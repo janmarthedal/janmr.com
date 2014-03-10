@@ -1,0 +1,101 @@
+---
+layout: post
+status: publish
+published: true
+title: On the Divergence of a Geometric Progression Sum
+author: Jan Marthedal Rasmussen
+author_login: sput
+author_email: jmr@kanooth.com
+author_url: http://kanooth.com/blog/
+excerpt: ! "Let us revisit the geometric progression sum considered in an earlier
+  article,\r\n\r\n\\[\r\ns_r = \\sum_{k=0}^\\infty r^k = 1 + r + r^2 + r^3 + \\ldots,\r\n\\]\r\n\r\nwhere
+  \\(r\\) here is a complex number. For what values of \\(r\\) does this infinite
+  sum make sense? Can we find a closed-form expression for \\(s_r\\) in such cases?\r\n"
+wordpress_id: 682
+wordpress_url: http://sputsoft.com/?p=682
+date: 2009-08-28 17:50:28.000000000 +02:00
+categories:
+- mathematics
+tags:
+- proof
+- infinite series
+comments:
+- id: 762
+  author: Quidnunc
+  author_email: ''
+  author_url: ''
+  date: !binary |-
+    MjAwOS0xMC0xNSAwNTo1NzoyOCArMDIwMA==
+  date_gmt: !binary |-
+    MjAwOS0xMC0xNSAwMzo1NzoyOCArMDIwMA==
+  content: ! '[...] On the Divergence of a Geometric Progression Sum | SputSoft (sputsoft.com)
+    - September 28, 2009 [...]'
+---
+Let us revisit the geometric progression sum considered in an <a href="&#47;blog&#47;2008&#47;10&#47;nice-geometric-progression-proof.html">earlier article<&#47;a>,
+
+\[
+s_r = \sum_{k=0}^\infty r^k = 1 + r + r^2 + r^3 + \ldots,
+\]
+
+where \(r\) here is a <a href="http:&#47;&#47;en.wikipedia.org&#47;wiki&#47;Complex_number">complex number<&#47;a>. For what values of \(r\) does this infinite sum make sense? Can we find a <a href="http:&#47;&#47;en.wikipedia.org&#47;wiki&#47;Closed-form_expression">closed-form expression<&#47;a> for \(s_r\) in such cases? To investigate this, we fix \(r\) to some value and consider the partial sums:
+
+<a id="more"></a><a id="more-682"></a>
+
+\[
+s_r(n) = \sum_{k=0}^n r^k = 1 + r + r^2 + \ldots + r^{n-1},
+\]
+
+where we just add the first \(n\) terms of \(s_r\). Now if \(s_r(n)\) tends to a finite limit&nbsp;\(v\) as \(n \rightarrow \infty\) (can we for any \(\delta > 0\) find an \(n_0\) such that \(|v-s_r(n)| \leq \delta\) for all \(n \geq n_0\)?) then we have \(s_r = v\).
+
+Let us first single out the special case \(r=1\). Since \(s_r(n) = n\) we cannot assign any well-defined, finite value to \(s_1\), so \(s_r\) is divergent for \(r=1\). For \(r \neq 1\) we get
+
+\[
+(1-r) s_r(n) = 1-r^n \quad \Longleftrightarrow \quad s_r(n) = \frac{1-r^n}{1-r}.
+\]
+
+Let us consider three different cases. If \(|r| < 1\) we see that the only term that depends on \(n\) tends to zero so we suspect that the limit is \(1&#47;(1-r)\),
+
+\[
+\left| \frac{1}{1-r} - \frac{1-r^n}{1-r} \right| = \left| \frac{r^n}{1-r} \right| = \frac{|r|^n}{|1-r|}.
+\]
+
+Since the magnitude of the difference between our suspected limit and the partial sums can be made as small as we like (as long as we choose \(n\) sufficiently large), we have
+
+\[
+s_r = \frac{1}{1-r}, \quad \hbox{for } |r| < 1.
+\]
+
+What about \(|r| > 1\)? We get
+
+\[
+|s_r(n)| = \left| \frac{1-r^n}{1-r} \right| \geq \frac{|r^n|-1}{|r-1|} \geq \frac{|r|^n-1}{|r|+1},
+\]
+
+and we see that \(|s_r(n)| \rightarrow \infty\) as \(n \rightarrow \infty\). We can thus not find a finite limit to which \(s_r(n)\) tends as \(n \rightarrow \infty\), so the series \(s_r\) is divergent for \(|r| > 1\).
+
+Left to consider is the case \(|r|=1\), \(r \neq 1\), and this is where it gets interesting. We get
+
+\[
+|s_r(n)| = \left| \frac{1-r^n}{1-r} \right| = \frac{|1-r^n|}{|1-r|}
+\leq \frac{1 + |r^n|}{|1-r|} = \frac{2}{|1-r|}.
+\]
+
+So the partial sums \(s_r(n)\) are bounded by some constant independent of \(n\). Does the value \(1&#47;(1-r)\) work as a limit in this case also? We set \(r = e^{i \theta}\) with \(0 < \theta < 2\pi\) and subtract,
+
+\[
+\begin{aligned}
+s_r(n) - \frac{1}{1-r} &= \frac{e^{i \theta n}}{e^{i \theta}-1} = \frac{e^{i \theta n} (e^{-i \theta}+1)}{(e^{i \theta}-1)(e^{-i \theta}+1)} = \frac{e^{i \theta (n-1)} + e^{i \theta n}}{2i\sin \theta} \\
+&= \frac{e^{i(\theta(2n-1)-\pi)&#47;2}}{2\sin(\theta&#47;2)}
+\end{aligned}
+\]
+
+(using \(e^{i x} + e^{i y} = 2 \cos((x-y)&#47;2) e^{i(x+y)&#47;2}\) and \(\sin \theta = 2\sin(\theta&#47;2)\cos(\theta&#47;2)\)). So \(s_r(n)\) does <em>not<&#47;em> converge to \(1&#47;(1-r)\) as \(n \rightarrow \infty\). Indeed, we see that \(s_r(n)\) follows a circle in the complex plane; a circle centered in \(1&#47;(1-r)\) with radius \(1&#47;(2\sin(\theta&#47;2))\). And this is what I find interesting: \(s_r(n)\) does not converge to any value,
+
+\[
+\hbox{the series } s_r \hbox{ is divergent for } |r| \geq 1,
+\]
+
+but circles around the value \(1&#47;(1-r)\) when \(|r|=1\), \(r \neq 1\). In fact, \(1&#47;(1-r)\) makes sense for all \(r \neq 1\), so can this value be assigned to \(s_r\) in some meaningful way? (When \(|r| < 1\), I would suspect that the values of \(s_r(n)\) spirals inward towards \(1&#47;(1-r)\) as \(n\) grows and spirals outwards when \(|r| > 1\); I have not verified this, though.)
+
+<div style="float:right"><a href="&#47;book&#47;link.php?id=hardy-div"><img src="&#47;book&#47;hardy-div.jpg" &#47;><&#47;a><&#47;div>
+This reminded me that <a href="http:&#47;&#47;en.wikipedia.org&#47;wiki&#47;G._H._Hardy">G. H. Hardy<&#47;a> has written a book called <em>Divergent Series<&#47;em>, where he manipulates infinite series with an "entirely uncritical spirit". Therein, he also considers the series \(s_r\) and, e.g., \(s_{-1} = 1&#47;2\) can somehow make sense. I have only flicked through the book (<a href="http:&#47;&#47;books.google.com&#47;books?id=jPccoUKsLdQC&printsec=frontcover&source=gbs_v2_summary_r&cad=0">excerpt<&#47;a>), but I think I should take a closer look...

@@ -1,0 +1,24 @@
+---
+layout: page
+status: publish
+published: true
+title: Numbers
+author: Jan Marthedal Rasmussen
+author_login: sput
+author_email: jmr@kanooth.com
+author_url: http://kanooth.com/blog/
+wordpress_id: 2660
+wordpress_url: http://kanooth.com/blog/?page_id=2660
+date: 2012-11-19 10:34:05.000000000 +01:00
+categories: []
+tags: []
+comments: []
+---
+Kanooth Numbers is a C++ library for doing multiple-precision arithmetic. The library is header-only and supposed to be highly portable.
+
+It serves two main purposes:
+<ul>
+	<li>A generic multiple-precision backend that builds on the <a href="&#47;blog&#47;tag&#47;numbers-project+basic-theory">theory presented on this blog<&#47;a>.<&#47;li>
+	<li>A simple and robust C++ interface to use the multiple-precision number types. This does not include overloading arithmetic operators such as <span class="sputcode">+<&#47;span>, <span class="sputcode">-<&#47;span> and <span class="sputcode">*<&#47;span>.<&#47;li>
+<&#47;ul>
+Browse or download the code from the <a href="https:&#47;&#47;github.com&#47;janmarthedal&#47;kanooth-numbers">GitHub project page<&#47;a>.
