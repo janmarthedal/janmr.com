@@ -1,9 +1,9 @@
-figure {
-  margin: 1em 0em;
+img {
+  margin: 1em;
 }
 
-figure img {
-  width: 100%;
+figure {
+  margin: 1em 0em;
 }
 
 figcaption {
