@@ -1,28 +1,21 @@
 ---
-layout: post
-status: publish
-published: true
+layout: wppost
 title: ! 'Book review: The Pleasures of Counting'
 author: Jan Marthedal Rasmussen
-author_login: sput
-author_email: jmr@kanooth.com
-author_url: http://kanooth.com/blog/
 excerpt: ! "<em>The Pleasures of Counting</em> is a book about people working with mathematics and challenges
   they have faced. The book has 544 pages with a total of 19 chapters and 3 appendices.
   It contains a lot of material and is split into five parts: The uses of abstraction,
   Meditations on measurement, The pleasures of computation, Enigma variations, and
   The pleasures of thought."
-wordpress_id: 973
-wordpress_url: http://sputsoft.com/?p=973
 date: 2009-11-15 14:48:16.000000000 +01:00
 categories:
 - book review
 tags:
 - recommended reading
 ---
-<div style="float:right"><a href="/book/link.php?id=korner"><img src="/book/korner.jpg" /></a></div>
+<div style="float:right"><a href="{% amazon korner %}"><img src="{% bookcover korner %}" /></a></div>
 <p><em>The Pleasures of Counting</em> is a book about people working with mathematics and challenges they have faced. The book has 544 pages with a total of 19 chapters and 3 appendices. It contains a lot of material and is split into five parts: The uses of abstraction, Meditations on measurement, The pleasures of computation, Enigma variations, and The pleasures of thought.</p>
-<p><span id="more-973"></span></p>
+<span></span>
 <p>It addresses history, short biographies, mathematical theories, physics, biology, to name some. Topics touched upon are: Finding the source of a cholera outbreak, effects of medicine, submarines and convoys during World War I, production of ammunition, using radar, hitting (moving) aircrafts, attacking submarines from aircrafts during WWII, the early days of operational research, body mass and metabolic rate in animals, dimensional analysis in physics, properties of light, boat anchor design, Einstein&#8217;s theory of relativity, weather prediction, turbulence, analysing the causes of war, measuring the length of coast lines, blood flow in vessels, pencil-and-paper vs. calculator, railroad problems during WWI and WWII, politics and argumentation regarding a new calendar, railways and safety, cryptology, the Enigma enciphering machines during WWII, code makers and code breakers during WWII, the RSA encryption system, survival of generations, epidemics and fish harvesting, mathematics as a career.</p>
 <p>Every subject treated in the book is in some way related to mathematics. Most of the mathematics, however, are simple equations and back-of-the-envelope considerations. But many mathematical disciplines are touched upon, some of them being: Gathering and interpreting data, first and second order linear differential equation, trigonometry, curve-fitting using polynomials, Taylor expansions, numerical integration, the differentiability of functions, probability theory, fractals, number representations, Euclid&#8217;s algorithm, Fibonacci numbers, maximum flow in networks, sorting and finding the largest number, roots and inequalities for second-degree polynomials, Stirling&#8217;s estimate of \(n!\), degrees of infinity, Alan Turing and the Entscheidungsproblem, substitution/rotation ciphers, elemental number theory, error-correcting codes, general logic and deduction, foundations of mathematics.</p>
 <p>Many exercises are found throughout the book. They vary from discussion-type exercises,</p>
@@ -32,13 +25,15 @@ Think carefully about the arguments against convoy given above. Which seem to yo
 <p>to applied mathematics (part of a larger exercise),</p>
 <blockquote><p>
 Suppose that we can produce merchant ships at a rate \(\mu\) (ships per unit time) and that we lose merchant ships at a rate \(\lambda\) (ships per ship afloat per unit time). Explain briefly why, with this model, the size \(x(t)\) of our fleet is governed by the differential equation</p>
-<p>\[<br />
-\dot{x} = \lambda x + \mu,<br />
+<p>
+\[
+\dot{x} = \lambda x + \mu,
 \]</p>
 <p>and deduce that</p>
-<p>\[<br />
-x(t) = \frac{\mu}{\lambda} + \left( X - \frac{\mu}{\lambda} \right) e^{-\lambda t},<br />
-\]</p>
+<p>\[
+x(t) = \frac{\mu}{\lambda} + \left( X - \frac{\mu}{\lambda} \right) e^{-\lambda t},
+\]
+</p>
 <p>where \(X\) is the size of the fleet when \(t=0\).
 </p></blockquote>
 <p>to more pure-mathematics exercises (also part of a larger exercise),</p>

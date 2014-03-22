@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: wppost
 title: Implementing Multiple-Precision Arithmetic, Part 2
 author: Jan Marthedal Rasmussen
 excerpt: ! "This article is a follow-up
@@ -18,9 +18,9 @@ tags:
 - numbers project
 ---
 <h3>Introduction</h3>
-<div style="float:right"><a href="/book/link.php?id=taocp2"><img src="/book/taocp2.jpg" /></a></div>
-<p>This article is a follow-up to <a href="/blog/2009/07/implementing-multiple-precision-arithmetic-part-1.html">part 1</a> where multiple-precision addition, subtraction, and multiplication for non-negative integers was discussed. This article deals with division. Again, the theoretic foundation is based on Section&nbsp;4.3.1, <em>The Classical Algorithms</em>, of <a href="http://www-cs-faculty.stanford.edu/~knuth/taocp.html">The Art of Computer Programming</a>, Volume&nbsp;2, by <a href="http://www-cs-faculty.stanford.edu/~knuth/">Donald E. Knuth</a>.</p>
-<p><span id="more-573"></span></p>
+<div style="float:right"><a href="{% amazon taocp2 %}"><img src="{% bookcover taocp2 %}" /></a></div>
+<p>This article is a follow-up to <a href="/2009/07/implementing-multiple-precision-arithmetic-part-1.html">part 1</a> where multiple-precision addition, subtraction, and multiplication for non-negative integers was discussed. This article deals with division. Again, the theoretic foundation is based on Section&nbsp;4.3.1, <em>The Classical Algorithms</em>, of <a href="http://www-cs-faculty.stanford.edu/~knuth/taocp.html">The Art of Computer Programming</a>, Volume&nbsp;2, by <a href="http://www-cs-faculty.stanford.edu/~knuth/">Donald E. Knuth</a>.</p>
+<span></span>
 <h3>Fundamentals</h3>
 <p>With \(u = (u_{m-1} \ldots u_1 u_0)_b\) and \(v = (v_{n-1} \ldots v_1 v_0)_b\) we wish to compute the integer quotient \(q = \lfloor u/v \rfloor\). As a bonus, our algorithm will also produce the remainder \(r\) such that \(u = q v + r\) with \(0 \leq r &lt; v\). We will assume that \(v \neq 0\) (otherwise the result is undefined) and that \(u \geq v\) (otherwise the result is trivially \(q=0\) and \(r=u\)). Since \(b^{m-1} \leq u &lt; b^m\) and \(b^{n-1} \leq v &lt; b^n\) we have \(b^{m-n-1} &lt; q &lt; b^{m-n+1}\), so \(q\) can be represented using \(m-n\) or \(m-n+1\) digits: \(q = (q_{m-n} \ldots q_1 q_0)_b\) where \(q_{m-n}\) may be zero, but in which case \(q_{m-n-1} \neq 0\) (if \(m > n\)).</p>
 <p>We will now consider (long) division from a top-level point of view. It is actually just a formalization of the well-known pencil-and-paper method:</p>
@@ -30,35 +30,36 @@ tags:
 <li><strong>G2</strong>. \(k \leftarrow m-n\).</li>
 <li><strong>G3</strong>. \(q_k \leftarrow \left\lfloor (u^{(k+1)}_{k+n} \ldots u^{(k+1)}_{k+1} u^{(k+1)}_k)_b / v \right\rfloor\).</li>
 <li><strong>G4</strong>. Set \(u^{(k)} \leftarrow u^{(k+1)} &#8211; q_k b^k v\) or, equivalently,</li>
-<p>\[<br />
-\begin{aligned}<br />
-(u^{(k)}_{k+n} \ldots u^{(k)}_{k+1} u^{(k)}_k)_b &#038;\leftarrow (u^{(k+1)}_{k+n} \ldots u^{(k+1)}_{k+1} u^{(k+1)}_k)_b - q_k v, \\<br />
-(u^{(k)}_{k-1} \ldots u^{(k)}_1 u^{(k)}_0)_b &#038;\leftarrow (u^{(k+1)}_{k-1} \ldots u^{(k+1)}_1 u^{(k+1)}_0)_b.<br />
-\end{aligned}<br />
+<p>
+\[
+\begin{aligned}
+(u^{(k)}_{k+n} \ldots u^{(k)}_{k+1} u^{(k)}_k)_b &#038;\leftarrow (u^{(k+1)}_{k+n} \ldots u^{(k+1)}_{k+1} u^{(k+1)}_k)_b - q_k v, \\
+(u^{(k)}_{k-1} \ldots u^{(k)}_1 u^{(k)}_0)_b &#038;\leftarrow (u^{(k+1)}_{k-1} \ldots u^{(k+1)}_1 u^{(k+1)}_0)_b.
+\end{aligned}
 \]</p>
 <li><strong>G5</strong>. If \(k=0\) then set \(r \leftarrow u^{(0)}\) and exit. Otherwise set \(k \leftarrow k-1\) and go to step&nbsp;<strong>G3</strong>.</li>
 </ul>
 <p>An essential invariant of this algorithm is</p>
-<p>\[<br />
-(u^{(k)}_{k+n-1} \ldots u^{(k)}_{k+1} u^{(k)}_k)_b < v \quad \hbox{for} \quad k=0, 1, \ldots, m-n+1.<br />
+<p>\[
+(u^{(k)}_{k+n-1} \ldots u^{(k)}_{k+1} u^{(k)}_k)_b < v \quad \hbox{for} \quad k=0, 1, \ldots, m-n+1.
 \]</p>
 <p>This can be seen as follows. For \(k=m-n+1\) the invariant is ensured by introducing a zero as the most significant digit of \(u^{(m-n+1)}\) in step&nbsp;<strong>G1</strong>. For \(k=0,1,\ldots,m-n\) we see from steps&nbsp;<strong>G3</strong> and&nbsp;<strong>G4</strong> that \((u^{(k)}_{k+n} \ldots u^{(k)}_{k+1} u^{(k)}_k)_b = (u^{(k+1)}_{k+n} \ldots u^{(k+1)}_{k+1} u^{(k+1)}_k)_b \hbox{ mod } v\) and the inequality follows.</p>
 <p>Note that the invariant implies that \(u^{(k)}_{k+n}=0\) for \(k=0, 1, \ldots, m-n\). Furthermore we have that</p>
-<p>\[<br />
-(u^{(k+1)}_{k+n} \ldots u^{(k+1)}_{k+1} u^{(k+1)}_k)_b = (u^{(k+1)}_{k+n} \ldots u^{(k+1)}_{k+1})_b \cdot b + u^{(k+1)}_k \leq (v-1) b + (b-1) = v b - 1<br />
+<p>\[
+(u^{(k+1)}_{k+n} \ldots u^{(k+1)}_{k+1} u^{(k+1)}_k)_b = (u^{(k+1)}_{k+n} \ldots u^{(k+1)}_{k+1})_b \cdot b + u^{(k+1)}_k \leq (v-1) b + (b-1) = v b - 1
 \]</p>
 <p>from which we see that the quotients \(q_k\) computed in step&nbsp;<strong>G3</strong> are non-negative and smaller than \(b\), as they should be.</p>
 <p>Finally, we can verify that the algorithm computes what we intended. We have</p>
-<p>\[<br />
-\begin{aligned}<br />
-r &#038;= u^{(0)} = u^{(1)} - q_0 b^0 v = u^{(2)} - q_1 b^1 v - q_0 b^0 v = \ldots \\<br />
-  &#038;= u^{(m-n+1)} - (q_{m-n} b^{m-n} + \cdots + q_0 b^0) v = u - q v.<br />
-\end{aligned}<br />
+<p>\[
+\begin{aligned}
+r &#038;= u^{(0)} = u^{(1)} - q_0 b^0 v = u^{(2)} - q_1 b^1 v - q_0 b^0 v = \ldots \\
+  &#038;= u^{(m-n+1)} - (q_{m-n} b^{m-n} + \cdots + q_0 b^0) v = u - q v.
+\end{aligned}
 \]</p>
 <p>Now for some practical aspects. Note first that all of the \(u^{(k)}\) variables can in fact be represented by a single variable and simply overwrite its digits along the way&#8212;thus ending up with the remainder. Note also that any of the remainder&#8217;s digits may be zero.</p>
 <p>Finally, how do we compute the quotient in step&nbsp;<strong>G3</strong>? That is in fact the central part of the division algorithm and is the subject of the rest of this article.</p>
 <h3>Simple Division</h3>
-<p>Let us first consider computing the quotient of step&nbsp;<strong>G3</strong> in the special case \(n=1\). So let us assume that \(u < b^2\), \(0 < v < b\) and \(\lfloor u/v \rfloor < b\). As in <a href="/blog/2009/07/implementing-multiple-precision-arithmetic-part-1.html">part 1</a> we wish to use \(b = b_T\) for some intrinsic integer (C++) type <span class="sputcode">T</span>, and just as most CPUs have built-in instructions for the most basic addition, subtraction, and multiplication operations, this is also the case for division. More specifically, obtaining the quotient \(q\) and remainder \(r\) such that \(u = q v + r\), where \(0 \leq q < b\), \(0 \leq r < v\), is a quite common instruction. And that instruction is exactly what we need in steps&nbsp;<strong>G3</strong> and&nbsp;<strong>G4</strong> above.</p>
+<p>Let us first consider computing the quotient of step&nbsp;<strong>G3</strong> in the special case \(n=1\). So let us assume that \(u < b^2\), \(0 < v < b\) and \(\lfloor u/v \rfloor < b\). As in <a href="/2009/07/implementing-multiple-precision-arithmetic-part-1.html">part 1</a> we wish to use \(b = b_T\) for some intrinsic integer (C++) type <span class="sputcode">T</span>, and just as most CPUs have built-in instructions for the most basic addition, subtraction, and multiplication operations, this is also the case for division. More specifically, obtaining the quotient \(q\) and remainder \(r\) such that \(u = q v + r\), where \(0 \leq q < b\), \(0 \leq r < v\), is a quite common instruction. And that instruction is exactly what we need in steps&nbsp;<strong>G3</strong> and&nbsp;<strong>G4</strong> above.</p>
 <p>However, it is not possible to access such an instruction directly through standard C++. As we did for multiplication, we therefore split \(u\) and \(v\) into smaller parts and do the operation at this smaller scale. So let us assume a number \(h\) exists such that \(h^2 = b\). We now set \(u = (u&#8217;_3 u&#8217;_2 u&#8217;_1 u&#8217;_0)_h\) and \(v = (v&#8217;_1 v&#8217;_0)_h\) and use the algorithms of this article on this representation. A &#8216;simple division&#8217; is now of the type \((u&#8217;_3 h + u&#8217;_2)/v&#8217;_1\) and we can do that directly in C++.</p>
 <p>We will not go further into the implementation of &#8216;double-precision division&#8217;, but an example implementation is the function <span class="sputcode">double_div</span> of <a href="http://sputsoftnumbers.svn.sourceforge.net/viewvc/sputsoftnumbers/tags/0.1/src/detail/lowlevel_generic.hpp?revision=88&amp;view=markup"><span class="sputcode">lowlevel_generic.hpp</span></a>. You can also see the specialization of this routine for <a href="http://en.wikipedia.org/wiki/X86">x86</a> processors with <a href="http://gcc.gnu.org/">GCC</a> compilers in the file <a href="http://sputsoftnumbers.svn.sourceforge.net/viewvc/sputsoftnumbers/tags/0.1/src/detail/lowlevel_gcc_x86.hpp?revision=88&amp;view=markup"><span class="sputcode">lowlevel_gcc_x86.hpp</span></a>.</p>
 <p>For \(n=1\) Algorithm G of the previous section can be greatly simplified if we are interested in just the quotient \(q=(q_{n-1} \ldots q_1 q_0)_b\) and the remainder \(0 \leq r &lt; v\):</p>
@@ -71,63 +72,64 @@ r &#038;= u^{(0)} = u^{(1)} - q_0 b^0 v = u^{(2)} - q_1 b^1 v - q_0 b^0 v = \ldo
 <h3>Long Division</h3>
 <p>Let us now consider computing the quotient in step&nbsp;<strong>G3</strong> in the case \(n > 1\). We therefore assume \(u = (u_n \ldots u_1 u_0)_b\), \(u < b^{n+1}\), and \(v = (v_{n-1} \ldots v_1 v_0)_b\), \(b^{n-1} \leq v < b^n\), with \(n \geq 2\) and \(0 \leq \lfloor u/v \rfloor < b\).</p>
 <p>We wish to compute \(q = \lfloor u/v \rfloor\) as fast as possible. How good is a 'first order' approximation, where we use just the two most-significant digits of \(u\) and the most-significant digit of \(v\): \((u_n b + u_{n-1})/v_{n-1}\)? First of all, if \(u_n = v_{n-1}\) this quantity equals \(b\) and we know that \(q \leq b-1\) by assumption, so let us therefore study</p>
-<p>\[<br />
-\hat{q} = \hbox{min} \left( \left\lfloor \frac{u_n b + u_{n-1}}{v_{n-1}} \right\rfloor, b-1 \right)<br />
+<p>\[
+\hat{q} = \hbox{min} \left( \left\lfloor \frac{u_n b + u_{n-1}}{v_{n-1}} \right\rfloor, b-1 \right)
 \]</p>
 <p>This approximate quotient is never too small, as the following theorem states.</p>
 <p><strong>Theorem 1.</strong> With \(\hat{q}\) as defined above we have \(q \leq \hat{q}\).</p>
-<p><em>Proof.</em> If \(\hat{q}=b-1\) then since \(q \leq b-1\) by assumption, the statement is true. Assume then that \(\hat{q} = \lfloor (u_n b + u_{n-1})/v_{n-1} \rfloor\). From the properties of the <a href="http://en.wikipedia.org/wiki/Floor_function">floor function</a> we have \(u_n b + u_{n-1} \leq \hat{q} v_{n-1} + v_{n-1} &#8211; 1\) and therefore \(\hat{q} v_{n-1} \geq u_n b + u_{n-1} &#8211; v_{n-1} + 1\). We then get<br/>\[<br />
-\begin{aligned}<br />
-u - \hat{q} v &#038;\leq u - \hat{q} v_{n-1} b^{n-1} \\<br />
-              &#038;\leq u_n b^n + \cdots + u_0 - (u_n b + u_{n-1} - v_{n-1} + 1) b^{n-1} \\<br />
-			  &#038;= u_{n-2} b^{n-2} + \cdots + u_0 - b^{n-1} + v_{n-1} b^{n-1} < v_{n-1} b^{n-1} \leq v.<br />
-\end{aligned}<br />
-\]<br/>So \(u &#8211; \hat{q} v < v\) and since \(0 \leq u - q v < v\) we must have \(q \leq \hat{q}\).&nbsp;&nbsp;&nbsp;&nbsp;&#x220E;</p>
+<p><em>Proof.</em> If \(\hat{q}=b-1\) then since \(q \leq b-1\) by assumption, the statement is true. Assume then that \(\hat{q} = \lfloor (u_n b + u_{n-1})/v_{n-1} \rfloor\). From the properties of the <a href="http://en.wikipedia.org/wiki/Floor_function">floor function</a> we have \(u_n b + u_{n-1} \leq \hat{q} v_{n-1} + v_{n-1} &#8211; 1\) and therefore \(\hat{q} v_{n-1} \geq u_n b + u_{n-1} &#8211; v_{n-1} + 1\). We then get\[
+\begin{aligned}
+u - \hat{q} v &#038;\leq u - \hat{q} v_{n-1} b^{n-1} \\
+              &#038;\leq u_n b^n + \cdots + u_0 - (u_n b + u_{n-1} - v_{n-1} + 1) b^{n-1} \\
+			  &#038;= u_{n-2} b^{n-2} + \cdots + u_0 - b^{n-1} + v_{n-1} b^{n-1} < v_{n-1} b^{n-1} \leq v.
+\end{aligned}
+\]So \(u &#8211; \hat{q} v < v\) and since \(0 \leq u - q v < v\) we must have \(q \leq \hat{q}\).&nbsp;&nbsp;&nbsp;&nbsp;&#x220E;</p>
 <p>If \(u\) and \(v\) are scaled appropriately, \(\hat{q}\) will never be too large, either.</p>
 <p><strong>Theorem 2.</strong> With \(\hat{q}\) as defined above and \(v_{n-1} \geq \lfloor b/2 \rfloor\), we have \(\hat{q} \leq q+2\).</p>
-<p><em>Proof.</em> Assume that \(\hat{q} \geq q+3\). We get<br/>\[<br />
-\hat{q} \leq \frac{u_n b u_{n-1}}{v_{n-1}} = \frac{u_n b^n u_{n-1} b^{n-1}}{v_{n-1} b^{n-1}}<br />
-\leq \frac{u}{v_{n-1} b^{n-1}} < \frac{u}{v - b^{n-1}},<br />
-\]<br/>since \(v = v_{n-1} b^{n-1} + \cdots + v_0 \leq v_{n-1} b^{n-1} + b^{n-1}\). We cannot have \(v = b^{n-1}\) since that would imply \(\hat{q} = q = u_n\). The relation \(q = \lfloor u/v \rfloor\) implies \(q > u/v &#8211; 1\), from which we get<br/>\[<br />
-3 \leq \hat{q} - q < \frac{u}{v - b^{n-1}} - \frac{u}{v} + 1 = \frac{u}{v} \left( \frac{b^{n-1}}{v - b^{n-1}} \right) + 1.<br />
-\]<br/>We then have<br/>\[<br />
-\frac{u}{v} \geq 2 \left( \frac{v - b^{n-1}}{b^{n-1}} \right) \geq 2(v_{n-1} - 1),<br />
-\]<br/>and finally<br/>\[<br />
-b-4 \geq \hat{q}-3 \geq q = \lfloor u/v \rfloor \geq 2(v_{n-1}-1),<br />
-\]<br/>which implies \(v_{n-1} < \lfloor b/2 \rfloor\).&nbsp;&nbsp;&nbsp;&nbsp;&#x220E;</p>
+<p><em>Proof.</em> Assume that \(\hat{q} \geq q+3\). We get\[
+\hat{q} \leq \frac{u_n b u_{n-1}}{v_{n-1}} = \frac{u_n b^n u_{n-1} b^{n-1}}{v_{n-1} b^{n-1}}
+\leq \frac{u}{v_{n-1} b^{n-1}} < \frac{u}{v - b^{n-1}},
+\]since \(v = v_{n-1} b^{n-1} + \cdots + v_0 \leq v_{n-1} b^{n-1} + b^{n-1}\). We cannot have \(v = b^{n-1}\) since that would imply \(\hat{q} = q = u_n\). The relation \(q = \lfloor u/v \rfloor\) implies \(q > u/v &#8211; 1\), from which we get\[
+3 \leq \hat{q} - q < \frac{u}{v - b^{n-1}} - \frac{u}{v} + 1 = \frac{u}{v} \left( \frac{b^{n-1}}{v - b^{n-1}} \right) + 1.
+\]We then have\[
+\frac{u}{v} \geq 2 \left( \frac{v - b^{n-1}}{b^{n-1}} \right) \geq 2(v_{n-1} - 1),
+\]and finally\[
+b-4 \geq \hat{q}-3 \geq q = \lfloor u/v \rfloor \geq 2(v_{n-1}-1),
+\]which implies \(v_{n-1} < \lfloor b/2 \rfloor\).&nbsp;&nbsp;&nbsp;&nbsp;&#x220E;</p>
 <p>We would expect to come even closer if we consider the 'second order' approximate quotient,</p>
-<p>\[<br />
-\left\lfloor \frac{u_n b^2 + u_{n-1} b + u_{n-2}}{v_{n-1} b + v_{n-2}} \right\rfloor,<br />
+<p>\[
+\left\lfloor \frac{u_n b^2 + u_{n-1} b + u_{n-2}}{v_{n-1} b + v_{n-2}} \right\rfloor,
 \]</p>
 <p>but how much closer? Given some approximate quotient \(\hat{q}\), let us compute the corresponding second order residual</p>
-<p>\[<br />
-u_n b^2 + u_{n-1} b + u_{n-2} - \hat{q} (v_{n-1} b + v_{n-2})<br />
-= \hat{r} b + u_{n-2} - \hat{q} v_{n-2},<br />
+<p>\[
+u_n b^2 + u_{n-1} b + u_{n-2} - \hat{q} (v_{n-1} b + v_{n-2})
+= \hat{r} b + u_{n-2} - \hat{q} v_{n-2},
 \]</p>
 <p>where \(\hat{r}\) is the first order residual,</p>
-<p>\[<br />
-\hat{r} = u_n b + u_{n-1} - \hat{q} v_{n-1}.<br />
+<p>\[
+\hat{r} = u_n b + u_{n-1} - \hat{q} v_{n-1}.
 \]</p>
 <p>By studying the sign of the second order residual we can now get closer to the true quotient.</p>
 <p><strong>Theorem 3.</strong> Let \(\hat{q}\) be any approximate quotient and \(\hat{r}\) the corresponding first order residual. Now if \(\hat{q} v_{n-2} > b \hat{r} + u_{n-2}\) then \(q < \hat{q}\).</p>
-<p><em>Proof.</em> Assume \(\hat{q} v_{n-2} > b \hat{r} + u_{n-2}\), equivalent to \(\hat{r} b + u_{n-2} &#8211; \hat{q} v_{n-2} + 1 \leq 0\). We then have<br/>\[<br />
-\begin{aligned}<br />
-u - \hat{q} v &#038;\leq u - \hat{q} v_{n-1} b^{n-1} - \hat{q} v_{n-2} b^{n-2} \\<br />
-			  &#038;=    b^{n-1} (u_n b + u_{n-1} - \hat{q} v_{n-1}) + u_{n-2} b^{n-2} + \cdots + u_0 - \hat{q} v_{n-2} b^{n-2} \\<br />
-              &#038;<    b^{n-1} \hat{r} + u_{n-2} b^{n-2} + b^{n-2} - \hat{q} v_{n-2} b^{n-2} \\<br />
-			  &#038;=    b^{n-2} (\hat{r} b + u_{n-2} - \hat{q} v_{n-2} + 1) \leq 0.<br />
-\end{aligned}<br />
-\]<br/>So \(u &#8211; \hat{q} v < 0 \leq u - q v\) which implies \(q < \hat{q}\).&nbsp;&nbsp;&nbsp;&nbsp;&#x220E;</p>
+<p><em>Proof.</em> Assume \(\hat{q} v_{n-2} > b \hat{r} + u_{n-2}\), equivalent to \(\hat{r} b + u_{n-2} &#8211; \hat{q} v_{n-2} + 1 \leq 0\). We then have\[
+\begin{aligned}
+u - \hat{q} v &#038;\leq u - \hat{q} v_{n-1} b^{n-1} - \hat{q} v_{n-2} b^{n-2} \\
+			  &#038;=    b^{n-1} (u_n b + u_{n-1} - \hat{q} v_{n-1}) + u_{n-2} b^{n-2} + \cdots + u_0 - \hat{q} v_{n-2} b^{n-2} \\
+              &#038;<    b^{n-1} \hat{r} + u_{n-2} b^{n-2} + b^{n-2} - \hat{q} v_{n-2} b^{n-2} \\
+			  &#038;=    b^{n-2} (\hat{r} b + u_{n-2} - \hat{q} v_{n-2} + 1) \leq 0.
+\end{aligned}
+\]So \(u &#8211; \hat{q} v < 0 \leq u - q v\) which implies \(q < \hat{q}\).&nbsp;&nbsp;&nbsp;&nbsp;&#x220E;</p>
 <p><strong>Theorem 4.</strong> Let \(\hat{q}\) be any approximate quotient and \(\hat{r}\) the corresponding first order residual. Now if \(\hat{q} v_{n-2} \leq b \hat{r} + u_{n-2}\) then \(\hat{q} \leq q+1\).</p>
-<p><em>Proof.</em> Let \(\hat{q} v_{n-2} \leq b \hat{r} + u_{n-2}\) and assume \(\hat{q} \geq q+2\). Now since \(u &#8211; q v < v\) we get<br/>\[<br />
-\begin{aligned}<br />
-u &#038;< (q+1) v \leq (\hat{q}-1) v < \hat{q} (v_{n-1} b^{n-1} + v_{n-2} b^{n-2} + b^{n-2}) - v \\<br />
-  &#038;< \hat{q} v_{n-1} b^{n-1} + \hat{q} v_{n-2} b^{n-2} + b^{n-1} - v \\<br />
-  &#038;\leq \hat{q} v_{n-1} b^{n-1} + (b \hat{r} + u_{n-2}) b^{n-2} + b^{n-1} - v \\<br />
-  &#038;= u_n b^n + u_{n-1} b^{n-1} + u_{n-2} b^{n-2} + b^{n-1} - v \\<br />
-  &#038;\leq u_n b^n + u_{n-1} b^{n-1} + u_{n-2} b^{n-2} \leq u.<br />
-\end{aligned}<br />
-\]<br/>This claims that \(u < u\), a contradiction, so our assumption \(\hat{q} \geq q+2\) must have been wrong.&nbsp;&nbsp;&nbsp;&nbsp;&#x220E;</p>
+<p><em>Proof.</em> Let \(\hat{q} v_{n-2} \leq b \hat{r} + u_{n-2}\) and assume \(\hat{q} \geq q+2\). Now since \(u &#8211; q v < v\) we get\[
+\begin{aligned}
+u &#038;< (q+1) v \leq (\hat{q}-1) v < \hat{q} (v_{n-1} b^{n-1} + v_{n-2} b^{n-2} + b^{n-2}) - v \\
+  &#038;< \hat{q} v_{n-1} b^{n-1} + \hat{q} v_{n-2} b^{n-2} + b^{n-1} - v \\
+  &#038;\leq \hat{q} v_{n-1} b^{n-1} + (b \hat{r} + u_{n-2}) b^{n-2} + b^{n-1} - v \\
+  &#038;= u_n b^n + u_{n-1} b^{n-1} + u_{n-2} b^{n-2} + b^{n-1} - v \\
+  &#038;\leq u_n b^n + u_{n-1} b^{n-1} + u_{n-2} b^{n-2} \leq u.
+\end{aligned}
+\]
+This claims that \(u < u\), a contradiction, so our assumption \(\hat{q} \geq q+2\) must have been wrong.&nbsp;&nbsp;&nbsp;&nbsp;&#x220E;</p>
 <p>We now have the following procedure for computing \(\hat{q}\), a very close estimate to \(q\):</p>
 <p><strong>Algorithm Q</strong>. Let \(u = (u_n \ldots u_1 u_0)_b\) and \(v = (v_{n-1} \ldots v_1 v_0)_b\), \(v_{n-1} \neq 0\), with \(n \geq 2\) and \(0 \leq \lfloor u/v \rfloor < b\) (any digit of \(u\) can be zero and note that the only digits accessed are \(u_n\), \(u_{n-1}\), \(u_{n-2}\), \(v_{n-1}\), and \(v_{n-2}\)). The algorithm computes an integer \(\hat{q}\) such that \(\hat{q}-1 \leq \lfloor u/v \rfloor \leq \hat{q}\) (Theorems&nbsp;1 and&nbsp;4).</p>
 <ul>
@@ -147,7 +149,7 @@ u &#038;< (q+1) v \leq (\hat{q}-1) v < \hat{q} (v_{n-1} b^{n-1} + v_{n-2} b^{n-2
 </ul>
 <p>The normalization in step&nbsp;<strong>L1</strong> such that \(v_{n-1} \geq \lfloor b/2 \rfloor\) does two things. Firstly, it makes sure that the while-loop of the \(\hat{q}\)-computation executes at most two times. Secondly, the probability that the adding back in step&nbsp;<strong>L5</strong> must be executed is of order \(2/b\) (a proof can be found in Knuth&#8217;s book).</p>
 <h3>Concluding Remarks</h3>
-<p>This and the <a href="/blog/2009/07/implementing-multiple-precision-arithmetic-part-1.html">previous</a> article have now covered addition, subtraction, multiplication, and division of non-negative integers. I have not yet issued a release of the C++ library implementing these algorithms, but I plan to do it shortly. <del cite="/blog/2011/09/hosting-and-status-for-the-numbers-project.html" datetime="2011-09-28T08:25:00Z">You can follow the <a href="http://sourceforge.net/projects/sputsoftnumbers/">project</a> as it develops at <a href="http://sourceforge.net">SourceForge</a>. You can <a href="http://sputsoftnumbers.svn.sourceforge.net/viewvc/sputsoftnumbers/trunk/">browse the source</a> or check out the source code as</p>
+<p>This and the <a href="/2009/07/implementing-multiple-precision-arithmetic-part-1.html">previous</a> article have now covered addition, subtraction, multiplication, and division of non-negative integers. I have not yet issued a release of the C++ library implementing these algorithms, but I plan to do it shortly. <del cite="/2011/09/hosting-and-status-for-the-numbers-project.html" datetime="2011-09-28T08:25:00Z">You can follow the <a href="http://sourceforge.net/projects/sputsoftnumbers/">project</a> as it develops at <a href="http://sourceforge.net">SourceForge</a>. You can <a href="http://sputsoftnumbers.svn.sourceforge.net/viewvc/sputsoftnumbers/trunk/">browse the source</a> or check out the source code as</p>
 <pre class="sputcode">
 svn co https://sputsoftnumbers.svn.sourceforge.net/svnroot/sputsoftnumbers/trunk sputsoftnumbers
 </pre>
