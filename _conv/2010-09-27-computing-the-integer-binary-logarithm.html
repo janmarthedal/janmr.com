@@ -39,15 +39,17 @@ k = \lfloor \log_2 n \rfloor \quad \Leftrightarrow \quad 2^k \leq n < 2^{k+1}.<b
 \lfloor \ldots \lfloor \lfloor n/2 \rfloor /2 \rfloor \ldots /2 \rfloor = \left\lfloor \frac{n}{2 \cdot 2 \cdots 2} \right\rfloor,<br />
 \]</p>
 <p>which means that we can repeatedly do integer divison by two until we reach zero. To be more specific:</p>
-<pre class="sputcode">
-template &lt;typename T&gt;
+
+{% highlight cpp %}
+template <typename T>
 unsigned floor_log2(T v) {
   unsigned r = -1;
-  while (v) { v &gt;&gt;= 1; r++; }
+  while (v) { v >>= 1; r++; }
   return r;
 }
-</pre>
-<p>The good thing about this algorithm is that it works for all (positive) integer types, provided that bitwise shift right <span class="sputcode">&gt;&gt;</span> or integer division by two is defined. The bad thing is that it is not very fast.</p>
+{% endhighlight %}
+
+<p>The good thing about this algorithm is that it works for all (positive) integer types, provided that bitwise shift right <span class="sputcode">>></span> or integer division by two is defined. The bad thing is that it is not very fast.</p>
 <p>An observation that can lead to faster algorithms is the fact that, as mentioned above, \(\lfloor \log_2 n \rfloor\) is the position of the left-most bit. Let us address multiple-precision numbers first. Assume that a positive integer <span class="mthi">n</span> is represented as in a <a href="/blog/2009/07/implementing-multiple-precision-arithmetic-part-1.html">previous post</a> as</p>
 <p>\[<br />
 n = (n_{d-1} \ldots n_1 u_0)_b = \sum_{i=0}^{d-1} n_i b^i<br />
@@ -58,20 +60,23 @@ n = (n_{d-1} \ldots n_1 u_0)_b = \sum_{i=0}^{d-1} n_i b^i<br />
 \]</p>
 <p>So the problem of computing the integer binary logarithm for a multiple-precision integer of the type stated is reduced to finding the integer binary logarithm of a single <span class="mthi">p</span>-bit digit.</p>
 <p>Consider now a positive integer represented using a 16 bit word. Since we are interested in the left-most bit, we can search for it using a kind of <a href="http://en.wikipedia.org/wiki/Binary_search_algorithm">binary search method</a>. First we do a <a href="http://en.wikipedia.org/wiki/Bitwise_operation#AND">bitwise and</a> with the mask (1111111100000000)<sub>2</sub> to see if the left-most bit is located in the upper or lower part of the word. If it is among the lower 8 bits we simply compute the result for this 8 bit number instead; if it is among the upper 8 bits we compute the result for the upper 8 bits and add 8. We have thus reduced the problem of finding the integer binary logarithm of an 16 bit number to finding the same function of an 8 bit number. This principle can be used recursively until we look at only 1 bit:</p>
-<pre class="sputcode">
+
+{% highlight cpp %}
 unsigned floor_log2(uint16_t v) {
   static const uint16_t ones = -1;
   unsigned r = 0;
-  if (v &#038; (ones &lt;&lt; 8)) { v &gt;&gt;= 8; r += 8; }
-  if (v &#038; (ones &lt;&lt; 4)) { v &gt;&gt;= 4; r += 4; }
-  if (v &#038; (ones &lt;&lt; 2)) { v &gt;&gt;= 2; r += 2; }
-  if (v &#038; (ones &lt;&lt; 1)) { v &gt;&gt;= 1; r += 1; }
+  if (v & (ones << 8)) { v >>= 8; r += 8; }
+  if (v & (ones << 4)) { v >>= 4; r += 4; }
+  if (v & (ones << 2)) { v >>= 2; r += 2; }
+  if (v & (ones << 1)) { v >>= 1; r += 1; }
   return r;
 }
-</pre>
+{% endhighlight %}
+
 <p>(Note that this function returns 0 if the argument is 0. The types <span class="sputcode">uint8_t</span>, <span class="sputcode">uint16_t</span>, and so on are defined in <span class="sputcode">stdint.h</span> and <span class="sputcode">cstdint</span>.)</p>
 <p>If we look at small numbers, say 8 bit integers, we can do much better with a simple table lookup. For instance:</p>
-<pre class="sputcode">
+
+{% highlight cpp %}
 const short floor_log2_table[256] = {
  -1, 0, 1,1, 2,2,2,2, 3,3,3,3,3,3,3,3, 4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,
  5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,
@@ -85,17 +90,20 @@ const short floor_log2_table[256] = {
 unsigned floor_log2(uint8_t v) {
   return floor_log2_table[v];
 }
-</pre>
+{% endhighlight %}
+
 <p>For large numbers we can combine the binary search and the table lookup. For 32 bit numbers we get:</p>
-<pre class="sputcode">
+
+{% highlight cpp %}
 unsigned floor_log2(uint32_t v) {
   static const uint32_t ones = -1;
   unsigned r = 0;
-  if (v &#038; (ones &lt;&lt; 16)) { v &gt;&gt;= 16; r += 16; }
-  if (v &#038; (ones &lt;&lt;  8)) { v &gt;&gt;=  8; r +=  8; }
+  if (v & (ones << 16)) { v >>= 16; r += 16; }
+  if (v & (ones <<  8)) { v >>=  8; r +=  8; }
   return r + floor_log2_table[v];
 }
-</pre>
+{% endhighlight %}
+
 <p>This provides a nice trade-off between speed and memory use.</p>
 <div style="float:right"><a href="/book/link.php?id=hackers-delight"><img src="/book/hackers-delight.jpg" /></a></div>
 <div style="float:right"><a href="/book/link.php?id=taocp4f1"><img src="/book/taocp4f1.jpg" /></a></div>

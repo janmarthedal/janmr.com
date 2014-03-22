@@ -52,7 +52,8 @@ T_{0,1}^{20}(1,0) &#038;= (T_{0,1}^2)^{10}(1,0) = T_{1,1}^{10}(1,0) = (T_{1,1}^2
 Then we just have to extract the second component (as done by applying the \(r\) function) and we get \(F_{20}=6765\).</p>
 <p>It is clear that the number and type of steps depend on the binary representation of <span class="mthi">n</span> when computing \(F_n\) using this method. Actually, reduction rule 2 will be performed \(\lfloor\log_2(n)\rfloor\) times and the number of times reduction rule 3 is performed corresponds to the number of 1s in the binary representation of <span class="mthi">n</span>. So the total number of steps needed for evaluating \(F_n\) using this method is logarithmic in <span class="mthi">n</span>.</p>
 <p>Let us look at a <span class="sputcode">C++</span> implementation. A straightforward implementation is this:</p>
-<pre class="sputcode">
+
+{% highlight cpp %}
 fibtype fib_rec(fibtype a, fibtype b, fibtype p, fibtype q, unsigned count) {
   if (count == 0)
     return b;
@@ -60,9 +61,11 @@ fibtype fib_rec(fibtype a, fibtype b, fibtype p, fibtype q, unsigned count) {
     return fib_rec(a, b, p*p+q*q, 2*p*q+q*q, count/2);
   return fib_rec(b*q+a*q+a*p, b*p+a*q, p, q, count-1);
 }
-</pre>
+{% endhighlight %}
+
 <p>where \(F_n\) = <span class="sputcode">fib_rec(1, 0, 0, 1, n)</span> (<span class="sputcode">fibtype</span> is just a <span class="sputcode">typedef</span> for a proper integer type.) It can be made iterative and improved at bit in the following way:</p>
-<pre class="sputcode">
+
+{% highlight cpp %}
 fibtype fibonacci(unsigned n) {
   if (n <= 1) return n;
   fibtype a=1, b=0, p=0, q=1, tmp;
@@ -79,7 +82,8 @@ fibtype fibonacci(unsigned n) {
   }
   return b*p + a*q;
 }
-</pre>
+{% endhighlight %}
+
 <p>The most important improvement here is probably the observation that \(r(T_{p,q}(a,b)) = b p + a q\).</p>
 <p>I don't claim that this is the fastest possible method for evaluating (single) Fibonacci numbers, but it certainly beats the "traditional" methods mentioned in the beginning (it may be inferior for small <span class="mthi">n</span>, though). Note also that as long as the numbers fit into the registers of the computer, the time necessary to perform each step is bounded by a constant. If multiple-precision is needed, however, this may no longer the case.</p>
 <p>Please inform me of other fast ways to compute Fibonacci numbers.</p>

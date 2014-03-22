@@ -52,8 +52,8 @@ x + <span class="overline">x</span> = &#8230;1111 = -1,
 </div>
 <p>This makes bitwise not equivalent to a simple subtraction. Notice how bitwise not turns a non-negative integer into a negative integer and vice versa.</p>
 <p>Let us turn to general bitwise operators. Consider a function that maps two bits to a single bit. Given such a function and two non-negative integers, we can apply the function to the zeroth bit of both numbers to obtain the zeroth bit of the result, then apply the function to the first bit of both numbers to obtain the first bit of the result, and so forth. In this way, any binary bit-operator {0,1}<sup>2</sup> &rarr; {0,1} can be extended to work on any non-negative integer (and as we shall see, any integer). There are 16 possible binary bit-operators:</p>
-<div class="spec1">
-<table rules=groups frame=box>
+
+<table class="table table-striped table-bordered">
 <colgroup span="1"></colgroup>
 <colgroup span="1"></colgroup>
 <colgroup span="4"></colgroup>
@@ -208,7 +208,7 @@ x + <span class="overline">x</span> = &#8230;1111 = -1,
 </tr>
 </tbody>
 </table>
-</div>
+
 <p>The first column of the table enumerates the functions from 0 to 15 (such that the binary representation of each number corresponds to the outputs). We see that exactly the functions 0-7 map (0,0) to 0, meaning that only these functions will map two non-negative integers to a non-negative integer.</p>
 <p>The second column shows expressions for the functions using the well-known operators <i>bitwise and</i>, x &amp; y, <i>bitwise or (inclusive or)</i>, x | y, <i>bitwise xor (exclusive or)</i>, x &oplus; y, and <i>bitwise not</i>, <span class="overline">x</span>. The table simultaneously define these operators.</p>
 <p>We can now formulate the goal of this article: Using only the bitwise operators that map non-negative integers to non-negative integers, together with usual integer arithmetic, how can we implement all 16 functions? The approach is quite simple: Use <i>bitwise not</i> to transform any negative integer into a non-negative integer, apply one of the functions 0-7, and then possibly apply <i>bitwise not</i> again to obtain the result.</p>
@@ -226,7 +226,8 @@ x &oplus; y = <span class="overline">x</span> &oplus; <span class="overline">y</
 </div>
 <p>All of these are easily proved since they (by definition) operate <i>bitwise</i>. This means that you only have to consider one-bit numbers, which means only four different cases to check.</p>
 <p>The only non-trivial operators among the functions 0-7 are x &amp; y, x | y, x &oplus; y, and x &amp; <span class="overline">y</span>. We will use the notation x <span class="overline">&amp;</span> y = x &amp; <span class="overline">y</span>. Note how <span class="overline">&amp;</span> is <i>not</i> symmetric. The only non-trivial operators among the functions 8-15 are <span class="overline">x &amp; y</span>, <span class="overline">x | y</span>, x | <span class="overline">y</span>, and <span class="overline">x &oplus; y</span>. Considering these eight cases, along with whether x and y are negative or not, we get the following table:</p>
-<table border="1" style="border-collapse:collapse; background:#F2F2F2;">
+
+<table class="table table-striped table-bordered">
 <tr>
 <td></td>
 <td>x &ge; 0, y &ge; 0</td>
@@ -291,6 +292,7 @@ x &oplus; y = <span class="overline">x</span> &oplus; <span class="overline">y</
 <td><span class="overline2"><span class="overline">x</span> &oplus; <span class="overline">y</span></span></td>
 </tr>
 </table>
+
 <p>Here, we have used only the identities shown earlier. Of course, we need to convert each bitwise not into a subtraction to complete the task. For instance, with x &lt; 0, y &ge; 0 we have</p>
 <div class="display-block">
 x | <span class="overline">y</span> = <span class="overline2"><span class="overline">x</span> &amp; y</span> = -1 &#8211; ((-1 &#8211; x) &amp; y)
