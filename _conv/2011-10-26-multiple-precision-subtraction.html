@@ -1,0 +1,72 @@
+---
+layout: post
+status: publish
+published: true
+title: Multiple-Precision Subtraction
+author: Jan Marthedal Rasmussen
+author_login: sput
+author_email: jmr@kanooth.com
+author_url: http://kanooth.com/blog/
+excerpt: ! "We now turn to multiple-precision subtraction for non-negative integers.
+  The algorithm is very similar to that of <a href=\"&#47;blog&#47;2011&#47;10&#47;multiple-precision-addition.html\">multiple-precision
+  addition<&#47;a>, but some minor differences make it worth while considering subtraction
+  separately.\r\n\r\nWe consider two <span class=\"mthi\">n<&#47;span>-digit numbers,
+  \\(u=(u_{n-1} \\ldots u_1 u_0)_b\\) and \\(v=(v_{n-1} \\ldots v_1 v_0)_b\\), with
+  \\(n \\geq 1\\) (see a <a href=\"&#47;blog&#47;2011&#47;10&#47;multiple-precision-number-representation.html\">previous
+  post<&#47;a> on the number notation). We wish to compute an <span class=\"mthi\">n<&#47;span>-digit
+  result \\(w=(w_{n-1} \\ldots w_1 w_0)_b\\) such that\r\n\\[\r\nw = (u - v - k_0)
+  \\;\\mbox{mod}\\; b^n\r\n\\]\r\nwhere \\(k_0\\) is some initial <a href=\"http:&#47;&#47;mathworld.wolfram.com&#47;Borrow.html\">borrow<&#47;a>,
+  \\(0 \\leq k_0 \\leq 1\\). Furthermore, a final borrow \\(k_n\\) will indicate whether
+  \\(u < v+k_0\\).\r\n"
+wordpress_id: 2538
+wordpress_url: http://kanooth.com/blog/?p=2538
+date: 2011-10-26 11:00:10.000000000 +02:00
+categories:
+- programming
+tags:
+- algorithms
+- multiple-precision
+- numbers project
+- basic theory
+---
+<p>We now turn to multiple-precision subtraction for non-negative integers. The algorithm is very similar to that of <a href="/blog/2011/10/multiple-precision-addition.html">multiple-precision addition</a>, but some minor differences make it worth while considering subtraction separately.</p>
+<p>We consider two <span class="mthi">n</span>-digit numbers, \(u=(u_{n-1} \ldots u_1 u_0)_b\) and \(v=(v_{n-1} \ldots v_1 v_0)_b\), with \(n \geq 1\) (see a <a href="/blog/2011/10/multiple-precision-number-representation.html">previous post</a> on the number notation). We wish to compute an <span class="mthi">n</span>-digit result \(w=(w_{n-1} \ldots w_1 w_0)_b\) such that<br />
+\[<br />
+w = (u - v - k_0) \;\mbox{mod}\; b^n<br />
+\]<br />
+where \(k_0\) is some initial <a href="http://mathworld.wolfram.com/Borrow.html">borrow</a>, \(0 \leq k_0 \leq 1\). Furthermore, a final borrow \(k_n\) will indicate whether \(u < v+k_0\).<br />
+<span id="more-2538"></span><br />
+Let us first introduce a notation which <a href="http://www-cs-faculty.stanford.edu/~uno/">Donald E. Knuth</a> refers to as <a href="http://en.wikipedia.org/wiki/Iverson_bracket">Iverson&#8217;s convention</a>: \([P]\) has value <span class="mthn">1</span> if <span class="mthi">P</span> is true and <span class="mthn">0</span> otherwise.</p>
+<p>We now have the algorithm:<br />
+\[<br />
+\begin{aligned}<br />
+w_i     &#038;\leftarrow (u_i - v_i - k_i) \;\mbox{mod}\; b, \\<br />
+k_{i+1} &#038;\leftarrow [u_i < v_i + k_i],<br />
+\end{aligned}<br />
+\]<br />
+for \(i = 0, 1, \ldots, n-1\). This is really just a formalization of the familiar pencil-and-paper method, but let us show that it does the right thing.</p>
+<p>Note first that \(0 \leq k_i \leq 1\) for \(i = 0, 1, \ldots, n-1\). This is a consequence of the assumption \(0 \leq k_0 \leq 1\) for the initial borrow and the range of the \([\cdot]\) operator. We next establish the relation<br />
+\[<br />
+-\left\lfloor \frac{u_i-v_i-k_i}{b} \right\rfloor = [u_i < v_i + k_i],<br />
+\]<br />
+which holds since we have \(-b = 0-(b-1)-1 \leq u_i-v_i-k_i \leq (b-1)-0-0 = b-1\). We now observe that<br />
+\[<br />
+\begin{aligned}<br />
+u_i-v_i-k_i &#038;= (u_i - v_i - k_i) \;\mbox{mod}\; b + \left\lfloor \frac{u_i-v_i-k_i}{b} \right\rfloor b \\<br />
+            &#038;= (u_i - v_i - k_i) \;\mbox{mod}\; b - [u_i < v_i + k_i] b \\<br />
+            &#038;= w_i &#8211; k_{i+1} b.<br />
+\end{aligned}<br />
+\]<br />
+We finally have<br />
+\[<br />
+\begin{aligned}<br />
+u - v &#038;= \sum_{i=0}^{n-1} (u_i-v_i) b^i = \sum_{i=0}^{n-1} (u_i-v_i-k_i) b^i + \sum_{i=0}^{n-1} k_i b^i \\<br />
+      &#038;= \sum_{i=0}^{n-1} (w_i-k_{i+1} b) b^i + \sum_{i=0}^{n-1} k_i b^i = \sum_{i=0}^{n-1} w_i b^i - \sum_{i=0}^{n-1} k_{i+1} b^{i+1} + \sum_{i=0}^{n-1} k_i b^i \\<br />
+      &#038;= w - k_n b^n + k_0,<br />
+\end{aligned}<br />
+\]<br />
+so \(u-v-k_0 = w-k_n b^n\). Since \(0 \leq w \leq b^n-1\) we have now established<br />
+\[<br />
+w = (u - v - k_0) \;\mbox{mod}\; b^n,<br />
+\]<br />
+and \(k_n\) indicates whether \(u < v+k_0\).</p>

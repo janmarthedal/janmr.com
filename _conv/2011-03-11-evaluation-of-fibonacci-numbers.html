@@ -1,0 +1,93 @@
+---
+layout: post
+status: publish
+published: true
+title: Fast Evaluation of Fibonacci Numbers
+author: Jan Marthedal Rasmussen
+author_login: sput
+author_email: jmr@kanooth.com
+author_url: http://kanooth.com/blog/
+excerpt: ! "The integer <a href=\"http://oeis.org/A000045\">sequence</a> 0, 1, 1,
+  2, 3, 5, 8, 13, ... is well known as the <a href=\"http://en.wikipedia.org/wiki/Fibonacci\">Fibonacci</a>
+  sequence. It is easily defined by \\(F_0 = 0\\), \\(F_1 = 1\\) and \\(F_n = F_{n-1}
+  + F_{n-2}\\) for \\(n \\geq 2\\).\r\n\r\nTo compute \\(F_n\\) you could use this
+  definition directly, but that leads to a <em>highly inefficient</em> algorithm that
+  is both recursive and which uses a number of additions which grows exponentially
+  with <span class=\"mthi\">n</span>."
+wordpress_id: 2120
+wordpress_url: http://sputsoft.com/blog/?p=2120
+date: 2011-03-11 11:01:12.000000000 +01:00
+categories:
+- programming
+- mathematics
+tags:
+- algorithms
+- Fibonacci number
+- numbers project
+---
+<p>The integer <a href="http://oeis.org/A000045">sequence</a> 0, 1, 1, 2, 3, 5, 8, 13, &#8230; is well known as the <a href="http://en.wikipedia.org/wiki/Fibonacci">Fibonacci</a> sequence. It is easily defined by \(F_0 = 0\), \(F_1 = 1\) and \(F_n = F_{n-1} + F_{n-2}\) for \(n \geq 2\).</p>
+<p>To compute \(F_n\) you could use this definition directly, but that leads to a <em>highly inefficient</em> algorithm that is both recursive and which uses a number of additions which grows exponentially with <span class="mthi">n</span>.</p>
+<p><span id="more-2120"></span></p>
+<p>The first observation that leads to a better algorithm is that we can iteratively compute \(F_2, F_3, \ldots, F_n\) and at each step, we only need the previous two values from the sequence. So if we set<br />
+\[<br />
+T(a,b) = (a+b, a)<br />
+\]<br />
+and \(r(a,b)=b\) then we have \(F_n = r(T^n(1,0))\), where \(T^n\) means that the operator \(T\) is applied <span class="mthi">n</span> times (and \(T^0\) is the identity). This reduces the number of iterations to <span class="mthi">n</span> which is much much better than exponential growth.</p>
+<div style="float:right"><a href="/book/link.php?id=sicp"><img src="/book/sicp.jpg" /></a></div>
+<p>But it can get even better. The following method is inspired by an exercise in the book <a href="/book/link.php?id=sicp">Structure and Interpretation of Computer Programs</a> (see <a href="http://mitpress.mit.edu/sicp/full-text/book/book-Z-H-11.html#%_sec_1.2.4">Exercise 1.19</a>). The key observation is that if we introduce<br />
+\[<br />
+T_{p,q}(a,b) = (a q + a p + b q, b p + a q)<br />
+\]<br />
+then we have both \(T(a,b)=T_{0,1}(a,b)\) and<br />
+\[<br />
+T_{p,q}^2(a,b) = T_{p,q}(a q + a p + b q, b p + a q) = \ldots<br />
+= T_{p^2+q^2,2 p q+q^2}(a,b).<br />
+\]<br />
+Why is this important? Because now we have</p>
+<ol>
+<li>\(T_{p,q}^0(a,b) = (a,b)\)</li>
+<li>\(T_{p,q}^{2k}(a,b) = (T_{p,q}^2)^k(a,b) = T_{p^2+q^2,2 p q+q^2}^k(a,b)\)</li>
+<li>\(T_{p,q}^{2k+1}(a,b) = T_{p,q}^{2k}(T_{p,q}(a,b)) = T_{p,q}^{2k}(a q + a p + b q, b p + a q)\)</li>
+</ol>
+<p>Notice how this type of reduction rules are very similar to those found in the <a href="/blog/2011/01/evaluation-of-powers.html">Evaluation of Powers post</a>. Let us look at an example and try to evaluate \(F_{20} = r(T^{20}(1,0)) = r(T_{0,1}^{20}(1,0))\) using these rules:<br />
+\[<br />
+\begin{split}<br />
+T_{0,1}^{20}(1,0) &#038;= (T_{0,1}^2)^{10}(1,0) = T_{1,1}^{10}(1,0) = (T_{1,1}^2)^5(1,0) = T_{2,3}^5(1,0) = T_{2,3}^4(T_{2,3}(1,0)) \\<br />
+&#038;= T_{2,3}^4(5,3) = (T_{2,3}^2)^2(5,3) = T_{13,21}^2(5,3) = T_{610,987}(5,3) = (10946,6765)<br />
+\end{split}<br />
+\]<br />
+Then we just have to extract the second component (as done by applying the \(r\) function) and we get \(F_{20}=6765\).</p>
+<p>It is clear that the number and type of steps depend on the binary representation of <span class="mthi">n</span> when computing \(F_n\) using this method. Actually, reduction rule 2 will be performed \(\lfloor\log_2(n)\rfloor\) times and the number of times reduction rule 3 is performed corresponds to the number of 1s in the binary representation of <span class="mthi">n</span>. So the total number of steps needed for evaluating \(F_n\) using this method is logarithmic in <span class="mthi">n</span>.</p>
+<p>Let us look at a <span class="sputcode">C++</span> implementation. A straightforward implementation is this:</p>
+<pre class="sputcode">
+fibtype fib_rec(fibtype a, fibtype b, fibtype p, fibtype q, unsigned count) {
+  if (count == 0)
+    return b;
+  if (count % 2 == 0)
+    return fib_rec(a, b, p*p+q*q, 2*p*q+q*q, count/2);
+  return fib_rec(b*q+a*q+a*p, b*p+a*q, p, q, count-1);
+}
+</pre>
+<p>where \(F_n\) = <span class="sputcode">fib_rec(1, 0, 0, 1, n)</span> (<span class="sputcode">fibtype</span> is just a <span class="sputcode">typedef</span> for a proper integer type.) It can be made iterative and improved at bit in the following way:</p>
+<pre class="sputcode">
+fibtype fibonacci(unsigned n) {
+  if (n <= 1) return n;
+  fibtype a=1, b=0, p=0, q=1, tmp;
+  while (n != 1) {
+    if (n % 2 != 0) {
+        tmp = b*q + a*q + a*p;
+        b   = b*p + a*q;
+        a   = tmp;
+    }
+    tmp = p*p + q*q;
+    q   = (2*p + q)*q;
+    p   = tmp;
+    n /= 2;
+  }
+  return b*p + a*q;
+}
+</pre>
+<p>The most important improvement here is probably the observation that \(r(T_{p,q}(a,b)) = b p + a q\).</p>
+<p>I don't claim that this is the fastest possible method for evaluating (single) Fibonacci numbers, but it certainly beats the "traditional" methods mentioned in the beginning (it may be inferior for small <span class="mthi">n</span>, though). Note also that as long as the numbers fit into the registers of the computer, the time necessary to perform each step is bounded by a constant. If multiple-precision is needed, however, this may no longer the case.</p>
+<p>Please inform me of other fast ways to compute Fibonacci numbers.</p>
+<p><i>(Update 2011-11-23: The source for the last algorithm can be found as <a href="/blog/2011/11/snippet-fibonacci-number-evaluator.html">a snippet</a>)</i></p>

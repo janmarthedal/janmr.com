@@ -1,0 +1,37 @@
+---
+layout: post
+title: Remembering Trigonometric Addition Formulas
+author: Jan Marthedal Rasmussen
+excerpt: ! "The addition formulas for sine and cosine look like this:\r\n\\[\\begin{aligned}\r\n\\cos(\\alpha
+  + \\beta) &amp;= \\cos \\alpha \\cos \\beta - \\sin \\alpha \\sin \\beta, \\\\\r\n\\sin(\\alpha
+  + \\beta) &amp;= \\cos \\alpha \\sin \\beta + \\sin \\alpha \\cos \\beta. \\\\\r\n\\end{aligned}\\]\r\nI
+  can never remember them [...]"
+date: 2009-09-23 14:13:57.000000000 +02:00
+categories:
+- mathematics
+tags:
+- trigonometry
+- visualization
+---
+<p>The addition formulas for sine and cosine look like this:<br />
+\[\begin{aligned}<br />
+\cos(\alpha + \beta) &amp;= \cos \alpha \cos \beta - \sin \alpha \sin \beta, \\<br />
+\sin(\alpha + \beta) &amp;= \cos \alpha \sin \beta + \sin \alpha \cos \beta. \\<br />
+\end{aligned}\]<br />
+I can never remember them.</p>
+<p><span id="more-781"></span></p>
+<p>One solution is of course to look them up in a <a href="http://www.math.sfu.ca/~cbm/aands/page_72.htm">book</a> or search the <a href="http://en.wikipedia.org/wiki/Angle_addition_formula#Angle_sum_and_difference_identities">internet</a>. What I usually do, though, is derive them using complex arithmetic. Apart from the usual rules known from real-valued arithmetic, all that is needed is knowing \(e^{i \phi} = \cos \phi + i \sin \phi\) and \(i^2 = -1\). Then you get<br />
+\[\begin{aligned}<br />
+\cos(\alpha + \beta) + i \sin(\alpha + \beta) &amp;= e^{i (\alpha+\beta)} \\<br />
+&amp;= e^{i \alpha} e^{i \beta} \\<br />
+&amp;= (\cos \alpha + i \sin \alpha)(\cos \beta + i \sin \beta) \\<br />
+&amp;= (\cos \alpha \cos \beta - \sin \alpha \sin \beta) + i (\cos \alpha \sin \beta + \sin \alpha \cos \beta).<br />
+\end{aligned}\]<br />
+By equating the real and imaginary parts you get the answer.</p>
+<p>Flicking through <em>Proofs Without Words II</em> by <a href="http://legacy.lclark.edu/~mathsci/nelsen.html">Roger B. Nelsen</a>, I saw the following wonderful figure. It could be a contender to an easier way to remember the addition formulas.</p>
+<div style="width: 535px" class="wp-caption alignnone"><a href="http://www.flickr.com/photos/janmr/6163380963/" title="Addition formulas for sine and cosine by janmarthedal, on Flickr"><img src="http://farm7.static.flickr.com/6166/6163380963_f96a86b1d9_z.jpg" width="525" height="505" alt="Addition formulas for sine and cosine"></a><p class="wp-caption-text">Figure 1</p></div>
+<p>(Attributed to the author himself.) It should be pretty much self-explanatory. Apart from using sine and cosine to assign side-lengths to the four relevant right-angled triangles, all you need know is that the sum of the angles in a triangle is equal to two right angles (to realize that the two \(\alpha\)-angles are indeed equal).</p>
+<div style="float:right"><a href="/book/link.php?id=pww2"><img src="/book/pww2.jpg" /></a></div>
+<div style="float:right"><a href="/book/link.php?id=pww1"><img src="/book/pww1.jpg" /></a></div>
+<p>Both volumes of <em>Proofs Without Words</em> contain other &#8220;visual proofs&#8221; of the addition formulas. Some of these can also be found <a href="http://mathworld.wolfram.com/TrigonometricAdditionFormulas.html">online</a>.</p>
+<p>How do you remember the addition formulas for sine and cosine?</p>
