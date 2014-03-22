@@ -11,8 +11,8 @@ def format_common(c):
   c = re.sub(r'&#47;', r'/', c)
   c = re.sub(r'"/blog', '"', c)
 
-  c = re.sub(r'/book/link.php\?id=(\w+)', r'{% amazon \1 %}', c)
-  c = re.sub(r'/book/(\w+).jpg', r'{% bookcover \1 %}', c)
+  c = re.sub(r'/book/link.php\?id=([\w-]+)', r'{% amazon \1 %}', c)
+  c = re.sub(r'/book/([\w-]+).jpg', r'{% bookcover \1 %}', c)
   
   return c
 

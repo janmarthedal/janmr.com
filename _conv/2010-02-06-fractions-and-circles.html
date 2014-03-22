@@ -57,8 +57,13 @@ tags:
 <p>(two cases to check).</p>
 <p>Note how this property implies that the fractions in any mediant sequence are ordered by size. But the most important use of this property will appear shortly.</p>
 <p>We now do the following in a <a href="http://en.wikipedia.org/wiki/Cartesian_coordinate_system">Cartesian coordinate system</a>: For each fraction \(\frac{m}{n}\) in a given mediant sequence, draw a circle centered at \(\left(\frac{m}{n}, \frac{1}{2 n^2}\right)\) with radius \(\frac{1}{2 n^2}\). An example can be seen in Figure&nbsp;1.</p>
-<p><div style="width: 727px" class="wp-caption alignnone"><a href="http://www.flickr.com/photos/janmr/6165990848/" title="Ford circles 1 by janmarthedal, on Flickr"><img src="http://farm7.static.flickr.com/6159/6165990848_af3f0c46ff_b.jpg" width="717" height="246" alt="Ford circles 1"></a><p class="wp-caption-text">Figure 1</p></div><br />
-By construction, the x-axis is obviously a tangent to all such circles. Furthermore, two circles, corresponding to two fractions \(\frac{m_1}{n_1}\) and \(\frac{m_2}{n_2}\), touch at exactly one point if and only if \(| n_1 m_2 &#8211; m_1 n_2 | = 1\). This is shown by an application of the <a href="http://en.wikipedia.org/wiki/Pythagorean_theorem">Pythagorean Theorem</a>:</p>
+
+<figure>
+  <img src="/media/ford1.svg" class="img-responsive" alt="Ford circles 1">
+  <figcaption>Figure 1</figcaption>
+</figure>
+
+<p>By construction, the x-axis is obviously a tangent to all such circles. Furthermore, two circles, corresponding to two fractions \(\frac{m_1}{n_1}\) and \(\frac{m_2}{n_2}\), touch at exactly one point if and only if \(| n_1 m_2 &#8211; m_1 n_2 | = 1\). This is shown by an application of the <a href="http://en.wikipedia.org/wiki/Pythagorean_theorem">Pythagorean Theorem</a>:</p>
 <p>\[<br />
 \begin{aligned}<br />
 \left( \frac{m_2}{n_2} - \frac{m_1}{n_1} \right)^2<br />
@@ -70,8 +75,13 @@ By construction, the x-axis is obviously a tangent to all such circles. Furtherm
 \]</p>
 <p>This is exactly the property that consequtive fractions in any mediant sequence fulfills.</p>
 <p>Zooming into the dashed region in Figure&nbsp;1 leads to Figure&nbsp;2.</p>
-<p><div style="width: 727px" class="wp-caption alignnone"><a href="http://www.flickr.com/photos/janmr/6165990776/" title="Ford circles 2 by janmarthedal, on Flickr"><img src="http://farm7.static.flickr.com/6158/6165990776_159b93645e_b.jpg" width="717" height="327" alt="Ford circles 2"></a><p class="wp-caption-text">Figure 2</p></div><br />
-So given a mediant sequence, we can draw such circles for each fraction in the sequence, except for the final \(\frac{1}{0}\) (which is just an auxillary element). The circles with diameter \(1\) correspond to the seqeuence \(\frac{0}{1}, \frac{1}{1}, \frac{2}{1}, \ldots\) and will all touch each other. See Figure&nbsp;1. Any circle with diameter less than \(1\) will touch exactly two larger circles, namely the two from which it was created when considering their mediant sequence representatives. To be more specific, if we went from a mediant sequence</p>
+
+<figure>
+  <img src="/media/ford2.svg" class="img-responsive" alt="Ford circles 2">
+  <figcaption>Figure 2</figcaption>
+</figure>
+
+<p>So given a mediant sequence, we can draw such circles for each fraction in the sequence, except for the final \(\frac{1}{0}\) (which is just an auxillary element). The circles with diameter \(1\) correspond to the seqeuence \(\frac{0}{1}, \frac{1}{1}, \frac{2}{1}, \ldots\) and will all touch each other. See Figure&nbsp;1. Any circle with diameter less than \(1\) will touch exactly two larger circles, namely the two from which it was created when considering their mediant sequence representatives. To be more specific, if we went from a mediant sequence</p>
 <p>\[<br />
 \ldots, \frac{m_1}{n_1}, \frac{m_2}{n_2}, \ldots<br />
 \]</p>
@@ -81,5 +91,10 @@ So given a mediant sequence, we can draw such circles for each fraction in the s
 \]</p>
 <p>then the three circles corresponding to the fractions of this second subsequence will all touch, and the middle one will obviously be the smallest (has the largest denominator). See, e.g., the fractions \(\frac{1}{2}\), \(\frac{3}{5}\), \(\frac{2}{3}\) in Figure&nbsp;2.</p>
 <p>Zooming in once again we get Figure&nbsp;3.</p>
-<p><div style="width: 727px" class="wp-caption alignnone"><a href="http://www.flickr.com/photos/janmr/6165990684/" title="Ford circles 3 by janmarthedal, on Flickr"><img src="http://farm7.static.flickr.com/6168/6165990684_7b6d00267f_b.jpg" width="717" height="370" alt="Ford circles 3"></a><p class="wp-caption-text">Figure 3</p></div><br />
-Note the many <a href="http://en.wikipedia.org/wiki/Self-similarity">self-similarities</a>.</p>
+
+<figure>
+  <img src="/media/ford3.svg" class="img-responsive" alt="Ford circles 3">
+  <figcaption>Figure 3</figcaption>
+</figure>
+
+<p>Note the many <a href="http://en.wikipedia.org/wiki/Self-similarity">self-similarities</a>.</p>

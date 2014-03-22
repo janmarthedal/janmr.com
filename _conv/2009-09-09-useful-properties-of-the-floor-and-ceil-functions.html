@@ -5,7 +5,7 @@ author: Jan Marthedal Rasmussen
 excerpt: ! "This articles explores some basic properties of the integer functions
   commonly known as floor and ceil. Most of the statements may seem trivial or obvious,
   but I, for one, have a tendency to forget just how exact you can be when it comes
-  to expressions&#47;equations where floor or ceil functions appear.\r\n\r\n"
+  to expressions/equations where floor or ceil functions appear."
 date: 2009-09-09 14:36:13.000000000 +02:00
 categories:
 - mathematics
@@ -13,53 +13,134 @@ tags:
 - mathematics
 - floor
 - ceil
-- discrete&#47;continuous
+- discrete/continuous
 ---
-<p>Let us revisit the geometric progression sum considered in an <a href="/blog/2008/10/nice-geometric-progression-proof.html">earlier article</a>,</p>
-
-\[
-s_r = \sum_{k=0}^\infty r^k = 1 + r + r^2 + r^3 + \ldots,
-\]
-
-<p>where \(r\) here is a <a href="http://en.wikipedia.org/wiki/Complex_number">complex number</a>. For what values of \(r\) does this infinite sum make sense? Can we find a <a href="http://en.wikipedia.org/wiki/Closed-form_expression">closed-form expression</a> for \(s_r\) in such cases? To investigate this, we fix \(r\) to some value and consider the partial sums:</p>
-<p><span id="more-682"></span></p>
-<p>\[<br />
-s_r(n) = \sum_{k=0}^n r^k = 1 + r + r^2 + \ldots + r^{n-1},<br />
-\]</p>
-<p>where we just add the first \(n\) terms of \(s_r\). Now if \(s_r(n)\) tends to a finite limit&nbsp;\(v\) as \(n \rightarrow \infty\) (can we for any \(\delta > 0\) find an \(n_0\) such that \(|v-s_r(n)| \leq \delta\) for all \(n \geq n_0\)?) then we have \(s_r = v\).</p>
-<p>Let us first single out the special case \(r=1\). Since \(s_r(n) = n\) we cannot assign any well-defined, finite value to \(s_1\), so \(s_r\) is divergent for \(r=1\). For \(r \neq 1\) we get</p>
-<p>\[<br />
-(1-r) s_r(n) = 1-r^n \quad \Longleftrightarrow \quad s_r(n) = \frac{1-r^n}{1-r}.<br />
-\]</p>
-<p>Let us consider three different cases. If \(|r| < 1\) we see that the only term that depends on \(n\) tends to zero so we suspect that the limit is \(1/(1-r)\),</p>
-<p>\[<br />
-\left| \frac{1}{1-r} - \frac{1-r^n}{1-r} \right| = \left| \frac{r^n}{1-r} \right| = \frac{|r|^n}{|1-r|}.<br />
-\]</p>
-<p>Since the magnitude of the difference between our suspected limit and the partial sums can be made as small as we like (as long as we choose \(n\) sufficiently large), we have</p>
-<p>\[<br />
-s_r = \frac{1}{1-r}, \quad \hbox{for } |r| < 1.<br />
-\]</p>
-<p>What about \(|r| > 1\)? We get</p>
-<p>\[<br />
-|s_r(n)| = \left| \frac{1-r^n}{1-r} \right| \geq \frac{|r^n|-1}{|r-1|} \geq \frac{|r|^n-1}{|r|+1},<br />
-\]</p>
-<p>and we see that \(|s_r(n)| \rightarrow \infty\) as \(n \rightarrow \infty\). We can thus not find a finite limit to which \(s_r(n)\) tends as \(n \rightarrow \infty\), so the series \(s_r\) is divergent for \(|r| > 1\).</p>
-<p>Left to consider is the case \(|r|=1\), \(r \neq 1\), and this is where it gets interesting. We get</p>
-<p>\[<br />
-|s_r(n)| = \left| \frac{1-r^n}{1-r} \right| = \frac{|1-r^n|}{|1-r|}<br />
-\leq \frac{1 + |r^n|}{|1-r|} = \frac{2}{|1-r|}.<br />
-\]</p>
-<p>So the partial sums \(s_r(n)\) are bounded by some constant independent of \(n\). Does the value \(1/(1-r)\) work as a limit in this case also? We set \(r = e^{i \theta}\) with \(0 < \theta < 2\pi\) and subtract,</p>
+<p>This articles explores some basic properties of the integer functions commonly known as floor and ceil. Most of the statements may seem trivial or obvious, but I, for one, have a tendency to forget just how exact you can be when it comes to expressions/equations where floor or ceil functions appear.</p>
+<p><span id="more-647"></span></p>
+<p>First, the definitions:</p>
 <p>\[<br />
 \begin{aligned}<br />
-s_r(n) - \frac{1}{1-r} &#038;= \frac{e^{i \theta n}}{e^{i \theta}-1} = \frac{e^{i \theta n} (e^{-i \theta}+1)}{(e^{i \theta}-1)(e^{-i \theta}+1)} = \frac{e^{i \theta (n-1)} + e^{i \theta n}}{2i\sin \theta} \\<br />
-&#038;= \frac{e^{i(\theta(2n-1)-\pi)/2}}{2\sin(\theta/2)}<br />
+\lfloor x \rfloor &#038;= \max \{ n \in \mathbb{Z} \mid n \leq x \} = \hbox{the greatest integer less than or equal to \(x\),} \\<br />
+\lceil  x \rceil  &#038;= \min \{ n \in \mathbb{Z} \mid n \geq x \} = \hbox{the least integer greater than or equal to \(x\),} \\<br />
 \end{aligned}<br />
 \]</p>
-<p>(using \(e^{i x} + e^{i y} = 2 \cos((x-y)/2) e^{i(x+y)/2}\) and \(\sin \theta = 2\sin(\theta/2)\cos(\theta/2)\)). So \(s_r(n)\) does <em>not</em> converge to \(1/(1-r)\) as \(n \rightarrow \infty\). Indeed, we see that \(s_r(n)\) follows a circle in the complex plane; a circle centered in \(1/(1-r)\) with radius \(1/(2\sin(\theta/2))\). And this is what I find interesting: \(s_r(n)\) does not converge to any value,</p>
+<p>for every real number \(x\).</p>
+<h2>Equality</h2>
+<p>What can we say about \(x\) and \(n\) if \(n=\lfloor x \rfloor\) or \(n=\lceil x \rceil\)? First of all, we obviously have \(n = x\) if and only if \(x\) is an integer. Let us now consider the floor function \(\lfloor \cdot \rfloor\). With \(x\) some real number we have \(\lfloor x \rfloor \leq x\), easily seen from the definition. Now let \(n=\lfloor x \rfloor\) and assume \(x-1 \geq n\) which is equivalent to \(n+1 \leq x\). But then \(n\) cannot be the greatest integer less than or equal to \(x\) so we have a contradiction. Since \(x\) was chosen arbitrarily we have \(x-1 < \lfloor x \rfloor\) for all \(x\). Similar considerations can be made for the ceil function \(\lceil \cdot \rceil\) and we get the important inequalities:</p>
 <p>\[<br />
-\hbox{the series } s_r \hbox{ is divergent for } |r| \geq 1,<br />
+x-1 \;<\; \lfloor x \rfloor \;\leq\; x \;\leq\; \lceil x \rceil \;<\; x+1.<br />
 \]</p>
-<p>but circles around the value \(1/(1-r)\) when \(|r|=1\), \(r \neq 1\). In fact, \(1/(1-r)\) makes sense for all \(r \neq 1\), so can this value be assigned to \(s_r\) in some meaningful way? (When \(|r| < 1\), I would suspect that the values of \(s_r(n)\) spirals inward towards \(1/(1-r)\) as \(n\) grows and spirals outwards when \(|r| > 1\); I have not verified this, though.)</p>
-<div style="float:right"><a href="/book/link.php?id=hardy-div"><img src="/book/hardy-div.jpg" /></a></div>
-<p>This reminded me that <a href="http://en.wikipedia.org/wiki/G._H._Hardy">G. H. Hardy</a> has written a book called <em>Divergent Series</em>, where he manipulates infinite series with an &#8220;entirely uncritical spirit&#8221;. Therein, he also considers the series \(s_r\) and, e.g., \(s_{-1} = 1/2\) can somehow make sense. I have only flicked through the book (<a href="http://books.google.com/books?id=jPccoUKsLdQC&#038;printsec=frontcover&#038;source=gbs_v2_summary_r&#038;cad=0">excerpt</a>), but I think I should take a closer look&#8230;</p>
+<p>At the same time, we have the right-going implications of the following statements (\(x\) is a real number and \(n\) an integer):</p>
+<p>\[<br />
+\begin{aligned}<br />
+n=\lfloor x \rfloor \quad &#038;\Longleftrightarrow \quad n \leq x < n+1, \\<br />
+n=\lfloor x \rfloor \quad &#038;\Longleftrightarrow \quad x-1 < n \leq x, \\<br />
+n=\lceil x \rceil   \quad &#038;\Longleftrightarrow \quad n-1 < x \leq n, \\<br />
+n=\lceil x \rceil   \quad &#038;\Longleftrightarrow \quad x \leq n < x+1. \\<br />
+\end{aligned}<br />
+\]</p>
+<p>Let us show the fourth left-going implication. Assume \(x \leq n < x+1\) and set \(k=\lceil x \rceil\). We then have \(x \leq k < x+1\) from which we get \(n < x+1 \leq k+1\) and \(k < x+1 \leq n+1\), so \(n=k=\lceil x \rceil\). The remaining three left-going implication can be proved in much the same way.</p>
+<p>From the statements above we can show some useful equalities:</p>
+<p>\[<br />
+n=\lfloor -x \rfloor \;\Leftrightarrow\; -x-1 < n \leq -x \;\Leftrightarrow\; x \leq -n < x+1 \;\Leftrightarrow\; -n=\lceil x \rceil,<br />
+\]</p>
+<p>so \(\lfloor -x \rfloor = -\lceil x \rceil\) for all \(x\), and</p>
+<p>\[<br />
+\lfloor x \rfloor \leq x < \lfloor x \rfloor+1 \;\Leftrightarrow\; \lfloor x \rfloor + k \leq x+k < \lfloor x \rfloor + k+1 \;\Leftrightarrow\; \lfloor x \rfloor + k = \lfloor x+k \rfloor,<br />
+\]</p>
+<p>so \(\lfloor x \rfloor + k = \lfloor x+k \rfloor\) for all integer \(k\). Naturally, the similar \(\lceil x \rceil + k = \lceil x+k \rceil\) also holds.</p>
+<h2>Inequalities</h2>
+<p>We now consider what can be said when inequalities are involved. Let \(x\) be some real number and \(n\) an integer. We then have the following:</p>
+<p>\[<br />
+\begin{aligned}<br />
+x < n    \quad &#038;\Longleftrightarrow \quad \lfloor x \rfloor < n, \\<br />
+n < x    \quad &#038;\Longleftrightarrow \quad n < \lceil x \rceil, \\<br />
+x \leq n \quad &#038;\Longleftrightarrow \quad \lceil x \rceil \leq n, \\<br />
+n \leq x \quad &#038;\Longleftrightarrow \quad n \leq \lfloor x \rfloor.<br />
+\end{aligned}<br />
+\]</p>
+<p>All we need to show these are \(\lfloor x \rfloor \leq x < \lfloor x \rfloor + 1\) and \(\lceil x \rceil - 1 < x \leq \lceil x \rceil\) from the previous section, and the fact that \(n < m+1\) is equivalent to \(n \leq m\) when \(m\) and \(n\) are integers. Consider, for instance, the third statement from above. If \(x \leq n\) then we have \(\lceil x \rceil - 1 < x \leq n\), which implies \(\lceil x \rceil \leq n\). On the other hand, if \(\lceil x \rceil \leq n\) then \(x \leq n\) because \(x \leq \lceil x \rceil\). The remaining statements are shown in a similar manner.</p>
+<h2>Some Increasing Functions</h2>
+<p>Certain functions have special properties when used together with floor and ceil. Such a function \(f: \mathbb{R} \rightarrow \mathbb{R}\) must be continuous and monotonically increasing and whenever \(f(x)\) is integer we must have that \(x\) is integer. An example could be \(f(x) = \sqrt{x}\). Note that being continuous and monotonically increasing ensures a well-defined inverse \(f^{-1}\). One of the requirements can then be formulated as \(f^{-1}(y)\) must be integer for all integer \(y\).</p>
+<p>Using the results of the previous sections we get</p>
+<p>\[<br />
+\begin{aligned}<br />
+k = \lfloor f( \lfloor x \rfloor ) \rfloor \quad &#038;\Leftrightarrow \quad k \leq f(\lfloor x \rfloor) < k+1<br />
+ \quad \Leftrightarrow \quad f^{-1}(k) \leq \lfloor x \rfloor < f^{-1}(k+1) \\<br />
+&#038;\Leftrightarrow \quad f^{-1}(k) \leq x < f^{-1}(k+1)<br />
+\quad \Leftrightarrow \quad k \leq f(x) < k+1 \\<br />
+&#038;\Leftrightarrow \quad \lfloor f(x) \rfloor = k.<br />
+\end{aligned}<br />
+\]</p>
+<p>Similar derivations can be shown for \(\lceil \cdot \rceil\) and we have</p>
+<p>\[<br />
+\lfloor f(x) \rfloor = \lfloor f(\lfloor x \rfloor) \rfloor \quad \hbox{and} \quad<br />
+\lceil f(x) \rceil = \lceil f(\lceil x \rceil) \rceil,<br />
+\]</p>
+<p>for this class of functions. For \(f(x) = \sqrt{x}\) we thus have</p>
+<p>\[<br />
+\left\lfloor \sqrt{x} \right\rfloor = \left\lfloor \sqrt{\lfloor x \rfloor} \right\rfloor<br />
+\quad \hbox{and} \quad<br />
+\left\lceil \sqrt{x} \right\rceil = \left\lceil \sqrt{\lceil x \rceil} \right\rceil.<br />
+\]</p>
+<h2>Fractions</h2>
+<p>The result of the previous section also applies to \(f(x) = (x + n)/m\) for integer \(m, n\) and \(m > 0\). The positivity of \(m\) ensures that \(f\) is monotonically increasing and \(f^{-1}(y) = m y &#8211; n\) is clearly integer for integer \(y\). We now have</p>
+<p>\[<br />
+\left\lfloor \frac{x+n}{m} \right\rfloor = \left\lfloor \frac{\lfloor x \rfloor+n}{m} \right\rfloor<br />
+\quad \hbox{and} \quad<br />
+\left\lceil \frac{x+n}{m} \right\rceil = \left\lceil \frac{\lceil x \rceil+n}{m} \right\rceil.<br />
+\]</p>
+<p>From these equalities we have the special cases</p>
+<p>\[<br />
+\begin{aligned}<br />
+\left\lfloor \ldots \left\lfloor \lfloor x/a_1 \rfloor /a_2 \right\rfloor \ldots /a_k \right\rfloor<br />
+&#038;= \left\lfloor \frac{x}{a_1 a_2 \cdots a_k} \right\rfloor \hbox{ and} \\<br />
+\left\lceil \ldots \left\lceil \lceil x/a_1 \rceil /a_2 \right\rceil \ldots /a_k \right\rceil<br />
+&#038;= \left\lceil \frac{x}{a_1 a_2 \cdots a_k} \right\rceil,<br />
+\end{aligned}<br />
+\]</p>
+<p>for integer and positive \(a_j\).</p>
+<p>Let us now consider \(q = \lfloor n/m \rfloor\) for integer \(m, n\) and \(m > 0\). We get</p>
+<p>\[<br />
+\begin{aligned}<br />
+q=\left\lfloor \frac{n}{m} \right\rfloor \;&#038;\Leftrightarrow\; \frac{n}{m}-1 < q \leq \frac{n}{m} \;\Leftrightarrow\; n-m < q m \leq n \;\Leftrightarrow\; q m \leq n < (q+1) m \\<br />
+ &#038;\Leftrightarrow\; q m \leq n \leq (q+1) m - 1,<br />
+\end{aligned}<br />
+\]</p>
+<p>which provides an interval of integers for the numerator \(n\). Similarly for the ceil function,</p>
+<p>\[<br />
+\begin{aligned}<br />
+q=\left\lceil \frac{n}{m} \right\rceil \;&#038;\Leftrightarrow\; \frac{n}{m} \leq q < \frac{n}{m}+1 \;\Leftrightarrow\; n \leq q m < n+m \;\Leftrightarrow\; (q-1) m < n \leq q m \\<br />
+ &#038;\Leftrightarrow\; (q-1) m+1 \leq n \leq q m.<br />
+\end{aligned}<br />
+\]</p>
+<p>When applying floor or ceil to rational numbers, one can be derived from the other. Since \((q-1) m+1 \leq n \leq q m\) can be rewritten as \(q m \leq n+m-1 \leq (q+1) m &#8211; 1\) we get</p>
+<p>\[<br />
+\left\lceil \frac{n}{m} \right\rceil = \left\lfloor \frac{n+m-1}{m} \right\rfloor,<br />
+\]</p>
+<p>and similarly</p>
+<p>\[<br />
+\left\lfloor \frac{n}{m} \right\rfloor = \left\lceil \frac{n-m+1}{m} \right\rceil.<br />
+\]</p>
+<h2>Logarithms</h2>
+<p>Let \(\log_b x\) be the logarithm of \(x\), base \(b\) (\(x > 0\), \(b > 0\), \(b \neq 1\)). We first set \(f(x) = \log_b x\) for integer \(b\), base \(2\) or \(10\) being the most common. Again, we can apply the theorem from earlier; \(f\) is continuous and monotonically increasing and \(f^{-1}(y) = b^y\) is integer for integer \(y\), so we have</p>
+<p>\[<br />
+\left\lfloor \log_b x \right\rfloor = \left\lfloor \log_b \lfloor x \rfloor \right\rfloor<br />
+\quad \hbox{and} \quad<br />
+\left\lceil \log_b x \right\rceil = \left\lceil \log_b \lceil x \rceil \right\rceil,<br />
+\]</p>
+<p>for integer \(b \geq 2\).</p>
+<p>We conclude with some straightforward, but quite useful, statements:</p>
+<p>\[<br />
+k = \lfloor \log_b x \rfloor \;\Leftrightarrow\; k \leq \log_b x < k+1 \;\Leftrightarrow\; b^k \leq x < b^{k+1}<br />
+\]</p>
+<p>and</p>
+<p>\[<br />
+k = \lceil \log_b x \rceil \;\Leftrightarrow\; k-1 < \log_b x \leq k \;\Leftrightarrow\; b^{k-1} < x \leq b^k,<br />
+\]</p>
+<p>for integer \(k\) and all \(b > 0\), \(b \neq 1\).</p>
+<h2>References</h2>
+<div style="float:right"><a href="/book/link.php?id=concrete"><img src="/book/concrete.jpg" /></a></div>
+<div style="float:right"><a href="/book/link.php?id=taocp1"><img src="/book/taocp1.jpg" /></a></div>
+<p>Most of the material presented in this article can be found in some form in <a href="http://www-cs-faculty.stanford.edu/~knuth/gkp.html">Concrete Mathematics</a> by <a href="http://math.ucsd.edu/~fan/ron/">R. L. Graham</a>, <a href="http://www-cs-faculty.stanford.edu/~knuth/">D. E. Knuth</a>, and <a href="http://en.wikipedia.org/wiki/Oren_Patashnik">O. Patashnik</a>, and in <a href="http://www-cs-faculty.stanford.edu/~knuth/taocp.html">The Art of Computer Programming</a>, Volume&nbsp;1, by <a href="http://www-cs-faculty.stanford.edu/~knuth/">Donald E. Knuth</a>.</p>
+<p>The <a href="http://www.wikipedia.org">Wikipedia</a> page <a href="http://en.wikipedia.org/wiki/Floor_and_ceiling_functions">Floor and ceiling functions</a> furthermore lists a lot of properties (very few proofs or derivations, though).</p>

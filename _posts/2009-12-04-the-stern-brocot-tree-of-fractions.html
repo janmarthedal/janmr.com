@@ -72,8 +72,13 @@ R=\begin{bmatrix} 1 &#038; 1 \\ 0 &#038; 1 \end{bmatrix}, \quad \hbox{so} \quad
 <p>This process is easily generalized:</p>
 <p><strong>Definition 1.</strong> The <strong>Stern-Brocot tree</strong> is equal to \(T(I)\), where \(T(M)\) is a binary tree with root \(f(M)\), left subtree \(T(M L)\), and right subtree \(T(M R)\).</p>
 <p>So the root of the Stern-Brocot tree is \(f(I)=\frac{1}{1}\) with \(T(L)\) and \(T(R)\) as left and right subtree, respectively. \(T(L)\) has root \(f(L)=\frac{1}{2}\), left subtree \(T(L^2)\) and right subtree \(T(L R)\). \(T(R)\) has root \(f(R)=\frac{2}{1}\), left subtree \(T(R L)\) and right subtree \(T(R^2)\). And so on. The top of the tree can be seen in Figure&nbsp;1.</p>
-<p><div style="width: 727px" class="wp-caption alignnone"><a href="http://www.flickr.com/photos/janmr/6163913710/" title="The Stern-Brocot tree by janmarthedal, on Flickr"><img src="http://farm7.static.flickr.com/6156/6163913710_49c5a6a076_b.jpg" width="717" height="364" alt="The Stern-Brocot tree"></a><p class="wp-caption-text">Figure 1. The Stern-Brocot tree.</p></div>
-Consider any subtree \(T(M)\) of the Stern-Brocot tree with root \(f(M)\). Note that it follows from the definitions that every node in the left subtree \(T(M L)\) is strictly less than \(f(M)\) and that every node in the right subtree \(T(M R)\) is strictly greater than \(f(M)\). Thus, <em>the Stern-Brocot tree is a </em><a href="http://en.wikipedia.org/wiki/Binary_search_tree"><em>binary search tree</em></a>, although an infinite one.</p>
+
+<figure>
+  <img src="/media/stern-brocot.svg" alt="The Stern-Brocot tree" class="img-responsive">
+  <figcaption>Figure 1. The Stern-Brocot tree.</figcaption>
+</figure>
+
+<p>Consider any subtree \(T(M)\) of the Stern-Brocot tree with root \(f(M)\). Note that it follows from the definitions that every node in the left subtree \(T(M L)\) is strictly less than \(f(M)\) and that every node in the right subtree \(T(M R)\) is strictly greater than \(f(M)\). Thus, <em>the Stern-Brocot tree is a </em><a href="http://en.wikipedia.org/wiki/Binary_search_tree"><em>binary search tree</em></a>, although an infinite one.</p>
 <p>From the definition we see that for any node \(f(M)\) of the Stern-Brocot tree we have</p>
 <div style="float:right">(8)</div>
 <p>\[
