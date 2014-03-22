@@ -1,0 +1,147 @@
+---
+layout: wppost
+title: Implementing Multiple-Precision Arithmetic, Part 1
+author: Jan Marthedal Rasmussen
+excerpt: This article is the first in a series dealing with algorithms for multiple-precision
+  arithmetic. The goal is to present both a theoretical foundation with high-level
+  algorithm descriptions (based on Section 4.3.1, <em>The Classical Algorithms</em>,
+  of <a href="http://www-cs-faculty.stanford.edu/~knuth/taocp.html">The Art of Computer
+  Programming</a>, Volume 2, by <a href="http://www-cs-faculty.stanford.edu/~knuth/">Donald
+  E. Knuth</a>) and a portable C++ implementation of the algorithms. The theory and
+  high-level algorithms will be quite universal and generic, whereas the presented
+  code will be just one way to implement the algorithms in a specific programming
+  language.
+date: 2009-07-23 10:58:04.000000000 +02:00
+categories:
+- programming
+tags:
+- arithmetic
+- algorithms
+- C++
+- multiple-precision
+- numbers project
+---
+<h3>Introduction</h3>
+
+<div style="float:right"><a href="{% amazon taocp2 %}"><img src="{% bookcover taocp2 %}" /></a></div>
+<p>This article is the first in a series dealing with algorithms for multiple-precision arithmetic. The goal is to present both a theoretical foundation with high-level algorithm descriptions (based on Section 4.3.1, <em>The Classical Algorithms</em>, of <a href="http://www-cs-faculty.stanford.edu/~knuth/taocp.html">The Art of Computer Programming</a>, Volume 2, by <a href="http://www-cs-faculty.stanford.edu/~knuth/">Donald E. Knuth</a>) and a portable C++ implementation of the algorithms. The theory and high-level algorithms will be quite universal and generic, whereas the presented code will be just one way to implement the algorithms in a specific programming language.</p><span></span>
+
+<p>We start out by considering only non-negative integers. A number \(u \geq 0\) will be represented in radix \(b \geq 2\) using the notation<br />
+\[u = (u_{n-1} \ldots u_1 u_0)_b = \sum_{i=0}^{n-1} u_i b^i, \quad 0 \leq u_i &lt; b.\]<br />
+We will call <span class="mthi">u</span> an <span class="mthi">n</span>-digit number and \(u_0\), \(u_1\), etc., its digits. Unless stated otherwise we will always have that the most-significant digit is non-zero, here \(u_{n-1} \neq 0\), and we will represent zero with no digits, \(0 = ()_b\). We have \(b^{n-1} \leq u \leq b^n-1\), implying \(n=1+\lfloor \log_b u \rfloor\) for \(u \geq 1\).</p>
+<p>Let the word size of the data type <span class="sputcode">T</span> used for each digit be \(b_T\). For instance, if <span class="sputcode">T</span> is a 32 bit unsigned integer, we have \(b_T = 2^{32}\). We will implement the algorithms using \(b = b_T\) and exploit the fact that C++ does arithmetic on unsigned integers <a href="http://en.wikipedia.org/wiki/Modular_arithmetic">modulo</a> \(b_T\) (see paragraph 3.9.1 (4) of the <a href="http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2009/n2914.pdf">C++ standard</a>). This makes it possible to implement portable algorithms. They will not be optimal with respect to speed, however, and it will be noted when specialized operations, such as add-with-carry instructions, would lead to more efficient implementations.</p>
+
+<h3>Data Structures</h3>
+
+<p>A non-negative number will be represented in C++ as an instance of the class <span class="sputcode">NonNegativeInteger</span>:</p>
+
+{% highlight cpp %}
+template <typename T, typename V=detail::SimpleDigitVector<T> >
+class NonNegativeInteger {
+private:
+  boost::shared_ptr<V> digitvec;
+  // ...
+public:
+  NonNegativeInteger();
+  NonNegativeInteger(T value);
+  // ...
+};
+{% endhighlight %}
+
+<p>The type argument <span class="sputcode">T</span> is used to represent each digit. It must be integer and unsigned, so <span class="sputcode">unsigned char</span>, <span class="sputcode">unsigned short</span>, <span class="sputcode">unsigned int</span>, <span class="sputcode">unsigned long</span>, and <span class="sputcode">unsigned long long</span> can all be used (the type <span class="sputcode">long long int</span> is not standard C++, but is, e.g., <a href="http://gcc.gnu.org/onlinedocs/gcc/Long-Long.html">supported</a> by <a href="http://gcc.gnu.org">GCC</a>). If a digit type with 8, 16, 32, or 64 bits is needed, the <a href="http://www.boost.org">boost</a> <a href="http://www.boost.org/doc/libs/release/libs/integer/index.html">integer types</a> <span class="sputcode">uint8_t</span>, <span class="sputcode">uint16_t</span>, <span class="sputcode">uint32_t</span>, <span class="sputcode">uint64_t</span> (from the namespace <span class="sputcode">boost</span>) can be used with portability ensured (<span class="sputcode">uint64_t</span> is not always available, but the macro <span class="sputcode">BOOST_NO_INT64_T</span> will tell you if it is not).</p>
+<p>The type argument <span class="sputcode">V</span> is used as the container type for the digits. The default container is <span class="sputcode">SimpleDigitVector</span> (which at this time is also the only container supported). This default container simply wraps an array of size (at least) the number of digits.</p>
+<p>Note that the digit container <span class="sputcode">digitvec</span> of <span class="sputcode">NonNegativeInteger</span> is wrapped in a <a href="http://www.boost.org/doc/libs/1_43_0/libs/smart_ptr/shared_ptr.htm">boost shared pointer</a>. Consider the small code excerpt:</p>
+
+{% highlight cpp %}
+NonNegativeInteger<unsigned> a=value1(), b=value2(), c;
+c = a;
+b += a;
+c += b;
+{% endhighlight %}
+  
+<p>Because of the shared pointer, the first assignment, <span class="sputcode">c = a</span>, is very cheap and will not result in copying the digit container. Instead, the <span class="sputcode">digitvec</span> of both <span class="sputcode">a</span> and <span class="sputcode">c</span> will refer to the <em>same</em> instance of the digit container (which gets a reference count of 2). This also makes it cheap to pass arguments by value and returning numbers by value. The next statement, <span class="sputcode">b += a</span>, can add <span class="sputcode">a</span> to <span class="sputcode">b</span> <em>in place</em> (assuming there is enough space in <span class="sputcode">b</span>&#8216;s <span class="sputcode">digitvec</span> to contain the result) because it is possible to check if <span class="sputcode">b</span> is the only instance referring to its digit container. Contrarywise, the last statement, <span class="sputcode">c += a</span>, cannot add <span class="sputcode">a</span> to <span class="sputcode">c</span> in place because <span class="sputcode">a</span> refers to the same container as <span class="sputcode">c</span> does.</p>
+<h3>Addition</h3>
+<p>Adding radix <span class="mthi">b</span>-numbers is quite straightforward and is easily done using the familiar pencil-and-paper method.</p>
+<p>To formalize, we first consider adding two <span class="mthi">n</span>-digit numbers, \(n \geq 1\), \(u=(u_{n-1} \ldots u_1 u_0)_b\) and \(v = (v_{n-1} \ldots v_1 v_0)_b\), obtaining an \((n+1)\)-digit sum \(w=(w_n \ldots w_1 w_0)_b\). Note that we here may end up with \(w_n = 0\) (in which case \(w_{n-1} \neq 0\)). We have<br />
+\[\begin{aligned}<br />
+w_0 &amp;\leftarrow (u_0 + v_0) \;\mbox{mod}\; b, \\<br />
+w_i &amp;\leftarrow (u_i + v_i + k_i) \;\mbox{mod}\; b, \\<br />
+w_n &amp;\leftarrow k_n.<br />
+\end{aligned} \quad<br />
+\begin{aligned}<br />
+k_1 &amp;\leftarrow \lfloor (u_0 + v_0)/b \rfloor, \\<br />
+k_{i+1} &amp;\leftarrow \lfloor (u_i + v_i + k_i)/b \rfloor, \quad i = 1, \ldots, n-1, \\<br />
+\mbox{ }<br />
+\end{aligned}\]<br />
+Note that \(\lfloor x/b \rfloor = [x \geq b]\) for \(x &lt; 2 b\), where \([P]\) is equal to <span class="mthn">1</span> if <span class="mthi">P</span> is true and equal to <span class="mthn">0</span> if <span class="mthi">P</span> is false. This means \(k_i \in \{0,1\}\) and furthermore \(u_i + v_i + k_i \leq b-1 + b-1 + 1 = 2 b &#8211; 1\). Using that \(0 \leq u_i, v_i \leq b-1\) and \((x \;\mbox{mod}\; b) + \lfloor x/b \rfloor = x\) it is quite easy to show that, in fact, \(w = u + v\).</p>
+<p>The cases where <span class="mthi">u</span> or <span class="mthi">v</span> is zero makes addition trivial. Similarly, if the number of digits in <span class="mthi">u</span> and <span class="mthi">v</span> are different, is it quite easy to adjust the algorithm above.</p>
+<p>Let us now look at some implementation details. How do we compute \(z = (x + y) \;\mbox{mod}\; b\) and \(k = \lfloor (x + y)/b \rfloor\) for \(0 \leq x, y &lt; b\)? We have several options, some of which are</p>
+<ol>
+<li>Use \(2 b \leq b_T\). Then <span class="mthi">z</span> and <span class="mthi">k</span> can be computed directly.</li>
+<li>Use \(b = b_T\) and the CPU&#8217;s add and add-with-carry instructions.</li>
+<li>Use \(b = b_T\), but the computations must be done in some portable C++ way.</li>
+</ol>
+<p>Option 1 is actually not an option because we insist on using \(b = b_T\). Option 2 leads to the most efficient code, regarding both space and speed. The problem is that these special instructions are not directly accessible via the C++ standard. Some compilers, though, make it possible to use inline assembly. For instance, <a href="http://gcc.gnu.org">GCC</a> has such <a href="http://gcc.gnu.org/onlinedocs/gcc/Extended-Asm.html">capabilities</a>.</p>
+<p>Option 3 is the way to go. As mentioned earlier, C++ does calculations modulo \(b_T\), so \(z \leftarrow (x + y) \;\mbox{mod}\; b\) comes &#8216;for free&#8217; as simply <span class="sputcode">z = x + y</span> in C++. Left is how to detect whether a carry occurs during an addition. One way to do that is the following. Consider \(z = (x + y) \;\mbox{mod}\; b\) for which there are two possibilities. Either \(z = x + y\) (\(k = 0\)) which implies \(z \geq x\) and \(z \geq y\), or we have \(z + b = x + y\) (\(k = 1\)) which implies \(z = x &#8211; (b &#8211; y) = y &#8211; (b &#8211; x)\), leading to \(z &lt; x\) and \(z &lt; y\). So \(k = [z &lt; x] = [z &lt; y]\). Another way to detect whether a carry occurs is to split <span class="mthi">x</span> and <span class="mthi">y</span> into a low and high part, and then adding the low and high parts seperately—keeping track of a possible intermediate carry, of course.</p>
+<h3>Subtraction</h3>
+<p>An algorithm for multiple-precision subtraction is similar to addition, as just considered. Again we set \(u=(u_{n-1} \ldots u_1 u_0)_b\) and \(v = (v_{n-1} \ldots v_1 v_0)_b\) with \(n \geq 1\). To ensure that the result \(w = u &#8211; v\) is a non-negative integer we furthermore require that \(u \geq v\). We now have the algorithm:<br />
+\[\begin{aligned}<br />
+w_0 &amp;\leftarrow (u_0 - v_0) \;\mbox{mod}\; b, \\<br />
+w_i &amp;\leftarrow (u_i - v_i - k_i) \;\mbox{mod}\; b,<br />
+\end{aligned} \quad<br />
+\begin{aligned}<br />
+k_1 &amp;\leftarrow [u_0 &lt; v_0], \\<br />
+k_{i+1} &amp;\leftarrow [u_i &lt; v_i + k_i], \quad i = 1, \ldots, n-1.<br />
+\end{aligned}\]<br />
+Note that <em>any</em> digit of the result may end up being zero—we only know that \(0 \geq w \geq b^n &#8211; b^{n-1} &#8211; 1\). Note furthermore that \(k_n = [u &lt; v] = 0\). Verification of the algorithm is easily done using the fact that \(x &#8211; y = ((x-y) \;\mbox{mod}\; b) &#8211; b [x &lt; y]\) for \(0 \leq x, y &lt; b\).</p>
+<p>The options when implementing the algorithm is, again, much like for addition. Using the CPU&#8217;s subtract-with-borrow instruction would be ideal here, but it cannot be done portably in C++. The borrow when calculating \(x &#8211; y\) can be computed as simply \(k \leftarrow [x &lt; y]\), or, to avoid branching instructions, we can split <span class="mthi">x</span> and <span class="mthi">y</span> into two parts and do the subtraction for each part seperately.</p>
+<h3>Multiplication</h3>
+<p>We seek an algorithm to compute \(w = u v\) where<br />
+\[u = (u_{m-1} \ldots u_1 u_0)_b, \quad v = (v_{n-1} \ldots v_1 v_0)_b,<br />
+\quad w = (w_{m+n-1} \ldots w_1 w_0)_b.\]<br />
+We first, however, consider the simpler operation \(z \leftarrow y + \alpha u\) where<br />
+\[0 \leq \alpha &lt; b, \quad y = (y_{m-1} \ldots y_1 y_0)_b, \quad z = (z_m \ldots z_1 z_0)_b.\]<br />
+The following algorithm suggests itself:<br />
+\[\begin{aligned}<br />
+z_0 &amp;\leftarrow (y_0 + \alpha u_0) \;\mbox{mod}\; b, \\<br />
+z_i &amp;\leftarrow (y_i + \alpha u_i + k_i) \;\mbox{mod}\; b, \\<br />
+z_m &amp;\leftarrow k_m.<br />
+\end{aligned} \quad<br />
+\begin{aligned}<br />
+k_1 &amp;\leftarrow \lfloor (y_0 + \alpha u_0)/b \rfloor, \\<br />
+k_{i+1} &amp;\leftarrow \lfloor (y_i + \alpha u_i + k_i)/b \rfloor, \quad i = 1, \ldots, m-1, \\<br />
+\mbox{ }<br />
+\end{aligned}\]<br />
+If \(\alpha = 0\) then obviously \(z_i = 0\). If \(1 \leq \alpha \leq b-1\) then \(z_m\) may be zero, in which case \(z_ {m-1} \neq 0\), since<br />
+\[2 b^{m-1} \leq \; z \; \leq b^m-1 + (b^m-1)(b-1) = b^{m+1} - b &lt; b^{m+1}\]<br />
+Note that \(k_i &lt; b\) since \(y_i + \alpha u_i + k_i \leq b-1 + (b-1)(b-1) + b-1 = b^2 &#8211; 1\). The algorithm above is easily verified, using that \(z_i + b k_{i+1} = y_i + \alpha u_i + k_i\).</p>
+<p>We now turn to \(w = u v\) and get<br />
+\[w = u v = \sum_{j=0}^{n-1} b^j v_j u.\]<br />
+From this we see that we can compute <span class="mthi">w</span> by doing a number of \((z \leftarrow y + \alpha u)\)-type operations, if we start with \(w=0\) and then do in-place updates for each <span class="mthi">j</span>. The \(b^j\)-factor simply determines the &#8216;digit offset&#8217; on which the updates should be done:<br />
+\[\begin{aligned}<br />
+(w_{m-1} \ldots w_1 w_0)_b &amp;\leftarrow (0 \, \ldots \, 0 \, 0)_b, \\<br />
+(w_{m+j} \ldots w_{j+1} w_j)_b &amp;\leftarrow (w_{m+j-1} \ldots w_{j+1} w_j)_b + v_j (u_{m-1} \ldots u_1 u_0)_b, \\<br />
+\end{aligned}\]<br />
+for \(j = 0, 1, \ldots, n-1\). Note that \(w_{m+n-1}\) may be zero, in which case \(w_{m+n-2} \neq 0\), since \(b^{m+n-2} \leq w &lt; b^{m+n}\).</p>
+<p>Now for some implementation details. We note that the only non-trivial computation is \(z \leftarrow y + \alpha x + k\), where \(0 \leq \alpha, k, x, y &lt; b\), followed by computing \(z \;\mbox{mod}\; b\) and \(\lfloor z/b \rfloor\). Most CPUs have instructions that can multiply two word-size numbers and produce a double-word answer. As was the case for addition and subtraction, we don&#8217;t have access to these instructions from standard C++. We have \(0 \leq z &lt; b^2\) but every multiplication result in our portable C++ implementation must be smaller than <span class="mthi">b</span>. We can do this by using a new base number <span class="mthi">h</span> where \(h^2 = b\) (we assume that <span class="mthi">b</span> is chosen appropriately so <span class="mthi">h</span> is integer) and setting<br />
+\[z = (z_3 z_2 z_1 z_0)_h, \quad y = (y_1 y_0)_h, \quad \alpha = (\alpha_1 \alpha_0)_h, \quad x = (x_1 x_0)_h, \quad k = (k_1 k_0)_h.\]<br />
+We can now use the multiplication algorithm above on a &#8216;smaller scale&#8217; to compute the product \(\alpha x\). We can furthermore expand the methods slightly and incorporate the addition of <span class="mthi">y</span> and <span class="mthi">k</span> in an elegant way:<br />
+\[\begin{aligned}<br />
+(z_1 z_0)_h &amp;\leftarrow (y_1 y_0)_h, \\<br />
+c &amp;\leftarrow k_0, \\<br />
+t &amp;\leftarrow z_0 + \alpha_0 x_0 + c, \quad z_0 \leftarrow t \;\mbox{mod}\; b, \quad c \leftarrow \lfloor t/b \rfloor, \\<br />
+t &amp;\leftarrow z_1 + \alpha_0 x_1 + c, \quad z_1 \leftarrow t \;\mbox{mod}\; b, \quad c \leftarrow \lfloor t/b \rfloor, \\<br />
+z_2 &amp;\leftarrow c, \\<br />
+c &amp;\leftarrow k_1, \\<br />
+t &amp;\leftarrow z_1 + \alpha_1 x_0 + c, \quad z_1 \leftarrow t \;\mbox{mod}\; b, \quad c \leftarrow \lfloor t/b \rfloor, \\<br />
+t &amp;\leftarrow z_2 + \alpha_1 x_1 + c, \quad z_2 \leftarrow t \;\mbox{mod}\; b, \quad c \leftarrow \lfloor t/b \rfloor, \\<br />
+z_3 &amp;\leftarrow c.<br />
+\end{aligned}\]<br />
+We now have \(z \;\mbox{mod}\; b = (z_1 z_0)_h\) and \(\lfloor z/b \rfloor = (z_3 z_2)_h\).</p>
+<h3>Concluding Remarks</h3>
+<p>We have now covered addition, subtraction, and multiplication of non-negative integers of arbitrary magnitude. Left is how to do division, which will be the subject of the <a href="/2009/08/implementing-multiple-precision-arithmetic-part-2.html">next article</a>.</p>
+<p>I am currently working on a project that implements multiple-precision arithmetic following the principles of this, and the following, articles. <del cite="/2011/09/hosting-and-status-for-the-numbers-project.html" datetime="2011-09-28T08:25:00Z">You can follow the <a href="http://sourceforge.net/projects/sputsoftnumbers/">project</a> as it develops at <a href="http://sourceforge.net">SourceForge</a>. The project is still in its infancy and no releases have yet been made. You can, however, <a href="http://sputsoftnumbers.svn.sourceforge.net/viewvc/sputsoftnumbers/trunk/">browse the source</a> or check out the source code (using a <a href="http://subversion.apache.org/">Subversion</a> client) as</p>
+<pre class="sputcode">svn co https://sputsoftnumbers.svn.sourceforge.net/svnroot/sputsoftnumbers/trunk sputsoftnumbers</pre>
+<p></del><br />
+Bug reports, suggestions for improvements, patches, and other comments are very welcome.</p>
+<p><em>Update 2010-07-03: The code has undergone some changes since this article was written. See the <a href="https://github.com/janmarthedal/kanooth-numbers">project page</a> for more information and the latest articles.</em></p>
