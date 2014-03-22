@@ -38,34 +38,42 @@ tags:
 </div>
 <p>I find functional programming languages very interesting. First of all, pure functional programming languages have a certain, well, purity to them. Secondly, they force you to think differently about programming, and this can be a healthy thing. Let me introduce three of the functional programming languages that I have come across.</p>
 <p>The first functional programming language I ever encountered was <a href="http://en.wikipedia.org/wiki/Standard_ML">Standard ML</a> (actually, we used a light-weight implementation called <a href="http://www.itu.dk/~sestoft/mosml.html">Moscow ML</a>). It enables assignments and is thus not pure. It features, among other things, type inference which is very nice. For instance, an exponentation function <span class="sputcode">power</span> could have the type</p>
-<pre class="sputcode">
+
+{% highlight sml %}
 val power = fn : real * int -> real
-</pre>
+{% endhighlight %}
+
 <p>Similarly, a <span class="sputcode">map</span> function which applies a user-supplied function to each element of a list could get the type</p>
-<pre class="sputcode">
+
+{% highlight sml %}
 val map = fn : ('a -> 'b) -> 'a list -> 'b list
-</pre>
+{% endhighlight %}
+
 <div style="float:right">
   <a href="/book/link.php?id=erlang"><img src="/book/erlang.jpg" /></a>
 </div>
 <p>This means that <span class="sputcode">map</span> takes as input a function (mapping an element of type <span class="sputcode">a&#8217;</span> to an element of type <span class="sputcode">b&#8217;</span>) and outputs a new function. This output function can then convert a list of type <span class="sputcode">a&#8217;</span> elements to a list of type <span class="sputcode">b&#8217;</span> elements. This is powerful stuff.</p>
 <p>Erlang is a pure functional programming language. It is often praised for being well-suited for large-scale, distributed and fault-tolerant applications. For instance, the very cool <a href="http://en.wikipedia.org/wiki/NoSQL">NoSQL</a> database system <a href="http://couchdb.apache.org/">CouchDB</a> is written in Erlang. Apart from having <a href="http://en.wikipedia.org/wiki/Pattern_matching">pattern matching</a>, which is common for functional programming languages, Erlang also features so-called guards, which are patterns with additional conditions. Consider the following Erlang code snippet (<a href="http://www.erlang.org/doc/getting_started/seq_prog.html">source</a>):</p>
-<pre class="sputcode">
+
+{% highlight erlang %}
 list_max([Head|Rest]) -> list_max(Rest, Head).
 
 list_max([], Res)                    -> Res;
 list_max([Head|Rest], Result_so_far)
            when Head > Result_so_far -> list_max(Rest, Head);
 list_max([Head|Rest], Result_so_far) -> list_max(Rest, Result_so_far).
-</pre>
+{% endhighlight %}
+
 <div style="float:right">
   <a href="/book/link.php?id=sicp"><img src="/book/sicp.jpg" /></a>
 </div>
 <p>The guard here is the <span class="sputcode">when Head &#8230;</span> part.</p>
 <p>I was recently introduced to <a href="http://en.wikipedia.org/wiki/Lisp_(programming_language)">Lisp</a> through the classic book <a href="/book/link.php?id=sicp">Structure and Interpretation of Computer Programs</a>. Actually, that book treats <a href="http://groups.csail.mit.edu/mac/projects/scheme/">MIT Scheme</a>, one of many flavours of Lisp. The syntax and semantics of Lisp is extremely simple and (almost) everything is composed by parentheses, identifiers and white-space. Reading Lisp code takes some getting used to, consider, e.g., the following function definition:</p>
-<pre class="sputcode">
+
+{% highlight scheme %}
 (define (fib n) (cond ((= n 0) 0) ((= n 1) 1) (else (+ (fib (- n 1)) (fib (- n 2))))))
-</pre>
+{% endhighlight %}
+
 <p>(Appropriate new-lines and indentation helps a great deal on the readability, though). Lisp also enables assignments and is therefore not pure. In fact, both imperative and functional programming approaches can be used.</p>
 <div style="clear:both"></div>
 <p>I plan to include more on functional programming languages on this blog in the future.</p>
