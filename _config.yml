@@ -5,4 +5,7 @@ url: http://blog2.janmr.com
 excerpt_separator: <span></span>
 permalink: /:year/:month/:title.html
 baseurl: /
+author: Jan Marthedal Rasmussen
+title: janmr blog
+rss_name: blogfeed.xml
 

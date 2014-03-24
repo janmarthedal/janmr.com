@@ -3,8 +3,13 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>{{ page.title }}</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{% if page.title %}{{ page.title }} - {% endif %}{{ site.title }}</title>
+    {% if page.description %}
+    <meta name="description" content="{{ page.description }}" />
+    {% endif %}
+    <meta name="author" content="{{ site.author }}">
+    <link href="http://feeds.feedburner.com/janmr-blog" rel="alternate" title="{{ site.title }}" type="application/rss+xml" />
     <link rel="stylesheet" href="/css/bootstrap.min.css">
     <link rel="stylesheet" href="/css/main.css">
     <link rel="stylesheet" href="/css/syntax.css">
@@ -20,27 +25,33 @@
           inlineMath: [ ["\\(","\\)"] ],
           displayMath: [ ["\\[","\\]"] ],
         },
-        "HTML-CSS": {
-          scale: 100
-        },
       });
     </script>
     <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML"></script>
   </head>
   <body>
     <div class="container">
+      <div class="page-header">
+        <h1><a href="/">{{ site.name }}</a></h1>
+      </div>
       <div class="row">
-        <div class="col-md-10">
-          <div class="page-header">
-            <h1><a href="/">{{ site.name }}</a></h1>
-          </div>
+        <div class="col-md-9">
           {{ content }}
-          <hr>
-          <footer>
-            &copy; 2014 Jan Marthedal Rasmussen
-          </footer>
+        </div>
+        <div class="col-md-3">
+          <a class="feed-link" href="http://feeds.feedburner.com/janmr-blog"><img src="/media/feed-icon.svg"> Subscribe in a reader</a>
+          <h4>Recent Posts</h4>
+          <nav id="posts">
+            {% for post in site.posts limit:10 %}
+              <p><a href="{{ post.url }}">{{ post.title }}</a> <small>{{ post.date | date_to_string }}</small></p>
+            {% endfor %}
+          </nav>
         </div>
       </div>
+      <hr>
+      <footer>
+        &copy; 2014 Jan Marthedal Rasmussen
+      </footer>
     </div>
   </body>
 </html>

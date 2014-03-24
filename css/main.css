@@ -10,3 +10,9 @@ figcaption {
   font-weight: bold;
 }
 
+a.feed-link img {
+  width: 16px;
+  height: auto;
+  margin: 0px;
+}
+
