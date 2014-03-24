@@ -30,28 +30,31 @@
     <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML"></script>
   </head>
   <body>
-    <div class="container">
-      <div class="page-header">
-        <h1><a href="/">{{ site.name }}</a></h1>
-      </div>
-      <div class="row">
-        <div class="col-md-9">
-          {{ content }}
+    <div id="wrapper">
+      <div class="container-fluid">
+        <div class="page-header">
+          <h1><a href="/">{{ site.name }}</a></h1>
         </div>
-        <div class="col-md-3">
-          <a class="feed-link" href="http://feeds.feedburner.com/janmr-blog"><img src="/media/feed-icon.svg"> Subscribe in a reader</a>
-          <h4>Recent Posts</h4>
-          <nav id="posts">
-            {% for post in site.posts limit:10 %}
-              <p><a href="{{ post.url }}">{{ post.title }}</a> <small>{{ post.date | date_to_string }}</small></p>
-            {% endfor %}
-          </nav>
+        <div class="row">
+          <div class="col-md-9">
+            {{ content }}
+          </div>
+          <div class="col-md-3">
+            <h4>About</h4>
+            <p>A blog about mathematics and computer programming by
+            <a href="http://janmr.com">Jan Marthedal Rasmussen</a>.</p>
+
+            <a class="feed-link" href="http://feeds.feedburner.com/janmr-blog"><img src="/media/feed-icon.svg"> Subscribe in a reader</a>
+
+            <h4>Recent Posts</h4>
+            <nav id="posts">
+              {% for post in site.posts limit:10 %}
+                <p><a href="{{ post.url }}">{{ post.title }}</a> <small>{{ post.date | date_to_string }}</small></p>
+              {% endfor %}
+            </nav>
+          </div>
         </div>
       </div>
-      <hr>
-      <footer>
-        &copy; 2014 Jan Marthedal Rasmussen
-      </footer>
     </div>
   </body>
 </html>
