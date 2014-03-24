@@ -1,7 +1,7 @@
 name: janmr blog
 markdown: redcarpet
 pygments: true
-url: http://blog2.janmr.com
+url: http://blog.janmr.com
 excerpt_separator: <span></span>
 permalink: /:year/:month/:title.html
 baseurl: /
