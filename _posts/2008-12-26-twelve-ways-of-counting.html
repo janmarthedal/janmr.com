@@ -81,16 +81,20 @@ and for completeness we define the (agreed-upon) boundary cases<br />
 \[\left\{ {0 \atop 0} \right\} = 1 \quad \mbox{and} \quad \left\{ {n \atop 0} \right\} = 0, \quad n \geq 1.\]<br />
 Imagine now that we want to list the \(\left\{ {n \atop m} \right\}\) set partitions of {1, 2, &#8230;, <span class="mthi">n</span>} into <span class="mthi">m</span> parts, \(n &gt; m &gt; 1\), using an inductive/recursive approach. First we list the arrangements that contain the one-element set {<span class="mthi">n</span>} as one of the parts. This can be done by listing the \(\left\{ {n-1 \atop m-1} \right\}\) set partitions of {1, 2, &#8230;, <span class="mthi">n</span>-1} into <span class="mthi">m</span>-1 parts and simply adding { <span class="mthi">n</span>} to each arrangement. We then list the \(\left\{ {n-1 \atop m} \right\}\) set partitions of {1, 2, &#8230;, <span class="mthi">n</span>-1} into <span class="mthi">m</span> parts. For each of these arrangements, we can add the element <span class="mthi">n</span> to <em>each</em> of the <span class="mthi">m</span> parts. We thereby list all the arrangements where the part containing the element <span class="mthi">n</span> contains at least one other element. Together with the border cases above, we now have the recursive definition<br />
 \[\left\{ {n \atop m} \right\} = \left\{ {n-1 \atop m-1} \right\} + m \left\{ {n-1 \atop m} \right\}, \quad n &gt; m &gt; 1.\]<br />
-Case 9 is similar to the one just considered, except the urns are now labeled. This means that if we swap the contents of any two urns, we have a new arrangement. And since all the parts are different (they are disjoint subsets), we have to count all \(m!\) permutations of the parts for each set partition of Case 11, so<br />
-\[<br />
-C_9(m,n) = m! \left\{ {n \atop m} \right\}, \quad n \geq m \geq 1.<br />
-\]<br />
-We now go to Case 3 where the balls are labeled and the urns are unlabeled, like Case 11, but where any number of urns may be empty. So we can simply use the counting of Case 11 and add the results of using exactly 1, 2, &#8230;, <span class="mthi">m</span> urns,<br />
-\[<br />
-C_3(m,n) = \sum_{k=1}^m \left\{ {n \atop k} \right\}.<br />
-\]</p>
-<div style="float:right"><a href="/book/link.php?id=concrete"><img src="/book/concrete.jpg" /></a></div>
-<p>You can read more about Sterling numbers in, e.g., <a href="http://www-cs-faculty.stanford.edu/~knuth/gkp.html">Concrete Mathematics</a> by Graham, Knuth, and Patashnik.</p>
+Case 9 is similar to the one just considered, except the urns are now labeled. This means that if we swap the contents of any two urns, we have a new arrangement. And since all the parts are different (they are disjoint subsets), we have to count all \(m!\) permutations of the parts for each set partition of Case 11, so<p>
+
+\[
+C_9(m,n) = m! \left\{ {n \atop m} \right\}, \quad n \geq m \geq 1.
+\]
+
+<p>We now go to Case 3 where the balls are labeled and the urns are unlabeled, like Case 11, but where any number of urns may be empty. So we can simply use the counting of Case 11 and add the results of using exactly 1, 2, &#8230;, <span class="mthi">m</span> urns,</p>
+
+\[
+C_3(m,n) = \sum_{k=1}^m \left\{ {n \atop k} \right\}.
+\]
+
+<div style="float:right"><a href="{% amazon concrete %}"><img src="{% bookcover concrete %}"></a></div>
+<p>You can read more about Sterling numbers in, e.g., <a href="http://www-cs-faculty.stanford.edu/~uno/gkp.html">Concrete Mathematics</a> by Graham, Knuth, and Patashnik.</p>
 <h3>Integer Compositions (10)</h3>
 <p>If unlabeled balls have to be placed in labeled urns with at least one ball in each urn, we can visualize an arrangement like this,</p>
 <div style="text-align: center;"><strong>OO|O|OOO|OO</strong>,</div>
@@ -148,4 +152,4 @@ Finally for Case 4, with reasoning similar to that of set partitioning (Case 3),
 
 <div style="float:right"><a href="{% amazon taocp4f3 %}"><img src="{% bookcover taocp4f3 %}"></a></div>
 <div style="float:right"><a href="{% amazon stanley97 %}"><img src="{% bookcover stanley97 %}"></a></div>
-<p>This table also appears in in Section 7.2.1.4, Fascicle 3, Volume 4 of <a href="http://www-cs-faculty.stanford.edu/~knuth/taocp.html">The Art of Computer Programming</a> by <a href="http://www-cs-faculty.stanford.edu/~knuth/">Donald E. Knuth</a> where The Twelvefold Way is briefly mentioned. The Twelvefold Way is originally treated in the book <a href="http://www-math.mit.edu/~rstan/ec/">Enumerative Combinatorics, Volume 1</a> by <a href="http://www-math.mit.edu/~rstan/">Richard P. Stanley</a>.</p>
+<p>This table also appears in in Section 7.2.1.4, Fascicle 3, Volume 4 of <a href="http://www-cs-faculty.stanford.edu/~uno/taocp.html">The Art of Computer Programming</a> by <a href="http://www-cs-faculty.stanford.edu/~uno/">Donald E. Knuth</a> where The Twelvefold Way is briefly mentioned. The Twelvefold Way is originally treated in the book <a href="http://www-math.mit.edu/~rstan/ec/">Enumerative Combinatorics, Volume 1</a> by <a href="http://www-math.mit.edu/~rstan/">Richard P. Stanley</a>.</p>

@@ -23,7 +23,7 @@ tags:
 <h3>Introduction</h3>
 
 <div style="float:right"><a href="{% amazon taocp2 %}"><img src="{% bookcover taocp2 %}" /></a></div>
-<p>This article is the first in a series dealing with algorithms for multiple-precision arithmetic. The goal is to present both a theoretical foundation with high-level algorithm descriptions (based on Section 4.3.1, <em>The Classical Algorithms</em>, of <a href="http://www-cs-faculty.stanford.edu/~knuth/taocp.html">The Art of Computer Programming</a>, Volume 2, by <a href="http://www-cs-faculty.stanford.edu/~knuth/">Donald E. Knuth</a>) and a portable C++ implementation of the algorithms. The theory and high-level algorithms will be quite universal and generic, whereas the presented code will be just one way to implement the algorithms in a specific programming language.</p><span></span>
+<p>This article is the first in a series dealing with algorithms for multiple-precision arithmetic. The goal is to present both a theoretical foundation with high-level algorithm descriptions (based on Section 4.3.1, <em>The Classical Algorithms</em>, of <a href="http://www-cs-faculty.stanford.edu/~uno/taocp.html">The Art of Computer Programming</a>, Volume 2, by <a href="http://www-cs-faculty.stanford.edu/~uno/">Donald E. Knuth</a>) and a portable C++ implementation of the algorithms. The theory and high-level algorithms will be quite universal and generic, whereas the presented code will be just one way to implement the algorithms in a specific programming language.</p><span></span>
 
 <p>We start out by considering only non-negative integers. A number \(u \geq 0\) will be represented in radix \(b \geq 2\) using the notation<br />
 \[u = (u_{n-1} \ldots u_1 u_0)_b = \sum_{i=0}^{n-1} u_i b^i, \quad 0 \leq u_i &lt; b.\]<br />
@@ -137,10 +137,9 @@ t &amp;\leftarrow z_2 + \alpha_1 x_1 + c, \quad z_2 \leftarrow t \;\mbox{mod}\; 
 z_3 &amp;\leftarrow c.<br />
 \end{aligned}\]<br />
 We now have \(z \;\mbox{mod}\; b = (z_1 z_0)_h\) and \(\lfloor z/b \rfloor = (z_3 z_2)_h\).</p>
+
 <h3>Concluding Remarks</h3>
+
 <p>We have now covered addition, subtraction, and multiplication of non-negative integers of arbitrary magnitude. Left is how to do division, which will be the subject of the <a href="/2009/08/implementing-multiple-precision-arithmetic-part-2.html">next article</a>.</p>
-<p>I am currently working on a project that implements multiple-precision arithmetic following the principles of this, and the following, articles. <del cite="/2011/09/hosting-and-status-for-the-numbers-project.html" datetime="2011-09-28T08:25:00Z">You can follow the <a href="http://sourceforge.net/projects/sputsoftnumbers/">project</a> as it develops at <a href="http://sourceforge.net">SourceForge</a>. The project is still in its infancy and no releases have yet been made. You can, however, <a href="http://sputsoftnumbers.svn.sourceforge.net/viewvc/sputsoftnumbers/trunk/">browse the source</a> or check out the source code (using a <a href="http://subversion.apache.org/">Subversion</a> client) as</p>
-<pre class="sputcode">svn co https://sputsoftnumbers.svn.sourceforge.net/svnroot/sputsoftnumbers/trunk sputsoftnumbers</pre>
-<p></del><br />
-Bug reports, suggestions for improvements, patches, and other comments are very welcome.</p>
-<p><em>Update 2010-07-03: The code has undergone some changes since this article was written. See the <a href="https://github.com/janmarthedal/kanooth-numbers">project page</a> for more information and the latest articles.</em></p>
+
+<p><em>Update 2010-07-03: The code has undergone some changes since this article was written. See the <a href="https://github.com/janmarthedal/kanooth-numbers">project page</a> for more information.</em></p>

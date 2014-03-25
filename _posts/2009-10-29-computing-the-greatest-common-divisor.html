@@ -31,16 +31,17 @@ tags:
 <p>One way to define \(\hbox{gcd}(u,v)\) is the following. Consider the set of all positive integers that divide both \(u\) and \(v\). This set is not empty since it always contains 1. It is also bounded since no divisor exceeds \(|u|\) or \(|v|\). Therefore, this set contains a maximum element, which is equal to \(\hbox{gcd}(u,v)\). From this definition Properties&nbsp;1, 2, and 3 follow easily. For the sake of simplicity, easily justified by Property&nbsp;2 and&nbsp;3, we will only consider non-negative \(u\) and \(v\).</p>
 <p>Consider now Property 4. We prove this by showing that the set of divisors of \(u\) and \(v\) is equal to the set of divisors of \(u\) and \(v+n u\) (and hence, their gcd&#8217;s must be equal). Consider then a positive integer \(d\) that divides \(u\) and \(v\). Obviously, \(d\) also divides \(v+n u\). Assume now that some \(d\) divides \(u\) and \(r=v+n u\). Then \(d\) also divides \(r-n u=v\).</p>
 <p>Another useful way to define \(\hbox{gcd}(u,v)\) is possible for positive \(u\) and \(v\). According to the <a href="http://en.wikipedia.org/wiki/Fundamental_theorem_of_arithmetic">fundamental theorem of arithmetic</a> we can write</p>
-<p>
 \[
 u = \prod_{p \; \rm prime} p^{u_p},
-\]</p>
+\]
 <p>and similarly for \(v\). We now have</p>
-<p>\[
+\[
 \hbox{gcd}(u,v) = \prod_{p \; \rm prime} p^{\min(u_p,v_p)}.
-\]</p>
+\]
 <p>Properties 5 and 6 follow from this equality.</p>
+
 <h2>Euclid&#8217;s Algorithm</h2>
+
 <p>Euclid&#8217;s algorithm appeared in <a href="http://en.wikipedia.org/wiki/Euclid">Euclid</a>&#8216;s <a href="http://aleph0.clarku.edu/~djoyce/java/elements/toc.html">Elements</a> (Propositions&nbsp;1 and&nbsp;2 of <a href="http://aleph0.clarku.edu/~djoyce/java/elements/bookVII/bookVII.html">Book VII</a>) around 300 BC, but was probably known before this.</p>
 <p>The algorithm builds upon Properties&nbsp;1 and&nbsp;4 from above. The value of \(n\) in Property&nbsp;4 is chosen to be \(n=-\lfloor v/u \rfloor\) which leads to the equality \(\hbox{gcd}(u,v) = \hbox{gcd}(u, v \hbox{ mod } u)\).</p>
 <p>The algorithm can be implemented quite concisely in C++, one way of doing it being the following:</p>
@@ -111,7 +112,7 @@ u = q v + r \geq v + r > 2r,
 {% endhighlight %}
 
 <p>Some remarks are in order with regard to efficiency. Every time <span class="sputcode">shift_to_uneven</span> is executed inside the while-loop we <em>know</em> that the number is even, so the initial check <span class="sputcode">!(n &#038; 1u)</span> is superfluous. Similarly the return value of <span class="sputcode">shift_to_uneven</span> is not used inside the while-loop, but it should be fairly easy for the compiler to observe this.</p>
-<p>Finally, if working with multiple-precision numbers, the binary shift operation can be expensive compared to a (constant-time) test-bit method, which tests whether a certain bit is set. Given a test-bit method, zero bits could be counted, starting from the least-significant bit, followed by a single binary shift operation. Both <a href="https://github.com/janmarthedal/kanooth-numbers">SputArithmetic</a> and <a href="http://gmplib.org">GMP</a> has such a test-bit method, but the code naturally becomes less generic.</p>
+<p>Finally, if working with multiple-precision numbers, the binary shift operation can be expensive compared to a (constant-time) test-bit method, which tests whether a certain bit is set. Given a test-bit method, zero bits could be counted, starting from the least-significant bit, followed by a single binary shift operation. Both <a href="https://github.com/janmarthedal/kanooth-numbers">SputArithmetic</a> and <a href="https://gmplib.org">GMP</a> has such a test-bit method, but the code naturally becomes less generic.</p>
 <p>How many times is the while-loop executed, in the worst case? Either \(u\) or \(v\) is reduced by at least a factor two, so, similar to Euclid&#8217;s algorithm, the loop is executed at most \(\log_2 u + \log_2 v\) times.</p>
 <div style="float:right"><a href="{% amazon stepanov09 %}"><img src="{% bookcover stepanov09 %}" /></a></div>
 <p>It should be noted that <a href="http://www.stepanovpapers.com">Alex Stepanov</a> has written <a href="http://www.stepanovpapers.com/notes.pdf">some notes</a> that, among many other things, deal with generic implementations of both Euclid&#8217;s and Stein&#8217;s gcd algorithms (see Section&nbsp;10.2). Stepanov has also written the book <a href="http://www.elementsofprogramming.com">Elements of Programming</a> with <a href="http://www.mcjones.org/paul/">Paul McJones</a>, which presents a mathematical approach to programming. The book also mentions Euclid&#8217;s and Stein&#8217;s algorithms, but the treatment in the notes is more comprehensive.</p>
@@ -159,10 +160,10 @@ u = q v + r \geq v + r > 2r,
 </figure>
 
 <p>Although this article is by no means a SputArithmetic versus GMP face-off, a comparison can rightly be made. The exact same input data and equivalent algorithms were used. For Euclid&#8217;s algorithm, the GMP algorithm was consistently 4.5-5.0 times faster. The same was the case for Stein&#8217;s algorithm, although the running times approached each other as the bit size of the input numbers went down.</p>
-<p>One more algorithm was tested, by the way, and that was GMP&#8217;s own gcd algorithm. The results were not shown in the figure, however, because they were (as good as) identical to the results of the Stein algorithm. According to the <a href="http://gmplib.org/manual/Binary-GCD.html">GMP manual</a>, the binary Stein&#8217;s algorithm is in fact used. For large input numbers, however, GMP&#8217;s own gcd function apparently switches to another method. The same page also states that the <em>&#8220;binary algorithm has so far been found to be faster than the Euclidean algorithm everywhere.&#8221;</em> Well, not everywhere.</p>
+<p>One more algorithm was tested, by the way, and that was GMP&#8217;s own gcd algorithm. The results were not shown in the figure, however, because they were (as good as) identical to the results of the Stein algorithm. According to the <a href="https://gmplib.org/manual/Binary-GCD.html">GMP manual</a>, the binary Stein&#8217;s algorithm is in fact used. For large input numbers, however, GMP&#8217;s own gcd function apparently switches to another method. The same page also states that the <em>&#8220;binary algorithm has so far been found to be faster than the Euclidean algorithm everywhere.&#8221;</em> Well, not everywhere.</p>
 <h2>Conclusion</h2>
 <p>The purpose of this article was to present and compare two common algorithms for computing the greatest common divisor of two integers: Euclid&#8217;s and Stein&#8217;s (binary) algorithm. Both algorithms work well, and only a constant factor will usually distinguish them, if implemented properly.</p>
 <p>On the basis of the results presented in this article, the following can be said. If the input numbers fit into the processor&#8217;s natural word size, Stein&#8217;s algorithm was faster than Euclid&#8217;s. For multiple-precision numbers, Euclid&#8217;s algorithm was faster than Stein&#8217;s. This immediately suggests a hybrid method: Use Euclid&#8217;s algorithm until the involved numbers fit into a register each, and then use Stein&#8217;s algorithm to finish. Such a hybrid method becomes less generic, however.</p>
 <p>If I had to choose a single all-purpose gcd algorithm, it would be Euclid&#8217;s. It is simple to implement and it generally performs very well.</p>
 <p>The running time results are not conclusive. Implementations details and testing methods can always be discussed but most importantly: Different hardware setups should be tried (and perhaps different compilers). If anyone is interested, I can make the test programs available for download.</p>
-<p><i>(Update 2011-11-23: Source code for Euclid&#8217;s and Stein&#8217;s algorithm are available as snippets <a href="/2011/11/snippet-gcd-euclid.html">gcd_euclid</a> and <a href="/2011/11/snippet-gcd-stein.html">gcd_stein</a>.)</i></p>
+<p><i>(Update 2014-03-25: Source code for Euclid&#8217;s and Stein&#8217;s algorithm are available at GitHub as <a href="https://github.com/janmarthedal/snippets/blob/master/c++/kanooth/snippets/gcd_euclid.hpp"><code>gcd_euclid.hpp</code></a> and <a href="https://github.com/janmarthedal/snippets/blob/master/c++/kanooth/snippets/gcd_stein.hpp"><code>gcd_stein.hpp</code></a>.)</i></p>

@@ -4,10 +4,9 @@ title: Multiple-Precision Addition
 author: Jan Marthedal Rasmussen
 excerpt: ! "This post will cover a basic addition algorithm for multiple-precision
   non-negative integers. The algorithm is based upon that presented in Section 4.3.1,
-  <em>The Classical Algorithms</em>, of <a href=\"http://www-cs-faculty.stanford.edu/~knuth/taocp.html\">The
-  Art of Computer Programming</a>, Volume 2, by <a href=\"http://www-cs-faculty.stanford.edu/~knuth/\">Donald
-  E. Knuth</a>. The notation and bounds used in this post were presented in a <a href=\"/2011/10/multiple-precision-number-representation.html\">previous
-  post</a>.\r\n\r\nWe consider adding two <span class=\"mthi\">n</span>-digit numbers
+  <em>The Classical Algorithms</em>, of The Art of Computer Programming</a>, Volume 2,
+  by Donald E. Knuth. The notation and bounds used in this post were presented in a 
+  previous post. We consider adding two <span class=\"mthi\">n</span>-digit numbers
   with \\(n \\geq 1\\), \\(u=(u_{n-1} \\ldots u_1 u_0)_b\\) and \\(v=(v_{n-1} \\ldots
   v_1 v_0)_b\\)."
 date: 2011-10-12 12:27:47.000000000 +02:00
@@ -20,7 +19,7 @@ tags:
 - basic theory
 ---
 <div style="float:right"><a href="{% amazon taocp2 %}"><img src="{% bookcover taocp2 %}" /></a></div>
-<p>This post will cover a basic addition algorithm for multiple-precision non-negative integers. The algorithm is based upon that presented in Section 4.3.1, <em>The Classical Algorithms</em>, of <a href="http://www-cs-faculty.stanford.edu/~knuth/taocp.html">The Art of Computer Programming</a>, Volume 2, by <a href="http://www-cs-faculty.stanford.edu/~knuth/">Donald E. Knuth</a>. The notation and bounds used in this post were presented in a <a href="/2011/10/multiple-precision-number-representation.html">previous post</a>.</p>
+<p>This post will cover a basic addition algorithm for multiple-precision non-negative integers. The algorithm is based upon that presented in Section 4.3.1, <em>The Classical Algorithms</em>, of <a href="http://www-cs-faculty.stanford.edu/~uno/taocp.html">The Art of Computer Programming</a>, Volume 2, by <a href="http://www-cs-faculty.stanford.edu/~uno/">Donald E. Knuth</a>. The notation and bounds used in this post were presented in a <a href="/2011/10/multiple-precision-number-representation.html">previous post</a>.</p>
 <p>We consider adding two <span class="mthi">n</span>-digit numbers with \(n \geq 1\), \(u=(u_{n-1} \ldots u_1 u_0)_b\) and \(v=(v_{n-1} \ldots v_1 v_0)_b\). <span></span>Since \(b^{n-1} \leq u, v \leq b^n &#8211; 1\) we have \(2 b^{n-1} \leq u+v \leq 2 b^n &#8211; 2\) which, when using the fact that \(b \geq 2\), leads to \(b^{n-1} \leq u+v \leq b^{n+1} &#8211; 1\) (note how a tighter bound of the form \(b^p \leq u+v \leq b^q &#8211; 1\) is not possible).</p>
 <p>This means that \(u+v\) can be represented using \(n\) or \(n+1\) digits, so we set \(w=(w_n \ldots w_1 w_0)_b\).</p>
 <p>Assuming \(k_0\) is set to some initial value (more on this below) we now have the following algorithm:
