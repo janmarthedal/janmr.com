@@ -1,0 +1,54 @@
+<doctype html>
+<html>
+<header>
+  <title>Thales' Theorem</title>
+  <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.0/normalize.min.css">
+</header>
+<body id="container">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.2/raphael-min.js"></script>
+  <script>
+    function render(paper, width, height) {
+      var border = Math.min(width/20, height/20, 20);
+      var radius = Math.min(width/2 - border, height - 2*border);
+      var stroke_width = Math.max(Math.min(radius/50, 10), 2);
+      var centerX = width/2, centerY = (height + radius)/2;
+
+      var arc = paper.path('M' + (centerX-radius) + ',' + centerY
+                           + ' A' + radius + ',' + radius + ' 0 0,1 ' + (centerX+radius) + ',' + centerY);
+      arc.attr({stroke: '#ddd', 'stroke-width': stroke_width/2});
+
+      var path = paper.path('M' + (centerX-radius) + ',' + centerY + ' L' + (centerX+radius) + ',' + centerY);
+      path.attr({stroke: '#000', 'stroke-width': stroke_width, 'stroke-linejoin': 'round'});
+      var knob = paper.circle(0, 0, stroke_width);
+      knob.attr({fill: '#000', 'fill-opacity': 0.1, 'stroke-width': 0});
+      knob.hover(function () { this.attr('fill-opacity', 0.5); },
+                 function () { this.attr('fill-opacity', 0.1); });
+
+      function set_triangle(pointerX, pointerY) {
+        var dx = pointerX - centerX, dy = pointerY - centerY;
+        var factor = radius/Math.sqrt(dx*dx + dy*dy);
+        var x = centerX + dx*factor, y = centerY + dy*factor;
+        path.attr('path', 'M' + (centerX-radius) + ',' + centerY
+                          + ' L' + (centerX+radius) + ',' + centerY
+                          + ' L' + x + ',' + y + ' Z');
+        knob.attr({cx: x, cy: y}).toFront();
+      }
+      
+      set_triangle(centerX-1, centerY-1);
+      knob.drag(function(dx, dy, x, y){
+        set_triangle(x, y);
+      });
+    }
+    $(function () {
+      var width = $('body').width();
+      var height = $('body').height();
+      var paper = Raphael("container");
+      paper.setViewBox(0, 0, width, height, true);
+      paper.setSize('100%', '100%');
+      render(paper, width, height);
+    });
+  </script>
+</body>
+</html>
+

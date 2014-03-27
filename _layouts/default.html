@@ -57,5 +57,29 @@
         </div>
       </div>
     </div>
+    
+    <!-- script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
+
+    <script>
+      $(document).ready(function () {
+        function set_figure_iframe_size($figure) {
+          var width = $figure.width();
+          $figure.find('iframe').each(function () {
+            var $elem = $(this);
+            var ratio = parseFloat($elem.data('ratio'));
+            $elem.width(width);
+            $elem.height(width / ratio);
+          });
+        }
+        $('figure iframe').each(function () {
+          $parent = $(this).parent();
+          set_figure_iframe_size($parent);
+          $parent.resize(function () {
+            set_figure_iframe_size($parent);            
+          });
+        });
+      });
+    </script -->
+
   </body>
 </html>

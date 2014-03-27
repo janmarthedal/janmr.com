@@ -24,3 +24,23 @@ div.post {
   margin-bottom: 5em;
 }
 
+.h_iframe {
+  position: relative;
+}
+
+.h_iframe img.ratio {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin: 0px;
+}
+
+.h_iframe iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
