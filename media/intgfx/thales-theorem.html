@@ -4,6 +4,9 @@
   <title>Thales' Theorem</title>
   <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.0/normalize.min.css">
   <style>
+    body {
+      overflow: hidden;
+    }
     text {
       fill: #000;
       stroke-width: 0;
@@ -24,20 +27,24 @@
       fill: #000;
       fill-opacity: 0.1;
     }
+    #knob:hover {
+      fill-opacity: 0.5;
+      cursor: move;
+    }
   </style>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
   <script src="http://cdnjs.cloudflare.com/ajax/libs/snap.svg/0.2.0/snap.svg-min.js"></script>
   <script>
     (function () {
-      var intgfx = {};
-      intgfx.init = function (id, renderer) {
+      function init(id, renderer) {
         $(function () {
           var scale, offsetX, offsetY;
-          var viewBox = $.map(document.getElementById(id).getAttribute('viewBox').split(' '), parseFloat);
+          var svgElement = document.getElementById(id);
+          var viewBox = $.map(svgElement.getAttribute('viewBox').split(' '), parseFloat);
           var bx = viewBox[0], by = viewBox[1], bw = viewBox[2], bh = viewBox[3];
           function set_trans() {
-            var width = $('#' + id).width();
-            var height = $('#' + id).height();
+            var width = svgElement.clientWidth || svgElement.parentNode.clientWidth;
+            var height = svgElement.clientHeight || svgElement.parentNode.clientHeight;
             var sx = bw/width;
             var sy = bh/height;
             if (sy >= sx) {
@@ -58,7 +65,9 @@
           });
         });
       }
-      window.intgfx = intgfx;
+      window.intgfx = {
+        init: init
+      };
     })();
   </script>
   <script>
@@ -82,19 +91,20 @@
       knob.drag(function (dx, dy, x, y) {
         set_triangle(trans.x(x, y), trans.y(x, y));
       });
-      knob.hover(function () { this.attr('fill-opacity', 0.5); }, function () { this.attr('fill-opacity', 0.1); });
     });
   </script>
 </header>
 <body>
-  <svg id="container" viewbox="-1.1 -0.1 2.2 1.2" preserveAspectRatio="xMidYMid meet">
-    <path class="arc" d="M-1,1A1,1,0,0,1,1,1" />
-    <text x="-1.02" y="1.06" font-size="0.06" text-anchor="end">A</text>
-    <text x="1.02" y="1.06" font-size="0.06" text-anchor="start">C</text>
-    <text id="labelB" x="-0.832" y="0.376" font-size="0.06" text-anchor="middle">B</text>
-    <path id="triangle" d="M-1,1L1,1L-0.8,0.4Z" />
-    <circle id="knob" cx="-0.8" cy="0.4" r="0.015" />
-  </svg>
+  <div>
+    <svg id="container" viewbox="-1.1 -0.1 2.2 1.2" preserveAspectRatio="xMidYMid meet">
+      <path class="arc" d="M-1,1A1,1,0,0,1,1,1" />
+      <text x="-1.02" y="1.06" font-size="0.06" text-anchor="end">A</text>
+      <text x="1.02" y="1.06" font-size="0.06" text-anchor="start">C</text>
+      <text id="labelB" x="-0.832" y="0.376" font-size="0.06" text-anchor="middle">B</text>
+      <path id="triangle" d="M-1,1L1,1L-0.8,0.4Z" />
+      <circle id="knob" cx="-0.8" cy="0.4" r="0.015" />
+    </svg>
+  </div>
 </body>
 </html>
 
