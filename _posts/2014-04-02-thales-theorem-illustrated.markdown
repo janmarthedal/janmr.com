@@ -1,11 +1,6 @@
 ---
 title: Thales' Theorem Illustrated
 layout: post
-categories:
-- mathematics
-tags:
-- geometry
-- interactive
 ---
 <figure>
   <div class="h_iframe">
@@ -14,4 +9,5 @@ tags:
   </div>
 </figure>
 
-Thales' Theorem: If A, B and C are points on a circle where the segment AC is a diameter, then the angle at B is a right angle (try dragging the point at B).
+Thales' Theorem: If A, B and C are points on a circle with the segment AC as a diameter, then the angle at B is a right angle (try dragging the point at B).
+

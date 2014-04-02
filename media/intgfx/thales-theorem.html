@@ -3,52 +3,98 @@
 <header>
   <title>Thales' Theorem</title>
   <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.0/normalize.min.css">
-</header>
-<body id="container">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
-  <script src="http://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.2/raphael-min.js"></script>
-  <script>
-    function render(paper, width, height) {
-      var border = Math.min(width/20, height/20, 20);
-      var radius = Math.min(width/2 - border, height - 2*border);
-      var stroke_width = Math.max(Math.min(radius/50, 10), 2);
-      var centerX = width/2, centerY = (height + radius)/2;
-
-      var arc = paper.path('M' + (centerX-radius) + ',' + centerY
-                           + ' A' + radius + ',' + radius + ' 0 0,1 ' + (centerX+radius) + ',' + centerY);
-      arc.attr({stroke: '#ddd', 'stroke-width': stroke_width/2});
-
-      var path = paper.path('M' + (centerX-radius) + ',' + centerY + ' L' + (centerX+radius) + ',' + centerY);
-      path.attr({stroke: '#000', 'stroke-width': stroke_width, 'stroke-linejoin': 'round'});
-      var knob = paper.circle(0, 0, stroke_width);
-      knob.attr({fill: '#000', 'fill-opacity': 0.1, 'stroke-width': 0});
-      knob.hover(function () { this.attr('fill-opacity', 0.5); },
-                 function () { this.attr('fill-opacity', 0.1); });
-
-      function set_triangle(pointerX, pointerY) {
-        var dx = pointerX - centerX, dy = pointerY - centerY;
-        var factor = radius/Math.sqrt(dx*dx + dy*dy);
-        var x = centerX + dx*factor, y = centerY + dy*factor;
-        path.attr('path', 'M' + (centerX-radius) + ',' + centerY
-                          + ' L' + (centerX+radius) + ',' + centerY
-                          + ' L' + x + ',' + y + ' Z');
-        knob.attr({cx: x, cy: y}).toFront();
-      }
-      
-      set_triangle(centerX-1, centerY-1);
-      knob.drag(function(dx, dy, x, y){
-        set_triangle(x, y);
-      });
+  <style>
+    text {
+      fill: #000;
+      stroke-width: 0;
     }
-    $(function () {
-      var width = $('body').width();
-      var height = $('body').height();
-      var paper = Raphael("container");
-      paper.setViewBox(0, 0, width, height, true);
-      paper.setSize('100%', '100%');
-      render(paper, width, height);
+    path.arc {
+      stroke: #ddd;
+      stroke-width: 0.01;
+      fill-opacity: 0;
+    }
+    #triangle {
+      stroke: #000;
+      stroke-width: 0.01;
+      stroke-linejoin: round;
+      fill-opacity: 0;
+    }
+    #knob {
+      stroke-width: 0;
+      fill: #000;
+      fill-opacity: 0.1;
+    }
+  </style>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/snap.svg/0.2.0/snap.svg-min.js"></script>
+  <script>
+    (function () {
+      var intgfx = {};
+      intgfx.init = function (id, renderer) {
+        $(function () {
+          var scale, offsetX, offsetY;
+          var viewBox = $.map(document.getElementById(id).getAttribute('viewBox').split(' '), parseFloat);
+          var bx = viewBox[0], by = viewBox[1], bw = viewBox[2], bh = viewBox[3];
+          function set_trans() {
+            var width = $('#' + id).width();
+            var height = $('#' + id).height();
+            var sx = bw/width;
+            var sy = bh/height;
+            if (sy >= sx) {
+              scale = sy;
+              offsetX = bx - sy*(width - height * (bw / bh))/2;
+              offsetY = by;
+            } else {
+              scale = sx;
+              offsetX = bx;
+              offsetY = by - sx*(height - width * (bh / bw))/2;
+            }
+          }
+          $(window).resize(set_trans);
+          set_trans();
+          renderer(Snap('#' + id), {
+            x: function (x, y) { return x*scale + offsetX; },
+            y: function (x, y) { return y*scale + offsetY; },
+          });
+        });
+      }
+      window.intgfx = intgfx;
+    })();
+  </script>
+  <script>
+    intgfx.init('container', function (s, trans) {
+      var path_data = [['M', -1, 1], ['L', 1, 1], ['L', 0, -1], ['Z']];
+      var path = s.select('#triangle');
+      var knob = s.select('#knob');
+      var labelB = s.select('#labelB');
+
+      function set_triangle(dx, dy) {
+        dy = Math.min(dy - 1, 0);
+        var factor = 1/Math.sqrt(dx*dx + dy*dy);
+        var x = dx*factor, y = 1 + dy*factor;
+        path_data[2][1] = x;
+        path_data[2][2] = y;
+        path.attr('path', path_data);
+        knob.attr({cx: x, cy: y});
+        labelB.attr({x: dx*factor*1.04, y: 1 + dy*factor*1.04});
+      }
+
+      knob.drag(function (dx, dy, x, y) {
+        set_triangle(trans.x(x, y), trans.y(x, y));
+      });
+      knob.hover(function () { this.attr('fill-opacity', 0.5); }, function () { this.attr('fill-opacity', 0.1); });
     });
   </script>
+</header>
+<body>
+  <svg id="container" viewbox="-1.1 -0.1 2.2 1.2" preserveAspectRatio="xMidYMid meet">
+    <path class="arc" d="M-1,1A1,1,0,0,1,1,1" />
+    <text x="-1.02" y="1.06" font-size="0.06" text-anchor="end">A</text>
+    <text x="1.02" y="1.06" font-size="0.06" text-anchor="start">C</text>
+    <text id="labelB" x="-0.832" y="0.376" font-size="0.06" text-anchor="middle">B</text>
+    <path id="triangle" d="M-1,1L1,1L-0.8,0.4Z" />
+    <circle id="knob" cx="-0.8" cy="0.4" r="0.015" />
+  </svg>
 </body>
 </html>
 
