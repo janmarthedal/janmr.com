@@ -7,14 +7,6 @@
     body {
       overflow: hidden;
     }
-    /*path, line, circle {
-      stroke: #ddd;
-      stroke-width: 0.01;
-      fill-opacity: 0;
-    }
-    #mainarc, #circ1, #circ2 {
-      stroke: #000;
-    }*/
     path, line {
       stroke: #ddd;
       stroke-width: 0.01;
@@ -24,8 +16,9 @@
       stroke: #000;
     }
     #circ1, #circ2 {
-      stroke-width: 0;
-      fill: #d04;
+      fill: #47a447;
+      stroke-width: 0.01;
+      stroke: #000;
     }
     #knob {
       stroke-width: 0;
@@ -109,13 +102,20 @@
         cy = Math.sqrt((1 + x)*(1 + x - 2*cx));
         circ2.attr({cx: cx, cy: 1-cy, r: cx-x});
       }
-
-      update(0.2);
-      knob.drag(function (dx, dy, x, y) {
+      function update_from_user(x, y) {
         update(trans.x(x, y), trans.y(x, y));
+      }
+
+      update(0.2, 0);
+      knob.drag(function (dx, dy, x, y) {
+        update_from_user(x, y);
       });
       vert.drag(function (dx, dy, x, y) {
-        update(trans.x(x, y), trans.y(x, y));
+        update_from_user(x, y);
+      });
+      $('#container').click(function (e) {
+        e.preventDefault();
+        update_from_user(e.clientX, e.clientY);
       });
     });
   </script>

@@ -1,6 +1,7 @@
 ---
 title: Archimedes' Twin Circles Illustrated
 layout: post
+excerpt: ! "The green circles will always be of equal size"
 ---
 <figure>
   <div class="h_iframe">
@@ -9,4 +10,4 @@ layout: post
   </div>
 </figure>
 
-The red circles will always be of equal size (try moving the vertical line by dragging the bottom knob).
+The green circles will always be of equal size (try clicking on the canvas or move the vertical line by dragging the bottom knob).
