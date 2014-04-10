@@ -3,14 +3,14 @@ module Jekyll
 
     def initialize(tag_name, source, tokens)
       super
-      @source = source
+      @source = source.strip.split('\\').join('\\\\').gsub("_", "\\_")
     end
 
     def render(context)
-      "\\\[#{@source}\\\]"
+      "\\\\\[#{@source}\\\\\]"
     end
   end
 end
 
-Liquid::Template.register_tag('display_math', Jekyll::DisplayMathTag)
+Liquid::Template.register_tag('dmath', Jekyll::DisplayMathTag)
 
