@@ -2,6 +2,8 @@
 layout: post
 title: Basic Multiple-Precision Long Division
 author: Jan Marthedal Rasmussen
+excerpt: ! "We consider the task of dividing a positive integer u by another positive integer v, thus obtaining a quotient q=u/v and a remainder r such that u = q v + r with 0 <= r < v.
+The method presented here is based on The Classical Algorithms, Section 4.3.1, of The Art of Computer Programming, Volume 2, by Donald E. Knuth. The material is quite theory-heavy and if you are just looking for the main algorithm, you can skip to the bottom and Algorithm L."
 categories:
 - programming
 tags:
@@ -13,7 +15,7 @@ tags:
 
 We consider the task of dividing a positive integer {% imath u %} by another positive integer {% imath v %}, thus obtaining a quotient {% imath q=\lfloor u/v \rfloor %} and a remainder {% imath r %} such that {% imath u = q v + r %} with {% imath 0 \leq r < v %}.
 
-The material presented here is based on *The Classical Algorithms*, Section&nbsp;4.3.1, of [The Art of Computer Programming](http://www-cs-faculty.stanford.edu/~uno/taocp.html), Volume&nbsp;2, by [Donald E. Knuth](http://www-cs-faculty.stanford.edu/~uno/).
+The method presented here is based on *The Classical Algorithms*, Section&nbsp;4.3.1, of [The Art of Computer Programming](http://www-cs-faculty.stanford.edu/~uno/taocp.html), Volume&nbsp;2, by [Donald E. Knuth](http://www-cs-faculty.stanford.edu/~uno/). The material is quite theory-heavy and if you are just looking for the main algorithm, you can skip to the bottom and [Algorithm&nbsp;L](#algorithm-L).
 
 We represent the numbers using radix {% imath b \geq 2 %} and set
 
@@ -24,11 +26,11 @@ so {% imath u %} is an {% imath m %}-digit number and {% imath v %} is an {% ima
 Two special cases are easily dealt with:
 
  * If {% imath m < n %} then {% imath u < v %} and so {% imath q = 0 %} and {% imath r = u %} is the simple answer.
- * If {% imath n = 1 %} then {% imath v %} is just a single digit and we use a [short division algorithm](/2012/11/basic-multiple-precision-short-division.html).
+ * If {% imath n = 1 %} then {% imath v %} is just a single digit and we use a [short division algorithm](/2012/11/basic-multiple-precision-short-division.html) instead.
 
-So in the following we assume that {% imath m \geq n \geq 2 %}.
+So in the following we assume that {% imath m \geq n > 1 %}.
 
-We will approach the division algorithm from top-level point of view. It is actually just a formalization of the well-known pencil-and-paper method:
+We will approach the division algorithm from a top-level point of view. It is actually just a formalization of the well-known pencil-and-paper method:
 
 **Algorithm G**. Given {% imath u = (u_{m-1} \ldots u_1 u_0)_b %}, {% imath u_{m-1} \neq 0 %} and {% imath v = (v_{n-1} \ldots v_1 v_0)_b %}, {% imath v_{n-1} \neq 0 %}, with {% imath m \geq n > 0 %}, this algorithm outlines how to compute the quotient {% imath q = (q_{m-n} \ldots q_1 q_0)_b = \lfloor u/v \rfloor %} (we may have {% imath q_{m-n} = 0 %} in which case {% imath q_{m-n-1} \neq 0 %} if {% imath m > n %}) and the remainder {% imath r %} such that {% imath u = q v + r %}, {% imath 0 \leq r &lt; v %}.
 
@@ -121,7 +123,7 @@ We now have the following procedure for computing {% imath \hat{q} %}, a very cl
 
 We can now combine Algorithm G with the just obtained knowledge of approximating the quotient in the following algorithm for long division:
 
-**Algorithm L**. Given {% imath u = (u_{m-1} \ldots u_1 u_0)_b %}, {% imath u_{m-1} \neq 0 %} and {% imath v = (v_{n-1} \ldots v_1 v_0)_b %}, {% imath v_{n-1} \neq 0 %}, with {% imath m \geq n > 1 %}, this algorithm computes the quotient {% imath q = (q_{m-n} \ldots q_1 q_0)_b = \lfloor u/v \rfloor %} (we may have {% imath q_{m-n} = 0 %} in which case {% imath q_{m-n-1} \neq 0 %} if {% imath m > n %}) and the remainder {% imath r %} such that {% imath u = q v + r %}, {% imath 0 \leq r < v %}.
+<span id="algorithm-L"></span>**Algorithm L**. Given {% imath u = (u_{m-1} \ldots u_1 u_0)_b %}, {% imath u_{m-1} \neq 0 %} and {% imath v = (v_{n-1} \ldots v_1 v_0)_b %}, {% imath v_{n-1} \neq 0 %}, with {% imath m \geq n > 1 %}, this algorithm computes the quotient {% imath q = (q_{m-n} \ldots q_1 q_0)_b = \lfloor u/v \rfloor %} (we may have {% imath q_{m-n} = 0 %} in which case {% imath q_{m-n-1} \neq 0 %} if {% imath m > n %}) and the remainder {% imath r %} such that {% imath u = q v + r %}, {% imath 0 \leq r < v %}.
 
  * **L1**. Set {% imath v \leftarrow d \cdot v %} such that {% imath v_{n-1} \geq \lfloor b/2 \rfloor %} (letting {% imath d %} be a power of two is usually the best choice). Similarly, set {% imath (u_m \ldots u_1 u_0)_b \leftarrow d \cdot u %} (ensure {% imath u %} gets {% imath n+1 %} digits, setting {% imath u_m=0 %} if necessary).
  * **L2**. Set {% imath k \leftarrow m - n %}.
