@@ -48,7 +48,7 @@ span.proof {
   display: block;
   border-left: 4px solid #888;
   padding-left: 0.5em;
-  margin: 0em 0em 1em 0.1em;
+  margin: 0.5em 0em 1em 0.1em;
 }
 
 span.proof:after {

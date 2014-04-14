@@ -68,7 +68,7 @@ This approximate quotient is never too small, as the following theorem states.
 
 **Theorem 1.** With {% imath \hat{q} %} as defined above we have {% imath q \leq \hat{q} %}.
 
-<span class="proof">*Proof.* If {% imath \hat{q}=b-1 %} then since {% imath q \leq b-1 %} by assumption, the statement is true.<br>Assume then that {% imath \hat{q} = \lfloor (u_n b + u_{n-1})/v_{n-1} \rfloor %}. From the properties of the [floor function](/2009/09/useful-properties-of-the-floor-and-ceil-functions.html) we have {% imath u_n b + u_{n-1} \leq \hat{q} v_{n-1} + v_{n-1} - 1 %} and therefore {% imath \hat{q} v_{n-1} \geq u_n b + u_{n-1} - v_{n-1} + 1 %}. We then get
+<button class="btn btn-default btn-xs toggler" data-target="prf1">*Proof*</button><span class="proof" id="prf1" style="display: none;">If {% imath \hat{q}=b-1 %} then since {% imath q \leq b-1 %} by assumption, the statement is true.<br>Assume then that {% imath \hat{q} = \lfloor (u_n b + u_{n-1})/v_{n-1} \rfloor %}. From the properties of the [floor function](/2009/09/useful-properties-of-the-floor-and-ceil-functions.html) we have {% imath u_n b + u_{n-1} \leq \hat{q} v_{n-1} + v_{n-1} - 1 %} and therefore {% imath \hat{q} v_{n-1} \geq u_n b + u_{n-1} - v_{n-1} + 1 %}. We then get
 {% dmath \begin{aligned} u - \hat{q} v &#038;\leq u - \hat{q} v_{n-1} b^{n-1} \\ &#038;\leq u_n b^n + \cdots + u_0 - (u_n b + u_{n-1} - v_{n-1} + 1) b^{n-1} \\ &#038;= u_{n-2} b^{n-2} + \cdots + u_0 - b^{n-1} + v_{n-1} b^{n-1} < v_{n-1} b^{n-1} \leq v. \end{aligned} %}
 So {% imath u - \hat{q} v < v %} and since {% imath 0 \leq u - q v < v %} we must have {% imath q \leq \hat{q} %}.</span>
 
@@ -76,7 +76,7 @@ If {% imath u %} and {% imath v %} are scaled appropriately, {% imath \hat{q} %}
 
 **Theorem 2.** With {% imath \hat{q} %} as defined above and {% imath v_{n-1} \geq \lfloor b/2 \rfloor %}, we have {% imath \hat{q} \leq q+2 %}.
 
-<span class="proof">*Proof.* Assume that {% imath \hat{q} \geq q+3 %}. We get
+<button class="btn btn-default btn-xs toggler" data-target="prf2">*Proof*</button><span class="proof" id="prf2" style="display: none;">Assume that {% imath \hat{q} \geq q+3 %}. We get
 {% dmath \hat{q} \leq \frac{u_n b u_{n-1}}{v_{n-1}} = \frac{u_n b^n u_{n-1} b^{n-1}}{v_{n-1} b^{n-1}} \leq \frac{u}{v_{n-1} b^{n-1}} < \frac{u}{v - b^{n-1}}, %}
 since {% imath v = v_{n-1} b^{n-1} + \cdots + v_0 \leq v_{n-1} b^{n-1} + b^{n-1} %}. We cannot have {% imath v = b^{n-1} %} since that would imply {% imath \hat{q} = q = u_n %}. The relation {% imath q = \lfloor u/v \rfloor %} implies {% imath q > u/v - 1 %}, from which we get
 {% dmath 3 \leq \hat{q} - q < \frac{u}{v - b^{n-1}} - \frac{u}{v} + 1 = \frac{u}{v} \left( \frac{b^{n-1}}{v - b^{n-1}} \right) + 1. %}
@@ -102,13 +102,13 @@ By studying the sign of the second order residual we can now get closer to the t
 
 **Theorem 3.** Let {% imath \hat{q} %} be any approximate quotient and {% imath \hat{r} %} the corresponding first order residual. Now if {% imath \hat{q} v_{n-2} > b \hat{r} + u_{n-2} %} then {% imath q < \hat{q} %}.
 
-<span class="proof">*Proof.* Assume {% imath \hat{q} v_{n-2} > b \hat{r} + u_{n-2} %}, equivalent to {% imath \hat{r} b + u_{n-2} - \hat{q} v_{n-2} + 1 \leq 0 %}. We then have
+<button class="btn btn-default btn-xs toggler" data-target="prf3">*Proof*</button><span class="proof" id="prf3" style="display: none;">Assume {% imath \hat{q} v_{n-2} > b \hat{r} + u_{n-2} %}, equivalent to {% imath \hat{r} b + u_{n-2} - \hat{q} v_{n-2} + 1 \leq 0 %}. We then have
 {% dmath \begin{aligned} u - \hat{q} v &#038;\leq u - \hat{q} v_{n-1} b^{n-1} - \hat{q} v_{n-2} b^{n-2} \\ &#038;=    b^{n-1} (u_n b + u_{n-1} - \hat{q} v_{n-1}) + u_{n-2} b^{n-2} + \cdots + u_0 - \hat{q} v_{n-2} b^{n-2} \\ &#038;<    b^{n-1} \hat{r} + u_{n-2} b^{n-2} + b^{n-2} - \hat{q} v_{n-2} b^{n-2} \\ &#038;=    b^{n-2} (\hat{r} b + u_{n-2} - \hat{q} v_{n-2} + 1) \leq 0. \end{aligned} %}
 So {% imath u - \hat{q} v < 0 \leq u - q v %} which implies {% imath q < \hat{q} %}.</span>
 
 **Theorem 4.** Let {% imath \hat{q} %} be any approximate quotient and {% imath \hat{r} %} the corresponding first order residual. Now if {% imath \hat{q} v_{n-2} \leq b \hat{r} + u_{n-2} %} then {% imath \hat{q} \leq q+1 %}.
 
-<span class="proof">*Proof.* Let {% imath \hat{q} v_{n-2} \leq b \hat{r} + u_{n-2} %} and assume {% imath \hat{q} \geq q+2 %}. Now since {% imath u - q v < v %} we get
+<button class="btn btn-default btn-xs toggler" data-target="prf4">*Proof*</button><span class="proof" id="prf4" style="display: none;">Let {% imath \hat{q} v_{n-2} \leq b \hat{r} + u_{n-2} %} and assume {% imath \hat{q} \geq q+2 %}. Now since {% imath u - q v < v %} we get
 {% dmath \begin{aligned} u &#038;< (q+1) v \leq (\hat{q}-1) v < \hat{q} (v_{n-1} b^{n-1} + v_{n-2} b^{n-2} + b^{n-2}) - v \\ &#038;< \hat{q} v_{n-1} b^{n-1} + \hat{q} v_{n-2} b^{n-2} + b^{n-1} - v \\ &#038;\leq \hat{q} v_{n-1} b^{n-1} + (b \hat{r} + u_{n-2}) b^{n-2} + b^{n-1} - v \\ &#038;= u_n b^n + u_{n-1} b^{n-1} + u_{n-2} b^{n-2} + b^{n-1} - v \\ &#038;\leq u_n b^n + u_{n-1} b^{n-1} + u_{n-2} b^{n-2} \leq u. \end{aligned} %}
 This claims that {% imath u < u %}, a contradiction, so our assumption {% imath \hat{q} \geq q+2 %} must have been wrong.</span>
 
@@ -119,7 +119,7 @@ We now have the following procedure for computing {% imath \hat{q} %}, a very cl
  * **Q1**. Set {% imath \hat{q} \leftarrow \lfloor (u_n b + u_{n-1})/v_{n-1} \rfloor %} and {% imath \hat{r} \leftarrow (u_n b + u_{n-1}) \hbox{ mod } v_{n-1} %}. If {% imath \hat{q} = b %} (division overflow when {% imath b=b_T %}) set {% imath \hat{q} \leftarrow \hat{q} - 1 %} and {% imath \hat{r} \leftarrow \hat{r} + v_{n-1} %} (dealing with division overflow can be avoided by setting {% imath \hat{q} \leftarrow b-1 %} and {% imath \hat{r} \leftarrow u_n + u_{n-1} %} if {% imath v_{n-1} = u_n %}).
  * **Q2**. While {% imath \hat{r} < b %} and {% imath \hat{q} v_{n-2} > b \hat{r} + u_{n-2} %}, set {% imath \hat{q} \leftarrow \hat{q} - 1 %} and {% imath \hat{r} \leftarrow \hat{r} + v_{n-1} %} (Theorem&nbsp;2 assures that this while-loop is executed at most two times if {% imath v_{n-1} \geq \lfloor b/2 \rfloor %}. The check {% imath \hat{r} < b %} is not necessary but makes sure that we don't deal with numbers that are {% imath b^2 %} or larger in the subsequent comparison).
 
-We can now combine Algorithm G of the Fundamentals section with the just obtained knowledge of approximating the quotient in the following algorithm for long division:
+We can now combine Algorithm G with the just obtained knowledge of approximating the quotient in the following algorithm for long division:
 
 **Algorithm L**. Given {% imath u = (u_{m-1} \ldots u_1 u_0)_b %}, {% imath u_{m-1} \neq 0 %} and {% imath v = (v_{n-1} \ldots v_1 v_0)_b %}, {% imath v_{n-1} \neq 0 %}, with {% imath m \geq n > 1 %}, this algorithm computes the quotient {% imath q = (q_{m-n} \ldots q_1 q_0)_b = \lfloor u/v \rfloor %} (we may have {% imath q_{m-n} = 0 %} in which case {% imath q_{m-n-1} \neq 0 %} if {% imath m > n %}) and the remainder {% imath r %} such that {% imath u = q v + r %}, {% imath 0 \leq r < v %}.
 
