@@ -4,8 +4,9 @@
   margin-right: auto;
 }
 
-img {
-  margin: 1em;
+figure > img {
+  margin: 1em auto;
+  display: block;
 }
 
 figure {
@@ -13,7 +14,7 @@ figure {
 }
 
 figcaption {
-  font-weight: bold;
+  margin: 0em 1em 1em;
 }
 
 .page-header a {

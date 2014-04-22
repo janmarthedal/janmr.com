@@ -140,7 +140,7 @@ u = q v + r \geq v + r > 2r,
 
 <figure>
   <img class="img-responsive" alt="Figure 1" src="/media/gcd_sputarith.png" title="GCD algorithms using SputArithmetic">
-  <figcaption>Figure 1. Average number of bits per input number along the 1. axis, and average milliseconds per gcd along the 2. axis.</figcaption>
+  <figcaption><strong>Figure 1.</strong> Average number of bits per input number along the 1. axis, and average milliseconds per gcd along the 2. axis.</figcaption>
 </figure>
 
 <p>The results are illustrated in Figure&nbsp;1, where only Euclid&#8217;s and the optimized Stein&#8217;s algorithm are depicted. The following comments regard the test algorithms not shown.</p>
@@ -156,7 +156,7 @@ u = q v + r \geq v + r > 2r,
 
 <figure>
   <img class="img-responsive" alt="Figure 2" src="/media/gcd_gmp.png" title="GCD algorithms using GMP">
-  <figcaption>Figure 2. Average number of bits per input number along the 1. axis, and average milliseconds per gcd along the 2. axis.</figcaption>
+  <figcaption><strong>Figure 2.</strong> Average number of bits per input number along the 1. axis, and average milliseconds per gcd along the 2. axis.</figcaption>
 </figure>
 
 <p>Although this article is by no means a SputArithmetic versus GMP face-off, a comparison can rightly be made. The exact same input data and equivalent algorithms were used. For Euclid&#8217;s algorithm, the GMP algorithm was consistently 4.5-5.0 times faster. The same was the case for Stein&#8217;s algorithm, although the running times approached each other as the bit size of the input numbers went down.</p>

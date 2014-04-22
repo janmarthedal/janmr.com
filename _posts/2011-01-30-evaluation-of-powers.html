@@ -103,7 +103,7 @@ multiplications (sequence <a href="http://oeis.org/A014701">A014701</a> at <a hr
 
 <figure>
   <img src="/media/power.png" class="img-responsive" alt="Evaluation of powers">
-  <figcaption>Figure 1. Number of multiplications used to evaluate the nth power.</figcaption>
+  <figcaption><strong>Figure 1.</strong> Number of multiplications used to evaluate the nth power.</figcaption>
 </figure>
 
 <p>Note also that we have only talked about minimizing the number of multiplications. What if a different cost is associated with each multiplication? For instance, the basic multiple-precision multiplication algorithm described in an <a href="/2009/07/implementing-multiple-precision-arithmetic-part-1.html">earlier post</a> has a cost propertional to \(m \times n\) if the factors have <span class="mthi">m</span> and <span class="mthi">n</span> digits, respectively. Using this cost model, the binary algorithm <em>is</em> actually optimal. This was shown by R. L. Graham, A. C.-C. Yao, and F.-F. Yao in <em>Addition chains with multiplicative cost</em>, Discrete Math., 23 (1978), 115-119 (article available <a href="http://www.math.ucsd.edu/~ronspubs/#78">online</a>).</p>
