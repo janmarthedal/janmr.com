@@ -23,10 +23,10 @@ integer grid by choosing the points that lie close to the true line. We also ass
 {% imath \Delta x > 0 %} and {% imath \Delta x \geq \Delta y \geq 0 %}. The method is easily
 extended to the general case with arbitrary starting and ending points.
 
-The line thus has the form
+The line has the form
 {% dmath y = f(x) = \frac{\Delta y}{\Delta x} x %}
-and we sample the line at the grid points {% imath (x_k, y_k) %} where {% imath x_k = k %} for
-{% imath k = 0, 1, \ldots, \Delta x %}.
+and we aim to sample the line at the grid points {% imath (x_k, y_k) %} with {% imath x_k = k %}
+for {% imath k = 0, 1, \ldots, \Delta x %} and {% imath y_0 = 0 %}.
 
 We now associate with each step an *error* term,
 {% dmath \nabla_k = 2\Delta x \left[f(x_k) - (y_{k-1} + \tfrac{1}{2})\right] = 2x_k\Delta y - (2y_{k-1} + 1) \Delta x \; . %}
@@ -58,9 +58,8 @@ To determine the {% imath \nabla_k %}'s we start with the base case:
 For {% imath k=1, 2, \ldots, \Delta x - 1 %} we get
 {% dmath \nabla_{k+1} - \nabla_k = 2(x_{k+1}-x_k)\Delta y - 2(y_k-y_{k-1})\Delta x \; . %} 
 We now split into the two cases for {% imath \nabla_k %} and get
-{% dmath \nabla_{k+1} = \begin{cases} \nabla_k + 2\Delta y & \mbox{for } \nabla_k \leq 0 ;\ , \\ \nabla_k + 2\Delta y - 2\Delta x & \mbox{for } \nabla_k > 0 \; , \end{cases} %}
+{% dmath \nabla_{k+1} = \begin{cases} \nabla_k + 2\Delta y & \mbox{for } \nabla_k \leq 0 \; , \\ \nabla_k + 2\Delta y - 2\Delta x & \mbox{for } \nabla_k > 0 \; , \end{cases} %}
 for {% imath k=1, 2, \ldots, \Delta x - 1 %}.
 
-These expressions for {% imath \nabla_k %}, together with the above cases on how to get
-{% imath y_k %} from {% imath y_{k-1} %}, determines the discrete points that approximates a given
-line.
+These expressions determine all the {% imath \nabla_k %}'s which, in turn, determines all the
+{% imath y_k %}'s.

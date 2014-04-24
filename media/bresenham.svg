@@ -130,11 +130,11 @@
      inkscape:current-layer="layer1"
      showgrid="false"
      inkscape:snap-global="false"
-     inkscape:window-width="1920"
-     inkscape:window-height="1176"
-     inkscape:window-x="1920"
-     inkscape:window-y="24"
-     inkscape:window-maximized="1"
+     inkscape:window-width="1494"
+     inkscape:window-height="913"
+     inkscape:window-x="2113"
+     inkscape:window-y="123"
+     inkscape:window-maximized="0"
      showguides="true"
      inkscape:guide-bbox="true"
      fit-margin-top="0"
@@ -268,7 +268,7 @@
          x="303.79688"
          y="269.45007">(x<tspan
    style="font-size:65.00091553%;baseline-shift:sub"
-   id="tspan4284">k-1</tspan>+1, y<tspan
+   id="tspan4284">k</tspan>, y<tspan
    style="font-size:65.00091553%;baseline-shift:sub"
    id="tspan4282">k-1</tspan>)</tspan></text>
     <text
@@ -283,7 +283,7 @@
          x="303.79688"
          y="169.45007">(x<tspan
    style="font-size:65.00091553%;baseline-shift:sub"
-   id="tspan4292">k-1</tspan>+1, y<tspan
+   id="tspan4292">k</tspan>, y<tspan
    style="font-size:65.00091553%;baseline-shift:sub"
    id="tspan4290">k-1</tspan>+1)</tspan></text>
     <path
