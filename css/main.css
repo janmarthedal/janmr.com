@@ -21,8 +21,12 @@ figcaption {
   color: #333;
 }
 
-div.post {
-  margin-bottom: 5em;
+div.post h2 {
+  margin-bottom: 1em;
+}
+
+div.post-body {
+  margin-bottom: 4em;
 }
 
 .h_iframe {

@@ -1,9 +1,14 @@
 ---
 layout: default
 ---
-<h2>{{ page.title }}<br><small>{{ page.date | date_to_long_string }}</small></h2>
-
 <div class="post">
+
+<h2>
+    {{ page.title }}<br>
+    <small><time datetime="{{ page.date | date: "%Y-%m-%d" }}">{{ page.date | date_to_long_string }}</time></small>
+</h2>
+
+<div class="post-body">
 {{ content }}
 </div>
 
@@ -19,3 +24,5 @@ layout: default
 </script>
 <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
 {% endif %}
+
+</div>
