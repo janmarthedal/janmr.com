@@ -2,7 +2,7 @@
 layout: post
 title: Structure of a Multiple-Precision Library in C++
 author: Jan Marthedal Rasmussen
-excerpt: ! ""
+excerpt: ! "This post will present an overview of the implementation of Kanooth Numbers, a portable multiple-precision library in C++."
 categories:
 - programming
 tags:
