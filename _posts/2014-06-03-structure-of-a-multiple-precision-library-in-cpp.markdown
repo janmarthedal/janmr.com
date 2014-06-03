@@ -11,7 +11,7 @@ tags:
 - multiple-precision
 
 ---
-This post will present an overview of my [Kanooth Numbers](https://github.com/janmarthedal/kanooth-numbers) library. The overall approach described here could easily be applicable to other multiple-precision libraries.
+This post will present an overview of the implementation of [Kanooth Numbers](https://github.com/janmarthedal/kanooth-numbers), a portable multiple-precision library in C++.
 
 ### Low-level Functions
 
@@ -31,7 +31,7 @@ Some of the most important low-level functions are:
  * `rshift`. Divide an <i>n</i>-digit number by a power of 2 (binary shift right).
  * `comp`. Compare two <i>n</i>-digit numbers.
 
-Many of these functions have further pre- and postconditions. A theoretical foundation behind most of these functions can be found among earlier posts:
+Many of these functions have several preconditions. A theoretical foundation behind most of these functions can be found among earlier posts:
 
  * [Multiple-Precision Addition](/2011/10/multiple-precision-addition.html)
  * [Multiple-Precision Subtraction](/2011/10/multiple-precision-subtraction.html)
@@ -56,7 +56,7 @@ Consider first an object representing non-negative integers (named `natural_numb
 
 It is a method's responsibility to handle memory management and to live up to the preconditions of the low-level functions, when used.
 
-Consider adding two numbers as an example. We wish to have a statement such as
+Consider adding two numbers. We wish to have a statement such as
 
 {% highlight cpp %}
 r.add(a, b);
@@ -91,13 +91,54 @@ void add_number(const natural_number_base& a, const natural_number_base& b) {
 }
 {% endhighlight %}
 
-The low-level `add` has the precondition that the first digit array must have at least as many digits as the second digit array. `set_digits_array` is another auxiliary method that makes sure that the most-significant digit is non-zero.
+The low-level `add` has the precondition that the first digit array must have at least as many digits as the second digit array. `set_digits_array` is another auxiliary method that makes sure that the most significant digit is non-zero.
 
 All other `natural_number` methods are constructed similarly: Making sure that enough destination digits are available and that the preconditions of any low-level functions are satisfied.
 
 #### Integer
 
+The `integer` data type is simply implemented as a natural number with a sign. All operations are implemented using natural number operations, keeping track of the correct sign.
+
+Consider addition as an example:
+
+{% highlight cpp %}
+void add(const integer_base& a, const integer_base& b) {
+  if (a.positive == b.positive) {
+    positive = a.positive;
+    number.add(a.number, b.number);
+  } else if (a.number.compare(b.number) >= 0) {
+    positive = a.positive;
+    number.subtract(a.number, b.number);
+  } else {
+    positive = b.positive;
+    number.subtract(b.number, a.number);
+  }
+}
+{% endhighlight %}
+
+Notice how signed addition is transformed into unsigned addition or subtraction, and how it is ensured that the first operand to `subtract` is not smaller than the second operand.
+
 ### Operator Overloading
 
-Since Boost 1.53, [Boost Multiprecision](http://www.boost.org/doc/libs/release/libs/multiprecision/)
+Using the number objects `natural_number` and `integer` together with their methods is sufficient to do multiple-precision arithmetic. But C++ has operator overloading and some would prefer to write
 
+{% highlight cpp %}
+r = 12*a + b;
+{% endhighlight %}
+
+instead of
+
+{% highlight cpp %}
+t.multiply(a, 12);
+r.add(t, b);
+{% endhighlight %}
+
+A naive implementation would evaluate the right-hand side followed by an assignment:
+
+{% highlight cpp %}
+t1.multiply(a, 12);
+t2.add(t1, b);
+r = t2;
+{% endhighlight %}
+
+which is not optimal. A better approach is to build a data structure of the right-hand side operations and not "translating" into actual function calls until its value was needed (here, when the actual assignment occurs). C++ is able to do all this at compile time. This functionality is currently not a part of the Kanooth Numbers library, but the [Boost Multiprecision](http://www.boost.org/doc/libs/release/libs/multiprecision/) libray does it very well. The Boost Multiprecision library also enables custom backends and both `natural_number` and `integer` has been wrapped in Boost Multiprecision backends, producing the data types `boost_natnum` and `boost_integer`, respectively.
