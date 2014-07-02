@@ -7,7 +7,7 @@ module Jekyll
     end
 
     def render(context)
-      "\\\\\[#{@source}\\\\\]"
+      "<math-tex mode=\"display\">#{@source}</math-tex>"
     end
   end
 end
