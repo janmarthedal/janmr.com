@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
     <link rel="stylesheet" href="/css/main.css">
     <link rel="stylesheet" href="/css/syntax.css">
-    <script src="//cdnjs.cloudflare.com/ajax/libs/polymer/0.3.3/platform.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/polymer/0.3.4/platform.js"></script>
     <link rel="import" href="/elements/google-analytics.html">
     {% if page.posttype == "wp" %}<style>
       .mthi { font-style: italic; }
@@ -33,9 +33,15 @@
     <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML"></script>
     {% else %}
     <link rel="import" href="/elements/math-tex.html">
-    <math-tex-setup></math-tex-setup>
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        TeX: {
+          extensions: ["AMSmath.js", "AMSsymbols.js", "noErrors.js", "noUndefined.js"]
+        }
+      });
+    </script>
     {% endif %}
-    <google-analytics domain="janmr.com" code="UA-46471633-2"></google-analytics>
+    <google-analytics domain="auto" code="UA-46471633-2"></google-analytics>
   </head>
   <body>
     <div id="wrapper">
