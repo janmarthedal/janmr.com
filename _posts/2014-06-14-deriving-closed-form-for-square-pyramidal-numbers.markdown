@@ -22,7 +22,7 @@ tags:
 ---
 The sum of the first *n* squares is
 
-{% dmath s_n = \sum_{k=1}^n k^2 = \tfrac{1}{6} n (n+1) (2n+1) \quad . %}
+{% dmath s_n = \sum_{k=1}^n k^2 = \textstyle\frac{1}{6} n (n+1) (2n+1) \quad . %}
 
 The numbers {% imath s_0, s_1, s_2, \ldots %} are called the [square pyramidal numbers](http://oeis.org/A000330).
 

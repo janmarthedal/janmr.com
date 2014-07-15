@@ -34,7 +34,7 @@ and we aim to sample the line at the grid points {% imath (x_k, y_k) %} with {% 
 for {% imath k = 0, 1, \ldots, \Delta x %} and {% imath y_0 = 0 %}.
 
 We now associate with each step an *error* term,
-{% dmath \nabla_k = 2\Delta x \left[f(x_k) - (y_{k-1} + \tfrac{1}{2})\right] = 2x_k\Delta y - (2y_{k-1} + 1) \Delta x \; . %}
+{% dmath \nabla_k = 2\Delta x \left[f(x_k) - (y_{k-1} + \textstyle\frac{1}{2})\right] = 2x_k\Delta y - (2y_{k-1} + 1) \Delta x \; . %}
 
 The interpretation of this error term is important: It expresses the difference at
 {% imath x = x_k %} between the line's true {% imath y %}-coordinate, {% imath f(x_k) %}, and the
