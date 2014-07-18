@@ -32,9 +32,16 @@
     </script>
     <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML"></script>
     {% else %}
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+            showProcessingMessages: false,
+            showMathMenu: false,
+            showMathMenuMSIE: false
+        });
+    </script>
     <link rel="import" href="/elements/math-tex.html">
     {% endif %}
-    <google-analytics domain="auto" code="UA-46471633-2"></google-analytics>
+    <google-analytics code="UA-46471633-2"></google-analytics>
   </head>
   <body>
     <div id="wrapper">
