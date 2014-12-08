@@ -30,8 +30,7 @@ extended to the general case with arbitrary starting and ending points.
 
 The line has the form
 {% dmath y = f(x) = \frac{\Delta y}{\Delta x} x %}
-and we aim to sample the line at the grid points {% imath (x_k, y_k) %} with {% imath x_k = k %}
-for {% imath k = 0, 1, \ldots, \Delta x %} and {% imath y_0 = 0 %}.
+and we aim to sample the line at the grid points {% imath (x_k, y_k) %} with {% imath x_k = k %} for {% imath k = 0, 1, \ldots, \Delta x %} and {% imath y_0 = 0 %}.
 
 We now associate with each step an *error* term,
 {% dmath \nabla_k = 2\Delta x \left[f(x_k) - (y_{k-1} + \textstyle\frac{1}{2})\right] = 2x_k\Delta y - (2y_{k-1} + 1) \Delta x \; . %}
@@ -46,8 +45,7 @@ quantities integral. The sign of {% imath \nabla_k %} is thus crucial:
  * If {% imath \nabla_k > 0 %} then {% imath y_k = y_{k-1}+1 %} should be chosen.
 
 Note how the magnitude of {% imath \nabla_k %} also tells exactly how far from the true line the
-chosen grid point is. It is straightforward to show that
-{% imath -2\Delta x < \nabla_k \leq 2\Delta x %} for {% imath k = 1, 2, \ldots, \Delta x %}.
+chosen grid point is. It is straightforward to show that {% imath -2\Delta x < \nabla_k \leq 2\Delta x %} for {% imath k = 1, 2, \ldots, \Delta x %}.
 
 <figure>
   <img src="/media/bresenham.svg">
@@ -66,5 +64,4 @@ We now split into the two cases for {% imath \nabla_k %} and get
 {% dmath \nabla_{k+1} = \begin{cases} \nabla_k + 2\Delta y & \mbox{for } \nabla_k \leq 0 \; , \\ \nabla_k + 2\Delta y - 2\Delta x & \mbox{for } \nabla_k > 0 \; , \end{cases} %}
 for {% imath k=1, 2, \ldots, \Delta x - 1 %}.
 
-These expressions determine all the {% imath \nabla_k %}'s which, in turn, determines all the
-{% imath y_k %}'s.
+These expressions determine all the {% imath \nabla_k %}'s which, in turn, determines all the {% imath y_k %}'s.

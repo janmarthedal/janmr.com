@@ -60,3 +60,9 @@ span.proof:after {
   content: "\00a0\00a0\00a0\00a0\220E";
 }
 
+.katex-block > .katex > .katex-inner {
+  display: block;
+  text-align: center;
+}
+
+

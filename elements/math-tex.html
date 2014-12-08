@@ -18,21 +18,13 @@
         state = states.ready;
         queue.forEach(requestTypeset);
         queue = [];
-        /*if (!queue.length) return;
-        console.log('queue size', queue.length);
-        setTimeout(function () {
-            var entry = queue.shift();
-            MathJax.Hub.Queue([entry[0], MathJax.Hub, entry[1], readyCallback]);
-        }, 0);*/
     }
 
     function pushAction(action, elem) {
         var entry = [action, elem];
         if (state === states.ready) {
-            console.log('request typeset');
             requestTypeset(entry);
         } else if (state !== states.error) {
-            console.log('pushed entry');
             queue.push(entry);
         }
     }

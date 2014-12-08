@@ -3,12 +3,14 @@ module Jekyll
 
     def initialize(tag_name, source, tokens)
       super
-      @source = source.strip.split('\\').join('\\\\').gsub("_", "\\_")
+      source = source.strip.split('\\').join('\\\\')
+      @source = `cd _plugins; node tex2html.js "#{source}"`
     end
 
     def render(context)
-      "<math-tex>#{@source}</math-tex>"
+      @source.strip!
     end
+
   end
 end
 
