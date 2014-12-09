@@ -70,23 +70,35 @@ This approximate quotient is never too small, as the following theorem states.
 
 **Theorem 1.** With {% imath \hat{q} %} as defined above we have {% imath q \leq \hat{q} %}.
 
-<button class="btn btn-default btn-xs" onclick="togglevis('prf1');">*Proof*</button><span class="proof" id="prf1" style="display: none;">If {% imath \hat{q}=b-1 %} then since {% imath q \leq b-1 %} by assumption, the statement is true.<br>Assume then that {% imath \hat{q} = \lfloor (u_n b + u_{n-1})/v_{n-1} \rfloor %}. From the properties of the [floor function](/2009/09/useful-properties-of-the-floor-and-ceil-functions.html) we have {% imath u_n b + u_{n-1} \leq \hat{q} v_{n-1} + v_{n-1} - 1 %} and therefore {% imath \hat{q} v_{n-1} \geq u_n b + u_{n-1} - v_{n-1} + 1 %}. We then get
+*Proof*. If {% imath \hat{q}=b-1 %} then since {% imath q \leq b-1 %} by assumption, the statement is true.
+
+Assume then that {% imath \hat{q} = \lfloor (u_n b + u_{n-1})/v_{n-1} \rfloor %}. From the properties of the [floor function](/2009/09/useful-properties-of-the-floor-and-ceil-functions.html) we have {% imath u_n b + u_{n-1} \leq \hat{q} v_{n-1} + v_{n-1} - 1 %} and therefore {% imath \hat{q} v_{n-1} \geq u_n b + u_{n-1} - v_{n-1} + 1 %}. We then get
+
 {% dmath \begin{aligned} u - \hat{q} v &#038;\leq u - \hat{q} v_{n-1} b^{n-1} \\ &#038;\leq u_n b^n + \cdots + u_0 - (u_n b + u_{n-1} - v_{n-1} + 1) b^{n-1} \\ &#038;= u_{n-2} b^{n-2} + \cdots + u_0 - b^{n-1} + v_{n-1} b^{n-1} < v_{n-1} b^{n-1} \leq v. \end{aligned} %}
-So {% imath u - \hat{q} v < v %} and since {% imath 0 \leq u - q v < v %} we must have {% imath q \leq \hat{q} %}.</span>
+
+So {% imath u - \hat{q} v < v %} and since {% imath 0 \leq u - q v < v %} we must have {% imath q \leq \hat{q} %}.<span class="qed"></span>
 
 If {% imath u %} and {% imath v %} are scaled appropriately, {% imath \hat{q} %} will never be too large, either.
 
 **Theorem 2.** With {% imath \hat{q} %} as defined above and {% imath v_{n-1} \geq \lfloor b/2 \rfloor %}, we have {% imath \hat{q} \leq q+2 %}.
 
-<button class="btn btn-default btn-xs" onclick="togglevis('prf2');">*Proof*</button><span class="proof" id="prf2" style="display: none;">Assume that {% imath \hat{q} \geq q+3 %}. We get
+*Proof*. Assume that {% imath \hat{q} \geq q+3 %}. We get
+
 {% dmath \hat{q} \leq \frac{u_n b u_{n-1}}{v_{n-1}} = \frac{u_n b^n u_{n-1} b^{n-1}}{v_{n-1} b^{n-1}} \leq \frac{u}{v_{n-1} b^{n-1}} < \frac{u}{v - b^{n-1}}, %}
+
 since {% imath v = v_{n-1} b^{n-1} + \cdots + v_0 \leq v_{n-1} b^{n-1} + b^{n-1} %}. We cannot have {% imath v = b^{n-1} %} since that would imply {% imath \hat{q} = q = u_n %}. The relation {% imath q = \lfloor u/v \rfloor %} implies {% imath q > u/v - 1 %}, from which we get
+
 {% dmath 3 \leq \hat{q} - q < \frac{u}{v - b^{n-1}} - \frac{u}{v} + 1 = \frac{u}{v} \left( \frac{b^{n-1}}{v - b^{n-1}} \right) + 1. %}
+
 We then have
+
 {% dmath \frac{u}{v} \geq 2 \left( \frac{v - b^{n-1}}{b^{n-1}} \right) \geq 2(v_{n-1} - 1), %}
+
 and finally
+
 {% dmath b-4 \geq \hat{q}-3 \geq q = \lfloor u/v \rfloor \geq 2(v_{n-1}-1), %}
-which implies {% imath v_{n-1} < \lfloor b/2 \rfloor %}.</span>
+
+which implies {% imath v_{n-1} < \lfloor b/2 \rfloor %}.<span class="qed"></span>
 
 We would expect to come even closer if we consider the 'second order' approximate quotient,
 
@@ -104,15 +116,19 @@ By studying the sign of the second order residual we can now get closer to the t
 
 **Theorem 3.** Let {% imath \hat{q} %} be any approximate quotient and {% imath \hat{r} %} the corresponding first order residual. Now if {% imath \hat{q} v_{n-2} > b \hat{r} + u_{n-2} %} then {% imath q < \hat{q} %}.
 
-<button class="btn btn-default btn-xs" onclick="togglevis('prf3');">*Proof*</button><span class="proof" id="prf3" style="display: none;">Assume {% imath \hat{q} v_{n-2} > b \hat{r} + u_{n-2} %}, equivalent to {% imath \hat{r} b + u_{n-2} - \hat{q} v_{n-2} + 1 \leq 0 %}. We then have
+*Proof*. Assume {% imath \hat{q} v_{n-2} > b \hat{r} + u_{n-2} %}, equivalent to {% imath \hat{r} b + u_{n-2} - \hat{q} v_{n-2} + 1 \leq 0 %}. We then have
+
 {% dmath \begin{aligned} u - \hat{q} v &#038;\leq u - \hat{q} v_{n-1} b^{n-1} - \hat{q} v_{n-2} b^{n-2} \\ &#038;=    b^{n-1} (u_n b + u_{n-1} - \hat{q} v_{n-1}) + u_{n-2} b^{n-2} + \cdots + u_0 - \hat{q} v_{n-2} b^{n-2} \\ &#038;<    b^{n-1} \hat{r} + u_{n-2} b^{n-2} + b^{n-2} - \hat{q} v_{n-2} b^{n-2} \\ &#038;=    b^{n-2} (\hat{r} b + u_{n-2} - \hat{q} v_{n-2} + 1) \leq 0. \end{aligned} %}
-So {% imath u - \hat{q} v < 0 \leq u - q v %} which implies {% imath q < \hat{q} %}.</span>
+
+So {% imath u - \hat{q} v < 0 \leq u - q v %} which implies {% imath q < \hat{q} %}.<span class="qed"></span>
 
 **Theorem 4.** Let {% imath \hat{q} %} be any approximate quotient and {% imath \hat{r} %} the corresponding first order residual. Now if {% imath \hat{q} v_{n-2} \leq b \hat{r} + u_{n-2} %} then {% imath \hat{q} \leq q+1 %}.
 
-<button class="btn btn-default btn-xs" onclick="togglevis('prf4');">*Proof*</button><span class="proof" id="prf4" style="display: none;">Let {% imath \hat{q} v_{n-2} \leq b \hat{r} + u_{n-2} %} and assume {% imath \hat{q} \geq q+2 %}. Now since {% imath u - q v < v %} we get
+*Proof*. Let {% imath \hat{q} v_{n-2} \leq b \hat{r} + u_{n-2} %} and assume {% imath \hat{q} \geq q+2 %}. Now since {% imath u - q v < v %} we get
+
 {% dmath \begin{aligned} u &#038;< (q+1) v \leq (\hat{q}-1) v < \hat{q} (v_{n-1} b^{n-1} + v_{n-2} b^{n-2} + b^{n-2}) - v \\ &#038;< \hat{q} v_{n-1} b^{n-1} + \hat{q} v_{n-2} b^{n-2} + b^{n-1} - v \\ &#038;\leq \hat{q} v_{n-1} b^{n-1} + (b \hat{r} + u_{n-2}) b^{n-2} + b^{n-1} - v \\ &#038;= u_n b^n + u_{n-1} b^{n-1} + u_{n-2} b^{n-2} + b^{n-1} - v \\ &#038;\leq u_n b^n + u_{n-1} b^{n-1} + u_{n-2} b^{n-2} \leq u. \end{aligned} %}
-This claims that {% imath u < u %}, a contradiction, so our assumption {% imath \hat{q} \geq q+2 %} must have been wrong.</span>
+
+This claims that {% imath u < u %}, a contradiction, so our assumption {% imath \hat{q} \geq q+2 %} must have been wrong.<span class="qed"></span>
 
 We now have the following procedure for computing {% imath \hat{q} %}, a very close estimate to {% imath q %}:
 

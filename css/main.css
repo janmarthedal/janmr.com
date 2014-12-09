@@ -49,20 +49,15 @@ div.post-body {
   overflow: hidden;
 }
 
-span.proof {
+.proof {
   display: block;
   border-left: 4px solid #888;
   padding-left: 0.5em;
   margin: 0.5em 0em 1em 0.1em;
 }
 
-span.proof:after {
-  content: "\00a0\00a0\00a0\00a0\220E";
-}
-
 .katex-block > .katex > .katex-inner {
   display: block;
   text-align: center;
 }
-
 

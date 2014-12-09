@@ -9,7 +9,6 @@ module Jekyll
 
     def render(context)
       @source.strip!
-      "\n\n#{@source}\n\n"
     end
 
   end
