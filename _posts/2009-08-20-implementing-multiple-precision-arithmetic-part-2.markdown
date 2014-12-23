@@ -1,0 +1,186 @@
+---
+layout: post
+title: Implementing Multiple-Precision Arithmetic, Part 2
+author: Jan Marthedal Rasmussen
+excerpt: ! "This article is a follow-up
+  to part 1 where multiple-precision addition, subtraction, and multiplication for
+  non-negative integers was discussed. This article deals with division. Again, the
+  theoretic foundation is based on Section&nbsp;4.3.1, *The Classical Algorithms*,
+  of The Art of Computer Programming, Volume&nbsp;2, by Donald E. Knuth."
+date: 2009-08-20 10:31:30.000000000 +02:00
+categories:
+- programming
+tags:
+- arithmetic
+- algorithms
+- C++
+- multiple-precision
+- numbers project
+---
+### Introduction
+
+<div style="float:right"><a href="{% amazon taocp2 %}"><img src="{% bookcover taocp2 %}" /></a></div>
+This article is a follow-up to [part 1](/2009/07/implementing-multiple-precision-arithmetic-part-1.html) where multiple-precision addition, subtraction, and multiplication for non-negative integers was discussed. This article deals with division. Again, the theoretic foundation is based on Section&nbsp;4.3.1, *The Classical Algorithms*, of [The Art of Computer Programming](http://www-cs-faculty.stanford.edu/~uno/taocp.html), Volume&nbsp;2, by [Donald E. Knuth](http://www-cs-faculty.stanford.edu/~uno/).<span></span>
+
+### Fundamentals
+
+With {% imath u = (u_{m-1} \ldots u_1 u_0)_b %} and {% imath v = (v_{n-1} \ldots v_1 v_0)_b %} we wish to compute the integer quotient {% imath q = \lfloor u/v \rfloor %}. As a bonus, our algorithm will also produce the remainder {% imath r %} such that {% imath u = q v + r %} with {% imath 0 \leq r < v %}. We will assume that {% imath v \neq 0 %} (otherwise the result is undefined) and that {% imath u \geq v %} (otherwise the result is trivially {% imath q=0 %} and {% imath r=u %}). Since {% imath b^{m-1} \leq u < b^m %} and {% imath b^{n-1} \leq v < b^n %} we have {% imath b^{m-n-1} < q < b^{m-n+1} %}, so {% imath q %} can be represented using {% imath m-n %} or {% imath m-n+1 %} digits: {% imath q = (q_{m-n} \ldots q_1 q_0)_b %} where {% imath q_{m-n} %} may be zero, but in which case {% imath q_{m-n-1} \neq 0 %} (if {% imath m > n %}).
+
+We will now consider (long) division from a top-level point of view. It is actually just a formalization of the well-known pencil-and-paper method:
+
+**Algorithm G**. Given {% imath u = (u_{m-1} \ldots u_1 u_0)_b %}, {% imath u_{m-1} \neq 0 %} and {% imath v = (v_{n-1} \ldots v_1 v_0)_b %}, {% imath v_{n-1} \neq 0 %}, with {% imath m \geq n > 0 %}, this algorithm outlines how to compute the quotient {% imath q = (q_{m-n} \ldots q_1 q_0)_b = \lfloor u/v \rfloor %} (we may have {% imath q_{m-n} = 0 %} in which case {% imath q_{m-n-1} \neq 0 %} if {% imath m > n %}) and the remainder {% imath r %} such that {% imath u = q v + r %}, {% imath 0 \leq r < v %}.
+
+*   **G1**. {% imath u^{(m-n+1)} \leftarrow (0 u_{m-1} \ldots u_1 u_0)_b %}.
+*   **G2**. {% imath k \leftarrow m-n %}.
+*   **G3**. {% imath q_k \leftarrow \left\lfloor (u^{(k+1)}_{k+n} \ldots u^{(k+1)}_{k+1} u^{(k+1)}_k)_b / v \right\rfloor %}.
+*   **G4**. Set {% imath u^{(k)} \leftarrow u^{(k+1)} - q_k b^k v %} or, equivalently,
+
+    {% dmath \begin{aligned} (u^{(k)}_{k+n} \ldots u^{(k)}_{k+1} u^{(k)}_k)_b &\leftarrow (u^{(k+1)}_{k+n} \ldots u^{(k+1)}_{k+1} u^{(k+1)}_k)_b - q_k v, \\ (u^{(k)}_{k-1} \ldots u^{(k)}_1 u^{(k)}_0)_b &\leftarrow (u^{(k+1)}_{k-1} \ldots u^{(k+1)}_1 u^{(k+1)}_0)_b. \end{aligned} %}
+
+*   **G5**. If {% imath k=0 %} then set {% imath r \leftarrow u^{(0)} %} and exit. Otherwise set {% imath k \leftarrow k-1 %} and go to step&nbsp;**G3**.
+
+An essential invariant of this algorithm is
+
+{% dmath (u^{(k)}_{k+n-1} \ldots u^{(k)}_{k+1} u^{(k)}_k)_b < v \quad \hbox{for} \quad k=0, 1, \ldots, m-n+1. %}
+
+This can be seen as follows. For {% imath k=m-n+1 %} the invariant is ensured by introducing a zero as the most significant digit of {% imath u^{(m-n+1)} %} in step&nbsp;**G1**. For {% imath k=0,1,\ldots,m-n %} we see from steps&nbsp;**G3** and&nbsp;**G4** that {% imath (u^{(k)}_{k+n} \ldots u^{(k)}_{k+1} u^{(k)}_k)_b = (u^{(k+1)}_{k+n} \ldots u^{(k+1)}_{k+1} u^{(k+1)}_k)_b \hbox{ mod } v %} and the inequality follows.
+
+Note that the invariant implies that {% imath u^{(k)}_{k+n}=0 %} for {% imath k=0, 1, \ldots, m-n %}. Furthermore we have that
+
+{% dmath (u^{(k+1)}_{k+n} \ldots u^{(k+1)}_{k+1} u^{(k+1)}_k)_b = (u^{(k+1)}_{k+n} \ldots u^{(k+1)}_{k+1})_b \cdot b + u^{(k+1)}_k \leq (v-1) b + (b-1) = v b - 1 %}
+
+from which we see that the quotients {% imath q_k %} computed in step&nbsp;**G3** are non-negative and smaller than {% imath b %}, as they should be.
+
+Finally, we can verify that the algorithm computes what we intended. We have
+
+{% dmath \begin{aligned} r &= u^{(0)} = u^{(1)} - q_0 b^0 v = u^{(2)} - q_1 b^1 v - q_0 b^0 v = \ldots \\ &= u^{(m-n+1)} - (q_{m-n} b^{m-n} + \cdots + q_0 b^0) v = u - q v. \end{aligned} %}
+
+Now for some practical aspects. Note first that all of the {% imath u^{(k)} %} variables can in fact be represented by a single variable and simply overwrite its digits along the way&mdash;thus ending up with the remainder. Note also that any of the remainder's digits may be zero.
+
+Finally, how do we compute the quotient in step&nbsp;**G3**? That is in fact the central part of the division algorithm and is the subject of the rest of this article.
+
+### Simple Division
+
+Let us first consider computing the quotient of step&nbsp;**G3** in the special case {% imath n=1 %}. So let us assume that {% imath u < b^2 %}, {% imath 0 < v < b %} and {% imath \lfloor u/v \rfloor < b %}. As in [part 1](/2009/07/implementing-multiple-precision-arithmetic-part-1.html) we wish to use {% imath b = b_T %} for some intrinsic integer (C++) type `T`, and just as most CPUs have built-in instructions for the most basic addition, subtraction, and multiplication operations, this is also the case for division. More specifically, obtaining the quotient {% imath q %} and remainder {% imath r %} such that {% imath u = q v + r %}, where {% imath 0 \leq q < b %}, {% imath 0 \leq r < v %}, is a quite common instruction. And that instruction is exactly what we need in steps&nbsp;**G3** and&nbsp;**G4** above.
+
+However, it is not possible to access such an instruction directly through standard C++. As we did for multiplication, we therefore split {% imath u %} and {% imath v %} into smaller parts and do the operation at this smaller scale. So let us assume a number {% imath h %} exists such that {% imath h^2 = b %}. We now set {% imath u = (u'_3 u'_2 u'_1 u'_0)_h %} and {% imath v = (v'_1 v'_0)_h %} and use the algorithms of this article on this representation. A 'simple division' is now of the type {% imath (u'_3 h + u'_2)/v'_1 %} and we can do that directly in C++.
+
+We will not go further into the implementation of 'double-precision division', but an example implementation is the function `double_div` of [`lowlevel_generic.hpp`](http://sourceforge.net/p/sputsoftnumbers/code/HEAD/tree/tags/0.1/src/detail/lowlevel_generic.hpp). You can also see the specialization of this routine for [x86](http://en.wikipedia.org/wiki/X86) processors with [GCC](http://gcc.gnu.org/) compilers in the file [`lowlevel_gcc_x86.hpp`](http://sourceforge.net/p/sputsoftnumbers/code/HEAD/tree/tags/0.1/src/detail/lowlevel_gcc_x86.hpp).
+
+For {% imath n=1 %} Algorithm G of the previous section can be greatly simplified if we are interested in just the quotient {% imath q=(q_{n-1} \ldots q_1 q_0)_b %} and the remainder {% imath 0 \leq r < v %}:
+
+**Algorithm S**. Given {% imath u = (u_{m-1} \ldots u_1 u_0)_b %} and {% imath 0 < v < b %} with {% imath m \geq 1 %} and {% imath u_{m-1} \neq 0 %}, this algorithm computes the quotient {% imath q = (q_{m-1} \ldots q_1 q_0)_b = \lfloor u/v \rfloor %} (we may have {% imath q_{m-1} = 0 %} in which case {% imath q_{m-2} \neq 0 %} if {% imath m > 1 %}) and the remainder {% imath r %} such that {% imath u = q v + r %}, {% imath 0 \leq r < v %}.
+
+*   **S1**. Set {% imath r \leftarrow 0 %}, {% imath k \leftarrow m-1 %}.
+*   **S2**. Set {% imath q_k \leftarrow \lfloor (r b + u_k)/v \rfloor %}, {% imath r \leftarrow (r b + u_k) \hbox{ mod } v %}.
+*   **S3**. If {% imath k=0 %} then exit. Otherwise set {% imath k \leftarrow k-1 %} and go to step&nbsp;**S2**.
+
+### Long Division
+
+Let us now consider computing the quotient in step&nbsp;**G3** in the case {% imath n > 1 %}. We therefore assume {% imath u = (u_n \ldots u_1 u_0)_b %}, {% imath u < b^{n+1} %}, and {% imath v = (v_{n-1} \ldots v_1 v_0)_b %}, {% imath b^{n-1} \leq v < b^n %}, with {% imath n \geq 2 %} and {% imath 0 \leq \lfloor u/v \rfloor < b %}.
+
+We wish to compute {% imath q = \lfloor u/v \rfloor %} as fast as possible. How good is a 'first order' approximation, where we use just the two most-significant digits of {% imath u %} and the most-significant digit of {% imath v %}: {% imath (u_n b + u_{n-1})/v_{n-1} %}? First of all, if {% imath u_n = v_{n-1} %} this quantity equals {% imath b %} and we know that {% imath q \leq b-1 %} by assumption, so let us therefore study
+
+{% dmath \hat{q} = \hbox{min} \left( \left\lfloor \frac{u_n b + u_{n-1}}{v_{n-1}} \right\rfloor, b-1 \right) %}
+
+This approximate quotient is never too small, as the following theorem states.
+
+**Theorem 1.** With {% imath \hat{q} %} as defined above we have {% imath q \leq \hat{q} %}.
+
+<button class="btn btn-default btn-xs" onclick="togglevis('prf1');">*Proof*</button>
+<div class="proof" id="prf1" style="display: none;">
+If {% imath \hat{q}=b-1 %} then since {% imath q \leq b-1 %} by assumption, the statement is true. Assume then that {% imath \hat{q} = \lfloor (u_n b + u_{n-1})/v_{n-1} \rfloor %}. From the properties of the <a href="http://en.wikipedia.org/wiki/Floor_function">floor function</a> we have {% imath u_n b + u_{n-1} \leq \hat{q} v_{n-1} + v_{n-1} - 1 %} and therefore {% imath \hat{q} v_{n-1} \geq u_n b + u_{n-1} - v_{n-1} + 1 %}. We then get
+
+{% dmath \begin{aligned} u - \hat{q} v &\leq u - \hat{q} v_{n-1} b^{n-1} \\ &\leq u_n b^n + \cdots + u_0 - (u_n b + u_{n-1} - v_{n-1} + 1) b^{n-1} \\ &= u_{n-2} b^{n-2} + \cdots + u_0 - b^{n-1} + v_{n-1} b^{n-1} < v_{n-1} b^{n-1} \leq v. \end{aligned} %}
+
+So {% imath u - \hat{q} v < v %} and since {% imath 0 \leq u - q v < v %} we must have {% imath q \leq \hat{q} %}.
+</div>
+
+If {% imath u %} and {% imath v %} are scaled appropriately, {% imath \hat{q} %} will never be too large, either.
+
+**Theorem 2.** With {% imath \hat{q} %} as defined above and {% imath v_{n-1} \geq \lfloor b/2 \rfloor %}, we have {% imath \hat{q} \leq q+2 %}.
+
+<button class="btn btn-default btn-xs" onclick="togglevis('prf2');">*Proof*</button>
+<div class="proof" id="prf2" style="display: none;">
+Assume that {% imath \hat{q} \geq q+3 %}. We get
+
+{% dmath \hat{q} \leq \frac{u_n b u_{n-1}}{v_{n-1}} = \frac{u_n b^n u_{n-1} b^{n-1}}{v_{n-1} b^{n-1}} \leq \frac{u}{v_{n-1} b^{n-1}} < \frac{u}{v - b^{n-1}}, %}
+
+since {% imath v = v_{n-1} b^{n-1} + \cdots + v_0 \leq v_{n-1} b^{n-1} + b^{n-1} %}. We cannot have {% imath v = b^{n-1} %} since that would imply {% imath \hat{q} = q = u_n %}. The relation {% imath q = \lfloor u/v \rfloor %} implies {% imath q > u/v - 1 %}, from which we get
+
+{% dmath 3 \leq \hat{q} - q < \frac{u}{v - b^{n-1}} - \frac{u}{v} + 1 = \frac{u}{v} \left( \frac{b^{n-1}}{v - b^{n-1}} \right) + 1. %}
+
+We then have
+
+{% dmath \frac{u}{v} \geq 2 \left( \frac{v - b^{n-1}}{b^{n-1}} \right) \geq 2(v_{n-1} - 1), %}
+
+and finally
+
+{% dmath b-4 \geq \hat{q}-3 \geq q = \lfloor u/v \rfloor \geq 2(v_{n-1}-1), %}
+
+which implies {% imath v_{n-1} < \lfloor b/2 \rfloor %}.
+</div>
+
+We would expect to come even closer if we consider the 'second order' approximate quotient,
+
+{% dmath \left\lfloor \frac{u_n b^2 + u_{n-1} b + u_{n-2}}{v_{n-1} b + v_{n-2}} \right\rfloor, %}
+
+but how much closer? Given some approximate quotient {% imath \hat{q} %}, let us compute the corresponding second order residual
+
+{% dmath u_n b^2 + u_{n-1} b + u_{n-2} - \hat{q} (v_{n-1} b + v_{n-2}) = \hat{r} b + u_{n-2} - \hat{q} v_{n-2}, %}
+
+where {% imath \hat{r} %} is the first order residual,
+
+{% dmath \hat{r} = u_n b + u_{n-1} - \hat{q} v_{n-1}. %}
+
+By studying the sign of the second order residual we can now get closer to the true quotient.
+
+**Theorem 3.** Let {% imath \hat{q} %} be any approximate quotient and {% imath \hat{r} %} the corresponding first order residual. Now if {% imath \hat{q} v_{n-2} > b \hat{r} + u_{n-2} %} then {% imath q < \hat{q} %}.
+
+<button class="btn btn-default btn-xs" onclick="togglevis('prf3');">*Proof*</button>
+<div class="proof" id="prf3" style="display: none;">
+Assume {% imath \hat{q} v_{n-2} > b \hat{r} + u_{n-2} %}, equivalent to {% imath \hat{r} b + u_{n-2} - \hat{q} v_{n-2} + 1 \leq 0 %}. We then have
+
+{% dmath \begin{aligned} u - \hat{q} v &\leq u - \hat{q} v_{n-1} b^{n-1} - \hat{q} v_{n-2} b^{n-2} \\ &=    b^{n-1} (u_n b + u_{n-1} - \hat{q} v_{n-1}) + u_{n-2} b^{n-2} + \cdots + u_0 - \hat{q} v_{n-2} b^{n-2} \\ &<    b^{n-1} \hat{r} + u_{n-2} b^{n-2} + b^{n-2} - \hat{q} v_{n-2} b^{n-2} \\ &=    b^{n-2} (\hat{r} b + u_{n-2} - \hat{q} v_{n-2} + 1) \leq 0. \end{aligned} %}
+
+So {% imath u - \hat{q} v < 0 \leq u - q v %} which implies {% imath q < \hat{q} %}.
+</div>
+
+**Theorem 4.** Let {% imath \hat{q} %} be any approximate quotient and {% imath \hat{r} %} the corresponding first order residual. Now if {% imath \hat{q} v_{n-2} \leq b \hat{r} + u_{n-2} %} then {% imath \hat{q} \leq q+1 %}.
+
+<button class="btn btn-default btn-xs" onclick="togglevis('prf4');">*Proof*</button>
+<div class="proof" id="prf4" style="display: none;">
+Let {% imath \hat{q} v_{n-2} \leq b \hat{r} + u_{n-2} %} and assume {% imath \hat{q} \geq q+2 %}. Now since {% imath u - q v < v %} we get
+
+{% dmath \begin{aligned} u &< (q+1) v \leq (\hat{q}-1) v < \hat{q} (v_{n-1} b^{n-1} + v_{n-2} b^{n-2} + b^{n-2}) - v \\ &< \hat{q} v_{n-1} b^{n-1} + \hat{q} v_{n-2} b^{n-2} + b^{n-1} - v \\ &\leq \hat{q} v_{n-1} b^{n-1} + (b \hat{r} + u_{n-2}) b^{n-2} + b^{n-1} - v \\ &= u_n b^n + u_{n-1} b^{n-1} + u_{n-2} b^{n-2} + b^{n-1} - v \\ &\leq u_n b^n + u_{n-1} b^{n-1} + u_{n-2} b^{n-2} \leq u. \end{aligned} %}
+
+This claims that {% imath u < u %}, a contradiction, so our assumption {% imath \hat{q} \geq q+2 %} must have been wrong.
+</div>
+
+We now have the following procedure for computing {% imath \hat{q} %}, a very close estimate to {% imath q %}:
+
+**Algorithm Q**. Let {% imath u = (u_n \ldots u_1 u_0)_b %} and {% imath v = (v_{n-1} \ldots v_1 v_0)_b %}, {% imath v_{n-1} \neq 0 %}, with {% imath n \geq 2 %} and {% imath 0 \leq \lfloor u/v \rfloor < b %} (any digit of {% imath u %} can be zero and note that the only digits accessed are {% imath u_n %}, {% imath u_{n-1} %}, {% imath u_{n-2} %}, {% imath v_{n-1} %}, and {% imath v_{n-2} %}). The algorithm computes an integer {% imath \hat{q} %} such that {% imath \hat{q}-1 \leq \lfloor u/v \rfloor \leq \hat{q} %} (Theorems&nbsp;1 and&nbsp;4).
+
+*   **Q1**. Set {% imath \hat{q} \leftarrow \lfloor (u_n b + u_{n-1})/v_{n-1} \rfloor %} and {% imath \hat{r} \leftarrow (u_n b + u_{n-1}) \hbox{ mod } v_{n-1} %}. If {% imath \hat{q} = b %} (division overflow when {% imath b=b_T %}) set {% imath \hat{q} \leftarrow \hat{q} - 1 %} and {% imath \hat{r} \leftarrow \hat{r} + v_{n-1} %} (dealing with division overflow can be avoided by setting {% imath \hat{q} \leftarrow b-1 %} and {% imath \hat{r} \leftarrow u_n + u_{n-1} %} if {% imath v_{n-1} = u_n %}).
+*   **Q2**. While {% imath \hat{r} < b %} and {% imath \hat{q} v_{n-2} > b \hat{r} + u_{n-2} %}, set {% imath \hat{q} \leftarrow \hat{q} - 1 %} and {% imath \hat{r} \leftarrow \hat{r} + v_{n-1} %} (Theorem&nbsp;2 assures that this while-loop is executed at most two times if {% imath v_{n-1} \geq \lfloor b/2 \rfloor %}. The check {% imath \hat{r} < b %} is not necessary but makes sure that we don't deal with numbers that are {% imath b^2 %} or larger in the subsequent comparison).
+
+We can now combine Algorithm G of the Fundamentals section with the just obtained knowledge of approximating the quotient in the following algorithm for long division:
+
+**Algorithm L**. Given {% imath u = (u_{m-1} \ldots u_1 u_0)_b %}, {% imath u_{m-1} \neq 0 %} and {% imath v = (v_{n-1} \ldots v_1 v_0)_b %}, {% imath v_{n-1} \neq 0 %}, with {% imath m \geq n > 1 %}, this algorithm computes the quotient {% imath q = (q_{m-n} \ldots q_1 q_0)_b = \lfloor u/v \rfloor %} (we may have {% imath q_{m-n} = 0 %} in which case {% imath q_{m-n-1} \neq 0 %} if {% imath m > n %}) and the remainder {% imath r %} such that {% imath u = q v + r %}, {% imath 0 \leq r < v %}.
+
+*   **L1**. Set {% imath v \leftarrow d \cdot v %} such that {% imath v_{n-1} \geq \lfloor b/2 \rfloor %} (letting {% imath d %} be a power of two is usually the best choice). Similarly, set {% imath (u_m \ldots u_1 u_0)_b \leftarrow d \cdot u %} (ensure {% imath u %} gets {% imath n+1 %} digits, setting {% imath u_m=0 %} if necessary).
+*   **L2**. Set {% imath k \leftarrow m - n %}.
+*   **L3**. Find {% imath \hat{q} %} such that {% imath \hat{q}-1 \leq \lfloor (u_{k+n} \ldots u_{k+1} u_k)_b /v \rfloor \leq \hat{q} %} (use Algorithm&nbsp;Q described above).
+*   **L4**. Make the update {% imath (u_{k+n} \ldots u_{k+1} u_k)_b \leftarrow (u_{k+n} \ldots u_{k+1} u_k)_b - \hat{q} v %}.
+*   **L5**. If the subtraction of step&nbsp;**L4** produces a borrow (the result is negative) do {% imath \hat{q} \leftarrow \hat{q} - 1 %} and {% imath (u_{k+n} \ldots u_{k+1} u_k)_b \leftarrow (u_{k+n} \ldots u_{k+1} u_k)_b + v %}.
+*   **L6**. Set {% imath q_k = \hat{q} %}.
+*   **L7**. If {% imath k=0 %} set {% imath r \leftarrow u/d %} and exit. Otherwise set {% imath k \leftarrow k-1 %} and go to step&nbsp;**L3**.
+
+The normalization in step&nbsp;**L1** such that {% imath v_{n-1} \geq \lfloor b/2 \rfloor %} does two things. Firstly, it makes sure that the while-loop of the {% imath \hat{q} %}-computation executes at most two times. Secondly, the probability that the adding back in step&nbsp;**L5** must be executed is of order {% imath 2/b %} (a proof can be found in Knuth's book).
+
+### Concluding Remarks
+
+This and the [previous](/2009/07/implementing-multiple-precision-arithmetic-part-1.html) article have now covered addition, subtraction, multiplication, and division of non-negative integers.
+
+*Update 2010-07-03: See the [project page](https://github.com/janmarthedal/kanooth-numbers) for more information.*
+
