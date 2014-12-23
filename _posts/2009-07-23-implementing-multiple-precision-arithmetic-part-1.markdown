@@ -31,11 +31,11 @@ We start out by considering only non-negative integers. A number {% imath u \geq
 
 We will call {% imath u %} an {% imath n %}-digit number and {% imath u_0 %}, {% imath u_1 %}, etc., its digits. Unless stated otherwise we will always have that the most-significant digit is non-zero, here {% imath u_{n-1} \neq 0 %}, and we will represent zero with no digits, {% imath 0 = ()_b %}. We have {% imath b^{n-1} \leq u \leq b^n-1 %}, implying {% imath n=1+\lfloor \log_b u \rfloor %} for {% imath u \geq 1 %}.
 
-Let the word size of the data type <code>T</code> used for each digit be {% imath b_T %}. For instance, if <code>T</code> is a 32 bit unsigned integer, we have {% imath b_T = 2^{32} %}. We will implement the algorithms using {% imath b = b_T %} and exploit the fact that C++ does arithmetic on unsigned integers [modulo](http://en.wikipedia.org/wiki/Modular_arithmetic) {% imath b_T %} (see paragraph 3.9.1 (4) of the [C++ standard](http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2009/n2914.pdf)). This makes it possible to implement portable algorithms. They will not be optimal with respect to speed, however, and it will be noted when specialized operations, such as add-with-carry instructions, would lead to more efficient implementations.
+Let the word size of the data type `T` used for each digit be {% imath b_T %}. For instance, if `T` is a 32 bit unsigned integer, we have {% imath b_T = 2^{32} %}. We will implement the algorithms using {% imath b = b_T %} and exploit the fact that C++ does arithmetic on unsigned integers [modulo](http://en.wikipedia.org/wiki/Modular_arithmetic) {% imath b_T %} (see paragraph 3.9.1 (4) of the [C++ standard](http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2009/n2914.pdf)). This makes it possible to implement portable algorithms. They will not be optimal with respect to speed, however, and it will be noted when specialized operations, such as add-with-carry instructions, would lead to more efficient implementations.
 
 ### Data Structures
 
-A non-negative number will be represented in C++ as an instance of the class <code>NonNegativeInteger</code>:
+A non-negative number will be represented in C++ as an instance of the class `NonNegativeInteger`:
 
 {% highlight cpp %}
 template <typename T, typename V=detail::SimpleDigitVector<T> >
@@ -50,11 +50,11 @@ public:
 };
 {% endhighlight %}
 
-The type argument <code>T</code> is used to represent each digit. It must be integer and unsigned, so <code>unsigned char</code>, <code>unsigned short</code>, <code>unsigned int</code>, <code>unsigned long</code>, and <code>unsigned long long</code> can all be used (the type <code>long long int</code> is not standard C++, but is, e.g., [supported](http://gcc.gnu.org/onlinedocs/gcc/Long-Long.html) by [GCC](http://gcc.gnu.org)). If a digit type with 8, 16, 32, or 64 bits is needed, the [boost](http://www.boost.org) [integer types](http://www.boost.org/doc/libs/release/libs/integer/index.html) <code>uint8\_t</code>, <code>uint16\_t</code>, <code>uint32\_t</code>, <code>uint64\_t</code> (from the namespace <code>boost</code>) can be used with portability ensured (<code>uint64\_t</code> is not always available, but the macro <code>BOOST\_NO\_INT64\_T</code> will tell you if it is not).
+The type argument `T` is used to represent each digit. It must be integer and unsigned, so `unsigned char`, `unsigned short`, `unsigned int`, `unsigned long`, and `unsigned long long` can all be used (the type `long long int` is not standard C++, but is, e.g., [supported](http://gcc.gnu.org/onlinedocs/gcc/Long-Long.html) by [GCC](http://gcc.gnu.org)). If a digit type with 8, 16, 32, or 64 bits is needed, the [boost](http://www.boost.org) [integer types](http://www.boost.org/doc/libs/release/libs/integer/index.html) `uint8\_t`, `uint16\_t`, `uint32\_t`, `uint64\_t` (from the namespace `boost`) can be used with portability ensured (`uint64\_t` is not always available, but the macro `BOOST\_NO\_INT64\_T` will tell you if it is not).
 
-The type argument <code>V</code> is used as the container type for the digits. The default container is <code>SimpleDigitVector</code> (which at this time is also the only container supported). This default container simply wraps an array of size (at least) the number of digits.
+The type argument `V` is used as the container type for the digits. The default container is `SimpleDigitVector` (which at this time is also the only container supported). This default container simply wraps an array of size (at least) the number of digits.
 
-Note that the digit container <code>digitvec</code> of <code>NonNegativeInteger</code> is wrapped in a [boost shared pointer](http://www.boost.org/doc/libs/1_43_0/libs/smart_ptr/shared_ptr.htm). Consider the small code excerpt:
+Note that the digit container `digitvec` of `NonNegativeInteger` is wrapped in a [boost shared pointer](http://www.boost.org/doc/libs/1_43_0/libs/smart_ptr/shared_ptr.htm). Consider the small code excerpt:
 
 {% highlight cpp %}
 NonNegativeInteger<unsigned> a=value1(), b=value2(), c;
@@ -63,7 +63,7 @@ b += a;
 c += b;
 {% endhighlight %}
   
-Because of the shared pointer, the first assignment, <code>c = a</code>, is very cheap and will not result in copying the digit container. Instead, the <code>digitvec</code> of both <code>a</code> and <code>c</code> will refer to the *same* instance of the digit container (which gets a reference count of 2). This also makes it cheap to pass arguments by value and returning numbers by value. The next statement, <code>b += a</code>, can add <code>a</code> to <code>b</code> *in place* (assuming there is enough space in <code>b</code>'s <code>digitvec</code> to contain the result) because it is possible to check if <code>b</code> is the only instance referring to its digit container. Contrarywise, the last statement, <code>c += a</code>, cannot add <code>a</code> to <code>c</code> in place because <code>a</code> refers to the same container as <code>c</code> does.
+Because of the shared pointer, the first assignment, `c = a`, is very cheap and will not result in copying the digit container. Instead, the `digitvec` of both `a` and `c` will refer to the *same* instance of the digit container (which gets a reference count of 2). This also makes it cheap to pass arguments by value and returning numbers by value. The next statement, `b += a`, can add `a` to `b` *in place* (assuming there is enough space in `b`'s `digitvec` to contain the result) because it is possible to check if `b` is the only instance referring to its digit container. Contrarywise, the last statement, `c += a`, cannot add `a` to `c` in place because `a` refers to the same container as `c` does.
 
 ### Addition
 
@@ -85,7 +85,7 @@ Let us now look at some implementation details. How do we compute {% imath z = (
 
 Option 1 is actually not an option because we insist on using {% imath b = b_T %}. Option 2 leads to the most efficient code, regarding both space and speed. The problem is that these special instructions are not directly accessible via the C++ standard. Some compilers, though, make it possible to use inline assembly. For instance, [GCC](http://gcc.gnu.org) has such [capabilities](http://gcc.gnu.org/onlinedocs/gcc/Extended-Asm.html).
 
-Option 3 is the way to go. As mentioned earlier, C++ does calculations modulo {% imath b_T %}, so {% imath z \leftarrow (x + y) \;\mbox{mod}\; b %} comes &#8216;for free&#8217; as simply <code>z = x + y</code> in C++. Left is how to detect whether a carry occurs during an addition. One way to do that is the following. Consider {% imath z = (x + y) \;\mbox{mod}\; b %} for which there are two possibilities. Either {% imath z = x + y %} ({% imath k = 0 %}) which implies {% imath z \geq x %} and {% imath z \geq y %}, or we have {% imath z + b = x + y %} ({% imath k = 1 %}) which implies {% imath z = x - (b - y) = y - (b - x) %}, leading to {% imath z < x %} and {% imath z < y %}. So {% imath k = [z < x] = [z < y] %}. Another way to detect whether a carry occurs is to split {% imath x %} and {% imath y %} into a low and high part, and then adding the low and high parts seperately—keeping track of a possible intermediate carry, of course.
+Option 3 is the way to go. As mentioned earlier, C++ does calculations modulo {% imath b_T %}, so {% imath z \leftarrow (x + y) \;\mbox{mod}\; b %} comes &#8216;for free&#8217; as simply `z = x + y` in C++. Left is how to detect whether a carry occurs during an addition. One way to do that is the following. Consider {% imath z = (x + y) \;\mbox{mod}\; b %} for which there are two possibilities. Either {% imath z = x + y %} ({% imath k = 0 %}) which implies {% imath z \geq x %} and {% imath z \geq y %}, or we have {% imath z + b = x + y %} ({% imath k = 1 %}) which implies {% imath z = x - (b - y) = y - (b - x) %}, leading to {% imath z < x %} and {% imath z < y %}. So {% imath k = [z < x] = [z < y] %}. Another way to detect whether a carry occurs is to split {% imath x %} and {% imath y %} into a low and high part, and then adding the low and high parts seperately—keeping track of a possible intermediate carry, of course.
 
 ### Subtraction
 
