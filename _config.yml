@@ -1,6 +1,7 @@
 name: janmr blog
 markdown: redcarpet
 highlighter: pygments
+encoding: utf-8
 url: http://blog.janmr.com
 excerpt_separator: <span></span>
 permalink: /:year/:month/:title.html

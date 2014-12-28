@@ -150,9 +150,9 @@ Naturally we have {% imath E(\{\}) = 0 %}. Let us now define {% imath E(G) %} us
 We can get an idea of what we need from {% imath E %} if we let {% imath k %} be fixed and then consider the four possible classes of moves from the position {% imath G + \star k %}:
 
 *   {% imath G_j + \star k \sim \star p_j + \star k %} with {% imath k > p_j %}. We could now move to {% imath \star p_j + \star p_j \in {\cal S}_P %}, implying {% imath G_j + \star k \in {\cal S}_N %}.
-*   {% imath G_j + \star k \sim \star p_j + \star k %} with {% imath k &lt; p_j %}. We could now move to {% imath \star k + \star k \in {\cal S}_P %}, implying {% imath G_j + \star k \in {\cal S}_N %}.
+*   {% imath G_j + \star k \sim \star p_j + \star k %} with {% imath k < p_j %}. We could now move to {% imath \star k + \star k \in {\cal S}_P %}, implying {% imath G_j + \star k \in {\cal S}_N %}.
 *   {% imath G_j + \star k %} with {% imath k = p_j %}. We would like to avoid this situation since then {% imath G_j + \star k \in {\cal S}_P %}, implying {% imath G + \star k \in {\cal S}_N %}.
-*   {% imath G + \star k' %} where {% imath k' &lt; k %}. We would now like to choose a position {% imath G_j %} for which {% imath E(G_j) = k' %} since then {% imath G_j + \star k' \in {\cal S}_P %}, implying {% imath G + \star k \in {\cal S}_P %}.
+*   {% imath G + \star k' %} where {% imath k' < k %}. We would now like to choose a position {% imath G_j %} for which {% imath E(G_j) = k' %} since then {% imath G_j + \star k' \in {\cal S}_P %}, implying {% imath G + \star k \in {\cal S}_P %}.
 
 If these points are fulfilled then, since {% imath G_j %} and {% imath k' %} could be chosen arbitrarily, we have covered all possible moves. We would then have {% imath G + \star k \in {\cal S}_P %}.
 

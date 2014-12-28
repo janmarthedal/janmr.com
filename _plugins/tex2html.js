@@ -11,8 +11,11 @@ try {
     output = '<p class="katex-block">' + output + '</p>';
 }
 catch (e) {
-  source = source.replace(/\\/g, '\\\\').replace(/_/g, '\\_');
-  output = '<math-tex' + (block ? ' mode="display"': '') + '>' + source + '</math-tex>';
+  //source = source.replace(/\\/g, '\\\\').replace(/_/g, '\\_');
+  //output = '<math-tex' + (block ? ' mode="display"': '') + '>' + source + '</math-tex>';
+
+  source = '<script type="math/tex' + (block ? '; mode=display' : '') + '">' + source + '</script>';
+  output = '-RAW-' + source.split('').map(function(c){return c.charCodeAt(0).toString(16);}).join('') + '-';
 }
 
 console.log(output);

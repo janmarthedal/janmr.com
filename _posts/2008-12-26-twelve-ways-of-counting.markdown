@@ -100,7 +100,7 @@ Let us first consider Case 11 where the {% imath n %} balls are labeled, the {% 
 
 where this curly bracket notation denote the Stirling numbers of the second kind. But this is just answering a question by posing another question. It is easy to see that
 
-{% dmath \left\{ {n \atop n} \right\} = \left\{ {n \atop 1} \right\} = 1, \quad n \geq 1, \quad \mbox{and} \quad \left\{ {n \atop m} \right\} = 0, \quad m &gt; n &gt; 0, %}
+{% dmath \left\{ {n \atop n} \right\} = \left\{ {n \atop 1} \right\} = 1, \quad n \geq 1, \quad \mbox{and} \quad \left\{ {n \atop m} \right\} = 0, \quad m > n > 0, %}
 
 and for completeness we define the (agreed-upon) boundary cases
 
@@ -108,7 +108,7 @@ and for completeness we define the (agreed-upon) boundary cases
 
 Imagine now that we want to list the {% imath \left\{ {n \atop m} \right\} %} set partitions of {1, 2, &#8230;, {% imath n %}} into {% imath m %} parts, {% imath n > m > 1 %}, using an inductive/recursive approach. First we list the arrangements that contain the one-element set {{% imath n %}} as one of the parts. This can be done by listing the {% imath \left\{ {n-1 \atop m-1} \right\} %} set partitions of {1, 2, &#8230;, {% imath n-1 %}} into {% imath m-1 %} parts and simply adding {{% imath n %}} to each arrangement. We then list the {% imath \left\{ {n-1 \atop m} \right\} %} set partitions of {1, 2, &#8230;, {% imath n-1 %}} into {% imath m %} parts. For each of these arrangements, we can add the element {% imath n %} to *each* of the {% imath m %} parts. We thereby list all the arrangements where the part containing the element {% imath n %} contains at least one other element. Together with the border cases above, we now have the recursive definition
 
-{% dmath \left\{ {n \atop m} \right\} = \left\{ {n-1 \atop m-1} \right\} + m \left\{ {n-1 \atop m} \right\}, \quad n &gt; m &gt; 1. %}
+{% dmath \left\{ {n \atop m} \right\} = \left\{ {n-1 \atop m-1} \right\} + m \left\{ {n-1 \atop m} \right\}, \quad n > m > 1. %}
 
 Case 9 is similar to the one just considered, except the urns are now labeled. This means that if we swap the contents of any two urns, we have a new arrangement. And since all the parts are different (they are disjoint subsets), we have to count all {% imath m! %} permutations of the parts for each set partition of Case 11, so
 
@@ -141,7 +141,7 @@ Case 12 has {% imath n %} unlabeled balls, {% imath m %} unlabeled urns and each
 
 for the number of partitions of {% imath n %} into {% imath m %} parts. As we did for set partitions, we will seek a recursively defined expression. We see that
 
-{% dmath \left| {n \atop n} \right| = \left| {n \atop 1} \right| = 1, \quad n \geq 1, \quad \mbox{and} \quad \left| {n \atop m} \right| = 0, \quad m &gt; n &gt; 0, %}
+{% dmath \left| {n \atop n} \right| = \left| {n \atop 1} \right| = 1, \quad n \geq 1, \quad \mbox{and} \quad \left| {n \atop m} \right| = 0, \quad m > n > 0, %}
 
 and the boundary conditions
 
@@ -149,7 +149,7 @@ and the boundary conditions
 
 In the general case of partitioning {% imath n %} into {% imath m %} parts, we can split the partitions into those that have at least one 1 among the parts, and those where each part is greater than 1. The first type can be obtained by listing all partitions of {% imath n %}-1 into {% imath m %}-1 parts, where a 1 could added to each arrangement, and the second type can be obtaining by listing all partitions of {% imath n %}-{% imath m %} into {% imath m %} parts, where 1 could be added to each part. We thus have
 
-{% dmath \left| {n \atop m} \right| = \left| {n-1 \atop m-1} \right| + \left| {n-m \atop m} \right|, \quad n &gt; m &gt; 1. %}
+{% dmath \left| {n \atop m} \right| = \left| {n-1 \atop m-1} \right| + \left| {n-m \atop m} \right|, \quad n > m > 1. %}
 
 Finally for Case 4, with reasoning similar to that of set partitioning (Case 3), when the urns are unlabeled and any urn is allowed to be empty, it is equivalent to adding the counts for non-empty urns for 1, 2, &#8230;, {% imath m %} urns,
 

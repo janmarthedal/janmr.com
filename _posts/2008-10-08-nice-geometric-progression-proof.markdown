@@ -14,7 +14,7 @@ Consider the geometric series,
 
 {% dmath s_r = \sum_{k=0}^\infty r^k = 1 + r + r^2 + r^3 + \ldots, %}
 
-for {% imath 0 &lt; r &lt; 1 %}. The goal is to find a <a href="http://en.wikipedia.org/wiki/Closed-form_expression">closed-form expression</a> for {% imath s_r %}.</p><span></span>
+for {% imath 0 < r < 1 %}. The goal is to find a <a href="http://en.wikipedia.org/wiki/Closed-form_expression">closed-form expression</a> for {% imath s_r %}.</p><span></span>
 
 <figure>
   <img src="/media/geoprog.svg" alt="Visual proof of a geometric progression sum" class="img-responsive">

@@ -15,8 +15,6 @@
     <link rel="stylesheet" href="/css/main.css">
     <link rel="stylesheet" href="/css/syntax.css">
     <link rel="stylesheet" href="/css/katex.min.css">
-    <script src="//cdnjs.cloudflare.com/ajax/libs/webcomponentsjs/0.5.2/webcomponents.min.js"></script>
-    <link rel="import" href="/elements/google-analytics.html">
     {% if page.posttype == "wp" %}<style>
       .mthi { font-style: italic; }
       .mthn, .mths, .mtho {}
@@ -40,9 +38,8 @@
             showMathMenuMSIE: false
         });
     </script>
-    <link rel="import" href="/elements/math-tex.html">
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML"></script>
     {% endif %}
-    <google-analytics code="UA-46471633-2"></google-analytics>
   </head>
   <body>
     <div id="wrapper">
@@ -52,7 +49,7 @@
         </div>
         <div class="row">
           <div class="col-md-9">
-            {{ content }}
+            {{ content | convert_raw }}
           </div>
           <div class="col-md-3">
             <h4>About</h4>

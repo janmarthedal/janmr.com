@@ -32,12 +32,12 @@ So in the following we assume that {% imath m \geq n > 1 %}.
 
 We will approach the division algorithm from a top-level point of view. It is actually just a formalization of the well-known pencil-and-paper method:
 
-**Algorithm G**. Given {% imath u = (u_{m-1} \ldots u_1 u_0)_b %}, {% imath u_{m-1} \neq 0 %} and {% imath v = (v_{n-1} \ldots v_1 v_0)_b %}, {% imath v_{n-1} \neq 0 %}, with {% imath m \geq n > 0 %}, this algorithm outlines how to compute the quotient {% imath q = (q_{m-n} \ldots q_1 q_0)_b = \lfloor u/v \rfloor %} (we may have {% imath q_{m-n} = 0 %} in which case {% imath q_{m-n-1} \neq 0 %} if {% imath m > n %}) and the remainder {% imath r %} such that {% imath u = q v + r %}, {% imath 0 \leq r &lt; v %}.
+**Algorithm G**. Given {% imath u = (u_{m-1} \ldots u_1 u_0)_b %}, {% imath u_{m-1} \neq 0 %} and {% imath v = (v_{n-1} \ldots v_1 v_0)_b %}, {% imath v_{n-1} \neq 0 %}, with {% imath m \geq n > 0 %}, this algorithm outlines how to compute the quotient {% imath q = (q_{m-n} \ldots q_1 q_0)_b = \lfloor u/v \rfloor %} (we may have {% imath q_{m-n} = 0 %} in which case {% imath q_{m-n-1} \neq 0 %} if {% imath m > n %}) and the remainder {% imath r %} such that {% imath u = q v + r %}, {% imath 0 \leq r < v %}.
 
  * **G1**. {% imath u^{(m-n+1)} \leftarrow (0 u_{m-1} \ldots u_1 u_0)_b %}.
  * **G2**. {% imath k \leftarrow m-n %}.
  * **G3**. {% imath q_k \leftarrow \left\lfloor (u^{(k+1)}_{k+n} \ldots u^{(k+1)}_{k+1} u^{(k+1)}_k)_b / v \right\rfloor %}.
- * **G4**. Set {% imath u^{(k)} \leftarrow u^{(k+1)} - q_k b^k v %} or, equivalently, {% dmath \begin{aligned} (u^{(k)}_{k+n} \ldots u^{(k)}_{k+1} u^{(k)}_k)_b &#038;\leftarrow (u^{(k+1)}_{k+n} \ldots u^{(k+1)}_{k+1} u^{(k+1)}_k)_b - q_k v, \\ (u^{(k)}_{k-1} \ldots u^{(k)}_1 u^{(k)}_0)_b &#038;\leftarrow (u^{(k+1)}_{k-1} \ldots u^{(k+1)}_1 u^{(k+1)}_0)_b. \end{aligned} %}
+ * **G4**. Set {% imath u^{(k)} \leftarrow u^{(k+1)} - q_k b^k v %} or, equivalently, {% dmath \begin{aligned} (u^{(k)}_{k+n} \ldots u^{(k)}_{k+1} u^{(k)}_k)_b &\leftarrow (u^{(k+1)}_{k+n} \ldots u^{(k+1)}_{k+1} u^{(k+1)}_k)_b - q_k v, \\ (u^{(k)}_{k-1} \ldots u^{(k)}_1 u^{(k)}_0)_b &\leftarrow (u^{(k+1)}_{k-1} \ldots u^{(k+1)}_1 u^{(k+1)}_0)_b. \end{aligned} %}
  * **G5**. If {% imath k=0 %} then set {% imath r \leftarrow u^{(0)} %} and exit. Otherwise set {% imath k \leftarrow k-1 %} and go to step&nbsp;**G3**.
 
 An essential invariant of this algorithm is
@@ -54,7 +54,7 @@ from which we see that the quotients {% imath q_k %} computed in step&nbsp;**G3*
 
 Finally, we can verify that the algorithm computes what we intended. We have
 
-{% dmath \begin{aligned} r &#038;= u^{(0)} = u^{(1)} - q_0 b^0 v = u^{(2)} - q_1 b^1 v - q_0 b^0 v = \ldots \\ &#038;= u^{(m-n+1)} - (q_{m-n} b^{m-n} + \cdots + q_0 b^0) v = u - q v. \end{aligned} %}
+{% dmath \begin{aligned} r &= u^{(0)} = u^{(1)} - q_0 b^0 v = u^{(2)} - q_1 b^1 v - q_0 b^0 v = \ldots \\ &= u^{(m-n+1)} - (q_{m-n} b^{m-n} + \cdots + q_0 b^0) v = u - q v. \end{aligned} %}
 
 Now for some practical aspects. Note first that all of the {% imath u^{(k)} %} variables can in fact be represented by a single variable and simply overwrite its digits along the way &ndash; thus ending up with the remainder. Note also that any of the remainder's digits may be zero.
 
@@ -76,7 +76,7 @@ If {% imath \hat{q}=b-1 %} then since {% imath q \leq b-1 %} by assumption, the 
 
 Assume then that {% imath \hat{q} = \lfloor (u_n b + u_{n-1})/v_{n-1} \rfloor %}. From the properties of the [floor function](/2009/09/useful-properties-of-the-floor-and-ceil-functions.html) we have {% imath u_n b + u_{n-1} \leq \hat{q} v_{n-1} + v_{n-1} - 1 %} and therefore {% imath \hat{q} v_{n-1} \geq u_n b + u_{n-1} - v_{n-1} + 1 %}. We then get
 
-{% dmath \begin{aligned} u - \hat{q} v &#038;\leq u - \hat{q} v_{n-1} b^{n-1} \\ &#038;\leq u_n b^n + \cdots + u_0 - (u_n b + u_{n-1} - v_{n-1} + 1) b^{n-1} \\ &#038;= u_{n-2} b^{n-2} + \cdots + u_0 - b^{n-1} + v_{n-1} b^{n-1} < v_{n-1} b^{n-1} \leq v. \end{aligned} %}
+{% dmath \begin{aligned} u - \hat{q} v &\leq u - \hat{q} v_{n-1} b^{n-1} \\ &\leq u_n b^n + \cdots + u_0 - (u_n b + u_{n-1} - v_{n-1} + 1) b^{n-1} \\ &= u_{n-2} b^{n-2} + \cdots + u_0 - b^{n-1} + v_{n-1} b^{n-1} < v_{n-1} b^{n-1} \leq v. \end{aligned} %}
 
 So {% imath u - \hat{q} v < v %} and since {% imath 0 \leq u - q v < v %} we must have {% imath q \leq \hat{q} %}.
 </div>
@@ -126,7 +126,7 @@ By studying the sign of the second order residual we can now get closer to the t
 <div class="proof" id="prf3" style="display: none;">
 Assume {% imath \hat{q} v_{n-2} > b \hat{r} + u_{n-2} %}, equivalent to {% imath \hat{r} b + u_{n-2} - \hat{q} v_{n-2} + 1 \leq 0 %}. We then have
 
-{% dmath \begin{aligned} u - \hat{q} v &#038;\leq u - \hat{q} v_{n-1} b^{n-1} - \hat{q} v_{n-2} b^{n-2} \\ &#038;=    b^{n-1} (u_n b + u_{n-1} - \hat{q} v_{n-1}) + u_{n-2} b^{n-2} + \cdots + u_0 - \hat{q} v_{n-2} b^{n-2} \\ &#038;<    b^{n-1} \hat{r} + u_{n-2} b^{n-2} + b^{n-2} - \hat{q} v_{n-2} b^{n-2} \\ &#038;=    b^{n-2} (\hat{r} b + u_{n-2} - \hat{q} v_{n-2} + 1) \leq 0. \end{aligned} %}
+{% dmath \begin{aligned} u - \hat{q} v &\leq u - \hat{q} v_{n-1} b^{n-1} - \hat{q} v_{n-2} b^{n-2} \\ &=    b^{n-1} (u_n b + u_{n-1} - \hat{q} v_{n-1}) + u_{n-2} b^{n-2} + \cdots + u_0 - \hat{q} v_{n-2} b^{n-2} \\ &<    b^{n-1} \hat{r} + u_{n-2} b^{n-2} + b^{n-2} - \hat{q} v_{n-2} b^{n-2} \\ &=    b^{n-2} (\hat{r} b + u_{n-2} - \hat{q} v_{n-2} + 1) \leq 0. \end{aligned} %}
 
 So {% imath u - \hat{q} v < 0 \leq u - q v %} which implies {% imath q < \hat{q} %}.
 </div>
@@ -137,7 +137,7 @@ So {% imath u - \hat{q} v < 0 \leq u - q v %} which implies {% imath q < \hat{q}
 <div class="proof" id="prf4" style="display: none;">
 Let {% imath \hat{q} v_{n-2} \leq b \hat{r} + u_{n-2} %} and assume {% imath \hat{q} \geq q+2 %}. Now since {% imath u - q v < v %} we get
 
-{% dmath \begin{aligned} u &#038;< (q+1) v \leq (\hat{q}-1) v < \hat{q} (v_{n-1} b^{n-1} + v_{n-2} b^{n-2} + b^{n-2}) - v \\ &#038;< \hat{q} v_{n-1} b^{n-1} + \hat{q} v_{n-2} b^{n-2} + b^{n-1} - v \\ &#038;\leq \hat{q} v_{n-1} b^{n-1} + (b \hat{r} + u_{n-2}) b^{n-2} + b^{n-1} - v \\ &#038;= u_n b^n + u_{n-1} b^{n-1} + u_{n-2} b^{n-2} + b^{n-1} - v \\ &#038;\leq u_n b^n + u_{n-1} b^{n-1} + u_{n-2} b^{n-2} \leq u. \end{aligned} %}
+{% dmath \begin{aligned} u &< (q+1) v \leq (\hat{q}-1) v < \hat{q} (v_{n-1} b^{n-1} + v_{n-2} b^{n-2} + b^{n-2}) - v \\ &< \hat{q} v_{n-1} b^{n-1} + \hat{q} v_{n-2} b^{n-2} + b^{n-1} - v \\ &\leq \hat{q} v_{n-1} b^{n-1} + (b \hat{r} + u_{n-2}) b^{n-2} + b^{n-1} - v \\ &= u_n b^n + u_{n-1} b^{n-1} + u_{n-2} b^{n-2} + b^{n-1} - v \\ &\leq u_n b^n + u_{n-1} b^{n-1} + u_{n-2} b^{n-2} \leq u. \end{aligned} %}
 
 This claims that {% imath u < u %}, a contradiction, so our assumption {% imath \hat{q} \geq q+2 %} must have been wrong.
 </div>
