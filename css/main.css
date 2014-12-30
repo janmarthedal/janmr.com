@@ -2,6 +2,7 @@
   max-width: 60em;
   margin-left: auto;
   margin-right: auto;
+  padding-bottom: 4em;
 }
 
 figure > img {
@@ -21,12 +22,12 @@ figcaption {
   color: #333;
 }
 
-div.post h2 {
+.post h2 {
   margin-bottom: 1em;
 }
 
-div.post-body {
-  margin-bottom: 4em;
+.page-navigation {
+  margin-top: 2em;
 }
 
 .h_iframe {
