@@ -4,7 +4,7 @@ module Jekyll
     def initialize(tag_name, source, tokens)
       super
       source = source.strip.split('\\').join('\\\\')
-      source = source.gsub('$', '\\$')
+      source = source.gsub('$', '\\\\$')
       @source = `cd _plugins; node tex2html.js "#{source}"`
     end
 
