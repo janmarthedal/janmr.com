@@ -17,32 +17,32 @@ tags:
 - number theory
 ---
 
-The greatest common divisor of two integers is the largest positive integer that divides them both. This article considers two algorithms for computing {% imath \hbox{gcd}(u,v) %}, the greatest common divisor of {% imath u %} and {% imath v %}.
+The greatest common divisor of two integers is the largest positive integer that divides them both. This article considers two algorithms for computing {% imath \text{gcd}(u,v) %}, the greatest common divisor of {% imath u %} and {% imath v %}.
 
 <span></span>
 
-Some key properties of {% imath \hbox{gcd} %} are:
+Some key properties of {% imath \text{gcd} %} are:
 
-1. {% imath \hbox{gcd}(u,0) = |u| %}.
-2. {% imath \hbox{gcd}(u,v) = \hbox{gcd}(-u,v) %}.
-3. {% imath \hbox{gcd}(u,v) = \hbox{gcd}(v,u) %}.
-4. {% imath \hbox{gcd}(u,v) = \hbox{gcd}(u,v+n u) %} for any integer {% imath n %}.
-5. {% imath \hbox{gcd}(u,v) = d \cdot \hbox{gcd}(u/d,v/d) %} if {% imath d %} divides both {% imath u %} and {% imath v %}.
-6. {% imath \hbox{gcd}(u,v) = \hbox{gcd}(u/d,v) %} if {% imath d %} is prime and divides {% imath u %} but not {% imath v %}.
+1. {% imath \text{gcd}(u,0) = |u| %}.
+2. {% imath \text{gcd}(u,v) = \text{gcd}(-u,v) %}.
+3. {% imath \text{gcd}(u,v) = \text{gcd}(v,u) %}.
+4. {% imath \text{gcd}(u,v) = \text{gcd}(u,v+n u) %} for any integer {% imath n %}.
+5. {% imath \text{gcd}(u,v) = d \cdot \text{gcd}(u/d,v/d) %} if {% imath d %} divides both {% imath u %} and {% imath v %}.
+6. {% imath \text{gcd}(u,v) = \text{gcd}(u/d,v) %} if {% imath d %} is prime and divides {% imath u %} but not {% imath v %}.
 
 Property 1 with {% imath u=0 %} takes care of the special case {% imath u=v=0 %}. In what follows we assume that {% imath u %} and {% imath v %} are not both zero.
 
-One way to define {% imath \hbox{gcd}(u,v) %} is the following. Consider the set of all positive integers that divide both {% imath u %} and {% imath v %}. This set is not empty since it always contains 1. It is also bounded since no divisor exceeds {% imath |u| %} or {% imath |v| %}. Therefore, this set contains a maximum element, which is equal to {% imath \hbox{gcd}(u,v) %}. From this definition Properties&nbsp;1, 2, and 3 follow easily. For the sake of simplicity, easily justified by Property&nbsp;2 and&nbsp;3, we will only consider non-negative {% imath u %} and {% imath v %}.
+One way to define {% imath \text{gcd}(u,v) %} is the following. Consider the set of all positive integers that divide both {% imath u %} and {% imath v %}. This set is not empty since it always contains 1. It is also bounded since no divisor exceeds {% imath |u| %} or {% imath |v| %}. Therefore, this set contains a maximum element, which is equal to {% imath \text{gcd}(u,v) %}. From this definition Properties&nbsp;1, 2, and 3 follow easily. For the sake of simplicity, easily justified by Property&nbsp;2 and&nbsp;3, we will only consider non-negative {% imath u %} and {% imath v %}.
 
 Consider now Property 4. We prove this by showing that the set of divisors of {% imath u %} and {% imath v %} is equal to the set of divisors of {% imath u %} and {% imath v+n u %} (and hence, their gcd's must be equal). Consider then a positive integer {% imath d %} that divides {% imath u %} and {% imath v %}. Obviously, {% imath d %} also divides {% imath v+n u %}. Assume now that some {% imath d %} divides {% imath u %} and {% imath r=v+n u %}. Then {% imath d %} also divides {% imath r-n u=v %}.
 
-Another useful way to define {% imath \hbox{gcd}(u,v) %} is possible for positive {% imath u %} and {% imath v %}. According to the [fundamental theorem of arithmetic](http://en.wikipedia.org/wiki/Fundamental_theorem_of_arithmetic) we can write
+Another useful way to define {% imath \text{gcd}(u,v) %} is possible for positive {% imath u %} and {% imath v %}. According to the [fundamental theorem of arithmetic](http://en.wikipedia.org/wiki/Fundamental_theorem_of_arithmetic) we can write
 
 {% dmath u = \prod_{p \; \rm prime} p^{u_p}, %}
 
 and similarly for {% imath v %}. We now have
 
-{% dmath \hbox{gcd}(u,v) = \prod_{p \; \rm prime} p^{\min(u_p,v_p)}. %}
+{% dmath \text{gcd}(u,v) = \prod_{p \; \rm prime} p^{\min(u_p,v_p)}. %}
 
 Properties 5 and 6 follow from this equality.
 
@@ -50,7 +50,7 @@ Properties 5 and 6 follow from this equality.
 
 Euclid's algorithm appeared in [Euclid](http://en.wikipedia.org/wiki/Euclid)&#8216;s [Elements](http://aleph0.clarku.edu/~djoyce/java/elements/toc.html) (Propositions&nbsp;1 and&nbsp;2 of [Book VII](http://aleph0.clarku.edu/~djoyce/java/elements/bookVII/bookVII.html)) around 300 BC, but was probably known before this.
 
-The algorithm builds upon Properties&nbsp;1 and&nbsp;4 from above. The value of {% imath n %} in Property&nbsp;4 is chosen to be {% imath n=-\lfloor v/u \rfloor %} which leads to the equality {% imath \hbox{gcd}(u,v) = \hbox{gcd}(u, v \hbox{ mod } u) %}.
+The algorithm builds upon Properties&nbsp;1 and&nbsp;4 from above. The value of {% imath n %} in Property&nbsp;4 is chosen to be {% imath n=-\lfloor v/u \rfloor %} which leads to the equality {% imath \text{gcd}(u,v) = \text{gcd}(u, v \text{ mod } u) %}.
 
 The algorithm can be implemented quite concisely in C++, one way of doing it being the following:
 
@@ -107,7 +107,7 @@ A possible implementation is this:
   }
 {% endhighlight %}
 
-Since the algorithm itself only works for positive numbers, the first two lines take care of the cases where one input number is zero. Next, the value of {% imath u_2 %} is determined (the number of 2-factors, in the notation introduced earlier) and at the same time setting {% imath u \leftarrow u/2^{u_2} %} (which is what `shift_to_uneven(u)` does). Similarly {% imath v_2 %} is determined, setting {% imath v \leftarrow v/2^{v_2} %}, and then finally {% imath s \leftarrow \min(u_2,v_2) %}. Assuming for the moment that the while-loop puts the greatest common divisor of two odd numbers into {% imath u %}, the algorithm finishes by returning {% imath 2^s u %}. We have thus used the equality {% imath \hbox{gcd}(u,v) = 2^{\min(u_2,v_2)} \hbox{gcd}(u/2^{u_2},v/2^{v_2}) %}.
+Since the algorithm itself only works for positive numbers, the first two lines take care of the cases where one input number is zero. Next, the value of {% imath u_2 %} is determined (the number of 2-factors, in the notation introduced earlier) and at the same time setting {% imath u \leftarrow u/2^{u_2} %} (which is what `shift_to_uneven(u)` does). Similarly {% imath v_2 %} is determined, setting {% imath v \leftarrow v/2^{v_2} %}, and then finally {% imath s \leftarrow \min(u_2,v_2) %}. Assuming for the moment that the while-loop puts the greatest common divisor of two odd numbers into {% imath u %}, the algorithm finishes by returning {% imath 2^s u %}. We have thus used the equality {% imath \text{gcd}(u,v) = 2^{\min(u_2,v_2)} \text{gcd}(u/2^{u_2},v/2^{v_2}) %}.
 
 We now focus on the while-loop. Note that the first time the loop is entered both {% imath u %} and {% imath v %} are odd. Now assume {% imath u %} is larger than {% imath v %}. The algorithm sets {% imath u \leftarrow u - v %} which makes {% imath u %} even, and then repeatedly divides {% imath u %} by {% imath 2 %} until {% imath u %} is odd. (If {% imath u %} had been smaller than {% imath v %} the same operations would have been performed with {% imath u %} and {% imath v %} interchanged.) We now see that at the beginning of each while-loop iteration, both {% imath u %} and {% imath v %} are odd.
 

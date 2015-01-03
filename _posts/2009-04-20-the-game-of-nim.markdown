@@ -160,9 +160,9 @@ These points actually give away the solution:
 
 **Theorem 7** (The Sprague–Grundy Theorem)**.** For any impartial game {% imath G %} we have {% imath G \sim \star E(G) %} with
 
-{% dmath E(G) = \mbox{mex}(\{ E(G') \mid G' \in G \}), %}
+{% dmath E(G) = \text{mex}(\{ E(G') \mid G' \in G \}), %}
 
-where {% imath \mbox{mex}(S) = \min\{k \mid k \geq 0 \mbox{ and } k \notin S \} %} is the &#8220;minimal excludant&#8221; of {% imath S %}.
+where {% imath \text{mex}(S) = \min\{k \mid k \geq 0 \text{ and } k \not\in S \} %} is the &#8220;minimal excludant&#8221; of {% imath S %}.
 
 ### Winning Nim
 
@@ -180,7 +180,7 @@ for all games {% imath G %} and {% imath H %}, we have
 
 This means that if we know the value of {% imath E(\star x + \star y) %} for all {% imath x, y \geq 0 %}, then we can compute {% imath E(G) %} of every Nim-game {% imath G %}. Let us introduce the notation {% imath x \circ y = E(\star x + \star y) %}. Using the Sprague–Grundy Theorem we have
 
-{% dmath x \circ y = \mbox{mex}(\{ x \circ (y-1), \ldots, x \circ 1, x \circ 0 \} \cup \{ (x-1) \circ y, \ldots, 1 \circ y, \ldots, 0 \circ y \}). %}
+{% dmath x \circ y = \text{mex}(\{ x \circ (y-1), \ldots, x \circ 1, x \circ 0 \} \cup \{ (x-1) \circ y, \ldots, 1 \circ y, \ldots, 0 \circ y \}). %}
 
 This makes it possible to tabulate the values of the {% imath \circ %}-operator:
 
@@ -386,9 +386,9 @@ This makes it possible to tabulate the values of the {% imath \circ %}-operator:
 
 This looks suspiciously like the binary <a href="http://en.wikipedia.org/wiki/Exclusive_or">exclusive-or (XOR)</a> operator {% imath \oplus %}. And indeed it is, as shown by the following theorem (the theorem is slightly more general than needed, but it is actually a bit more concise this way).
 
-**Theorem 8** (The Sprague–Grundy Theorem)**.** Let {% imath x = \mbox{mex}(S) %} and {% imath y = \mbox{mex}(T) %}. Then
+**Theorem 8** (The Sprague–Grundy Theorem)**.** Let {% imath x = \text{mex}(S) %} and {% imath y = \text{mex}(T) %}. Then
 
-{% dmath x \oplus y = \mbox{mex} \left( (S \oplus y) \cup (x \oplus T) \right), %}
+{% dmath x \oplus y = \text{mex} \left( (S \oplus y) \cup (x \oplus T) \right), %}
 
 where {% imath S \oplus y = \{ x \oplus y \mid x \in S \} %} and {% imath x \oplus T = \{ x \oplus y \mid y \in T \} %}.
 
@@ -396,7 +396,7 @@ where {% imath S \oplus y = \{ x \oplus y \mid x \in S \} %} and {% imath x \opl
 <div class="proof" id="prf8" style="display: none;">
 We need to show two things: (a) {% imath x \oplus y \not\in (S \oplus y) \cup (x \oplus T) %} and (b) {% imath k \in (S \oplus y) \cup (x \oplus T) %} for all {% imath 0 \leq k < x \oplus y %}.
 
-To show (a) we assume {% imath x \oplus y = s \oplus y %} for some {% imath s \in S %}. But this implies {% imath s = x %} and {% imath x \not\in S %} by the definition of {% imath \mbox{mex} %}. Similarly {% imath x \oplus y \in x \oplus T %} is impossible. So {% imath x \oplus y \not\in (S \oplus y) \cup (x \oplus T) %}.
+To show (a) we assume {% imath x \oplus y = s \oplus y %} for some {% imath s \in S %}. But this implies {% imath s = x %} and {% imath x \not\in S %} by the definition of {% imath \text{mex} %}. Similarly {% imath x \oplus y \in x \oplus T %} is impossible. So {% imath x \oplus y \not\in (S \oplus y) \cup (x \oplus T) %}.
 
 To show (b) we choose a {% imath k %} such that {% imath 0 \leq k < x \oplus y %}. We now set {% imath x \oplus y = (\alpha 1 \alpha')_2 %} and {% imath k = (\alpha 0 \alpha'')_2 %} where {% imath \alpha %}, {% imath \alpha' %}, and {% imath \alpha'' %} are binary strings and {% imath |\alpha'| = |\alpha''| %}. Let now {% imath x = (\beta 1 \beta')_2 %} and {% imath y = (\gamma 0 \gamma')_2 %} where {% imath |\beta| = |\gamma| = |\alpha| %} (the ({% imath |\alpha|+1 %})th bits of {% imath x %} and {% imath y %} must be different and we assume, without loss of generality, that {% imath x %} has a {% imath 1 %}). Note how we have {% imath \beta \oplus \gamma = \alpha %} and therefore {% imath k \oplus y = (\beta 0 \beta'')_2 < x %} and thus {% imath k \oplus y \in S %}. We now see that {% imath k = (k \oplus y) \oplus y \in S \oplus y %}.
 </div>

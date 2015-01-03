@@ -75,7 +75,7 @@ where {% imath F_0, F_1, \ldots %} are the well-known [Fibonacci numbers](http:/
 We also have
 
 <div class="pull-right">(7)</div>
-{% dmath K_n(x_1, \ldots, x_n) \geq K(y_1, \ldots, y_n), \quad \hbox{when } x_k \geq y_k, %}
+{% dmath K_n(x_1, \ldots, x_n) \geq K(y_1, \ldots, y_n), \quad \text{when } x_k \geq y_k, %}
 
 which can be shown straightforwardly by induction. We will use this fact later on.
 
@@ -142,7 +142,7 @@ NUM evaluate_continued_fraction_rec2(In first, In last)
 A drawback to this approach is the recursive calls. Another way to evaluate is to use a special case of Equation&nbsp;(2),
 
 <div class="pull-right">(12)</div>
-{% dmath /\!/ a_1, \ldots, a_{n-1}, a_n /\!/ = /\!/ a_1, \ldots, a_{n-1} + 1/a_n /\!/, \quad \hbox{for } n \geq 2. %}
+{% dmath /\!/ a_1, \ldots, a_{n-1}, a_n /\!/ = /\!/ a_1, \ldots, a_{n-1} + 1/a_n /\!/, \quad \text{for } n \geq 2. %}
 
 So given a [bidirectional iterator](http://www.sgi.com/tech/stl/BidirectionalIterator.html) the evaluation can be done as
 
@@ -195,7 +195,7 @@ If {% imath x_k=0 %} then {% imath a_{k+1}, \ldots %} are undefined and {% imath
 
 It should be clear from the previous section that the value of the a regular continued fraction is a rational number. So let us try to reverse the process when&nbsp;{% imath x %} is a rational number. Given {% imath x=u/v %} with integer&nbsp;{% imath u %} and positive integer&nbsp;{% imath v %}, how can {% imath a_0, a_1, \ldots %} be computed? Setting {% imath u_k/v_k = x_k %} in the construction process from above, we get
 
-{% dmath \begin{aligned} a_0 = \left\lfloor \frac{u}{v} \right\rfloor, \qquad &\frac{u_0}{v_0} = \frac{u}{v} - a_0 = \frac{u - \lfloor u/v \rfloor v}{v} = \frac{u \hbox{ mod } v}{v}, \\ a_{k+1} = \left\lfloor \frac{v_k}{u_k} \right\rfloor, \qquad &\frac{u_{k+1}}{v_{k+1}} = \frac{v_k}{u_k} - a_{k+1} = \frac{v_k - \lfloor v_k/u_k \rfloor u_k}{u_k} = \frac{v_k \hbox{ mod } u_k}{u_k}, \end{aligned} %}
+{% dmath \begin{aligned} a_0 = \left\lfloor \frac{u}{v} \right\rfloor, \qquad &\frac{u_0}{v_0} = \frac{u}{v} - a_0 = \frac{u - \lfloor u/v \rfloor v}{v} = \frac{u \text{ mod } v}{v}, \\ a_{k+1} = \left\lfloor \frac{v_k}{u_k} \right\rfloor, \qquad &\frac{u_{k+1}}{v_{k+1}} = \frac{v_k}{u_k} - a_{k+1} = \frac{v_k - \lfloor v_k/u_k \rfloor u_k}{u_k} = \frac{v_k \text{ mod } u_k}{u_k}, \end{aligned} %}
 
 for {% imath k = 0, 1, \ldots %}. If this is turned into a C++ algorithm, we get the following. (The main loop has been [unrolled](http://en.wikipedia.org/wiki/Loop_unwinding) to avoid the {% imath u \leftrightarrow v %} swapping and a little tweaking was also necessary when the algorithm starts because C++ integer division `u/v` is not always equal to {% imath \lfloor u/v \rfloor %} when the result is negative.)
 

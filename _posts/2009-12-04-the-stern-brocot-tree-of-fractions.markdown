@@ -52,7 +52,7 @@ which is seen to be the mediant of the two fractions represented by the columns 
 We now introduce
 
 <div class="pull-right">(7)</div>
-{% dmath \begin{aligned} L=\begin{bmatrix} 1 & 0 \\ 1 & 1 \end{bmatrix}, \quad \hbox{so} \quad &\begin{bmatrix} m_2 & m_1 \\ n_2 & n_1 \end{bmatrix} L = \begin{bmatrix} m_2+m_1 & m_1 \\ n_2+n_1 & n_1 \end{bmatrix} \quad \hbox{and} \\ R=\begin{bmatrix} 1 & 1 \\ 0 & 1 \end{bmatrix}, \quad \hbox{so} \quad &\begin{bmatrix} m_2 & m_1 \\ n_2 & n_1 \end{bmatrix} R = \begin{bmatrix} m_2 & m_2+m_1 \\ n_2 & n_2+n_1 \end{bmatrix}. \end{aligned} %}
+{% dmath \begin{aligned} L=\begin{bmatrix} 1 & 0 \\ 1 & 1 \end{bmatrix}, \quad \text{so} \quad &\begin{bmatrix} m_2 & m_1 \\ n_2 & n_1 \end{bmatrix} L = \begin{bmatrix} m_2+m_1 & m_1 \\ n_2+n_1 & n_1 \end{bmatrix} \quad \text{and} \\ R=\begin{bmatrix} 1 & 1 \\ 0 & 1 \end{bmatrix}, \quad \text{so} \quad &\begin{bmatrix} m_2 & m_1 \\ n_2 & n_1 \end{bmatrix} R = \begin{bmatrix} m_2 & m_2+m_1 \\ n_2 & n_2+n_1 \end{bmatrix}. \end{aligned} %}
 
 Notice how (right-)multiplication of both {% imath L %} and {% imath R %} preserves the fact that the fraction represented by the first column is greater than the fraction represented by the second column. This follows from&nbsp;(1). Notice also how {% imath f(L) = \frac{1}{2} %} and {% imath f(R) = \frac{2}{1} %} are the left- and rightmost of the newly inserted fractions in&nbsp;(4), respectively. Similarly, {% imath f(L^2) = \frac{1}{3} %}, {% imath f(L R) = \frac{2}{3} %}, {% imath f(R L) = \frac{3}{2} %}, {% imath f(R^2) = \frac{3}{1} %} are the inserted fractions in&nbsp;(5).
 
@@ -77,7 +77,7 @@ From the definition we see that for any node {% imath f(M) %} of the Stern-Broco
 for even {% imath n %} and non-negative integers {% imath a_k %}. Insisting that {% imath n %} must be even is just a technicality which will be clarified later. Any {% imath a_k %} can be zero so its not a restriction. Computing the [determinants](http://en.wikipedia.org/wiki/Determinant) of the simple matrices in&nbsp;(6) and&nbsp;(7) we get {% imath \det I = \det L = \det R = 1 %}. Since {% imath \det (A B) = \det A \, \det B %} it follows that
 
 <div class="pull-right">(9)</div>
-{% dmath \det M = 1 \hbox{ for any subtree } T(M) \hbox{ of the Stern-Brocot tree.} %}
+{% dmath \det M = 1 \text{ for any subtree } T(M) \text{ of the Stern-Brocot tree.} %}
 
 This is an important property. Consider any node {% imath \frac{m}{n} %} of the tree. Then the left subtree is {% imath T(M') %} with
 
@@ -87,11 +87,11 @@ for some integers {% imath m' %} and {% imath n' %}. But then {% imath m' n - m 
 
 A natural question is now: Can *any* reduced positive fraction be found in the Stern-Brocot tree? Assume there is a fraction {% imath \frac{p}{q} %} with {% imath p \perp q %} which is *not* present. Consider now the process of searching for this fraction. This will produce an infinite sequence of matrices of the form&nbsp;(8) for {% imath n=0, 1, \ldots %}, where the {% imath a_k %}'s are determined from the number of left and right branches chosen during the search. Let one of the matrices be
 
-{% dmath M = \begin{bmatrix} m_2 & m_1 \\ n_2 & n_1 \end{bmatrix} \hbox{ where } \frac{m_1}{n_1} < \frac{p}{q} < \frac{m_2}{n_2}. %}
+{% dmath M = \begin{bmatrix} m_2 & m_1 \\ n_2 & n_1 \end{bmatrix} \text{ where } \frac{m_1}{n_1} < \frac{p}{q} < \frac{m_2}{n_2}. %}
 
 The inequalities follow from the properties of the Stern-Brocot tree and the search process being performed. They imply that
 
-{% dmath p n_1 - q m_1 \geq 1 \hbox{ and } q m_2 - p n_2 \geq 1 %}
+{% dmath p n_1 - q m_1 \geq 1 \text{ and } q m_2 - p n_2 \geq 1 %}
 
 and we know from&nbsp;(9) that {% imath n_1 m_2 - m_1 n_2 = 1 %}. We now get
 

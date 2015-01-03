@@ -19,7 +19,7 @@ The method presented here is based on *The Classical Algorithms*, Section&nbsp;4
 
 We represent the numbers using radix {% imath b \geq 2 %} and set
 
-{% dmath u = (u_{m-1} \ldots u_1 u_0)_b \quad \mbox{and} \quad v = (v_{n-1} \ldots v_1 v_0)_b \; , %}
+{% dmath u = (u_{m-1} \ldots u_1 u_0)_b \quad \text{and} \quad v = (v_{n-1} \ldots v_1 v_0)_b \; , %}
 
 so {% imath u %} is an {% imath m %}-digit number and {% imath v %} is an {% imath n %}-digit number (see [previous post](/2011/10/multiple-precision-number-representation.html) for more details on representing multiple-precision numbers).
 
@@ -42,9 +42,9 @@ We will approach the division algorithm from a top-level point of view. It is ac
 
 An essential invariant of this algorithm is
 
-{% dmath (u^{(k)}_{k+n-1} \ldots u^{(k)}_{k+1} u^{(k)}_k)_b < v \quad \hbox{for} \quad k=0, 1, \ldots, m-n+1. %}
+{% dmath (u^{(k)}_{k+n-1} \ldots u^{(k)}_{k+1} u^{(k)}_k)_b < v \quad \text{for} \quad k=0, 1, \ldots, m-n+1. %}
 
-This can be seen as follows. For {% imath k=m-n+1 %} the invariant is ensured by introducing a zero as the most significant digit of {% imath u^{(m-n+1)} %} in step&nbsp;**G1**. For {% imath k=0,1,\ldots,m-n %} we see from steps&nbsp;**G3** and&nbsp;**G4** that {% imath (u^{(k)}_{k+n} \ldots u^{(k)}_{k+1} u^{(k)}_k)_b = (u^{(k+1)}_{k+n} \ldots u^{(k+1)}_{k+1} u^{(k+1)}_k)_b \hbox{ mod } v %} and the inequality follows.
+This can be seen as follows. For {% imath k=m-n+1 %} the invariant is ensured by introducing a zero as the most significant digit of {% imath u^{(m-n+1)} %} in step&nbsp;**G1**. For {% imath k=0,1,\ldots,m-n %} we see from steps&nbsp;**G3** and&nbsp;**G4** that {% imath (u^{(k)}_{k+n} \ldots u^{(k)}_{k+1} u^{(k)}_k)_b = (u^{(k+1)}_{k+n} \ldots u^{(k+1)}_{k+1} u^{(k+1)}_k)_b \text{ mod } v %} and the inequality follows.
 
 Note that the invariant implies that {% imath u^{(k)}_{k+n}=0 %} for {% imath k=0, 1, \ldots, m-n %}. Furthermore we have that
 
@@ -64,7 +64,7 @@ Let us now consider computing the quotient in step&nbsp;**G3** in the case {% im
 
 We wish to compute {% imath q = \lfloor u/v \rfloor %} as fast as possible. How good is a 'first order' approximation, where we use just the two most-significant digits of {% imath u %} and the most-significant digit of {% imath v %}: {% imath (u_n b + u_{n-1})/v_{n-1} %}? First of all, if {% imath u_n = v_{n-1} %} this quantity equals {% imath b %} and we know that {% imath q \leq b-1 %} by assumption, so let us therefore study
 
-{% dmath \hat{q} = \hbox{min} \left( \left\lfloor \frac{u_n b + u_{n-1}}{v_{n-1}} \right\rfloor, b-1 \right) %}
+{% dmath \hat{q} = \text{min} \left( \left\lfloor \frac{u_n b + u_{n-1}}{v_{n-1}} \right\rfloor, b-1 \right) %}
 
 This approximate quotient is never too small, as the following theorem states.
 
@@ -146,7 +146,7 @@ We now have the following procedure for computing {% imath \hat{q} %}, a very cl
 
 **Algorithm Q**. Let {% imath u = (u_n \ldots u_1 u_0)_b %} and {% imath v = (v_{n-1} \ldots v_1 v_0)_b %}, {% imath v_{n-1} \neq 0 %}, with {% imath n \geq 2 %} and {% imath 0 \leq \lfloor u/v \rfloor < b %} (any digit of {% imath u %} can be zero and note that the only digits accessed are {% imath u_n %}, {% imath u_{n-1} %}, {% imath u_{n-2} %}, {% imath v_{n-1} %}, and {% imath v_{n-2} %}). The algorithm computes an integer {% imath \hat{q} %} such that {% imath \hat{q}-1 \leq \lfloor u/v \rfloor \leq \hat{q} %} (Theorems&nbsp;1 and&nbsp;4).
 
- * **Q1**. Set {% imath \hat{q} \leftarrow \lfloor (u_n b + u_{n-1})/v_{n-1} \rfloor %} and {% imath \hat{r} \leftarrow (u_n b + u_{n-1}) \hbox{ mod } v_{n-1} %}. If {% imath \hat{q} = b %} (division overflow when {% imath b=b_T %}) set {% imath \hat{q} \leftarrow \hat{q} - 1 %} and {% imath \hat{r} \leftarrow \hat{r} + v_{n-1} %} (dealing with division overflow can be avoided by setting {% imath \hat{q} \leftarrow b-1 %} and {% imath \hat{r} \leftarrow u_n + u_{n-1} %} if {% imath v_{n-1} = u_n %}).
+ * **Q1**. Set {% imath \hat{q} \leftarrow \lfloor (u_n b + u_{n-1})/v_{n-1} \rfloor %} and {% imath \hat{r} \leftarrow (u_n b + u_{n-1}) \text{ mod } v_{n-1} %}. If {% imath \hat{q} = b %} (division overflow when {% imath b=b_T %}) set {% imath \hat{q} \leftarrow \hat{q} - 1 %} and {% imath \hat{r} \leftarrow \hat{r} + v_{n-1} %} (dealing with division overflow can be avoided by setting {% imath \hat{q} \leftarrow b-1 %} and {% imath \hat{r} \leftarrow u_n + u_{n-1} %} if {% imath v_{n-1} = u_n %}).
  * **Q2**. While {% imath \hat{r} < b %} and {% imath \hat{q} v_{n-2} > b \hat{r} + u_{n-2} %}, set {% imath \hat{q} \leftarrow \hat{q} - 1 %} and {% imath \hat{r} \leftarrow \hat{r} + v_{n-1} %} (Theorem&nbsp;2 assures that this while-loop is executed at most two times if {% imath v_{n-1} \geq \lfloor b/2 \rfloor %}. The check {% imath \hat{r} < b %} is not necessary but makes sure that we don't deal with numbers that are {% imath b^2 %} or larger in the subsequent comparison).
 
 We can now combine Algorithm G with the just obtained knowledge of approximating the quotient in the following algorithm for long division:

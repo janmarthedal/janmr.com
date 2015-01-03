@@ -25,11 +25,11 @@ This means that {% imath u+v %} can be represented using {% imath n %} or {% ima
 
 Assuming {% imath k_0 %} is set to some initial value (more on this below) we now have the following algorithm:
 
-{% dmath \begin{aligned} w_i     &\leftarrow (u_i + v_i + k_i) \;\mbox{mod}\; b \\ k_{i+1} &\leftarrow \lfloor (u_i + v_i + k_i)/b \rfloor \end{aligned} %}
+{% dmath \begin{aligned} w_i     &\leftarrow (u_i + v_i + k_i) \;\text{mod}\; b \\ k_{i+1} &\leftarrow \lfloor (u_i + v_i + k_i)/b \rfloor \end{aligned} %}
 
 for {% imath i = 0, 1, \ldots, n-1 %}, and finally {% imath w_n \leftarrow k_n %}.
 
-The algorithm sets the digits of {% imath w %} such that {% imath w = u+v+k_0 %}. This can be seen by first observing that {% imath p = p \;\mbox{mod}\; b + \lfloor p/b \rfloor b %} for any integer {% imath p %}. Using this relation on the variables set during the algorithm, we have
+The algorithm sets the digits of {% imath w %} such that {% imath w = u+v+k_0 %}. This can be seen by first observing that {% imath p = p \;\text{mod}\; b + \lfloor p/b \rfloor b %} for any integer {% imath p %}. Using this relation on the variables set during the algorithm, we have
 
 {% dmath u_i + v_i + k_i = w_i + k_{i+1} b %}
 

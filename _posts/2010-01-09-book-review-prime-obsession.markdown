@@ -28,7 +28,7 @@ The Riemann Hypothesis concerns the zeros of the [Riemann zeta function](http://
 
 The Riemann zeta function is intimately linked to primes through the [Euler product formula](http://en.wikipedia.org/wiki/Euler_product_formula),
 
-{% dmath \sum_{n=1}^\infty \frac{1}{n^s} = \prod_{p \hbox{ prime}} \left( 1 - \frac{1}{p^s} \right)^{-1} %}
+{% dmath \sum_{n=1}^\infty \frac{1}{n^s} = \prod_{p \text{ prime}} \left( 1 - \frac{1}{p^s} \right)^{-1} %}
 
 which the book refers to as the Golden Key. Proving the Riemann Hypothesis could provide important insight into the distribution of primes.
 

@@ -42,7 +42,7 @@ So {% imath a=|AF| %}, {% imath b=|BE| %}, and {% imath h=|CD| %} are given whil
 
 Consider first the special case {% imath a=b %}. It is then clear that
 
-{% dmath w = \sqrt{a^2-4h^2} \quad\hbox{for } a=b. %}
+{% dmath w = \sqrt{a^2-4h^2} \quad\text{for } a=b. %}
 
 Assume now, without loss of generality, that {% imath a > b %}. The Pythegorean theorem gives us
 
@@ -51,7 +51,7 @@ Assume now, without loss of generality, that {% imath a > b %}. The Pythegorean 
 
 We then use that the triangle ACD is similar to AFB, just like the triangle BDC is similar to BAE, and get
 
-{% dmath \frac{|AD|}{w} = \frac{h}{p} \quad\hbox{and}\quad \frac{|BD|}{w} = \frac{h}{q}. %}
+{% dmath \frac{|AD|}{w} = \frac{h}{p} \quad\text{and}\quad \frac{|BD|}{w} = \frac{h}{q}. %}
 
 This gives us
 
@@ -74,13 +74,13 @@ We finally divide each side by {% imath \sqrt{a^2-b^2}^4 %} and obtain
 where
 
 <div class="pull-right">(4)</div>
-{% dmath x = \frac{p+q}{\sqrt{a^2-b^2}} \quad\hbox{and}\quad c = \frac{4h}{\sqrt{a^2-b^2}}. %}
+{% dmath x = \frac{p+q}{\sqrt{a^2-b^2}} \quad\text{and}\quad c = \frac{4h}{\sqrt{a^2-b^2}}. %}
 
 Let us take a closer look at (3) by considering the fourth degree polynomium {% imath Q(x)=x^3 (x-c) - 1 %}. Note first that {% imath c %} is positive. Next that {% imath Q %} is decreasing for {% imath x < 0 %} and {% imath 0 < x < 3c/4 %} and increasing for {% imath x > 3c/4 %} (seen from the derivative {% imath Q'(x)=x^2(4x-3c) %}). And since {% imath Q(0)=-1 %} we then know that {% imath Q %} *always* has exactly two zeros, one negative and one positive. We are naturally interested in the positive one.
 
 Assume now that we have found the (positive) root {% imath x %}. We then have from (4) and (1),
 
-{% dmath p+q = x \sqrt{a^2-b^2} \quad \hbox{and} \quad p-q = \frac{a^2-b^2}{p+q} = \frac{1}{x} \sqrt{a^2-b^2}, %}
+{% dmath p+q = x \sqrt{a^2-b^2} \quad \text{and} \quad p-q = \frac{a^2-b^2}{p+q} = \frac{1}{x} \sqrt{a^2-b^2}, %}
 
 and then
 

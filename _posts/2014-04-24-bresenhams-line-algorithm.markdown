@@ -61,7 +61,7 @@ To determine the {% imath \nabla_k %}'s we start with the base case:
 For {% imath k=1, 2, \ldots, \Delta x - 1 %} we get
 {% dmath \nabla_{k+1} - \nabla_k = 2(x_{k+1}-x_k)\Delta y - 2(y_k-y_{k-1})\Delta x \; . %} 
 We now split into the two cases for {% imath \nabla_k %} and get
-{% dmath \nabla_{k+1} = \begin{cases} \nabla_k + 2\Delta y & \mbox{for } \nabla_k \leq 0 \; , \\ \nabla_k + 2\Delta y - 2\Delta x & \mbox{for } \nabla_k > 0 \; , \end{cases} %}
+{% dmath \nabla_{k+1} = \begin{cases} \nabla_k + 2\Delta y & \text{for } \nabla_k \leq 0 \; , \\ \nabla_k + 2\Delta y - 2\Delta x & \text{for } \nabla_k > 0 \; , \end{cases} %}
 for {% imath k=1, 2, \ldots, \Delta x - 1 %}.
 
 These expressions determine all the {% imath \nabla_k %}'s which, in turn, determines all the {% imath y_k %}'s.

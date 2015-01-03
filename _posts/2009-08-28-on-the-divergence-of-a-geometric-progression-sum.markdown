@@ -29,7 +29,7 @@ Let us consider three different cases. If {% imath |r| < 1 %} we see that the on
 
 Since the magnitude of the difference between our suspected limit and the partial sums can be made as small as we like (as long as we choose {% imath n %} sufficiently large), we have
 
-{% dmath s_r = \frac{1}{1-r}, \quad \hbox{for } |r| < 1. %}
+{% dmath s_r = \frac{1}{1-r}, \quad \text{for } |r| < 1. %}
 
 What about {% imath |r| > 1 %}? We get
 
@@ -47,7 +47,7 @@ So the partial sums {% imath s_r(n) %} are bounded by some constant independent 
 
 (using {% imath e^{i x} + e^{i y} = 2 \cos((x-y)/2) e^{i(x+y)/2} %} and {% imath \sin \theta = 2\sin(\theta/2)\cos(\theta/2) %}). So {% imath s_r(n) %} does <em>not</em> converge to {% imath 1/(1-r) %} as {% imath n \rightarrow \infty %}. Indeed, we see that {% imath s_r(n) %} follows a circle in the complex plane; a circle centered in {% imath 1/(1-r) %} with radius {% imath 1/(2\sin(\theta/2)) %}. And this is what I find interesting: {% imath s_r(n) %} does not converge to any value,
 
-{% dmath \hbox{the series } s_r \hbox{ is divergent for } |r| \geq 1, %}
+{% dmath \text{the series } s_r \text{ is divergent for } |r| \geq 1, %}
 
 but circles around the value {% imath 1/(1-r) %} when {% imath |r|=1 %}, {% imath r \neq 1 %}. In fact, {% imath 1/(1-r) %} makes sense for all {% imath r \neq 1 %}, so can this value be assigned to {% imath s_r %} in some meaningful way? (When {% imath |r| < 1 %}, I would suspect that the values of {% imath s_r(n) %} spirals inward towards {% imath 1/(1-r) %} as {% imath n %} grows and spirals outwards when {% imath |r| > 1 %}; I have not verified this, though.)
 

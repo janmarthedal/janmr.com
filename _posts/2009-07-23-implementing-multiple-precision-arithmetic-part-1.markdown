@@ -71,13 +71,13 @@ Adding radix {% imath b %}-numbers is quite straightforward and is easily done u
 
 To formalize, we first consider adding two {% imath n %}-digit numbers, {% imath n \geq 1 %}, {% imath u=(u_{n-1} \ldots u_1 u_0)_b %} and {% imath v = (v_{n-1} \ldots v_1 v_0)_b %}, obtaining an {% imath (n+1) %}-digit sum {% imath w=(w_n \ldots w_1 w_0)_b %}. Note that we here may end up with {% imath w_n = 0 %} (in which case {% imath w_{n-1} \neq 0 %}). We have
 
-{% dmath \begin{aligned} w_0 &\leftarrow (u_0 + v_0) \;\mbox{mod}\; b, \\ w_i &\leftarrow (u_i + v_i + k_i) \;\mbox{mod}\; b, \\ w_n &\leftarrow k_n. \end{aligned} \quad \begin{aligned} k_1 &\leftarrow \lfloor (u_0 + v_0)/b \rfloor, \\ k_{i+1} &\leftarrow \lfloor (u_i + v_i + k_i)/b \rfloor, \quad i = 1, \ldots, n-1, \\ \mbox{ } \end{aligned} %}
+{% dmath \begin{aligned} w_0 &\leftarrow (u_0 + v_0) \;\text{mod}\; b, \\ w_i &\leftarrow (u_i + v_i + k_i) \;\text{mod}\; b, \\ w_n &\leftarrow k_n. \end{aligned} \quad \begin{aligned} k_1 &\leftarrow \lfloor (u_0 + v_0)/b \rfloor, \\ k_{i+1} &\leftarrow \lfloor (u_i + v_i + k_i)/b \rfloor, \quad i = 1, \ldots, n-1, \\ \text{ } \end{aligned} %}
 
-Note that {% imath \lfloor x/b \rfloor = [x \geq b] %} for {% imath x < 2 b %}, where {% imath [P] %} is equal to {% imath 1 %} if {% imath P %} is true and equal to {% imath 0 %} if {% imath P %} is false. This means {% imath k_i \in \{0,1\} %} and furthermore {% imath u_i + v_i + k_i \leq b-1 + b-1 + 1 = 2 b - 1 %}. Using that {% imath 0 \leq u_i, v_i \leq b-1 %} and {% imath (x \;\mbox{mod}\; b) + \lfloor x/b \rfloor = x %} it is quite easy to show that, in fact, {% imath w = u + v %}.
+Note that {% imath \lfloor x/b \rfloor = [x \geq b] %} for {% imath x < 2 b %}, where {% imath [P] %} is equal to {% imath 1 %} if {% imath P %} is true and equal to {% imath 0 %} if {% imath P %} is false. This means {% imath k_i \in \{0,1\} %} and furthermore {% imath u_i + v_i + k_i \leq b-1 + b-1 + 1 = 2 b - 1 %}. Using that {% imath 0 \leq u_i, v_i \leq b-1 %} and {% imath (x \;\text{mod}\; b) + \lfloor x/b \rfloor = x %} it is quite easy to show that, in fact, {% imath w = u + v %}.
 
 The cases where {% imath u %} or {% imath v %} is zero makes addition trivial. Similarly, if the number of digits in {% imath u %} and {% imath v %} are different, is it quite easy to adjust the algorithm above.
 
-Let us now look at some implementation details. How do we compute {% imath z = (x + y) \;\mbox{mod}\; b %} and {% imath k = \lfloor (x + y)/b \rfloor %} for {% imath 0 \leq x, y < b %}? We have several options, some of which are
+Let us now look at some implementation details. How do we compute {% imath z = (x + y) \;\text{mod}\; b %} and {% imath k = \lfloor (x + y)/b \rfloor %} for {% imath 0 \leq x, y < b %}? We have several options, some of which are
 
 1.  Use {% imath 2 b \leq b_T %}. Then {% imath z %} and {% imath k %} can be computed directly.
 2.  Use {% imath b = b_T %} and the CPU's add and add-with-carry instructions.
@@ -85,15 +85,15 @@ Let us now look at some implementation details. How do we compute {% imath z = (
 
 Option 1 is actually not an option because we insist on using {% imath b = b_T %}. Option 2 leads to the most efficient code, regarding both space and speed. The problem is that these special instructions are not directly accessible via the C++ standard. Some compilers, though, make it possible to use inline assembly. For instance, [GCC](http://gcc.gnu.org) has such [capabilities](http://gcc.gnu.org/onlinedocs/gcc/Extended-Asm.html).
 
-Option 3 is the way to go. As mentioned earlier, C++ does calculations modulo {% imath b_T %}, so {% imath z \leftarrow (x + y) \;\mbox{mod}\; b %} comes &#8216;for free&#8217; as simply `z = x + y` in C++. Left is how to detect whether a carry occurs during an addition. One way to do that is the following. Consider {% imath z = (x + y) \;\mbox{mod}\; b %} for which there are two possibilities. Either {% imath z = x + y %} ({% imath k = 0 %}) which implies {% imath z \geq x %} and {% imath z \geq y %}, or we have {% imath z + b = x + y %} ({% imath k = 1 %}) which implies {% imath z = x - (b - y) = y - (b - x) %}, leading to {% imath z < x %} and {% imath z < y %}. So {% imath k = [z < x] = [z < y] %}. Another way to detect whether a carry occurs is to split {% imath x %} and {% imath y %} into a low and high part, and then adding the low and high parts seperately—keeping track of a possible intermediate carry, of course.
+Option 3 is the way to go. As mentioned earlier, C++ does calculations modulo {% imath b_T %}, so {% imath z \leftarrow (x + y) \;\text{mod}\; b %} comes &#8216;for free&#8217; as simply `z = x + y` in C++. Left is how to detect whether a carry occurs during an addition. One way to do that is the following. Consider {% imath z = (x + y) \;\text{mod}\; b %} for which there are two possibilities. Either {% imath z = x + y %} ({% imath k = 0 %}) which implies {% imath z \geq x %} and {% imath z \geq y %}, or we have {% imath z + b = x + y %} ({% imath k = 1 %}) which implies {% imath z = x - (b - y) = y - (b - x) %}, leading to {% imath z < x %} and {% imath z < y %}. So {% imath k = [z < x] = [z < y] %}. Another way to detect whether a carry occurs is to split {% imath x %} and {% imath y %} into a low and high part, and then adding the low and high parts seperately—keeping track of a possible intermediate carry, of course.
 
 ### Subtraction
 
 An algorithm for multiple-precision subtraction is similar to addition, as just considered. Again we set {% imath u=(u_{n-1} \ldots u_1 u_0)_b %} and {% imath v = (v_{n-1} \ldots v_1 v_0)_b %} with {% imath n \geq 1 %}. To ensure that the result {% imath w = u - v %} is a non-negative integer we furthermore require that {% imath u \geq v %}. We now have the algorithm:
 
-{% dmath \begin{aligned} w_0 &\leftarrow (u_0 - v_0) \;\mbox{mod}\; b, \\ w_i &\leftarrow (u_i - v_i - k_i) \;\mbox{mod}\; b, \end{aligned} \quad \begin{aligned} k_1 &\leftarrow [u_0 < v_0], \\ k_{i+1} &\leftarrow [u_i < v_i + k_i], \quad i = 1, \ldots, n-1. \end{aligned} %}
+{% dmath \begin{aligned} w_0 &\leftarrow (u_0 - v_0) \;\text{mod}\; b, \\ w_i &\leftarrow (u_i - v_i - k_i) \;\text{mod}\; b, \end{aligned} \quad \begin{aligned} k_1 &\leftarrow [u_0 < v_0], \\ k_{i+1} &\leftarrow [u_i < v_i + k_i], \quad i = 1, \ldots, n-1. \end{aligned} %}
 
-Note that <em>any</em> digit of the result may end up being zero—we only know that {% imath 0 \geq w \geq b^n - b^{n-1} - 1 %}. Note furthermore that {% imath k_n = [u < v] = 0 %}. Verification of the algorithm is easily done using the fact that {% imath x - y = ((x-y) \;\mbox{mod}\; b) - b [x < y] %} for {% imath 0 \leq x, y < b %}.
+Note that <em>any</em> digit of the result may end up being zero—we only know that {% imath 0 \geq w \geq b^n - b^{n-1} - 1 %}. Note furthermore that {% imath k_n = [u < v] = 0 %}. Verification of the algorithm is easily done using the fact that {% imath x - y = ((x-y) \;\text{mod}\; b) - b [x < y] %} for {% imath 0 \leq x, y < b %}.
 
 The options when implementing the algorithm is, again, much like for addition. Using the CPU's subtract-with-borrow instruction would be ideal here, but it cannot be done portably in C++. The borrow when calculating {% imath x - y %} can be computed as simply {% imath k \leftarrow [x < y] %}, or, to avoid branching instructions, we can split {% imath x %} and {% imath y %} into two parts and do the subtraction for each part seperately.
 
@@ -109,7 +109,7 @@ We first, however, consider the simpler operation {% imath z \leftarrow y + \alp
 
 The following algorithm suggests itself:
 
-{% dmath \begin{aligned} z_0 &\leftarrow (y_0 + \alpha u_0) \;\mbox{mod}\; b, \\ z_i &\leftarrow (y_i + \alpha u_i + k_i) \;\mbox{mod}\; b, \\ z_m &\leftarrow k_m. \end{aligned} \quad \begin{aligned} k_1 &\leftarrow \lfloor (y_0 + \alpha u_0)/b \rfloor, \\ k_{i+1} &\leftarrow \lfloor (y_i + \alpha u_i + k_i)/b \rfloor, \quad i = 1, \ldots, m-1, \\ \mbox{ } \end{aligned} %}
+{% dmath \begin{aligned} z_0 &\leftarrow (y_0 + \alpha u_0) \;\text{mod}\; b, \\ z_i &\leftarrow (y_i + \alpha u_i + k_i) \;\text{mod}\; b, \\ z_m &\leftarrow k_m. \end{aligned} \quad \begin{aligned} k_1 &\leftarrow \lfloor (y_0 + \alpha u_0)/b \rfloor, \\ k_{i+1} &\leftarrow \lfloor (y_i + \alpha u_i + k_i)/b \rfloor, \quad i = 1, \ldots, m-1, \\ \text{ } \end{aligned} %}
 
 If {% imath \alpha = 0 %} then obviously {% imath z_i = 0 %}. If {% imath 1 \leq \alpha \leq b-1 %} then {% imath z_m %} may be zero, in which case {% imath z_ {m-1} \neq 0 %}, since
 
@@ -127,15 +127,15 @@ From this we see that we can compute {% imath w %} by doing a number of {% imath
 
 for {% imath j = 0, 1, \ldots, n-1 %}. Note that {% imath w_{m+n-1} %} may be zero, in which case {% imath w_{m+n-2} \neq 0 %}, since {% imath b^{m+n-2} \leq w < b^{m+n} %}.
 
-Now for some implementation details. We note that the only non-trivial computation is {% imath z \leftarrow y + \alpha x + k %}, where {% imath 0 \leq \alpha, k, x, y < b %}, followed by computing {% imath z \;\mbox{mod}\; b %} and {% imath \lfloor z/b \rfloor %}. Most CPUs have instructions that can multiply two word-size numbers and produce a double-word answer. As was the case for addition and subtraction, we don't have access to these instructions from standard C++. We have {% imath 0 \leq z < b^2 %} but every multiplication result in our portable C++ implementation must be smaller than {% imath b %}. We can do this by using a new base number {% imath h %} where {% imath h^2 = b %} (we assume that {% imath b %} is chosen appropriately so {% imath h %} is integer) and setting
+Now for some implementation details. We note that the only non-trivial computation is {% imath z \leftarrow y + \alpha x + k %}, where {% imath 0 \leq \alpha, k, x, y < b %}, followed by computing {% imath z \;\text{mod}\; b %} and {% imath \lfloor z/b \rfloor %}. Most CPUs have instructions that can multiply two word-size numbers and produce a double-word answer. As was the case for addition and subtraction, we don't have access to these instructions from standard C++. We have {% imath 0 \leq z < b^2 %} but every multiplication result in our portable C++ implementation must be smaller than {% imath b %}. We can do this by using a new base number {% imath h %} where {% imath h^2 = b %} (we assume that {% imath b %} is chosen appropriately so {% imath h %} is integer) and setting
 
 {% dmath z = (z_3 z_2 z_1 z_0)_h, \quad y = (y_1 y_0)_h, \quad \alpha = (\alpha_1 \alpha_0)_h, \quad x = (x_1 x_0)_h, \quad k = (k_1 k_0)_h. %}
 
 We can now use the multiplication algorithm above on a &#8216;smaller scale&#8217; to compute the product {% imath \alpha x %}. We can furthermore expand the methods slightly and incorporate the addition of {% imath y %} and {% imath k %} in an elegant way:
 
-{% dmath \begin{aligned} (z_1 z_0)_h &\leftarrow (y_1 y_0)_h, \\ c &\leftarrow k_0, \\ t &\leftarrow z_0 + \alpha_0 x_0 + c, \quad z_0 \leftarrow t \;\mbox{mod}\; b, \quad c \leftarrow \lfloor t/b \rfloor, \\ t &\leftarrow z_1 + \alpha_0 x_1 + c, \quad z_1 \leftarrow t \;\mbox{mod}\; b, \quad c \leftarrow \lfloor t/b \rfloor, \\ z_2 &\leftarrow c, \\ c &\leftarrow k_1, \\ t &\leftarrow z_1 + \alpha_1 x_0 + c, \quad z_1 \leftarrow t \;\mbox{mod}\; b, \quad c \leftarrow \lfloor t/b \rfloor, \\ t &\leftarrow z_2 + \alpha_1 x_1 + c, \quad z_2 \leftarrow t \;\mbox{mod}\; b, \quad c \leftarrow \lfloor t/b \rfloor, \\ z_3 &\leftarrow c. \end{aligned} %}
+{% dmath \begin{aligned} (z_1 z_0)_h &\leftarrow (y_1 y_0)_h, \\ c &\leftarrow k_0, \\ t &\leftarrow z_0 + \alpha_0 x_0 + c, \quad z_0 \leftarrow t \;\text{mod}\; b, \quad c \leftarrow \lfloor t/b \rfloor, \\ t &\leftarrow z_1 + \alpha_0 x_1 + c, \quad z_1 \leftarrow t \;\text{mod}\; b, \quad c \leftarrow \lfloor t/b \rfloor, \\ z_2 &\leftarrow c, \\ c &\leftarrow k_1, \\ t &\leftarrow z_1 + \alpha_1 x_0 + c, \quad z_1 \leftarrow t \;\text{mod}\; b, \quad c \leftarrow \lfloor t/b \rfloor, \\ t &\leftarrow z_2 + \alpha_1 x_1 + c, \quad z_2 \leftarrow t \;\text{mod}\; b, \quad c \leftarrow \lfloor t/b \rfloor, \\ z_3 &\leftarrow c. \end{aligned} %}
 
-We now have {% imath z \;\mbox{mod}\; b = (z_1 z_0)_h %} and {% imath \lfloor z/b \rfloor = (z_3 z_2)_h %}.
+We now have {% imath z \;\text{mod}\; b = (z_1 z_0)_h %} and {% imath \lfloor z/b \rfloor = (z_3 z_2)_h %}.
 
 ### Concluding Remarks
 

@@ -15,7 +15,7 @@ We now turn to multiple-precision subtraction for non-negative integers. The alg
 
 We consider two {% imath n %}-digit numbers, {% imath u=(u_{n-1} \ldots u_1 u_0)_b %} and {% imath v=(v_{n-1} \ldots v_1 v_0)_b %}, with {% imath n \geq 1 %} (see a [previous post](/2011/10/multiple-precision-number-representation.html) on the number notation). We wish to compute an {% imath n %}-digit result {% imath w=(w_{n-1} \ldots w_1 w_0)_b %} such that
 
-{% dmath w = (u - v - k_0) \;\mbox{mod}\; b^n %}
+{% dmath w = (u - v - k_0) \;\text{mod}\; b^n %}
 
 where {% imath k_0 %} is some initial [borrow](http://mathworld.wolfram.com/Borrow.html), {% imath 0 \leq k_0 \leq 1 %}. Furthermore, a final borrow {% imath k_n %} will indicate whether {% imath u < v+k_0 %}.<span></span>
 
@@ -23,7 +23,7 @@ Let us first introduce a notation which [Donald E. Knuth](http://www-cs-faculty.
 
 We now have the algorithm:
 
-{% dmath \begin{aligned} w_i     &\leftarrow (u_i - v_i - k_i) \;\mbox{mod}\; b, \\ k_{i+1} &\leftarrow [u_i < v_i + k_i], \end{aligned} %}
+{% dmath \begin{aligned} w_i     &\leftarrow (u_i - v_i - k_i) \;\text{mod}\; b, \\ k_{i+1} &\leftarrow [u_i < v_i + k_i], \end{aligned} %}
 
 for {% imath i = 0, 1, \ldots, n-1 %}. This is really just a formalization of the familiar pencil-and-paper method, but let us show that it does the right thing.
 
@@ -33,7 +33,7 @@ Note first that {% imath 0 \leq k_i \leq 1 %} for {% imath i = 0, 1, \ldots, n-1
 
 which holds since we have {% imath -b = 0-(b-1)-1 \leq u_i-v_i-k_i \leq (b-1)-0-0 = b-1 %}. We now observe that
 
-{% dmath \begin{aligned} u_i-v_i-k_i &= (u_i - v_i - k_i) \;\mbox{mod}\; b + \left\lfloor \frac{u_i-v_i-k_i}{b} \right\rfloor b \\ &= (u_i - v_i - k_i) \;\mbox{mod}\; b - [u_i < v_i + k_i] b \\ &= w_i - k_{i+1} b. \end{aligned} %}
+{% dmath \begin{aligned} u_i-v_i-k_i &= (u_i - v_i - k_i) \;\text{mod}\; b + \left\lfloor \frac{u_i-v_i-k_i}{b} \right\rfloor b \\ &= (u_i - v_i - k_i) \;\text{mod}\; b - [u_i < v_i + k_i] b \\ &= w_i - k_{i+1} b. \end{aligned} %}
 
 We finally have
 
@@ -41,7 +41,7 @@ We finally have
 
 so {% imath u-v-k_0 = w-k_n b^n %}. Since {% imath 0 \leq w \leq b^n-1 %} we have now established
 
-{% dmath w = (u - v - k_0) \;\mbox{mod}\; b^n, %}
+{% dmath w = (u - v - k_0) \;\text{mod}\; b^n, %}
 
 and {% imath k_n %} indicates whether {% imath u < v+k_0 %}.
 

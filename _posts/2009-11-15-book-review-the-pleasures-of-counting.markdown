@@ -37,7 +37,7 @@ to applied mathematics (part of a larger exercise),
 
 to more pure-mathematics exercises (also part of a larger exercise),
 
-> Let {% imath a_1, a_2, \ldots, a_{(p-1)(q-1)} %} be the {% imath (p-1)(q-1) %} integers between {% imath 0 %} and {% imath p q %} which are coprime to {% imath p q %}. If {% imath k %} is coprime to {% imath p q %} explain why {% imath k a_r %} is coprime to {% imath p q %} and there is exactly one integer {% imath b_r %} between {% imath 0 %} and {% imath p q %} such that {% imath b_r \equiv k a_r \hbox{ mod } p q %}. Explain why {% imath b_r %} is coprime to {% imath p q %}.
+> Let {% imath a_1, a_2, \ldots, a_{(p-1)(q-1)} %} be the {% imath (p-1)(q-1) %} integers between {% imath 0 %} and {% imath p q %} which are coprime to {% imath p q %}. If {% imath k %} is coprime to {% imath p q %} explain why {% imath k a_r %} is coprime to {% imath p q %} and there is exactly one integer {% imath b_r %} between {% imath 0 %} and {% imath p q %} such that {% imath b_r \equiv k a_r \text{ mod } p q %}. Explain why {% imath b_r %} is coprime to {% imath p q %}.
 
 Most of the mathematical exercises are formulated as &#8220;show that the solution of the equation is &#8230;&#8221; instead of &#8220;find the solution of the equation&#8221;. This makes it possible for the reader to skim over most exercises and get a feel for the mathematics involved without actually spending a lot of time solving (or trying to solve) the exercises.
 

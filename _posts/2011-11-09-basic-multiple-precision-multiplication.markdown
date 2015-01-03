@@ -25,13 +25,13 @@ Using this information it is straightforward to show that {% imath b^{n-1} \leq 
 
 We now have the algorithm:
 
-{% dmath \begin{aligned} z_i &\leftarrow (\alpha v_i + y_i + k_i) \;\mbox{mod}\; b, \\ k_{i+1} &\leftarrow \left\lfloor \frac{\alpha v_i + y_i + k_i}{b} \right\rfloor, \end{aligned} %}
+{% dmath \begin{aligned} z_i &\leftarrow (\alpha v_i + y_i + k_i) \;\text{mod}\; b, \\ k_{i+1} &\leftarrow \left\lfloor \frac{\alpha v_i + y_i + k_i}{b} \right\rfloor, \end{aligned} %}
 
 for {% imath i = 0, 1, \ldots, n-1 %} and finally setting {% imath z_n = k_n %}.
 
 To realize that the algorithm computes what it is supposed to, observe first that
 
-{% dmath \alpha v_i + y_i + k_i = (\alpha v_i + y_i + k_i) \;\mbox{mod}\; b + \left\lfloor (\alpha v_i + y_i + k_i)/b \right\rfloor b = z_i + k_{i+1} b. %}
+{% dmath \alpha v_i + y_i + k_i = (\alpha v_i + y_i + k_i) \;\text{mod}\; b + \left\lfloor (\alpha v_i + y_i + k_i)/b \right\rfloor b = z_i + k_{i+1} b. %}
 
 Then we have
 
@@ -47,7 +47,7 @@ which implies that {% imath k_{i+1} = \lfloor (\alpha v_i + y_i + k_i)/b \rfloor
 
 We now turn to multiplying two multiple-precision numbers. More specifically, we wish to multiply
 
-{% dmath u = (u_{m-1} \ldots u_1 u_0)_b, \quad \mbox{and} \quad v = (v_{n-1} \ldots v_1 v_0)_b, %}
+{% dmath u = (u_{m-1} \ldots u_1 u_0)_b, \quad \text{and} \quad v = (v_{n-1} \ldots v_1 v_0)_b, %}
 
 which implies {% imath b^{m+n-2} \leq u v < b^{m+n} %}. So we set {% imath w = (w_{m+n-1} \ldots w_1 w_0)_b %} and aim to compute
 

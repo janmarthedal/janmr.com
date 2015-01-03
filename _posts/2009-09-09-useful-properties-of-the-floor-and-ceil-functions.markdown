@@ -66,21 +66,21 @@ Using the results of the previous sections we get
 
 Similar derivations can be shown for {% imath \lceil \cdot \rceil %} and we have
 
-{% dmath \lfloor f(x) \rfloor = \lfloor f(\lfloor x \rfloor) \rfloor \quad \hbox{and} \quad \lceil f(x) \rceil = \lceil f(\lceil x \rceil) \rceil, %}
+{% dmath \lfloor f(x) \rfloor = \lfloor f(\lfloor x \rfloor) \rfloor \quad \text{and} \quad \lceil f(x) \rceil = \lceil f(\lceil x \rceil) \rceil, %}
 
 for this class of functions. For {% imath f(x) = \sqrt{x} %} we thus have
 
-{% dmath \left\lfloor \sqrt{x} \right\rfloor = \left\lfloor \sqrt{\lfloor x \rfloor} \right\rfloor \quad \hbox{and} \quad \left\lceil \sqrt{x} \right\rceil = \left\lceil \sqrt{\lceil x \rceil} \right\rceil. %}
+{% dmath \left\lfloor \sqrt{x} \right\rfloor = \left\lfloor \sqrt{\lfloor x \rfloor} \right\rfloor \quad \text{and} \quad \left\lceil \sqrt{x} \right\rceil = \left\lceil \sqrt{\lceil x \rceil} \right\rceil. %}
 
 ### Fractions
 
 The result of the previous section also applies to {% imath f(x) = (x + n)/m %} for integer {% imath m, n %} and {% imath m > 0 %}. The positivity of {% imath m %} ensures that {% imath f %} is monotonically increasing and {% imath f^{-1}(y) = m y - n %} is clearly integer for integer {% imath y %}. We now have
 
-{% dmath \left\lfloor \frac{x+n}{m} \right\rfloor = \left\lfloor \frac{\lfloor x \rfloor+n}{m} \right\rfloor \quad \hbox{and} \quad \left\lceil \frac{x+n}{m} \right\rceil = \left\lceil \frac{\lceil x \rceil+n}{m} \right\rceil. %}
+{% dmath \left\lfloor \frac{x+n}{m} \right\rfloor = \left\lfloor \frac{\lfloor x \rfloor+n}{m} \right\rfloor \quad \text{and} \quad \left\lceil \frac{x+n}{m} \right\rceil = \left\lceil \frac{\lceil x \rceil+n}{m} \right\rceil. %}
 
 From these equalities we have the special cases
 
-{% dmath \begin{aligned} \left\lfloor \ldots \left\lfloor \lfloor x/a_1 \rfloor /a_2 \right\rfloor \ldots /a_k \right\rfloor &= \left\lfloor \frac{x}{a_1 a_2 \cdots a_k} \right\rfloor \hbox{ and} \\ \left\lceil \ldots \left\lceil \lceil x/a_1 \rceil /a_2 \right\rceil \ldots /a_k \right\rceil &= \left\lceil \frac{x}{a_1 a_2 \cdots a_k} \right\rceil, \end{aligned} %}
+{% dmath \begin{aligned} \left\lfloor \ldots \left\lfloor \lfloor x/a_1 \rfloor /a_2 \right\rfloor \ldots /a_k \right\rfloor &= \left\lfloor \frac{x}{a_1 a_2 \cdots a_k} \right\rfloor \text{ and} \\ \left\lceil \ldots \left\lceil \lceil x/a_1 \rceil /a_2 \right\rceil \ldots /a_k \right\rceil &= \left\lceil \frac{x}{a_1 a_2 \cdots a_k} \right\rceil, \end{aligned} %}
 
 for integer and positive {% imath a_j %}.
 
@@ -104,7 +104,7 @@ and similarly
 
 Let {% imath \log_b x %} be the logarithm of {% imath x %}, base {% imath b %} ({% imath x > 0 %}, {% imath b > 0 %}, {% imath b \neq 1 %}). We first set {% imath f(x) = \log_b x %} for integer {% imath b %}, base {% imath 2 %} or {% imath 10 %} being the most common. Again, we can apply the theorem from earlier; {% imath f %} is continuous and monotonically increasing and {% imath f^{-1}(y) = b^y %} is integer for integer {% imath y %}, so we have
 
-{% dmath \left\lfloor \log_b x \right\rfloor = \left\lfloor \log_b \lfloor x \rfloor \right\rfloor \quad \hbox{and} \quad \left\lceil \log_b x \right\rceil = \left\lceil \log_b \lceil x \rceil \right\rceil, %}
+{% dmath \left\lfloor \log_b x \right\rfloor = \left\lfloor \log_b \lfloor x \rfloor \right\rfloor \quad \text{and} \quad \left\lceil \log_b x \right\rceil = \left\lceil \log_b \lceil x \rceil \right\rceil, %}
 
 for integer {% imath b \geq 2 %}.
 
