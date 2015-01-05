@@ -8,11 +8,16 @@ var output;
 try {
   output = katex.renderToString(block ? '\\displaystyle{' + source + '}' : source);
   if (block)
-    output = '<p class="katex-block">' + output + '</p>';
+    output = '<div class="math-item">' + output + '</div>';
+  else
+    output = '<span class="math-item">' + output + '</span>';
 }
 catch (e) {
-  source = '<script type="math/tex' + (block ? '; mode=display' : '') + '">' + source + '</script>';
   output = '-RAW-' + source.split('').map(function(c){return c.charCodeAt(0).toString(16);}).join('') + '-';
+  if (block)
+    output = '<div class="math-item"><script type="math/tex; mode=display">' + output + '</script></div>';
+  else
+    output = '<span class="math-item"><script type="math/tex">' + output + '</script></span>';
 }
 
 console.log(output);
