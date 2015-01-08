@@ -63,7 +63,7 @@ This process is easily generalized:
 So the root of the Stern-Brocot tree is {% imath f(I)=\frac{1}{1} %} with {% imath T(L) %} and {% imath T(R) %} as left and right subtree, respectively. {% imath T(L) %} has root {% imath f(L)=\frac{1}{2} %}, left subtree {% imath T(L^2) %} and right subtree {% imath T(L R) %}. {% imath T(R) %} has root {% imath f(R)=\frac{2}{1} %}, left subtree {% imath T(R L) %} and right subtree {% imath T(R^2) %}. And so on. The top of the tree can be seen in Figure&nbsp;1.
 
 <figure>
-  <img src="/media/stern-brocot.svg" alt="The Stern-Brocot tree" class="img-responsive">
+  <img src="{{site.baseurl}}media/stern-brocot.svg" alt="The Stern-Brocot tree" class="img-responsive">
   <figcaption><strong>Figure 1.</strong> The Stern-Brocot tree.</figcaption>
 </figure>
 

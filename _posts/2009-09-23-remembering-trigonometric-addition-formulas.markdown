@@ -24,7 +24,7 @@ By equating the real and imaginary parts you get the answer.
 Flicking through *Proofs Without Words II* by [Roger B. Nelsen](http://legacy.lclark.edu/~mathsci/nelsen.html), I saw the following wonderful figure. It could be a contender to an easier way to remember the addition formulas.
 
 <figure>
-  <img src="/media/trigadd.svg" class="img-responsive" alt="Addition formulas for sine and cosine">
+  <img src="{{site.baseurl}}media/trigadd.svg" class="img-responsive" alt="Addition formulas for sine and cosine">
 </figure>
 
 (Attributed to the author himself.) It should be pretty much self-explanatory. Apart from using sine and cosine to assign side-lengths to the four relevant right-angled triangles, all you need know is that the sum of the angles in a triangle is equal to two right angles (to realize that the two {% imath \alpha %}-angles are indeed equal).

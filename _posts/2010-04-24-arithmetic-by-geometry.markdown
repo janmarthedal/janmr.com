@@ -30,7 +30,7 @@ According to [Hawking](http://www.hawking.org.uk)&#8216;s <a href="{% amazon haw
 Let A be a point in the [Euclidean](http://en.wikipedia.org/wiki/Euclidean_geometry) [plane](http://en.wikipedia.org/wiki/Plane_(geometry)) and let two non-parallel lines have one end-point at A and otherwise extend infinitely. Place now the points B and D on one of the lines and C and E on the other, with the restriction that the lines BC and DE should be parallel. See Figure&nbsp;1.
 
 <figure>
-  <img src="/media/multiplication.svg" class="img-responsive" alt="Multiplication by geometry">
+  <img src="{{site.baseurl}}media/multiplication.svg" class="img-responsive" alt="Multiplication by geometry">
   <figcaption><strong>Figure 1.</strong> Multiplication by geometry.</figcaption>
 </figure>
 
@@ -54,21 +54,21 @@ Division can be performed using the same geometrical construction as for multipl
 Let the line segment CD have length {% imath x %} and extend the line from D to a point A such that {% imath |AD|=1 %}. Draw a [semicircle](http://en.wikipedia.org/wiki/Semicircle) with AC as diameter. Now draw a line through D which is perpendicular to AC and call the intersection between this line and the circle point B. The length of the line segment BD is now equal to the square root of {% imath x %}. See Figure&nbsp;2.
 
 <figure>
-  <img src="/media/root1.svg" class="img-responsive" alt="Square root by geometry">
+  <img src="{{site.baseurl}}media/root1.svg" class="img-responsive" alt="Square root by geometry">
   <figcaption><strong>Figure 2.</strong> Square root by geometry.</figcaption>
 </figure>
 
 Why is this so? It can be shown by using the [Pythagorean theorem](/2010/02/visualizing-the-pythagorean-theorem.html) and a bit of algebra, but it is most easily seen by considering similar triangles again. First, we argue that the angle at B in the triangle ABC in Figure&nbsp;3 is a right angle. This is so because the two triangles ABM and BCM are isosceles [triangles](http://en.wikipedia.org/wiki/Triangle) and the sum of the angles in the triangle ABC is thus {% imath 2\alpha+2\beta=\pi %}, implying that {% imath \alpha+\beta %} is equal to a right angle.
 
 <figure>
-  <img src="/media/root2.svg" class="img-responsive" alt="Any triangle inscribed in a semicircle has a right angle">
+  <img src="{{site.baseurl}}media/root2.svg" class="img-responsive" alt="Any triangle inscribed in a semicircle has a right angle">
   <figcaption><strong>Figure 3.</strong> Any triangle inscribed in a semicircle has a right angle.</figcaption>
 </figure>
 
 Consider Figure&nbsp;4. It is now easy to see that the triangles ADB, BDC, and ABC are all similar. For instance, ABC and BDC both have a right angle and share the angle at C, so the remaining angles must be equal.
 
 <figure>
-  <img src="/media/root3.svg" class="img-responsive" alt="Three similar triangles related to a semicircle">
+  <img src="{{site.baseurl}}media/root3.svg" class="img-responsive" alt="Three similar triangles related to a semicircle">
   <figcaption><strong>Figure 4.</strong> Three similar triangles related to a semicircle.</figcaption>
 </figure>
 
@@ -83,7 +83,7 @@ and if we set {% imath |AD|=1 %} and {% imath |CD|=x %} we get
 ### Concluding Remarks
 
 <figure>
-  <img src="/media/signedmult.svg" class="img-responsive" alt="Signed multiplication by geometry">
+  <img src="{{site.baseurl}}media/signedmult.svg" class="img-responsive" alt="Signed multiplication by geometry">
   <figcaption><strong>Figure 5.</strong> Signed multiplication.</figcaption>
 </figure>
 

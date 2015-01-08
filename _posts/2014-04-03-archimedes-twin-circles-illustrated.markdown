@@ -5,8 +5,8 @@ excerpt: ! "The green circles will always be of equal size"
 ---
 <figure>
   <div class="h_iframe">
-    <img class="ratio" src="/media/white/2x1.gif">
-    <iframe src="/media/intgfx/archimedes-twin-circles.html"></iframe>
+    <img class="ratio" src="{{site.baseurl}}media/white/2x1.gif">
+    <iframe src="{{site.baseurl}}media/intgfx/archimedes-twin-circles.html"></iframe>
   </div>
 </figure>
 

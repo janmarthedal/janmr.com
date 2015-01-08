@@ -33,7 +33,7 @@ and
 where {% imath \text{p} %}, {% imath \text{q} %}, {% imath \text{v} %}, and {% imath \text{w} %} are vectors. We assume that both {% imath \text{v} %} and {% imath \text{w} %} are non-null. See Figure&nbsp;1.
 
 <figure>
-  <img src="/media/lines.svg" class="img-responsive" alt="Line-line intersection">
+  <img src="{{site.baseurl}}media/lines.svg" class="img-responsive" alt="Line-line intersection">
   <figcaption><strong>Figure 1.</strong> Line-line intersection</figcaption>
 </figure>
 

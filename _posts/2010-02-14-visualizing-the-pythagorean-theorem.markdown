@@ -27,7 +27,7 @@ In this article I show my favorite three visualizations of the theorem. Note tha
 This first one is a classic, at least for me, see Figure&nbsp;1. It is very simple to understand and was the first visualization of the Pythagorean theorem I knew of. According to Nelsen's <a href="{% amazon pww1 %}">Proofs Without Words</a>, it appeared in the chinese [Chou pei suan ching](http://en.wikipedia.org/wiki/Chou_Pei_Suan_Ching) around 200 B.C. A similar figure also appears in [Euclid](http://en.wikipedia.org/wiki/Euclid)&#8216;s [Elements](http://en.wikipedia.org/wiki/Euclid's_Elements), [Book II](http://aleph0.clarku.edu/~djoyce/java/elements/bookII/bookII.html), [Proposition 4](http://aleph0.clarku.edu/~djoyce/java/elements/bookII/propII4.html).
 
 <figure>
-  <img src="/media/pythagoras1.svg" class="img-responsive" alt="Pythagoras 1">
+  <img src="{{site.baseurl}}media/pythagoras1.svg" class="img-responsive" alt="Pythagoras 1">
   <figcaption><strong>Figure 1.</strong></figcaption>
 </figure>
 
@@ -37,7 +37,7 @@ This first one is a classic, at least for me, see Figure&nbsp;1. It is very simp
 The second visualization, seen in Figure&nbsp;2, is attributed [Thābit ibn Qurra](http://en.wikipedia.org/wiki/Thābit_ibn_Qurra) who lived around 900 A.D. It is probably my current favorite, partly because only a single figure/drawing is needed. Two colorings of this figure, however, is shown to ease the understanding.
 
 <figure>
-  <img src="/media/pythagoras2.svg" class="img-responsive" alt="Pythagoras 2">
+  <img src="{{site.baseurl}}media/pythagoras2.svg" class="img-responsive" alt="Pythagoras 2">
   <figcaption><strong>Figure 2.</strong></figcaption>
 </figure>
 
@@ -47,7 +47,7 @@ The second visualization, seen in Figure&nbsp;2, is attributed [Thābit ibn Qurr
 The third visualization is due to the 12. century Indian mathematician and astronomer [Bhāskara](http://en.wikipedia.org/wiki/Bhāskara_II), see Figure&nbsp;3. I think it is a bit harder to understand at first, compared to the ones above, but it is still quite elegant. The trick is to observe that the right-most figure consists of two squares, joined at the dashed line. The side lengths of these squares can then be compared to the side lengths of the triangles.
 
 <figure>
-  <img src="/media/pythagoras3.svg" class="img-responsive" alt="Pythagoras 3">
+  <img src="{{site.baseurl}}media/pythagoras3.svg" class="img-responsive" alt="Pythagoras 3">
   <figcaption><strong>Figure 3.</strong></figcaption>
 </figure>
 

@@ -102,7 +102,7 @@ multiplications (sequence [A014701](http://oeis.org/A014701) at [OEIS](http://oe
 As mentioned above, this algorithm is not optimal, but it is not bad either. In fact, 15 is the smallest value of {% imath n %} for which the binary algorithm does not use the minimal number of multiplications. Figure 1 below compares the number of multiplications needed by the binary algorithm to the minimal number possible.
 
 <figure>
-  <img src="/media/power.png" class="img-responsive" alt="Evaluation of powers">
+  <img src="{{site.baseurl}}media/power.png" class="img-responsive" alt="Evaluation of powers">
   <figcaption><strong>Figure 1.</strong> Number of multiplications used to evaluate the nth power.</figcaption>
 </figure>
 

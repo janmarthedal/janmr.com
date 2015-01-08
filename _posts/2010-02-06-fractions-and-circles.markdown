@@ -53,7 +53,7 @@ Note how this property implies that the fractions in any mediant sequence are or
 We now do the following in a [Cartesian coordinate system](http://en.wikipedia.org/wiki/Cartesian_coordinate_system): For each fraction {% imath \frac{m}{n} %} in a given mediant sequence, draw a circle centered at {% imath \left(\frac{m}{n}, \frac{1}{2 n^2}\right) %} with radius {% imath \frac{1}{2 n^2} %}. An example can be seen in Figure&nbsp;1.
 
 <figure>
-  <img src="/media/ford1.svg" class="img-responsive" alt="Ford circles 1">
+  <img src="{{site.baseurl}}media/ford1.svg" class="img-responsive" alt="Ford circles 1">
   <figcaption><strong>Figure 1</strong></figcaption>
 </figure>
 
@@ -66,7 +66,7 @@ This is exactly the property that consequtive fractions in any mediant sequence 
 Zooming into the dashed region in Figure&nbsp;1 leads to Figure&nbsp;2.
 
 <figure>
-  <img src="/media/ford2.svg" class="img-responsive" alt="Ford circles 2">
+  <img src="{{site.baseurl}}media/ford2.svg" class="img-responsive" alt="Ford circles 2">
   <figcaption><strong>Figure 2</strong></figcaption>
 </figure>
 
@@ -83,7 +83,7 @@ then the three circles corresponding to the fractions of this second subsequence
 Zooming in once again we get Figure&nbsp;3.
 
 <figure>
-  <img src="/media/ford3.svg" class="img-responsive" alt="Ford circles 3">
+  <img src="{{site.baseurl}}media/ford3.svg" class="img-responsive" alt="Ford circles 3">
   <figcaption><strong>Figure 3</strong></figcaption>
 </figure>
 

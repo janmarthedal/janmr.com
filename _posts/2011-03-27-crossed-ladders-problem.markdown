@@ -16,7 +16,7 @@ tags:
 I was [recently reminded](https://twitter.com/divbyzero/status/44871018350784512) of the crossed ladders problem. The following simple figure should be adequate in defining the problem:
 
 <figure>
-  <img src="/media/crossed-ladders.jpg" class="img-responsive" alt="The Crossed Ladders Problem">
+  <img src="{{site.baseurl}}media/crossed-ladders.jpg" class="img-responsive" alt="The Crossed Ladders Problem">
   <figcaption><strong>Figure 1.</strong> The crossed ladders problem</figcaption>
 </figure>
 
@@ -34,7 +34,7 @@ The thing is that it looks simple. But [it isn't](http://www.reddit.com/r/math/c
 First, some variables must be introduced. Consider the following figures:
 
 <figure>
-  <img src="/media/crossed-ladders-vars.jpg" class="img-responsive" alt="Variables for the Crossed Ladders Problem">
+  <img src="{{site.baseurl}}media/crossed-ladders-vars.jpg" class="img-responsive" alt="Variables for the Crossed Ladders Problem">
   <figcaption><strong>Figure 3.</strong> Variables for the crossed ladders problem</figcaption>
 </figure>
 

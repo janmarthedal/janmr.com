@@ -33,7 +33,7 @@ This article shows why the strategy works, introducing the necessary game theory
 Nim is played by two players who take turns moving. The initial game position for Nim consists of a number of piles, each containing any number of sticks. A player moves by removing any positive number of sticks from a single pile, possibly emptying the pile. The first player to face an empty position, consisting of no sticks at all, loses. An example of a game of Nim, starting with three piles with 2, 3, and 4 sticks, can be seen in Figure 1.
 
 <figure>
-  <img title="Figure 1" src="/media/game234.svg" alt="Figure 1" class="img-responsive">
+  <img title="Figure 1" src="{{site.baseurl}}media/game234.svg" alt="Figure 1" class="img-responsive">
   <figcaption><strong>Figure 1.</strong> A possible gameplay in Nim.</figcaption>
 </figure>
 
@@ -59,7 +59,7 @@ A combinatorial game is a game for two players where both players have perfect i
 For instance, {% imath \star 1 = \{\{\}\} %}, {% imath \star 2 = \{\{\},\{\{\}\}\} %}, and {% imath \star 3 = \{\{\},\{\{\}\},\{\{\},\{\{\}\}\}\} %}. A graph representation of all possible game positions in a Nim game starting with the position {% imath \star 4 %} can be seen in Figure 2.
 
 <figure>
-  <img class="img-responsive" title="Figure 2" src="/media/graph4.svg" alt="Figure 2">
+  <img class="img-responsive" title="Figure 2" src="{{site.baseurl}}media/graph4.svg" alt="Figure 2">
   <figcaption><strong>Figure 2.</strong> Graph representation of the Nim game</figcaption>
 </figure>
   
@@ -69,7 +69,7 @@ We can also construct a new game by adding two games. Given two games {% imath G
 
 We see that {% imath G + \{\} = \{\} + G = G %}, as it should be. These special cases, and the fact that set union is commutative, makes position adding commutative too. Likewise, since union is associative and {% imath G + (\{\} + H) = (G + \{\}) + H %} and {% imath G + (H + \{\}) = (G + H) + \{\} %}, we also have associativity for game adding.
 
-Recall the initial Nim game in Figure 1 with three piles of 2, 3, and 4 sticks, respectively. We can now write that position as {% imath \star 2 + \star 3 + \star 4 %}. It is possible to write out its set representation but it is <a href="/media/set234.txt">quite large</a>.
+Recall the initial Nim game in Figure 1 with three piles of 2, 3, and 4 sticks, respectively. We can now write that position as {% imath \star 2 + \star 3 + \star 4 %}. It is possible to write out its set representation but it is <a href="{{site.baseurl}}media/set234.txt">quite large</a>.
 
 ### Properties of Impartial Games
 
@@ -80,7 +80,7 @@ Given an impartial game, let {% imath \cal S %} be the set of all possible game 
 
 Consider a graph in which every game position is a node and where there is an arc (directed edge) from position {% imath G %} to position {% imath g %} if and only if {% imath g \in G %}. Since any game will terminate, this graph contains no cycles and is thus a <a href="http://en.wikipedia.org/wiki/Directed_acyclic_graph">Directed Acyclic Graph (DAG)</a>. This makes it possible to <a href="http://en.wikipedia.org/wiki/Topological_sorting">topologically sort</a> the nodes/positions, starting from the terminal position and working backwards through every possible position, placing each position in {% imath {\cal S}_P %} or {% imath {\cal S}_N %} in the process. We have, in this way, divided {% imath {\cal S} %} into two disjoint subsets.
 
-Such a <a href="/media/graph234.svg">graph</a> for the game {% imath \star 2 + \star 3 + \star 4 %} would consists of 27 vertices and 114 arcs. Only 4 of the vertices represent games/positions in {% imath {\cal S}_P %}.
+Such a <a href="{{site.baseurl}}media/graph234.svg">graph</a> for the game {% imath \star 2 + \star 3 + \star 4 %} would consists of 27 vertices and 114 arcs. Only 4 of the vertices represent games/positions in {% imath {\cal S}_P %}.
 
 From the definitions of {% imath {\cal S}_P %} and {% imath {\cal S}_N %} we have something essential. Given a position in {% imath {\cal S}_N %}, the **n**ext player to move will always win, assuming a perfect play on his/her part. Similarly, given a position in {% imath {\cal S}_P %}, the **p**revious player will always win, again assuming a perfect play.
 

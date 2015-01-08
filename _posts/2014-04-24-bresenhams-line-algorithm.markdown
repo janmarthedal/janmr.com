@@ -51,7 +51,7 @@ Note how the magnitude of {% imath \nabla_k %} also tells exactly how far from t
 chosen grid point is. It is straightforward to show that {% imath -2\Delta x < \nabla_k \leq 2\Delta x %} for {% imath k = 1, 2, \ldots, \Delta x %}.
 
 <figure>
-  <img src="/media/bresenham.svg">
+  <img src="{{site.baseurl}}media/bresenham.svg">
   <figcaption><strong>Figure 1.</strong> Given that the previous point is at {% imath (x_{k-1}, y_{k-1}) %},
     the dashed lines indicate the two extreme cases for the line being approximated. {% imath \nabla_k %}
     will be negative if the line goes through the red area and positive if it goes through the blue

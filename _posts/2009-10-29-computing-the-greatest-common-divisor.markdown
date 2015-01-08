@@ -167,7 +167,7 @@ A number of files were created. One with 100 random numbers consisting of 1-2000
 The procedure was then the same as for the built-in types, see steps&nbsp;2 and&nbsp;3 from the previous section. Similarly, Euclid's and Stein's algorithm from this article and from Boost were used, along with an optimized version of Stein's algorithm (using a test-bit method as mentioned earlier).
 
 <figure>
-  <img class="img-responsive" alt="Figure 1" src="/media/gcd_sputarith.png" title="GCD algorithms using SputArithmetic">
+  <img class="img-responsive" alt="Figure 1" src="{{site.baseurl}}media/gcd_sputarith.png" title="GCD algorithms using SputArithmetic">
   <figcaption><strong>Figure 1.</strong> Average number of bits per input number along the 1. axis, and average milliseconds per gcd along the 2. axis.</figcaption>
 </figure>
 
@@ -186,7 +186,7 @@ Note that although Boost's version of Stein's algorithm was relatively slow for 
 The same test method and data files as the SputArithmetic test were used, and GMP equivalents of this article's Euclid and optimized Stein algorithms were tested. The results can be seen in Figure&nbsp;2. This time, Euclid's algorithm was faster than Stein's for all number sizes.
 
 <figure>
-  <img class="img-responsive" alt="Figure 2" src="/media/gcd_gmp.png" title="GCD algorithms using GMP">
+  <img class="img-responsive" alt="Figure 2" src="{{site.baseurl}}media/gcd_gmp.png" title="GCD algorithms using GMP">
   <figcaption><strong>Figure 2.</strong> Average number of bits per input number along the 1. axis, and average milliseconds per gcd along the 2. axis.</figcaption>
 </figure>
 

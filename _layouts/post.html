@@ -21,6 +21,22 @@ layout: default
     </div>
 </div> 
 
+{% if site.postrace %}
+<script>
+  (function (query) {
+    if (/^\?race=(\d+)$/.test(query)) {
+      function redirect() {
+        window.location = {% if page.next %}'{{page.next.url}}'{% else %}'{{ site.baseurl }}postrace.html'{% endif %} + query;
+      }
+      if (typeof MathJax === 'object')
+        MathJax.Hub.Register.StartupHook('End', redirect);
+      else
+        window.onload = redirect;
+    }
+  })(window.location.search);
+</script>
+{% endif %}
+
 {% if site.disqus %}
 <div id="disqus_thread"></div>
 <script type="text/javascript">

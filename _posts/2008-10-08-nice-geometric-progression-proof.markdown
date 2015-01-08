@@ -17,7 +17,7 @@ Consider the geometric series,
 for {% imath 0 < r < 1 %}. The goal is to find a <a href="http://en.wikipedia.org/wiki/Closed-form_expression">closed-form expression</a> for {% imath s_r %}.</p><span></span>
 
 <figure>
-  <img src="/media/geoprog.svg" alt="Visual proof of a geometric progression sum" class="img-responsive">
+  <img src="{{site.baseurl}}media/geoprog.svg" alt="Visual proof of a geometric progression sum" class="img-responsive">
 </figure>
 
 Consider now the figure shown. Given that {% imath |AB|=|AD|=1 %} and {% imath |DE|=r %}, the rest of the figure can be constructed (the lines AC and BF are parallel and the rest of the lines, with the exception of BC, are perpendicular to AC). It is important to note that the four-sided figures ABED, DEHG, GHKJ, and so on, are all <a title="similar" href="http://en.wikipedia.org/wiki/Similarity_(geometry)">similar</a> to each other, and we see that the length {% imath |AC| %} is exactly the quantity we are looking for.

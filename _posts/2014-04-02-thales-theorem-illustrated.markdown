@@ -6,8 +6,8 @@ excerpt: ! "Thales' Theorem: If A, B and C are points on a circle with the segme
 ---
 <figure>
   <div class="h_iframe">
-    <img class="ratio" src="/media/white/2x1.gif">
-    <iframe src="/media/intgfx/thales-theorem.html"></iframe>
+    <img class="ratio" src="{{site.baseurl}}media/white/2x1.gif">
+    <iframe src="{{site.baseurl}}media/intgfx/thales-theorem.html"></iframe>
   </div>
 </figure>
 

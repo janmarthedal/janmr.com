@@ -3,7 +3,7 @@ module Jekyll
 
     def initialize(tag_name, source, tokens)
       super
-      @source = simple(source.strip, tag_name == 'dmath')
+      @source = combined(source.strip, tag_name == 'dmath')
     end
 
     def render(context)
