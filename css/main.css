@@ -1,8 +1,6 @@
 #wrapper {
   max-width: 60em;
-  margin-left: auto;
-  margin-right: auto;
-  padding-bottom: 4em;
+  margin: 0 auto 4em;
 }
 
 figure > img {
@@ -27,7 +25,7 @@ figcaption {
 }
 
 .page-navigation {
-  margin-top: 2em;
+  margin: 2em 0;
 }
 
 .h_iframe {

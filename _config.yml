@@ -10,4 +10,4 @@ author: Jan Marthedal Rasmussen
 title: janmr blog
 rss_name: blogfeed.xml
 exclude: [mathstats.py]
-
+disqus: true
