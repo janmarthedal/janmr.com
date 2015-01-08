@@ -1,0 +1,23 @@
+---
+layout: default
+---
+{% if site.postrace %}
+<a onclick='startrace()' href='#'>Start race</a>
+
+<p>Time elapsed: <span id='result'></span></p>
+
+<script>
+  function startrace() {
+    window.location = '{{ site.posts.last.url }}?race=' + (new Date()).getTime();
+  }
+  (function () {
+    var match = window.location.search.match(/^\?race=(\d+)$/);
+    if (match) {
+      var now = (new Date()).getTime();
+      var start = Number.parseInt(match[1]);
+      var result = document.querySelector('#result');
+      result.appendChild(document.createTextNode('' + (now - start)));
+    }
+  })();
+</script>
+{% endif %}
