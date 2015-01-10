@@ -14,7 +14,7 @@ layout: default
     var match = window.location.search.match(/^\?race=(\d+)$/);
     if (match) {
       var now = (new Date()).getTime();
-      var start = Number.parseInt(match[1]);
+      var start = parseInt(match[1]);
       var result = document.querySelector('#result');
       result.appendChild(document.createTextNode('' + (now - start)));
     }
