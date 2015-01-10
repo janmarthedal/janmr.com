@@ -1,31 +1,31 @@
+require 'URI'
+require 'Net/HTTP'
+
 module Jekyll
   class MathTags < Liquid::Tag
 
     def initialize(tag_name, source, tokens)
       super
-      @source = combined(source.strip, tag_name == 'dmath')
+      is_block = tag_name == 'dmath'
+      tag = is_block ? 'div' : 'span'
+      html = katex_markup(source.strip, is_block)
+      @source = "<#{tag} class=\"math-item\">#{html}</#{tag}>"
     end
 
     def render(context)
-      @source.strip
+      @source
     end
 
-    def simple(source, is_block)
-      if is_block
-        return '<div class="math-item"><script type="math/tex; mode=display">-RAW-' + source.unpack('H*')[0] + '-</script></div>'
-      else
-        return '<span class="math-item"><script type="math/tex">-RAW-' + source.unpack('H*')[0] + '-</script></span>'
-      end
+    def katex_markup(source, is_block)
+      tex = is_block ? "\\displaystyle{#{source}}" : source
+      html = Net::HTTP.get('localhost', '/render?q=' + URI.encode_www_form_component(tex), 3000).force_encoding('utf-8').strip
+      html == '-' ? mathjax_markup(source, is_block) : html
     end
 
-    def combined(source, is_block)
-      source = source.split('\\').join('\\\\')
-      source = source.gsub('$', '\\\\$')
-      if is_block
-        return `cd _plugins; node tex2html.js "#{source}" block`
-      else
-        return `cd _plugins; node tex2html.js "#{source}"`
-      end
+    def mathjax_markup(source, is_block)
+      type = is_block ? 'math/tex; mode=display' : 'math/tex'
+      coded = source.unpack('H*')[0]
+      "<script type=\"#{type}\">-RAW-#{coded}-</script>"
     end
 
   end
