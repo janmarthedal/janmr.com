@@ -8,8 +8,7 @@ excerpt: ! "Prior to the current post, this blog contained 45 posts with a total
   per post, ranging from a few posts containing no math at all to one containing
   267 items.
   
-  From the beginning I have used [MathJax](http://www.mathjax.org) to display
-  the math [...]"
+  From the beginning I have used MathJax to display the math [...]"
 categories:
 - programming
 tags:
