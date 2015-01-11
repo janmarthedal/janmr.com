@@ -2,6 +2,14 @@
 layout: post
 title: MathJax, KaTeX and a lot of Math
 author: Jan Marthedal Rasmussen
+excerpt: ! "Prior to the current post, this blog contained 45 posts with a total
+  of 2307 math items, where a math item is anything from single-letter variable
+  identifiers to large, multi-line equations. That's an avarage of 51 math items
+  per post, ranging from a few posts containing no math at all to one containing
+  267 items.
+  
+  From the beginning I have used [MathJax](http://www.mathjax.org) to display
+  the math [...]"
 categories:
 - programming
 tags:
