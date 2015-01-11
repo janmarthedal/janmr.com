@@ -2,16 +2,18 @@
 layout: post
 title: Stackexchange Lists
 author: Jan Marthedal Rasmussen
+excerpt: ! "Stack Exchange is a network of free, community-driven Q&A sites (in their own words).  There are a lot of them and more are coming. The most relevant of them, in relation to this blog, are probably MathOverflow, Mathematics, Theoretical Computer Science, and StackOverflow.
+  
+  I recently looked through those sites for interesting questions tagged big-list. These questions typically encourage many different answers. I recommend the following:"
 date: 2011-02-03 17:19:36.000000000 +01:00
 categories:
 - links
 tags:
 - stackexchange
 ---
-
 [Stack Exchange](http://stackexchange.com/) is a network of free, community-driven Q&amp;A sites (in their own words). There are [a lot of them](http://stackexchange.com/sites) and [more are coming](http://area51.stackexchange.com/). The most relevant of them, in relation to this blog, are probably [MathOverflow](http://mathoverflow.net/), [Mathematics](http://math.stackexchange.com/), [Theoretical Computer Science](http://cstheory.stackexchange.com/), and [StackOverflow](http://stackoverflow.com/).
 
-I recently looked through those sites for interesting questions tagged *big-list*. These questions typically encourage many different answers. I recommend the following:<span></span>
+I recently looked through those sites for interesting questions tagged *big-list*. These questions typically encourage many different answers. I recommend the following:
 
 *   [A single math paper everyone should read](http://mathoverflow.net/questions/2144/a-single-paper-everyone-should-read)
 *   [Examples of common false beliefs in mathematics](http://mathoverflow.net/questions/23478/examples-of-common-false-beliefs-in-mathematics)

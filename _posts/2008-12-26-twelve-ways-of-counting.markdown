@@ -2,7 +2,7 @@
 layout: post
 title: Twelve Ways of Counting
 author: Jan Marthedal Rasmussen
-excerpt: ! "I have for a long time had an ambition of getting better at combinatorics, especially <em>enumerative combinatorics</em>, the discipline of counting the number of arrangements, given some pattern. Getting introduced to The Twelvefold Way was a real eye-opener in this regard. It is a way to categorize some fundamental combinatorial counting problems by considering different ways of putting balls into urns. Different setups arise depending on whether the balls are labeled or unlabeled, whether the urns are labeled or unlabeled, and whether each urn can contain any number of balls, at most one or at least one, leading to 2 &middot; 2 &middot; 3 = 12 cases."
+excerpt: ! "I have for a long time had an ambition of getting better at combinatorics, especially enumerative combinatorics, the discipline of counting the number of arrangements, given some pattern. Getting introduced to The Twelvefold Way was a real eye-opener in this regard. It is a way to categorize some fundamental combinatorial counting problems by considering different ways of putting balls into urns. Different setups arise depending on whether the balls are labeled or unlabeled, whether the urns are labeled or unlabeled, and whether each urn can contain any number of balls, at most one or at least one, leading to 2*2*3 = 12 cases. [...]"
 date: 2008-12-26 10:16:49.000000000 +01:00
 categories:
 - mathematics

@@ -2,15 +2,7 @@
 layout: post
 title: The Game of Nim
 author: Jan Marthedal Rasmussen
-excerpt: ! "I have known the game of Nim for many years. Once, a friend of mine beat me repeatedly in one game
-  after another and I had no idea how he did it. Looking back, I am not sure he knew
-  the perfect Nim-strategy, but he knew enough to frustrate me immensely. A year ago
-  or so, I was flicking through Fascicle 1 of The
-  Art of Computer Programming, Volume 4 by Donald
-  E. Knuth, and I read about the strategy of Nim. The strategy is <em>very</em>
-  simple but I could not possibly understand <em>why</em> it worked. This
-  article shows why the strategy works, introducing the necessary game theory along
-  the way."
+excerpt: ! "I have known the game of Nim for many years. Once, a friend of mine beat me repeatedly in one game after another and I had no idea how he did it. Looking back, I am not sure he knew the perfect Nim-strategy, but he knew enough to frustrate me immensely. A year ago or so, I was flicking through Fascicle 1 of The Art of Computer Programming, Volume 4 by Donald E. Knuth, and I read about the strategy of Nim. The strategy is very simple but I could not possibly understand why it worked. This article shows why the strategy works, introducing the necessary game theory along the way. [...]"
 date: 2009-04-20 14:02:36.000000000 +02:00
 categories:
 - mathematics
@@ -26,7 +18,7 @@ tags:
 <div style="float:right"><a href="{% amazon taocp4f1 %}"><img src="{% bookcover taocp4f1 %}" /></a></div>
 I have known the game of Nim for many years. Once, a friend of mine beat me repeatedly in one game after another and I had no idea how he did it. Looking back, I am not sure he knew the perfect Nim-strategy, but he knew enough to frustrate me immensely. A year ago or so, I was flicking through Fascicle 1 of <a href="http://www-cs-faculty.stanford.edu/~uno/taocp.html">The Art of Computer Programming</a>, Volume 4 by <a href="http://www-cs-faculty.stanford.edu/~uno/">Donald E. Knuth</a>, and I read about the strategy of Nim. The strategy is *very* simple but I could not possibly understand *why* it worked.
 
-This article shows why the strategy works, introducing the necessary game theory along the way.<span></span>
+This article shows why the strategy works, introducing the necessary game theory along the way.
 
 ### Nim
 

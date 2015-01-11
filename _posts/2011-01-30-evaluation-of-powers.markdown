@@ -2,6 +2,7 @@
 layout: post
 title: Evaluation of Powers
 author: Jan Marthedal Rasmussen
+excerpt: ! "How do you efficiently compute x^n for a positive integer n? Take x^{15} as an example. You could take x and repeatedly multiply by x 14 times. A better way to do it, however, is this: [...]"
 date: 2011-01-30 16:03:57.000000000 +01:00
 categories:
 - programming
@@ -10,7 +11,7 @@ tags:
 - algorithms
 - numbers project
 ---
-How do you efficiently compute {% imath x^n %} for a positive integer {% imath n %}? Take {% imath x^{15} %} as an example. You could take {% imath x %} and repeatedly multiply by {% imath x %} 14 times. A better way to do it, however, is this:<span></span>
+How do you efficiently compute {% imath x^n %} for a positive integer {% imath n %}? Take {% imath x^{15} %} as an example. You could take {% imath x %} and repeatedly multiply by {% imath x %} 14 times. A better way to do it, however, is this:
 
 *   {% imath t_0=x %}
 *   {% imath t_1=t_0 \cdot t_0 = x^2 %}

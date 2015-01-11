@@ -2,6 +2,9 @@
 layout: post
 title: Going Functional
 author: Jan Marthedal Rasmussen
+excerpt: ! "Imperative programming languages--such as C++, Java, Perl and assembly are by far the most common. They all lie fairly close to the underlying computer architecture by executing one statement at a time, changing a state along the way. They describe how to compute something.
+
+Purely functional languages--such as Erlang and Haskell--have no state, only values, expressions and functions. All variables are immutable, that is, when a value has been assigned to a variable, it can never change. Purely functional programming languages describe what to compute, but not explicitly how."
 date: 2011-05-31 13:55:51.000000000 +02:00
 categories:
 - programming
@@ -13,7 +16,7 @@ tags:
 ---
 [Imperative programming](http://en.wikipedia.org/wiki/Imperative_programming) languages&mdash;such as C++, Java, Perl and assembly&mdash;are by far the [most common](http://www.langpop.com). They all lie fairly close to the underlying computer architecture by executing one statement at a time, changing a state along the way. They describe *how* to compute something.
 
-Purely functional languages&mdash;such as [Erlang](http://www.erlang.org/) and [Haskell](http://www.haskell.org)&mdash;have no state, only values, expressions and functions. All variables are [immutable](http://en.wikipedia.org/wiki/Mutable), that is, when a value has been assigned to a variable, it can never change. Purely functional programming languages describe *what* to compute, but not explicitly how.<span></span>
+Purely functional languages&mdash;such as [Erlang](http://www.erlang.org/) and [Haskell](http://www.haskell.org)&mdash;have no state, only values, expressions and functions. All variables are [immutable](http://en.wikipedia.org/wiki/Mutable), that is, when a value has been assigned to a variable, it can never change. Purely functional programming languages describe *what* to compute, but not explicitly how.
 
 Non-pure [functional programming](http://en.wikipedia.org/wiki/Functional_programming) languages have features from both imperative and purely functional languages. A typical feature of functional programming languages, pure or not, is that functions are often considered values in their own right. This leads to [higher-order functions](http://en.wikipedia.org/wiki/Higher-order_function) which basically are functions that operate on other functions. Actually, [JavaScript](http://en.wikipedia.org/wiki/JavaScript) is considered a functional programming language [by some](http://www.blinkx.com/watch-video/douglas-crockford-on-functional-javascript/xscZz8XhfuNQ_aaVuyUB2A) because of its ability to treat functions as values.
 

@@ -6,7 +6,7 @@ excerpt: ! "'Prime Obsession: Bernhard Riemann and the Greatest Unsolved Problem
   book about the Riemann Hypothesis, posed by Bernhard
   Riemann in 1859. As the book title says, it is one of the greatest unsettled
   mathematical conjectures remaining today. It is among David
-  Hilbert's list of twenty-three mathematical problems and one of the seven >millennium
+  Hilbert's list of twenty-three mathematical problems and one of the seven millennium
   problems presented by the Clay Mathematics Institute."
 date: 2010-01-09 20:15:23.000000000 +01:00
 categories:
@@ -18,7 +18,7 @@ tags:
 - Riemann hypothesis
 ---
 <div class="pull-right"><a href="{% amazon derbyshire03 %}"><img src="{% bookcover derbyshire03 %}" /></a></div>
-*Prime Obsession: Bernhard Riemann and the Greatest Unsolved Problem in Mathematics* is a book about the [Riemann Hypothesis](http://en.wikipedia.org/wiki/Riemann_hypothesis), posed by [Bernhard Riemann](http://en.wikipedia.org/wiki/Bernhard_Riemann) in 1859. As the book title says, it is one of the greatest unsettled mathematical conjectures remaining today. It is among [David Hilbert](http://en.wikipedia.org/wiki/David_Hilbert)&#8216;s [list of twenty-three mathematical problems](http://en.wikipedia.org/wiki/Hilbert_problems) and one of the seven millennium problems presented by the [Clay Mathematics Institute](http://www.claymath.org/).<span></span>
+*Prime Obsession: Bernhard Riemann and the Greatest Unsolved Problem in Mathematics* is a book about the [Riemann Hypothesis](http://en.wikipedia.org/wiki/Riemann_hypothesis), posed by [Bernhard Riemann](http://en.wikipedia.org/wiki/Bernhard_Riemann) in 1859. As the book title says, it is one of the greatest unsettled mathematical conjectures remaining today. It is among [David Hilbert](http://en.wikipedia.org/wiki/David_Hilbert)'s [list of twenty-three mathematical problems](http://en.wikipedia.org/wiki/Hilbert_problems) and one of the seven millennium problems presented by the [Clay Mathematics Institute](http://www.claymath.org).
 
 The Riemann Hypothesis concerns the zeros of the [Riemann zeta function](http://en.wikipedia.org/wiki/Riemann_zeta_function),
 

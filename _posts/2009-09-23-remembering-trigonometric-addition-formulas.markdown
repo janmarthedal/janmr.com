@@ -2,6 +2,7 @@
 layout: post
 title: Remembering Trigonometric Addition Formulas
 author: Jan Marthedal Rasmussen
+excerpt: ! "The addition formulas for sine and cosine look like this: [...] I can never remember them. [...]"
 date: 2009-09-23 14:13:57.000000000 +02:00
 categories:
 - mathematics
@@ -13,7 +14,7 @@ The addition formulas for sine and cosine look like this:
 
 {% dmath \begin{aligned} \cos(\alpha + \beta) &= \cos \alpha \cos \beta - \sin \alpha \sin \beta, \\ \sin(\alpha + \beta) &= \cos \alpha \sin \beta + \sin \alpha \cos \beta. \\ \end{aligned} %}
 
-I can never remember them.<span></span>
+I can never remember them.
 
 One solution is of course to look them up in a [book](http://www.math.sfu.ca/~cbm/aands/page_72.htm) or search the [internet](http://en.wikipedia.org/wiki/Angle_addition_formula#Angle_sum_and_difference_identities). What I usually do, though, is derive them using complex arithmetic. Apart from the usual rules known from real-valued arithmetic, all that is needed is knowing {% imath e^{i \phi} = \cos \phi + i \sin \phi %} and {% imath i^2 = -1 %}. Then you get
 

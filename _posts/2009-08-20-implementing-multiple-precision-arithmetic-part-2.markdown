@@ -5,8 +5,8 @@ author: Jan Marthedal Rasmussen
 excerpt: ! "This article is a follow-up
   to part 1 where multiple-precision addition, subtraction, and multiplication for
   non-negative integers was discussed. This article deals with division. Again, the
-  theoretic foundation is based on Section&nbsp;4.3.1, *The Classical Algorithms*,
-  of The Art of Computer Programming, Volume&nbsp;2, by Donald E. Knuth."
+  theoretic foundation is based on Section 4.3.1, The Classical Algorithms,
+  of The Art of Computer Programming, Volume 2, by Donald E. Knuth."
 date: 2009-08-20 10:31:30.000000000 +02:00
 categories:
 - programming
@@ -20,7 +20,7 @@ tags:
 ### Introduction
 
 <div style="float:right"><a href="{% amazon taocp2 %}"><img src="{% bookcover taocp2 %}" /></a></div>
-This article is a follow-up to [part 1](/2009/07/implementing-multiple-precision-arithmetic-part-1.html) where multiple-precision addition, subtraction, and multiplication for non-negative integers was discussed. This article deals with division. Again, the theoretic foundation is based on Section&nbsp;4.3.1, *The Classical Algorithms*, of [The Art of Computer Programming](http://www-cs-faculty.stanford.edu/~uno/taocp.html), Volume&nbsp;2, by [Donald E. Knuth](http://www-cs-faculty.stanford.edu/~uno/).<span></span>
+This article is a follow-up to [part 1](/2009/07/implementing-multiple-precision-arithmetic-part-1.html) where multiple-precision addition, subtraction, and multiplication for non-negative integers was discussed. This article deals with division. Again, the theoretic foundation is based on Section&nbsp;4.3.1, *The Classical Algorithms*, of [The Art of Computer Programming](http://www-cs-faculty.stanford.edu/~uno/taocp.html), Volume&nbsp;2, by [Donald E. Knuth](http://www-cs-faculty.stanford.edu/~uno/).
 
 ### Fundamentals
 

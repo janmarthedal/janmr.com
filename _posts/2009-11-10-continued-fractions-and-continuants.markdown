@@ -2,6 +2,7 @@
 layout: post
 title: Continued Fractions and Continuants
 author: Jan Marthedal Rasmussen
+excerpt: We will be considering continued fractions of the form [...]
 date: 2009-11-10 16:27:42.000000000 +01:00
 categories:
 - programming
@@ -17,8 +18,6 @@ tags:
 We will be considering continued fractions of the form
 
 {% dmath a_0 + \displaystyle\frac{1}{a_1 + \displaystyle\frac{1}{\ddots + \displaystyle\frac{1}{a_{n-1} + \displaystyle\frac{1}{a_n}}}} %}
-
-<span></span>
 
 where the {% imath a_k %}'s are real numbers called the partial quotients. Continued fractions can be greatly [generalized](http://en.wikipedia.org/wiki/Generalized_continued_fraction), where both the &#8220;numerators&#8221; (here all equal to one) and the partial quotients can be more general mathematical objects. Most common, however, are *regular continued fractions* where {% imath a_0 %} is an integer and {% imath a_1, \ldots, a_n %} are positive integers. For easier notation we introduce
 

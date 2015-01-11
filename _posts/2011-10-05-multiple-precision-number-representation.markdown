@@ -16,8 +16,6 @@ Let us consider a common way to represent non-negative integers. An integer {% i
 
 {% dmath u = (u_{n-1} \ldots u_1 u_0)_b = \sum_{k=0}^{n-1} u_k b^k, \quad 0 \leq u_k \leq b-1. %}
 
-<span></span>
-
 We will call {% imath u %} an {% imath n %}-digit number and {% imath u_0, u_1, \ldots %} its digits. Zero will be represented with no digits, {% imath 0 = ()_b %}. Observe that
 
 {% dmath u \leq ((b-1) \ldots (b-1) (b-1))_b = \sum_{k=0}^{n-1} (b-1) b^k = b^n - 1 %}

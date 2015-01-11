@@ -15,7 +15,7 @@ tags:
 - ceil
 - discrete/continuous
 ---
-This articles explores some basic properties of the integer functions commonly known as floor and ceil. Most of the statements may seem trivial or obvious, but I, for one, have a tendency to forget just how exact you can be when it comes to expressions/equations where floor or ceil functions appear.<span></span>
+This articles explores some basic properties of the integer functions commonly known as floor and ceil. Most of the statements may seem trivial or obvious, but I, for one, have a tendency to forget just how exact you can be when it comes to expressions/equations where floor or ceil functions appear.
 
 First, the definitions:
 

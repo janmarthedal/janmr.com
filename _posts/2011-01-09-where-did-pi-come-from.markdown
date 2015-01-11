@@ -2,6 +2,7 @@
 layout: post
 title: Where Did pi Come From?
 author: Jan Marthedal Rasmussen
+excerpt: ! "[...] where did that pi come from? What do trees have to do with pi? That was the subject of Donald E. Knuth's 16th Annual Christmas Tree Lecture, given on December 6, 2010."
 date: 2011-01-09 14:41:37.000000000 +01:00
 categories:
 - mathematics
@@ -10,7 +11,7 @@ tags:
 - stirling's formula
 - knuth
 ---
-The [Catalan](http://en.wikipedia.org/wiki/Catalan_number) [number](http://oeis.org/A000108) {% imath C_n %} denotes the number of forests with {% imath n %} nodes. In fact, the Catalan numbers relate to many different structures, see, e.g., the pages linked to above and the references on those pages.<span></span>
+The [Catalan](http://en.wikipedia.org/wiki/Catalan_number) [number](http://oeis.org/A000108) {% imath C_n %} denotes the number of forests with {% imath n %} nodes. In fact, the Catalan numbers relate to many different structures, see, e.g., the pages linked to above and the references on those pages.
 
 A formula for the Catalan numbers is given by
 

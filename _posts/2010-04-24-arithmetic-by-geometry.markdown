@@ -21,7 +21,6 @@ tags:
 
 Today [real numbers](http://en.wikipedia.org/wiki/Real_number) are most often represented by applying ([elementary](http://en.wikipedia.org/wiki/Elementary_function_(differential_algebra))) [functions](http://en.wikipedia.org/wiki/Function_(mathematics)) to ([decimal](http://en.wikipedia.org/wiki/Decimal)) [integers](http://en.wikipedia.org/wiki/Integer). Throughout history, though, arithmetic and propositions involving (positive) real numbers were often considered from a purely geometrical point of view. Real numbers were identified by the length of some line segment and, e.g., the product of two numbers was identified by the area of a rectangle with side-lengths equal to the two numbers. This made sense from a physical/applied point of view, but it had certain shortcomings.
 
-<span></span>
 <div class="pull-right"><a href="{% amazon hawking %}"><img src="{% bookcover hawking %}" /></a></div>
 According to [Hawking](http://www.hawking.org.uk)&#8216;s <a href="{% amazon hawking %}">God Created the Integers</a>, this was changed by [Ren&eacute; Descartes](http://en.wikipedia.org/wiki/Rene_Descartes) in the seventeenth century. He treated *any* (positive) real number as the length of a line segment, also products, square roots, and so on. This article considers some of the constructions he considered in *Problems the Construction of Which Requires Only Straight Lines and Circles* (included and commented in Hawking's <a href="{% amazon hawking %}">book</a>), namely multiplication, division and root extraction.
 

@@ -2,8 +2,7 @@
 layout: post
 title: ! 'Book Review: The Book of Numbers'
 author: Jan Marthedal Rasmussen
-excerpt: ! "*The Book of
-  Numbers* is a wonderful book about, well, numbers. And lots of them. From
+excerpt: ! "'The Book of Numbers' is a wonderful book about, well, numbers. And lots of them. From
   ancient ways of writing numbers to Gaussian integers to surreal
   numbers. The authors are some tough mathematicians, too. John
   H. Conway is Professor of Mathematics at Princeton

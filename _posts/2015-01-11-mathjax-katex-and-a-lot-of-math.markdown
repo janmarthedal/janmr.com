@@ -19,7 +19,7 @@ tags:
 - blogging
 # Posts: 45
 # Math items: 2307 in total, 51 items/post on average
-# Loading and typesetting all posts: 0.99 s/post <!--986 ms/post--> on average
+# Loading and typesetting all posts: 986 ms/post on average
 # As above but with MathJax disabled: 290 ms/post on average
 # Posts: 10
 # Math items: 1523 in total, 152 items/post on average

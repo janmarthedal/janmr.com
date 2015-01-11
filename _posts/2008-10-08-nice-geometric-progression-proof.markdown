@@ -2,6 +2,7 @@
 layout: post
 title: Nice Proof of a Geometric Progression Sum
 author: Jan Marthedal Rasmussen
+excerpt: ! "Consider the geometric series, s_r = sum_{k=0}^infty r^k = 1 + r + r^2 + r^3 + ..., for 0 < r < 1. The goal is to find a closed-form expression for s_r. [...]"
 date: 2008-10-08 22:58:26.000000000 +02:00
 categories:
 - mathematics
@@ -14,13 +15,13 @@ Consider the geometric series,
 
 {% dmath s_r = \sum_{k=0}^\infty r^k = 1 + r + r^2 + r^3 + \ldots, %}
 
-for {% imath 0 < r < 1 %}. The goal is to find a <a href="http://en.wikipedia.org/wiki/Closed-form_expression">closed-form expression</a> for {% imath s_r %}.</p><span></span>
+for {% imath 0 < r < 1 %}. The goal is to find a [closed-form expression](http://en.wikipedia.org/wiki/Closed-form_expression) for {% imath s_r %}.
 
 <figure>
   <img src="{{site.baseurl}}media/geoprog.svg" alt="Visual proof of a geometric progression sum" class="img-responsive">
 </figure>
 
-Consider now the figure shown. Given that {% imath |AB|=|AD|=1 %} and {% imath |DE|=r %}, the rest of the figure can be constructed (the lines AC and BF are parallel and the rest of the lines, with the exception of BC, are perpendicular to AC). It is important to note that the four-sided figures ABED, DEHG, GHKJ, and so on, are all <a title="similar" href="http://en.wikipedia.org/wiki/Similarity_(geometry)">similar</a> to each other, and we see that the length {% imath |AC| %} is exactly the quantity we are looking for.
+Consider now the figure shown. Given that {% imath |AB|=|AD|=1 %} and {% imath |DE|=r %}, the rest of the figure can be constructed (the lines AC and BF are parallel and the rest of the lines, with the exception of BC, are perpendicular to AC). It is important to note that the four-sided figures ABED, DEHG, GHKJ, and so on, are all [similar](http://en.wikipedia.org/wiki/Similarity_(geometry)) to each other, and we see that the length {% imath |AC| %} is exactly the quantity we are looking for.
 
 Note now how the triangle ABC is similar to the triangle FEB, leading to
 

@@ -2,6 +2,7 @@
 layout: post
 title: The Stern-Brocot Tree of Fractions
 author: Jan Marthedal Rasmussen
+excerpt: ! "Consider two fractions m_1/n_1 and m_2/n_2 with positive numerators and denominators. The fraction (m_1+m_2)/(n_1+n_2) is called the mediant of m_1/n_1 and m_2/n_2. It is straightforward to show that the mediant is placed numerically between the original fractions,"
 date: 2009-12-04 21:21:54.000000000 +01:00
 categories:
 - mathematics
@@ -11,7 +12,7 @@ tags:
 - binary search tree
 - Stern-Brocot tree
 ---
-Consider two fractions {% imath \frac{m_1}{n_1} %} and {% imath \frac{m_2}{n_2} %} with positive numerators and denominators. The fraction {% imath \frac{m_1+m_2}{n_1+n_2} %} is called the *mediant* of {% imath \frac{m_1}{n_1} %} and {% imath \frac{m_2}{n_2} %}. It is straightforward to show that the mediant is placed numerically between the original fractions,<span></span>
+Consider two fractions {% imath \frac{m_1}{n_1} %} and {% imath \frac{m_2}{n_2} %} with positive numerators and denominators. The fraction {% imath \frac{m_1+m_2}{n_1+n_2} %} is called the *mediant* of {% imath \frac{m_1}{n_1} %} and {% imath \frac{m_2}{n_2} %}. It is straightforward to show that the mediant is placed numerically between the original fractions,
 
 <div class="pull-right">(1)</div>
 {% dmath \frac{m_1}{n_1} < \frac{m_2}{n_2} \quad \Rightarrow \quad \frac{m_1}{n_1} < \frac{m_1+m_2}{n_1+n_2} < \frac{m_2}{n_2}. %}

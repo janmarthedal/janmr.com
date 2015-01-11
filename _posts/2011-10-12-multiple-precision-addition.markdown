@@ -19,7 +19,7 @@ tags:
 <div class="pull-right"><a href="{% amazon taocp2 %}"><img src="{% bookcover taocp2 %}" /></a></div>
 This post will cover a basic addition algorithm for multiple-precision non-negative integers. The algorithm is based upon that presented in Section 4.3.1, *The Classical Algorithms*, of [The Art of Computer Programming](http://www-cs-faculty.stanford.edu/~uno/taocp.html), Volume 2, by [Donald E. Knuth](http://www-cs-faculty.stanford.edu/~uno/). The notation and bounds used in this post were presented in a [previous post](/2011/10/multiple-precision-number-representation.html).
 
-We consider adding two {% imath n %}-digit numbers with {% imath n \geq 1 %}, {% imath u=(u_{n-1} \ldots u_1 u_0)_b %} and {% imath v=(v_{n-1} \ldots v_1 v_0)_b %}. <span></span>Since {% imath b^{n-1} \leq u, v \leq b^n - 1 %} we have {% imath 2 b^{n-1} \leq u+v \leq 2 b^n - 2 %} which, when using the fact that {% imath b \geq 2 %}, leads to {% imath b^{n-1} \leq u+v \leq b^{n+1} - 1 %} (note how a tighter bound of the form {% imath b^p \leq u+v \leq b^q - 1 %} is not possible).
+We consider adding two {% imath n %}-digit numbers with {% imath n \geq 1 %}, {% imath u=(u_{n-1} \ldots u_1 u_0)_b %} and {% imath v=(v_{n-1} \ldots v_1 v_0)_b %}. Since {% imath b^{n-1} \leq u, v \leq b^n - 1 %} we have {% imath 2 b^{n-1} \leq u+v \leq 2 b^n - 2 %} which, when using the fact that {% imath b \geq 2 %}, leads to {% imath b^{n-1} \leq u+v \leq b^{n+1} - 1 %} (note how a tighter bound of the form {% imath b^p \leq u+v \leq b^q - 1 %} is not possible).
 
 This means that {% imath u+v %} can be represented using {% imath n %} or {% imath n+1 %} digits, so we set {% imath w=(w_n \ldots w_1 w_0)_b %}.
 

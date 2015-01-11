@@ -4,7 +4,7 @@ title: Good Rational Bounds
 author: Jan Marthedal Rasmussen
 excerpt: ! "Say we have a k-bit integer and we want to allocate a character array
   to hold the decimal digits of this number. How large must the array be? Well, the
-  exact formula is"
+  exact formula is [...]"
 date: 2013-01-07 12:38:33.000000000 +01:00
 categories:
 - mathematics
@@ -14,7 +14,7 @@ tags:
 - rational bound
 ---
 
-Say we have a k-bit integer and we want to allocate a character array to hold the decimal digits of this number. How large must the array be? Well, the exact formula is<span></span>
+Say we have a k-bit integer and we want to allocate a character array to hold the decimal digits of this number. How large must the array be? Well, the exact formula is
 
 {% dmath \left\lfloor \log_{10}(2^k) \right\rfloor + 1 = \left\lfloor k \frac{\ln(2)}{\ln(10)} \right\rfloor + 1, %}
 

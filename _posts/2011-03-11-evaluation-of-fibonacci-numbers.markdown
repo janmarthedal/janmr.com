@@ -2,6 +2,9 @@
 layout: post
 title: Fast Evaluation of Fibonacci Numbers
 author: Jan Marthedal Rasmussen
+excerpt: ! "The integer sequence 0, 1, 1, 2, 3, 5, 8, 13, ... is well known as the Fibonacci sequence. It is easily defined by F_0 = 0, F_1 = 1 and F_n = F_{n-1} + F_{n-2} for n >= 2.
+  
+  To compute F_n you could use this definition directly, but that leads to a highly inefficient algorithm that is both recursive and which uses a number of additions which grows exponentially with n."
 date: 2011-03-11 11:01:12.000000000 +01:00
 categories:
 - programming
@@ -13,7 +16,7 @@ tags:
 ---
 The integer [sequence](http://oeis.org/A000045) 0, 1, 1, 2, 3, 5, 8, 13, &#8230; is well known as the [Fibonacci](http://en.wikipedia.org/wiki/Fibonacci) sequence. It is easily defined by {% imath F_0 = 0 %}, {% imath F_1 = 1 %} and {% imath F_n = F_{n-1} + F_{n-2} %} for {% imath n \geq 2 %}.
 
-To compute {% imath F_n %} you could use this definition directly, but that leads to a *highly inefficient* algorithm that is both recursive and which uses a number of additions which grows exponentially with {% imath n %}.<span></span>
+To compute {% imath F_n %} you could use this definition directly, but that leads to a *highly inefficient* algorithm that is both recursive and which uses a number of additions which grows exponentially with {% imath n %}.
 
 The first observation that leads to a better algorithm is that we can iteratively compute {% imath F_2, F_3, \ldots, F_n %} and at each step, we only need the previous two values from the sequence. So if we set
 

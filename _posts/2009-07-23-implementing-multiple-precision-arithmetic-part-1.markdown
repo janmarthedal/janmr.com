@@ -4,7 +4,7 @@ title: Implementing Multiple-Precision Arithmetic, Part 1
 author: Jan Marthedal Rasmussen
 excerpt: This article is the first in a series dealing with algorithms for multiple-precision
   arithmetic. The goal is to present both a theoretical foundation with high-level
-  algorithm descriptions (based on Section 4.3.1, <em>The Classical Algorithms</em>,
+  algorithm descriptions (based on Section 4.3.1, The Classical Algorithms,
   of The Art of Computer Programming, Volume 2, by Donald
   E. Knuth) and a portable C++ implementation of the algorithms. The theory and
   high-level algorithms will be quite universal and generic, whereas the presented
@@ -23,7 +23,7 @@ tags:
 ### Introduction
 
 <div style="float:right"><a href="{% amazon taocp2 %}"><img src="{% bookcover taocp2 %}" /></a></div>
-This article is the first in a series dealing with algorithms for multiple-precision arithmetic. The goal is to present both a theoretical foundation with high-level algorithm descriptions (based on Section 4.3.1, *The Classical Algorithms*, of [The Art of Computer Programming](http://www-cs-faculty.stanford.edu/~uno/taocp.html), Volume 2, by [Donald E. Knuth](http://www-cs-faculty.stanford.edu/~uno/)) and a portable C++ implementation of the algorithms. The theory and high-level algorithms will be quite universal and generic, whereas the presented code will be just one way to implement the algorithms in a specific programming language.<span></span>
+This article is the first in a series dealing with algorithms for multiple-precision arithmetic. The goal is to present both a theoretical foundation with high-level algorithm descriptions (based on Section 4.3.1, *The Classical Algorithms*, of [The Art of Computer Programming](http://www-cs-faculty.stanford.edu/~uno/taocp.html), Volume 2, by [Donald E. Knuth](http://www-cs-faculty.stanford.edu/~uno/)) and a portable C++ implementation of the algorithms. The theory and high-level algorithms will be quite universal and generic, whereas the presented code will be just one way to implement the algorithms in a specific programming language.
 
 We start out by considering only non-negative integers. A number {% imath u \geq 0 %} will be represented in radix {% imath b \geq 2 %} using the notation
 

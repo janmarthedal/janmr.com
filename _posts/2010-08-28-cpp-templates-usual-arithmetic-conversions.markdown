@@ -2,15 +2,11 @@
 layout: post
 title: C++ Templates and Usual Arithmetic Conversions
 author: Jan Marthedal Rasmussen
-excerpt: ! "If you add a <span class=\"sputcode\">short int</span> and a <span
-  class=\"sputcode\">char</span> in C++, what is the resulting type? What if you
-  subtract a <span class=\"sputcode\">long int</span> from an <span class=\"sputcode\">unsigned
-  int</span>? The answers actually depend on the compiler and the target architecture
-  (<span class=\"sputcode\">int</span> or <span class=\"sputcode\">unsigned</span>
-  in the first case and <span class=\"sputcode\">long int</span> or <span class=\"sputcode\">unsigned
-  long int</span> in the second). This article lists the rules from the current
+excerpt: ! "If you add a short int and a char in C++, what is the resulting type? What if you
+  subtract a long int from an unsigned int? The answers actually depend on the compiler and the target architecture (int or unsigned in the first case and long int or unsigned
+  long int in the second). This article lists the rules from the current
   C++ standard and gives an example of how the type can be resolved at compile time
-  using templates.\r\n\r\n"
+  using templates."
 date: 2010-08-28 11:56:11.000000000 +02:00
 categories:
 - programming

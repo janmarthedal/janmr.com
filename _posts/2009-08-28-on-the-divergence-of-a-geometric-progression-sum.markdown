@@ -2,6 +2,7 @@
 layout: post
 title: On the Divergence of a Geometric Progression Sum
 author: Jan Marthedal Rasmussen
+excerpt: ! "Let us revisit the geometric progression sum considered in an earlier article, s_r = sum_{k=0}^infty r^k = 1 + r + r^2 + r^3 + ..., where r here is a complex number. For what values of r does this infinite sum make sense? [...]"
 date: 2009-08-28 17:50:28.000000000 +02:00
 categories:
 - mathematics
@@ -13,7 +14,7 @@ Let us revisit the geometric progression sum considered in an <a href="/2008/10/
 
 {% dmath s_r = \sum_{k=0}^\infty r^k = 1 + r + r^2 + r^3 + \ldots, %}
 
-where {% imath r %} here is a <a href="http://en.wikipedia.org/wiki/Complex_number">complex number</a>. For what values of {% imath r %} does this infinite sum make sense? Can we find a <a href="http://en.wikipedia.org/wiki/Closed-form_expression">closed-form expression</a> for {% imath s_r %} in such cases?<span></span> To investigate this, we fix {% imath r %} to some value and consider the partial sums:
+where {% imath r %} here is a <a href="http://en.wikipedia.org/wiki/Complex_number">complex number</a>. For what values of {% imath r %} does this infinite sum make sense? Can we find a <a href="http://en.wikipedia.org/wiki/Closed-form_expression">closed-form expression</a> for {% imath s_r %} in such cases? To investigate this, we fix {% imath r %} to some value and consider the partial sums:
 
 {% dmath s_r(n) = \sum_{k=0}^n r^k = 1 + r + r^2 + \ldots + r^{n-1}, %}
 
