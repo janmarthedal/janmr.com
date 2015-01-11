@@ -2,6 +2,8 @@
 layout: post
 title: Multiple-Precision Number Representation
 author: Jan Marthedal Rasmussen
+excerpt: ! "Let us consider a common way to represent non-negative integers. An integer u >= 0 will
+  be represented in radix b >= 2 using the notation [...]"
 date: 2011-10-05 10:23:53.000000000 +02:00
 categories:
 - programming

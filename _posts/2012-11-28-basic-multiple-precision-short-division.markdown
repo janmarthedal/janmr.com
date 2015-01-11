@@ -2,6 +2,8 @@
 layout: post
 title: Basic Multiple-Precision Short Division
 author: Jan Marthedal Rasmussen
+excerpt: ! "Let us consider short division, by which we mean a multiple-digit number u
+  divided by a single digit v [...]"
 date: 2012-11-28 13:34:47.000000000 +01:00
 categories:
 - programming
@@ -11,10 +13,9 @@ tags:
 - numbers project
 - basic theory
 ---
-
 Let us consider short division, by which we mean a multiple-digit number {% imath u = (u_{m-1} \ldots u_1 u_0)_b %} divided by a single digit {% imath v %} (see, e.g., [post on number representation](/2011/10/multiple-precision-number-representation.html)). We will assume {% imath m \geq 1 %}, {% imath u_{m-1} \neq 0 %} and {% imath 0 < v < b %}.
 
-We are interested in a quotient {% imath q = \lfloor u/v \rfloor %} and a remainder {% imath r %} such that {% imath u = q v + r %} with {% imath 0 \leq r < v %}. Using that {% imath b^{m-1} \leq u < b^m %} and {% imath 0 < v < b %} we can deduce that {% imath b^{m-2} < q < b^m %} which means that {% imath q %} can be represented using {% imath m-1 %} or {% imath m %} digits: {% imath q = (q_{m-1} \ldots q_1 q_0)_b %} (we may have {% imath q_{m-1} = 0 %} in which case {% imath q_{m-2} \neq 0 %}).<span></span>
+We are interested in a quotient {% imath q = \lfloor u/v \rfloor %} and a remainder {% imath r %} such that {% imath u = q v + r %} with {% imath 0 \leq r < v %}. Using that {% imath b^{m-1} \leq u < b^m %} and {% imath 0 < v < b %} we can deduce that {% imath b^{m-2} < q < b^m %} which means that {% imath q %} can be represented using {% imath m-1 %} or {% imath m %} digits: {% imath q = (q_{m-1} \ldots q_1 q_0)_b %} (we may have {% imath q_{m-1} = 0 %} in which case {% imath q_{m-2} \neq 0 %}).
 
 We now have the following straightforward algorithm:
 

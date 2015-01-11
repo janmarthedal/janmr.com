@@ -2,6 +2,12 @@
 layout: post
 title: Basic Multiple-Precision Multiplication
 author: Jan Marthedal Rasmussen
+excerpt: ! "After addressing multiple-precision addition and subtraction, we now turn to
+  multiplication of two multiple-precision numbers. Once again, we use the number representation and
+  notation introduced earlier. Several algorithms exist for doing multiple-precision multiplication.
+  This post will present the basic, pencil-and-paper-like method. Basically, it consists of two parts:
+  Multiplying a number by a single digit and adding together the sub-results, aligned appropriately.
+  [...]"
 date: 2011-11-09 09:55:46.000000000 +01:00
 categories:
 - programming
@@ -13,7 +19,7 @@ tags:
 ---
 After addressing multiple-precision [addition](/2011/10/multiple-precision-addition.html) and [subtraction](/2011/10/multiple-precision-subtraction.html), we now turn to multiplication of two multiple-precision numbers. Once again, we use the number representation and notation [introduced earlier](/2011/10/multiple-precision-number-representation.html).
 
-Several algorithms exist for doing multiple-precision multiplication. This post will present the basic, pencil-and-paper-like method. Basically, it consists of two parts: Multiplying a number by a single digit and adding together the sub-results, aligned appropriately.<span></span>
+Several algorithms exist for doing multiple-precision multiplication. This post will present the basic, pencil-and-paper-like method. Basically, it consists of two parts: Multiplying a number by a single digit and adding together the sub-results, aligned appropriately.
 
 #### Multiple digits times a single digit
 

@@ -2,6 +2,9 @@
 layout: post
 title: Multiple-Precision Subtraction
 author: Jan Marthedal Rasmussen
+excerpt: ! "We now turn to multiple-precision subtraction for non-negative integers. The algorithm is
+  very similar to that of multiple-precision addition, but some minor differences make it worth while
+  considering subtraction separately. [...]"
 date: 2011-10-26 11:00:10.000000000 +02:00
 categories:
 - programming
@@ -17,7 +20,7 @@ We consider two {% imath n %}-digit numbers, {% imath u=(u_{n-1} \ldots u_1 u_0)
 
 {% dmath w = (u - v - k_0) \;\text{mod}\; b^n %}
 
-where {% imath k_0 %} is some initial [borrow](http://mathworld.wolfram.com/Borrow.html), {% imath 0 \leq k_0 \leq 1 %}. Furthermore, a final borrow {% imath k_n %} will indicate whether {% imath u < v+k_0 %}.<span></span>
+where {% imath k_0 %} is some initial [borrow](http://mathworld.wolfram.com/Borrow.html), {% imath 0 \leq k_0 \leq 1 %}. Furthermore, a final borrow {% imath k_n %} will indicate whether {% imath u < v+k_0 %}.
 
 Let us first introduce a notation which [Donald E. Knuth](http://www-cs-faculty.stanford.edu/~uno/) refers to as [Iverson's convention](http://en.wikipedia.org/wiki/Iverson_bracket): {% imath [P] %} has value {% imath 1 %} if {% imath P %} is true and {% imath 0 %} otherwise.
 

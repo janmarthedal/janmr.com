@@ -16,7 +16,7 @@ tags:
 - bitwise operators
 - number representation
 ---
-When representing integers using a fixed number of bits, negative numbers are typically represented using [two's complement](http://en.wikipedia.org/wiki/Two's_complement). If using {% imath n %} bit numbers, the two's complement of a number {% imath x %} with {% imath 0 \leq x < 2^n %} is {% imath (-x) \mathbin{\text{mod}} 2^n = 2^n - x %}. But what do you do if you want to work with unbounded/multiple-precision integers? Fixing {% imath x %} and letting the number of bits go to infinity, you will notice that increasing {% imath n %} by one simply adds a 1 at the left. For instance,<span></span>
+When representing integers using a fixed number of bits, negative numbers are typically represented using [two's complement](http://en.wikipedia.org/wiki/Two's_complement). If using {% imath n %} bit numbers, the two's complement of a number {% imath x %} with {% imath 0 \leq x < 2^n %} is {% imath (-x) \mathbin{\text{mod}} 2^n = 2^n - x %}. But what do you do if you want to work with unbounded/multiple-precision integers? Fixing {% imath x %} and letting the number of bits go to infinity, you will notice that increasing {% imath n %} by one simply adds a 1 at the left. For instance,
 
 *   {% imath 1975 = (11110110111)_2 %}
 *   {% imath -1975 = 2^{12} - 1975 = (100001001001)_2 %} &nbsp;&nbsp; (with {% imath n=12 %})

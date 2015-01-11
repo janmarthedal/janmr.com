@@ -2,13 +2,18 @@
 layout: post
 title: Bell Numbers
 author: Jan Marthedal Rasmussen
+excerpt: ! "I recently studied a system of linear ODEs, where n parameters, [...] described
+  the system. It turned out that the structure of the solutions depended on whether any of the
+  parameters where equal to each other. For instance, with three parameters there were five
+  possibilities: [...] We can quickly go through small values of n and we get (starting with n=0):
+  1, 1, 2, 5, 15, .... How do we obtain a general formula? [...]"
 date: 2011-06-23 12:54:44.000000000 +02:00
 categories:
 - mathematics
 tags:
 - combinatorics
+- ode
 ---
-
 I recently studied a system of linear [ODE](http://en.wikipedia.org/wiki/Ordinary_differential_equation)s, where {% imath n %} parameters, {% imath k_1, \ldots, k_n %} described the system. It turned out that the structure of the solutions depended on whether any of the parameters where equal to each other. For instance, with three parameters there were five possibilities:
 
 1. {% imath k_1 = k_2 = k_3 %}
@@ -17,7 +22,7 @@ I recently studied a system of linear [ODE](http://en.wikipedia.org/wiki/Ordinar
 4. {% imath k_2 = k_3 %}, {% imath k_1 \neq k_2 %}
 5. {% imath k_1 \neq k_2 %}, {% imath k_1 \neq k_3 %}, {% imath k_2 \neq k_3 %}
 
-We can quickly go through small values of {% imath n %} and we get (starting with {% imath n=0 %}): 1, 1, 2, 5, 15, &#8230;. How do we obtain a general formula?<span></span> Observe first that the number of possibilities corresponds to the number of equivalence relations in a set of {% imath n %} elements. We can then list the equivalence classes for each possible equivalence relation. For the example {% imath n=3 %} we get, corresponding to the list above:
+We can quickly go through small values of {% imath n %} and we get (starting with {% imath n=0 %}): 1, 1, 2, 5, 15, &#8230;. How do we obtain a general formula? Observe first that the number of possibilities corresponds to the number of equivalence relations in a set of {% imath n %} elements. We can then list the equivalence classes for each possible equivalence relation. For the example {% imath n=3 %} we get, corresponding to the list above:
 
 1. {% imath \{\{k_1,k_2,k_3\}\} %}
 2. {% imath \{\{k_1,k_2\}, \{k_3\}\} %}
