@@ -16,7 +16,7 @@ tags:
 ### Introduction
 
 <div style="float:right"><a href="{% amazon taocp4f1 %}"><img src="{% bookcover taocp4f1 %}" /></a></div>
-I have known the game of Nim for many years. Once, a friend of mine beat me repeatedly in one game after another and I had no idea how he did it. Looking back, I am not sure he knew the perfect Nim-strategy, but he knew enough to frustrate me immensely. A year ago or so, I was flicking through Fascicle 1 of <a href="http://www-cs-faculty.stanford.edu/~uno/taocp.html">The Art of Computer Programming</a>, Volume 4 by <a href="http://www-cs-faculty.stanford.edu/~uno/">Donald E. Knuth</a>, and I read about the strategy of Nim. The strategy is *very* simple but I could not possibly understand *why* it worked.
+I have known the game of Nim for many years. Once, a friend of mine beat me repeatedly in one game after another and I had no idea how he did it. Looking back, I am not sure he knew the perfect Nim-strategy, but he knew enough to frustrate me immensely. A year ago or so, I was flicking through Fascicle 1 of [The Art of Computer Programming](http://www-cs-faculty.stanford.edu/~uno/taocp.html), Volume 4 by [Donald E. Knuth](http://www-cs-faculty.stanford.edu/~uno/), and I read about the strategy of Nim. The strategy is *very* simple but I could not possibly understand *why* it worked.
 
 This article shows why the strategy works, introducing the necessary game theory along the way.
 
@@ -61,7 +61,7 @@ We can also construct a new game by adding two games. Given two games {% imath G
 
 We see that {% imath G + \{\} = \{\} + G = G %}, as it should be. These special cases, and the fact that set union is commutative, makes position adding commutative too. Likewise, since union is associative and {% imath G + (\{\} + H) = (G + \{\}) + H %} and {% imath G + (H + \{\}) = (G + H) + \{\} %}, we also have associativity for game adding.
 
-Recall the initial Nim game in Figure 1 with three piles of 2, 3, and 4 sticks, respectively. We can now write that position as {% imath \star 2 + \star 3 + \star 4 %}. It is possible to write out its set representation but it is <a href="{{site.baseurl}}media/set234.txt">quite large</a>.
+Recall the initial Nim game in Figure 1 with three piles of 2, 3, and 4 sticks, respectively. We can now write that position as {% imath \star 2 + \star 3 + \star 4 %}. It is possible to write out its set representation but it is [quite large]({{site.baseurl}}media/set234.txt).
 
 ### Properties of Impartial Games
 
@@ -70,9 +70,9 @@ Given an impartial game, let {% imath \cal S %} be the set of all possible game 
 *   {% imath {\cal S}_P %} consists of the terminal position {% imath \{\} %}, from where no legal move can be made, and every position for which *every* move will lead to a position in {% imath {\cal S}_N %} ({% imath \{G_1,\ldots,G_n\} \in {\cal S}_P \Leftrightarrow \forall k: G_k \in {\cal S}_N %}).
 *   {% imath {\cal S}_N %} consists of every position for which *at least one* move will lead to a position in {% imath {\cal S}_P %} ({% imath \{G_1,\ldots,G_n\} \in {\cal S}_N \Leftrightarrow \exists k: G_k \in {\cal S}_P %}).
 
-Consider a graph in which every game position is a node and where there is an arc (directed edge) from position {% imath G %} to position {% imath g %} if and only if {% imath g \in G %}. Since any game will terminate, this graph contains no cycles and is thus a <a href="http://en.wikipedia.org/wiki/Directed_acyclic_graph">Directed Acyclic Graph (DAG)</a>. This makes it possible to <a href="http://en.wikipedia.org/wiki/Topological_sorting">topologically sort</a> the nodes/positions, starting from the terminal position and working backwards through every possible position, placing each position in {% imath {\cal S}_P %} or {% imath {\cal S}_N %} in the process. We have, in this way, divided {% imath {\cal S} %} into two disjoint subsets.
+Consider a graph in which every game position is a node and where there is an arc (directed edge) from position {% imath G %} to position {% imath g %} if and only if {% imath g \in G %}. Since any game will terminate, this graph contains no cycles and is thus a [Directed Acyclic Graph (DAG)](http://en.wikipedia.org/wiki/Directed_acyclic_graph). This makes it possible to [topologically sort](http://en.wikipedia.org/wiki/Topological_sorting) the nodes/positions, starting from the terminal position and working backwards through every possible position, placing each position in {% imath {\cal S}_P %} or {% imath {\cal S}_N %} in the process. We have, in this way, divided {% imath {\cal S} %} into two disjoint subsets.
 
-Such a <a href="{{site.baseurl}}media/graph234.svg">graph</a> for the game {% imath \star 2 + \star 3 + \star 4 %} would consists of 27 vertices and 114 arcs. Only 4 of the vertices represent games/positions in {% imath {\cal S}_P %}.
+Such a [graph]({{site.baseurl}}media/graph234.svg) for the game {% imath \star 2 + \star 3 + \star 4 %} would consists of 27 vertices and 114 arcs. Only 4 of the vertices represent games/positions in {% imath {\cal S}_P %}.
 
 From the definitions of {% imath {\cal S}_P %} and {% imath {\cal S}_N %} we have something essential. Given a position in {% imath {\cal S}_N %}, the **n**ext player to move will always win, assuming a perfect play on his/her part. Similarly, given a position in {% imath {\cal S}_P %}, the **p**revious player will always win, again assuming a perfect play.
 
@@ -81,6 +81,7 @@ We now move on to different facts about impartial games. Some of them are intere
 **Theorem 1.** {% imath G + G \in {\cal S}_P %} for any game {% imath G %}.
 
 <button class="btn btn-default btn-xs" onclick="togglevis('prf1');">*Proof*</button>
+
 <div class="proof" id="prf1" style="display: none;">
 We use structural induction (we consider a topologically sorted graph of a game from the terminal game and backwards). For {% imath G = \{\} %} the statement is trivially true. Now assume that {% imath G = \{ G_1, G_2, \ldots, G_n \} %} where {% imath G_k + G_k \in {\cal S}_P %} for {% imath k = 1, 2, \ldots, n %}. If, in the position {% imath G + G %}, the player to move chooses the position {% imath G_j + G %}, the other player can make the same move in the &#8220;other part&#8221;, leading to {% imath G_j + G_j %}, which was assumed to lie in {% imath {\cal S}_P %}. This shows that {% imath G_j + G \in {\cal S}_N %} and since {% imath j %} was chosen arbitrarily {% imath G + G \in {\cal S}_P %}.
 </div>
@@ -94,6 +95,7 @@ It is clear that {% imath \sim %} is an equivalence relation (it is reflexive, {
 **Theorem 3.** For all {% imath G, H \in {\cal S}_P %} we have {% imath G + H \in {\cal S}_P %}.
 
 <button class="btn btn-default btn-xs" onclick="togglevis('prf3');">*Proof*</button>
+
 <div class="proof" id="prf3" style="display: none;">
 Again, we use structural induction. If {% imath G = \{\} %} the result follows easily. Now assume that {% imath G'' + H \in {\cal S}_P %} for all {% imath G'' \in {\cal S}_P %} where {% imath G'' \in G' %} and {% imath G' \in G %}. If a move is made from {% imath G + H %} to {% imath G' + H %}, where {% imath G' \in G %}, we can go to a position {% imath G'' + H %} where {% imath G'' \in G' %} and {% imath G'' \in {\cal S}_P %}. This last position lies in {% imath {\cal S}_P %} by assumption and then {% imath G + H \in {\cal S}_P %} does too. By symmetry the same arguments can be used if a move is made in the {% imath H %} part.
 </div>
@@ -103,6 +105,7 @@ The following important theorem shows that any game in {% imath {\cal S}_P %} is
 **Theorem 4.** {% imath G \sim \{\} %} for all {% imath G \in {\cal S}_P %}.
 
 <button class="btn btn-default btn-xs" onclick="togglevis('prf4');">*Proof*</button>
+
 <div class="proof" id="prf4" style="display: none;">
 We need to show {% imath G + X \in {\cal S}_P \Leftrightarrow X \in {\cal S}_P %} for all games {% imath X %}. First we show {% imath X \in {\cal S}_P \Rightarrow G + X \in {\cal S}_P %} so let {% imath X \in {\cal S}_P %} and consider the position {% imath G + X %}. But that {% imath G + X \in {\cal S}_P %} follows immediately from Theorem 3.
 
@@ -114,6 +117,7 @@ The next theorem shows that we can add and &#8220;subtract&#8221; on both sides 
 **Theorem 5.** {% imath G \sim H \Leftrightarrow F + G \sim F + H %} for all games {% imath F, G, H %}.
 
 <button class="btn btn-default btn-xs" onclick="togglevis('prf5');">*Proof*</button>
+
 <div class="proof" id="prf5" style="display: none;">
 Let {% imath G \sim H %}, meaning {% imath G + X \in {\cal S}_P \Leftrightarrow H + X \in {\cal S}_P %} for all games {% imath X %}. Now assume {% imath F + G + Y \in {\cal S}_P %} for some {% imath Y \in \cal S %} and by setting {% imath X = F + Y %} we have {% imath H + X = H + F + Y \in \cal S %}, showing that {% imath F + G + Y \in {\cal S}_P \Rightarrow F + H + Y \in {\cal S}_P %} for all {% imath Y \in \cal S %}. Analogously we can show the same statement with {% imath G %} and {% imath H %} interchanged. Hence, {% imath F + G \sim F + H %}. Now assume {% imath F + G \sim F + H %}. We then have {% imath G = G + \{\} \sim G + (F + F) = (G + F) + F \sim (H + F) + F = H + (F + F) \sim H + \{\} = H %}.
 </div>
@@ -123,6 +127,7 @@ Finally a theorem essential for the next section.
 **Theorem 6.** {% imath G \sim H \Leftrightarrow G + H \in {\cal S}_P %} for all games {% imath G %} and {% imath H %}.
 
 <button class="btn btn-default btn-xs" onclick="togglevis('prf6');">*Proof*</button>
+
 <div class="proof" id="prf6" style="display: none;">
 {% imath G \sim H \Leftrightarrow G + H \sim H + H \sim \{\} \Leftrightarrow G + H \in {\cal S}_P %}.
 </div>
@@ -376,7 +381,7 @@ This makes it possible to tabulate the values of the {% imath \circ %}-operator:
 </tbody>
 </table>
 
-This looks suspiciously like the binary <a href="http://en.wikipedia.org/wiki/Exclusive_or">exclusive-or (XOR)</a> operator {% imath \oplus %}. And indeed it is, as shown by the following theorem (the theorem is slightly more general than needed, but it is actually a bit more concise this way).
+This looks suspiciously like the binary [exclusive-or (XOR)](http://en.wikipedia.org/wiki/Exclusive_or) operator {% imath \oplus %}. And indeed it is, as shown by the following theorem (the theorem is slightly more general than needed, but it is actually a bit more concise this way).
 
 **Theorem 8** (The Sprague–Grundy Theorem)**.** Let {% imath x = \text{mex}(S) %} and {% imath y = \text{mex}(T) %}. Then
 
@@ -385,6 +390,7 @@ This looks suspiciously like the binary <a href="http://en.wikipedia.org/wiki/Ex
 where {% imath S \oplus y = \{ x \oplus y \mid x \in S \} %} and {% imath x \oplus T = \{ x \oplus y \mid y \in T \} %}.
 
 <button class="btn btn-default btn-xs" onclick="togglevis('prf8');">*Proof*</button>
+
 <div class="proof" id="prf8" style="display: none;">
 We need to show two things: (a) {% imath x \oplus y \not\in (S \oplus y) \cup (x \oplus T) %} and (b) {% imath k \in (S \oplus y) \cup (x \oplus T) %} for all {% imath 0 \leq k < x \oplus y %}.
 
@@ -410,9 +416,10 @@ In other words, if a game has {% imath p_1 \oplus p_2 \oplus \cdots \oplus p_n \
 
 ### Finishing Remarks
 
-According to Fascicle 1 of <a href="http://www-cs-faculty.stanford.edu/~uno/taocp.html">The Art of Computer Programming</a>, Volume 4, by <a href="http://www-cs-faculty.stanford.edu/~uno/">Donald E. Knuth</a>, the binary operator XOR, {% imath \oplus %}, was known long before operators such as binary *AND* and binary *OR*, because it is so intimately tied to the Nim game. For the same reason, the XOR operator has often been called the &#8220;nim sum&#8221;.
+According to Fascicle 1 of [The Art of Computer Programming](http://www-cs-faculty.stanford.edu/~uno/taocp.html), Volume 4, by [Donald E. Knuth](http://www-cs-faculty.stanford.edu/~uno/), the binary operator XOR, {% imath \oplus %}, was known long before operators such as binary *AND* and binary *OR*, because it is so intimately tied to the Nim game. For the same reason, the XOR operator has often been called the &#8220;nim sum&#8221;.
 
 <div style="float:right"><a href="{% amazon numbers-games %}"><img src="{% bookcover numbers-games %}" /></a></div>
-Note how the definition of the {% imath \star n %}-games resembles one of the standard ways to construct the <a href="http://en.wikipedia.org/wiki/Natural_number">natural numbers</a>. Other than its obvious relation to the Nim-game, this is perhaps one of the reasons that {% imath \star n %}-games are sometimes called *nimbers*. Generalized numbers and games are the subject of the book <a href="http://en.wikipedia.org/wiki/On_Numbers_and_Games">On Numbers and Games</a> by <a href="http://en.wikipedia.org/wiki/John_Horton_Conway">John H. Conway</a>.
 
-<a href="http://www.wikipedia.org">Wikipedia</a> has some relevant pages in relation to this article, see <a href="http://en.wikipedia.org/wiki/Impartial_game">impartial game</a>, <a href="http://en.wikipedia.org/wiki/Combinatorial_game_theory">combinatorial game theory</a>, and <a href="http://en.wikipedia.org/wiki/Sprague–Grundy_theorem">Sprague–Grundy Theorem</a>. See also the blog entry on <a href="http://blog.plover.com/math/sprague-grundy.html">The Universe of Discourse</a>.
+Note how the definition of the {% imath \star n %}-games resembles one of the standard ways to construct the [natural numbers](http://en.wikipedia.org/wiki/Natural_number). Other than its obvious relation to the Nim-game, this is perhaps one of the reasons that {% imath \star n %}-games are sometimes called *nimbers*. Generalized numbers and games are the subject of the book [On Numbers and Games](http://en.wikipedia.org/wiki/On_Numbers_and_Games) by [John H. Conway](http://en.wikipedia.org/wiki/John_Horton_Conway).
+
+[Wikipedia](http://www.wikipedia.org) has some relevant pages in relation to this article, see [impartial game](http://en.wikipedia.org/wiki/Impartial_game), [combinatorial game theory](http://en.wikipedia.org/wiki/Combinatorial_game_theory), and [Sprague–Grundy Theorem](http://en.wikipedia.org/wiki/Sprague–Grundy_theorem). See also the blog entry on [The Universe of Discourse](http://blog.plover.com/math/sprague-grundy.html).

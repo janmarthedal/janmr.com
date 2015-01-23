@@ -11,9 +11,9 @@ tags:
 - combinatorics
 - enumerative combinatorics
 ---
-I have for a long time had an ambition of getting better at <a href="http://en.wikipedia.org/wiki/Combinatorics">combinatorics</a>, especially *enumerative combinatorics*, the discipline of counting the number of arrangements, given some pattern.
+I have for a long time had an ambition of getting better at [combinatorics](http://en.wikipedia.org/wiki/Combinatorics), especially *enumerative combinatorics*, the discipline of counting the number of arrangements, given some pattern.
 
-Getting introduced to The Twelvefold Way was a real eye-opener in this regard. It is a way to categorize some fundamental combinatorial counting problems by considering different ways of putting balls into urns. Different setups arise depending on whether the balls are labeled or unlabeled, whether the urns are labeled or unlabeled, and whether each urn can contain any number of balls, at most one or at least one, leading to {% imath 2 \cdot 2 \cdot 3 = 12 %} cases.<span></span>
+Getting introduced to The Twelvefold Way was a real eye-opener in this regard. It is a way to categorize some fundamental combinatorial counting problems by considering different ways of putting balls into urns. Different setups arise depending on whether the balls are labeled or unlabeled, whether the urns are labeled or unlabeled, and whether each urn can contain any number of balls, at most one or at least one, leading to {% imath 2 \cdot 2 \cdot 3 = 12 %} cases.
 
 All cases are shown and numbered in this table:
 
@@ -22,8 +22,8 @@ All cases are shown and numbered in this table:
 <tr>
 <td>balls per urn</td>
 <td>unrestricted</td>
-<td>&le; 1</td>
-<td>&ge; 1</td>
+<td>{% imath \leq 1 %}</td>
+<td>{% imath \geq 1 %}</td>
 </tr>
 <tr>
 <td>{% imath n %} labeled balls, {% imath m %} labeled urns</td>
@@ -54,7 +54,7 @@ All cases are shown and numbered in this table:
 
 I will now consider each one. Not row- or columnwise, but in a rather thematic way. The number of arrangements will be denoted {% imath C_k(m,n) %} for {% imath m %} urns, {% imath n %} balls, for each case {% imath k = 1, 2, \ldots, 12 %}.
 
-### The Trivial (7, <span>8</span>)
+### The Trivial (7, 8)
 
 When the urns are unlabeled and a maximum of one ball may be put in each urn, the answer is trivial. Different ways of placing the balls can not be distinguished since the urns are unlabeled, so there is only one way to do it,
 
@@ -119,7 +119,8 @@ We now go to Case 3 where the balls are labeled and the urns are unlabeled, like
 {% dmath C_3(m,n) = \sum_{k=1}^m \left\{ {n \atop k} \right\}. %}
 
 <div style="float:right"><a href="{% amazon concrete %}"><img src="{% bookcover concrete %}"></a></div>
-You can read more about Sterling numbers in, e.g., <a href="http://www-cs-faculty.stanford.edu/~uno/gkp.html">Concrete Mathematics</a> by Graham, Knuth, and Patashnik.
+
+You can read more about Sterling numbers in, e.g., [Concrete Mathematics](http://www-cs-faculty.stanford.edu/~uno/gkp.html) by Graham, Knuth, and Patashnik.
 
 ### Integer Compositions (10)
 
@@ -127,11 +128,11 @@ If unlabeled balls have to be placed in labeled urns with at least one ball in e
 
 <div style="text-align: center;"><strong>OO|O|OOO|OO</strong>,</div>
 
-meaning 2 balls in the first urn, 1 in the second, 3 in the third, and 2 in the fourth urn ({% imath m %}=4 and {% imath n %}=8 in this example). So counting the arrangements for Case 10 is equivalent to counting how many ways we can place {% imath m %}-1 seperators, &#8216;<strong>|</strong>&#8216;, among the {% imath n %}-1 places in between the <strong>O</strong>&#8216;s, leading to
+meaning 2 balls in the first urn, 1 in the second, 3 in the third, and 2 in the fourth urn ({% imath m %}=4 and {% imath n %}=8 in this example). So counting the arrangements for Case 10 is equivalent to counting how many ways we can place {% imath m %}-1 seperators, <span>"<strong>|</strong>"</span>, among the {% imath n %}-1 places in between the **O**'s, leading to
 
 {% dmath C_{10}(m,n) = {n-1 \choose m-1}, \quad n \geq m. %}
 
-The example above illustrates that 8=2+1+3+2 and is called a composition of the integer 8 into 4 parts. So enumerating the ways to place {% imath n %} unlabeled balls in {% imath m %} labeled urns with at least one ball in each urn is equivalent to counting the *compositions of the integer m into n parts*.
+The example above illustrates that {% imath 8=2+1+3+2 %} and is called a composition of the integer 8 into 4 parts. So enumerating the ways to place {% imath n %} unlabeled balls in {% imath m %} labeled urns with at least one ball in each urn is equivalent to counting the *compositions of the integer m into n parts*.
 
 ### Integer Partitions (4, 12)
 
@@ -151,7 +152,7 @@ In the general case of partitioning {% imath n %} into {% imath m %} parts, we c
 
 {% dmath \left| {n \atop m} \right| = \left| {n-1 \atop m-1} \right| + \left| {n-m \atop m} \right|, \quad n > m > 1. %}
 
-Finally for Case 4, with reasoning similar to that of set partitioning (Case 3), when the urns are unlabeled and any urn is allowed to be empty, it is equivalent to adding the counts for non-empty urns for 1, 2, &#8230;, {% imath m %} urns,
+Finally for Case 4, with reasoning similar to that of set partitioning (Case 3), when the urns are unlabeled and any urn is allowed to be empty, it is equivalent to adding the counts for non-empty urns for {% imath 1, 2, \ldots, m %} urns,
 
 {% dmath C_4(m,n) = \sum_{k=1}^m \left| {n \atop k} \right|. %}
 
@@ -164,8 +165,8 @@ All twelve case can be summarized in the following table:
 <tr>
 <td>balls per urn</td>
 <td>unrestricted</td>
-<td>&le; 1</td>
-<td>&ge; 1</td>
+<td>{% imath \leq 1 %}</td>
+<td>{% imath \geq 1 %}</td>
 </tr>
 <tr>
 <td>{% imath n %} labeled balls, {% imath m %} labeled urns</td>
@@ -195,5 +196,7 @@ All twelve case can be summarized in the following table:
 </table>
 
 <div style="float:right"><a href="{% amazon taocp4f3 %}"><img src="{% bookcover taocp4f3 %}"></a></div>
+
 <div style="float:right"><a href="{% amazon stanley97 %}"><img src="{% bookcover stanley97 %}"></a></div>
-This table also appears in in Section&nbsp;7.2.1.4, Fascicle&nbsp;3, Volume&nbsp;4 of <a href="http://www-cs-faculty.stanford.edu/~uno/taocp.html">The Art of Computer Programming</a> by <a href="http://www-cs-faculty.stanford.edu/~uno/">Donald E. Knuth</a> where The Twelvefold Way is briefly mentioned. The Twelvefold Way is originally treated in the book <a href="http://www-math.mit.edu/~rstan/ec/">Enumerative Combinatorics, Volume&nbsp;1</a> by <a href="http://www-math.mit.edu/~rstan/">Richard P. Stanley</a>.
+
+This table also appears in in Section&nbsp;7.2.1.4, Fascicle&nbsp;3, Volume&nbsp;4 of [The Art of Computer Programming](http://www-cs-faculty.stanford.edu/~uno/taocp.html) by [Donald E. Knuth](http://www-cs-faculty.stanford.edu/~uno/) where The Twelvefold Way is briefly mentioned. The Twelvefold Way is originally treated in the book [Enumerative Combinatorics, Volume&nbsp;1](http://www-math.mit.edu/~rstan/ec/) by [Richard P. Stanley](http://www-math.mit.edu/~rstan/).

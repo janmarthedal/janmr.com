@@ -34,11 +34,14 @@ We will approach the division algorithm from a top-level point of view. It is ac
 
 **Algorithm G**. Given {% imath u = (u_{m-1} \ldots u_1 u_0)_b %}, {% imath u_{m-1} \neq 0 %} and {% imath v = (v_{n-1} \ldots v_1 v_0)_b %}, {% imath v_{n-1} \neq 0 %}, with {% imath m \geq n > 0 %}, this algorithm outlines how to compute the quotient {% imath q = (q_{m-n} \ldots q_1 q_0)_b = \lfloor u/v \rfloor %} (we may have {% imath q_{m-n} = 0 %} in which case {% imath q_{m-n-1} \neq 0 %} if {% imath m > n %}) and the remainder {% imath r %} such that {% imath u = q v + r %}, {% imath 0 \leq r < v %}.
 
- * **G1**. {% imath u^{(m-n+1)} \leftarrow (0 u_{m-1} \ldots u_1 u_0)_b %}.
- * **G2**. {% imath k \leftarrow m-n %}.
- * **G3**. {% imath q_k \leftarrow \left\lfloor (u^{(k+1)}_{k+n} \ldots u^{(k+1)}_{k+1} u^{(k+1)}_k)_b / v \right\rfloor %}.
- * **G4**. Set {% imath u^{(k)} \leftarrow u^{(k+1)} - q_k b^k v %} or, equivalently, {% dmath \begin{aligned} (u^{(k)}_{k+n} \ldots u^{(k)}_{k+1} u^{(k)}_k)_b &\leftarrow (u^{(k+1)}_{k+n} \ldots u^{(k+1)}_{k+1} u^{(k+1)}_k)_b - q_k v, \\ (u^{(k)}_{k-1} \ldots u^{(k)}_1 u^{(k)}_0)_b &\leftarrow (u^{(k+1)}_{k-1} \ldots u^{(k+1)}_1 u^{(k+1)}_0)_b. \end{aligned} %}
- * **G5**. If {% imath k=0 %} then set {% imath r \leftarrow u^{(0)} %} and exit. Otherwise set {% imath k \leftarrow k-1 %} and go to step&nbsp;**G3**.
+*   **G1**. {% imath u^{(m-n+1)} \leftarrow (0 u_{m-1} \ldots u_1 u_0)_b %}.
+*   **G2**. {% imath k \leftarrow m-n %}.
+*   **G3**. {% imath q_k \leftarrow \left\lfloor (u^{(k+1)}_{k+n} \ldots u^{(k+1)}_{k+1} u^{(k+1)}_k)_b / v \right\rfloor %}.
+*   **G4**. Set {% imath u^{(k)} \leftarrow u^{(k+1)} - q_k b^k v %} or, equivalently,
+
+    {% dmath \begin{aligned} (u^{(k)}_{k+n} \ldots u^{(k)}_{k+1} u^{(k)}_k)_b &\leftarrow (u^{(k+1)}_{k+n} \ldots u^{(k+1)}_{k+1} u^{(k+1)}_k)_b - q_k v, \\ (u^{(k)}_{k-1} \ldots u^{(k)}_1 u^{(k)}_0)_b &\leftarrow (u^{(k+1)}_{k-1} \ldots u^{(k+1)}_1 u^{(k+1)}_0)_b. \end{aligned} %}
+
+*   **G5**. If {% imath k=0 %} then set {% imath r \leftarrow u^{(0)} %} and exit. Otherwise set {% imath k \leftarrow k-1 %} and go to step&nbsp;**G3**.
 
 An essential invariant of this algorithm is
 
@@ -71,6 +74,7 @@ This approximate quotient is never too small, as the following theorem states.
 **Theorem 1.** With {% imath \hat{q} %} as defined above we have {% imath q \leq \hat{q} %}.
 
 <button class="btn btn-default btn-xs" onclick="togglevis('prf1');">*Proof*</button>
+
 <div class="proof" id="prf1" style="display: none;">
 If {% imath \hat{q}=b-1 %} then since {% imath q \leq b-1 %} by assumption, the statement is true.
 
@@ -86,6 +90,7 @@ If {% imath u %} and {% imath v %} are scaled appropriately, {% imath \hat{q} %}
 **Theorem 2.** With {% imath \hat{q} %} as defined above and {% imath v_{n-1} \geq \lfloor b/2 \rfloor %}, we have {% imath \hat{q} \leq q+2 %}.
 
 <button class="btn btn-default btn-xs" onclick="togglevis('prf2');">*Proof*</button>
+
 <div class="proof" id="prf2" style="display: none;">
 Assume that {% imath \hat{q} \geq q+3 %}. We get
 
@@ -123,6 +128,7 @@ By studying the sign of the second order residual we can now get closer to the t
 **Theorem 3.** Let {% imath \hat{q} %} be any approximate quotient and {% imath \hat{r} %} the corresponding first order residual. Now if {% imath \hat{q} v_{n-2} > b \hat{r} + u_{n-2} %} then {% imath q < \hat{q} %}.
 
 <button class="btn btn-default btn-xs" onclick="togglevis('prf3');">*Proof*</button>
+
 <div class="proof" id="prf3" style="display: none;">
 Assume {% imath \hat{q} v_{n-2} > b \hat{r} + u_{n-2} %}, equivalent to {% imath \hat{r} b + u_{n-2} - \hat{q} v_{n-2} + 1 \leq 0 %}. We then have
 
@@ -134,6 +140,7 @@ So {% imath u - \hat{q} v < 0 \leq u - q v %} which implies {% imath q < \hat{q}
 **Theorem 4.** Let {% imath \hat{q} %} be any approximate quotient and {% imath \hat{r} %} the corresponding first order residual. Now if {% imath \hat{q} v_{n-2} \leq b \hat{r} + u_{n-2} %} then {% imath \hat{q} \leq q+1 %}.
 
 <button class="btn btn-default btn-xs" onclick="togglevis('prf4');">*Proof*</button>
+
 <div class="proof" id="prf4" style="display: none;">
 Let {% imath \hat{q} v_{n-2} \leq b \hat{r} + u_{n-2} %} and assume {% imath \hat{q} \geq q+2 %}. Now since {% imath u - q v < v %} we get
 
@@ -153,13 +160,13 @@ We can now combine Algorithm G with the just obtained knowledge of approximating
 
 <span id="algorithm-L"></span>**Algorithm L**. Given {% imath u = (u_{m-1} \ldots u_1 u_0)_b %}, {% imath u_{m-1} \neq 0 %} and {% imath v = (v_{n-1} \ldots v_1 v_0)_b %}, {% imath v_{n-1} \neq 0 %}, with {% imath m \geq n > 1 %}, this algorithm computes the quotient {% imath q = (q_{m-n} \ldots q_1 q_0)_b = \lfloor u/v \rfloor %} (we may have {% imath q_{m-n} = 0 %} in which case {% imath q_{m-n-1} \neq 0 %} if {% imath m > n %}) and the remainder {% imath r %} such that {% imath u = q v + r %}, {% imath 0 \leq r < v %}.
 
- * **L1**. Set {% imath v \leftarrow d \cdot v %} such that {% imath v_{n-1} \geq \lfloor b/2 \rfloor %} (letting {% imath d %} be a power of two is usually the best choice). Similarly, set {% imath (u_m \ldots u_1 u_0)_b \leftarrow d \cdot u %} (ensure {% imath u %} gets {% imath n+1 %} digits, setting {% imath u_m=0 %} if necessary).
- * **L2**. Set {% imath k \leftarrow m - n %}.
- * **L3**. Find {% imath \hat{q} %} such that {% imath \hat{q}-1 \leq \lfloor (u_{k+n} \ldots u_{k+1} u_k)_b /v \rfloor \leq \hat{q} %} (use Algorithm&nbsp;Q described above).
- * **L4**. Make the update {% imath (u_{k+n} \ldots u_{k+1} u_k)_b \leftarrow (u_{k+n} \ldots u_{k+1} u_k)_b - \hat{q} v %}.
- * **L5**. If the subtraction of step&nbsp;**L4** produces a borrow (the result is negative) do {% imath \hat{q} \leftarrow \hat{q} - 1 %} and {% imath (u_{k+n} \ldots u_{k+1} u_k)_b \leftarrow (u_{k+n} \ldots u_{k+1} u_k)_b + v %}.
- * **L6**. Set {% imath q_k = \hat{q} %}.
- * **L7**. If {% imath k=0 %} set {% imath r \leftarrow u/d %} and exit. Otherwise set {% imath k \leftarrow k-1 %} and go to step&nbsp;**L3**.
+*   **L1**. Set {% imath v \leftarrow d \cdot v %} such that {% imath v_{n-1} \geq \lfloor b/2 \rfloor %} (letting {% imath d %} be a power of two is usually the best choice). Similarly, set {% imath (u_m \ldots u_1 u_0)_b \leftarrow d \cdot u %} (ensure {% imath u %} gets {% imath n+1 %} digits, setting {% imath u_m=0 %} if necessary).
+*   **L2**. Set {% imath k \leftarrow m - n %}.
+*   **L3**. Find {% imath \hat{q} %} such that {% imath \hat{q}-1 \leq \lfloor (u_{k+n} \ldots u_{k+1} u_k)_b /v \rfloor \leq \hat{q} %} (use Algorithm&nbsp;Q described above).
+*   **L4**. Make the update {% imath (u_{k+n} \ldots u_{k+1} u_k)_b \leftarrow (u_{k+n} \ldots u_{k+1} u_k)_b - \hat{q} v %}.
+*   **L5**. If the subtraction of step&nbsp;**L4** produces a borrow (the result is negative) do {% imath \hat{q} \leftarrow \hat{q} - 1 %} and {% imath (u_{k+n} \ldots u_{k+1} u_k)_b \leftarrow (u_{k+n} \ldots u_{k+1} u_k)_b + v %}.
+*   **L6**. Set {% imath q_k = \hat{q} %}.
+*   **L7**. If {% imath k=0 %} set {% imath r \leftarrow u/d %} and exit. Otherwise set {% imath k \leftarrow k-1 %} and go to step&nbsp;**L3**.
 
 The normalization in step&nbsp;**L1** such that {% imath v_{n-1} \geq \lfloor b/2 \rfloor %} does two things. Firstly, it makes sure that the while-loop of the {% imath \hat{q} %}-computation executes at most two times. Secondly, the probability that the adding back in step&nbsp;**L5** must be executed is of order {% imath 2/b %} (a proof can be found in Knuth's book).
 

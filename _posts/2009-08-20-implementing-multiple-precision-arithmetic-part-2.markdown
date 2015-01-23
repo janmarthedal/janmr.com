@@ -88,6 +88,7 @@ This approximate quotient is never too small, as the following theorem states.
 **Theorem 1.** With {% imath \hat{q} %} as defined above we have {% imath q \leq \hat{q} %}.
 
 <button class="btn btn-default btn-xs" onclick="togglevis('prf1');">*Proof*</button>
+
 <div class="proof" id="prf1" style="display: none;">
 If {% imath \hat{q}=b-1 %} then since {% imath q \leq b-1 %} by assumption, the statement is true. Assume then that {% imath \hat{q} = \lfloor (u_n b + u_{n-1})/v_{n-1} \rfloor %}. From the properties of the <a href="http://en.wikipedia.org/wiki/Floor_function">floor function</a> we have {% imath u_n b + u_{n-1} \leq \hat{q} v_{n-1} + v_{n-1} - 1 %} and therefore {% imath \hat{q} v_{n-1} \geq u_n b + u_{n-1} - v_{n-1} + 1 %}. We then get
 
@@ -101,6 +102,7 @@ If {% imath u %} and {% imath v %} are scaled appropriately, {% imath \hat{q} %}
 **Theorem 2.** With {% imath \hat{q} %} as defined above and {% imath v_{n-1} \geq \lfloor b/2 \rfloor %}, we have {% imath \hat{q} \leq q+2 %}.
 
 <button class="btn btn-default btn-xs" onclick="togglevis('prf2');">*Proof*</button>
+
 <div class="proof" id="prf2" style="display: none;">
 Assume that {% imath \hat{q} \geq q+3 %}. We get
 
@@ -138,6 +140,7 @@ By studying the sign of the second order residual we can now get closer to the t
 **Theorem 3.** Let {% imath \hat{q} %} be any approximate quotient and {% imath \hat{r} %} the corresponding first order residual. Now if {% imath \hat{q} v_{n-2} > b \hat{r} + u_{n-2} %} then {% imath q < \hat{q} %}.
 
 <button class="btn btn-default btn-xs" onclick="togglevis('prf3');">*Proof*</button>
+
 <div class="proof" id="prf3" style="display: none;">
 Assume {% imath \hat{q} v_{n-2} > b \hat{r} + u_{n-2} %}, equivalent to {% imath \hat{r} b + u_{n-2} - \hat{q} v_{n-2} + 1 \leq 0 %}. We then have
 
@@ -149,6 +152,7 @@ So {% imath u - \hat{q} v < 0 \leq u - q v %} which implies {% imath q < \hat{q}
 **Theorem 4.** Let {% imath \hat{q} %} be any approximate quotient and {% imath \hat{r} %} the corresponding first order residual. Now if {% imath \hat{q} v_{n-2} \leq b \hat{r} + u_{n-2} %} then {% imath \hat{q} \leq q+1 %}.
 
 <button class="btn btn-default btn-xs" onclick="togglevis('prf4');">*Proof*</button>
+
 <div class="proof" id="prf4" style="display: none;">
 Let {% imath \hat{q} v_{n-2} \leq b \hat{r} + u_{n-2} %} and assume {% imath \hat{q} \geq q+2 %}. Now since {% imath u - q v < v %} we get
 
