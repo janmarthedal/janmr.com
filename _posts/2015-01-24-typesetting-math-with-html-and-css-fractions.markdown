@@ -5,7 +5,7 @@ author: Jan Marthedal Rasmussen
 excerpt: |
   Currently, there is no best way of showing math on the web. An HTML5 standard exists, MathML, but unfortunately it doesn't have broad browser support. Instead, many alternatives exist, all with varying quality and speed.
 
-  I would like to explore how far you can get by using just HTML and CSS (including web fonts). My findings should be considered experimental and in no way authoritative.
+  I would like to explore how far you can get by using just HTML and CSS (including web fonts). My findings should be considered experimental.
 
   This post will deal with one way of typesetting fractions, inspired by the approach taken by Kahn Academy's KaTeX project.
 inhead: |
@@ -112,7 +112,7 @@ But we would also like to display a horizontal line between the numerator and de
 before<span class="math-box"><span class="vstack"><div style="top: 0.686em;">8</div><div style="top: -0.23em;"><span class="frac-line"></span></div><div style="top: -0.677em;">1234</div><span class="baseline-fix"></span></span></span>after
 </div>
 
-This can be done with
+We aim for this markup
 
 {% highlight html %}
 before<span class="math-box">
@@ -125,7 +125,7 @@ before<span class="math-box">
 </span>after
 {% endhighlight %}
 
-but what should the style be for `span.frac-line`? Using something like `display: inline-block; width: 100%; border-bottom: 1px solid black;` will work, but how wide should the line be? Using something like `0.04em` makes the line scale with the font size, but using a small font size can result in a line width less than 1 pixel (leading to the line disappearing or having a modified color). Here, KaTeX has a nice trick up their sleeve:
+but what should the style be for `span.frac-line`? Using something like `display: inline-block; width: 100%; border-bottom: 1px solid black;` will work, but how thick should the line be? Using something like `0.04em` makes the line scale with the font size, but using a small font size can result in a line thickness less than 1 pixel (leading to the line disappearing or having a modified color). Here, KaTeX has a nice trick up their sleeve:
 
 {% highlight css %}
 .math-box .frac-line {
