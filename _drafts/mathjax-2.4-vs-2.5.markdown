@@ -15,29 +15,33 @@ tags:
 - mathjax
 # Posts: 47
 # Math items: 2312 in total
-# No MathJax: 8014
-# MathJax 2.4: 34985
-# MathJax 2.5, no previews: 37172
-# MathJax 2.5, with previews: 44760
+# No MathJax: (8014) 12393
+# MathJax 2.4: (34985) 43757
+# MathJax 2.5, no previews: (37172) 42018
+# MathJax 2.5, with previews: (44760) 51824
 # Posts: 10
 # Math items: 1528 in total
-# No MathJax: 2620
-# MathJax 2.4: 15599
-# MathJax 2.5, no previews: 14704
-# MathJax 2.5, with previews: 20934
+# No MathJax: (2620) 2889
+# MathJax 2.4: (15599) 22714
+# MathJax 2.5, no previews: (14704) 16662
+# MathJax 2.5, with previews: (20934) 23317
 ---
 How about when around 90% of the math was pre-converted to HTML by KaTeX? The numbers:
 
-*  Posts: 45
-*  Math items: A total of 2079 using KaTeX, 228 using MathJax
-*  Loading and typesetting all posts: 0.64 s/post on average
-*  As above but with MathJax disabled: 0.30 s/post on average
+*  Posts: 47
+*  Math items: 2312
+*  MathJax disabled: 0.26 s/post on average
+*  MathJax 2.4: 0.93 s/post on average
+*  MathJax 2.5, no previews: 0.89 s/post on average
+*  MathJax 2.5, with previews: 1.10 s/post on average
 
-And the most math-heavy posts:
+And the 10 most math-heavy posts:
 
 *  Posts: 10
-*  Math items: A total of 1330 using KaTeX, 193 using MathJax
-*  Loading and typesetting all posts: 1.3 s/post on average
-*  As above but with MathJax disabled: 0.35 s/post on average
+*  Math items: 1330
+*  MathJax disabled: 0.28 s/post on average
+*  MathJax 2.4: 2.27 s/post on average
+*  MathJax 2.5, no previews: 1.67 s/post on average
+*  MathJax 2.5, with previews: 2.33 s/post on average
 
-A significant improvement. And in fact, my own personal experience of loading posts before and after introducing KaTeX to my blog was even more noticable that these number seem to reflect. This is probably due to the fact that the initial paragraphs of posts generally contain fairly simple math items and thus items that KaTeX can handle. That gives MathJax time to work on the items [below the fold](http://en.wikipedia.org/wiki/Above_the_fold#Below_the_fold).
+
