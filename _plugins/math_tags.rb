@@ -1,5 +1,5 @@
-require 'URI'
-require 'Net/HTTP'
+require 'uri'
+require 'net/http'
 
 module Jekyll
   class MathTags < Liquid::Tag
