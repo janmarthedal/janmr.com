@@ -41,7 +41,7 @@ From the beginning I have used [MathJax](http://www.mathjax.org) to display the 
 > The HTML-CSS output is highly browser and client dependent. From basic things like installed fonts to tricky things
 > like hacks around browser and OS bugs, MathJax does a lot of work to guarantee identical display across all browsers.
 > So in a very real sense, you cannot store the HTML-CSS output -- as soon as it gets somewhat complex, it will not
-> render well across browsers.&nbsp;&nbsp;&nbsp;&horbar;[Peter Krautzberger](https://groups.google.com/d/msg/mathjax-users/O--eKm9elRU/zNZx24gnI3gJ), MathJax manager
+> render well across browsers.&nbsp;&nbsp;&nbsp;&#8213;[Peter Krautzberger](https://groups.google.com/d/msg/mathjax-users/O--eKm9elRU/zNZx24gnI3gJ), MathJax manager
 
 I have been quite pleased with MathJax, and I still am. There is one caveat, though: It can be a bit slow. This need for on-the-fly processing comes at a cost. Every time a page loads in someone's browser, everything has to be typeset from scratch. Often, this is not a problem. By the time the page has loaded and your eyes has found the opening paragraph, MathJax is done. But sometimes the page is very math-heavy and MathJax has to work hard for so long that it becomes annoying.
 

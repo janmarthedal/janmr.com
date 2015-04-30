@@ -60,3 +60,12 @@ div.math-item {
   margin: 0 0 11px;
 }
 
+.prev-post {
+  float: left;
+}
+
+.next-post {
+  float: right;
+  margin-left: 2em;
+}
+
