@@ -69,3 +69,13 @@ div.math-item {
   margin-left: 2em;
 }
 
+.icon > svg {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+}
+
+.icon > svg path {
+  fill: #333;
+}
+
