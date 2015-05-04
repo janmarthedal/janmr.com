@@ -1,6 +1,6 @@
 name: janmr blog
-markdown: kramdown #redcarpet
-highlighter: rouge #pygments
+markdown: kramdown
+highlighter: rouge
 encoding: utf-8
 url: http://blog.janmr.com
 excerpt_separator: <span></span>
@@ -11,3 +11,6 @@ title: janmr blog
 rss_name: blogfeed.xml
 exclude: [mathstats.py]
 disqus: true
+sass:
+    style: :compressed
+
