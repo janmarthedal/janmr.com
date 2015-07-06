@@ -1,6 +1,6 @@
 ---
 layout: post
-title: RAIL for a Smooth Web Experience
+title: Time Budgets for the Web
 author: Jan Marthedal Rasmussen
 excerpt: |
   I was recently introduced to the so-called RAIL principle in the Udacity MOOC Browser Rendering Optimization. It is an acronym for **R**esponsive, **A**nimation, **I**dle and **L**oad and introduces some time budgets to follow when creating a smooth and responsive web experience. It seems to have been a concept coined by the Google Chrome team and is also mentioned in a recent talk by Google's Paul Irish. [...]
