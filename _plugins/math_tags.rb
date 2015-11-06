@@ -17,8 +17,8 @@ module Jekyll
     end
 
     def katex_markup(source, is_block)
-      tex = is_block ? "\\displaystyle{#{source}}" : source
-      html = Net::HTTP.get('localhost', '/render?q=' + URI.encode_www_form_component(tex), 3000).force_encoding('utf-8').strip
+      html = Net::HTTP.get('localhost', '/render?q=' + URI.encode_www_form_component(source) + '&d=' + (is_block ? 'block' : 'inline'),
+                           3000).force_encoding('utf-8').strip
       html == '-' ? mathjax_markup(source, is_block) : html
     end
 
@@ -33,4 +33,3 @@ end
 
 Liquid::Template.register_tag('imath', Jekyll::MathTags)
 Liquid::Template.register_tag('dmath', Jekyll::MathTags)
-
