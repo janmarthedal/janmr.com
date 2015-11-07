@@ -13,7 +13,7 @@ categories:
 tags:
 - recommended reading
 ---
-<div class="pull-right"><a href="{% amazon korner %}"><img src="{% bookcover korner %}" /></a></div>
+<div class="pull-right"><a href="{% amazon korner %}"><img src="{% bookcover korner %}" alt=""></a></div>
 *The Pleasures of Counting* is a book about people working with mathematics and challenges they have faced. The book has 544 pages with a total of 19 chapters and 3 appendices. It contains a lot of material and is split into five parts: The uses of abstraction, Meditations on measurement, The pleasures of computation, Enigma variations, and The pleasures of thought.
 
 It addresses history, short biographies, mathematical theories, physics, biology, to name some. Topics touched upon are: Finding the source of a cholera outbreak, effects of medicine, submarines and convoys during World War I, production of ammunition, using radar, hitting (moving) aircrafts, attacking submarines from aircrafts during WWII, the early days of operational research, body mass and metabolic rate in animals, dimensional analysis in physics, properties of light, boat anchor design, Einstein's theory of relativity, weather prediction, turbulence, analysing the causes of war, measuring the length of coast lines, blood flow in vessels, pencil-and-paper vs. calculator, railroad problems during WWI and WWII, politics and argumentation regarding a new calendar, railways and safety, cryptology, the Enigma enciphering machines during WWII, code makers and code breakers during WWII, the RSA encryption system, survival of generations, epidemics and fish harvesting, mathematics as a career.
@@ -27,11 +27,11 @@ Many exercises are found throughout the book. They vary from discussion-type exe
 to applied mathematics (part of a larger exercise),
 
 > Suppose that we can produce merchant ships at a rate {% imath \mu %} (ships per unit time) and that we lose merchant ships at a rate {% imath \lambda %} (ships per ship afloat per unit time). Explain briefly why, with this model, the size {% imath x(t) %} of our fleet is governed by the differential equation
-> 
+>
 > {% dmath \dot{x} = \lambda x + \mu, %}
-> 
+>
 > and deduce that
-> 
+>
 > {% dmath x(t) = \frac{\mu}{\lambda} + \left( X - \frac{\mu}{\lambda} \right) e^{-\lambda t}, %}
 > where {% imath X %} is the size of the fleet when {% imath t=0 %}.
 
@@ -58,5 +58,3 @@ Book facts:
 *   Publication year: 1996.
 *   Publisher: [Cambridge University Press](http://www.cambridge.org).
 *   ISBN: Paperback [0521568234](http://en.wikipedia.org/w/index.php?title=Special:BookSources&isbn=0521568234), hardback [052156087X](http://en.wikipedia.org/w/index.php?title=Special:BookSources&isbn=052156087X).
-
-

@@ -23,7 +23,7 @@ In this article I show my favorite three visualizations of the theorem. Note tha
 
 ### Visualization 1
 
-<div class="pull-right"><a href="{% amazon pww1 %}"><img src="{% bookcover pww1 %}"></a></div>
+<div class="pull-right"><a href="{% amazon pww1 %}"><img src="{% bookcover pww1 %}" alt=""></a></div>
 This first one is a classic, at least for me, see Figure&nbsp;1. It is very simple to understand and was the first visualization of the Pythagorean theorem I knew of. According to Nelsen's <a href="{% amazon pww1 %}">Proofs Without Words</a>, it appeared in the chinese [Chou pei suan ching](http://en.wikipedia.org/wiki/Chou_Pei_Suan_Ching) around 200 B.C. A similar figure also appears in [Euclid](http://en.wikipedia.org/wiki/Euclid)&#8216;s [Elements](http://en.wikipedia.org/wiki/Euclid's_Elements), [Book II](http://aleph0.clarku.edu/~djoyce/java/elements/bookII/bookII.html), [Proposition 4](http://aleph0.clarku.edu/~djoyce/java/elements/bookII/propII4.html).
 
 <figure>
@@ -33,7 +33,7 @@ This first one is a classic, at least for me, see Figure&nbsp;1. It is very simp
 
 ### Visualization 2
 
-<div class="pull-right"><a href="{% amazon hawking %}"><img src="{% bookcover hawking %}" /></a></div>
+<div class="pull-right"><a href="{% amazon hawking %}"><img src="{% bookcover hawking %}" alt=""></a></div>
 The second visualization, seen in Figure&nbsp;2, is attributed [Thābit ibn Qurra](http://en.wikipedia.org/wiki/Thābit_ibn_Qurra) who lived around 900 A.D. It is probably my current favorite, partly because only a single figure/drawing is needed. Two colorings of this figure, however, is shown to ease the understanding.
 
 <figure>
@@ -43,7 +43,7 @@ The second visualization, seen in Figure&nbsp;2, is attributed [Thābit ibn Qurr
 
 ### Visualization 3
 
-<div class="pull-right"><a href="{% amazon pww2 %}"><img src="{% bookcover pww2 %}" /></a></div>
+<div class="pull-right"><a href="{% amazon pww2 %}"><img src="{% bookcover pww2 %}" alt=""></a></div>
 The third visualization is due to the 12. century Indian mathematician and astronomer [Bhāskara](http://en.wikipedia.org/wiki/Bhāskara_II), see Figure&nbsp;3. I think it is a bit harder to understand at first, compared to the ones above, but it is still quite elegant. The trick is to observe that the right-most figure consists of two squares, joined at the dashed line. The side lengths of these squares can then be compared to the side lengths of the triangles.
 
 <figure>
@@ -60,4 +60,3 @@ Stephen Hawking, in <a href="{% amazon hawking %}">God Created the Integers</a>,
 The three books mentioned in this article contains at least 10 other (visual) proofs of the Pythagorean theorem. The three shown above are my current favorites, though. Feel free to post a comment if you know of some visualization which is, in some sense, better.
 
 *(Update 2010-02-14: An amazing [<span style="text-decoration: line-through;">84</span> 104 proofs](http://www.cut-the-knot.org/pythagoras/index.shtml) have been collected at [cut-the-knot](http://www.cut-the-knot.org/).)*
-

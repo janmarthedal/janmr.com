@@ -30,10 +30,9 @@ Flicking through *Proofs Without Words II* by [Roger B. Nelsen](http://legacy.lc
 
 (Attributed to the author himself.) It should be pretty much self-explanatory. Apart from using sine and cosine to assign side-lengths to the four relevant right-angled triangles, all you need know is that the sum of the angles in a triangle is equal to two right angles (to realize that the two {% imath \alpha %}-angles are indeed equal).
 
-<div style="float:right"><a href="{% amazon pww2 %}"><img src="{% bookcover pww2 %}" /></a></div>
-<div style="float:right"><a href="{% amazon pww1 %}"><img src="{% bookcover pww1 %}" /></a></div>
+<div style="float:right"><a href="{% amazon pww2 %}"><img src="{% bookcover pww2 %}" alt=""></a></div>
+<div style="float:right"><a href="{% amazon pww1 %}"><img src="{% bookcover pww1 %}" alt=""></a></div>
 
 Both volumes of *Proofs Without Words* contain other &#8220;visual proofs&#8221; of the addition formulas. Some of these can also be found [online](http://mathworld.wolfram.com/TrigonometricAdditionFormulas.html).
 
 How do you remember the addition formulas for sine and cosine?
-

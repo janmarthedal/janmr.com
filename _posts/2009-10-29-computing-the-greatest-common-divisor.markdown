@@ -72,7 +72,7 @@ Note that every time `u %= v` is executed we have {% imath u \leftarrow r %} whe
 
 {% dmath u = q v + r \geq v + r > 2r, %}
 
-<div style="float:right"><a href="{% amazon taocp2 %}"><img src="{% bookcover taocp2 %}" /></a></div>
+<div style="float:right"><a href="{% amazon taocp2 %}"><img src="{% bookcover taocp2 %}" alt=""></a></div>
 
 which in turn means that the value of {% imath u %} at least halves every time `u %= v` is executed. Of course, a similar statement holds for `v %= u`. This shows that Euclid's algorithm computes a remainder (roughly) at most {% imath \log_2 u + \log_2 v %} times. For a thorough analysis see Section&nbsp;4.5.3 of [The Art of Computer Programming](http://www-cs-faculty.stanford.edu/~knuth/taocp.html), Volume&nbsp;2, by [Donald E. Knuth](http://www-cs-faculty.stanford.edu/~knuth/).
 
@@ -131,7 +131,7 @@ Finally, if working with multiple-precision numbers, the binary shift operation 
 
 How many times is the while-loop executed, in the worst case? Either {% imath u %} or {% imath v %} is reduced by at least a factor two, so, similar to Euclid's algorithm, the loop is executed at most {% imath \log_2 u + \log_2 v %} times.
 
-<div style="float:right"><a href="{% amazon stepanov09 %}"><img src="{% bookcover stepanov09 %}" /></a></div>
+<div style="float:right"><a href="{% amazon stepanov09 %}"><img src="{% bookcover stepanov09 %}" alt=""></a></div>
 
 It should be noted that [Alex Stepanov](http://www.stepanovpapers.com) has written [some notes](http://www.stepanovpapers.com/notes.pdf) that, among many other things, deal with generic implementations of both Euclid's and Stein's gcd algorithms (see Section&nbsp;10.2). Stepanov has also written the book [Elements of Programming](http://www.elementsofprogramming.com) with [Paul McJones](http://www.mcjones.org/paul/), which presents a mathematical approach to programming. The book also mentions Euclid's and Stein's algorithms, but the treatment in the notes is more comprehensive.
 
@@ -202,5 +202,3 @@ If I had to choose a single all-purpose gcd algorithm, it would be Euclid's. It 
 The running time results are not conclusive. Implementations details and testing methods can always be discussed but most importantly: Different hardware setups should be tried (and perhaps different compilers). If anyone is interested, I can make the test programs available for download.
 
 *(Update 2014-03-25: Source code for Euclid's and Stein's algorithm are available at GitHub as [`gcd_euclid.hpp`](https://github.com/janmarthedal/snippets/blob/master/c++/kanooth/snippets/gcd_euclid.hpp) and [`gcd_stein.hpp`](https://github.com/janmarthedal/snippets/blob/master/c++/kanooth/snippets/gcd_stein.hpp).)*
-
-

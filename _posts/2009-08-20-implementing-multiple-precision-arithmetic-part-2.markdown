@@ -19,7 +19,7 @@ tags:
 ---
 ### Introduction
 
-<div style="float:right"><a href="{% amazon taocp2 %}"><img src="{% bookcover taocp2 %}" /></a></div>
+<div style="float:right"><a href="{% amazon taocp2 %}"><img src="{% bookcover taocp2 %}" alt=""></a></div>
 This article is a follow-up to [part 1](/2009/07/implementing-multiple-precision-arithmetic-part-1.html) where multiple-precision addition, subtraction, and multiplication for non-negative integers was discussed. This article deals with division. Again, the theoretic foundation is based on Section&nbsp;4.3.1, *The Classical Algorithms*, of [The Art of Computer Programming](http://www-cs-faculty.stanford.edu/~uno/taocp.html), Volume&nbsp;2, by [Donald E. Knuth](http://www-cs-faculty.stanford.edu/~uno/).
 
 ### Fundamentals
@@ -187,4 +187,3 @@ The normalization in step&nbsp;**L1** such that {% imath v_{n-1} \geq \lfloor b/
 This and the [previous](/2009/07/implementing-multiple-precision-arithmetic-part-1.html) article have now covered addition, subtraction, multiplication, and division of non-negative integers.
 
 *Update 2010-07-03: See the [project page](https://github.com/janmarthedal/kanooth-numbers) for more information.*
-

@@ -21,7 +21,7 @@ tags:
 
 Today [real numbers](http://en.wikipedia.org/wiki/Real_number) are most often represented by applying ([elementary](http://en.wikipedia.org/wiki/Elementary_function_(differential_algebra))) [functions](http://en.wikipedia.org/wiki/Function_(mathematics)) to ([decimal](http://en.wikipedia.org/wiki/Decimal)) [integers](http://en.wikipedia.org/wiki/Integer). Throughout history, though, arithmetic and propositions involving (positive) real numbers were often considered from a purely geometrical point of view. Real numbers were identified by the length of some line segment and, e.g., the product of two numbers was identified by the area of a rectangle with side-lengths equal to the two numbers. This made sense from a physical/applied point of view, but it had certain shortcomings.
 
-<div class="pull-right"><a href="{% amazon hawking %}"><img src="{% bookcover hawking %}" /></a></div>
+<div class="pull-right"><a href="{% amazon hawking %}"><img src="{% bookcover hawking %}" alt=""></a></div>
 According to [Hawking](http://www.hawking.org.uk)&#8216;s <a href="{% amazon hawking %}">God Created the Integers</a>, this was changed by [Ren&eacute; Descartes](http://en.wikipedia.org/wiki/Rene_Descartes) in the seventeenth century. He treated *any* (positive) real number as the length of a line segment, also products, square roots, and so on. This article considers some of the constructions he considered in *Problems the Construction of Which Requires Only Straight Lines and Circles* (included and commented in Hawking's <a href="{% amazon hawking %}">book</a>), namely multiplication, division and root extraction.
 
 ### Multiplication
@@ -93,5 +93,3 @@ It is interesting to note how addition and subtraction is one-dimensional in thi
 Figure&nbsp;5 shows how even signed real numbers can be multiplied geometrically. Let two non-parallel and (infinitely long) lines meet at point A and let A split each line into a positive and a negative part. Point B, located at unit length from A, naturally has to be in positive part. This construction now handles the signs of multiplication quite nicely (for instance, the product of two negative numbers is seen to be positive).
 
 It should be noted that Descartes was not the first to show these constructions. The construction of the square root of some number was also mentioned in, e.g., [Euclid](http://en.wikipedia.org/wiki/Euclid)&#8216;s [Elements](http://aleph0.clarku.edu/~djoyce/java/elements/elements.html), [Book VI](http://aleph0.clarku.edu/~djoyce/java/elements/bookVI/bookVI.html), [Proposition 13](http://aleph0.clarku.edu/~djoyce/java/elements/bookVI/propVI13.html). However, he made essential steps to join geometry with algebra and analysis into [analytical geometry](http://en.wikipedia.org/wiki/Analytical_geometry).
-
-

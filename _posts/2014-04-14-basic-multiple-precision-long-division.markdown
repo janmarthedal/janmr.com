@@ -11,7 +11,7 @@ tags:
 - algorithms
 - multiple-precision
 ---
-<div style="float:right"><a href="{% amazon taocp2 %}"><img src="{% bookcover taocp2 %}"></a></div>
+<div style="float:right"><a href="{% amazon taocp2 %}"><img src="{% bookcover taocp2 %}" alt=""></a></div>
 
 We consider the task of dividing a positive integer {% imath u %} by another positive integer {% imath v %}, thus obtaining a quotient {% imath q=\lfloor u/v \rfloor %} and a remainder {% imath r %} such that {% imath u = q v + r %} with {% imath 0 \leq r < v %}.
 
@@ -169,4 +169,3 @@ We can now combine Algorithm G with the just obtained knowledge of approximating
 *   **L7**. If {% imath k=0 %} set {% imath r \leftarrow u/d %} and exit. Otherwise set {% imath k \leftarrow k-1 %} and go to step&nbsp;**L3**.
 
 The normalization in step&nbsp;**L1** such that {% imath v_{n-1} \geq \lfloor b/2 \rfloor %} does two things. Firstly, it makes sure that the while-loop of the {% imath \hat{q} %}-computation executes at most two times. Secondly, the probability that the adding back in step&nbsp;**L5** must be executed is of order {% imath 2/b %} (a proof can be found in Knuth's book).
-

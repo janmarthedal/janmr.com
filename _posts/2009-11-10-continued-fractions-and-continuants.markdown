@@ -25,9 +25,9 @@ where the {% imath a_k %}'s are real numbers called the partial quotients. Conti
 
 where {% imath /\!/ \, /\!/ = 0 %} for {% imath n=0 %}.
 
-<div class="pull-right"><a href="{% amazon khinchin %}"><img src="{% bookcover khinchin %}" /></a></div>
-<div class="pull-right"><a href="{% amazon concrete %}"><img src="{% bookcover concrete %}" /></a></div>
-<div class="pull-right"><a href="{% amazon taocp2 %}"><img src="{% bookcover taocp2 %}" /></a></div>
+<div class="pull-right"><a href="{% amazon khinchin %}"><img src="{% bookcover khinchin %}" alt=""></a></div>
+<div class="pull-right"><a href="{% amazon concrete %}"><img src="{% bookcover concrete %}" alt=""></a></div>
+<div class="pull-right"><a href="{% amazon taocp2 %}"><img src="{% bookcover taocp2 %}" alt=""></a></div>
 
 Most of the theory in this article is based on Section&nbsp;4.5.3 from [The Art of Computer Programming](http://www-cs-faculty.stanford.edu/~uno/taocp.html), Volume&nbsp;2, by [Donald E. Knuth](http://www-cs-faculty.stanford.edu/~uno/) and Section&nbsp;6.7 from [Concrete Mathematics](http://www-cs-faculty.stanford.edu/~uno/gkp.html) by [Graham](http://math.ucsd.edu/~fan/ron/), [Knuth](http://www-cs-faculty.stanford.edu/~uno/), and [Patashnik](http://en.wikipedia.org/wiki/Oren_Patashnik). See also <a href="{% amazon khinchin %}">Continued Fractions</a> by A. Ya. Khinchin.
 
@@ -276,4 +276,3 @@ for positive integers {% imath n %}. To prove the first of these identities let 
 ### Concluding Remarks
 
 This article on continued fractions was supposed to be fairly short and just contain the most basic properties, but the subject turned out to be vast and very interesting. More articles related to continued fractions will likely follow.
-

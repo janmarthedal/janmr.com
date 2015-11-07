@@ -22,7 +22,7 @@ tags:
 ---
 ### Introduction
 
-<div style="float:right"><a href="{% amazon taocp2 %}"><img src="{% bookcover taocp2 %}" /></a></div>
+<div style="float:right"><a href="{% amazon taocp2 %}"><img src="{% bookcover taocp2 %}" alt=""></a></div>
 This article is the first in a series dealing with algorithms for multiple-precision arithmetic. The goal is to present both a theoretical foundation with high-level algorithm descriptions (based on Section 4.3.1, *The Classical Algorithms*, of [The Art of Computer Programming](http://www-cs-faculty.stanford.edu/~uno/taocp.html), Volume 2, by [Donald E. Knuth](http://www-cs-faculty.stanford.edu/~uno/)) and a portable C++ implementation of the algorithms. The theory and high-level algorithms will be quite universal and generic, whereas the presented code will be just one way to implement the algorithms in a specific programming language.
 
 We start out by considering only non-negative integers. A number {% imath u \geq 0 %} will be represented in radix {% imath b \geq 2 %} using the notation
@@ -62,7 +62,7 @@ c = a;
 b += a;
 c += b;
 {% endhighlight %}
-  
+
 Because of the shared pointer, the first assignment, `c = a`, is very cheap and will not result in copying the digit container. Instead, the `digitvec` of both `a` and `c` will refer to the *same* instance of the digit container (which gets a reference count of 2). This also makes it cheap to pass arguments by value and returning numbers by value. The next statement, `b += a`, can add `a` to `b` *in place* (assuming there is enough space in `b`'s `digitvec` to contain the result) because it is possible to check if `b` is the only instance referring to its digit container. Contrarywise, the last statement, `c += a`, cannot add `a` to `c` in place because `a` refers to the same container as `c` does.
 
 ### Addition

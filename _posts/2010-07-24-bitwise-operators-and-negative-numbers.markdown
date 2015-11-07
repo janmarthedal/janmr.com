@@ -290,7 +290,6 @@ This way, the bitwise and-operation is being applied to non-negative numbers and
 
 We can now, with assistance from the table above, apply any of the 16 binary bitwise operators to *any* pair of integers, without restricting ourselves to working with a fixed number of bits.
 
-<div style="float:right"><a href="{% amazon hackers-delight %}"><img src="{% bookcover hackers-delight %}"></a></div>
-<div style="float:right"><a href="{% amazon taocp4f1 %}"><img src="{% bookcover taocp4f1 %}"></a></div>
+<div style="float:right"><a href="{% amazon hackers-delight %}"><img src="{% bookcover hackers-delight %}" alt=""></a></div>
+<div style="float:right"><a href="{% amazon taocp4f1 %}"><img src="{% bookcover taocp4f1 %}" alt=""></a></div>
 For further reading related to the binary representation of numbers, I recommend [The Art of Computer Programming, Volume 4, Fascicle 1: Bitwise Tricks &amp; Techniques and Binary Decision Diagrams]({% amazon taocp4f1 %}) by [Donald E. Knuth](http://www-cs-faculty.stanford.edu/~knuth/) and [Hacker's Delight]({% amazon hackers-delight %}) by Henry S. Warren, Jr.
-

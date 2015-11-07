@@ -118,7 +118,7 @@ We now go to Case 3 where the balls are labeled and the urns are unlabeled, like
 
 {% dmath C_3(m,n) = \sum_{k=1}^m \left\{ {n \atop k} \right\}. %}
 
-<div style="float:right"><a href="{% amazon concrete %}"><img src="{% bookcover concrete %}"></a></div>
+<div style="float:right"><a href="{% amazon concrete %}"><img src="{% bookcover concrete %}" alt=""></a></div>
 
 You can read more about Sterling numbers in, e.g., [Concrete Mathematics](http://www-cs-faculty.stanford.edu/~uno/gkp.html) by Graham, Knuth, and Patashnik.
 
@@ -195,8 +195,8 @@ All twelve case can be summarized in the following table:
 </tbody>
 </table>
 
-<div style="float:right"><a href="{% amazon taocp4f3 %}"><img src="{% bookcover taocp4f3 %}"></a></div>
+<div style="float:right"><a href="{% amazon taocp4f3 %}"><img src="{% bookcover taocp4f3 %}" alt=""></a></div>
 
-<div style="float:right"><a href="{% amazon stanley97 %}"><img src="{% bookcover stanley97 %}"></a></div>
+<div style="float:right"><a href="{% amazon stanley97 %}"><img src="{% bookcover stanley97 %}" alt=""></a></div>
 
 This table also appears in in Section&nbsp;7.2.1.4, Fascicle&nbsp;3, Volume&nbsp;4 of [The Art of Computer Programming](http://www-cs-faculty.stanford.edu/~uno/taocp.html) by [Donald E. Knuth](http://www-cs-faculty.stanford.edu/~uno/) where The Twelvefold Way is briefly mentioned. The Twelvefold Way is originally treated in the book [Enumerative Combinatorics, Volume&nbsp;1](http://www-math.mit.edu/~rstan/ec/) by [Richard P. Stanley](http://www-math.mit.edu/~rstan/).

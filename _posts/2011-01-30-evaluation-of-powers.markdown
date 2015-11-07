@@ -31,7 +31,7 @@ Since the numbers in an addition chain grows the fastest by doubling the previou
 <div class="pull-right">(1)</div>
 {% dmath a(n) \geq \lceil \log_2(n) \rceil \quad . %}
 
-<div class="pull-right"><img src="{% bookcover taocp2 %}" alt=""><a href="{% amazon taocp2 %}"></a></div>
+<div class="pull-right"><a href="{% amazon taocp2 %}"><img src="{% bookcover taocp2 %}" alt=""></a></div>
 
 (This, and other results related to the evaluation of powers and addition chains can be found in <a href="{% amazon taocp2 %}">The Art of Computer Programming, Volume 2</a>, Section 4.6.3.)
 
@@ -108,5 +108,3 @@ As mentioned above, this algorithm is not optimal, but it is not bad either. In 
 </figure>
 
 Note also that we have only talked about minimizing the number of multiplications. What if a different cost is associated with each multiplication? For instance, the basic multiple-precision multiplication algorithm described in an [earlier post](/2009/07/implementing-multiple-precision-arithmetic-part-1.html) has a cost propertional to {% imath m \times n %} if the factors have {% imath m %} and {% imath n %} digits, respectively. Using this cost model, the binary algorithm *is* actually optimal. This was shown by R. L. Graham, A. C.-C. Yao, and F.-F. Yao in *Addition chains with multiplicative cost*, Discrete Math., 23 (1978), 115-119 (article available [online](http://www.math.ucsd.edu/~ronspubs/#78)).
-
-

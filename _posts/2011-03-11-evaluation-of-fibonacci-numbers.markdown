@@ -3,7 +3,7 @@ layout: post
 title: Fast Evaluation of Fibonacci Numbers
 author: Jan Marthedal Rasmussen
 excerpt: ! "The integer sequence 0, 1, 1, 2, 3, 5, 8, 13, ... is well known as the Fibonacci sequence. It is easily defined by F_0 = 0, F_1 = 1 and F_n = F_{n-1} + F_{n-2} for n >= 2.
-  
+
   To compute F_n you could use this definition directly, but that leads to a highly inefficient algorithm that is both recursive and which uses a number of additions which grows exponentially with n."
 date: 2011-03-11 11:01:12.000000000 +01:00
 categories:
@@ -24,7 +24,7 @@ The first observation that leads to a better algorithm is that we can iterativel
 
 and {% imath r(a,b)=b %} then we have {% imath F_n = r(T^n(1,0)) %}, where {% imath T^n %} means that the operator {% imath T %} is applied {% imath n %} times (and {% imath T^0 %} is the identity). This reduces the number of iterations to {% imath n %} which is much much better than exponential growth.
 
-<div class="pull-right"><a href="{% amazon sicp %}"><img src="{% bookcover sicp %}" /></a></div>
+<div class="pull-right"><a href="{% amazon sicp %}"><img src="{% bookcover sicp %}" alt=""></a></div>
 But it can get even better. The following method is inspired by an exercise in the book <a href="{% amazon sicp %}">Structure and Interpretation of Computer Programs</a> (see [Exercise 1.19](http://mitpress.mit.edu/sicp/full-text/book/book-Z-H-11.html#%_sec_1.2.4)). The key observation is that if we introduce
 
 {% dmath T_{p,q}(a,b) = (a q + a p + b q, b p + a q) %}
@@ -87,4 +87,3 @@ I don't claim that this is the fastest possible method for evaluating (single) F
 Please inform me of other fast ways to compute Fibonacci numbers.
 
 *(Update 2014-03-25: The source for the last algorithm can be found as [a snippet](https://github.com/janmarthedal/snippets/blob/master/c++/kanooth/snippets/fibonacci_number.hpp))*
-

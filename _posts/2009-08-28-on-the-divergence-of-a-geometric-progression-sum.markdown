@@ -52,5 +52,5 @@ So the partial sums {% imath s_r(n) %} are bounded by some constant independent 
 
 but circles around the value {% imath 1/(1-r) %} when {% imath |r|=1 %}, {% imath r \neq 1 %}. In fact, {% imath 1/(1-r) %} makes sense for all {% imath r \neq 1 %}, so can this value be assigned to {% imath s_r %} in some meaningful way? (When {% imath |r| < 1 %}, I would suspect that the values of {% imath s_r(n) %} spirals inward towards {% imath 1/(1-r) %} as {% imath n %} grows and spirals outwards when {% imath |r| > 1 %}; I have not verified this, though.)
 
-<div style="float:right"><a href="{% amazon hardy-div %}"><img src="{% bookcover hardy-div %}" /></a></div>
+<div style="float:right"><a href="{% amazon hardy-div %}"><img src="{% bookcover hardy-div %}" alt=""></a></div>
 This reminded me that <a href="http://en.wikipedia.org/wiki/G._H._Hardy">G. H. Hardy</a> has written a book called <em>Divergent Series</em>, where he manipulates infinite series with an &#8220;entirely uncritical spirit&#8221;. Therein, he also considers the series {% imath s_r %} and, e.g., {% imath s_{-1} = 1/2 %} can somehow make sense. I have only flicked through the book (<a href="http://books.google.com/books?id=jPccoUKsLdQC&#038;printsec=frontcover&#038;source=gbs_v2_summary_r&#038;cad=0">excerpt</a>), but I think I should take a closer look&#8230;

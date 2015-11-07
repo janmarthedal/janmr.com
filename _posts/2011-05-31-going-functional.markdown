@@ -20,7 +20,7 @@ Purely functional languages&mdash;such as [Erlang](http://www.erlang.org/) and [
 
 Non-pure [functional programming](http://en.wikipedia.org/wiki/Functional_programming) languages have features from both imperative and purely functional languages. A typical feature of functional programming languages, pure or not, is that functions are often considered values in their own right. This leads to [higher-order functions](http://en.wikipedia.org/wiki/Higher-order_function) which basically are functions that operate on other functions. Actually, [JavaScript](http://en.wikipedia.org/wiki/JavaScript) is considered a functional programming language [by some](http://www.blinkx.com/watch-video/douglas-crockford-on-functional-javascript/xscZz8XhfuNQ_aaVuyUB2A) because of its ability to treat functions as values.
 
-<div class="pull-right"><a href="{% amazon paulson %}"><img src="{% bookcover paulson %}" /></a></div>
+<div class="pull-right"><a href="{% amazon paulson %}"><img src="{% bookcover paulson %}" alt=""></a></div>
 I find functional programming languages very interesting. First of all, pure functional programming languages have a certain, well, purity to them. Secondly, they force you to think differently about programming, and this can be a healthy thing. Let me introduce three of the functional programming languages that I have come across.
 
 The first functional programming language I ever encountered was [Standard ML](http://en.wikipedia.org/wiki/Standard_ML) (actually, we used a light-weight implementation called [Moscow ML](http://www.itu.dk/~sestoft/mosml.html)). It enables assignments and is thus not pure. It features, among other things, type inference which is very nice. For instance, an exponentation function `power` could have the type
@@ -35,7 +35,7 @@ Similarly, a `map` function which applies a user-supplied function to each eleme
 val map = fn : ('a -> 'b) -> 'a list -> 'b list
 {% endhighlight %}
 
-<div class="pull-right"><a href="{% amazon erlang %}"><img src="{% bookcover erlang %}" /></a></div>
+<div class="pull-right"><a href="{% amazon erlang %}"><img src="{% bookcover erlang %}" alt=""></a></div>
 This means that `map` takes as input a function (mapping an element of type `a'` to an element of type `b'`) and outputs a new function. This output function can then convert a list of type `a'` elements to a list of type `b'` elements. This is powerful stuff.
 
 Erlang is a pure functional programming language. It is often praised for being well-suited for large-scale, distributed and fault-tolerant applications. For instance, the very cool [NoSQL](http://en.wikipedia.org/wiki/NoSQL) database system [CouchDB](http://couchdb.apache.org/) is written in Erlang. Apart from having [pattern matching](http://en.wikipedia.org/wiki/Pattern_matching), which is common for functional programming languages, Erlang also features so-called guards, which are patterns with additional conditions. Consider the following Erlang code snippet ([source](http://www.erlang.org/doc/getting_started/seq_prog.html)):
@@ -50,7 +50,7 @@ list_max([Head|Rest], Result_so_far) -> list_max(Rest, Result_so_far).
 {% endhighlight %}
 
 <div class="pull-right">
-  <a href="{% amazon sicp %}"><img src="{% bookcover sicp %}" /></a>
+  <a href="{% amazon sicp %}"><img src="{% bookcover sicp %}" alt=""></a>
 </div>
 The guard here is the `when Head ...` part.
 
@@ -63,4 +63,3 @@ I was recently introduced to [Lisp](http://en.wikipedia.org/wiki/Lisp_(programmi
 (Appropriate new-lines and indentation helps a great deal on the readability, though). Lisp also enables assignments and is therefore not pure. In fact, both imperative and functional programming approaches can be used.
 
 I plan to include more on functional programming languages on this blog in the future.
-

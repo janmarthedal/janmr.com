@@ -20,7 +20,7 @@ We will make use of the following fundamental theorem:
 
 > {% imath p \mid a b %} for a prime {% imath p %}, then {% imath p \mid a %} or {% imath p \mid b %}.
 
-<div class="pull-right"><a href="{% amazon hardy-wright %}"><img src="{% bookcover hardy-wright %}" /></a></div>
+<div class="pull-right"><a href="{% amazon hardy-wright %}"><img src="{% bookcover hardy-wright %}" alt=""></a></div>
 (Here, {% imath p \mid a %} means that {% imath p %} divides {% imath a %}.) This is called Euclid's First Theorem or [Euclid's Lemma](http://en.wikipedia.org/wiki/Euclid's_lemma). For most, it is intuitively clear, but a proof can be found in, e.g., <a href="{% amazon hardy-wright %}">Hardy and Wright: An Introduction to the Theory of Numbers</a>.
 
 An application of this theorem to factorial numbers is that if a prime {% imath p %} is a divisor of {% imath n! %} then {% imath p %} must be a divisor of at least one of the numbers {% imath 1, 2, \ldots, n %}. This immediately implies
@@ -78,5 +78,3 @@ For instance,
 > {% imath d_{10}(42!) = d_5(42!) = \lfloor 42/5 \rfloor + \lfloor 42/5^2 \rfloor = 8 + 1 = 9 %},
 
 so there are 9 trailing zeros in the decimal representation of 42!.
-
-

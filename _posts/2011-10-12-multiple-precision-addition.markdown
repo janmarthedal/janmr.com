@@ -5,7 +5,7 @@ author: Jan Marthedal Rasmussen
 excerpt: ! "This post will cover a basic addition algorithm for multiple-precision
   non-negative integers. The algorithm is based upon that presented in Section 4.3.1,
   The Classical Algorithms, of The Art of Computer Programming, Volume 2,
-  by Donald E. Knuth. The notation and bounds used in this post were presented in a 
+  by Donald E. Knuth. The notation and bounds used in this post were presented in a
   previous post. We consider adding two n-digit numbers [...]"
 date: 2011-10-12 12:27:47.000000000 +02:00
 categories:
@@ -16,7 +16,7 @@ tags:
 - numbers project
 - basic theory
 ---
-<div class="pull-right"><a href="{% amazon taocp2 %}"><img src="{% bookcover taocp2 %}" /></a></div>
+<div class="pull-right"><a href="{% amazon taocp2 %}"><img src="{% bookcover taocp2 %}" alt=""></a></div>
 This post will cover a basic addition algorithm for multiple-precision non-negative integers. The algorithm is based upon that presented in Section 4.3.1, *The Classical Algorithms*, of [The Art of Computer Programming](http://www-cs-faculty.stanford.edu/~uno/taocp.html), Volume 2, by [Donald E. Knuth](http://www-cs-faculty.stanford.edu/~uno/). The notation and bounds used in this post were presented in a [previous post](/2011/10/multiple-precision-number-representation.html).
 
 We consider adding two {% imath n %}-digit numbers with {% imath n \geq 1 %}, {% imath u=(u_{n-1} \ldots u_1 u_0)_b %} and {% imath v=(v_{n-1} \ldots v_1 v_0)_b %}. Since {% imath b^{n-1} \leq u, v \leq b^n - 1 %} we have {% imath 2 b^{n-1} \leq u+v \leq 2 b^n - 2 %} which, when using the fact that {% imath b \geq 2 %}, leads to {% imath b^{n-1} \leq u+v \leq b^{n+1} - 1 %} (note how a tighter bound of the form {% imath b^p \leq u+v \leq b^q - 1 %} is not possible).
@@ -44,5 +44,3 @@ It is clear that each resulting digits of {% imath w %} satisfies {% imath 0 \le
 Assume that {% imath 0 \leq k_i \leq 1 %} for some {% imath i=0, \ldots, n-1 %}. Since {% imath u_i+v_i+k_i \leq b-1+b-1+1 = 2b-1 %} we see that {% imath k_{i+1} = \lfloor (u_i + v_i + k_i)/b \rfloor \leq 1 %}. So if we have {% imath 0 \leq k_0 \leq 1 %} as initial value for the algorithm we have, by induction, that {% imath 0 \leq k_i \leq 1 %} for all {% imath i=0, \ldots, n %}.
 
 This shows how (not surprisingly) {% imath k_0 %} can be seen as an &#8220;initial carry&#8221; and how each {% imath k_{i+1} %} is {% imath 0 %} or {% imath 1 %}, depending on whether a carry was produced from the {% imath i %}th digit addition.
-
-

@@ -120,9 +120,8 @@ for integer {% imath k %} and all {% imath b > 0 %}, {% imath b \neq 1 %}.
 
 ### References
 
-<div style="float:right"><a href="{% amazon concrete %}"><img src="{% bookcover concrete %}" /></a></div>
-<div style="float:right"><a href="{% amazon taocp1 %}"><img src="{% bookcover taocp1 %}" /></a></div>
+<div style="float:right"><a href="{% amazon concrete %}"><img src="{% bookcover concrete %}" alt=""></a></div>
+<div style="float:right"><a href="{% amazon taocp1 %}"><img src="{% bookcover taocp1 %}" alt=""></a></div>
 Most of the material presented in this article can be found in some form in [Concrete Mathematics](http://www-cs-faculty.stanford.edu/~uno/gkp.html) by [R. L. Graham](http://math.ucsd.edu/~fan/ron/), [D. E. Knuth](http://www-cs-faculty.stanford.edu/~uno/), and [O. Patashnik](http://en.wikipedia.org/wiki/Oren_Patashnik), and in [The Art of Computer Programming](http://www-cs-faculty.stanford.edu/~uno/taocp.html), Volume&nbsp;1, by [Donald E. Knuth](http://www-cs-faculty.stanford.edu/~uno/).
 
 The [Wikipedia](http://www.wikipedia.org) page [Floor and ceiling functions](http://en.wikipedia.org/wiki/Floor_and_ceiling_functions) furthermore lists a lot of properties (very few proofs or derivations, though).
-

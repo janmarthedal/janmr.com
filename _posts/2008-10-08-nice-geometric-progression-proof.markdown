@@ -37,6 +37,6 @@ The figure also shows that the sum converges for all {% imath 0 < r < 1 %} sinc
 
 (I don't know who to attribute this proof to, unfortunately. I saw it in a magazine for elementary school teachers.)
 
-<div style="float: right;"><a href="{% amazon pww1 %}"><img src="{% bookcover pww1 %}" /></a></div>
+<div style="float: right;"><a href="{% amazon pww1 %}"><img src="{% bookcover pww1 %}" alt=""></a></div>
 
 *Update 2009-08-22: Apparently, the proof was discovered by Benjamin G. Klein and Irl C. Bivens, and it appears on page 120 of <a href="{% amazon pww1 %}">Proofs without Words: Exercises in Visual Thinking</a> by Roger B. Nelson (thanks for the reference, David Radcliffe).*
