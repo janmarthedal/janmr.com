@@ -28,14 +28,13 @@ The site [WebComponents.org](http://webcomponents.org) is a site "where pioneers
 The [Polymer project](http://www.polymer-project.org/) is driven by Google and attempts to do several things:
 
  * Build an easy-to-use library on top of Web Components.
- * Provide a polyfill layer to add Polymer support to [evergreen browsers](http://www.yetihq.com/blog/evergreen-web-browser/) not yet having native support for Web Components.
+ * Provide a polyfill layer to add Polymer support to [evergreen browsers](http://tomdale.net/2013/05/evergreen-browsers/) not yet having native support for Web Components.
  * Implement and publish own core custom elements.
 
-[Matt McNulty](https://twitter.com/mattsmcnulty) from the Polymer team recently [gave a talk](https://www.youtube.com/watch?v=yRbOSdAe_JU) on *Polymer and the Web Components revolution*. [Addy Osmani](https://twitter.com/addyosmani) also [made a video](https://www.youtube.com/watch?v=2toYLLcoY14) on how to make your own custom Polymer elements. Polymer can be followed on [Twitter](http://twitter.com/polymer) and [various other places](http://www.polymer-project.org/discuss.html).
+[Matt McNulty](https://twitter.com/mattsmcnulty) from the Polymer team recently [gave a talk](https://www.youtube.com/watch?v=yRbOSdAe_JU) on *Polymer and the Web Components revolution*. [Addy Osmani](https://twitter.com/addyosmani) also [made a video](https://www.youtube.com/watch?v=2toYLLcoY14) on how to make your own custom Polymer elements. Polymer can be followed on [Twitter](http://twitter.com/polymer) and has its [own blog](https://blog.polymer-project.org/).
 
-[X-Tag](x-tags.org) is a Mozilla project with a goal similar to that of Polymer. The two projects even share the polyfill layer.
+[X-Tag](https://x-tag.readme.io/) is a Mozilla project with a goal similar to that of Polymer. The two projects even share the polyfill layer.
 
 [Bosonic](http://bosonic.github.io) provide tools to develop Web Components "closer to the metal", that is, following the [spec draft](http://www.w3.org/TR/components-intro) without any sugaring layer (and filling the missing parts themselves, I guess). The Bosonic approach is a bit different from Polymer and X-Tag in that they require running a transpiler to turn Web Component HTML sources into JS and CSS files before use.
 
 One of the most powerful aspects of Web Components is the ability to create and share custom elements. [customelements.io](http://customelements.io) is a growing collection of custom elements, where anyone can submit their own creations.
-

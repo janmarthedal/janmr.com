@@ -7,7 +7,7 @@ excerpt: ! "Prior to the current post, this blog contained 45 posts with a total
   identifiers to large, multi-line equations. That's an avarage of 51 math items
   per post, ranging from a few posts containing no math at all to one containing
   267 items.
-  
+
   From the beginning I have used MathJax to display the math [...]"
 categories:
 - programming
@@ -49,7 +49,7 @@ In September 2014, the [KaTeX project](https://khan.github.io/KaTeX/) was [annou
 
 I recently tried using KaTeX for the math on this blog. This was an obvious thing to try since the blog is statically generated using [Jekyll](http://jekyllrb.com). When each instance of LaTeX markup was processed as part of the Markdown to HTML conversion, a small ([node.js](http://nodejs.org)) web service wrapping the KaTeX libray was queried to produce the corresponding HTML code.
 
-The KaTeX conversion failed in about 10% of time, though, because LaTeX commands and symbols not supported by KaTeX were being used (mostly multi-line environments). In these cases the conversion would fall back on using MathJax. (It should be noted that some of the unsupported symbols were easy to add. These additions along with a few bug fixes can be found in my [KaTeX fork](https://github.com/janmarthedal/KaTeX).)
+The KaTeX conversion failed in about 10% of time, though, because LaTeX commands and symbols not supported by KaTeX were being used (mostly multi-line environments). In these cases the conversion would fall back on using MathJax. (<s>It should be noted that some of the unsupported symbols were easy to add. These additions along with a few bug fixes can be found in my KaTeX fork</s>.)
 
 I was quite pleased with this hybrid solution and the increase in speed was clearly noticable. But how much faster? Was it possible to quantify the increase in speed?
 
