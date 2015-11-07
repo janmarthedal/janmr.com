@@ -5,7 +5,7 @@ excerpt: ! "Given a triangle, start with a circle tangent to two sides. Then dra
 ---
 <figure>
   <div class="h_iframe">
-    <img class="ratio" src="{{site.baseurl}}media/white/4x3.gif">
+    <img class="ratio" src="{{site.baseurl}}media/white/4x3.gif" alt="">
     <iframe src="{{site.baseurl}}media/intgfx/six-circles-theorem.html"></iframe>
   </div>
 </figure>
