@@ -8,7 +8,8 @@ module Jekyll
       super
       is_block = tag_name == 'dmath'
       tag = is_block ? 'div' : 'span'
-      html = katex_markup(source.strip, is_block)
+      #html = katex_markup(source.strip, is_block)
+      html = mathjax_markup(source.strip, is_block)
       @source = "<#{tag} class=\"math-item\">#{html}</#{tag}>"
     end
 
