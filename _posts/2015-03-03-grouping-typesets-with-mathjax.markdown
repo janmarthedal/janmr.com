@@ -9,9 +9,9 @@ excerpt: |
 categories: [programming]
 tags: [typesetting, mathjax]
 ---
-When [MathJax](http://mathjax.org) typesets the equations on a web page, it does a good job of grouping the work into chunks, so that a chunk of equations (see the [EqnChunk option](http://docs.mathjax.org/en/latest/options/HTML-CSS.html)) will be typeset before they are displayed and the next chunk is processed. Typesetting and displaying only one equation at a time would lead to a lot of screen flickering and it would also take longer before the page has been completed because of the increased work for the browser.
+When [MathJax](http://mathjax.org) typesets the equations on a web page, it does a good job of grouping the work into chunks, so that a chunk of equations (see the [EqnChunk option](http://docs.mathjax.org/en/v2.5-latest/options/HTML-CSS.html) will be typeset before they are displayed and the next chunk is processed. Typesetting and displaying only one equation at a time would lead to a lot of screen flickering and it would also take longer before the page has been completed because of the increased work for the browser.
 
-Sometimes you want to typeset and display a lot of equations [dynamically](http://docs.mathjax.org/en/latest/typeset.html). For the sake of this post, let us assume that we have an array `scripts` where each entry refers to an HTML script element containing some TeX to typeset. (Using script elements and [`MathJax.Hub.Process`](http://docs.mathjax.org/en/latest/api/hub.html#Process) avoids the need for running any preprocessors, but the following is equally valid when using `MathJax.Hub.Typeset` and preprocessors.)
+Sometimes you want to typeset and display a lot of equations [dynamically](http://docs.mathjax.org/en/v2.5-latest/typeset.html). For the sake of this post, let us assume that we have an array `scripts` where each entry refers to an HTML script element containing some TeX to typeset. (Using script elements and [`MathJax.Hub.Process`](http://docs.mathjax.org/en/v2.5-latest/api/hub.html#Process) avoids the need for running any preprocessors, but the following is equally valid when using `MathJax.Hub.Typeset` and preprocessors.)
 
 In this case it is easy to trigger the typesetting as
 
@@ -55,4 +55,3 @@ for (var k = 0; k < scripts.length; k++)
 {% endhighlight %}
 
 In this example, MathJax will go to work typesetting the first entry in the `scripts` array. While this is happening, the rest of the array will be pushed onto the `queue` variable. Now, when typesetting of the first equation is done, the remaining equations will be handled collectively ([demo](http://jsfiddle.net/janmr/6vk0v0cq/2/)). This leads to the example running in time comparable to submitting the whole array directly.
-
