@@ -53,7 +53,7 @@ The KaTeX conversion failed in about 10% of time, though, because LaTeX commands
 
 I was quite pleased with this hybrid solution and the increase in speed was clearly noticable. But how much faster? Was it possible to quantify the increase in speed?
 
-An experiment was set up where my browser would run through all the blog's posts in succession. By listening to [MathJax's `End` signal](http://docs.mathjax.org/en/latest/startup.html), the next post would be loaded as soon as MathJax had finished typesetting the current page. For comparison, a similar experiment was performed, but this time *without* loading the MathJax library (the next page would now load as soon as the browser triggered the [onload event](https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers.onload)). This way, the same pages and resources would be loaded&mdash;with the exception of MathJax, of course.
+An experiment was set up where my browser would run through all the blog's posts in succession. By listening to [MathJax's `End` signal](http://docs.mathjax.org/en/v2.4-latest/startup.html), the next post would be loaded as soon as MathJax had finished typesetting the current page. For comparison, a similar experiment was performed, but this time *without* loading the MathJax library (the next page would now load as soon as the browser triggered the [onload event](https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers.onload)). This way, the same pages and resources would be loaded&mdash;with the exception of MathJax, of course.
 
 First, I timed running through all the posts using just MathJax and no KaTeX. The results can be summarized as follows:
 
