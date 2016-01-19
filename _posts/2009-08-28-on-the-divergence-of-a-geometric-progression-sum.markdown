@@ -8,7 +8,7 @@ categories:
 - mathematics
 tags:
 - proof
-- infinite series
+- infinite-series
 ---
 Let us revisit the geometric progression sum considered in an <a href="/2008/10/nice-geometric-progression-proof.html">earlier article</a>,
 

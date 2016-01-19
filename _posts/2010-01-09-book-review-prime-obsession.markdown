@@ -10,12 +10,10 @@ excerpt: ! "'Prime Obsession: Bernhard Riemann and the Greatest Unsolved Problem
   problems presented by the Clay Mathematics Institute."
 date: 2010-01-09 20:15:23.000000000 +01:00
 categories:
-- book review
+- book-review
 tags:
-- recommended reading
-- zeta function
-- prime numbers
-- Riemann hypothesis
+- book-review
+- recommended-reading
 ---
 <div class="pull-right"><a href="{% amazon derbyshire03 %}"><img src="{% bookcover derbyshire03 %}" alt=""></a></div>
 *Prime Obsession: Bernhard Riemann and the Greatest Unsolved Problem in Mathematics* is a book about the [Riemann Hypothesis](http://en.wikipedia.org/wiki/Riemann_hypothesis), posed by [Bernhard Riemann](http://en.wikipedia.org/wiki/Bernhard_Riemann) in 1859. As the book title says, it is one of the greatest unsettled mathematical conjectures remaining today. It is among [David Hilbert](http://en.wikipedia.org/wiki/David_Hilbert)'s [list of twenty-three mathematical problems](http://en.wikipedia.org/wiki/Hilbert_problems) and one of the seven millennium problems presented by the [Clay Mathematics Institute](http://www.claymath.org).

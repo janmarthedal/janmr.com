@@ -19,7 +19,7 @@ inhead: |
             display: inline-block;
         }
         .math-box .strut {
-            display: inline-block; 
+            display: inline-block;
         }
         .math-box .frac-line {
             width: 100%;
@@ -52,8 +52,10 @@ inhead: |
             margin-top: -1px;
         }
     </style>
-categories: [programming]
-tags: [math, typesetting, html, css]
+categories:
+- programming
+tags:
+- math-typesetting
 ---
 Currently, there is no best way of showing math on the web. An HTML5 standard exists, [MathML](http://www.w3.org/TR/MathML/), but unfortunately it doesn't have broad [browser support](http://caniuse.com/#feat=mathml). Instead, many alternatives exist, all with varying quality and speed.
 
@@ -171,7 +173,7 @@ before<span class="math-box" style="border: 1px solid red;">
 
 {% highlight css %}
 .math-box .strut {
-  display: inline-block; 
+  display: inline-block;
 }
 {% endhighlight %}
 

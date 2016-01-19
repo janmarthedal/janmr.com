@@ -10,9 +10,8 @@ date: 2010-10-30 08:47:19.000000000 +02:00
 categories:
 - mathematics
 tags:
-- prime numbers
+- prime-numbers
 - factorials
-- stirling's formula
 ---
 Factorial numbers, {% imath n! = 1 \cdot 2 \cdots n %}, grow very fast with {% imath n %}. In fact, {% imath n! \sim \sqrt{2 \pi n} (n/e)^n %} according to [Stirling's approximation](http://en.wikipedia.org/wiki/Stirling's_approximation). The [prime factors](http://en.wikipedia.org/wiki/Prime_factor) of a factorial number, however, are all relatively small, and the complete factorization of {% imath n! %} is quite easy to obtain.
 

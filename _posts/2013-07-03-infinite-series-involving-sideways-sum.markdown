@@ -8,11 +8,10 @@ date: 2013-07-03 08:56:35.000000000 +02:00
 categories:
 - mathematics
 tags:
-- infinite series
-- binary numbers
+- infinite-series
+- binary-numbers
 - stackexchange
 - nerd-sniping
-- sideways sum
 ---
 
 I found a recent [question](http://math.stackexchange.com/questions/432250/how-does-one-easily-calculate-sum-limits-n-1-infty-frac-mathrmpopn) on [Mathematics Stack Exchange](http://math.stackexchange.com) quite interesting. It simply asked
@@ -40,4 +39,3 @@ for some {% imath l = 0, 1, 2, \ldots %}. This provides us with the intervals of
 Here, both a [telescoping sum](http://en.wikipedia.org/wiki/Telescoping_series), a geometric progression sum (see [Nice Proof of a Geometric Progression Sum](/2008/10/nice-geometric-progression-proof.html) with {% imath r=1/2 %}) and the [power series](https://en.wikipedia.org/wiki/Taylor_series#List_of_Maclaurin_series_of_some_common_functions) for the natural logarithm of 2 occurs.
 
 Very nice.
-

@@ -9,8 +9,7 @@ tags:
 - arithmetic
 - algorithms
 - multiple-precision
-- C++
-
+- cpp
 ---
 This post will present an overview of the implementation of [Kanooth Numbers](https://github.com/janmarthedal/kanooth-numbers), a portable multiple-precision library in C++.
 

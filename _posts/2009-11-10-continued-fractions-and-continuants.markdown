@@ -9,11 +9,8 @@ categories:
 - mathematics
 tags:
 - algorithms
-- C++
-- continued fraction
-- continuant
-- quadratic irrationality
-- Fibonacci number
+- cpp
+- continued-fraction
 ---
 We will be considering continued fractions of the form
 

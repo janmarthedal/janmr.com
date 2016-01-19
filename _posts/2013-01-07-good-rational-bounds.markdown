@@ -9,9 +9,8 @@ date: 2013-01-07 12:38:33.000000000 +01:00
 categories:
 - mathematics
 tags:
-- continued fraction
-- rational approximation
-- rational bound
+- continued-fraction
+- rational-approximation
 ---
 
 Say we have a k-bit integer and we want to allocate a character array to hold the decimal digits of this number. How large must the array be? Well, the exact formula is
@@ -38,4 +37,3 @@ We now begin to compute the odd convergents, and keeping an eye on how tight the
 There are more odd convergents to consider, but we probably don't need to go any further for this use case. So we can allocate {% imath \lfloor 146 k / 485 \rfloor + 1 %} characters, knowing that it is a very tight upper bound.
 
 (Note how a similar approach could be used if we were looking for a lower bound instead.)
-

@@ -9,7 +9,7 @@ categories:
 - mathematics
 tags:
 - algorithms
-- numbers project
+- numbers-project
 ---
 How do you efficiently compute {% imath x^n %} for a positive integer {% imath n %}? Take {% imath x^{15} %} as an example. You could take {% imath x %} and repeatedly multiply by {% imath x %} 14 times. A better way to do it, however, is this:
 

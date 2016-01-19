@@ -14,8 +14,7 @@ categories:
 tags:
 - algorithms
 - multiple-precision
-- numbers project
-- basic theory
+- numbers-project
 ---
 After addressing multiple-precision [addition](/2011/10/multiple-precision-addition.html) and [subtraction](/2011/10/multiple-precision-subtraction.html), we now turn to multiplication of two multiple-precision numbers. Once again, we use the number representation and notation [introduced earlier](/2011/10/multiple-precision-number-representation.html).
 
@@ -75,4 +74,3 @@ The algorithm can actually be generalized slightly if we compute
 instead. All we need to do is replace the first step in the algorithm by
 
 {% dmath (w_n \ldots w_1 w_0)_b \leftarrow (w_{n-1} \ldots w_1 w_0)_b + u_0 v. %}
-

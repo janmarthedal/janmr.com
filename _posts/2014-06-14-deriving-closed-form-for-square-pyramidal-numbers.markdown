@@ -6,9 +6,7 @@ excerpt: ! "The sum of the first n squares is s_n = 1/6 n (n+1) (2n+1). The numb
 categories:
 - mathematics
 tags:
-- sums
-- pyramidal numbers
-- closed form
+- pyramidal-numbers
 ---
 The sum of the first *n* squares is
 

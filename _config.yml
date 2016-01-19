@@ -9,7 +9,7 @@ baseurl: /
 author: Jan Marthedal Rasmussen
 title: janmr blog
 rss_name: blogfeed.xml
-exclude: [mathstats.py,vendor]
+exclude: [mathstats.py,vendor,node_modules,katex-server.js,package.json,Gemfile,postrace.html]
 disqus: true
 sass:
     style: :compressed

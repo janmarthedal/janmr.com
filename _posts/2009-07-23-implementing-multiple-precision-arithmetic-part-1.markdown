@@ -16,9 +16,9 @@ categories:
 tags:
 - arithmetic
 - algorithms
-- C++
+- cpp
 - multiple-precision
-- numbers project
+- numbers-project
 ---
 ### Introduction
 

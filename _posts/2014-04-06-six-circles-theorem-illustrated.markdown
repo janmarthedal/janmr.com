@@ -2,6 +2,9 @@
 title: Six Circles Theorem Illustrated
 layout: post
 excerpt: ! "Given a triangle, start with a circle tangent to two sides. Then draw a new circle tangent to this first circle and a different pair of sides. Continue this process in the same direction. The sixth circle will be tangent to both the fifth and the first circle, thus producing a cyclic chain of touching circles."
+tags:
+- visualization
+- theorem
 ---
 <figure>
   <div class="h_iframe">

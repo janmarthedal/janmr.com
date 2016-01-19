@@ -10,10 +10,9 @@ date: 2009-09-09 14:36:13.000000000 +02:00
 categories:
 - mathematics
 tags:
-- mathematics
 - floor
 - ceil
-- discrete/continuous
+- discrete-continuous
 ---
 This articles explores some basic properties of the integer functions commonly known as floor and ceil. Most of the statements may seem trivial or obvious, but I, for one, have a tendency to forget just how exact you can be when it comes to expressions/equations where floor or ceil functions appear.
 

@@ -13,8 +13,7 @@ categories:
 tags:
 - algorithms
 - multiple-precision
-- numbers project
-- basic theory
+- numbers-project
 ---
 <div class="pull-right"><a href="{% amazon taocp2 %}"><img src="{% bookcover taocp2 %}" alt=""></a></div>
 This post will cover a basic addition algorithm for multiple-precision non-negative integers. The algorithm is based upon that presented in Section 4.3.1, *The Classical Algorithms*, of [The Art of Computer Programming](http://www-cs-faculty.stanford.edu/~uno/taocp.html), Volume 2, by [Donald E. Knuth](http://www-cs-faculty.stanford.edu/~uno/). The notation and bounds used in this post were presented in a [previous post](/2011/10/multiple-precision-number-representation.html).

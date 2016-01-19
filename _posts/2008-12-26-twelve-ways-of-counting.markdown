@@ -7,9 +7,7 @@ date: 2008-12-26 10:16:49.000000000 +01:00
 categories:
 - mathematics
 tags:
-- mathematics
 - combinatorics
-- enumerative combinatorics
 ---
 I have for a long time had an ambition of getting better at [combinatorics](http://en.wikipedia.org/wiki/Combinatorics), especially *enumerative combinatorics*, the discipline of counting the number of arrangements, given some pattern.
 

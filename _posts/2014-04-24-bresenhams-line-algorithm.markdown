@@ -12,7 +12,7 @@ categories:
 - programming
 - mathematics
 tags:
-- raster
+- raster-graphics
 - algorithms
 ---
 In 1965 Jack Elton Bresenham published the paper *Algorithm for computer control of a digital

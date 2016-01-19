@@ -7,10 +7,8 @@ date: 2009-12-04 21:21:54.000000000 +01:00
 categories:
 - mathematics
 tags:
-- continued fraction
-- continuant
-- binary search tree
-- Stern-Brocot tree
+- continued-fraction
+- stern-brocot-tree
 ---
 Consider two fractions {% imath \frac{m_1}{n_1} %} and {% imath \frac{m_2}{n_2} %} with positive numerators and denominators. The fraction {% imath \frac{m_1+m_2}{n_1+n_2} %} is called the *mediant* of {% imath \frac{m_1}{n_1} %} and {% imath \frac{m_2}{n_2} %}. It is straightforward to show that the mediant is placed numerically between the original fractions,
 

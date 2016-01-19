@@ -9,10 +9,7 @@ date: 2011-05-31 13:55:51.000000000 +02:00
 categories:
 - programming
 tags:
-- functional programming
-- erlang
-- lisp
-- ml
+- functional-programming
 ---
 [Imperative programming](http://en.wikipedia.org/wiki/Imperative_programming) languages&mdash;such as C++, Java, Perl and assembly&mdash;are by far the [most common](https://web.archive.org/web/20110430164550/http://www.langpop.com/). They all lie fairly close to the underlying computer architecture by executing one statement at a time, changing a state along the way. They describe *how* to compute something.
 

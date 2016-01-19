@@ -7,8 +7,7 @@ excerpt: |
 categories:
 - development
 tags:
-- web-dev
-- rail
+- web-development
 ---
 I was recently introduced to the so-called RAIL principle in the Udacity MOOC [Browser Rendering Optimization](https://www.udacity.com/course/browser-rendering-optimization--ud860). It is an acronym for **R**esponsive, **A**nimation, **I**dle and **L**oad and introduces some time budgets to follow when creating a smooth and responsive web experience. It seems to have been a [concept](https://docs.google.com/document/d/1bYMyE6NdiAupuwl7pWQfB-vOZBPSsXCv57hljLDMV8E/) coined by the Google Chrome team and is also mentioned in a [recent talk](https://youtu.be/2ksXo2_Lfl0) by Google's [Paul Irish](http://www.paulirish.com/).
 
