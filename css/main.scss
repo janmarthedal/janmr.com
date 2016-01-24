@@ -33,8 +33,12 @@ figcaption {
   color: #333;
 }
 
-.post h2 {
-  margin-bottom: 1em;
+.post-tags {
+  margin-bottom: 1.5em;
+}
+
+.post-list {
+  margin-top: 1em;
 }
 
 .page-navigation {
@@ -106,4 +110,3 @@ div.math-item {
  * KaTeX
  **********************/
 @import "katex.min";
-

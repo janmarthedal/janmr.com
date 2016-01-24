@@ -11,8 +11,7 @@ categories:
 tags:
 - algorithms
 - multiple-precision
-- numbers project
-- basic theory
+- numbers-project
 ---
 We now turn to multiple-precision subtraction for non-negative integers. The algorithm is very similar to that of [multiple-precision addition](/2011/10/multiple-precision-addition.html), but some minor differences make it worth while considering subtraction separately.
 
@@ -47,4 +46,3 @@ so {% imath u-v-k_0 = w-k_n b^n %}. Since {% imath 0 \leq w \leq b^n-1 %} we hav
 {% dmath w = (u - v - k_0) \;\text{mod}\; b^n, %}
 
 and {% imath k_n %} indicates whether {% imath u < v+k_0 %}.
-

@@ -9,9 +9,10 @@ excerpt: ! "The Pleasures of Counting is a book about people working with mathem
   The pleasures of thought."
 date: 2009-11-15 14:48:16.000000000 +01:00
 categories:
-- book review
+- book-review
 tags:
-- recommended reading
+- book-review
+- recommended-reading
 ---
 <div class="pull-right"><a href="{% amazon korner %}"><img src="{% bookcover korner %}" alt=""></a></div>
 *The Pleasures of Counting* is a book about people working with mathematics and challenges they have faced. The book has 544 pages with a total of 19 chapters and 3 appendices. It contains a lot of material and is split into five parts: The uses of abstraction, Meditations on measurement, The pleasures of computation, Enigma variations, and The pleasures of thought.

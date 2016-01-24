@@ -12,11 +12,8 @@ excerpt: ! "Prior to the current post, this blog contained 45 posts with a total
 categories:
 - programming
 tags:
-- jekyll
 - mathjax
 - katex
-- typesetting
-- blogging
 # Posts: 45
 # Math items: 2307 in total, 51 items/post on average
 # Loading and typesetting all posts: 986 ms/post on average

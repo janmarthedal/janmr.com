@@ -7,8 +7,7 @@ date: 2011-01-09 14:41:37.000000000 +01:00
 categories:
 - mathematics
 tags:
-- catalan numbers
-- stirling's formula
+- catalan-numbers
 - knuth
 ---
 The [Catalan](http://en.wikipedia.org/wiki/Catalan_number) [number](http://oeis.org/A000108) {% imath C_n %} denotes the number of forests with {% imath n %} nodes. In fact, the Catalan numbers relate to many different structures, see, e.g., the pages linked to above and the references on those pages.
@@ -36,4 +35,3 @@ Knuth uses this result to show how pi appears in the asymptotic formula for Cata
 See, e.g., exercise 1.2.11.2&ndash;5 in <a href="{% amazon taocp1 %}">The Art of Computer Programming, Volume 1</a>.
 
 You can watch the lecture by Knuth by going to the [Computer Musings by Professor Donald E. Knuth](http://scpd.stanford.edu/knuth/index.jsp) page at Stanford University (*update 2013-06-30:* direct link no longer working). I highly recommend it.
-

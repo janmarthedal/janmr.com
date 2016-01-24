@@ -8,18 +8,22 @@ layout: default
     <small><time datetime="{{ page.date | date: "%Y-%m-%d" }}">{{ page.date | date_to_long_string }}</time></small>
 </h2>
 
+<div class="post-tags">{% for tag in page.tags %}
+    <a class="label label-info" href="/tags/{{ tag }}">{{ tag }}</a>{% endfor %}
+</div>
+
 <div class="post-body clearfix">
 {{ content }}
 </div>
 
-<div class="page-navigation clearfix"> 
-    <div class="prev-post"> 
-        {% if page.previous.url %}<a href="{{page.previous.url}}" title="Previous post: {{page.previous.title}}">&laquo; {{page.previous.title}}</a>{% endif %} 
-    </div> 
-    <div class="next-post"> 
-        {% if page.next.url %}<a href="{{page.next.url}}" title="Next post: {{page.next.title}}">{{page.next.title}} &raquo; </a>{% endif %} 
+<div class="page-navigation clearfix">
+    <div class="prev-post">
+        {% if page.previous.url %}<a href="{{page.previous.url}}" title="Previous post: {{page.previous.title}}">&laquo; {{page.previous.title}}</a>{% endif %}
     </div>
-</div> 
+    <div class="next-post">
+        {% if page.next.url %}<a href="{{page.next.url}}" title="Next post: {{page.next.title}}">{{page.next.title}} &raquo; </a>{% endif %}
+    </div>
+</div>
 
 {% if site.postrace %}
 <script>

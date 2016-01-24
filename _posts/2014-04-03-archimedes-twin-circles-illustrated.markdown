@@ -2,6 +2,9 @@
 title: Archimedes' Twin Circles Illustrated
 layout: post
 excerpt: ! "The green circles will always be of equal size"
+tags:
+- visualization
+- theorem
 ---
 <figure>
   <div class="h_iframe">

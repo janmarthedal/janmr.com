@@ -12,10 +12,6 @@ categories:
 tags:
 - geometry
 - lines
-- inner product
-- plane
-- vector space
-- Euclidean geometry
 ---
 How do you calculate the point where two lines in the plane intersect? It is not very hard to do, but the formula can look [quite complicated](http://en.wikipedia.org/w/index.php?title=Line-line_intersection&oldid=330824670), depending on how you write it up. This article is a reminder that it can be expressed in a simple manner.
 
@@ -101,5 +97,3 @@ Setting {% imath \alpha = w_1 v_2 - w_2 v_1 %} and {% imath \beta = w_1 (q_2-p_2
 *   {% imath \alpha = 0 %}, {% imath \beta = 0 %}: The two lines overlap.
 *   {% imath \alpha = 0 %}, {% imath \beta \neq 0 %}: The lines are parallel but do not intersect.
 *   {% imath \alpha \neq 0 %}: The lines meet at a single point, {% imath (p_1 + \frac{\beta}{\alpha} v_1, p_2 + \frac{\beta}{\alpha} v_2) %}.
-
-

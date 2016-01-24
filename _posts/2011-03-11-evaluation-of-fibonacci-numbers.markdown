@@ -11,8 +11,7 @@ categories:
 - mathematics
 tags:
 - algorithms
-- Fibonacci number
-- numbers project
+- numbers-project
 ---
 The integer [sequence](http://oeis.org/A000045) 0, 1, 1, 2, 3, 5, 8, 13, &#8230; is well known as the [Fibonacci](http://en.wikipedia.org/wiki/Fibonacci) sequence. It is easily defined by {% imath F_0 = 0 %}, {% imath F_1 = 1 %} and {% imath F_n = F_{n-1} + F_{n-2} %} for {% imath n \geq 2 %}.
 

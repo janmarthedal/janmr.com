@@ -7,11 +7,8 @@ date: 2009-04-20 14:02:36.000000000 +02:00
 categories:
 - mathematics
 tags:
-- combinatorial game
-- impartial game
-- Nim
-- Sprague-Grundy
-- game theory
+- combinatorial-game
+- game-theory
 ---
 ### Introduction
 

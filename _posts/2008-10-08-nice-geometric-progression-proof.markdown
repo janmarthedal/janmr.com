@@ -9,7 +9,7 @@ categories:
 tags:
 - proof
 - visualization
-- infinite series
+- infinite-series
 ---
 Consider the geometric series,
 

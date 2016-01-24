@@ -9,8 +9,7 @@ categories:
 - programming
 tags:
 - multiple-precision
-- numbers project
-- basic theory
+- numbers-project
 ---
 Let us consider a common way to represent non-negative integers. An integer {% imath u \geq 0 %} will be represented in radix {% imath b \geq 2 %} using the notation
 
@@ -31,4 +30,3 @@ for any {% imath n \geq 1 %}. Secondly, that each non-negative integer has a uni
 {% dmath b^{n-1} \leq u < b^n \quad \Leftrightarrow \quad n-1 \leq \log_b(u) < n \quad \Leftrightarrow \quad \lfloor \log_b(u) \rfloor = n-1. %}
 
 This last relation can be quite useful since the number of needed digits can be found, given {% imath u %} and {% imath b %}. For instance, the fact that {% imath \lfloor \log_2(1317803400) \rfloor + 1 = 31 %} means that the number 1317803400 can be represented using 31 binary digits.
-

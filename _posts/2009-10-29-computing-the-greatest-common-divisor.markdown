@@ -10,11 +10,10 @@ categories:
 - programming
 tags:
 - algorithms
-- C++
+- cpp
 - gcd
-- generic programming
-- numbers project
-- number theory
+- numbers-project
+- number-theory
 ---
 The greatest common divisor of two integers is the largest positive integer that divides them both. This article considers two algorithms for computing {% imath \text{gcd}(u,v) %}, the greatest common divisor of {% imath u %} and {% imath v %}.
 

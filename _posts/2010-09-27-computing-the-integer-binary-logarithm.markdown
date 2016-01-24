@@ -8,9 +8,8 @@ categories:
 - programming
 tags:
 - algorithms
-- numbers project
-- number representation
-- binary numbers
+- numbers-project
+- binary-numbers
 ---
 The binary logarithm, or the logarithm to the base 2, of a number {% imath x > 0 %} is the number {% imath y = log_2 x %} such that {% imath 2^y = x %}. This article looks at how we can determine the integer part of the binary logarithm using integer arithmetic only. Naturally, the binary logarithm is especially easy to work with on (binary) computers and bitwise operations come in handy.
 

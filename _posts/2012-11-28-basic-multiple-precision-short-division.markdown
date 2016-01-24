@@ -10,8 +10,7 @@ categories:
 tags:
 - algorithms
 - multiple-precision
-- numbers project
-- basic theory
+- numbers-project
 ---
 Let us consider short division, by which we mean a multiple-digit number {% imath u = (u_{m-1} \ldots u_1 u_0)_b %} divided by a single digit {% imath v %} (see, e.g., [post on number representation](/2011/10/multiple-precision-number-representation.html)). We will assume {% imath m \geq 1 %}, {% imath u_{m-1} \neq 0 %} and {% imath 0 < v < b %}.
 
@@ -32,4 +31,3 @@ By the definition of integer division and modulus, the quantities in step **S2**
 since {% imath r_m = 0 %}. It is clear from the definition of {% imath r_k %} that {% imath 0 \leq r_k < v %} for {% imath k = 0, 1, \ldots, m %}. Considering now the definition of {% imath q_k %} we see that since {% imath r_{k+1} b + u_k \leq (v-1) b + b-1 = b v - 1 %} we will have {% imath 0 \leq q_k < b %} for {% imath k = 0, 1, \ldots, m-1 %}.
 
 Note two important things: During the course of the algorithm, we only need to keep track of one {% imath r %}-value, not one for each {% imath k %} (it just made the analysis easier). Note also that each entry of {% imath u %} can be overwritten with the coefficients/digits of {% imath q %}, possibly saving some storage.
-

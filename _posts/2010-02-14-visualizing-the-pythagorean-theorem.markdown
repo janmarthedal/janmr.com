@@ -14,7 +14,7 @@ categories:
 - mathematics
 tags:
 - proof
-- Pythagoras
+- pythagoras
 - visualization
 ---
 Most people are familiar with the Pythagorean theorem: In a right-angled triangle the square of the hypotenuse is equal to the sum of the squares of the other two sides. As the name of the theorem implies, it is attributed to [Pythagoras](http://en.wikipedia.org/wiki/Pythagoras), a Greek mathematician who lived around 500 B.C. The theorem is also included in [Euclid](http://en.wikipedia.org/wiki/Euclid)&#8216;s [Elements](http://en.wikipedia.org/wiki/Euclid's_Elements), an encyclopedia of all known mathematics around 300 B.C. But how do you actually prove the Pythagorean theorem?<span></span>

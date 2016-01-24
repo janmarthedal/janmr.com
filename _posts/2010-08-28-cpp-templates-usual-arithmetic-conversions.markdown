@@ -11,10 +11,9 @@ date: 2010-08-28 11:56:11.000000000 +02:00
 categories:
 - programming
 tags:
-- C++
-- generic programming
+- cpp
 - templates
-- data types
+- data-types
 ---
 
 If you add a `short int` and a `char` in C++, what is the resulting type? What if you subtract a `long int` from an `unsigned int`? The answers actually depend on the compiler and the target architecture (`int` or `unsigned` in the first case and `long int` or `unsigned long int` in the second). This article lists the rules from the current C++ standard and gives an example of how the type can be resolved at compile time using templates.

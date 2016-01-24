@@ -12,9 +12,8 @@ categories:
 - mathematics
 tags:
 - multiple-precision
-- numbers project
-- bitwise operators
-- number representation
+- numbers-project
+- bitwise-operators
 ---
 When representing integers using a fixed number of bits, negative numbers are typically represented using [two's complement](http://en.wikipedia.org/wiki/Two's_complement). If using {% imath n %} bit numbers, the two's complement of a number {% imath x %} with {% imath 0 \leq x < 2^n %} is {% imath (-x) \mathbin{\text{mod}} 2^n = 2^n - x %}. But what do you do if you want to work with unbounded/multiple-precision integers? Fixing {% imath x %} and letting the number of bits go to infinity, you will notice that increasing {% imath n %} by one simply adds a 1 at the left. For instance,
 

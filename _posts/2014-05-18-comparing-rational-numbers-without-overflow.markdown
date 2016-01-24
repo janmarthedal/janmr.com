@@ -10,9 +10,7 @@ categories:
 tags:
 - arithmetic
 - algorithms
-- rational numbers
 - fractions
-
 ---
 Say you want to know if the inequality
 
@@ -55,4 +53,3 @@ Let us finish with a small example:
 {% dmath \begin{aligned} \frac{355}{113} &< \frac{22}{7} \quad \Leftrightarrow \\ 3 + \frac{16}{113} &< 3 + \frac{1}{7} \quad \Leftrightarrow \\ \frac{113}{16} &> \frac{7}{1} \quad \Leftrightarrow \\ 7 + \frac{1}{16} &> 7 + \frac{0}{1} \; , \end{aligned} %}
 
 so yes, {% imath 355/113 < 22/7 %}.
-
