@@ -35,7 +35,7 @@ val map = fn : ('a -> 'b) -> 'a list -> 'b list
 <div class="pull-right"><img src="{% bookcover erlang %}" alt=""></div>
 This means that `map` takes as input a function (mapping an element of type `a'` to an element of type `b'`) and outputs a new function. This output function can then convert a list of type `a'` elements to a list of type `b'` elements. This is powerful stuff.
 
-Erlang is a pure functional programming language. It is often praised for being well-suited for large-scale, distributed and fault-tolerant applications. For instance, the very cool [NoSQL](http://en.wikipedia.org/wiki/NoSQL) database system [CouchDB](http://couchdb.apache.org/) is written in Erlang. Apart from having [pattern matching](http://en.wikipedia.org/wiki/Pattern_matching), which is common for functional programming languages, Erlang also features so-called guards, which are patterns with additional conditions. Consider the following Erlang code snippet ([source](http://www.erlang.org/doc/getting_started/seq_prog.html)):
+Erlang is a pure functional programming language. It is often praised for being well-suited for large-scale, distributed and fault-tolerant applications. For instance, the very cool [NoSQL](http://en.wikipedia.org/wiki/NoSQL) database system [CouchDB](http://couchdb.apache.org/) is written in Erlang. Apart from having [pattern matching](http://en.wikipedia.org/wiki/Pattern_matching), which is common for functional programming languages, Erlang also features so-called guards, which are patterns with additional conditions. Consider the following Erlang code snippet ([source](http://erlang.org/doc/getting_started/seq_prog.html)):
 
 {% highlight erlang %}
 list_max([Head|Rest]) -> list_max(Rest, Head).
