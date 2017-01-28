@@ -1,3 +1,3 @@
 echo Rendering $1
-node ./page2html.js < $1 > tmp.html
-mv tmp.html $1
+cp $1 /tmp/foo
+sed '/<script.*MathJax\.js/d' /tmp/foo | node ./page2html.js --nodollars > $1

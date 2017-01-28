@@ -3,20 +3,13 @@ module Jekyll
 
     def initialize(tag_name, source, tokens)
       super
-      is_block = tag_name == 'dmath'
-      tag = is_block ? 'div' : 'span'
-      html = mathjax_markup(source.strip, is_block)
-      @source = "<#{tag} class=\"math-item\">#{html}</#{tag}>"
+      type = tag_name == 'dmath' ? 'math/tex; mode=display' : 'math/tex'
+      coded = source.strip.unpack('H*')[0]
+      @source = "<script type=\"#{type}\">-RAW-#{coded}-</script>"
     end
 
     def render(context)
       @source
-    end
-
-    def mathjax_markup(source, is_block)
-      type = is_block ? 'math/tex; mode=display' : 'math/tex'
-      coded = source.unpack('H*')[0]
-      "<script type=\"#{type}\">-RAW-#{coded}-</script>"
     end
 
   end

@@ -110,10 +110,10 @@ function processHTML(html,callback) {
     document.body.innerHTML = result.html;
     document.head.appendChild(document.body.firstChild);
     var mj_styles = document.getElementById('MathJax_CHTML_styles');
+    //callback(mj_styles.outerHTML); return;
     mj_styles.parentNode.removeChild(mj_styles);
     var HTML = "<!DOCTYPE html>\n"+document.documentElement.outerHTML.replace(/^(\n|\s)*/,"");
     callback(HTML);
-    //callback(mj_styles.outerHTML);
   });
 }
 
