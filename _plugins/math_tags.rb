@@ -1,6 +1,3 @@
-require 'uri'
-require 'net/http'
-
 module Jekyll
   class MathTags < Liquid::Tag
 
@@ -8,19 +5,12 @@ module Jekyll
       super
       is_block = tag_name == 'dmath'
       tag = is_block ? 'div' : 'span'
-      html = ENV.has_key?('JANMRNOKATEX') ? mathjax_markup(source.strip, is_block)
-            : katex_markup(source.strip, is_block)
+      html = mathjax_markup(source.strip, is_block)
       @source = "<#{tag} class=\"math-item\">#{html}</#{tag}>"
     end
 
     def render(context)
       @source
-    end
-
-    def katex_markup(source, is_block)
-      html = Net::HTTP.get('localhost', '/render?q=' + URI.encode_www_form_component(source) + '&d=' + (is_block ? 'block' : 'inline'),
-                           3000).force_encoding('utf-8').strip
-      html == '-' ? mathjax_markup(source, is_block) : html
     end
 
     def mathjax_markup(source, is_block)
