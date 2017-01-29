@@ -106,7 +106,6 @@ From the initial illustration of the problem, we have {% imath a=12 %}, {% imath
 
 {% dmath w \simeq 4.2973280047205172448618937103219913746175. %}
 
-There are actually lengths that have an integer solution. Take, [for instance](http://users.softlab.ntua.gr/~ttsiod/ladders.html), {% imath a=119 %}, {% imath b=70 %}, {% imath h=30 %} and {% imath w=56 %}.
+There are actually lengths that have an integer solution. Take, [for instance](https://www.thanassis.space/ladders.html), {% imath a=119 %}, {% imath b=70 %}, {% imath h=30 %} and {% imath w=56 %}.
 
 A simple, but tricky, problem.
-

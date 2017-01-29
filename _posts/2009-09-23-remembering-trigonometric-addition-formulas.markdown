@@ -22,7 +22,7 @@ One solution is of course to look them up in a [book](http://www.math.sfu.ca/~cb
 
 By equating the real and imaginary parts you get the answer.
 
-Flicking through *Proofs Without Words II* by [Roger B. Nelsen](http://legacy.lclark.edu/~mathsci/nelsen.html), I saw the following wonderful figure. It could be a contender to an easier way to remember the addition formulas.
+Flicking through *Proofs Without Words II* by Roger B. Nelsen, I saw the following wonderful figure. It could be a contender to an easier way to remember the addition formulas.
 
 <figure>
   <img src="{{site.baseurl}}media/trigadd.svg" class="img-responsive" alt="Addition formulas for sine and cosine">
