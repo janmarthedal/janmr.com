@@ -101,11 +101,11 @@ and similarly
 
 ### Logarithms
 
-Let {% imath \log_b x %} be the logarithm of {% imath x %}, base {% imath b %} ({% imath x > 0 %}, {% imath b > 0 %}, {% imath b \neq 1 %}). We first set {% imath f(x) = \log_b x %} for integer {% imath b %}, base {% imath 2 %} or {% imath 10 %} being the most common. Again, we can apply the theorem from earlier; {% imath f %} is continuous and monotonically increasing and {% imath f^{-1}(y) = b^y %} is integer for integer {% imath y %}, so we have
+Let {% imath \log_b x %} be the logarithm of {% imath x %}, base {% imath b %} ({% imath x \geq 1 %}, {% imath b > 0 %}, {% imath b \neq 1 %}). We first set {% imath f(x) = \log_b x %} for integer {% imath b %}, base {% imath 2 %} or {% imath 10 %} being the most common. Again, we can apply the theorem from earlier; {% imath f %} is continuous and monotonically increasing and {% imath f^{-1}(y) = b^y %} is integer for integer {% imath y \geq 0 %}, so we have
 
 {% dmath \left\lfloor \log_b x \right\rfloor = \left\lfloor \log_b \lfloor x \rfloor \right\rfloor \quad \text{and} \quad \left\lceil \log_b x \right\rceil = \left\lceil \log_b \lceil x \rceil \right\rceil, %}
 
-for integer {% imath b \geq 2 %}.
+for integer {% imath b \geq 2 %} and {% imath x \geq 1 %}.
 
 We conclude with some straightforward, but quite useful, statements:
 
