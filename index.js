@@ -1,10 +1,15 @@
-const fs         = require('fs');
-const Metalsmith = require('metalsmith');
-const concat     = require('metalsmith-concat');
-const layouts    = require('metalsmith-layouts');
-const less       = require('metalsmith-less');
-const markdown   = require('metalsmith-markdown');
-const permalinks = require('metalsmith-permalinks');
+const Metalsmith  = require('metalsmith');
+const collections = require('metalsmith-collections');
+const concat      = require('metalsmith-concat');
+const debug       = require('metalsmith-debug');
+const layouts     = require('metalsmith-layouts');
+const less        = require('metalsmith-less');
+const permalinks  = require('metalsmith-permalinks');
+
+const front_matter = require('./plugins/front-matter');
+const markdown = require('./plugins/markdown');
+const post_permalinks = require('./plugins/post-permalinks');
+const transform_jekyll = require('./plugins/transform-jekyll');
 
 Metalsmith(__dirname)
   .metadata({
@@ -15,17 +20,27 @@ Metalsmith(__dirname)
   .source('./src')
   .destination('./build')
   .clean(true)
+  .use(front_matter())
   .use(less())
   .use(concat({
     files: 'css/*.css',
     output: 'css/main.css',
   }))
+  /*.use(collections({
+    posts: {
+      pattern: 'posts/*',
+      sortBy: 'date',
+      reverse: true
+    }
+  }))*/
+  .use(transform_jekyll())
   .use(markdown())
-  .use(permalinks())
+  .use(post_permalinks())
   .use(layouts({
     engine: 'handlebars',
     partials: 'partials'
   }))
+  .use(debug())
   .build(function(err, files) {
     if (err) { throw err; }
   });

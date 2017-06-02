@@ -18,9 +18,12 @@
   },
   "homepage": "https://github.com/janmarthedal/janmr-home#readme",
   "devDependencies": {
+    "commonmark": "^0.27.0",
     "handlebars": "^4.0.10",
     "metalsmith": "^2.3.0",
+    "metalsmith-collections": "^0.9.0",
     "metalsmith-concat": "^6.0.0",
+    "metalsmith-debug": "^1.1.0",
     "metalsmith-layouts": "^1.8.1",
     "metalsmith-less": "^2.0.0",
     "metalsmith-markdown": "^0.2.1",
