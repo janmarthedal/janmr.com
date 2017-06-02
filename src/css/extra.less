@@ -1,3 +1,125 @@
+@text-color: #333;
+@link-color: #337ab7;
+@dimmed-color: #777;
+@p-margin: 0.7rem;
+
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
 body {
-    color: red;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    line-height: 1.5;
+    font-size: 100%;
+    color: @text-color;
+    background-color: #fff;
+}
+
+#wrapper {
+    max-width: 60em;
+    margin: 0 auto 4em;
+    padding-left: 1em;
+    padding-right: 1em;
+}
+
+a {
+    color: @link-color;
+    text-decoration: none;
+}
+
+p {
+    margin: 0 0 @p-margin;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: inherit;
+    font-weight: 500;
+    line-height: 1.1;
+    color: inherit;
+}
+
+h1 {
+    font-size: 2.52rem;
+    padding-bottom: 0.5em;
+    margin: 1em 0 0.5em;
+    border-bottom: 1px solid #eee;
+    & > a {
+        color: inherit;
+    }
+}
+
+h2 {
+    font-size: 2rem;
+    small {
+        font-size: 65%;
+        font-weight: normal;
+        line-height: 1;
+        color: @dimmed-color;
+    }
+}
+
+h3 {
+    font-size: 1.59rem;
+}
+
+h4 {
+    font-size: 1.26rem;
+}
+
+h5 {
+    font-size: 1rem;
+}
+
+h6 {
+    font-size: 0.79rem;
+}
+
+h4, h5, h6 {
+    margin-top: @p-margin;
+    margin-bottom: @p-margin;
+}
+
+.content {
+    margin-left: -1rem;
+    margin-right: -1rem;
+}
+
+.main, .sidebar {
+    float: left;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+.main {
+    width: 75%;
+}
+
+.sidebar {
+    width: 25%;
+}
+
+figure {
+    margin: 1em 0;
+    & > img {
+        max-width: 100%;
+        height: auto;
+    }
+}
+
+footer {
+    & > p {
+        color: @dimmed-color;
+    }
+}
+
+.icon {
+    display: inline-block;
+    width: 1.5em;
+    & > svg {
+        display: inline-block;
+        width: 1em;
+        height: 1em;        
+    }
 }

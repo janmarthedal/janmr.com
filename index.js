@@ -1,3 +1,4 @@
+const handlebars  = require('handlebars');
 const Metalsmith  = require('metalsmith');
 const collections = require('metalsmith-collections');
 const concat      = require('metalsmith-concat');
@@ -12,6 +13,17 @@ const markdown = require('./plugins/markdown');
 const post_permalinks = require('./plugins/post-permalinks');
 const transform_jekyll = require('./plugins/transform-jekyll');
 
+const months = ['January', 'February', 'March', 'April', 'May', 'June',
+  'July', 'August', 'September', 'October', 'November', 'December'];
+
+handlebars.registerHelper('formatDate', function(date) {
+  return ('0' + date.getDate()).slice(-2) + ' ' + months[date.getMonth()] + ' ' + date.getFullYear();
+});
+
+handlebars.registerHelper('isoDate', function(date) {
+  return date.toISOString().substr(0, 10);
+});
+
 Metalsmith(__dirname)
   .metadata({
     title: "janmr.com",
@@ -25,7 +37,7 @@ Metalsmith(__dirname)
   .use(front_matter())
   .use(less())
   .use(concat({
-    files: 'css/*.css',
+    files: ['css/normalize.css', 'css/mathjax.css', 'css/extra.css'],
     output: 'css/main.css',
   }))
   /*.use(collections({
