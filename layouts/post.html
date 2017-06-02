@@ -4,6 +4,9 @@
     <div class="content">
       <div class="main">
         <h2>{{ title }}<br><small><time datetime="{{ isoDate date }}">{{ formatDate date }}</time></small></h2>
+        <div class="post-tags">
+          {{#each tags}}<a class="label" href="/blog/tags/{{this}}">{{this}}</a> {{/each}}
+        </div>
         {{{ contents }}}
       </div>
       <div class="sidebar">

@@ -1,6 +1,7 @@
 @text-color: #333;
 @link-color: #337ab7;
 @dimmed-color: #777;
+@label-bg: #337ab7;
 @p-margin: 0.7rem;
 
 * {
@@ -122,4 +123,22 @@ footer {
         width: 1em;
         height: 1em;        
     }
+}
+
+.post-tags {
+    margin-bottom: 1.5em;
+}
+
+.label {
+    display: inline;
+    padding: .2em .6em .3em;
+    font-size: 75%;
+    font-weight: bold;
+    line-height: 1;
+    color: #fff;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: baseline;
+    border-radius: .25em;
+    background-color: @label-bg;
 }
