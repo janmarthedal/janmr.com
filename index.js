@@ -7,6 +7,7 @@ const less        = require('metalsmith-less');
 const permalinks  = require('metalsmith-permalinks');
 
 const front_matter = require('./plugins/front-matter');
+const make_mathjax_css = require('./plugins/make-mathjax-css');
 const markdown = require('./plugins/markdown');
 const post_permalinks = require('./plugins/post-permalinks');
 const transform_jekyll = require('./plugins/transform-jekyll');
@@ -20,6 +21,7 @@ Metalsmith(__dirname)
   .source('./src')
   .destination('./build')
   .clean(true)
+  .use(make_mathjax_css())
   .use(front_matter())
   .use(less())
   .use(concat({

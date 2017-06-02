@@ -2,6 +2,7 @@ const basename = require('path').basename;
 const dirname = require('path').dirname;
 const extname = require('path').extname;
 const commonmark = require('commonmark');
+const mjAPI = require('./mathjax-api');
 
 module.exports = plugin;
 
@@ -11,9 +12,9 @@ function plugin(opts) {
     const writer = new commonmark.HtmlRenderer();
 
     return function(files, metalsmith, done) {
-        setImmediate(done);
-        Object.keys(files).forEach(function(file) {
-            if (!is_markdown(file)) return;
+        Promise.all(Object.keys(files).map(function(file) {
+            if (!is_markdown(file))
+                return Promise.resolve();
             const data = files[file];
             const dir = dirname(file);
             let html = basename(file, extname(file)) + '.html';
@@ -23,22 +24,38 @@ function plugin(opts) {
 
             const id_to_eqn = [];
             str = get_math(str, id_to_eqn);
+            const typeset_promises = id_to_eqn.map(data => typeset_math(data.eqn, data.block));
 
             const parsed = reader.parse(str);
             // transform parsed if you like...
             str = writer.render(parsed); // result is a String
 
-            str = str.replace(/<img src="\/eqn\/(\d+)".*?\/>/g, function(match, n) {
-                const data = id_to_eqn[parseInt(n)];
-                return '<script type="math/tex' + (data.block ? '; mode=display' : '') + '">' + data.eqn + '</script>';
+            return Promise.all(typeset_promises).then(id_to_html => {
+                str = str.replace(/<img src="\/eqn\/(\d+)".*?\/>/g, function(match, n) {
+                    return id_to_html[parseInt(n)];
+                });
+                data.contents = new Buffer(str);
+                delete files[file];
+                files[html] = data;
             });
-
-            data.contents = new Buffer(str);
-            delete files[file];
-            files[html] = data;
-        });
+        })).then(() => done());
     };
 
+}
+
+function typeset_math(math, block) {
+    return new Promise((resolve, reject) => {
+        mjAPI.typeset({
+            math: math,
+            format: block ? 'TeX' : 'inline-TeX',
+            html: true
+        }, data => {
+            if (data.errors)
+                reject(data.errors);
+            else
+                resolve(data.html);
+        });
+    });
 }
 
 function TeX_brace_balance(tex) {
