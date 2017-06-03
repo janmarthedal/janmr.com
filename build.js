@@ -52,16 +52,19 @@ Metalsmith(__dirname)
     }))
     .use(collections({
         posts: {
-            pattern: 'blog/**/*',
+            pattern: 'blog/*/*/*',
             sortBy: 'date',
-            reverse: false
+            reverse: true
         }
     }))
     .use(function (files, metalsmith, done) {
         setImmediate(done);
-        Object.keys(files).forEach((file) => {
-            files[file].path = '/' + file;
-        })
+        Object.keys(files).forEach(file => {
+            files[file].path = file;
+        });
+        metalsmith.metadata().collections.posts.forEach(post => {
+            post.date = files[post.path].date;
+        });
     }) 
     .use(layouts({
         engine: 'handlebars',
