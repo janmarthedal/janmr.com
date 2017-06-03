@@ -2,6 +2,7 @@ const basename = require('path').basename;
 const dirname = require('path').dirname;
 const extname = require('path').extname;
 const commonmark = require('commonmark');
+const hljs = require('highlightjs');
 const mjAPI = require('./mathjax-api');
 
 module.exports = plugin;
@@ -28,7 +29,14 @@ function plugin(opts) {
 
             const parsed = reader.parse(str);
             // transform parsed if you like...
-            str = writer.render(parsed); // result is a String
+            str = writer.render(parsed);
+
+            str = str.replace(/<pre><code class="language-(\w+)">([^]*?)<\/code><\/pre>/g,
+                (match, language, source) => {
+                    const res = hljs.highlight(language, source);
+                    return `<pre><code class="language-${language} hljs">` + 
+                        res.value.replace(/&amp;/g, '&') + '</code></pre>';
+                });
 
             return Promise.all(typeset_promises).then(id_to_html => {
                 str = str.replace(/<img src="\/eqn\/(\d+)".*?\/>/g, function(match, n) {

@@ -17,6 +17,12 @@ function plugin(opts) {
             str = str.replace(/{%\s*bookcover\s+(.*?)\s*%}/g, '/media/books/$1.jpg');
             str = str.replace(/{%\s*amazon\s+(.*?)\s*%}/g, (match, tag) => amazon[tag]);
             str = str.replace(/<table class="table table-striped table-bordered">/g, '<table>');
+            str = str.replace(/{% highlight (\w+) %}/g, '``` $1');
+            str = str.replace(/{% endhighlight %}/g, '```');
+            str = str.replace(/([^`]`)([^`]+)(`[^`])/g, (match, st1, st, st2) => {
+                console.log(st);
+                return st1 + st.replace(/\\_/g, '_') + st2;
+            });
 
             data.contents = new Buffer(str);
         });

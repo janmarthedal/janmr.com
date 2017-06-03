@@ -38,7 +38,7 @@ Metalsmith(__dirname)
     .use(front_matter())
     .use(less())
     .use(concat({
-        files: ['css/normalize.css', 'css/mathjax.css', 'css/extra.css'],
+        files: ['css/normalize.css', 'css/mathjax.css', 'css/hljs-default.css', 'css/extra.css'],
         output: 'css/main.css',
     }))
     .use(transform_jekyll())
