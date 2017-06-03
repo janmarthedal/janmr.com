@@ -41,13 +41,6 @@ Metalsmith(__dirname)
         files: ['css/normalize.css', 'css/mathjax.css', 'css/extra.css'],
         output: 'css/main.css',
     }))
-    /*.use(collections({
-        posts: {
-        pattern: 'posts/*',
-        sortBy: 'date',
-        reverse: true
-        }
-    }))*/
     .use(transform_jekyll())
     .use(markdown())
     .use(post_permalinks())
@@ -57,9 +50,16 @@ Metalsmith(__dirname)
         sortBy: 'date',
         reverse: true
     }))
+    .use(collections({
+        posts: {
+            pattern: 'blog/**/*',
+            sortBy: 'date',
+            reverse: false
+        }
+    }))
     .use(function (files, metalsmith, done) {
         setImmediate(done);
-        Object.keys(files).forEach(function(file) {
+        Object.keys(files).forEach((file) => {
             files[file].path = '/' + file;
         })
     }) 

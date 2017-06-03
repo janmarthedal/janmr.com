@@ -5,6 +5,16 @@
 @p-margin: 0.7rem;
 @line-height: 1.43;
 
+.clearfix() {
+    &:before,
+    &:after {
+        content: " ";
+        display: table;
+    }
+    &:after {
+        clear: both;
+    }
+}
 
 * {
     -webkit-box-sizing: border-box;
@@ -84,11 +94,6 @@ h4, h5, h6 {
     margin-bottom: @p-margin;
 }
 
-.content {
-    margin-left: -1rem;
-    margin-right: -1rem;
-}
-
 .main, .sidebar {
     float: left;
     padding-left: 1rem;
@@ -103,6 +108,29 @@ h4, h5, h6 {
     .sidebar {
         width: 25%;
     }
+}
+
+.content {
+    margin-left: -1rem;
+    margin-right: -1rem;
+}
+
+.post-body {
+    .clearfix();
+}
+
+.page-navigation {
+    .clearfix();
+    margin: 2em 0;
+}
+
+.prev-post {
+    float: left;
+}
+
+.next-post {
+    float: right;
+    margin-left: 2em;
 }
 
 figure {

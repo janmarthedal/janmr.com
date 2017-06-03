@@ -3,5 +3,16 @@
         <div class="post-tags">
           {{#each tags}}<a class="label" href="/blog/tags/{{slug}}.html">{{name}}</a> {{/each}}
         </div>
-        {{{ contents }}}
+        <div class="post-body">
+          {{{ contents }}}
+        </div>
+        <div class="page-navigation">
+          <div class="prev-post">
+            {{#if previous }}<a href="{{previous.path}}" title="Previous post: {{previous.title}}">&laquo; {{previous.title}}</a>{{/if}}
+          </div>
+          <div class="next-post">
+            {{#if next }}<a href="{{next.path}}" title="Next post: {{next.title}}">{{next.title}} &raquo; </a>{{/if}}
+          </div>
+        </div>
+        <div id="disqus_thread"></div>
 {{> blog-footer}}
