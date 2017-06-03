@@ -15,9 +15,8 @@ function plugin(opts) {
             str = str.replace(/{%\s*imath\s+(.*?)\s*%}/g, '$$$1$$');
             str = str.replace(/{{site\.baseurl}}/g, '/');
             str = str.replace(/{%\s*bookcover\s+(.*?)\s*%}/g, '/media/books/$1.jpg');
-            str = str.replace(/{%\s*amazon\s+(.*?)\s*%}/g, function(match, tag) {
-                return amazon[tag];
-            });
+            str = str.replace(/{%\s*amazon\s+(.*?)\s*%}/g, (match, tag) => amazon[tag]);
+            str = str.replace(/<table class="table table-striped table-bordered">/g, '<table>');
 
             data.contents = new Buffer(str);
         });

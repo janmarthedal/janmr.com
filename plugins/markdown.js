@@ -34,6 +34,9 @@ function plugin(opts) {
                 str = str.replace(/<img src="\/eqn\/(\d+)".*?\/>/g, function(match, n) {
                     return id_to_html[parseInt(n)];
                 });
+                str = str.replace(/!\[\]\(\/eqn\/(\d+)\)/g, function(match, n) {
+                    return id_to_html[parseInt(n)];
+                });
                 data.contents = new Buffer(str);
                 delete files[file];
                 files[html] = data;

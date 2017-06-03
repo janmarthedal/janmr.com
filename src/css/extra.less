@@ -3,6 +3,8 @@
 @dimmed-color: #777;
 @label-bg: #337ab7;
 @p-margin: 0.7rem;
+@line-height: 1.43;
+
 
 * {
     -webkit-box-sizing: border-box;
@@ -12,7 +14,7 @@
 
 body {
     font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
-    line-height: 1.5;
+    line-height: @line-height;
     font-size: 100%;
     color: @text-color;
     background-color: #fff;
@@ -114,6 +116,28 @@ figure {
 footer {
     & > p {
         color: @dimmed-color;
+    }
+}
+
+table {
+    width: 100%;
+    max-width: 100%;
+    margin-bottom: 1rem;
+    background-color: transparent;
+    border-collapse: collapse;
+    border-spacing: 0;
+    border: 1px solid #ddd;
+
+    & > tbody > tr:nth-of-type(odd) {
+        background-color: #f9f9f9;
+    }
+
+    & > thead > tr > th, & > tbody > tr > th, & > thead > tr > td, & > tbody > tr > td {
+        border: 1px solid #ddd;
+        padding: 0.57rem;
+        line-height: @line-height;
+        vertical-align: top;
+        border-top: 1px solid #ddd;
     }
 }
 
