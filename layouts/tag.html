@@ -1,0 +1,8 @@
+{{> blog-header}}
+  <h2>Posts tagged <em>{{ tag }}</em></h1>
+  <ul>
+    {{#each pagination.files}}
+    <li><a href="{{path}}">{{title}}</a></li>
+    {{/each}}
+  </ul>
+{{> blog-footer}}
