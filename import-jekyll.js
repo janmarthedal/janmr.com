@@ -1,34 +1,5 @@
 const extname = require('path').extname;
-
-module.exports = plugin;
-
-function plugin(opts) {
-
-    return function(files, metalsmith, done) {
-        setImmediate(done);
-        Object.keys(files).forEach(function(file) {
-            if (!is_markdown(file)) return;
-            const data = files[file];
-            let str = data.contents.toString();
-
-            str = str.replace(/{%\s*dmath\s+(.*?)\s*%}/g, '$$$$$1$$$$');
-            str = str.replace(/{%\s*imath\s+(.*?)\s*%}/g, '$$$1$$');
-            str = str.replace(/{{site\.baseurl}}/g, '/');
-            str = str.replace(/{%\s*bookcover\s+(.*?)\s*%}/g, '/media/books/$1.jpg');
-            str = str.replace(/{%\s*amazon\s+(.*?)\s*%}/g, (match, tag) => amazon[tag]);
-            str = str.replace(/<table class="table table-striped table-bordered">/g, '<table>');
-            str = str.replace(/{% highlight (\w+) %}/g, '``` $1');
-            str = str.replace(/{% endhighlight %}/g, '```');
-            str = str.replace(/([^`]`)([^`]+)(`[^`])/g, (match, st1, st, st2) => {
-                console.log(st);
-                return st1 + st.replace(/\\_/g, '_') + st2;
-            });
-
-            data.contents = new Buffer(str);
-        });
-    };
-
-}
+const Metalsmith = require('metalsmith');
 
 const amazon = {
     "abramowitz":
@@ -93,6 +64,49 @@ const amazon = {
         "http://www.amazon.com/gp/product/0321335708?ie=UTF8&tag=sputsoft-20&linkCode=as2&camp=1789&creative=390957&creativeASIN=0321335708",
 };
 
-function is_markdown(file){
-  return /\.md|\.markdown/.test(extname(file));
-}
+function import_jekyll(files, metalsmith, done) {
+    setImmediate(done);
+    Object.keys(files).forEach(function(file) {
+        if (!/\.md|\.markdown/.test(extname(file))) return;
+        const data = files[file];
+        let str = data.contents.toString();
+
+        str = str.replace(/{%\s*dmath\s+(.*?)\s*%}/g, '$$$$$1$$$$');
+        str = str.replace(/{%\s*imath\s+(.*?)\s*%}/g, '$$$1$$');
+        str = str.replace(/{{site\.baseurl}}/g, '/');
+        str = str.replace(/{%\s*bookcover\s+(.*?)\s*%}/g, '/media/books/$1.jpg');
+        str = str.replace(/{%\s*amazon\s+(.*?)\s*%}/g, (match, tag) => amazon[tag]);
+        str = str.replace(/<table class="table table-striped table-bordered">/g, '<table>');
+        str = str.replace(/{% highlight (\w+) %}/g, '``` $1');
+        str = str.replace(/{% endhighlight %}/g, '```');
+        str = str.replace(/([^`]`)([^`]+)(`[^`])/g,
+            (match, st1, st, st2) => st1 + st.replace(/\\_/g, '_') + st2);
+        str = str.replace(/<\/div>\n(\w)/g, '</div>\n\n$1');
+
+        const items = [
+            '---',
+            'layout: post.html',
+            'title: ' + (data.title.indexOf(':') < 0 ? data.title : '"' + data.title + '"')
+        ];
+
+        if (data.tags)
+            items.push('tags: ' + data.tags.join(', '));
+        if (data.categories)
+            items.push('categories: ' + data.categories.join(', '));
+        if (data.excerpt)
+            items.push('excerpt: "' + data.excerpt + '"');
+        items.push('---');
+        items.push(str);
+
+        data.contents = new Buffer(items.join('\n'));
+    });
+};
+
+Metalsmith(__dirname)
+    .source('../janmr-blog/_posts')
+    .destination('./src/posts')
+    .clean(true)
+    .use(import_jekyll)
+    .build(function(err, files) {
+        if (err) { throw err; }
+    });
