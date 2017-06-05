@@ -103,6 +103,29 @@ function import_jekyll(files, metalsmith, done) {
             items.push('categories: ' + data.categories.join(', '));
         if (data.excerpt)
             items.push('excerpt: "' + data.excerpt + '"');
+        if (data.inhead) {
+            items.push('inhead: |');
+            data.inhead.split('\n').forEach(line => {
+                items.push('    ' + line);
+                if (line.indexOf('<style>') >= 0) {
+                    items.push("        @font-face{font-family:KaTeX_Main;src:url(https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/fonts/KaTeX_Main-Regular.woff2) format('woff2'),url(https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/fonts/KaTeX_Main-Regular.woff) format('woff'),url(https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/fonts/KaTeX_Main-Regular.ttf) format('truetype');font-weight:400;font-style:normal}");
+                }
+                if (line.indexOf('.well') >= 0) {
+                    [
+                        'min-height: 20px;',
+                        'padding: 19px;',
+                        'margin-bottom: 20px;',
+                        'background-color: #f5f5f5;',
+                        'border: 1px solid #e3e3e3;',
+                        'border-radius: 4px;',
+                        '-webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,0.05);',
+                        'box-shadow: inset 0 1px 1px rgba(0,0,0,0.05);'
+                    ].forEach(p => {
+                        items.push('            ' + p);
+                    });
+                }
+            });
+        }
         items.push('---');
         items.push(str);
 

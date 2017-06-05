@@ -59,7 +59,8 @@ function plugin(opts) {
 }
 
 function typeset_math(math, block) {
-    return new Promise((resolve, reject) => {
+    return Promise.resolve('foo');
+    /*return new Promise((resolve, reject) => {
         mjAPI.typeset({
             math: math,
             format: block ? 'TeX' : 'inline-TeX',
@@ -70,7 +71,7 @@ function typeset_math(math, block) {
             else
                 resolve(data.html);
         });
-    });
+    });*/
 }
 
 function TeX_brace_balance(tex) {
