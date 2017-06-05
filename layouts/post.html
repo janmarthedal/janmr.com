@@ -1,5 +1,5 @@
 {{> blog-header}}
-        <h2>{{ title }}<br><small><time datetime="{{ isoDate date }}">{{ formatDate date }}</time></small></h2>
+        <h2>{{{ title }}}<br><small><time datetime="{{ isoDate date }}">{{ formatDate date }}</time></small></h2>
         <div class="post-tags">
           {{#each tags}}<a class="label" href="/blog/tags/{{slug}}">{{name}}</a> {{/each}}
         </div>
@@ -8,10 +8,10 @@
         </div>
         <div class="page-navigation">
           <div class="prev-post">
-            {{#if next }}<a href="/{{next.path}}" title="Previous post: {{next.title}}">&laquo; {{next.title}}</a>{{/if}}
+            {{#if next }}<a href="/{{next.path}}" title="Previous post: {{next.title}}">&laquo; {{{next.title}}}</a>{{/if}}
           </div>
           <div class="next-post">
-            {{#if previous }}<a href="/{{previous.path}}" title="Next post: {{previous.title}}">{{previous.title}} &raquo;</a>{{/if}}
+            {{#if previous }}<a href="/{{previous.path}}" title="Next post: {{previous.title}}">{{{previous.title}}} &raquo;</a>{{/if}}
           </div>
         </div>
         <div id="disqus_thread"></div>
