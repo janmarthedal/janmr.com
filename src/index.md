@@ -2,7 +2,7 @@
 layout: base.html
 title: janmr.com
 ---
-<h1>{{ title }}</h1>
+<h1>janmr.com</h1>
 
 #### Profiles
 

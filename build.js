@@ -2,6 +2,7 @@ const handlebars  = require('handlebars');
 const Metalsmith  = require('metalsmith');
 const collections = require('metalsmith-collections');
 const concat      = require('metalsmith-concat');
+const feed        = require('metalsmith-feed');
 const layouts     = require('metalsmith-layouts');
 const less        = require('metalsmith-less');
 const permalinks  = require('metalsmith-permalinks');
@@ -23,8 +24,11 @@ handlebars.registerHelper('isoDate', function(date) {
 
 Metalsmith(__dirname)
     .metadata({
-        title: "janmr.com",
-        url: "http://janmr.com/"
+        site: {
+            title: 'janmr.com',
+            description: 'User-contributed collection of mathematical definitions, theorems and proofs',
+            url: 'http://janmr.com/'
+        }
     })
     .source('./src')
     .destination('./build')
@@ -59,6 +63,11 @@ Metalsmith(__dirname)
             post.date = files[post.path].date;
         });
     }) 
+    .use(feed({
+        collection: 'posts',
+        limit: false,
+        destination: 'blog/rss.xml'
+    }))
     .use(layouts({
         engine: 'handlebars',
         partials: 'partials'
