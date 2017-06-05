@@ -55,7 +55,8 @@ number_t power(number_t y, number_t x, unsigned n) {
     }
   }
   return y;
-}```
+}
+```
 
 A slightly improved version (and maybe a bit less elegant) is the following:
 
@@ -68,7 +69,8 @@ number_t power(number_t y, number_t x, unsigned n) {
     n >>= 1;
   }
   return y*x;
-}```
+}
+```
 
 This algorithm performs $\lfloor \log_2 n \rfloor$ multiplications of the type $x \leftarrow x^2$ and $\nu(n)$ multiplications of the type $y \leftarrow y \cdot x$, where $\nu(n)$ is the number of 1s in the binary representation of $n$, so all in all it requires
 
@@ -86,7 +88,8 @@ number_t power(number_t x, unsigned n) {
     n >>= 1;
   }
   return power(x, x, n-1);
-}```
+}
+```
 
 This way, when executing `power(x, x, n-1)`, `n` will always be uneven. This saves one multiplication compared to using just `power(1, x, n)`, so it requires
 
