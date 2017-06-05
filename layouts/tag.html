@@ -1,6 +1,6 @@
 {{> blog-header}}
   <h2>Posts tagged <em>{{ tag }}</em></h1>
   <div class="post-list">{{#each pagination.files}}
-    <h5><a href="/{{path}}">{{title}}</a> <small>{{ formatDate this.date }}</small></h5>{{/each}}
+    <h5><a href="/{{path}}">{{{title}}}</a> <small>{{ formatDate this.date }}</small></h5>{{/each}}
   </div>
 {{> blog-footer}}

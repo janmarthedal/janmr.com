@@ -1,5 +1,5 @@
 {{> blog-header}}
   <div class="post-list">{{#each collections.posts}}
-    <h5><a href="/{{path}}">{{title}}</a> <small>{{ formatDate this.date }}</small></h5>{{/each}}
+    <h5><a href="/{{path}}">{{{title}}}</a> <small>{{ formatDate this.date }}</small></h5>{{/each}}
   </div>
 {{> blog-footer}}
