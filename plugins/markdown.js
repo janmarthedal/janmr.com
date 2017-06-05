@@ -93,6 +93,10 @@ function TeX_brace_balance(tex) {
 }
 
 function get_math(str, id_to_eqn) {
+    str = str.replace(/^> \$\$(.*)\$\$$/gm, (match, eqn) => {
+        id_to_eqn.push({eqn: eqn, block: true});
+        return '> ![](/eqn/' + (id_to_eqn.length - 1) + ')';
+    });
     return str.split(/\s*\$\$\s*/).map(function (para, j) {
         if (j % 2) {
             id_to_eqn.push({eqn: para, block: true});
