@@ -125,6 +125,6 @@ We now have $z \;\text{mod}\; b = (z_1 z_0)_h$ and $\lfloor z/b \rfloor = (z_3 z
 
 ### Concluding Remarks
 
-We have now covered addition, subtraction, and multiplication of non-negative integers of arbitrary magnitude. Left is how to do division, which will be the subject of the [next article](/2009/08/implementing-multiple-precision-arithmetic-part-2.html).
+We have now covered addition, subtraction, and multiplication of non-negative integers of arbitrary magnitude. Left is how to do division, which will be the subject of the [next article](/blog/2009/08/implementing-multiple-precision-arithmetic-part-2).
 
 *Update 2010-07-03: The code has undergone some changes since this article was written. See the [project page](https://github.com/janmarthedal/kanooth-numbers) for more information.*

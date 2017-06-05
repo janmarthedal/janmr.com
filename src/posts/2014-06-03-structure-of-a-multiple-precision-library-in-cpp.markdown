@@ -9,7 +9,7 @@ This post will present an overview of the implementation of [Kanooth Numbers](ht
 
 ### Low-level Functions
 
-The low-level functions are the building blocks for all number operations, heavily inspired by the [GNU MP low-level functions](https://gmplib.org/manual/Low_002dlevel-Functions.html). Each low-level function does one simple operation and operates on non-negative numbers. The numbers are represented by arrays where the radix corresponds to a memory word (typically the radix will be 2<sup>32</sup> or 2<sup>64</sup>), see [post on number representation](/2011/10/multiple-precision-number-representation.html) (the most significant digit is not always non-zero, though). The functions make no memory allocations and it is the responsibility of the caller to make sure that, e.g., the result array is large enough.
+The low-level functions are the building blocks for all number operations, heavily inspired by the [GNU MP low-level functions](https://gmplib.org/manual/Low_002dlevel-Functions.html). Each low-level function does one simple operation and operates on non-negative numbers. The numbers are represented by arrays where the radix corresponds to a memory word (typically the radix will be 2<sup>32</sup> or 2<sup>64</sup>), see [post on number representation](/blog/2011/10/multiple-precision-number-representation) (the most significant digit is not always non-zero, though). The functions make no memory allocations and it is the responsibility of the caller to make sure that, e.g., the result array is large enough.
 
 Some of the most important low-level functions are:
 
@@ -27,11 +27,11 @@ Some of the most important low-level functions are:
 
 Many of these functions have several preconditions. A theoretical foundation behind most of these functions can be found among earlier posts:
 
- * [Multiple-Precision Addition](/2011/10/multiple-precision-addition.html)
- * [Multiple-Precision Subtraction](/2011/10/multiple-precision-subtraction.html)
- * [Basic Multiple-Precision Multiplication](/2011/11/basic-multiple-precision-multiplication.html)
- * [Basic Multiple-Precision Short Division](/2012/11/basic-multiple-precision-short-division.html)
- * [Basic Multiple-Precision Long Division](/2014/04/basic-multiple-precision-long-division.html)
+ * [Multiple-Precision Addition](/blog/2011/10/multiple-precision-addition)
+ * [Multiple-Precision Subtraction](/blog/2011/10/multiple-precision-subtraction)
+ * [Basic Multiple-Precision Multiplication](/blog/2011/11/basic-multiple-precision-multiplication)
+ * [Basic Multiple-Precision Short Division](/blog/2012/11/basic-multiple-precision-short-division)
+ * [Basic Multiple-Precision Long Division](/blog/2014/04/basic-multiple-precision-long-division)
 
 An [example implementation](https://github.com/janmarthedal/kanooth-numbers/blob/28268a02e943629cb64cd4b68c4911f11674c6fb/kanooth/numbers/lowlevel/generic_has_double.hpp) of these low-level functions can be seen as part the library code.
 

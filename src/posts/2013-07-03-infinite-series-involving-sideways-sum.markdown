@@ -28,6 +28,6 @@ for some $l = 0, 1, 2, \ldots$. This provides us with the intervals of $n$ that 
 
 $$\begin{aligned} \sum_{n=1}^\infty\frac{\mathrm{pop}(n)}{n(n+1)} &= \sum_{k=0}^\infty \sum_{n=1}^\infty \frac{\theta_k(n)}{n(n+1)} \\ &= \sum_{k=0}^\infty \sum_{l=0}^\infty \sum_{n=(2 l + 1) 2^k}^{(2 l + 2) 2^k - 1} \frac{1}{n(n+1)} \\ &= \sum_{k=0}^\infty \sum_{l=0}^\infty \sum_{n=(2 l + 1) 2^k}^{(2 l + 2) 2^k - 1} \left( \frac{1}{n} - \frac{1}{n+1} \right) \\ &= \sum_{k=0}^\infty \sum_{l=0}^\infty \left( \frac{1}{(2 l + 1) 2^k} - \frac{1}{(2 l + 2) 2^k} \right) \\ &= \left( \sum_{k=0}^\infty 2^{-k} \right) \left( \sum_{m=1}^\infty (-1)^{m+1} \frac{1}{m} \right) \\ &= 2 \ln 2 \end{aligned}$$
 
-Here, both a [telescoping sum](http://en.wikipedia.org/wiki/Telescoping_series), a geometric progression sum (see [Nice Proof of a Geometric Progression Sum](/2008/10/nice-geometric-progression-proof.html) with $r=1/2$) and the [power series](https://en.wikipedia.org/wiki/Taylor_series#List_of_Maclaurin_series_of_some_common_functions) for the natural logarithm of 2 occurs.
+Here, both a [telescoping sum](http://en.wikipedia.org/wiki/Telescoping_series), a geometric progression sum (see [Nice Proof of a Geometric Progression Sum](/blog/2008/10/nice-geometric-progression-proof) with $r=1/2$) and the [power series](https://en.wikipedia.org/wiki/Taylor_series#List_of_Maclaurin_series_of_some_common_functions) for the natural logarithm of 2 occurs.
 
 Very nice.

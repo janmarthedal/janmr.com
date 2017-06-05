@@ -208,7 +208,7 @@ void fraction_to_continued_fraction(NUM u, NUM v, Out out)
 }
 ```
 
-Notice the resemblence to [computing the greatest common divisor](/2009/10/computing-the-greatest-common-divisor.html) using Euclid's algorithm. In fact, the values of `u` and `v` are equivalent to those during the `gcd_euclid` function of that article. Furthermore, Euclid's algorithm always terminates, so the construction process always terminates when the input number is rational. In fact, a continued fraction is finite if and only if it represents a rational number.
+Notice the resemblence to [computing the greatest common divisor](/blog/2009/10/computing-the-greatest-common-divisor) using Euclid's algorithm. In fact, the values of `u` and `v` are equivalent to those during the `gcd_euclid` function of that article. Furthermore, Euclid's algorithm always terminates, so the construction process always terminates when the input number is rational. In fact, a continued fraction is finite if and only if it represents a rational number.
 
 ### Infinite Continued Fractions
 

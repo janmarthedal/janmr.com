@@ -32,7 +32,7 @@ Why is this important? Because now we have
 2. $T_{p,q}^{2k}(a,b) = (T_{p,q}^2)^k(a,b) = T_{p^2+q^2,2 p q+q^2}^k(a,b)$
 3. $T_{p,q}^{2k+1}(a,b) = T_{p,q}^{2k}(T_{p,q}(a,b)) = T_{p,q}^{2k}(a q + a p + b q, b p + a q)$
 
-Notice how this type of reduction rules are very similar to those found in the [Evaluation of Powers post](/2011/01/evaluation-of-powers.html). Let us look at an example and try to evaluate $F_{20} = r(T^{20}(1,0)) = r(T_{0,1}^{20}(1,0))$ using these rules:
+Notice how this type of reduction rules are very similar to those found in the [Evaluation of Powers post](/blog/2011/01/evaluation-of-powers). Let us look at an example and try to evaluate $F_{20} = r(T^{20}(1,0)) = r(T_{0,1}^{20}(1,0))$ using these rules:
 
 $$\begin{split} T_{0,1}^{20}(1,0) &= (T_{0,1}^2)^{10}(1,0) = T_{1,1}^{10}(1,0) = (T_{1,1}^2)^5(1,0) = T_{2,3}^5(1,0) = T_{2,3}^4(T_{2,3}(1,0)) \\ &= T_{2,3}^4(5,3) = (T_{2,3}^2)^2(5,3) = T_{13,21}^2(5,3) = T_{610,987}(5,3) = (10946,6765) \end{split}$$
 

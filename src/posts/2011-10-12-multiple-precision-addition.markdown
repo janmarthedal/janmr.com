@@ -7,7 +7,7 @@ excerpt: "This post will cover a basic addition algorithm for multiple-precision
 ---
 <div class="pull-right"><a href="http://www.amazon.com/gp/product/0201896842?ie=UTF8&tag=sputsoft-20&linkCode=as2&camp=1789&creative=390957&creativeASIN=0201896842"><img src="/media/books/taocp2.jpg" alt=""></a></div>
 
-This post will cover a basic addition algorithm for multiple-precision non-negative integers. The algorithm is based upon that presented in Section 4.3.1, *The Classical Algorithms*, of [The Art of Computer Programming](http://www-cs-faculty.stanford.edu/~uno/taocp.html), Volume 2, by [Donald E. Knuth](http://www-cs-faculty.stanford.edu/~uno/). The notation and bounds used in this post were presented in a [previous post](/2011/10/multiple-precision-number-representation.html).
+This post will cover a basic addition algorithm for multiple-precision non-negative integers. The algorithm is based upon that presented in Section 4.3.1, *The Classical Algorithms*, of [The Art of Computer Programming](http://www-cs-faculty.stanford.edu/~uno/taocp.html), Volume 2, by [Donald E. Knuth](http://www-cs-faculty.stanford.edu/~uno/). The notation and bounds used in this post were presented in a [previous post](/blog/2011/10/multiple-precision-number-representation).
 
 We consider adding two $n$-digit numbers with $n \geq 1$, $u=(u_{n-1} \ldots u_1 u_0)_b$ and $v=(v_{n-1} \ldots v_1 v_0)_b$. Since $b^{n-1} \leq u, v \leq b^n - 1$ we have $2 b^{n-1} \leq u+v \leq 2 b^n - 2$ which, when using the fact that $b \geq 2$, leads to $b^{n-1} \leq u+v \leq b^{n+1} - 1$ (note how a tighter bound of the form $b^p \leq u+v \leq b^q - 1$ is not possible).
 
