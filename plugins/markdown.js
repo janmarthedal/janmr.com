@@ -13,6 +13,7 @@ function plugin(opts) {
     const writer = new commonmark.HtmlRenderer();
 
     return function(files, metalsmith, done) {
+        const startTime = (new Date()).getTime();
         Promise.all(Object.keys(files).map(function(file) {
             if (!is_markdown(file))
                 return Promise.resolve();
@@ -49,7 +50,10 @@ function plugin(opts) {
                 delete files[file];
                 files[html] = data;
             });
-        })).then(() => done());
+        })).then(() => {
+            console.log('markdown took ' + ((new Date()).getTime() - startTime) + ' ms');
+            done();
+        });
     };
 
 }
