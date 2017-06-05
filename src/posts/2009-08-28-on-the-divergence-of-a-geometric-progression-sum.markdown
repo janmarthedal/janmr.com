@@ -5,11 +5,11 @@ tags: proof, infinite-series
 categories: mathematics
 excerpt: "Let us revisit the geometric progression sum considered in an earlier article, s_r = sum_{k=0}^infty r^k = 1 + r + r^2 + r^3 + ..., where r here is a complex number. For what values of r does this infinite sum make sense? [...]"
 ---
-Let us revisit the geometric progression sum considered in an <a href="/2008/10/nice-geometric-progression-proof.html">earlier article</a>,
+Let us revisit the geometric progression sum considered in an [earlier article](/2008/10/nice-geometric-progression-proof.html),
 
 $$s_r = \sum_{k=0}^\infty r^k = 1 + r + r^2 + r^3 + \ldots,$$
 
-where $r$ here is a <a href="http://en.wikipedia.org/wiki/Complex_number">complex number</a>. For what values of $r$ does this infinite sum make sense? Can we find a <a href="http://en.wikipedia.org/wiki/Closed-form_expression">closed-form expression</a> for $s_r$ in such cases? To investigate this, we fix $r$ to some value and consider the partial sums:
+where $r$ here is a [complex number](http://en.wikipedia.org/wiki/Complex_number). For what values of $r$ does this infinite sum make sense? Can we find a [closed-form expression](http://en.wikipedia.org/wiki/Closed-form_expression) for $s_r$ in such cases? To investigate this, we fix $r$ to some value and consider the partial sums:
 
 $$s_r(n) = \sum_{k=0}^n r^k = 1 + r + r^2 + \ldots + r^{n-1},$$
 
@@ -49,4 +49,4 @@ but circles around the value $1/(1-r)$ when $|r|=1$, $r \neq 1$. In fact, $1/(1-
 
 <div style="float:right"><a href="http://www.amazon.com/gp/product/0821826492?ie=UTF8&tag=sputsoft-20&linkCode=as2&camp=1789&creative=390957&creativeASIN=0821826492"><img src="/media/books/hardy-div.jpg" alt=""></a></div>
 
-This reminded me that <a href="http://en.wikipedia.org/wiki/G._H._Hardy">G. H. Hardy</a> has written a book called <em>Divergent Series</em>, where he manipulates infinite series with an &#8220;entirely uncritical spirit&#8221;. Therein, he also considers the series $s_r$ and, e.g., $s_{-1} = 1/2$ can somehow make sense. I have only flicked through the book (<a href="http://books.google.com/books?id=jPccoUKsLdQC&#038;printsec=frontcover&#038;source=gbs_v2_summary_r&#038;cad=0">excerpt</a>), but I think I should take a closer look&#8230;
+This reminded me that [G. H. Hardy](http://en.wikipedia.org/wiki/G._H._Hardy) has written a book called <em>Divergent Series</em>, where he manipulates infinite series with an &#8220;entirely uncritical spirit&#8221;. Therein, he also considers the series $s_r$ and, e.g., $s_{-1} = 1/2$ can somehow make sense. I have only flicked through the book ([excerpt](http://books.google.com/books?id=jPccoUKsLdQC&#038;printsec=frontcover&#038;source=gbs_v2_summary_r&#038;cad=0)), but I think I should take a closer look&#8230;

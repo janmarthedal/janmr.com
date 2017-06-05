@@ -79,7 +79,7 @@ This approximate quotient is never too small, as the following theorem states.
 <button class="proof">*Proof*</button>
 
 <div class="proof">
-If $\hat{q}=b-1$ then since $q \leq b-1$ by assumption, the statement is true. Assume then that $\hat{q} = \lfloor (u_n b + u_{n-1})/v_{n-1} \rfloor$. From the properties of the <a href="http://en.wikipedia.org/wiki/Floor_function">floor function</a> we have $u_n b + u_{n-1} \leq \hat{q} v_{n-1} + v_{n-1} - 1$ and therefore $\hat{q} v_{n-1} \geq u_n b + u_{n-1} - v_{n-1} + 1$. We then get
+If $\hat{q}=b-1$ then since $q \leq b-1$ by assumption, the statement is true. Assume then that $\hat{q} = \lfloor (u_n b + u_{n-1})/v_{n-1} \rfloor$. From the properties of the [floor function](http://en.wikipedia.org/wiki/Floor_function) we have $u_n b + u_{n-1} \leq \hat{q} v_{n-1} + v_{n-1} - 1$ and therefore $\hat{q} v_{n-1} \geq u_n b + u_{n-1} - v_{n-1} + 1$. We then get
 
 $$\begin{aligned} u - \hat{q} v &\leq u - \hat{q} v_{n-1} b^{n-1} \\ &\leq u_n b^n + \cdots + u_0 - (u_n b + u_{n-1} - v_{n-1} + 1) b^{n-1} \\ &= u_{n-2} b^{n-2} + \cdots + u_0 - b^{n-1} + v_{n-1} b^{n-1} < v_{n-1} b^{n-1} \leq v. \end{aligned}$$
 

@@ -11,7 +11,7 @@ $$s_n = \sum_{k=1}^n k^2 = \textstyle\frac{1}{6} n (n+1) (2n+1) \quad .$$
 
 The numbers $s_0, s_1, s_2, \ldots$ are called the [square pyramidal numbers](http://oeis.org/A000330).
 
-Many different proofs exist. Seven different proofs can be found in <a href="http://www.amazon.com/gp/product/0201558025?ie=UTF8&tag=sputsoft-20&linkCode=as2&camp=1789&creative=390957&creativeASIN=0201558025">Concrete Mathematics</a> and even a [visual proof](http://www.maa.org/programs/faculty-and-departments/classroom-capsules-and-notes/proof-without-words-sum-of-squares-0) has been published (via [@MathUpdate](https://twitter.com/MathUpdate)).
+Many different proofs exist. Seven different proofs can be found in [Concrete Mathematics](http://www.amazon.com/gp/product/0201558025?ie=UTF8&tag=sputsoft-20&linkCode=as2&camp=1789&creative=390957&creativeASIN=0201558025) and even a [visual proof](http://www.maa.org/programs/faculty-and-departments/classroom-capsules-and-notes/proof-without-words-sum-of-squares-0) has been published (via [@MathUpdate](https://twitter.com/MathUpdate)).
 
 One of the simplest proofs uses induction on *n*. This approach assumes that you know (or guess) the correct formula beforehand, though.
 

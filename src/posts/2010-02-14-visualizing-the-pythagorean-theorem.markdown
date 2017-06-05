@@ -13,7 +13,7 @@ In this article I show my favorite three visualizations of the theorem. Note tha
 
 <div class="pull-right"><a href="http://www.amazon.com/gp/product/0883857006?ie=UTF8&tag=sputsoft-20&linkCode=as2&camp=1789&creative=390957&creativeASIN=0883857006"><img src="/media/books/pww1.jpg" alt=""></a></div>
 
-This first one is a classic, at least for me, see Figure&nbsp;1. It is very simple to understand and was the first visualization of the Pythagorean theorem I knew of. According to Nelsen's <a href="http://www.amazon.com/gp/product/0883857006?ie=UTF8&tag=sputsoft-20&linkCode=as2&camp=1789&creative=390957&creativeASIN=0883857006">Proofs Without Words</a>, it appeared in the chinese [Chou pei suan ching](http://en.wikipedia.org/wiki/Chou_Pei_Suan_Ching) around 200 B.C. A similar figure also appears in [Euclid](http://en.wikipedia.org/wiki/Euclid)&#8216;s [Elements](http://en.wikipedia.org/wiki/Euclid's_Elements), [Book II](http://aleph0.clarku.edu/~djoyce/java/elements/bookII/bookII.html), [Proposition 4](http://aleph0.clarku.edu/~djoyce/java/elements/bookII/propII4.html).
+This first one is a classic, at least for me, see Figure&nbsp;1. It is very simple to understand and was the first visualization of the Pythagorean theorem I knew of. According to Nelsen's [Proofs Without Words](http://www.amazon.com/gp/product/0883857006?ie=UTF8&tag=sputsoft-20&linkCode=as2&camp=1789&creative=390957&creativeASIN=0883857006), it appeared in the chinese [Chou pei suan ching](http://en.wikipedia.org/wiki/Chou_Pei_Suan_Ching) around 200 B.C. A similar figure also appears in [Euclid](http://en.wikipedia.org/wiki/Euclid)&#8216;s [Elements](http://en.wikipedia.org/wiki/Euclid's_Elements), [Book II](http://aleph0.clarku.edu/~djoyce/java/elements/bookII/bookII.html), [Proposition 4](http://aleph0.clarku.edu/~djoyce/java/elements/bookII/propII4.html).
 
 <figure>
   <img src="/media/pythagoras1.svg" class="img-responsive" alt="Pythagoras 1">
@@ -42,7 +42,7 @@ The third visualization is due to the 12. century Indian mathematician and astro
   <figcaption><strong>Figure 3.</strong></figcaption>
 </figure>
 
-Stephen Hawking, in <a href="http://www.amazon.com/gp/product/0762430044?ie=UTF8&tag=sputsoft-20&linkCode=as2&camp=1789&creative=390957&creativeASIN=0762430044">God Created the Integers</a>, claims that Bhāskara did not show the figure to the right in Figure&nbsp;3, but simply said &#8220;see!&#8221;. Hawking then observes: If the sides of the triangles are $a$, $b$, and $c$, with $c$ the length of the hypotenuse and $a > b$, we have
+Stephen Hawking, in [God Created the Integers](http://www.amazon.com/gp/product/0762430044?ie=UTF8&tag=sputsoft-20&linkCode=as2&camp=1789&creative=390957&creativeASIN=0762430044), claims that Bhāskara did not show the figure to the right in Figure&nbsp;3, but simply said &#8220;see!&#8221;. Hawking then observes: If the sides of the triangles are $a$, $b$, and $c$, with $c$ the length of the hypotenuse and $a > b$, we have
 
 $$c^2 = 4 \frac{a b}{2} + (a-b)^2 = a^2 + b^2.$$
 
