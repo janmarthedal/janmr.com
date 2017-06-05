@@ -81,7 +81,7 @@ function import_jekyll(files, metalsmith, done) {
         str = str.replace(/{% endhighlight %}/g, '```');
         str = str.replace(/([^`]`)([^`]+)(`[^`])/g,
             (match, st1, st, st2) => st1 + st.replace(/\\_/g, '_') + st2);
-        str = str.replace(/<\/div>\n(\w)/g, '</div>\n\n$1');
+        str = str.replace(/<\/div>\n([\w*])/g, '</div>\n\n$1');
         str = str.replace(/<button[^>]*>\*Proof\*<\/button>/g, '<button class="proof">*Proof*</button>')
         str = str.replace(/<div class="proof"[^>]*>([^]*?)<\/div>/g, '<div class="proof">$1</div>');
         str = str.replace(/<a href="([^"]+)">([a-zA-Z0-9_. -]+?)<\/a>/g, '[$2]($1)');
