@@ -34,6 +34,10 @@ function plugin(opts) {
 
             str = str.replace(/<pre><code class="language-(\w+)">([^]*?)<\/code><\/pre>/g,
                 (match, language, source) => {
+                    if (language === 'html' || language === 'xml') {
+                        source = source.replace(/&lt;/g, '<')
+                            .replace(/&gt;/g, '>').replace(/&quot;/g, '"');
+                    }
                     const res = hljs.highlight(language, source);
                     return `<pre><code class="language-${language} hljs">` + 
                         res.value.replace(/&amp;/g, '&') + '</code></pre>';
@@ -59,8 +63,8 @@ function plugin(opts) {
 }
 
 function typeset_math(math, block) {
-    return Promise.resolve('foo');
-    /*return new Promise((resolve, reject) => {
+    //return Promise.resolve('foo');
+    return new Promise((resolve, reject) => {
         mjAPI.typeset({
             math: math,
             format: block ? 'TeX' : 'inline-TeX',
@@ -71,7 +75,7 @@ function typeset_math(math, block) {
             else
                 resolve(data.html);
         });
-    });*/
+    });
 }
 
 function TeX_brace_balance(tex) {

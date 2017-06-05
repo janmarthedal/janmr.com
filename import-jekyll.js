@@ -77,8 +77,7 @@ function import_jekyll(files, metalsmith, done) {
         str = str.replace(/{%\s*bookcover\s+(.*?)\s*%}/g, '/media/books/$1.jpg');
         str = str.replace(/{%\s*amazon\s+(.*?)\s*%}/g, (match, tag) => amazon[tag]);
         str = str.replace(/<table class="table table-striped table-bordered">/g, '<table>');
-        str = str.replace(/{% highlight (\w+) %}\n*/g, '``` $1\n');
-        str = str.replace(/\n*{% endhighlight %}/g, '\n```');
+        str = str.replace(/{% highlight (\w+) %}\n*([^]*?)\n*{% endhighlight %}/g, '``` $1\n$2\n```');
         str = str.replace(/([^`]`)([^`]+)(`[^`])/g,
             (match, st1, st, st2) => st1 + st.replace(/\\_/g, '_') + st2);
         str = str.replace(/<\/div>\n([\w*])/g, '</div>\n\n$1');
