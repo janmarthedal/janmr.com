@@ -86,6 +86,10 @@ function import_jekyll(files, metalsmith, done) {
         str = str.replace(/<div class="proof"[^>]*>([^]*?)<\/div>/g, '<div class="proof">$1</div>');
         str = str.replace(/<a href="([^"]+)">([a-zA-Z0-9_. -]+?)<\/a>/g, '[$2]($1)');
         str = str.replace(/\((\/\d\d\d\d\/\d\d\/.*?)\.html\)/g, '(/blog$1)');
+        str = str.replace(/<div class="h_iframe">[^]+?\/media\/white\/2x1\.gif[^]+?iframe src="([^"]+)"[^]+?<\/div>/g,
+            '<div class="aspect-ratio" style="padding-bottom: 55%"><iframe src="$1"></iframe></div>');
+        str = str.replace(/<div class="h_iframe">[^]+?\/media\/white\/4x3\.gif[^]+?iframe src="([^"]+)"[^]+?<\/div>/g,
+            '<div class="aspect-ratio" style="padding-bottom: 75%"><iframe src="$1"></iframe></div>');
 
         const items = [
             '---',

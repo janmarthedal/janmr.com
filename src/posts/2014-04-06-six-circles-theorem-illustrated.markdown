@@ -5,10 +5,7 @@ tags: visualization, theorem
 excerpt: "Given a triangle, start with a circle tangent to two sides. Then draw a new circle tangent to this first circle and a different pair of sides. Continue this process in the same direction. The sixth circle will be tangent to both the fifth and the first circle, thus producing a cyclic chain of touching circles."
 ---
 <figure>
-  <div class="h_iframe">
-    <img class="ratio" src="/media/white/4x3.gif" alt="">
-    <iframe src="/media/intgfx/six-circles-theorem.html"></iframe>
-  </div>
+  <div class="aspect-ratio" style="padding-bottom: 75%"><iframe src="/media/intgfx/six-circles-theorem.html"></iframe></div>
 </figure>
 
 Given a triangle, start with a circle tangent to two sides. Then draw a new circle tangent to this first circle and a different pair of sides. Continue this process in the same direction. The sixth circle will be tangent to both the fifth and the first circle, thus producing a cyclic chain of touching circles.
