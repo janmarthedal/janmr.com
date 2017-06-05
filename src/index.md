@@ -18,6 +18,6 @@ title: janmr.com
 
 #### Projects
 
-[Blog](https://janmr.com/blog/)
+[Blog](/blog/)
 
 [Mathitems](https://mathitems.com)
