@@ -75,7 +75,9 @@ We now move on to different facts about impartial games. Some of them are intere
 
 <button class="proof">*Proof*</button>
 
-> We use structural induction (we consider a topologically sorted graph of a game from the terminal game and backwards). For $G = \{\}$ the statement is trivially true. Now assume that $G = \{ G_1, G_2, \ldots, G_n \}$ where $G_k + G_k \in {\cal S}_P$ for $k = 1, 2, \ldots, n$. If, in the position $G + G$, the player to move chooses the position $G_j + G$, the other player can make the same move in the &#8220;other part&#8221;, leading to $G_j + G_j$, which was assumed to lie in ${\cal S}_P$. This shows that $G_j + G \in {\cal S}_N$ and since $j$ was chosen arbitrarily $G + G \in {\cal S}_P$.
+<div class="proof">
+We use structural induction (we consider a topologically sorted graph of a game from the terminal game and backwards). For $G = \{\}$ the statement is trivially true. Now assume that $G = \{ G_1, G_2, \ldots, G_n \}$ where $G_k + G_k \in {\cal S}_P$ for $k = 1, 2, \ldots, n$. If, in the position $G + G$, the player to move chooses the position $G_j + G$, the other player can make the same move in the &#8220;other part&#8221;, leading to $G_j + G_j$, which was assumed to lie in ${\cal S}_P$. This shows that $G_j + G \in {\cal S}_N$ and since $j$ was chosen arbitrarily $G + G \in {\cal S}_P$.
+</div>
 
 Next is the very important concept of *equivalence* between games.
 
@@ -87,7 +89,9 @@ It is clear that $\sim$ is an equivalence relation (it is reflexive, $G \sim G$,
 
 <button class="proof">*Proof*</button>
 
-> Again, we use structural induction. If $G = \{\}$ the result follows easily. Now assume that $G'' + H \in {\cal S}_P$ for all $G'' \in {\cal S}_P$ where $G'' \in G'$ and $G' \in G$. If a move is made from $G + H$ to $G' + H$, where $G' \in G$, we can go to a position $G'' + H$ where $G'' \in G'$ and $G'' \in {\cal S}_P$. This last position lies in ${\cal S}_P$ by assumption and then $G + H \in {\cal S}_P$ does too. By symmetry the same arguments can be used if a move is made in the $H$ part.
+<div class="proof">
+Again, we use structural induction. If $G = \{\}$ the result follows easily. Now assume that $G'' + H \in {\cal S}_P$ for all $G'' \in {\cal S}_P$ where $G'' \in G'$ and $G' \in G$. If a move is made from $G + H$ to $G' + H$, where $G' \in G$, we can go to a position $G'' + H$ where $G'' \in G'$ and $G'' \in {\cal S}_P$. This last position lies in ${\cal S}_P$ by assumption and then $G + H \in {\cal S}_P$ does too. By symmetry the same arguments can be used if a move is made in the $H$ part.
+</div>
 
 The following important theorem shows that any game in ${\cal S}_P$ is equivalent to the terminal game.
 
@@ -95,9 +99,11 @@ The following important theorem shows that any game in ${\cal S}_P$ is equivalen
 
 <button class="proof">*Proof*</button>
 
-> We need to show $G + X \in {\cal S}_P \Leftrightarrow X \in {\cal S}_P$ for all games $X$. First we show $X \in {\cal S}_P \Rightarrow G + X \in {\cal S}_P$ so let $X \in {\cal S}_P$ and consider the position $G + X$. But that $G + X \in {\cal S}_P$ follows immediately from Theorem 3.
-> 
-> Next we show $G + X \in {\cal S}_P \Rightarrow X \in {\cal S}_P$ which is equivalent to $X \in {\cal S}_N \Rightarrow G + X \in {\cal S}_N$. So let $X \in {\cal S}_N$ and consider the position $G + X$. We can now make a move to $G + X'$ where $X' \in X$ and $X' \in {\cal S}_P$. From Theorem 3 follows that $G + X' \in {\cal S}_P$ and thus $G + X \in {\cal S}_N$.
+<div class="proof">
+We need to show $G + X \in {\cal S}_P \Leftrightarrow X \in {\cal S}_P$ for all games $X$. First we show $X \in {\cal S}_P \Rightarrow G + X \in {\cal S}_P$ so let $X \in {\cal S}_P$ and consider the position $G + X$. But that $G + X \in {\cal S}_P$ follows immediately from Theorem 3.
+
+Next we show $G + X \in {\cal S}_P \Rightarrow X \in {\cal S}_P$ which is equivalent to $X \in {\cal S}_N \Rightarrow G + X \in {\cal S}_N$. So let $X \in {\cal S}_N$ and consider the position $G + X$. We can now make a move to $G + X'$ where $X' \in X$ and $X' \in {\cal S}_P$. From Theorem 3 follows that $G + X' \in {\cal S}_P$ and thus $G + X \in {\cal S}_N$.
+</div>
 
 The next theorem shows that we can add and &#8220;subtract&#8221; on both sides of a $\sim$.
 
@@ -105,7 +111,9 @@ The next theorem shows that we can add and &#8220;subtract&#8221; on both sides 
 
 <button class="proof">*Proof*</button>
 
-> Let $G \sim H$, meaning $G + X \in {\cal S}_P \Leftrightarrow H + X \in {\cal S}_P$ for all games $X$. Now assume $F + G + Y \in {\cal S}_P$ for some $Y \in \cal S$ and by setting $X = F + Y$ we have $H + X = H + F + Y \in \cal S$, showing that $F + G + Y \in {\cal S}_P \Rightarrow F + H + Y \in {\cal S}_P$ for all $Y \in \cal S$. Analogously we can show the same statement with $G$ and $H$ interchanged. Hence, $F + G \sim F + H$. Now assume $F + G \sim F + H$. We then have $G = G + \{\} \sim G + (F + F) = (G + F) + F \sim (H + F) + F = H + (F + F) \sim H + \{\} = H$.
+<div class="proof">
+Let $G \sim H$, meaning $G + X \in {\cal S}_P \Leftrightarrow H + X \in {\cal S}_P$ for all games $X$. Now assume $F + G + Y \in {\cal S}_P$ for some $Y \in \cal S$ and by setting $X = F + Y$ we have $H + X = H + F + Y \in \cal S$, showing that $F + G + Y \in {\cal S}_P \Rightarrow F + H + Y \in {\cal S}_P$ for all $Y \in \cal S$. Analogously we can show the same statement with $G$ and $H$ interchanged. Hence, $F + G \sim F + H$. Now assume $F + G \sim F + H$. We then have $G = G + \{\} \sim G + (F + F) = (G + F) + F \sim (H + F) + F = H + (F + F) \sim H + \{\} = H$.
+</div>
 
 Finally a theorem essential for the next section.
 
@@ -113,7 +121,9 @@ Finally a theorem essential for the next section.
 
 <button class="proof">*Proof*</button>
 
-> $G \sim H \Leftrightarrow G + H \sim H + H \sim \{\} \Leftrightarrow G + H \in {\cal S}_P$.
+<div class="proof">
+$G \sim H \Leftrightarrow G + H \sim H + H \sim \{\} \Leftrightarrow G + H \in {\cal S}_P$.
+</div>
 
 ### Characterizing Winning Positions
 
@@ -374,11 +384,13 @@ where $S \oplus y = \{ x \oplus y \mid x \in S \}$ and $x \oplus T = \{ x \oplus
 
 <button class="proof">*Proof*</button>
 
-> We need to show two things: (a) $x \oplus y \not\in (S \oplus y) \cup (x \oplus T)$ and (b) $k \in (S \oplus y) \cup (x \oplus T)$ for all $0 \leq k < x \oplus y$.
-> 
-> To show (a) we assume $x \oplus y = s \oplus y$ for some $s \in S$. But this implies $s = x$ and $x \not\in S$ by the definition of $\text{mex}$. Similarly $x \oplus y \in x \oplus T$ is impossible. So $x \oplus y \not\in (S \oplus y) \cup (x \oplus T)$.
-> 
-> To show (b) we choose a $k$ such that $0 \leq k < x \oplus y$. We now set $x \oplus y = (\alpha 1 \alpha')_2$ and $k = (\alpha 0 \alpha'')_2$ where $\alpha$, $\alpha'$, and $\alpha''$ are binary strings and $|\alpha'| = |\alpha''|$. Let now $x = (\beta 1 \beta')_2$ and $y = (\gamma 0 \gamma')_2$ where $|\beta| = |\gamma| = |\alpha|$ (the ($|\alpha|+1$)th bits of $x$ and $y$ must be different and we assume, without loss of generality, that $x$ has a $1$). Note how we have $\beta \oplus \gamma = \alpha$ and therefore $k \oplus y = (\beta 0 \beta'')_2 < x$ and thus $k \oplus y \in S$. We now see that $k = (k \oplus y) \oplus y \in S \oplus y$.
+<div class="proof">
+We need to show two things: (a) $x \oplus y \not\in (S \oplus y) \cup (x \oplus T)$ and (b) $k \in (S \oplus y) \cup (x \oplus T)$ for all $0 \leq k < x \oplus y$.
+
+To show (a) we assume $x \oplus y = s \oplus y$ for some $s \in S$. But this implies $s = x$ and $x \not\in S$ by the definition of $\text{mex}$. Similarly $x \oplus y \in x \oplus T$ is impossible. So $x \oplus y \not\in (S \oplus y) \cup (x \oplus T)$.
+
+To show (b) we choose a $k$ such that $0 \leq k < x \oplus y$. We now set $x \oplus y = (\alpha 1 \alpha')_2$ and $k = (\alpha 0 \alpha'')_2$ where $\alpha$, $\alpha'$, and $\alpha''$ are binary strings and $|\alpha'| = |\alpha''|$. Let now $x = (\beta 1 \beta')_2$ and $y = (\gamma 0 \gamma')_2$ where $|\beta| = |\gamma| = |\alpha|$ (the ($|\alpha|+1$)th bits of $x$ and $y$ must be different and we assume, without loss of generality, that $x$ has a $1$). Note how we have $\beta \oplus \gamma = \alpha$ and therefore $k \oplus y = (\beta 0 \beta'')_2 < x$ and thus $k \oplus y \in S$. We now see that $k = (k \oplus y) \oplus y \in S \oplus y$.
+</div>
 
 From this theorem we see that if $S = \{ 0, 1, \ldots, x-1 \}$ and $T = \{ 0, 1, \ldots, y-1 \}$ we have the desired equality. We now have
 
