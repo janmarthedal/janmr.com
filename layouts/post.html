@@ -1,7 +1,7 @@
 {{> blog-header}}
         <h2>{{ title }}<br><small><time datetime="{{ isoDate date }}">{{ formatDate date }}</time></small></h2>
         <div class="post-tags">
-          {{#each tags}}<a class="label" href="/blog/tags/{{slug}}.html">{{name}}</a> {{/each}}
+          {{#each tags}}<a class="label" href="/blog/tags/{{slug}}">{{name}}</a> {{/each}}
         </div>
         <div class="post-body">
           {{{ contents }}}

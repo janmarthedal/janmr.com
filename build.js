@@ -9,7 +9,7 @@ const permalinks  = require('metalsmith-permalinks');
 const tags        = require('metalsmith-tags');
 const make_mathjax_css = require('./plugins/make-mathjax-css');
 const markdown         = require('./plugins/markdown');
-const post_permalinks  = require('./plugins/post-permalinks');
+const post_metadata    = require('./plugins/post-metadata');
 
 const months = ['January', 'February', 'March', 'April', 'May', 'June',
   'July', 'August', 'September', 'October', 'November', 'December'];
@@ -40,7 +40,7 @@ Metalsmith(__dirname)
         output: 'css/main.css',
     }))
     .use(markdown())
-    .use(post_permalinks())
+    .use(post_metadata())
     .use(tags({
         path: 'blog/tags/:tag.html',
         layout: 'tag.html',
@@ -49,20 +49,25 @@ Metalsmith(__dirname)
     }))
     .use(collections({
         posts: {
-            pattern: 'blog/*/*/*',
+            pattern: 'posts/*',
             sortBy: 'date',
             reverse: true
         }
     }))
+    .use(permalinks({
+        relative: false,
+        linksets: [{
+            match: { collection: 'posts' },
+            pattern: 'blog/:date/:slug',
+            date: date => date.getFullYear() + '/' + ('0' + (date.getMonth()+1)).slice(-2)
+        }]
+    }))
     .use(function (files, metalsmith, done) {
         setImmediate(done);
-        Object.keys(files).forEach(file => {
-            files[file].path = file;
-        });
         metalsmith.metadata().collections.posts.forEach(post => {
-            post.date = files[post.path].date;
+            post.date = files[post.path + '/index.html'].date;
         });
-    }) 
+    })
     .use(feed({
         collection: 'posts',
         limit: false,
