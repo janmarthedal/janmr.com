@@ -1,6 +1,7 @@
 const handlebars  = require('handlebars');
 const Metalsmith  = require('metalsmith');
 const collections = require('metalsmith-collections');
+const cleancss    = require('metalsmith-clean-css');
 const concat      = require('metalsmith-concat');
 const contenthash = require('metalsmith-contenthash');
 const feed        = require('metalsmith-feed');
@@ -39,6 +40,9 @@ Metalsmith(__dirname)
     .use(concat({
         files: ['css/normalize.css', 'css/mathjax.css', 'css/hljs-default.css', 'css/extra.css'],
         output: 'css/main.css',
+    }))
+    .use(cleancss({
+        files: 'css/main.css'
     }))
     .use(contenthash({
         pattern: ['css/main.css', 'js/main.js']
