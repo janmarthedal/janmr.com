@@ -18,6 +18,7 @@ ga('create','UA-46471633-1','auto');ga('send','pageview');
       this.page.url = 'https://janmr.com' + p;
     };
     s.src = 'https://janmr-blog.disqus.com/embed.js';
+    s.defer = true;
     s.setAttribute('data-timestamp', +new Date());
     d.body.appendChild(s);
   }
