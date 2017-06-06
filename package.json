@@ -28,7 +28,7 @@
     "metalsmith-feed": "git+ssh://git@github.com/janmarthedal/metalsmith-feed.git",
     "metalsmith-layouts": "^1.8.1",
     "metalsmith-less": "^2.0.0",
-    "metalsmith-permalinks": "^0.5.0",
+    "metalsmith-permalinks": "git+ssh://git@github.com/janmarthedal/metalsmith-permalinks.git",
     "metalsmith-tags": "^2.0.0"
   }
 }
