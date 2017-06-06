@@ -3,9 +3,10 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
-  <title>{{ title }}</title>{{#if description}}
+  <meta name="viewport" content="width=device-width, initial-scale=1">{{#if description}}
   <meta name="description" content="{{ description }}">{{/if}}
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ title }}</title>
+  <link rel="alternate" href="http://feeds.feedburner.com/janmr-blog" title="janmr blog" type="application/rss+xml">
   <link rel="stylesheet" href="/css/main.css">{{#if inhead}}
   {{{ inhead }}}{{/if}}
 </head>
