@@ -1,0 +1,198 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>C++ Templates and Usual Arithmetic Conversions</title>
+  <link rel="alternate" href="http://feeds.feedburner.com/janmr-blog" title="janmr blog" type="application/rss+xml">
+  <link rel="stylesheet" href="/css/main.9a888a8bccb3dfde.css">
+</head>
+<body>
+  <div id="wrapper">
+    <h1><a href="/blog/">janmr blog</a></h1>
+    <div class="content">
+      <div class="main">        <h2>C++ Templates and Usual Arithmetic Conversions<br><small><time datetime="2010-08-28">28 August 2010</time></small></h2>
+        <div class="post-tags">
+          <a class="label" href="/blog/tags/cpp">cpp</a> <a class="label" href="/blog/tags/templates">templates</a> <a class="label" href="/blog/tags/data-types">data-types</a> 
+        </div>
+        <div class="post-body">
+          <p>If you add a <code>short int</code> and a <code>char</code> in C++, what is the resulting type? What if you subtract a <code>long int</code> from an <code>unsigned int</code>? The answers actually depend on the compiler and the target architecture (<code>int</code> or <code>unsigned</code> in the first case and <code>long int</code> or <code>unsigned long int</code> in the second). This article lists the rules from the current C++ standard and gives an example of how the type can be resolved at compile time using templates.</p>
+<p><span></span></p>
+<h3>Introduction</h3>
+<div class="pull-right"><a href="http://www.amazon.com/gp/product/0201700735?ie=UTF8&tag=sputsoft-20&linkCode=as2&camp=1789&creative=390957&creativeASIN=0201700735"><img src="/media/books/stroustrup.jpg" alt=""></a></div>
+<p>Let me first note that I will be referring to the current C++ standard from 1998 (with a minor revision in 2003). This standard is described in <a href="http://www.amazon.com/gp/product/0201700735?ie=UTF8&tag=sputsoft-20&linkCode=as2&camp=1789&creative=390957&creativeASIN=0201700735">The C++ Programming Language</a> by <a href="http://www.stroustrup.com">Bjarne Stroustrup</a>. It can also be found <a href="ftp://ftp.research.att.com/pub/c++std/WP/CD2/">online</a>.</p>
+<p>In C++, the <em>integer types</em> are <code>short int</code>, <code>int</code>, <code>long int</code> and the unsigned versions of these. The integer types together with the boolean type (<code>bool</code>) and the character types (plain/<code>signed</code>/<code>unsigned</code> <code>char</code> and <code>wchar_t</code>) are called <em>integral types</em>. The integral types together with the floating-point types (<code>float</code>, <code>double</code>, and <code>long double</code>) are called <em>arithmetic types</em>.</p>
+<h3>Resolving the Return Type</h3>
+<p>Consider having the function <code>fct</code> overloaded with one function for each arithmetic type, for example:</p>
+<pre><code class="language-cpp hljs"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">fct</span><span class="hljs-params">(<span class="hljs-keyword">short</span> v)</span>          </span>{ <span class="hljs-built_in">std</span>::<span class="hljs-built_in">cout</span> &lt;&lt; &quot;<span class="hljs-keyword">short</span> &quot;          &lt;&lt; v &lt;&lt; <span class="hljs-built_in">std</span>::<span class="hljs-built_in">endl</span>; }
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">fct</span><span class="hljs-params">(<span class="hljs-keyword">unsigned</span> <span class="hljs-keyword">short</span> v)</span> </span>{ <span class="hljs-built_in">std</span>::<span class="hljs-built_in">cout</span> &lt;&lt; &quot;<span class="hljs-keyword">unsigned</span> <span class="hljs-keyword">short</span> &quot; &lt;&lt; v &lt;&lt; <span class="hljs-built_in">std</span>::<span class="hljs-built_in">endl</span>; }
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">fct</span><span class="hljs-params">(<span class="hljs-keyword">int</span> v)</span>            </span>{ <span class="hljs-built_in">std</span>::<span class="hljs-built_in">cout</span> &lt;&lt; &quot;<span class="hljs-keyword">int</span> &quot;            &lt;&lt; v &lt;&lt; <span class="hljs-built_in">std</span>::<span class="hljs-built_in">endl</span>; }
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">fct</span><span class="hljs-params">(<span class="hljs-keyword">unsigned</span> v)</span>       </span>{ <span class="hljs-built_in">std</span>::<span class="hljs-built_in">cout</span> &lt;&lt; &quot;<span class="hljs-keyword">unsigned</span> &quot;       &lt;&lt; v &lt;&lt; <span class="hljs-built_in">std</span>::<span class="hljs-built_in">endl</span>; }
+...
+</code></pre>
+<p>and so on. If you now have the following little routine:</p>
+<pre><code class="language-cpp hljs"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">g</span><span class="hljs-params">(<span class="hljs-keyword">short</span> <span class="hljs-keyword">int</span> a, <span class="hljs-keyword">char</span> b)</span> </span>{
+  fct(a + b);
+}
+</code></pre>
+<p>which instance of <code>fct</code> is called? This is another way of asking the question that started this article.</p>
+<p>When a binary operator (<code>+</code>, <code>-</code>, <code>*</code>, <code>/</code>, <code>%</code>) is applied to operands with arithmetic types, the C++ compiler must do the following:</p>
+<ul>
+<li><strong>Integral promotion</strong>. Each operand is, if necessary, promoted to at least an <code>int</code> (to be made more precise below).</li>
+<li><strong>Usual arithmetic conversions</strong>. Based on the (possibly promoted) types of the operands, a common type is found. Both operands are converted to this type, which will also be the resulting type.</li>
+</ul>
+<h3>Integral Promotions</h3>
+<p>Integral promotions are defined in Section 4.5, page 4-3, from the <a href="ftp://ftp.research.att.com/pub/c++std/WP/CD2/">online standard</a> and in Section C.6.1, page 833, from <a href="http://www.amazon.com/gp/product/0201700735?ie=UTF8&tag=sputsoft-20&linkCode=as2&camp=1789&creative=390957&creativeASIN=0201700735">The C++ Programming Language</a>. If we ignore enumerations and bit-fields, they can be summed up as follows:</p>
+<ul>
+<li>A <code>char</code>, <code>signed char</code>, <code>signed char</code>, <code>short int</code>, <code>unsigned short int</code> is converted to <code>int</code> if <code>int</code> can represent all the values of the source type; otherwise, it is converted to an <code>unsigned int</code>.</li>
+<li><code>wchar_t</code> is converted to the first of the following types that can represent all the values of <code>wchar_t</code>: <code>int</code>, <code>unsigned int</code>, <code>long</code>, <code>unsigned long</code>.</li>
+<li><code>bool</code> is converted to <code>int</code>.</li>
+</ul>
+<h3>Usual Arithmetic Conversions</h3>
+<p>The rules for usual arithmetic conversions can be found in Section 5, page 5-2, from the <a href="ftp://ftp.research.att.com/pub/c++std/WP/CD2/">online standard</a> and in Section C.6.3, page 836, from <a href="http://www.amazon.com/gp/product/0201700735?ie=UTF8&tag=sputsoft-20&linkCode=as2&camp=1789&creative=390957&creativeASIN=0201700735">The C++ Programming Language</a>. Assuming integral promotions have been performed (if needed), the usual arithmetic conversions are in essense the following:</p>
+<ul>
+<li>If one operand is a <code>long int</code> and the other <code>unsigned int</code>, then if a <code>long int</code> can represent all the values of an <code>unsigned int</code>, the <code>unsigned int</code> shall be converted to a <code>long int</code>; otherwise both operands shall be converted to <code>unsigned long int</code>.</li>
+<li>Otherwise, find the highest ranking type among the operands and convert the other operand to this type. The relevant types listed from high to low rank are: <code>long double</code>, <code>double</code>, <code>float</code>, <code>unsigned long</code>, <code>long</code>, <code>unsigned</code>, <code>int</code>.</li>
+</ul>
+<h3>Using Templates To Get The Type</h3>
+<p>Those were the rules in written form. Imagine now that we have, e.g., the following routine:</p>
+<pre><code class="language-cpp hljs"><span class="hljs-keyword">template</span> &lt;<span class="hljs-keyword">typename</span> A, <span class="hljs-keyword">typename</span> B&gt;
+[some-type] add(<span class="hljs-keyword">const</span> A&amp; a, <span class="hljs-keyword">const</span> B&amp; b) { <span class="hljs-keyword">return</span> a + b; }
+</code></pre>
+<p>We would like the types of <code>add(a, b)</code> and <code>a + b</code> to be identical when both <code>a</code> and <code>b</code> are arithmetic types.</p>
+<p>First, promotions. By default, a type is not promoted:</p>
+<pre><code class="language-cpp hljs"><span class="hljs-keyword">template</span> &lt;<span class="hljs-keyword">typename</span> T&gt;
+<span class="hljs-keyword">struct</span> promote { <span class="hljs-keyword">typedef</span> T type; };
+</code></pre>
+<p>We then use template specializations for the types that need to be promoted. Some of these are easy:</p>
+<pre><code class="language-cpp hljs"><span class="hljs-keyword">template</span> &lt;&gt;
+<span class="hljs-keyword">struct</span> promote&lt;<span class="hljs-keyword">signed</span> <span class="hljs-keyword">short</span>&gt; { <span class="hljs-keyword">typedef</span> <span class="hljs-keyword">int</span> type; };
+<span class="hljs-keyword">template</span> &lt;&gt;
+<span class="hljs-keyword">struct</span> promote&lt;<span class="hljs-keyword">bool</span>&gt; { <span class="hljs-keyword">typedef</span> <span class="hljs-keyword">int</span> type; };
+</code></pre>
+<p>For the rest, we need a sort of if-then-else for choosing a type:</p>
+<pre><code class="language-cpp hljs"><span class="hljs-keyword">template</span> &lt;<span class="hljs-keyword">bool</span> C, <span class="hljs-keyword">typename</span> T, <span class="hljs-keyword">typename</span> F&gt;
+<span class="hljs-keyword">struct</span> choose_type { <span class="hljs-keyword">typedef</span> F type; };
+<span class="hljs-keyword">template</span> &lt;<span class="hljs-keyword">typename</span> T, <span class="hljs-keyword">typename</span> F&gt;
+<span class="hljs-keyword">struct</span> choose_type&lt;<span class="hljs-literal">true</span>, T, F&gt; { <span class="hljs-keyword">typedef</span> T type; };
+</code></pre>
+<p>So the boolean value of the first argument determines whether to choose the type <code>T</code> (if true) or <code>F</code> (if false). We now have:</p>
+<pre><code class="language-cpp hljs"><span class="hljs-keyword">template</span> &lt;&gt;
+<span class="hljs-keyword">struct</span> promote&lt;<span class="hljs-keyword">unsigned</span> <span class="hljs-keyword">short</span>&gt; {
+  <span class="hljs-keyword">typedef</span> choose_type&lt;<span class="hljs-keyword">sizeof</span>(<span class="hljs-keyword">short</span>) &lt; <span class="hljs-keyword">sizeof</span>(<span class="hljs-keyword">int</span>), <span class="hljs-keyword">int</span>, <span class="hljs-keyword">unsigned</span>&gt;::type type;
+};
+<span class="hljs-keyword">template</span> &lt;&gt;
+<span class="hljs-keyword">struct</span> promote&lt;<span class="hljs-keyword">signed</span> <span class="hljs-keyword">char</span>&gt; {
+  <span class="hljs-keyword">typedef</span> choose_type&lt;<span class="hljs-keyword">sizeof</span>(<span class="hljs-keyword">char</span>) &lt;= <span class="hljs-keyword">sizeof</span>(<span class="hljs-keyword">int</span>), <span class="hljs-keyword">int</span>, <span class="hljs-keyword">unsigned</span>&gt;::type type;
+};
+<span class="hljs-keyword">template</span> &lt;&gt;
+<span class="hljs-keyword">struct</span> promote&lt;<span class="hljs-keyword">unsigned</span> <span class="hljs-keyword">char</span>&gt; {
+  <span class="hljs-keyword">typedef</span> choose_type&lt;<span class="hljs-keyword">sizeof</span>(<span class="hljs-keyword">char</span>) &lt; <span class="hljs-keyword">sizeof</span>(<span class="hljs-keyword">int</span>), <span class="hljs-keyword">int</span>, <span class="hljs-keyword">unsigned</span>&gt;::type type;
+};
+<span class="hljs-keyword">template</span> &lt;&gt;
+<span class="hljs-keyword">struct</span> promote&lt;<span class="hljs-keyword">char</span>&gt;
+ : <span class="hljs-keyword">public</span> promote&lt;choose_type&lt;<span class="hljs-built_in">std</span>::numeric_limits&lt;<span class="hljs-keyword">char</span>&gt;::is_signed,
+                              <span class="hljs-keyword">signed</span> <span class="hljs-keyword">char</span>, <span class="hljs-keyword">unsigned</span> <span class="hljs-keyword">char</span>&gt;::type&gt; {};
+</code></pre>
+<p>This last one for plain <code>char</code> is needed because C++ considers <code>char</code>, <code>signed char</code>, and <code>unsigned char</code> to be three distinct types. The standard does not specify whether <code>char</code> is signed or not. (The <code>numeric_limits</code> template is defined in the <code>limits</code> header.)</p>
+<p>Finally, to promote <code>wchar_t</code>:</p>
+<pre><code class="language-cpp hljs"><span class="hljs-keyword">template</span> &lt;&gt;
+<span class="hljs-keyword">struct</span> promote&lt;<span class="hljs-keyword">wchar_t</span>&gt; {
+  <span class="hljs-keyword">typedef</span> choose_type&lt;
+            <span class="hljs-built_in">std</span>::numeric_limits&lt;<span class="hljs-keyword">wchar_t</span>&gt;::is_signed,
+            choose_type&lt;<span class="hljs-keyword">sizeof</span>(<span class="hljs-keyword">wchar_t</span>) &lt;= <span class="hljs-keyword">sizeof</span>(<span class="hljs-keyword">int</span>), <span class="hljs-keyword">int</span>, <span class="hljs-keyword">long</span>&gt;::type,
+            choose_type&lt;<span class="hljs-keyword">sizeof</span>(<span class="hljs-keyword">wchar_t</span>) &lt;= <span class="hljs-keyword">sizeof</span>(<span class="hljs-keyword">int</span>), <span class="hljs-keyword">unsigned</span>, <span class="hljs-keyword">unsigned</span> <span class="hljs-keyword">long</span>&gt;::type
+          &gt;::type type;
+};
+</code></pre>
+<p>We can now turn to the usual arithmetic conversions. First, we promote each type, if necessary:</p>
+<pre><code class="language-cpp hljs"><span class="hljs-keyword">template</span> &lt;<span class="hljs-keyword">typename</span> A, <span class="hljs-keyword">typename</span> B&gt;
+<span class="hljs-keyword">struct</span> resolve_uac : <span class="hljs-keyword">public</span> resolve_uac2&lt;<span class="hljs-keyword">typename</span> promote&lt;A&gt;::type,
+                                         <span class="hljs-keyword">typename</span> promote&lt;B&gt;::type&gt; {};
+</code></pre>
+<p>This ensures that the type arguments for <code>resolve_uac2</code> are at least <code>int</code>s. We then introduce ranks for those types:</p>
+<pre><code class="language-cpp hljs"><span class="hljs-keyword">template</span> &lt;<span class="hljs-keyword">typename</span> T&gt; <span class="hljs-keyword">struct</span> type_rank;
+<span class="hljs-keyword">template</span> &lt;&gt; <span class="hljs-keyword">struct</span> type_rank&lt;<span class="hljs-keyword">int</span>&gt;           { <span class="hljs-keyword">static</span> <span class="hljs-keyword">const</span> <span class="hljs-keyword">int</span> rank = <span class="hljs-number">1</span>; };
+<span class="hljs-keyword">template</span> &lt;&gt; <span class="hljs-keyword">struct</span> type_rank&lt;<span class="hljs-keyword">unsigned</span>&gt;      { <span class="hljs-keyword">static</span> <span class="hljs-keyword">const</span> <span class="hljs-keyword">int</span> rank = <span class="hljs-number">2</span>; };
+<span class="hljs-keyword">template</span> &lt;&gt; <span class="hljs-keyword">struct</span> type_rank&lt;<span class="hljs-keyword">long</span>&gt;          { <span class="hljs-keyword">static</span> <span class="hljs-keyword">const</span> <span class="hljs-keyword">int</span> rank = <span class="hljs-number">3</span>; };
+<span class="hljs-keyword">template</span> &lt;&gt; <span class="hljs-keyword">struct</span> type_rank&lt;<span class="hljs-keyword">unsigned</span> <span class="hljs-keyword">long</span>&gt; { <span class="hljs-keyword">static</span> <span class="hljs-keyword">const</span> <span class="hljs-keyword">int</span> rank = <span class="hljs-number">4</span>; };
+<span class="hljs-keyword">template</span> &lt;&gt; <span class="hljs-keyword">struct</span> type_rank&lt;<span class="hljs-keyword">float</span>&gt;         { <span class="hljs-keyword">static</span> <span class="hljs-keyword">const</span> <span class="hljs-keyword">int</span> rank = <span class="hljs-number">5</span>; };
+<span class="hljs-keyword">template</span> &lt;&gt; <span class="hljs-keyword">struct</span> type_rank&lt;<span class="hljs-keyword">double</span>&gt;        { <span class="hljs-keyword">static</span> <span class="hljs-keyword">const</span> <span class="hljs-keyword">int</span> rank = <span class="hljs-number">6</span>; };
+<span class="hljs-keyword">template</span> &lt;&gt; <span class="hljs-keyword">struct</span> type_rank&lt;<span class="hljs-keyword">long</span> <span class="hljs-keyword">double</span>&gt;   { <span class="hljs-keyword">static</span> <span class="hljs-keyword">const</span> <span class="hljs-keyword">int</span> rank = <span class="hljs-number">7</span>; };
+</code></pre>
+<p>Now we can pick the type with the highest rank:</p>
+<pre><code class="language-cpp hljs"><span class="hljs-keyword">template</span> &lt;<span class="hljs-keyword">typename</span> A, <span class="hljs-keyword">typename</span> B&gt;
+<span class="hljs-keyword">struct</span> resolve_uac2 {
+  <span class="hljs-keyword">typedef</span> <span class="hljs-keyword">typename</span> choose_type&lt;
+            type_rank&lt;A&gt;::rank &gt;= type_rank&lt;B&gt;::rank, A, B
+          &gt;::type return_type;
+};
+</code></pre>
+<p>Finally we need to deal with the special case where one type is <code>long int</code> and the other is <code>unsigned int</code>:</p>
+<pre><code class="language-cpp hljs"><span class="hljs-keyword">template</span> &lt;&gt;
+<span class="hljs-keyword">struct</span> resolve_uac2&lt;<span class="hljs-keyword">long</span>, <span class="hljs-keyword">unsigned</span>&gt; {
+  <span class="hljs-keyword">typedef</span> choose_type&lt;<span class="hljs-keyword">sizeof</span>(<span class="hljs-keyword">long</span>) == <span class="hljs-keyword">sizeof</span>(<span class="hljs-keyword">unsigned</span>),
+                      <span class="hljs-keyword">unsigned</span> <span class="hljs-keyword">long</span>, <span class="hljs-keyword">long</span>&gt;::type return_type;
+};
+<span class="hljs-keyword">template</span> &lt;&gt;
+<span class="hljs-keyword">struct</span> resolve_uac2&lt;<span class="hljs-keyword">unsigned</span>, <span class="hljs-keyword">long</span>&gt; : <span class="hljs-keyword">public</span> resolve_uac2&lt;<span class="hljs-keyword">long</span>, <span class="hljs-keyword">unsigned</span>&gt; {};
+</code></pre>
+<p>We can now write the <code>add</code> routine from earlier as:</p>
+<pre><code class="language-cpp hljs"><span class="hljs-keyword">template</span> &lt;<span class="hljs-keyword">typename</span> A, <span class="hljs-keyword">typename</span> B&gt;
+<span class="hljs-keyword">typename</span> resolve_uac&lt;A, B&gt;::<span class="hljs-function">return_type <span class="hljs-title">add</span><span class="hljs-params">(<span class="hljs-keyword">const</span> A&amp; a, <span class="hljs-keyword">const</span> B&amp; b)</span>
+</span>{ <span class="hljs-keyword">return</span> a + b; }
+</code></pre>
+<p>and the return type will match that of the <code>+</code> operation. Note that the arguments to <code>add</code> have to be arithmetic types (because of the <a href="http://en.wikipedia.org/wiki/Substitution_failure_is_not_an_error">substitution-failure-is-not-an-error</a> principle).</p>
+<h3>Remarks</h3>
+<p>The rules and implementation above should be complete with the exception of enumerations and bit-fields, see the links to the standard for the missing pieces. Note also that the rules for promotions and usual arithmetic conversions will change (slightly) in the upcoming C++0x standard, see the <a href="http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2010/n3092.pdf">C++0x draft</a>, Section 5, page 84.</p>
+
+        </div>
+        <div class="page-navigation">
+          <div class="prev-post">
+            <a href="/blog/2010/07/bitwise-operators-and-negative-numbers" title="Previous post: Bitwise Operators and Negative Numbers">&laquo; Bitwise Operators and Negative Numbers</a>
+          </div>
+          <div class="next-post">
+            <a href="/blog/2010/09/computing-the-integer-binary-logarithm" title="Next post: Computing the Integer Binary Logarithm">Computing the Integer Binary Logarithm &raquo;</a>
+          </div>
+        </div>
+        <div id="disqus_thread"></div>
+      </div>
+      <div class="sidebar">
+        <h4>About</h4>
+        <p>A blog about mathematics and computer programming by
+          <a href="/">Jan Marthedal Rasmussen</a>.</p>
+        <h4>Links</h4>
+        <p><span class="icon" style="vertical-align: -8%">
+          <svg viewBox="0 -1536 1408 1792">
+            <g transform="matrix(1 0 0 -1 0 0)">
+              <path fill="#333" d="M256 224v-192q0 -13 -9.5 -22.5t-22.5 -9.5h-192q-13 0 -22.5 9.5t-9.5 22.5v192q0 13 9.5 22.5t22.5 9.5h192q13 0 22.5 -9.5t9.5 -22.5zM256 608v-192q0 -13 -9.5 -22.5t-22.5 -9.5h-192q-13 0 -22.5 9.5t-9.5 22.5v192q0 13 9.5 22.5t22.5 9.5h192q13 0 22.5 -9.5 t9.5 -22.5zM256 992v-192q0 -13 -9.5 -22.5t-22.5 -9.5h-192q-13 0 -22.5 9.5t-9.5 22.5v192q0 13 9.5 22.5t22.5 9.5h192q13 0 22.5 -9.5t9.5 -22.5zM1792 224v-192q0 -13 -9.5 -22.5t-22.5 -9.5h-1344q-13 0 -22.5 9.5t-9.5 22.5v192q0 13 9.5 22.5t22.5 9.5h1344 q13 0 22.5 -9.5t9.5 -22.5zM256 1376v-192q0 -13 -9.5 -22.5t-22.5 -9.5h-192q-13 0 -22.5 9.5t-9.5 22.5v192q0 13 9.5 22.5t22.5 9.5h192q13 0 22.5 -9.5t9.5 -22.5zM1792 608v-192q0 -13 -9.5 -22.5t-22.5 -9.5h-1344q-13 0 -22.5 9.5t-9.5 22.5v192q0 13 9.5 22.5 t22.5 9.5h1344q13 0 22.5 -9.5t9.5 -22.5zM1792 992v-192q0 -13 -9.5 -22.5t-22.5 -9.5h-1344q-13 0 -22.5 9.5t-9.5 22.5v192q0 13 9.5 22.5t22.5 9.5h1344q13 0 22.5 -9.5t9.5 -22.5zM1792 1376v-192q0 -13 -9.5 -22.5t-22.5 -9.5h-1344q-13 0 -22.5 9.5t-9.5 22.5v192 q0 13 9.5 22.5t22.5 9.5h1344q13 0 22.5 -9.5t9.5 -22.5z"></path>
+            </g>
+          </svg>
+        </span> <a href="/blog/">All posts</a></p>
+        <p><span class="icon">
+            <svg viewBox="0 0 16 16">
+              <path fill="#333" d="M15.969,3.058c-0.586,0.26-1.217,0.436-1.878,0.515c0.675-0.405,1.194-1.045,1.438-1.809
+              c-0.632,0.375-1.332,0.647-2.076,0.793c-0.596-0.636-1.446-1.033-2.387-1.033c-1.806,0-3.27,1.464-3.27,3.27 c0,0.256,0.029,0.506,0.085,0.745C5.163,5.404,2.753,4.102,1.14,2.124C0.859,2.607,0.698,3.168,0.698,3.767 c0,1.134,0.577,2.135,1.455,2.722C1.616,6.472,1.112,6.325,0.671,6.08c0,0.014,0,0.027,0,0.041c0,1.584,1.127,2.906,2.623,3.206 C3.02,9.402,2.731,9.442,2.433,9.442c-0.211,0-0.416-0.021-0.615-0.059c0.416,1.299,1.624,2.245,3.055,2.271 c-1.119,0.877-2.529,1.4-4.061,1.4c-0.264,0-0.524-0.015-0.78-0.046c1.447,0.928,3.166,1.469,5.013,1.469 c6.015,0,9.304-4.983,9.304-9.304c0-0.142-0.003-0.283-0.009-0.423C14.976,4.29,15.531,3.714,15.969,3.058z"></path>
+            </svg>
+          </span> <a href="https://twitter.com/janmarthedal">Twitter profile</a></p>
+        <p><span class="icon">
+            <svg viewBox="0 0 16 16">
+              <path fill="#333" d="M7.999,0.431c-4.285,0-7.76,3.474-7.76,7.761 c0,3.428,2.223,6.337,5.307,7.363c0.388,0.071,0.53-0.168,0.53-0.374c0-0.184-0.007-0.672-0.01-1.32 c-2.159,0.469-2.614-1.04-2.614-1.04c-0.353-0.896-0.862-1.135-0.862-1.135c-0.705-0.481,0.053-0.472,0.053-0.472 c0.779,0.055,1.189,0.8,1.189,0.8c0.692,1.186,1.816,0.843,2.258,0.645c0.071-0.502,0.271-0.843,0.493-1.037 C4.86,11.425,3.049,10.76,3.049,7.786c0-0.847,0.302-1.54,0.799-2.082C3.768,5.507,3.501,4.718,3.924,3.65 c0,0,0.652-0.209,2.134,0.796C6.677,4.273,7.34,4.187,8,4.184c0.659,0.003,1.323,0.089,1.943,0.261 c1.482-1.004,2.132-0.796,2.132-0.796c0.423,1.068,0.157,1.857,0.077,2.054c0.497,0.542,0.798,1.235,0.798,2.082 c0,2.981-1.814,3.637-3.543,3.829c0.279,0.24,0.527,0.713,0.527,1.437c0,1.037-0.01,1.874-0.01,2.129 c0,0.208,0.14,0.449,0.534,0.373c3.081-1.028,5.302-3.935,5.302-7.362C15.76,3.906,12.285,0.431,7.999,0.431z"></path>
+            </svg>
+          </span> <a href="https://github.com/janmarthedal/">GitHub profile</a></p>
+        <p><span class="icon" style="vertical-align: -8%">
+          <svg viewBox="0 -1536 1408 1792">
+            <g transform="matrix(1 0 0 -1 0 0)">
+              <path fill="#333" d="M384 192q0 -80 -56 -136t-136 -56t-136 56t-56 136t56 136t136 56t136 -56t56 -136zM896 69q2 -28 -17 -48q-18 -21 -47 -21h-135q-25 0 -43 16.5t-20 41.5q-22 229 -184.5 391.5t-391.5 184.5q-25 2 -41.5 20t-16.5 43v135q0 29 21 47q17 17 43 17h5q160 -13 306 -80.5 t259 -181.5q114 -113 181.5 -259t80.5 -306zM1408 67q2 -27 -18 -47q-18 -20 -46 -20h-143q-26 0 -44.5 17.5t-19.5 42.5q-12 215 -101 408.5t-231.5 336t-336 231.5t-408.5 102q-25 1 -42.5 19.5t-17.5 43.5v143q0 28 20 46q18 18 44 18h3q262 -13 501.5 -120t425.5 -294 q187 -186 294 -425.5t120 -501.5z"></path>
+            </g>
+          </svg>
+        </span> <a href="http://feeds.feedburner.com/janmr-blog">Subscribe in a reader</a></p>
+        <footer><p class="text-muted">Copyright Jan Marthedal Rasmussen © 2017</p></footer>
+      </div>
+    </div>
+  </div>
+  <script src="/js/main.9d716cf03cf8bdc8.js" defer></script>
+  <script src="https://www.google-analytics.com/analytics.js" defer></script>
+</body>
+</html>
