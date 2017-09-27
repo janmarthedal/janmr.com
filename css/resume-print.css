@@ -1,0 +1,12 @@
+html {
+    font-size: 10px;
+    color: #000;
+}
+
+.social-icons {
+    display: none;
+}
+
+a {
+    color: inherit;
+}
