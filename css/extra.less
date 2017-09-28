@@ -291,3 +291,37 @@ button.proof {
     }
 }
 
+.skills {
+    .clearfix();
+    section {
+        float: left;
+        width: 100%;
+        @media(min-width: 680px) {
+            width: 50%;
+        }
+    }
+    ul {
+        list-style-type: none;
+        padding-left: 1em;
+    }
+    .name {
+        display: inline-block;
+        margin-left: 1em;
+    }
+    img {
+        height: 1em;
+    }
+}
+
+@media print {
+    html {
+        font-size: 10px;
+        color: #000;
+    }
+    a {
+        color: inherit;
+    }
+    .print-no {
+        display: none;
+    }
+}
