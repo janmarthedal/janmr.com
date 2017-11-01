@@ -71,14 +71,12 @@ Metalsmith(__dirname)
         }]
     }))
     .use(function(files, metalsmith, done) {
+        var metadata = metalsmith.metadata();
         setImmediate(done);
-        metalsmith.metadata().collections.posts.forEach(post => {
+        metadata.collections.posts.forEach(post => {
             post.date = files[post.path + '/index.html'].date;
         });
-    })
-    .use(function(files, metalsmith, done) {
-        setImmediate(done);
-        metalsmith.metadata().latestPosts = metalsmith.metadata().collections.posts.slice(0, 5);
+        metadata.latestPosts = metadata.collections.posts.slice(0, 5);
     })
     .use(feed({
         collection: 'posts',
