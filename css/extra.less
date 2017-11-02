@@ -313,6 +313,10 @@ button.proof {
     }
 }
 
+.print-only {
+    display: none;
+}
+
 @media print {
     html {
         font-size: 10px;
@@ -323,5 +327,8 @@ button.proof {
     }
     .print-no {
         display: none;
+    }
+    .print-only {
+        display: inline-block;
     }
 }
