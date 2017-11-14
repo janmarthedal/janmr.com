@@ -34,7 +34,7 @@ function plugin(opts) {
 
             str = str.replace(/<pre><code class="language-(\w+)">([^]*?)<\/code><\/pre>/g,
                 (match, language, source) => {
-                    if (language === 'html' || language === 'xml') {
+                    if (language === 'html' || language === 'xml' || language === 'css') {
                         source = source.replace(/&lt;/g, '<')
                             .replace(/&gt;/g, '>').replace(/&quot;/g, '"');
                     }
