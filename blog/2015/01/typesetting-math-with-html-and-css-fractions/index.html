@@ -93,7 +93,7 @@ before<span class="math-box"><span class="vstack"><div style="top: 0.686em;">8</
   <span class="hljs-attribute">display</span>: inline-block;
   <span class="hljs-attribute">position</span>: relative;
 }
-<span class="hljs-selector-class">.math-box</span> <span class="hljs-selector-class">.vstack</span> &<span class="hljs-selector-tag">gt</span>; <span class="hljs-selector-tag">div</span> {
+<span class="hljs-selector-class">.math-box</span> <span class="hljs-selector-class">.vstack</span> &gt; <span class="hljs-selector-tag">div</span> {
   <span class="hljs-attribute">position</span>: relative;
   <span class="hljs-attribute">text-align</span>: center;
   <span class="hljs-attribute">height</span>: <span class="hljs-number">0</span>;
@@ -126,22 +126,22 @@ before<span class="math-box"><span class="vstack"><div style="top: 0.686em;">8</
 <span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>after
 </code></pre>
 <p>but what should the style be for <code>span.frac-line</code>? Using something like <code>display: inline-block; width: 100%; border-bottom: 1px solid black;</code> will work, but how thick should the line be? Using something like <code>0.04em</code> makes the line scale with the font size, but using a small font size can result in a line thickness less than 1 pixel (leading to the line disappearing or having a modified color). Here, KaTeX has a nice trick up their sleeve:</p>
-<pre><code class="language-css hljs">.math-box .frac-line {
-  width: 100%;
-  display: inline-block;
+<pre><code class="language-css hljs"><span class="hljs-selector-class">.math-box</span> <span class="hljs-selector-class">.frac-line</span> {
+  <span class="hljs-attribute">width</span>: <span class="hljs-number">100%</span>;
+  <span class="hljs-attribute">display</span>: inline-block;
 }
-.math-box .frac-line:before {
-  display: block;
-  border-bottom-style: solid;
-  border-bottom-width: 1px;
-  content: &quot;&quot;;
+<span class="hljs-selector-class">.math-box</span> <span class="hljs-selector-class">.frac-line</span><span class="hljs-selector-pseudo">:before</span> {
+  <span class="hljs-attribute">display</span>: block;
+  <span class="hljs-attribute">border-bottom-style</span>: solid;
+  <span class="hljs-attribute">border-bottom-width</span>: <span class="hljs-number">1px</span>;
+  <span class="hljs-attribute">content</span>: <span class="hljs-string">""</span>;
 }
-.math-box .frac-line:after {
-  display: block;
-  margin-top: -1px;
-  border-bottom-style: solid;
-  border-bottom-width: 0.04em;
-  content: &quot;&quot;;
+<span class="hljs-selector-class">.math-box</span> <span class="hljs-selector-class">.frac-line</span><span class="hljs-selector-pseudo">:after</span> {
+  <span class="hljs-attribute">display</span>: block;
+  <span class="hljs-attribute">margin-top</span>: -<span class="hljs-number">1px</span>;
+  <span class="hljs-attribute">border-bottom-style</span>: solid;
+  <span class="hljs-attribute">border-bottom-width</span>: <span class="hljs-number">0.04em</span>;
+  <span class="hljs-attribute">content</span>: <span class="hljs-string">""</span>;
 }
 </code></pre>
 <p>(<a href="http://jsfiddle.net/janmr/3xuz8tL1/1/">Live demo</a>.) Using the pseudo-elements <code>:before</code> and <code>:after</code>, two lines will be drawn on top of each other. This way the line will be <code>0.04em</code>, but never less than <code>1px</code>.</p>
