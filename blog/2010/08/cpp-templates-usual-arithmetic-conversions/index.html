@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>C++ Templates and Usual Arithmetic Conversions</title>
   <link rel="alternate" href="http://feeds.feedburner.com/janmr-blog" title="janmr blog" type="application/rss+xml">
-  <link rel="stylesheet" href="/css/main.7ca27f17d7981fbc.css">
+  <link rel="stylesheet" href="/css/main.7614535f90467929.css">
 </head>
 <body>
   <div id="wrapper">
@@ -63,42 +63,42 @@
 <p>We would like the types of <code>add(a, b)</code> and <code>a + b</code> to be identical when both <code>a</code> and <code>b</code> are arithmetic types.</p>
 <p>First, promotions. By default, a type is not promoted:</p>
 <pre><code class="language-cpp hljs"><span class="hljs-keyword">template</span> &lt;<span class="hljs-keyword">typename</span> T&gt;
-<span class="hljs-keyword">struct</span> promote { <span class="hljs-keyword">typedef</span> T type; };
+<span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">promote</span> {</span> <span class="hljs-keyword">typedef</span> T type; };
 </code></pre>
 <p>We then use template specializations for the types that need to be promoted. Some of these are easy:</p>
 <pre><code class="language-cpp hljs"><span class="hljs-keyword">template</span> &lt;&gt;
-<span class="hljs-keyword">struct</span> promote&lt;<span class="hljs-keyword">signed</span> <span class="hljs-keyword">short</span>&gt; { <span class="hljs-keyword">typedef</span> <span class="hljs-keyword">int</span> type; };
+<span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">promote</span>&<span class="hljs-title">lt</span>;</span><span class="hljs-keyword">signed</span> <span class="hljs-keyword">short</span>&gt; { <span class="hljs-keyword">typedef</span> <span class="hljs-keyword">int</span> type; };
 <span class="hljs-keyword">template</span> &lt;&gt;
-<span class="hljs-keyword">struct</span> promote&lt;<span class="hljs-keyword">bool</span>&gt; { <span class="hljs-keyword">typedef</span> <span class="hljs-keyword">int</span> type; };
+<span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">promote</span>&<span class="hljs-title">lt</span>;</span><span class="hljs-keyword">bool</span>&gt; { <span class="hljs-keyword">typedef</span> <span class="hljs-keyword">int</span> type; };
 </code></pre>
 <p>For the rest, we need a sort of if-then-else for choosing a type:</p>
 <pre><code class="language-cpp hljs"><span class="hljs-keyword">template</span> &lt;<span class="hljs-keyword">bool</span> C, <span class="hljs-keyword">typename</span> T, <span class="hljs-keyword">typename</span> F&gt;
-<span class="hljs-keyword">struct</span> choose_type { <span class="hljs-keyword">typedef</span> F type; };
+<span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">choose_type</span> {</span> <span class="hljs-keyword">typedef</span> F type; };
 <span class="hljs-keyword">template</span> &lt;<span class="hljs-keyword">typename</span> T, <span class="hljs-keyword">typename</span> F&gt;
-<span class="hljs-keyword">struct</span> choose_type&lt;<span class="hljs-literal">true</span>, T, F&gt; { <span class="hljs-keyword">typedef</span> T type; };
+<span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">choose_type</span>&<span class="hljs-title">lt</span>;</span><span class="hljs-literal">true</span>, T, F&gt; { <span class="hljs-keyword">typedef</span> T type; };
 </code></pre>
 <p>So the boolean value of the first argument determines whether to choose the type <code>T</code> (if true) or <code>F</code> (if false). We now have:</p>
 <pre><code class="language-cpp hljs"><span class="hljs-keyword">template</span> &lt;&gt;
-<span class="hljs-keyword">struct</span> promote&lt;<span class="hljs-keyword">unsigned</span> <span class="hljs-keyword">short</span>&gt; {
+<span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">promote</span>&<span class="hljs-title">lt</span>;</span><span class="hljs-keyword">unsigned</span> <span class="hljs-keyword">short</span>&gt; {
   <span class="hljs-keyword">typedef</span> choose_type&lt;<span class="hljs-keyword">sizeof</span>(<span class="hljs-keyword">short</span>) &lt; <span class="hljs-keyword">sizeof</span>(<span class="hljs-keyword">int</span>), <span class="hljs-keyword">int</span>, <span class="hljs-keyword">unsigned</span>&gt;::type type;
 };
 <span class="hljs-keyword">template</span> &lt;&gt;
-<span class="hljs-keyword">struct</span> promote&lt;<span class="hljs-keyword">signed</span> <span class="hljs-keyword">char</span>&gt; {
+<span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">promote</span>&<span class="hljs-title">lt</span>;</span><span class="hljs-keyword">signed</span> <span class="hljs-keyword">char</span>&gt; {
   <span class="hljs-keyword">typedef</span> choose_type&lt;<span class="hljs-keyword">sizeof</span>(<span class="hljs-keyword">char</span>) &lt;= <span class="hljs-keyword">sizeof</span>(<span class="hljs-keyword">int</span>), <span class="hljs-keyword">int</span>, <span class="hljs-keyword">unsigned</span>&gt;::type type;
 };
 <span class="hljs-keyword">template</span> &lt;&gt;
-<span class="hljs-keyword">struct</span> promote&lt;<span class="hljs-keyword">unsigned</span> <span class="hljs-keyword">char</span>&gt; {
+<span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">promote</span>&<span class="hljs-title">lt</span>;</span><span class="hljs-keyword">unsigned</span> <span class="hljs-keyword">char</span>&gt; {
   <span class="hljs-keyword">typedef</span> choose_type&lt;<span class="hljs-keyword">sizeof</span>(<span class="hljs-keyword">char</span>) &lt; <span class="hljs-keyword">sizeof</span>(<span class="hljs-keyword">int</span>), <span class="hljs-keyword">int</span>, <span class="hljs-keyword">unsigned</span>&gt;::type type;
 };
 <span class="hljs-keyword">template</span> &lt;&gt;
-<span class="hljs-keyword">struct</span> promote&lt;<span class="hljs-keyword">char</span>&gt;
+<span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">promote</span>&<span class="hljs-title">lt</span>;</span><span class="hljs-keyword">char</span>&gt;
  : <span class="hljs-keyword">public</span> promote&lt;choose_type&lt;<span class="hljs-built_in">std</span>::numeric_limits&lt;<span class="hljs-keyword">char</span>&gt;::is_signed,
                               <span class="hljs-keyword">signed</span> <span class="hljs-keyword">char</span>, <span class="hljs-keyword">unsigned</span> <span class="hljs-keyword">char</span>&gt;::type&gt; {};
 </code></pre>
 <p>This last one for plain <code>char</code> is needed because C++ considers <code>char</code>, <code>signed char</code>, and <code>unsigned char</code> to be three distinct types. The standard does not specify whether <code>char</code> is signed or not. (The <code>numeric_limits</code> template is defined in the <code>limits</code> header.)</p>
 <p>Finally, to promote <code>wchar_t</code>:</p>
 <pre><code class="language-cpp hljs"><span class="hljs-keyword">template</span> &lt;&gt;
-<span class="hljs-keyword">struct</span> promote&lt;<span class="hljs-keyword">wchar_t</span>&gt; {
+<span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">promote</span>&<span class="hljs-title">lt</span>;</span><span class="hljs-keyword">wchar_t</span>&gt; {
   <span class="hljs-keyword">typedef</span> choose_type&lt;
             <span class="hljs-built_in">std</span>::numeric_limits&lt;<span class="hljs-keyword">wchar_t</span>&gt;::is_signed,
             choose_type&lt;<span class="hljs-keyword">sizeof</span>(<span class="hljs-keyword">wchar_t</span>) &lt;= <span class="hljs-keyword">sizeof</span>(<span class="hljs-keyword">int</span>), <span class="hljs-keyword">int</span>, <span class="hljs-keyword">long</span>&gt;::type,
@@ -108,22 +108,22 @@
 </code></pre>
 <p>We can now turn to the usual arithmetic conversions. First, we promote each type, if necessary:</p>
 <pre><code class="language-cpp hljs"><span class="hljs-keyword">template</span> &lt;<span class="hljs-keyword">typename</span> A, <span class="hljs-keyword">typename</span> B&gt;
-<span class="hljs-keyword">struct</span> resolve_uac : <span class="hljs-keyword">public</span> resolve_uac2&lt;<span class="hljs-keyword">typename</span> promote&lt;A&gt;::type,
+<span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">resolve_uac</span> :</span> <span class="hljs-keyword">public</span> resolve_uac2&lt;<span class="hljs-keyword">typename</span> promote&lt;A&gt;::type,
                                          <span class="hljs-keyword">typename</span> promote&lt;B&gt;::type&gt; {};
 </code></pre>
 <p>This ensures that the type arguments for <code>resolve_uac2</code> are at least <code>int</code>s. We then introduce ranks for those types:</p>
-<pre><code class="language-cpp hljs"><span class="hljs-keyword">template</span> &lt;<span class="hljs-keyword">typename</span> T&gt; <span class="hljs-keyword">struct</span> type_rank;
-<span class="hljs-keyword">template</span> &lt;&gt; <span class="hljs-keyword">struct</span> type_rank&lt;<span class="hljs-keyword">int</span>&gt;           { <span class="hljs-keyword">static</span> <span class="hljs-keyword">const</span> <span class="hljs-keyword">int</span> rank = <span class="hljs-number">1</span>; };
-<span class="hljs-keyword">template</span> &lt;&gt; <span class="hljs-keyword">struct</span> type_rank&lt;<span class="hljs-keyword">unsigned</span>&gt;      { <span class="hljs-keyword">static</span> <span class="hljs-keyword">const</span> <span class="hljs-keyword">int</span> rank = <span class="hljs-number">2</span>; };
-<span class="hljs-keyword">template</span> &lt;&gt; <span class="hljs-keyword">struct</span> type_rank&lt;<span class="hljs-keyword">long</span>&gt;          { <span class="hljs-keyword">static</span> <span class="hljs-keyword">const</span> <span class="hljs-keyword">int</span> rank = <span class="hljs-number">3</span>; };
-<span class="hljs-keyword">template</span> &lt;&gt; <span class="hljs-keyword">struct</span> type_rank&lt;<span class="hljs-keyword">unsigned</span> <span class="hljs-keyword">long</span>&gt; { <span class="hljs-keyword">static</span> <span class="hljs-keyword">const</span> <span class="hljs-keyword">int</span> rank = <span class="hljs-number">4</span>; };
-<span class="hljs-keyword">template</span> &lt;&gt; <span class="hljs-keyword">struct</span> type_rank&lt;<span class="hljs-keyword">float</span>&gt;         { <span class="hljs-keyword">static</span> <span class="hljs-keyword">const</span> <span class="hljs-keyword">int</span> rank = <span class="hljs-number">5</span>; };
-<span class="hljs-keyword">template</span> &lt;&gt; <span class="hljs-keyword">struct</span> type_rank&lt;<span class="hljs-keyword">double</span>&gt;        { <span class="hljs-keyword">static</span> <span class="hljs-keyword">const</span> <span class="hljs-keyword">int</span> rank = <span class="hljs-number">6</span>; };
-<span class="hljs-keyword">template</span> &lt;&gt; <span class="hljs-keyword">struct</span> type_rank&lt;<span class="hljs-keyword">long</span> <span class="hljs-keyword">double</span>&gt;   { <span class="hljs-keyword">static</span> <span class="hljs-keyword">const</span> <span class="hljs-keyword">int</span> rank = <span class="hljs-number">7</span>; };
+<pre><code class="language-cpp hljs"><span class="hljs-keyword">template</span> &lt;<span class="hljs-keyword">typename</span> T&gt; <span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">type_rank</span>;</span>
+<span class="hljs-keyword">template</span> &lt;&gt; <span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">type_rank</span>&<span class="hljs-title">lt</span>;</span><span class="hljs-keyword">int</span>&gt;           { <span class="hljs-keyword">static</span> <span class="hljs-keyword">const</span> <span class="hljs-keyword">int</span> rank = <span class="hljs-number">1</span>; };
+<span class="hljs-keyword">template</span> &lt;&gt; <span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">type_rank</span>&<span class="hljs-title">lt</span>;</span><span class="hljs-keyword">unsigned</span>&gt;      { <span class="hljs-keyword">static</span> <span class="hljs-keyword">const</span> <span class="hljs-keyword">int</span> rank = <span class="hljs-number">2</span>; };
+<span class="hljs-keyword">template</span> &lt;&gt; <span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">type_rank</span>&<span class="hljs-title">lt</span>;</span><span class="hljs-keyword">long</span>&gt;          { <span class="hljs-keyword">static</span> <span class="hljs-keyword">const</span> <span class="hljs-keyword">int</span> rank = <span class="hljs-number">3</span>; };
+<span class="hljs-keyword">template</span> &lt;&gt; <span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">type_rank</span>&<span class="hljs-title">lt</span>;</span><span class="hljs-keyword">unsigned</span> <span class="hljs-keyword">long</span>&gt; { <span class="hljs-keyword">static</span> <span class="hljs-keyword">const</span> <span class="hljs-keyword">int</span> rank = <span class="hljs-number">4</span>; };
+<span class="hljs-keyword">template</span> &lt;&gt; <span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">type_rank</span>&<span class="hljs-title">lt</span>;</span><span class="hljs-keyword">float</span>&gt;         { <span class="hljs-keyword">static</span> <span class="hljs-keyword">const</span> <span class="hljs-keyword">int</span> rank = <span class="hljs-number">5</span>; };
+<span class="hljs-keyword">template</span> &lt;&gt; <span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">type_rank</span>&<span class="hljs-title">lt</span>;</span><span class="hljs-keyword">double</span>&gt;        { <span class="hljs-keyword">static</span> <span class="hljs-keyword">const</span> <span class="hljs-keyword">int</span> rank = <span class="hljs-number">6</span>; };
+<span class="hljs-keyword">template</span> &lt;&gt; <span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">type_rank</span>&<span class="hljs-title">lt</span>;</span><span class="hljs-keyword">long</span> <span class="hljs-keyword">double</span>&gt;   { <span class="hljs-keyword">static</span> <span class="hljs-keyword">const</span> <span class="hljs-keyword">int</span> rank = <span class="hljs-number">7</span>; };
 </code></pre>
 <p>Now we can pick the type with the highest rank:</p>
 <pre><code class="language-cpp hljs"><span class="hljs-keyword">template</span> &lt;<span class="hljs-keyword">typename</span> A, <span class="hljs-keyword">typename</span> B&gt;
-<span class="hljs-keyword">struct</span> resolve_uac2 {
+<span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">resolve_uac2</span> {</span>
   <span class="hljs-keyword">typedef</span> <span class="hljs-keyword">typename</span> choose_type&lt;
             type_rank&lt;A&gt;::rank &gt;= type_rank&lt;B&gt;::rank, A, B
           &gt;::type return_type;
@@ -131,12 +131,12 @@
 </code></pre>
 <p>Finally we need to deal with the special case where one type is <code>long int</code> and the other is <code>unsigned int</code>:</p>
 <pre><code class="language-cpp hljs"><span class="hljs-keyword">template</span> &lt;&gt;
-<span class="hljs-keyword">struct</span> resolve_uac2&lt;<span class="hljs-keyword">long</span>, <span class="hljs-keyword">unsigned</span>&gt; {
+<span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">resolve_uac2</span>&<span class="hljs-title">lt</span>;</span><span class="hljs-keyword">long</span>, <span class="hljs-keyword">unsigned</span>&gt; {
   <span class="hljs-keyword">typedef</span> choose_type&lt;<span class="hljs-keyword">sizeof</span>(<span class="hljs-keyword">long</span>) == <span class="hljs-keyword">sizeof</span>(<span class="hljs-keyword">unsigned</span>),
                       <span class="hljs-keyword">unsigned</span> <span class="hljs-keyword">long</span>, <span class="hljs-keyword">long</span>&gt;::type return_type;
 };
 <span class="hljs-keyword">template</span> &lt;&gt;
-<span class="hljs-keyword">struct</span> resolve_uac2&lt;<span class="hljs-keyword">unsigned</span>, <span class="hljs-keyword">long</span>&gt; : <span class="hljs-keyword">public</span> resolve_uac2&lt;<span class="hljs-keyword">long</span>, <span class="hljs-keyword">unsigned</span>&gt; {};
+<span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">resolve_uac2</span>&<span class="hljs-title">lt</span>;</span><span class="hljs-keyword">unsigned</span>, <span class="hljs-keyword">long</span>&gt; : <span class="hljs-keyword">public</span> resolve_uac2&lt;<span class="hljs-keyword">long</span>, <span class="hljs-keyword">unsigned</span>&gt; {};
 </code></pre>
 <p>We can now write the <code>add</code> routine from earlier as:</p>
 <pre><code class="language-cpp hljs"><span class="hljs-keyword">template</span> &lt;<span class="hljs-keyword">typename</span> A, <span class="hljs-keyword">typename</span> B&gt;
@@ -185,7 +185,7 @@
             <path d="M12.8 16C12.8 8.978 7.022 3.2 0 3.2V0c8.777 0 16 7.223 16 16h-3.2zM2.194 11.61c1.21 0 2.195.985 2.195 2.196 0 1.21-.99 2.194-2.2 2.194C.98 16 0 15.017 0 13.806c0-1.21.983-2.195 2.194-2.195zM10.606 16h-3.11c0-4.113-3.383-7.497-7.496-7.497v-3.11c5.818 0 10.606 4.79 10.606 10.607z"/>
           </svg></span>
           <a href="http://feeds.feedburner.com/janmr-blog">Subscribe in a reader</a></p>
-        <footer><p class="text-muted">Copyright Jan Marthedal Rasmussen © 2018</p></footer>
+        <footer><p class="text-muted">Copyright Jan Marthedal Rasmussen © 2019</p></footer>
       </div>
     </div>
   </div>
