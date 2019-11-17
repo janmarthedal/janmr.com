@@ -11,9 +11,9 @@ We will make use of the following fundamental theorem:
 
 > $p \mid a b$ for a prime $p$, then $p \mid a$ or $p \mid b$.
 
-<div class="pull-right"><a href="http://www.amazon.com/gp/product/0198531710?ie=UTF8&tag=sputsoft-20&linkCode=as2&camp=1789&creative=390957&creativeASIN=0198531710"><img src="/media/books/hardy-wright.jpg" alt=""></a></div>
+<div class="pull-right"><a href="https://en.wikipedia.org/wiki/Special:BookSources/0198531710"><img src="/media/books/hardy-wright.jpg" alt=""></a></div>
 
-(Here, $p \mid a$ means that $p$ divides $a$.) This is called Euclid's First Theorem or [Euclid's Lemma](http://en.wikipedia.org/wiki/Euclid's_lemma). For most, it is intuitively clear, but a proof can be found in, e.g., <a href="http://www.amazon.com/gp/product/0198531710?ie=UTF8&tag=sputsoft-20&linkCode=as2&camp=1789&creative=390957&creativeASIN=0198531710">Hardy and Wright: An Introduction to the Theory of Numbers</a>.
+(Here, $p \mid a$ means that $p$ divides $a$.) This is called Euclid's First Theorem or [Euclid's Lemma](http://en.wikipedia.org/wiki/Euclid's_lemma). For most, it is intuitively clear, but a proof can be found in, e.g., <a href="https://en.wikipedia.org/wiki/Special:BookSources/0198531710">Hardy and Wright: An Introduction to the Theory of Numbers</a>.
 
 An application of this theorem to factorial numbers is that if a prime $p$ is a divisor of $n!$ then $p$ must be a divisor of at least one of the numbers $1, 2, \ldots, n$. This immediately implies
 

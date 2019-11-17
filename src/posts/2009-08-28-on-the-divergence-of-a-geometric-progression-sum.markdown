@@ -47,6 +47,6 @@ $$\text{the series } s_r \text{ is divergent for } |r| \geq 1,$$
 
 but circles around the value $1/(1-r)$ when $|r|=1$, $r \neq 1$. In fact, $1/(1-r)$ makes sense for all $r \neq 1$, so can this value be assigned to $s_r$ in some meaningful way? (When $|r| < 1$, I would suspect that the values of $s_r(n)$ spirals inward towards $1/(1-r)$ as $n$ grows and spirals outwards when $|r| > 1$; I have not verified this, though.)
 
-<div style="float:right"><a href="http://www.amazon.com/gp/product/0821826492?ie=UTF8&tag=sputsoft-20&linkCode=as2&camp=1789&creative=390957&creativeASIN=0821826492"><img src="/media/books/hardy-div.jpg" alt=""></a></div>
+<div style="float:right"><a href="https://en.wikipedia.org/wiki/Special:BookSources/0821826492"><img src="/media/books/hardy-div.jpg" alt=""></a></div>
 
 This reminded me that [G. H. Hardy](http://en.wikipedia.org/wiki/G._H._Hardy) has written a book called <em>Divergent Series</em>, where he manipulates infinite series with an &#8220;entirely uncritical spirit&#8221;. Therein, he also considers the series $s_r$ and, e.g., $s_{-1} = 1/2$ can somehow make sense. I have only flicked through the book ([excerpt](http://books.google.com/books?id=jPccoUKsLdQC&#038;printsec=frontcover&#038;source=gbs_v2_summary_r&#038;cad=0)), but I think I should take a closer look&#8230;

@@ -19,9 +19,9 @@ const amazon = {
     "hackers-delight":
         "https://en.wikipedia.org/wiki/Special:BookSources/0201914654",
     "hardy-div":
-        "http://www.amazon.com/gp/product/0821826492?ie=UTF8&tag=sputsoft-20&linkCode=as2&camp=1789&creative=390957&creativeASIN=0821826492",
+        "https://en.wikipedia.org/wiki/Special:BookSources/0821826492",
     "hardy-wright":
-        "http://www.amazon.com/gp/product/0198531710?ie=UTF8&tag=sputsoft-20&linkCode=as2&camp=1789&creative=390957&creativeASIN=0198531710",
+        "https://en.wikipedia.org/wiki/Special:BookSources/0198531710",
     "hawking":
         "http://www.amazon.com/gp/product/0762430044?ie=UTF8&tag=sputsoft-20&linkCode=as2&camp=1789&creative=390957&creativeASIN=0762430044",
     "khinchin":
