@@ -7,7 +7,7 @@ excerpt: "This article is a follow-up to part 1 where multiple-precision additio
 ---
 ### Introduction
 
-<div style="float:right"><a href="http://www.amazon.com/gp/product/0201896842?ie=UTF8&tag=sputsoft-20&linkCode=as2&camp=1789&creative=390957&creativeASIN=0201896842"><img src="/media/books/taocp2.jpg" alt=""></a></div>
+<div style="float:right"><a href="https://en.wikipedia.org/wiki/Special:BookSources/0201896842"><img src="/media/books/taocp2.jpg" alt=""></a></div>
 
 This article is a follow-up to [part 1](/blog/2009/07/implementing-multiple-precision-arithmetic-part-1) where multiple-precision addition, subtraction, and multiplication for non-negative integers was discussed. This article deals with division. Again, the theoretic foundation is based on Section&nbsp;4.3.1, *The Classical Algorithms*, of [The Art of Computer Programming](http://www-cs-faculty.stanford.edu/~uno/taocp.html), Volume&nbsp;2, by [Donald E. Knuth](http://www-cs-faculty.stanford.edu/~uno/).
 

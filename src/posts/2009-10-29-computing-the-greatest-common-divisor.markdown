@@ -61,7 +61,7 @@ Note that every time `u %= v` is executed we have $u \leftarrow r$ where $u = q 
 
 $$u = q v + r \geq v + r > 2r,$$
 
-<div style="float:right"><a href="http://www.amazon.com/gp/product/0201896842?ie=UTF8&tag=sputsoft-20&linkCode=as2&camp=1789&creative=390957&creativeASIN=0201896842"><img src="/media/books/taocp2.jpg" alt=""></a></div>
+<div style="float:right"><a href="https://en.wikipedia.org/wiki/Special:BookSources/0201896842"><img src="/media/books/taocp2.jpg" alt=""></a></div>
 
 which in turn means that the value of $u$ at least halves every time `u %= v` is executed. Of course, a similar statement holds for `v %= u`. This shows that Euclid's algorithm computes a remainder (roughly) at most $\log_2 u + \log_2 v$ times. For a thorough analysis see Section&nbsp;4.5.3 of [The Art of Computer Programming](http://www-cs-faculty.stanford.edu/~knuth/taocp.html), Volume&nbsp;2, by [Donald E. Knuth](http://www-cs-faculty.stanford.edu/~knuth/).
 

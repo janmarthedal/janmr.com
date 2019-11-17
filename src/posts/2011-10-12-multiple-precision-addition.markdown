@@ -5,7 +5,7 @@ tags: algorithms, multiple-precision, numbers-project
 categories: programming
 excerpt: "This post will cover a basic addition algorithm for multiple-precision non-negative integers. The algorithm is based upon that presented in Section 4.3.1, The Classical Algorithms, of The Art of Computer Programming, Volume 2, by Donald E. Knuth. The notation and bounds used in this post were presented in a previous post. We consider adding two n-digit numbers [...]"
 ---
-<div class="pull-right"><a href="http://www.amazon.com/gp/product/0201896842?ie=UTF8&tag=sputsoft-20&linkCode=as2&camp=1789&creative=390957&creativeASIN=0201896842"><img src="/media/books/taocp2.jpg" alt=""></a></div>
+<div class="pull-right"><a href="https://en.wikipedia.org/wiki/Special:BookSources/0201896842"><img src="/media/books/taocp2.jpg" alt=""></a></div>
 
 This post will cover a basic addition algorithm for multiple-precision non-negative integers. The algorithm is based upon that presented in Section 4.3.1, *The Classical Algorithms*, of [The Art of Computer Programming](http://www-cs-faculty.stanford.edu/~uno/taocp.html), Volume 2, by [Donald E. Knuth](http://www-cs-faculty.stanford.edu/~uno/). The notation and bounds used in this post were presented in a [previous post](/blog/2011/10/multiple-precision-number-representation).
 

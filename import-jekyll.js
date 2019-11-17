@@ -47,13 +47,13 @@ const amazon = {
     "taocp1":
         "https://en.wikipedia.org/wiki/Special:BookSources/0201896834",
     "taocp2":
-        "http://www.amazon.com/gp/product/0201896842?ie=UTF8&tag=sputsoft-20&linkCode=as2&camp=1789&creative=390957&creativeASIN=0201896842",
+        "https://en.wikipedia.org/wiki/Special:BookSources/0201896842",
     "taocp3":
-        "http://www.amazon.com/gp/product/0201896850?ie=UTF8&tag=sputsoft-20&linkCode=as2&camp=1789&creative=390957&creativeASIN=0201896850",
+        "https://en.wikipedia.org/wiki/Special:BookSources/0201896850",
     "taocp1f1":
-        "http://www.amazon.com/gp/product/0201853922?ie=UTF8&tag=sputsoft-20&linkCode=as2&camp=1789&creative=390957&creativeASIN=0201853922",
+        "https://en.wikipedia.org/wiki/Special:BookSources/0201853922",
     "taocp4f0":
-        "http://www.amazon.com/gp/product/0321534964?ie=UTF8&tag=sputsoft-20&linkCode=as2&camp=1789&creative=390957&creativeASIN=0321534964",
+        "https://en.wikipedia.org/wiki/Special:BookSources/0321534964",
     "taocp4f1":
         "http://www.amazon.com/gp/product/0321580508?ie=UTF8&tag=sputsoft-20&linkCode=as2&camp=1789&creative=390957&creativeASIN=0321580508",
     "taocp4f2":
