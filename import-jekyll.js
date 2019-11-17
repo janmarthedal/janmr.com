@@ -11,7 +11,7 @@ const amazon = {
     "conway-guy":
         "https://en.wikipedia.org/wiki/Special:BookSources/038797993X",
     "davis00":
-        "http://www.amazon.com/gp/product/0393322297?ie=UTF8&tag=sputsoft-20&link_code=as3&camp=211189&creative=373489&creativeASIN=0393322297",
+        "https://en.wikipedia.org/wiki/Special:BookSources/0393322297",
     "derbyshire03":
         "http://www.amazon.com/gp/product/0452285259?ie=UTF8&tag=sputsoft-20&linkCode=as2&camp=1789&creative=390957&creativeASIN=0452285259",
     "derbyshire06":
