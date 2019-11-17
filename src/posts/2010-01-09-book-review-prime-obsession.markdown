@@ -29,7 +29,7 @@ This is a good book. While describing the history and mathematics of the Riemann
 
 I would recommend it to anyone interested in mathematics and who has some basic mathematical knowledge.
 
-> *If I were to awaken after having slept for a thousand years, my first question would be: Has the Riemann hypothesis been proven?* &#8212; David Hilbert (Quoted in <a href="http://www.amazon.com/gp/product/0306454041?ie=UTF8&tag=sputsoft-20&linkCode=as2&camp=1789&creative=9325&creativeASIN=0306454041">Mathematical Mysteries: The Beauty and Magic of Numbers</a>)
+> *If I were to awaken after having slept for a thousand years, my first question would be: Has the Riemann hypothesis been proven?* &#8212; David Hilbert (Quoted in <a href="https://en.wikipedia.org/wiki/Special:BookSources/0306454041">Mathematical Mysteries: The Beauty and Magic of Numbers</a>)
 
 Book facts:
 

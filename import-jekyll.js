@@ -29,11 +29,11 @@ const amazon = {
     "korner":
         "https://en.wikipedia.org/wiki/Special:BookSources/0521568234",
     "mathmyst":
-        "http://www.amazon.com/gp/product/0306454041?ie=UTF8&tag=sputsoft-20&linkCode=as2&camp=1789&creative=9325&creativeASIN=0306454041",
+        "https://en.wikipedia.org/wiki/Special:BookSources/0306454041",
     "numbers-games":
-        "http://www.amazon.com/gp/product/1568811276?ie=UTF8&tag=sputsoft-20&linkCode=as2&camp=1789&creative=390957&creativeASIN=1568811276",
+        "https://en.wikipedia.org/wiki/Special:BookSources/1568811276",
     "proofsbook":
-        "http://www.amazon.com/gp/product/3540404600?ie=UTF8&tag=sputsoft-20&linkCode=as2&camp=1789&creative=390957&creativeASIN=3540404600",
+        "https://en.wikipedia.org/wiki/Special:BookSources/3540404600",
     "pww2":
         "http://www.amazon.com/gp/product/0883857219?ie=UTF8&tag=sputsoft-20&linkCode=as2&camp=1789&creative=390957&creativeASIN=0883857219",
     "sicp":

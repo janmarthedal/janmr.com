@@ -40,7 +40,7 @@ This procedure is easily generalized and we have
 <div class="pull-right">(1)</div>
 $$d_p(n!) = \sum_{k=1}^\infty \left\lfloor \frac{n}{p^k} \right\rfloor = \sum_{k=1}^{\lfloor \log_p(n) \rfloor} \left\lfloor \frac{n}{p^k} \right\rfloor.$$
 
-This [identity](http://en.wikipedia.org/wiki/Factorial#Number_theory) was found by the french mathematician [Adrien-Marie Legendre](http://en.wikipedia.org/wiki/Adrien-Marie_Legendre) (see also <a href="http://www.amazon.com/gp/product/3540404600?ie=UTF8&tag=sputsoft-20&linkCode=as2&camp=1789&creative=390957&creativeASIN=3540404600">Aigner and Ziegler: Proofs from The Book</a>, page 8, where it is called Legendre's Theorem).
+This [identity](http://en.wikipedia.org/wiki/Factorial#Number_theory) was found by the french mathematician [Adrien-Marie Legendre](http://en.wikipedia.org/wiki/Adrien-Marie_Legendre) (see also <a href="https://en.wikipedia.org/wiki/Special:BookSources/3540404600">Aigner and Ziegler: Proofs from The Book</a>, page 8, where it is called Legendre's Theorem).
 
 Doing this for all primes in our example, we get
 

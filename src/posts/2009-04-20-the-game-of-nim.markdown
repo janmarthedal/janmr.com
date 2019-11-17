@@ -411,7 +411,7 @@ In other words, if a game has $p_1 \oplus p_2 \oplus \cdots \oplus p_n \neq 0$ t
 
 According to Fascicle 1 of [The Art of Computer Programming](http://www-cs-faculty.stanford.edu/~uno/taocp.html), Volume 4, by [Donald E. Knuth](http://www-cs-faculty.stanford.edu/~uno/), the binary operator XOR, $\oplus$, was known long before operators such as binary *AND* and binary *OR*, because it is so intimately tied to the Nim game. For the same reason, the XOR operator has often been called the &#8220;nim sum&#8221;.
 
-<div style="float:right"><a href="http://www.amazon.com/gp/product/1568811276?ie=UTF8&tag=sputsoft-20&linkCode=as2&camp=1789&creative=390957&creativeASIN=1568811276"><img src="/media/books/numbers-games.jpg" alt=""></a></div>
+<div style="float:right"><a href="https://en.wikipedia.org/wiki/Special:BookSources/1568811276"><img src="/media/books/numbers-games.jpg" alt=""></a></div>
 
 Note how the definition of the $\star n$-games resembles one of the standard ways to construct the [natural numbers](http://en.wikipedia.org/wiki/Natural_number). Other than its obvious relation to the Nim-game, this is perhaps one of the reasons that $\star n$-games are sometimes called *nimbers*. Generalized numbers and games are the subject of the book [On Numbers and Games](http://en.wikipedia.org/wiki/On_Numbers_and_Games) by [John H. Conway](http://en.wikipedia.org/wiki/John_Horton_Conway).
 
