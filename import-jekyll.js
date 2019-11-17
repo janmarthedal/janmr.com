@@ -3,7 +3,7 @@ const Metalsmith = require('metalsmith');
 
 const amazon = {
     "abramowitz":
-        "http://www.amazon.com/gp/product/0486612724?ie=UTF8&tag=sputsoft-20&linkCode=as2&camp=1789&creative=390957&creativeASIN=0486612724",
+        "https://en.wikipedia.org/wiki/Special:BookSources/0486612724",
     "pww1":
         "https://en.wikipedia.org/wiki/Special:BookSources/0883857006",
     "concrete":
