@@ -55,13 +55,13 @@ const amazon = {
     "taocp4f0":
         "https://en.wikipedia.org/wiki/Special:BookSources/0321534964",
     "taocp4f1":
-        "http://www.amazon.com/gp/product/0321580508?ie=UTF8&tag=sputsoft-20&linkCode=as2&camp=1789&creative=390957&creativeASIN=0321580508",
+        "https://en.wikipedia.org/wiki/Special:BookSources/0321580508",
     "taocp4f2":
-        "http://www.amazon.com/gp/product/0201853930?ie=UTF8&tag=sputsoft-20&linkCode=as2&camp=1789&creative=390957&creativeASIN=0201853930",
+        "https://en.wikipedia.org/wiki/Special:BookSources/0201853930",
     "taocp4f3":
-        "http://www.amazon.com/gp/product/0201853949?ie=UTF8&tag=sputsoft-20&linkCode=as2&camp=1789&creative=390957&creativeASIN=0201853949",
+        "https://en.wikipedia.org/wiki/Special:BookSources/0201853949",
     "taocp4f4":
-        "http://www.amazon.com/gp/product/0321335708?ie=UTF8&tag=sputsoft-20&linkCode=as2&camp=1789&creative=390957&creativeASIN=0321335708",
+        "https://en.wikipedia.org/wiki/Special:BookSources/0321335708",
 };
 
 function import_jekyll(files, metalsmith, done) {

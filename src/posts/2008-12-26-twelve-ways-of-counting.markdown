@@ -189,7 +189,7 @@ All twelve case can be summarized in the following table:
 </tbody>
 </table>
 
-<div style="float:right"><a href="http://www.amazon.com/gp/product/0201853949?ie=UTF8&tag=sputsoft-20&linkCode=as2&camp=1789&creative=390957&creativeASIN=0201853949"><img src="/media/books/taocp4f3.jpg" alt=""></a></div>
+<div style="float:right"><a href="https://en.wikipedia.org/wiki/Special:BookSources/0201853949"><img src="/media/books/taocp4f3.jpg" alt=""></a></div>
 
 <div style="float:right"><a href="https://en.wikipedia.org/wiki/Special:BookSources/0521663512"><img src="/media/books/stanley97.jpg" alt=""></a></div>
 

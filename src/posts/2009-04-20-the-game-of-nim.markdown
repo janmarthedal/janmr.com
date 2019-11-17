@@ -7,7 +7,7 @@ excerpt: "I have known the game of Nim for many years. Once, a friend of mine be
 ---
 ### Introduction
 
-<div style="float:right"><a href="http://www.amazon.com/gp/product/0321580508?ie=UTF8&tag=sputsoft-20&linkCode=as2&camp=1789&creative=390957&creativeASIN=0321580508"><img src="/media/books/taocp4f1.jpg" alt=""></a></div>
+<div style="float:right"><a href="https://en.wikipedia.org/wiki/Special:BookSources/0321580508"><img src="/media/books/taocp4f1.jpg" alt=""></a></div>
 
 I have known the game of Nim for many years. Once, a friend of mine beat me repeatedly in one game after another and I had no idea how he did it. Looking back, I am not sure he knew the perfect Nim-strategy, but he knew enough to frustrate me immensely. A year ago or so, I was flicking through Fascicle 1 of [The Art of Computer Programming](http://www-cs-faculty.stanford.edu/~uno/taocp.html), Volume 4 by [Donald E. Knuth](http://www-cs-faculty.stanford.edu/~uno/), and I read about the strategy of Nim. The strategy is *very* simple but I could not possibly understand *why* it worked.
 
