@@ -13,7 +13,7 @@ const amazon = {
     "davis00":
         "https://en.wikipedia.org/wiki/Special:BookSources/0393322297",
     "derbyshire03":
-        "http://www.amazon.com/gp/product/0452285259?ie=UTF8&tag=sputsoft-20&linkCode=as2&camp=1789&creative=390957&creativeASIN=0452285259",
+        "https://en.wikipedia.org/wiki/Special:BookSources/0452285259",
     "derbyshire06":
         "http://www.amazon.com/gp/product/0452288533?ie=UTF8&tag=sputsoft-20&linkCode=as2&camp=1789&creative=390957&creativeASIN=0452288533",
     "hackers-delight":
