@@ -7,7 +7,7 @@ const amazon = {
     "pww1":
         "https://en.wikipedia.org/wiki/Special:BookSources/0883857006",
     "concrete":
-        "http://www.amazon.com/gp/product/0201558025?ie=UTF8&tag=sputsoft-20&linkCode=as2&camp=1789&creative=390957&creativeASIN=0201558025",
+        "https://en.wikipedia.org/wiki/Special:BookSources/0201558025",
     "conway-guy":
         "http://www.amazon.com/gp/product/038797993X?ie=UTF8&tag=sputsoft-20&linkCode=as2&camp=1789&creative=390957&creativeASIN=038797993X",
     "davis00":

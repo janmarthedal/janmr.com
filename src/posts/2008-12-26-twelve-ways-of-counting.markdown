@@ -112,7 +112,7 @@ We now go to Case 3 where the balls are labeled and the urns are unlabeled, like
 
 $$C_3(m,n) = \sum_{k=1}^m \left\{ {n \atop k} \right\}.$$
 
-<div style="float:right"><a href="http://www.amazon.com/gp/product/0201558025?ie=UTF8&tag=sputsoft-20&linkCode=as2&camp=1789&creative=390957&creativeASIN=0201558025"><img src="/media/books/concrete.jpg" alt=""></a></div>
+<div style="float:right"><a href="https://en.wikipedia.org/wiki/Special:BookSources/0201558025"><img src="/media/books/concrete.jpg" alt=""></a></div>
 
 You can read more about Sterling numbers in, e.g., [Concrete Mathematics](http://www-cs-faculty.stanford.edu/~uno/gkp.html) by Graham, Knuth, and Patashnik.
 
