@@ -88,9 +88,9 @@ unsigned floor_log2(uint32_t v) {
 
 This provides a nice trade-off between speed and memory use.
 
-<div class="pull-right"><a href="http://www.amazon.com/gp/product/0201914654?ie=UTF8&tag=sputsoft-20&linkCode=as2&camp=1789&creative=390957&creativeASIN=0201914654"><img src="/media/books/hackers-delight.jpg" alt=""></a></div>
+<div class="pull-right"><a href="https://en.wikipedia.org/wiki/Special:BookSources/0201914654"><img src="/media/books/hackers-delight.jpg" alt=""></a></div>
 <div class="pull-right"><a href="http://www.amazon.com/gp/product/0321580508?ie=UTF8&tag=sputsoft-20&linkCode=as2&camp=1789&creative=390957&creativeASIN=0321580508"><img src="/media/books/taocp4f1.jpg" alt=""></a></div>
 
-For further reading on the integer binary logarithm, and *many* other aspects related to the binary representation of numbers, I recommend <a href="http://www.amazon.com/gp/product/0321580508?ie=UTF8&tag=sputsoft-20&linkCode=as2&camp=1789&creative=390957&creativeASIN=0321580508">The Art of Computer Programming, Volume 4, Fascicle 1: Bitwise Tricks &amp; Techniques and Binary Decision Diagrams</a> by [Donald E. Knuth](http://www-cs-faculty.stanford.edu/~uno/) and <a href="http://www.amazon.com/gp/product/0201914654?ie=UTF8&tag=sputsoft-20&linkCode=as2&camp=1789&creative=390957&creativeASIN=0201914654">Hacker's Delight</a> by Henry S. Warren, Jr. See also these online [Bit Twiddling Hacks](http://graphics.stanford.edu/~seander/bithacks.html#IntegerLogObvious).
+For further reading on the integer binary logarithm, and *many* other aspects related to the binary representation of numbers, I recommend <a href="http://www.amazon.com/gp/product/0321580508?ie=UTF8&tag=sputsoft-20&linkCode=as2&camp=1789&creative=390957&creativeASIN=0321580508">The Art of Computer Programming, Volume 4, Fascicle 1: Bitwise Tricks &amp; Techniques and Binary Decision Diagrams</a> by [Donald E. Knuth](http://www-cs-faculty.stanford.edu/~uno/) and <a href="https://en.wikipedia.org/wiki/Special:BookSources/0201914654">Hacker's Delight</a> by Henry S. Warren, Jr. See also these online [Bit Twiddling Hacks](http://graphics.stanford.edu/~seander/bithacks.html#IntegerLogObvious).
 
 *(Update 2014-03-25: Source code is available as snippet [integer\_binary\_logarithm](https://github.com/janmarthedal/snippets/blob/master/c++/kanooth/snippets/integer_binary_logarithm.hpp).)*
