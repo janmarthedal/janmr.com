@@ -17,7 +17,7 @@ If you haven't seen the problem before, I highly recommend trying to solve it be
 I had previously tried to solve it, but without success. This time I couldn't get it out of my mind. I had become a (self-inflicted) victim of *nerd sniping*.
 
 <figure>
-  <a href="http://xkcd.com/356/"><img class="img-responsive" title="xkcd: Nerd sniping" src="http://imgs.xkcd.com/comics/nerd_sniping.png" alt="Nerd sniping"></a>
+  <a href="http://xkcd.com/356/"><img class="img-responsive" title="xkcd: Nerd sniping" src="https://imgs.xkcd.com/comics/nerd_sniping.png" alt="Nerd sniping"></a>
   <figcaption><strong>Figure 2.</strong> xkcd explains nerd sniping</figcaption>
 </figure>
 
