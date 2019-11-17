@@ -28,8 +28,8 @@ Metalsmith(__dirname)
     .metadata({
         site: {
             title: 'janmr.com',
-            description: 'User-contributed collection of mathematical definitions, theorems and proofs',
-            url: 'http://janmr.com/'
+            description: 'Website for Jan Marthedal Rasmussen',
+            url: 'https://janmr.com/'
         }
     })
     .source('./src')
