@@ -12,9 +12,9 @@ If you add a `short int` and a `char` in C++, what is the resulting type? What i
 
 ### Introduction
 
-<div class="pull-right"><a href="http://www.amazon.com/gp/product/0201700735?ie=UTF8&tag=sputsoft-20&linkCode=as2&camp=1789&creative=390957&creativeASIN=0201700735"><img src="/media/books/stroustrup.jpg" alt=""></a></div>
+<div class="pull-right"><a href="https://en.wikipedia.org/wiki/Special:BookSources/0201700735"><img src="/media/books/stroustrup.jpg" alt=""></a></div>
 
-Let me first note that I will be referring to the current C++ standard from 1998 (with a minor revision in 2003). This standard is described in <a href="http://www.amazon.com/gp/product/0201700735?ie=UTF8&tag=sputsoft-20&linkCode=as2&camp=1789&creative=390957&creativeASIN=0201700735">The C++ Programming Language</a> by [Bjarne Stroustrup](http://www.stroustrup.com). It can also be found [online](ftp://ftp.research.att.com/pub/c++std/WP/CD2/).
+Let me first note that I will be referring to the current C++ standard from 1998 (with a minor revision in 2003). This standard is described in <a href="https://en.wikipedia.org/wiki/Special:BookSources/0201700735">The C++ Programming Language</a> by [Bjarne Stroustrup](http://www.stroustrup.com). It can also be found [online](ftp://ftp.research.att.com/pub/c++std/WP/CD2/).
 
 In C++, the *integer types* are `short int`, `int`, `long int` and the unsigned versions of these. The integer types together with the boolean type (`bool`) and the character types (plain/`signed`/`unsigned` `char` and `wchar_t`) are called *integral types*. The integral types together with the floating-point types (`float`, `double`, and `long double`) are called *arithmetic types*.
 
@@ -47,7 +47,7 @@ When a binary operator (`+`, `-`, `*`, `/`, `%`) is applied to operands with ari
 
 ### Integral Promotions
 
-Integral promotions are defined in Section 4.5, page 4-3, from the [online standard](ftp://ftp.research.att.com/pub/c++std/WP/CD2/) and in Section C.6.1, page 833, from <a href="http://www.amazon.com/gp/product/0201700735?ie=UTF8&tag=sputsoft-20&linkCode=as2&camp=1789&creative=390957&creativeASIN=0201700735">The C++ Programming Language</a>. If we ignore enumerations and bit-fields, they can be summed up as follows:
+Integral promotions are defined in Section 4.5, page 4-3, from the [online standard](ftp://ftp.research.att.com/pub/c++std/WP/CD2/) and in Section C.6.1, page 833, from <a href="https://en.wikipedia.org/wiki/Special:BookSources/0201700735">The C++ Programming Language</a>. If we ignore enumerations and bit-fields, they can be summed up as follows:
 
 *   A `char`, `signed char`, `signed char`, `short int`, `unsigned short int` is converted to `int` if `int` can represent all the values of the source type; otherwise, it is converted to an `unsigned int`.
 *   `wchar_t` is converted to the first of the following types that can represent all the values of `wchar_t`: `int`, `unsigned int`, `long`, `unsigned long`.
@@ -55,7 +55,7 @@ Integral promotions are defined in Section 4.5, page 4-3, from the [online stand
 
 ### Usual Arithmetic Conversions
 
-The rules for usual arithmetic conversions can be found in Section 5, page 5-2, from the [online standard](ftp://ftp.research.att.com/pub/c++std/WP/CD2/) and in Section C.6.3, page 836, from <a href="http://www.amazon.com/gp/product/0201700735?ie=UTF8&tag=sputsoft-20&linkCode=as2&camp=1789&creative=390957&creativeASIN=0201700735">The C++ Programming Language</a>. Assuming integral promotions have been performed (if needed), the usual arithmetic conversions are in essense the following:
+The rules for usual arithmetic conversions can be found in Section 5, page 5-2, from the [online standard](ftp://ftp.research.att.com/pub/c++std/WP/CD2/) and in Section C.6.3, page 836, from <a href="https://en.wikipedia.org/wiki/Special:BookSources/0201700735">The C++ Programming Language</a>. Assuming integral promotions have been performed (if needed), the usual arithmetic conversions are in essense the following:
 
 *   If one operand is a `long int` and the other `unsigned int`, then if a `long int` can represent all the values of an `unsigned int`, the `unsigned int` shall be converted to a `long int`; otherwise both operands shall be converted to `unsigned long int`.
 *   Otherwise, find the highest ranking type among the operands and convert the other operand to this type. The relevant types listed from high to low rank are: `long double`, `double`, `float`, `unsigned long`, `long`, `unsigned`, `int`.

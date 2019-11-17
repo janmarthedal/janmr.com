@@ -27,6 +27,6 @@ Knuth uses this result to show how pi appears in the asymptotic formula for Cata
 
 $$n! \sim \sqrt{2 \pi n} \left(\frac{n}{e}\right)^n.$$
 
-See, e.g., exercise 1.2.11.2&ndash;5 in <a href="http://www.amazon.com/gp/product/0201896834?ie=UTF8&tag=sputsoft-20&linkCode=as2&camp=1789&creative=9325&creativeASIN=0201896834">The Art of Computer Programming, Volume 1</a>.
+See, e.g., exercise 1.2.11.2&ndash;5 in <a href="https://en.wikipedia.org/wiki/Special:BookSources/0201896834">The Art of Computer Programming, Volume 1</a>.
 
 You can watch the lecture by Knuth by going to the [Computer Musings by Professor Donald E. Knuth](http://scpd.stanford.edu/knuth/index.jsp) page at Stanford University (*update 2013-06-30:* direct link no longer working). I highly recommend it.

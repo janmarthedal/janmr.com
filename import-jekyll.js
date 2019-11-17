@@ -41,11 +41,11 @@ const amazon = {
     "stanley97":
         "https://en.wikipedia.org/wiki/Special:BookSources/0521663512",
     "stepanov09":
-        "http://www.amazon.com/gp/product/032163537X?ie=UTF8&tag=sputsoft-20&linkCode=as2&camp=1789&creative=390957&creativeASIN=032163537X",
+        "https://en.wikipedia.org/wiki/Special:BookSources/032163537X",
     "stroustrup":
-        "http://www.amazon.com/gp/product/0201700735?ie=UTF8&tag=sputsoft-20&linkCode=as2&camp=1789&creative=390957&creativeASIN=0201700735",
+        "https://en.wikipedia.org/wiki/Special:BookSources/0201700735",
     "taocp1":
-        "http://www.amazon.com/gp/product/0201896834?ie=UTF8&tag=sputsoft-20&linkCode=as2&camp=1789&creative=9325&creativeASIN=0201896834",
+        "https://en.wikipedia.org/wiki/Special:BookSources/0201896834",
     "taocp2":
         "http://www.amazon.com/gp/product/0201896842?ie=UTF8&tag=sputsoft-20&linkCode=as2&camp=1789&creative=390957&creativeASIN=0201896842",
     "taocp3":

@@ -120,7 +120,7 @@ Finally, if working with multiple-precision numbers, the binary shift operation 
 
 How many times is the while-loop executed, in the worst case? Either $u$ or $v$ is reduced by at least a factor two, so, similar to Euclid's algorithm, the loop is executed at most $\log_2 u + \log_2 v$ times.
 
-<div style="float:right"><a href="http://www.amazon.com/gp/product/032163537X?ie=UTF8&tag=sputsoft-20&linkCode=as2&camp=1789&creative=390957&creativeASIN=032163537X"><img src="/media/books/stepanov09.jpg" alt=""></a></div>
+<div style="float:right"><a href="https://en.wikipedia.org/wiki/Special:BookSources/032163537X"><img src="/media/books/stepanov09.jpg" alt=""></a></div>
 
 It should be noted that [Alex Stepanov](http://www.stepanovpapers.com) has written [some notes](http://www.stepanovpapers.com/notes.pdf) that, among many other things, deal with generic implementations of both Euclid's and Stein's gcd algorithms (see Section&nbsp;10.2). Stepanov has also written the book [Elements of Programming](http://www.elementsofprogramming.com) with [Paul McJones](http://www.mcjones.org/paul/), which presents a mathematical approach to programming. The book also mentions Euclid's and Stein's algorithms, but the treatment in the notes is more comprehensive.
 
