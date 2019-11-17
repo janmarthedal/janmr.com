@@ -33,7 +33,7 @@ The second visualization, seen in Figure&nbsp;2, is attributed [Thābit ibn Qurr
 
 ### Visualization 3
 
-<div class="pull-right"><a href="http://www.amazon.com/gp/product/0883857219?ie=UTF8&tag=sputsoft-20&linkCode=as2&camp=1789&creative=390957&creativeASIN=0883857219"><img src="/media/books/pww2.jpg" alt=""></a></div>
+<div class="pull-right"><a href="https://en.wikipedia.org/wiki/Special:BookSources/0883857219"><img src="/media/books/pww2.jpg" alt=""></a></div>
 
 The third visualization is due to the 12. century Indian mathematician and astronomer [Bhāskara](http://en.wikipedia.org/wiki/Bhāskara_II), see Figure&nbsp;3. I think it is a bit harder to understand at first, compared to the ones above, but it is still quite elegant. The trick is to observe that the right-most figure consists of two squares, joined at the dashed line. The side lengths of these squares can then be compared to the side lengths of the triangles.
 

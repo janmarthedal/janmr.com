@@ -16,9 +16,9 @@ $$T(a,b) = (a+b, a)$$
 
 and $r(a,b)=b$ then we have $F_n = r(T^n(1,0))$, where $T^n$ means that the operator $T$ is applied $n$ times (and $T^0$ is the identity). This reduces the number of iterations to $n$ which is much much better than exponential growth.
 
-<div class="pull-right"><a href="http://www.amazon.com/gp/product/0262510871?ie=UTF8&tag=sputsoft-20&link_code=as3&camp=211189&creative=373489&creativeASIN=0262510871"><img src="/media/books/sicp.jpg" alt=""></a></div>
+<div class="pull-right"><a href="https://en.wikipedia.org/wiki/Special:BookSources/0262510871"><img src="/media/books/sicp.jpg" alt=""></a></div>
 
-But it can get even better. The following method is inspired by an exercise in the book [Structure and Interpretation of Computer Programs](http://www.amazon.com/gp/product/0262510871?ie=UTF8&tag=sputsoft-20&link_code=as3&camp=211189&creative=373489&creativeASIN=0262510871) (see [Exercise 1.19](http://mitpress.mit.edu/sicp/full-text/book/book-Z-H-11.html#%_sec_1.2.4)). The key observation is that if we introduce
+But it can get even better. The following method is inspired by an exercise in the book [Structure and Interpretation of Computer Programs](https://en.wikipedia.org/wiki/Special:BookSources/0262510871) (see [Exercise 1.19](http://mitpress.mit.edu/sicp/full-text/book/book-Z-H-11.html#%_sec_1.2.4)). The key observation is that if we introduce
 
 $$T_{p,q}(a,b) = (a q + a p + b q, b p + a q)$$
 

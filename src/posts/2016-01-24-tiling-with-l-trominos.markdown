@@ -32,6 +32,6 @@ As an example, here is a complete tiling for a $32 \times 32$ grid:
 
 Try clicking on different cells in the figure&mdash;the layout should update automatically ([full-screen example](http://janmarthedal.github.io/tromino/)).
 
-The theorem is mentioned in [Proof Without Words II](http://www.amazon.com/gp/product/0883857219?ie=UTF8&tag=sputsoft-20&linkCode=as2&camp=1789&creative=390957&creativeASIN=0883857219) by Roger B. Nelsen and in Mathematical Gems III by Ross Honsberger. The theorem itself is attributed to [Solomon W. Golomb](https://en.wikipedia.org/wiki/Solomon_W._Golomb).
+The theorem is mentioned in [Proof Without Words II](https://en.wikipedia.org/wiki/Special:BookSources/0883857219) by Roger B. Nelsen and in Mathematical Gems III by Ross Honsberger. The theorem itself is attributed to [Solomon W. Golomb](https://en.wikipedia.org/wiki/Solomon_W._Golomb).
 
 <script src="/media/js/tromino.js"></script>

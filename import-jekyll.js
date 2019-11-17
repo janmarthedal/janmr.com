@@ -35,11 +35,11 @@ const amazon = {
     "proofsbook":
         "https://en.wikipedia.org/wiki/Special:BookSources/3540404600",
     "pww2":
-        "http://www.amazon.com/gp/product/0883857219?ie=UTF8&tag=sputsoft-20&linkCode=as2&camp=1789&creative=390957&creativeASIN=0883857219",
+        "https://en.wikipedia.org/wiki/Special:BookSources/0883857219",
     "sicp":
-        "http://www.amazon.com/gp/product/0262510871?ie=UTF8&tag=sputsoft-20&link_code=as3&camp=211189&creative=373489&creativeASIN=0262510871",
+        "https://en.wikipedia.org/wiki/Special:BookSources/0262510871",
     "stanley97":
-        "http://www.amazon.com/gp/product/0521663512?ie=UTF8&tag=sputsoft-20&linkCode=as2&camp=1789&creative=9325&creativeASIN=0521663512",
+        "https://en.wikipedia.org/wiki/Special:BookSources/0521663512",
     "stepanov09":
         "http://www.amazon.com/gp/product/032163537X?ie=UTF8&tag=sputsoft-20&linkCode=as2&camp=1789&creative=390957&creativeASIN=032163537X",
     "stroustrup":
