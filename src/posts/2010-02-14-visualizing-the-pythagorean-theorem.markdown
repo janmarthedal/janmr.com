@@ -22,7 +22,7 @@ This first one is a classic, at least for me, see Figure&nbsp;1. It is very simp
 
 ### Visualization 2
 
-<div class="pull-right"><a href="http://www.amazon.com/gp/product/0762430044?ie=UTF8&tag=sputsoft-20&linkCode=as2&camp=1789&creative=390957&creativeASIN=0762430044"><img src="/media/books/hawking.jpg" alt=""></a></div>
+<div class="pull-right"><a href="https://en.wikipedia.org/wiki/Special:BookSources/0762430044"><img src="/media/books/hawking.jpg" alt=""></a></div>
 
 The second visualization, seen in Figure&nbsp;2, is attributed [Thābit ibn Qurra](http://en.wikipedia.org/wiki/Thābit_ibn_Qurra) who lived around 900 A.D. It is probably my current favorite, partly because only a single figure/drawing is needed. Two colorings of this figure, however, is shown to ease the understanding.
 
@@ -42,7 +42,7 @@ The third visualization is due to the 12. century Indian mathematician and astro
   <figcaption><strong>Figure 3.</strong></figcaption>
 </figure>
 
-Stephen Hawking, in [God Created the Integers](http://www.amazon.com/gp/product/0762430044?ie=UTF8&tag=sputsoft-20&linkCode=as2&camp=1789&creative=390957&creativeASIN=0762430044), claims that Bhāskara did not show the figure to the right in Figure&nbsp;3, but simply said &#8220;see!&#8221;. Hawking then observes: If the sides of the triangles are $a$, $b$, and $c$, with $c$ the length of the hypotenuse and $a > b$, we have
+Stephen Hawking, in [God Created the Integers](https://en.wikipedia.org/wiki/Special:BookSources/0762430044), claims that Bhāskara did not show the figure to the right in Figure&nbsp;3, but simply said &#8220;see!&#8221;. Hawking then observes: If the sides of the triangles are $a$, $b$, and $c$, with $c$ the length of the hypotenuse and $a > b$, we have
 
 $$c^2 = 4 \frac{a b}{2} + (a-b)^2 = a^2 + b^2.$$
 

@@ -23,11 +23,11 @@ const amazon = {
     "hardy-wright":
         "https://en.wikipedia.org/wiki/Special:BookSources/0198531710",
     "hawking":
-        "http://www.amazon.com/gp/product/0762430044?ie=UTF8&tag=sputsoft-20&linkCode=as2&camp=1789&creative=390957&creativeASIN=0762430044",
+        "https://en.wikipedia.org/wiki/Special:BookSources/0762430044",
     "khinchin":
-        "http://www.amazon.com/gp/product/0486696308?ie=UTF8&tag=sputsoft-20&linkCode=as2&camp=1789&creative=390957&creativeASIN=0486696308",
+        "https://en.wikipedia.org/wiki/Special:BookSources/0486696308",
     "korner":
-        "http://www.amazon.com/gp/product/0521568234?ie=UTF8&tag=sputsoft-20&linkCode=as2&camp=1789&creative=390957&creativeASIN=0521568234",
+        "https://en.wikipedia.org/wiki/Special:BookSources/0521568234",
     "mathmyst":
         "http://www.amazon.com/gp/product/0306454041?ie=UTF8&tag=sputsoft-20&linkCode=as2&camp=1789&creative=9325&creativeASIN=0306454041",
     "numbers-games":
