@@ -14,7 +14,7 @@ is true ($n_1, n_2, d_1, d_2$ are all assumed to be positive integers). Of cours
 
 $$n_1 d_2 < n_2 d_1 \; ,$$
 
-and we were done. But if our number representation allowed only numbers up to a certain size, say 32 bit unsigned integers, the multiplication could overflow.
+and we were done. But if our number representation allowed numbers only up to a certain size, say 32 bit unsigned integers, the multiplication could overflow.
 
 Of course, double-precision could be used to do the multiplication anyway, but this post will present a different method. The method effectively computes the [continued fraction representation](/blog/2009/11/continued-fractions-and-continuants) of each fraction simultaneously, but stops as soon as they differ. It is also the algorithm used for comparisons in the Boost C++ library [Rational](http://www.boost.org/doc/libs/release/libs/rational/).
 
@@ -22,7 +22,7 @@ We start by doing the (integer) division on each side of the inequality to obtai
 
 $$q_1 + \frac{r_1}{d_1} < q_2 + \frac{r_2}{d_2}$$
 
-with $q_k = \lfloor d_k/n_k \rfloor \geq 1$ the quotient and $r_k = n_k - q_k d_k$ the remainder ($k=1,2$).
+with $q_k = \lfloor n_k/d_k \rfloor \geq 0$ the quotient and $r_k = n_k - q_k d_k$ the remainder ($k=1,2$).
 
 Now if $q_1 < q_2$ we have (using [properties of the floor function](/blog/2009/09/useful-properties-of-the-floor-and-ceil-functions))
 
