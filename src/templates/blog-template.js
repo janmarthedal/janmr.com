@@ -2,10 +2,14 @@ import React from "react"
 import { graphql } from "gatsby"
 
 export default function Template({
-  data, // this prop will be injected by the GraphQL query below.
+  data, // this prop will be injected by the GraphQL query below
+  pageContext
 }) {
   const { markdownRemark } = data // data.markdownRemark holds your post data
   const { frontmatter, html } = markdownRemark
+  const { prev, next } = pageContext
+  console.log('prev', prev)
+  console.log('next', next)
   return (
     <main>
       <h1><a href="/blog/">janmr blog</a></h1>
@@ -15,7 +19,19 @@ export default function Template({
             { frontmatter.title }<br/>
             <small><time datetime={ frontmatter.isoDate }>{ frontmatter.date }</time></small>
           </h2>
+          <div className="post-tags">
+            { frontmatter.tags.map(tag => <a className="label" href={ `/blog/tags/${tag}` }>{ tag }</a>) }
+          </div>
           <div className="post-body" dangerouslySetInnerHTML={{ __html: html }} />
+          <div className="page-navigation">
+            <div className="prev-post">
+              { prev && <a href={ prev.frontmatter.path } title={ "Previous post: " + prev.frontmatter.title }>&laquo; { prev.frontmatter.title }</a> }
+            </div>
+            <div className="next-post">
+              { next && <a href={ next.frontmatter.path } title={ "Next post: " + next.frontmatter.title }>{ next.frontmatter.title } &raquo;</a> }
+            </div>
+          </div>
+          <div id="disqus_thread"></div>
         </div>
       </div>
     </main>
@@ -31,6 +47,7 @@ export const pageQuery = graphql`
         isoDate: date(formatString: "YYYY-MM-DD")
         path
         title
+        tags
       }
     }
   }
