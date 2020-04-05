@@ -13,7 +13,7 @@ const IndexPage = ({
   const Posts = edges
     .filter(edge => !!edge.node.frontmatter.date)
     .map(edge => <li key={ edge.node.id }>
-      <a href={ edge.node.frontmatter.path }>{ edge.node.frontmatter.title }</a> <small>{ edge.node.frontmatter.date }</small>
+      <Link to={ edge.node.frontmatter.path }>{ edge.node.frontmatter.title }</Link> <small>{ edge.node.frontmatter.date }</small>
     </li>)
 
   return (

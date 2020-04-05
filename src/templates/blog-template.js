@@ -1,5 +1,5 @@
 import React from "react"
-import { graphql } from "gatsby"
+import { graphql, Link } from "gatsby"
 
 import BlogPage from "../components/blog-page"
 
@@ -17,15 +17,15 @@ export default function Template({
         <small><time dateTime={ frontmatter.isoDate }>{ frontmatter.date }</time></small>
       </h2>
       <div className="post-tags">
-        { frontmatter.tags.map(tag => <a key={ tag } className="label" href={ `/blog/tags/${tag}` }>{ tag }</a>) }
+        { frontmatter.tags.map(tag => <Link key={ tag } className="label" to={ `/blog/tags/${tag}` }>{ tag }</Link>) }
       </div>
       <div className="post-body" dangerouslySetInnerHTML={{ __html: html }} />
       <div className="page-navigation">
         <div className="prev-post">
-          { prev && <a href={ prev.frontmatter.path } title={ "Previous post: " + prev.frontmatter.title }>&laquo; { prev.frontmatter.title }</a> }
+          { prev && <Link to={ prev.frontmatter.path } title={ "Previous post: " + prev.frontmatter.title }>&laquo; { prev.frontmatter.title }</Link> }
         </div>
         <div className="next-post">
-          { next && <a href={ next.frontmatter.path } title={ "Next post: " + next.frontmatter.title }>{ next.frontmatter.title } &raquo;</a> }
+          { next && <Link to={ next.frontmatter.path } title={ "Next post: " + next.frontmatter.title }>{ next.frontmatter.title } &raquo;</Link> }
         </div>
       </div>
       <div id="disqus_thread"></div>

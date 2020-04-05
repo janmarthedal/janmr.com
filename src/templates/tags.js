@@ -1,5 +1,5 @@
 import React from "react"
-import { graphql } from "gatsby"
+import { graphql, Link } from "gatsby"
 
 import BlogPage from "../components/blog-page"
 
@@ -10,7 +10,7 @@ const Tags = ({ pageContext, data }) => {
   const Posts = edges
     .filter(edge => !!edge.node.frontmatter.date)
     .map(edge => <h5 key={ edge.node.id }>
-      <a href={ edge.node.frontmatter.path }>{ edge.node.frontmatter.title }</a> <small>{ edge.node.frontmatter.date }</small>
+      <Link to={ edge.node.frontmatter.path }>{ edge.node.frontmatter.title }</Link> <small>{ edge.node.frontmatter.date }</small>
     </h5>)
 
   return (
