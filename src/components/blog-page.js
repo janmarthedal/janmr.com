@@ -15,7 +15,7 @@ const BlogPage = ({ children }) => (
       </div>
       <div className="sidebar">
         <h4>About</h4>
-        <p>A blog about mathematics and computer programming by <Link href="/">Jan Marthedal Rasmussen</Link>.</p>
+        <p>A blog about mathematics and computer programming by <Link to="/">Jan Marthedal Rasmussen</Link>.</p>
         <h4>Links</h4>
         <p><span className="icon">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
