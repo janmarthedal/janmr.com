@@ -1,7 +1,7 @@
 ---
 path: /blog/2015/01/typesetting-math-with-html-and-css-fractions
 date: '2015-01-24'
-title: Typesetting Math Using HTML and CSS &mdash; Fractions
+title: "Typesetting Math Using HTML and CSS: Fractions"
 tags:
   - math-typesetting
 categories:
