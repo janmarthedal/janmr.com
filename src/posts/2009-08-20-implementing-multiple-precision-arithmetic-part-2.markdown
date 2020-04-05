@@ -36,25 +36,39 @@ We will now consider (long) division from a top-level point of view. It is actua
 *   **G3**. $q_k \leftarrow \left\lfloor (u^{(k+1)}_{k+n} \ldots u^{(k+1)}_{k+1} u^{(k+1)}_k)_b / v \right\rfloor$.
 *   **G4**. Set $u^{(k)} \leftarrow u^{(k+1)} - q_k b^k v$ or, equivalently,
 
-    $$\begin{aligned} (u^{(k)}_{k+n} \ldots u^{(k)}_{k+1} u^{(k)}_k)_b &\leftarrow (u^{(k+1)}_{k+n} \ldots u^{(k+1)}_{k+1} u^{(k+1)}_k)_b - q_k v, \\ (u^{(k)}_{k-1} \ldots u^{(k)}_1 u^{(k)}_0)_b &\leftarrow (u^{(k+1)}_{k-1} \ldots u^{(k+1)}_1 u^{(k+1)}_0)_b. \end{aligned}$$
+$$
+\begin{aligned}
+(u^{(k)}_{k+n} \ldots u^{(k)}_{k+1} u^{(k)}_k)_b &\leftarrow (u^{(k+1)}_{k+n} \ldots u^{(k+1)}_{k+1} u^{(k+1)}_k)_b - q_k v, \\
+(u^{(k)}_{k-1} \ldots u^{(k)}_1 u^{(k)}_0)_b &\leftarrow (u^{(k+1)}_{k-1} \ldots u^{(k+1)}_1 u^{(k+1)}_0)_b.
+\end{aligned}
+$$
 
 *   **G5**. If $k=0$ then set $r \leftarrow u^{(0)}$ and exit. Otherwise set $k \leftarrow k-1$ and go to step&nbsp;**G3**.
 
 An essential invariant of this algorithm is
 
-$$(u^{(k)}_{k+n-1} \ldots u^{(k)}_{k+1} u^{(k)}_k)_b < v \quad \text{for} \quad k=0, 1, \ldots, m-n+1.$$
+$$
+(u^{(k)}_{k+n-1} \ldots u^{(k)}_{k+1} u^{(k)}_k)_b < v \quad \text{for} \quad k=0, 1, \ldots, m-n+1.
+$$
 
 This can be seen as follows. For $k=m-n+1$ the invariant is ensured by introducing a zero as the most significant digit of $u^{(m-n+1)}$ in step&nbsp;**G1**. For $k=0,1,\ldots,m-n$ we see from steps&nbsp;**G3** and&nbsp;**G4** that $(u^{(k)}_{k+n} \ldots u^{(k)}_{k+1} u^{(k)}_k)_b = (u^{(k+1)}_{k+n} \ldots u^{(k+1)}_{k+1} u^{(k+1)}_k)_b \text{ mod } v$ and the inequality follows.
 
 Note that the invariant implies that $u^{(k)}_{k+n}=0$ for $k=0, 1, \ldots, m-n$. Furthermore we have that
 
-$$(u^{(k+1)}_{k+n} \ldots u^{(k+1)}_{k+1} u^{(k+1)}_k)_b = (u^{(k+1)}_{k+n} \ldots u^{(k+1)}_{k+1})_b \cdot b + u^{(k+1)}_k \leq (v-1) b + (b-1) = v b - 1$$
+$$
+(u^{(k+1)}_{k+n} \ldots u^{(k+1)}_{k+1} u^{(k+1)}_k)_b = (u^{(k+1)}_{k+n} \ldots u^{(k+1)}_{k+1})_b \cdot b + u^{(k+1)}_k \leq (v-1) b + (b-1) = v b - 1
+$$
 
 from which we see that the quotients $q_k$ computed in step&nbsp;**G3** are non-negative and smaller than $b$, as they should be.
 
 Finally, we can verify that the algorithm computes what we intended. We have
 
-$$\begin{aligned} r &= u^{(0)} = u^{(1)} - q_0 b^0 v = u^{(2)} - q_1 b^1 v - q_0 b^0 v = \ldots \\ &= u^{(m-n+1)} - (q_{m-n} b^{m-n} + \cdots + q_0 b^0) v = u - q v. \end{aligned}$$
+$$
+\begin{aligned}
+r &= u^{(0)} = u^{(1)} - q_0 b^0 v = u^{(2)} - q_1 b^1 v - q_0 b^0 v = \ldots \\
+&= u^{(m-n+1)} - (q_{m-n} b^{m-n} + \cdots + q_0 b^0) v = u - q v.
+\end{aligned}
+$$
 
 Now for some practical aspects. Note first that all of the $u^{(k)}$ variables can in fact be represented by a single variable and simply overwrite its digits along the way&mdash;thus ending up with the remainder. Note also that any of the remainder's digits may be zero.
 
@@ -82,7 +96,9 @@ Let us now consider computing the quotient in step&nbsp;**G3** in the case $n > 
 
 We wish to compute $q = \lfloor u/v \rfloor$ as fast as possible. How good is a 'first order' approximation, where we use just the two most-significant digits of $u$ and the most-significant digit of $v$: $(u_n b + u_{n-1})/v_{n-1}$? First of all, if $u_n = v_{n-1}$ this quantity equals $b$ and we know that $q \leq b-1$ by assumption, so let us therefore study
 
-$$\hat{q} = \text{min} \left( \left\lfloor \frac{u_n b + u_{n-1}}{v_{n-1}} \right\rfloor, b-1 \right)$$
+$$
+\hat{q} = \text{min} \left( \left\lfloor \frac{u_n b + u_{n-1}}{v_{n-1}} \right\rfloor, b-1 \right)
+$$
 
 This approximate quotient is never too small, as the following theorem states.
 
@@ -93,7 +109,13 @@ This approximate quotient is never too small, as the following theorem states.
 <div class="proof">
 If $\hat{q}=b-1$ then since $q \leq b-1$ by assumption, the statement is true. Assume then that $\hat{q} = \lfloor (u_n b + u_{n-1})/v_{n-1} \rfloor$. From the properties of the [floor function](http://en.wikipedia.org/wiki/Floor_function) we have $u_n b + u_{n-1} \leq \hat{q} v_{n-1} + v_{n-1} - 1$ and therefore $\hat{q} v_{n-1} \geq u_n b + u_{n-1} - v_{n-1} + 1$. We then get
 
-$$\begin{aligned} u - \hat{q} v &\leq u - \hat{q} v_{n-1} b^{n-1} \\ &\leq u_n b^n + \cdots + u_0 - (u_n b + u_{n-1} - v_{n-1} + 1) b^{n-1} \\ &= u_{n-2} b^{n-2} + \cdots + u_0 - b^{n-1} + v_{n-1} b^{n-1} < v_{n-1} b^{n-1} \leq v. \end{aligned}$$
+$$
+\begin{aligned}
+u - \hat{q} v &\leq u - \hat{q} v_{n-1} b^{n-1} \\
+&\leq u_n b^n + \cdots + u_0 - (u_n b + u_{n-1} - v_{n-1} + 1) b^{n-1} \\
+&= u_{n-2} b^{n-2} + \cdots + u_0 - b^{n-1} + v_{n-1} b^{n-1} < v_{n-1} b^{n-1} \leq v.
+\end{aligned}
+$$
 
 So $u - \hat{q} v < v$ and since $0 \leq u - q v < v$ we must have $q \leq \hat{q}$.
 </div>
@@ -107,34 +129,48 @@ If $u$ and $v$ are scaled appropriately, $\hat{q}$ will never be too large, eith
 <div class="proof">
 Assume that $\hat{q} \geq q+3$. We get
 
-$$\hat{q} \leq \frac{u_n b u_{n-1}}{v_{n-1}} = \frac{u_n b^n u_{n-1} b^{n-1}}{v_{n-1} b^{n-1}} \leq \frac{u}{v_{n-1} b^{n-1}} < \frac{u}{v - b^{n-1}},$$
+$$
+\hat{q} \leq \frac{u_n b u_{n-1}}{v_{n-1}} = \frac{u_n b^n u_{n-1} b^{n-1}}{v_{n-1} b^{n-1}} \leq \frac{u}{v_{n-1} b^{n-1}} < \frac{u}{v - b^{n-1}},
+$$
 
 since $v = v_{n-1} b^{n-1} + \cdots + v_0 \leq v_{n-1} b^{n-1} + b^{n-1}$. We cannot have $v = b^{n-1}$ since that would imply $\hat{q} = q = u_n$. The relation $q = \lfloor u/v \rfloor$ implies $q > u/v - 1$, from which we get
 
-$$3 \leq \hat{q} - q < \frac{u}{v - b^{n-1}} - \frac{u}{v} + 1 = \frac{u}{v} \left( \frac{b^{n-1}}{v - b^{n-1}} \right) + 1.$$
+$$
+3 \leq \hat{q} - q < \frac{u}{v - b^{n-1}} - \frac{u}{v} + 1 = \frac{u}{v} \left( \frac{b^{n-1}}{v - b^{n-1}} \right) + 1.
+$$
 
 We then have
 
-$$\frac{u}{v} \geq 2 \left( \frac{v - b^{n-1}}{b^{n-1}} \right) \geq 2(v_{n-1} - 1),$$
+$$
+\frac{u}{v} \geq 2 \left( \frac{v - b^{n-1}}{b^{n-1}} \right) \geq 2(v_{n-1} - 1),
+$$
 
 and finally
 
-$$b-4 \geq \hat{q}-3 \geq q = \lfloor u/v \rfloor \geq 2(v_{n-1}-1),$$
+$$
+b-4 \geq \hat{q}-3 \geq q = \lfloor u/v \rfloor \geq 2(v_{n-1}-1),
+$$
 
 which implies $v_{n-1} < \lfloor b/2 \rfloor$.
 </div>
 
 We would expect to come even closer if we consider the 'second order' approximate quotient,
 
-$$\left\lfloor \frac{u_n b^2 + u_{n-1} b + u_{n-2}}{v_{n-1} b + v_{n-2}} \right\rfloor,$$
+$$
+\left\lfloor \frac{u_n b^2 + u_{n-1} b + u_{n-2}}{v_{n-1} b + v_{n-2}} \right\rfloor,
+$$
 
 but how much closer? Given some approximate quotient $\hat{q}$, let us compute the corresponding second order residual
 
-$$u_n b^2 + u_{n-1} b + u_{n-2} - \hat{q} (v_{n-1} b + v_{n-2}) = \hat{r} b + u_{n-2} - \hat{q} v_{n-2},$$
+$$
+u_n b^2 + u_{n-1} b + u_{n-2} - \hat{q} (v_{n-1} b + v_{n-2}) = \hat{r} b + u_{n-2} - \hat{q} v_{n-2},
+$$
 
 where $\hat{r}$ is the first order residual,
 
-$$\hat{r} = u_n b + u_{n-1} - \hat{q} v_{n-1}.$$
+$$
+\hat{r} = u_n b + u_{n-1} - \hat{q} v_{n-1}.
+$$
 
 By studying the sign of the second order residual we can now get closer to the true quotient.
 
@@ -145,7 +181,14 @@ By studying the sign of the second order residual we can now get closer to the t
 <div class="proof">
 Assume $\hat{q} v_{n-2} > b \hat{r} + u_{n-2}$, equivalent to $\hat{r} b + u_{n-2} - \hat{q} v_{n-2} + 1 \leq 0$. We then have
 
-$$\begin{aligned} u - \hat{q} v &\leq u - \hat{q} v_{n-1} b^{n-1} - \hat{q} v_{n-2} b^{n-2} \\ &=    b^{n-1} (u_n b + u_{n-1} - \hat{q} v_{n-1}) + u_{n-2} b^{n-2} + \cdots + u_0 - \hat{q} v_{n-2} b^{n-2} \\ &<    b^{n-1} \hat{r} + u_{n-2} b^{n-2} + b^{n-2} - \hat{q} v_{n-2} b^{n-2} \\ &=    b^{n-2} (\hat{r} b + u_{n-2} - \hat{q} v_{n-2} + 1) \leq 0. \end{aligned}$$
+$$
+\begin{aligned}
+u - \hat{q} v &\leq u - \hat{q} v_{n-1} b^{n-1} - \hat{q} v_{n-2} b^{n-2} \\
+&= b^{n-1} (u_n b + u_{n-1} - \hat{q} v_{n-1}) + u_{n-2} b^{n-2} + \cdots + u_0 - \hat{q} v_{n-2} b^{n-2} \\
+&< b^{n-1} \hat{r} + u_{n-2} b^{n-2} + b^{n-2} - \hat{q} v_{n-2} b^{n-2} \\
+&= b^{n-2} (\hat{r} b + u_{n-2} - \hat{q} v_{n-2} + 1) \leq 0.
+\end{aligned}
+$$
 
 So $u - \hat{q} v < 0 \leq u - q v$ which implies $q < \hat{q}$.
 </div>
@@ -157,7 +200,15 @@ So $u - \hat{q} v < 0 \leq u - q v$ which implies $q < \hat{q}$.
 <div class="proof">
 Let $\hat{q} v_{n-2} \leq b \hat{r} + u_{n-2}$ and assume $\hat{q} \geq q+2$. Now since $u - q v < v$ we get
 
-$$\begin{aligned} u &< (q+1) v \leq (\hat{q}-1) v < \hat{q} (v_{n-1} b^{n-1} + v_{n-2} b^{n-2} + b^{n-2}) - v \\ &< \hat{q} v_{n-1} b^{n-1} + \hat{q} v_{n-2} b^{n-2} + b^{n-1} - v \\ &\leq \hat{q} v_{n-1} b^{n-1} + (b \hat{r} + u_{n-2}) b^{n-2} + b^{n-1} - v \\ &= u_n b^n + u_{n-1} b^{n-1} + u_{n-2} b^{n-2} + b^{n-1} - v \\ &\leq u_n b^n + u_{n-1} b^{n-1} + u_{n-2} b^{n-2} \leq u. \end{aligned}$$
+$$
+\begin{aligned}
+u &< (q+1) v \leq (\hat{q}-1) v < \hat{q} (v_{n-1} b^{n-1} + v_{n-2} b^{n-2} + b^{n-2}) - v \\
+&< \hat{q} v_{n-1} b^{n-1} + \hat{q} v_{n-2} b^{n-2} + b^{n-1} - v \\
+&\leq \hat{q} v_{n-1} b^{n-1} + (b \hat{r} + u_{n-2}) b^{n-2} + b^{n-1} - v \\
+&= u_n b^n + u_{n-1} b^{n-1} + u_{n-2} b^{n-2} + b^{n-1} - v \\
+&\leq u_n b^n + u_{n-1} b^{n-1} + u_{n-2} b^{n-2} \leq u.
+\end{aligned}
+$$
 
 This claims that $u < u$, a contradiction, so our assumption $\hat{q} \geq q+2$ must have been wrong.
 </div>

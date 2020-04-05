@@ -55,7 +55,9 @@ The third visualization is due to the 12. century Indian mathematician and astro
 
 Stephen Hawking, in [God Created the Integers](https://en.wikipedia.org/wiki/Special:BookSources/0762430044), claims that Bhāskara did not show the figure to the right in Figure&nbsp;3, but simply said &#8220;see!&#8221;. Hawking then observes: If the sides of the triangles are $a$, $b$, and $c$, with $c$ the length of the hypotenuse and $a > b$, we have
 
-$$c^2 = 4 \frac{a b}{2} + (a-b)^2 = a^2 + b^2.$$
+$$
+c^2 = 4 \frac{a b}{2} + (a-b)^2 = a^2 + b^2.
+$$
 
 ### Other
 

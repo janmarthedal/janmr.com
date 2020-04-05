@@ -12,6 +12,7 @@ import PropTypes from "prop-types"
 // import Header from "./header"
 import "./normalize.css"
 import "./extra.less"
+import "./mathjax.css"
 
 const Layout = ({ children }) => {
   /*const data = useStaticQuery(graphql`

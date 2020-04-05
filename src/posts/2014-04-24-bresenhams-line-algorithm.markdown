@@ -32,13 +32,17 @@ extended to the general case with arbitrary starting and ending points.
 
 The line has the form
 
-$$y = f(x) = \frac{\Delta y}{\Delta x} x$$
+$$
+y = f(x) = \frac{\Delta y}{\Delta x} x
+$$
 
 and we aim to sample the line at the grid points $(x_k, y_k)$ with $x_k = k$ for $k = 0, 1, \ldots, \Delta x$ and $y_0 = 0$.
 
 We now associate with each step an *error* term,
 
-$$\nabla_k = 2\Delta x \left[f(x_k) - (y_{k-1} + \textstyle\frac{1}{2})\right] = 2x_k\Delta y - (2y_{k-1} + 1) \Delta x \; .$$
+$$
+\nabla_k = 2\Delta x \left[f(x_k) - (y_{k-1} + \textstyle\frac{1}{2})\right] = 2x_k\Delta y - (2y_{k-1} + 1) \Delta x \; .
+$$
 
 The interpretation of this error term is important: It expresses the difference at
 $x = x_k$ between the line's true $y$-coordinate, $f(x_k)$, and the
@@ -62,15 +66,21 @@ chosen grid point is. It is straightforward to show that $-2\Delta x < \nabla_k 
 
 To determine the $\nabla_k$'s we start with the base case:
 
-$$\nabla_1 = 2\cdot 1\cdot \Delta y - (2\cdot 0 + 1) \Delta x = 2\Delta y - \Delta x \; .$$
+$$
+\nabla_1 = 2\cdot 1\cdot \Delta y - (2\cdot 0 + 1) \Delta x = 2\Delta y - \Delta x \; .
+$$
 
 For $k=1, 2, \ldots, \Delta x - 1$ we get
 
-$$\nabla_{k+1} - \nabla_k = 2(x_{k+1}-x_k)\Delta y - 2(y_k-y_{k-1})\Delta x \; .$$
+$$
+\nabla_{k+1} - \nabla_k = 2(x_{k+1}-x_k)\Delta y - 2(y_k-y_{k-1})\Delta x \; .
+$$
 
 We now split into the two cases for $\nabla_k$ and get
 
-$$\nabla_{k+1} = \begin{cases} \nabla_k + 2\Delta y & \text{for } \nabla_k \leq 0 \; , \\ \nabla_k + 2\Delta y - 2\Delta x & \text{for } \nabla_k > 0 \; , \end{cases}$$
+$$
+\nabla_{k+1} = \begin{cases} \nabla_k + 2\Delta y & \text{for } \nabla_k \leq 0 \; , \\ \nabla_k + 2\Delta y - 2\Delta x & \text{for } \nabla_k > 0 \; , \end{cases}
+$$
 
 for $k=1, 2, \ldots, \Delta x - 1$.
 

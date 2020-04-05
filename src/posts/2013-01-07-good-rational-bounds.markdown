@@ -15,7 +15,9 @@ excerpt: >-
 
 Say we have a k-bit integer and we want to allocate a character array to hold the decimal digits of this number. How large must the array be? Well, the exact formula is
 
-$$\left\lfloor \log_{10}(2^k) \right\rfloor + 1 = \left\lfloor k \frac{\ln(2)}{\ln(10)} \right\rfloor + 1,$$
+$$
+\left\lfloor \log_{10}(2^k) \right\rfloor + 1 = \left\lfloor k \frac{\ln(2)}{\ln(10)} \right\rfloor + 1,
+$$
 
 but we are concerned about efficiency and don't want to use floating point calculations. So we fire up a calculator and get $\ln(2) / \ln(10) \simeq 0.3010299957$. This means that we can use, e.g., $1/3$ as an upper bound for $\ln(2) / \ln(10)$ and allocate $\lfloor k / 3 \rfloor + 1$ characters. But we are also concerned about memory and think it is a waste to use little more than 10% more memory than needed. We could just use $30103/100000$ as an upper bound, but we don't want to use too large constants because we are also concerned about arithmetic overflow.
 
@@ -26,7 +28,9 @@ This is where continued fractions come in, see an [earlier post](/blog/2009/11/c
 
 We will now apply these facts to our example. We start by obtaining any rational upper bound with the restriction that it must be tighter than the good rational bound that we are aiming for. We have $\ln(2) / \ln(10) < 0.30103$ and we compute the continued fraction for this upper bound,
 
-$$30103/100000 = /\!/ 3, 3, 9, 2, 2, 4, 5, 1, 1, 1, 2 /\!/.$$
+$$
+30103/100000 = /\!/ 3, 3, 9, 2, 2, 4, 5, 1, 1, 1, 2 /\!/.
+$$
 
 We now begin to compute the odd convergents, and keeping an eye on how tight they are:
 

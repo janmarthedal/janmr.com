@@ -21,13 +21,17 @@ excerpt: >-
 
 The Riemann Hypothesis concerns the zeros of the [Riemann zeta function](http://en.wikipedia.org/wiki/Riemann_zeta_function),
 
-$$\zeta(s) = \sum_{n=1}^\infty \frac{1}{n^s} = 1 + \frac{1}{2^s} + \frac{1}{3^s} + \frac{1}{4^s} + \ldots$$
+$$
+\zeta(s) = \sum_{n=1}^\infty \frac{1}{n^s} = 1 + \frac{1}{2^s} + \frac{1}{3^s} + \frac{1}{4^s} + \ldots
+$$
 
 (actually, the right-hand side is only well-defined for $\Re s > 1$, and $\zeta(s)$ is an [analytical continuation](http://en.wikipedia.org/wiki/Analytic_continuation) of this infinite series). The zeta function is defined for all complex numbers $s \neq 1$ and has the so-called trivial zeros $s=-2, -4, -6, \ldots$ along the real line. The Riemann Hypothesis says: *All non-trivial zeros of the Riemann Zeta function has real part* $\frac{1}{2}$. [Billions of non-trivial zeros](http://www.dtc.umn.edu/~odlyzko/zeta_tables/index.html) with real part $\frac{1}{2}$ have been found computationally, but it remains to prove whether this is true for them all.
 
 The Riemann zeta function is intimately linked to primes through the [Euler product formula](http://en.wikipedia.org/wiki/Euler_product_formula),
 
-$$\sum_{n=1}^\infty \frac{1}{n^s} = \prod_{p \text{ prime}} \left( 1 - \frac{1}{p^s} \right)^{-1}$$
+$$
+\sum_{n=1}^\infty \frac{1}{n^s} = \prod_{p \text{ prime}} \left( 1 - \frac{1}{p^s} \right)^{-1}
+$$
 
 which the book refers to as the Golden Key. Proving the Riemann Hypothesis could provide important insight into the distribution of primes.
 

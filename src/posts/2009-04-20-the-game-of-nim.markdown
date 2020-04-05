@@ -62,7 +62,9 @@ For instance, $\star 1 = \{\{\}\}$, $\star 2 = \{\{\},\{\{\}\}\}$, and $\star 3 
 
 We can also construct a new game by adding two games. Given two games $G$ and $H$ the notation $G + H$ means that a move can be chosen from either $G$ or $H$. If, e.g., a move is made in $G$ that leads to the game $g \in G$, the game for the added game becomes $g + H$. In general we have
 
-$$G + H = \{ G + h \mid h \in H \} \cup \{ g + H \mid g \in G \}$$
+$$
+G + H = \{ G + h \mid h \in H \} \cup \{ g + H \mid g \in G \}
+$$
 
 We see that $G + \{\} = \{\} + G = G$, as it should be. These special cases, and the fact that set union is commutative, makes position adding commutative too. Likewise, since union is associative and $G + (\{\} + H) = (G + \{\}) + H$ and $G + (H + \{\}) = (G + H) + \{\}$, we also have associativity for game adding.
 
@@ -143,7 +145,9 @@ The goal is now to characterize ${\cal S}_P$ or, equivalently, the games $G$ for
 
 We do this by constructing a function $E: {\cal S} \rightarrow \{0, 1, 2, \ldots \}$ such that
 
-$$G \sim \star E(G)$$
+$$
+G \sim \star E(G)
+$$
 
 for all games $G$. This will identify ${\cal S}_P$ since we will have $G \sim \{\} \Leftrightarrow E(G) = 0$.
 
@@ -162,7 +166,9 @@ These points actually give away the solution:
 
 **Theorem 7** (The Sprague–Grundy Theorem)**.** For any impartial game $G$ we have $G \sim \star E(G)$ with
 
-$$E(G) = \text{mex}(\{ E(G') \mid G' \in G \}),$$
+$$
+E(G) = \text{mex}(\{ E(G') \mid G' \in G \}),
+$$
 
 where $\text{mex}(S) = \min\{k \mid k \geq 0 \text{ and } k \not\in S \}$ is the &#8220;minimal excludant&#8221; of $S$.
 
@@ -170,19 +176,27 @@ where $\text{mex}(S) = \min\{k \mid k \geq 0 \text{ and } k \not\in S \}$ is the
 
 Let us now apply the theory to Nim. Since every game of Nim has the form
 
-$$G = \star p_1 + \star p_2 + \cdots + \star p_n, \quad p_j \geq 0,$$
+$$
+G = \star p_1 + \star p_2 + \cdots + \star p_n, \quad p_j \geq 0,
+$$
 
 and since
 
-$$E(G + H) = E(\star E(G) + \star E(H))$$
+$$
+E(G + H) = E(\star E(G) + \star E(H))
+$$
 
 for all games $G$ and $H$, we have
 
-$$E(G) = E(\star p_1 + \star E(\star p_2 + \cdots + \star E(\star p_{n-1} + \star p_n) \cdots )).$$
+$$
+E(G) = E(\star p_1 + \star E(\star p_2 + \cdots + \star E(\star p_{n-1} + \star p_n) \cdots )).
+$$
 
 This means that if we know the value of $E(\star x + \star y)$ for all $x, y \geq 0$, then we can compute $E(G)$ of every Nim-game $G$. Let us introduce the notation $x \circ y = E(\star x + \star y)$. Using the Sprague–Grundy Theorem we have
 
-$$x \circ y = \text{mex}(\{ x \circ (y-1), \ldots, x \circ 1, x \circ 0 \} \cup \{ (x-1) \circ y, \ldots, 1 \circ y, \ldots, 0 \circ y \}).$$
+$$
+x \circ y = \text{mex}(\{ x \circ (y-1), \ldots, x \circ 1, x \circ 0 \} \cup \{ (x-1) \circ y, \ldots, 1 \circ y, \ldots, 0 \circ y \}).
+$$
 
 This makes it possible to tabulate the values of the $\circ$-operator:
 
@@ -390,7 +404,9 @@ This looks suspiciously like the binary [exclusive-or (XOR)](http://en.wikipedia
 
 **Theorem 8** (The Sprague–Grundy Theorem)**.** Let $x = \text{mex}(S)$ and $y = \text{mex}(T)$. Then
 
-$$x \oplus y = \text{mex} \left( (S \oplus y) \cup (x \oplus T) \right),$$
+$$
+x \oplus y = \text{mex} \left( (S \oplus y) \cup (x \oplus T) \right),
+$$
 
 where $S \oplus y = \{ x \oplus y \mid x \in S \}$ and $x \oplus T = \{ x \oplus y \mid y \in T \}$.
 
@@ -406,11 +422,15 @@ To show (b) we choose a $k$ such that $0 \leq k < x \oplus y$. We now set $x \op
 
 From this theorem we see that if $S = \{ 0, 1, \ldots, x-1 \}$ and $T = \{ 0, 1, \ldots, y-1 \}$ we have the desired equality. We now have
 
-$$E(\star p_1 + \star p_2 + \cdots + \star p_n) = p_1 \oplus p_2 \oplus \cdots \oplus p_n,$$
+$$
+E(\star p_1 + \star p_2 + \cdots + \star p_n) = p_1 \oplus p_2 \oplus \cdots \oplus p_n,
+$$
 
 and thus
 
-$$G = \star p_1 + \star p_2 + \cdots + \star p_n \in {\cal S}_P \quad \Leftrightarrow \quad p_1 \oplus p_2 \oplus \cdots \oplus p_n = 0.$$
+$$
+G = \star p_1 + \star p_2 + \cdots + \star p_n \in {\cal S}_P \quad \Leftrightarrow \quad p_1 \oplus p_2 \oplus \cdots \oplus p_n = 0.
+$$
 
 Recalling the definitions of ${\cal S}_P$ and ${\cal S}_N$ we now have the ultimate strategy for Nim:
 

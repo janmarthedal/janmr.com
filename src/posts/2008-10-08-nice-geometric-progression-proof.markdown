@@ -12,7 +12,9 @@ excerpt: "Consider the geometric series, s_r = sum_{k=0}^infty r^k = 1 + r + r^2
 ---
 Consider the geometric series,
 
-$$s_r = \sum_{k=0}^\infty r^k = 1 + r + r^2 + r^3 + \ldots,$$
+$$
+s_r = \sum_{k=0}^\infty r^k = 1 + r + r^2 + r^3 + \ldots,
+$$
 
 for $0 < r < 1$. The goal is to find a [closed-form expression](http://en.wikipedia.org/wiki/Closed-form_expression) for $s_r$.
 
@@ -24,11 +26,15 @@ Consider now the figure shown. Given that $|AB|=|AD|=1$ and $|DE|=r$, the rest o
 
 Note now how the triangle ABC is similar to the triangle FEB, leading to
 
-$$\frac{|AC|}{|AB|} = \frac{|BF|}{|FE|}.$$
+$$
+\frac{|AC|}{|AB|} = \frac{|BF|}{|FE|}.
+$$
 
 If we then evaluate each side of the equality-sign, we get
 
-$$1 + r + r^2 + r^3 + \ldots = \frac{1}{1-r}.$$
+$$
+1 + r + r^2 + r^3 + \ldots = \frac{1}{1-r}.
+$$
 
 Quite elegant, I think.
 

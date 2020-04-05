@@ -21,7 +21,9 @@ To compute $F_n$ you could use this definition directly, but that leads to a *hi
 
 The first observation that leads to a better algorithm is that we can iteratively compute $F_2, F_3, \ldots, F_n$ and at each step, we only need the previous two values from the sequence. So if we set
 
-$$T(a,b) = (a+b, a)$$
+$$
+T(a,b) = (a+b, a)
+$$
 
 and $r(a,b)=b$ then we have $F_n = r(T^n(1,0))$, where $T^n$ means that the operator $T$ is applied $n$ times (and $T^0$ is the identity). This reduces the number of iterations to $n$ which is much much better than exponential growth.
 
@@ -29,11 +31,15 @@ and $r(a,b)=b$ then we have $F_n = r(T^n(1,0))$, where $T^n$ means that the oper
 
 But it can get even better. The following method is inspired by an exercise in the book [Structure and Interpretation of Computer Programs](https://en.wikipedia.org/wiki/Special:BookSources/0262510871) (see [Exercise 1.19](http://mitpress.mit.edu/sicp/full-text/book/book-Z-H-11.html#%_sec_1.2.4)). The key observation is that if we introduce
 
-$$T_{p,q}(a,b) = (a q + a p + b q, b p + a q)$$
+$$
+T_{p,q}(a,b) = (a q + a p + b q, b p + a q)
+$$
 
 then we have both $T(a,b)=T_{0,1}(a,b)$ and
 
-$$T_{p,q}^2(a,b) = T_{p,q}(a q + a p + b q, b p + a q) = \ldots = T_{p^2+q^2,2 p q+q^2}(a,b).$$
+$$
+T_{p,q}^2(a,b) = T_{p,q}(a q + a p + b q, b p + a q) = \ldots = T_{p^2+q^2,2 p q+q^2}(a,b).
+$$
 
 Why is this important? Because now we have
 
@@ -43,7 +49,9 @@ Why is this important? Because now we have
 
 Notice how this type of reduction rules are very similar to those found in the [Evaluation of Powers post](/blog/2011/01/evaluation-of-powers). Let us look at an example and try to evaluate $F_{20} = r(T^{20}(1,0)) = r(T_{0,1}^{20}(1,0))$ using these rules:
 
-$$\begin{split} T_{0,1}^{20}(1,0) &= (T_{0,1}^2)^{10}(1,0) = T_{1,1}^{10}(1,0) = (T_{1,1}^2)^5(1,0) = T_{2,3}^5(1,0) = T_{2,3}^4(T_{2,3}(1,0)) \\ &= T_{2,3}^4(5,3) = (T_{2,3}^2)^2(5,3) = T_{13,21}^2(5,3) = T_{610,987}(5,3) = (10946,6765) \end{split}$$
+$$
+\begin{split} T_{0,1}^{20}(1,0) &= (T_{0,1}^2)^{10}(1,0) = T_{1,1}^{10}(1,0) = (T_{1,1}^2)^5(1,0) = T_{2,3}^5(1,0) = T_{2,3}^4(T_{2,3}(1,0)) \\ &= T_{2,3}^4(5,3) = (T_{2,3}^2)^2(5,3) = T_{13,21}^2(5,3) = T_{610,987}(5,3) = (10946,6765) \end{split}
+$$
 
 Then we just have to extract the second component (as done by applying the $r$ function) and we get $F_{20}=6765$.
 

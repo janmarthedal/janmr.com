@@ -45,7 +45,9 @@ How many partitions have $\{n,a,b\}$ as a separate subset, i.e., are of the form
 
 And so on. We get that
 
-$$B_n = \sum_{k=0}^{n-1} {n-1 \choose k} B_{n-1-k} = \sum_{k=0}^{n-1} {n-1 \choose n-1-k} B_{n-1-k} = \sum_{k=0}^{n-1} {n-1 \choose k} B_k$$
+$$
+B_n = \sum_{k=0}^{n-1} {n-1 \choose k} B_{n-1-k} = \sum_{k=0}^{n-1} {n-1 \choose n-1-k} B_{n-1-k} = \sum_{k=0}^{n-1} {n-1 \choose k} B_k
+$$
 
 for $n \geq 1$ and using $B_0 = 1$ we can now compute $B_n$ for any value of $n$ (no closed-form expression is known).
 

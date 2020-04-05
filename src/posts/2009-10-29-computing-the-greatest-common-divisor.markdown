@@ -34,11 +34,15 @@ Consider now Property 4. We prove this by showing that the set of divisors of $u
 
 Another useful way to define $\text{gcd}(u,v)$ is possible for positive $u$ and $v$. According to the [fundamental theorem of arithmetic](http://en.wikipedia.org/wiki/Fundamental_theorem_of_arithmetic) we can write
 
-$$u = \prod_{p \; \rm prime} p^{u_p},$$
+$$
+u = \prod_{p \; \rm prime} p^{u_p},
+$$
 
 and similarly for $v$. We now have
 
-$$\text{gcd}(u,v) = \prod_{p \; \rm prime} p^{\min(u_p,v_p)}.$$
+$$
+\text{gcd}(u,v) = \prod_{p \; \rm prime} p^{\min(u_p,v_p)}.
+$$
 
 Properties 5 and 6 follow from this equality.
 
@@ -69,7 +73,9 @@ This generic implementation works for both built-in integer C++ types and number
 
 Note that every time `u %= v` is executed we have $u \leftarrow r$ where $u = q v + r$ and $0 \leq r < v$ behind the scenes. With the exception of the very first time this statement executes (where we may have $u < v$) we have $q \geq 1$. This implies
 
-$$u = q v + r \geq v + r > 2r,$$
+$$
+u = q v + r \geq v + r > 2r,
+$$
 
 <div style="float:right"><a href="https://en.wikipedia.org/wiki/Special:BookSources/0201896842"><img src="/media/books/taocp2.jpg" alt=""></a></div>
 

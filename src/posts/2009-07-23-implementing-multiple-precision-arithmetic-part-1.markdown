@@ -20,7 +20,9 @@ This article is the first in a series dealing with algorithms for multiple-preci
 
 We start out by considering only non-negative integers. A number $u \geq 0$ will be represented in radix $b \geq 2$ using the notation
 
-$$u = (u_{n-1} \ldots u_1 u_0)_b = \sum_{i=0}^{n-1} u_i b^i, \quad 0 \leq u_i < b.$$
+$$
+u = (u_{n-1} \ldots u_1 u_0)_b = \sum_{i=0}^{n-1} u_i b^i, \quad 0 \leq u_i < b.
+$$
 
 We will call $u$ an $n$-digit number and $u_0$, $u_1$, etc., its digits. Unless stated otherwise we will always have that the most-significant digit is non-zero, here $u_{n-1} \neq 0$, and we will represent zero with no digits, $0 = ()_b$. We have $b^{n-1} \leq u \leq b^n-1$, implying $n=1+\lfloor \log_b u \rfloor$ for $u \geq 1$.
 
@@ -64,7 +66,18 @@ Adding radix $b$-numbers is quite straightforward and is easily done using the f
 
 To formalize, we first consider adding two $n$-digit numbers, $n \geq 1$, $u=(u_{n-1} \ldots u_1 u_0)_b$ and $v = (v_{n-1} \ldots v_1 v_0)_b$, obtaining an $(n+1)$-digit sum $w=(w_n \ldots w_1 w_0)_b$. Note that we here may end up with $w_n = 0$ (in which case $w_{n-1} \neq 0$). We have
 
-$$\begin{aligned} w_0 &\leftarrow (u_0 + v_0) \;\text{mod}\; b, \\ w_i &\leftarrow (u_i + v_i + k_i) \;\text{mod}\; b, \\ w_n &\leftarrow k_n. \end{aligned} \quad \begin{aligned} k_1 &\leftarrow \lfloor (u_0 + v_0)/b \rfloor, \\ k_{i+1} &\leftarrow \lfloor (u_i + v_i + k_i)/b \rfloor, \quad i = 1, \ldots, n-1, \\ \text{ } \end{aligned}$$
+$$
+\begin{aligned}
+w_0 &\leftarrow (u_0 + v_0) \;\text{mod}\; b, \\
+w_i &\leftarrow (u_i + v_i + k_i) \;\text{mod}\; b, \\
+w_n &\leftarrow k_n.
+\end{aligned} \quad
+\begin{aligned}
+k_1 &\leftarrow \lfloor (u_0 + v_0)/b \rfloor, \\
+k_{i+1} &\leftarrow \lfloor (u_i + v_i + k_i)/b \rfloor, \quad i = 1, \ldots, n-1, \\
+\text{ }
+\end{aligned}
+$$
 
 Note that $\lfloor x/b \rfloor = [x \geq b]$ for $x < 2 b$, where $[P]$ is equal to $1$ if $P$ is true and equal to $0$ if $P$ is false. This means $k_i \in \{0,1\}$ and furthermore $u_i + v_i + k_i \leq b-1 + b-1 + 1 = 2 b - 1$. Using that $0 \leq u_i, v_i \leq b-1$ and $(x \;\text{mod}\; b) + \lfloor x/b \rfloor = x$ it is quite easy to show that, in fact, $w = u + v$.
 
@@ -84,7 +97,16 @@ Option 3 is the way to go. As mentioned earlier, C++ does calculations modulo $b
 
 An algorithm for multiple-precision subtraction is similar to addition, as just considered. Again we set $u=(u_{n-1} \ldots u_1 u_0)_b$ and $v = (v_{n-1} \ldots v_1 v_0)_b$ with $n \geq 1$. To ensure that the result $w = u - v$ is a non-negative integer we furthermore require that $u \geq v$. We now have the algorithm:
 
-$$\begin{aligned} w_0 &\leftarrow (u_0 - v_0) \;\text{mod}\; b, \\ w_i &\leftarrow (u_i - v_i - k_i) \;\text{mod}\; b, \end{aligned} \quad \begin{aligned} k_1 &\leftarrow [u_0 < v_0], \\ k_{i+1} &\leftarrow [u_i < v_i + k_i], \quad i = 1, \ldots, n-1. \end{aligned}$$
+$$
+\begin{aligned}
+w_0 &\leftarrow (u_0 - v_0) \;\text{mod}\; b, \\
+w_i &\leftarrow (u_i - v_i - k_i) \;\text{mod}\; b,
+\end{aligned} \quad
+\begin{aligned}
+k_1 &\leftarrow [u_0 < v_0], \\
+k_{i+1} &\leftarrow [u_i < v_i + k_i], \quad i = 1, \ldots, n-1.
+\end{aligned}
+$$
 
 Note that <em>any</em> digit of the result may end up being zero—we only know that $0 \geq w \geq b^n - b^{n-1} - 1$. Note furthermore that $k_n = [u < v] = 0$. Verification of the algorithm is easily done using the fact that $x - y = ((x-y) \;\text{mod}\; b) - b [x < y]$ for $0 \leq x, y < b$.
 
@@ -94,39 +116,77 @@ The options when implementing the algorithm is, again, much like for addition. U
 
 We seek an algorithm to compute $w = u v$ where
 
-$$u = (u_{m-1} \ldots u_1 u_0)_b, \quad v = (v_{n-1} \ldots v_1 v_0)_b, \quad w = (w_{m+n-1} \ldots w_1 w_0)_b.$$
+$$
+u = (u_{m-1} \ldots u_1 u_0)_b, \quad v = (v_{n-1} \ldots v_1 v_0)_b, \quad w = (w_{m+n-1} \ldots w_1 w_0)_b.
+$$
 
 We first, however, consider the simpler operation $z \leftarrow y + \alpha u$ where
 
-$$0 \leq \alpha < b, \quad y = (y_{m-1} \ldots y_1 y_0)_b, \quad z = (z_m \ldots z_1 z_0)_b.$$
+$$
+0 \leq \alpha < b, \quad y = (y_{m-1} \ldots y_1 y_0)_b, \quad z = (z_m \ldots z_1 z_0)_b.
+$$
 
 The following algorithm suggests itself:
 
-$$\begin{aligned} z_0 &\leftarrow (y_0 + \alpha u_0) \;\text{mod}\; b, \\ z_i &\leftarrow (y_i + \alpha u_i + k_i) \;\text{mod}\; b, \\ z_m &\leftarrow k_m. \end{aligned} \quad \begin{aligned} k_1 &\leftarrow \lfloor (y_0 + \alpha u_0)/b \rfloor, \\ k_{i+1} &\leftarrow \lfloor (y_i + \alpha u_i + k_i)/b \rfloor, \quad i = 1, \ldots, m-1, \\ \text{ } \end{aligned}$$
+$$
+\begin{aligned}
+z_0 &\leftarrow (y_0 + \alpha u_0) \;\text{mod}\; b, \\
+z_i &\leftarrow (y_i + \alpha u_i + k_i) \;\text{mod}\; b, \\
+z_m &\leftarrow k_m.
+\end{aligned} \quad
+\begin{aligned}
+k_1 &\leftarrow \lfloor (y_0 + \alpha u_0)/b \rfloor, \\
+k_{i+1} &\leftarrow \lfloor (y_i + \alpha u_i + k_i)/b \rfloor, \quad i = 1, \ldots, m-1, \\
+\text{ }
+\end{aligned}
+$$
 
 If $\alpha = 0$ then obviously $z_i = 0$. If $1 \leq \alpha \leq b-1$ then $z_m$ may be zero, in which case $z_ {m-1} \neq 0$, since
 
-$$2 b^{m-1} \leq \; z \; \leq b^m-1 + (b^m-1)(b-1) = b^{m+1} - b < b^{m+1}$$
+$$
+2 b^{m-1} \leq \; z \; \leq b^m-1 + (b^m-1)(b-1) = b^{m+1} - b < b^{m+1}
+$$
 
 Note that $k_i < b$ since $y_i + \alpha u_i + k_i \leq b-1 + (b-1)(b-1) + b-1 = b^2 - 1$. The algorithm above is easily verified, using that $z_i + b k_{i+1} = y_i + \alpha u_i + k_i$.
 
 We now turn to $w = u v$ and get
 
-$$w = u v = \sum_{j=0}^{n-1} b^j v_j u.$$
+$$
+w = u v = \sum_{j=0}^{n-1} b^j v_j u.
+$$
 
 From this we see that we can compute $w$ by doing a number of $(z \leftarrow y + \alpha u)$-type operations, if we start with $w=0$ and then do in-place updates for each $j$. The $b^j$-factor simply determines the &#8216;digit offset&#8217; on which the updates should be done:
 
-$$\begin{aligned} (w_{m-1} \ldots w_1 w_0)_b &\leftarrow (0 \, \ldots \, 0 \, 0)_b, \\ (w_{m+j} \ldots w_{j+1} w_j)_b &\leftarrow (w_{m+j-1} \ldots w_{j+1} w_j)_b + v_j (u_{m-1} \ldots u_1 u_0)_b, \\ \end{aligned}$$
+$$
+\begin{aligned}
+(w_{m-1} \ldots w_1 w_0)_b &\leftarrow (0 \, \ldots \, 0 \, 0)_b, \\
+(w_{m+j} \ldots w_{j+1} w_j)_b &\leftarrow (w_{m+j-1} \ldots w_{j+1} w_j)_b + v_j (u_{m-1} \ldots u_1 u_0)_b,
+\end{aligned}
+$$
 
 for $j = 0, 1, \ldots, n-1$. Note that $w_{m+n-1}$ may be zero, in which case $w_{m+n-2} \neq 0$, since $b^{m+n-2} \leq w < b^{m+n}$.
 
 Now for some implementation details. We note that the only non-trivial computation is $z \leftarrow y + \alpha x + k$, where $0 \leq \alpha, k, x, y < b$, followed by computing $z \;\text{mod}\; b$ and $\lfloor z/b \rfloor$. Most CPUs have instructions that can multiply two word-size numbers and produce a double-word answer. As was the case for addition and subtraction, we don't have access to these instructions from standard C++. We have $0 \leq z < b^2$ but every multiplication result in our portable C++ implementation must be smaller than $b$. We can do this by using a new base number $h$ where $h^2 = b$ (we assume that $b$ is chosen appropriately so $h$ is integer) and setting
 
-$$z = (z_3 z_2 z_1 z_0)_h, \quad y = (y_1 y_0)_h, \quad \alpha = (\alpha_1 \alpha_0)_h, \quad x = (x_1 x_0)_h, \quad k = (k_1 k_0)_h.$$
+$$
+z = (z_3 z_2 z_1 z_0)_h, \quad y = (y_1 y_0)_h, \quad \alpha = (\alpha_1 \alpha_0)_h, \quad x = (x_1 x_0)_h, \quad k = (k_1 k_0)_h.
+$$
 
 We can now use the multiplication algorithm above on a &#8216;smaller scale&#8217; to compute the product $\alpha x$. We can furthermore expand the methods slightly and incorporate the addition of $y$ and $k$ in an elegant way:
 
-$$\begin{aligned} (z_1 z_0)_h &\leftarrow (y_1 y_0)_h, \\ c &\leftarrow k_0, \\ t &\leftarrow z_0 + \alpha_0 x_0 + c, \quad z_0 \leftarrow t \;\text{mod}\; b, \quad c \leftarrow \lfloor t/b \rfloor, \\ t &\leftarrow z_1 + \alpha_0 x_1 + c, \quad z_1 \leftarrow t \;\text{mod}\; b, \quad c \leftarrow \lfloor t/b \rfloor, \\ z_2 &\leftarrow c, \\ c &\leftarrow k_1, \\ t &\leftarrow z_1 + \alpha_1 x_0 + c, \quad z_1 \leftarrow t \;\text{mod}\; b, \quad c \leftarrow \lfloor t/b \rfloor, \\ t &\leftarrow z_2 + \alpha_1 x_1 + c, \quad z_2 \leftarrow t \;\text{mod}\; b, \quad c \leftarrow \lfloor t/b \rfloor, \\ z_3 &\leftarrow c. \end{aligned}$$
+$$
+\begin{aligned}
+(z_1 z_0)_h &\leftarrow (y_1 y_0)_h, \\
+c &\leftarrow k_0, \\
+t &\leftarrow z_0 + \alpha_0 x_0 + c, \quad z_0 \leftarrow t \;\text{mod}\; b, \quad c \leftarrow \lfloor t/ \rfloor, \\
+t &\leftarrow z_1 + \alpha_0 x_1 + c, \quad z_1 \leftarrow t \;\text{mod}\; b, \quad c \leftarrow \lfloor t/b \rfloor, \\
+z_2 &\leftarrow c, \\
+c &\leftarrow k_1, \\
+t &\leftarrow z_1 + \alpha_1 x_0 + c, \quad z_1 \leftarrow t \;\text{mod}\; b, \quad c \leftarrow \lfloor t/b \rfloor, \\
+t &\leftarrow z_2 + \alpha_1 x_1 + c, \quad z_2 \leftarrow t \;\text{mod}\; b, \quad c \leftarrow \lfloor t/b \rfloor, \\
+z_3 &\leftarrow c.
+\end{aligned}
+$$
 
 We now have $z \;\text{mod}\; b = (z_1 z_0)_h$ and $\lfloor z/b \rfloor = (z_3 z_2)_h$.
 

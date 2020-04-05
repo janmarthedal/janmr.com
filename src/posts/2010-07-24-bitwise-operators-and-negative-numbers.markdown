@@ -27,11 +27,15 @@ When representing integers using a fixed number of bits, negative numbers are ty
 
 Notice the important special case $-1 = (\ldots 1111)_2$. If $\overline{x}$ denotes *bitwise not* of $x$, where each bit is flipped from $0$ to $1$ and vice versa, we observe that
 
-$$x + \overline{x} = \ldots 1111 = -1,$$
+$$
+x + \overline{x} = \ldots 1111 = -1,
+$$
 
 from which we have the important identity
 
-$$\overline{x} = -1 - x.$$
+$$
+\overline{x} = -1 - x.
+$$
 
 This makes bitwise not equivalent to a simple subtraction. Notice how bitwise not turns a non-negative integer into a negative integer and vice versa.
 
@@ -201,15 +205,21 @@ We can now formulate the goal of this article: Using only the bitwise operators 
 
 Before proceeding, we need some fundamental identities. First, symmetry:
 
-$$x \mathbin{\&} y = y \mathbin{\&} x, \quad x \mathbin{|} y = y \mathbin{|} x, \quad x \oplus y = y \oplus x.$$
+$$
+x \mathbin{\&} y = y \mathbin{\&} x, \quad x \mathbin{|} y = y \mathbin{|} x, \quad x \oplus y = y \oplus x.
+$$
 
 Then, [De Morgan's laws](http://en.wikipedia.org/wiki/De_Morgan's_laws):
 
-$$\overline{x \mathbin{\&} y} = \overline{x} \mathbin{|} \overline{y}, \quad \overline{x \mathbin{|} y} = \overline{x} \mathbin{\&} \overline{y}.$$
+$$
+\overline{x \mathbin{\&} y} = \overline{x} \mathbin{|} \overline{y}, \quad \overline{x \mathbin{|} y} = \overline{x} \mathbin{\&} \overline{y}.
+$$
 
 Finally some useful rules for exlusive or:
 
-$$x \oplus y = \overline{x} \oplus \overline{y}, \quad \overline{x \oplus y} = \overline{x} \oplus y = x \oplus \overline{y}.$$
+$$
+x \oplus y = \overline{x} \oplus \overline{y}, \quad \overline{x \oplus y} = \overline{x} \oplus y = x \oplus \overline{y}.
+$$
 
 All of these are easily proved since they (by definition) operate *bitwise*. This means that you only have to consider one-bit numbers, which means only four different cases to check.
 
@@ -283,7 +293,9 @@ The only non-trivial operators among the functions 0&ndash;7 are $x \mathbin{\&}
 
 Here, we have used only the identities shown earlier. Of course, we need to convert each bitwise not into a subtraction to complete the task. For instance, with $x < 0$, $y \geq 0$ we have
 
-$$x \mathbin{|} \overline{y} = \overline{\overline{x} \mathbin{\&} y} = -1 - ((-1 - x) \mathbin{\&} y).$$
+$$
+x \mathbin{|} \overline{y} = \overline{\overline{x} \mathbin{\&} y} = -1 - ((-1 - x) \mathbin{\&} y).
+$$
 
 This way, the bitwise and-operation is being applied to non-negative numbers and we see that the result is always negative.
 

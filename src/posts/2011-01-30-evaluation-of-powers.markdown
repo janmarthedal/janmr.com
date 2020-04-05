@@ -31,7 +31,9 @@ We see that $a(15)=5$, which shows that the addition chain 1,2,3,5,10,15 is inde
 Since the numbers in an addition chain grows the fastest by doubling the previous item, it is fairly easy to see that
 
 <div class="pull-right">(1)</div>
-$$a(n) \geq \lceil \log_2(n) \rceil \quad .$$
+$$
+a(n) \geq \lceil \log_2(n) \rceil \quad .
+$$
 
 <div class="pull-right"><a href="https://en.wikipedia.org/wiki/Special:BookSources/0201896842"><img src="/media/books/taocp2.jpg" alt=""></a></div>
 
@@ -82,7 +84,9 @@ number_t power(number_t y, number_t x, unsigned n) {
 
 This algorithm performs $\lfloor \log_2 n \rfloor$ multiplications of the type $x \leftarrow x^2$ and $\nu(n)$ multiplications of the type $y \leftarrow y \cdot x$, where $\nu(n)$ is the number of 1s in the binary representation of $n$, so all in all it requires
 
-$$\lfloor \log_2 n \rfloor + \nu(n)$$
+$$
+\lfloor \log_2 n \rfloor + \nu(n)
+$$
 
 multiplications (sequence [A056792](http://oeis.org/A056792) at [OEIS](http://oeis.org)).
 
@@ -101,7 +105,9 @@ number_t power(number_t x, unsigned n) {
 
 This way, when executing `power(x, x, n-1)`, `n` will always be uneven. This saves one multiplication compared to using just `power(1, x, n)`, so it requires
 
-$$\lfloor \log_2 n \rfloor + \nu(n) - 1$$
+$$
+\lfloor \log_2 n \rfloor + \nu(n) - 1
+$$
 
 multiplications (sequence [A014701](http://oeis.org/A014701) at [OEIS](http://oeis.org)).
 

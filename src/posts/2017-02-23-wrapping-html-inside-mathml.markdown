@@ -32,7 +32,9 @@ excerpt: >-
 
 which would produce
 
-$$\sqrt{1+x^2} \, .$$
+$$
+\sqrt{1+x^2} \, .
+$$
 
 Unfortunately, browser support is [far from great](http://radar.oreilly.com/2013/11/mathml-forges-on.html#browser-support) (and not as good as [caniuse.com](http://caniuse.com/#feat=mathml) reports).
 

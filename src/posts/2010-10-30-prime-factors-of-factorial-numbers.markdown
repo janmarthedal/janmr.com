@@ -33,7 +33,9 @@ Let us introduce the notation $d_a(b)$ as the number of times $a$ divides into $
 
 We now seek to determine $d_p(n!)$ for all primes $p \leq n$. From Euclid's First Theorem and the [Fundamental Theorem of Arithmetic](http://en.wikipedia.org/wiki/Fundamental_theorem_of_arithmetic) follows:
 
-$$d_p(n!) = d_p(1) + d_p(2) + \cdots + d_p(n)$$
+$$
+d_p(n!) = d_p(1) + d_p(2) + \cdots + d_p(n)
+$$
 
 The trick here is not to consider the right-hand side term by term, but rather as a whole. Let us take
 
@@ -41,12 +43,16 @@ The trick here is not to consider the right-hand side term by term, but rather a
 
 and $p=3$ as an example. How many of the numbers 1, 2, &#8230;, 42 are divisible by 3? Exactly $\lfloor 42/3 \rfloor = 14$ of them. But this is not the total count, because some of them are divisible by 3 multiple times. So how many are divisible by $3^2$? $\lfloor 42/3^2 \rfloor = 4$ of them. Similarly, $\lfloor 42/3^3 \rfloor = 1$. And $\lfloor 42/3^4 \rfloor = \lfloor 42/3^5 \rfloor = \ldots = 0$. So we have
 
-$$d_3(42!) = 14+4+1 = 19.$$
+$$
+d_3(42!) = 14+4+1 = 19.
+$$
 
 This procedure is easily generalized and we have
 
 <div class="pull-right">(1)</div>
-$$d_p(n!) = \sum_{k=1}^\infty \left\lfloor \frac{n}{p^k} \right\rfloor = \sum_{k=1}^{\lfloor \log_p(n) \rfloor} \left\lfloor \frac{n}{p^k} \right\rfloor.$$
+$$
+d_p(n!) = \sum_{k=1}^\infty \left\lfloor \frac{n}{p^k} \right\rfloor = \sum_{k=1}^{\lfloor \log_p(n) \rfloor} \left\lfloor \frac{n}{p^k} \right\rfloor.
+$$
 
 This [identity](http://en.wikipedia.org/wiki/Factorial#Number_theory) was found by the french mathematician [Adrien-Marie Legendre](http://en.wikipedia.org/wiki/Adrien-Marie_Legendre) (see also <a href="https://en.wikipedia.org/wiki/Special:BookSources/3540404600">Aigner and Ziegler: Proofs from The Book</a>, page 8, where it is called Legendre's Theorem).
 
@@ -63,15 +69,21 @@ $d_p(n!) \geq d_q(n!)$ for primes $p$, $q$ with $p < q$
 
 and thus
 
-$$d_2(n!) \geq d_3(n!) \geq d_5(n!) \geq d_7(n!) \geq d_{11}(n!) \geq \ldots$$
+$$
+d_2(n!) \geq d_3(n!) \geq d_5(n!) \geq d_7(n!) \geq d_{11}(n!) \geq \ldots
+$$
 
 What about $d_k(n!)$ for composite numbers $k$? Given the factorization of both $n!$ and $k$, this is easy to compute. But if, e.g., the multiplicity of all prime factors of $k$ are the same, then the relation&nbsp;(2) can be used. Consider $d_{10}(m)$ for a positive integer $m$. Since $10 = 2 \cdot 5$ then
 
-$$d_{10}(m) = \min\{ d_2(m), d_5(m) \}.$$
+$$
+d_{10}(m) = \min\{ d_2(m), d_5(m) \}.
+$$
 
 But if $m=n!$ then we can use&nbsp;(2) and we have
 
-$$d_{10}(n!) = d_5(n!).$$
+$$
+d_{10}(n!) = d_5(n!).
+$$
 
 For instance,
 

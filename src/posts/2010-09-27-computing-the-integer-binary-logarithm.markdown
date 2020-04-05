@@ -19,13 +19,17 @@ The binary logarithm, or the logarithm to the base 2, of a number $x > 0$ is the
 
 As we saw in a [previous post](/blog/2009/09/useful-properties-of-the-floor-and-ceil-functions), we have
 
-$$k = \lfloor \log_2 n \rfloor \quad \Leftrightarrow \quad 2^k \leq n < 2^{k+1}.$$
+$$
+k = \lfloor \log_2 n \rfloor \quad \Leftrightarrow \quad 2^k \leq n < 2^{k+1}.
+$$
 
 This means that we seek an integer $k$ such that $\lfloor n/2^k \rfloor \neq 0$ and $\lfloor n/2^{k+1} \rfloor = 0$. We see that $k$ is the position of the left-most bit or, equivalently, that it takes $k + 1$ bits, but no fewer, to represent the number $n$.
 
 The [ceil/floor post](/blog/2009/09/useful-properties-of-the-floor-and-ceil-functions) also states
 
-$$\lfloor \ldots \lfloor \lfloor n/2 \rfloor /2 \rfloor \ldots /2 \rfloor = \left\lfloor \frac{n}{2 \cdot 2 \cdots 2} \right\rfloor,$$
+$$
+\lfloor \ldots \lfloor \lfloor n/2 \rfloor /2 \rfloor \ldots /2 \rfloor = \left\lfloor \frac{n}{2 \cdot 2 \cdots 2} \right\rfloor,
+$$
 
 which means that we can repeatedly do integer divison by two until we reach zero. To be more specific:
 
@@ -42,11 +46,15 @@ The good thing about this algorithm is that it works for all (positive) integer 
 
 An observation that can lead to faster algorithms is the fact that, as mentioned above, $\lfloor \log_2 n \rfloor$ is the position of the left-most bit. Let us address multiple-precision numbers first. Assume that a positive integer $n$ is represented as in a [previous post](/blog/2009/07/implementing-multiple-precision-arithmetic-part-1) as
 
-$$n = (n_{d-1} \ldots n_1 u_0)_b = \sum_{i=0}^{d-1} n_i b^i$$
+$$
+n = (n_{d-1} \ldots n_1 u_0)_b = \sum_{i=0}^{d-1} n_i b^i
+$$
 
 with $d \geq 1$ and $n_{d-1} \neq 0$. Now if $b = 2^p$ for some $p$, as is normally the case, we have:
 
-$$\lfloor \log_2 n \rfloor = (d-1) p + \lfloor \log_2 n_{d-1} \rfloor.$$
+$$
+\lfloor \log_2 n \rfloor = (d-1) p + \lfloor \log_2 n_{d-1} \rfloor.
+$$
 
 So the problem of computing the integer binary logarithm for a multiple-precision integer of the type stated is reduced to finding the integer binary logarithm of a single $p$-bit digit.
 

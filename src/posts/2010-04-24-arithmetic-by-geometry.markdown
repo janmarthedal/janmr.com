@@ -36,17 +36,23 @@ Let A be a point in the [Euclidean](http://en.wikipedia.org/wiki/Euclidean_geome
 We see that the triangles ABC and ADE are [similar](http://en.wikipedia.org/wiki/Similarity_(geometry)) and this implies that
 
 <div class="pull-right">(1)</div>
-$$\frac{|AD|}{|AB|} = \frac{|AE|}{|AC|}$$
+$$
+\frac{|AD|}{|AB|} = \frac{|AE|}{|AC|}
+$$
 
 If we now place point B such that $|AB|=1$, point C such that $|AC|=x$, point D such that $|AD|=y$, and point E such that BC and DE are parallel, we have
 
-$$z = |AE| = \frac{|AC| |AD|}{|AB|} = x y.$$
+$$
+z = |AE| = \frac{|AC| |AD|}{|AB|} = x y.
+$$
 
 ### Division
 
 Division can be performed using the same geometrical construction as for multiplication: Place point B such that $|AB|=1$, point D such that $|AD|=y$, point E such that $|AE|=z$, and point C such that BC and DE are parallel. Then we have
 
-$$x = |AC| = \frac{|AE| |AB|}{|AD|} = \frac{z}{y}.$$
+$$
+x = |AC| = \frac{|AE| |AB|}{|AD|} = \frac{z}{y}.
+$$
 
 ### Square Root
 
@@ -73,11 +79,15 @@ Consider Figure&nbsp;4. It is now easy to see that the triangles ADB, BDC, and A
 
 We now have
 
-$$\frac{|CD|}{|BD|} = \frac{|BD|}{|AD|}$$
+$$
+\frac{|CD|}{|BD|} = \frac{|BD|}{|AD|}
+$$
 
 and if we set $|AD|=1$ and $|CD|=x$ we get
 
-$$x = |CD| = |BD|^2 \quad \Rightarrow \quad |BD| = \sqrt{x}.$$
+$$
+x = |CD| = |BD|^2 \quad \Rightarrow \quad |BD| = \sqrt{x}.
+$$
 
 ### Concluding Remarks
 
