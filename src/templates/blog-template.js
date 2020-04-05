@@ -14,10 +14,10 @@ export default function Template({
     <BlogPage>
       <h2>
         { frontmatter.title }<br/>
-        <small><time datetime={ frontmatter.isoDate }>{ frontmatter.date }</time></small>
+        <small><time dateTime={ frontmatter.isoDate }>{ frontmatter.date }</time></small>
       </h2>
       <div className="post-tags">
-        { frontmatter.tags.map(tag => <a className="label" href={ `/blog/tags/${tag}` }>{ tag }</a>) }
+        { frontmatter.tags.map(tag => <a key={ tag } className="label" href={ `/blog/tags/${tag}` }>{ tag }</a>) }
       </div>
       <div className="post-body" dangerouslySetInnerHTML={{ __html: html }} />
       <div className="page-navigation">

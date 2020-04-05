@@ -1,14 +1,12 @@
 import React from "react"
 import { graphql } from "gatsby"
 
-import BlogPage from "../../components/blog-page"
-// import SEO from "../../components/seo"
+import BlogPage from "../components/blog-page"
 
-const BlogHome = ({
-  data: {
-    allMarkdownRemark: { edges },
-  },
-}) => {
+const Tags = ({ pageContext, data }) => {
+  const { tag } = pageContext
+  const { edges } = data.allMarkdownRemark
+
   const Posts = edges
     .filter(edge => !!edge.node.frontmatter.date)
     .map(edge => <h5 key={ edge.node.id }>
@@ -17,18 +15,22 @@ const BlogHome = ({
 
   return (
     <BlogPage>
+      <h2>Posts tagged <em>{ tag }</em></h2>
       <div className="post-list">
         { Posts }
       </div>
-    </BlogPage>
+     </BlogPage>
   )
 }
 
-export default BlogHome
+export default Tags
 
 export const pageQuery = graphql`
-  query {
-    allMarkdownRemark(sort: { order: DESC, fields: [frontmatter___date] }) {
+  query($tag: String) {
+    allMarkdownRemark(
+      sort: { fields: [frontmatter___date], order: DESC }
+      filter: { frontmatter: { tags: { in: [$tag] } } }
+    ) {
       edges {
         node {
           id

@@ -1,5 +1,5 @@
 import React from "react"
-import { Link } from "gatsby"
+import { graphql, Link } from "gatsby"
 
 import Layout from "../components/layout"
 // import Image from "../components/image"
@@ -12,7 +12,7 @@ const IndexPage = ({
 }) => {
   const Posts = edges
     .filter(edge => !!edge.node.frontmatter.date)
-    .map(edge => <li>
+    .map(edge => <li key={ edge.node.id }>
       <a href={ edge.node.frontmatter.path }>{ edge.node.frontmatter.title }</a> <small>{ edge.node.frontmatter.date }</small>
     </li>)
 
@@ -34,7 +34,7 @@ const IndexPage = ({
 
       <p>Once in a while, I sit down and write a new post for <Link to="/blog/">my blog</Link>. The latest posts are:</p>
 
-      <ul class="post-list">
+      <ul className="post-list">
         { Posts }
       </ul>
     </Layout>
