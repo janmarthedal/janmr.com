@@ -47,7 +47,7 @@ module.exports = {
         gfm: true,
         plugins: [
           {
-            resolve: `gatsby-remark-mathjax`
+            resolve: `gatsby-remark-mathjax-ssr`
           },
           {
             resolve: `gatsby-remark-prismjs`,

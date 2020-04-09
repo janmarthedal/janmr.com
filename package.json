@@ -2,7 +2,7 @@
   "name": "janmr.com",
   "description": "Home of Jan Marthedal Rasmussen",
   "version": "0.1.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "author": "Jan Marthedal Rasmussen <jan@janmr.com>",
   "dependencies": {
     "gatsby": "^2.19.7",
     "gatsby-image": "^2.2.39",
@@ -12,12 +12,12 @@
     "gatsby-plugin-offline": "^3.0.32",
     "gatsby-plugin-react-helmet": "^3.1.21",
     "gatsby-plugin-sharp": "^2.4.3",
+    "gatsby-remark-mathjax-ssr": "^1.0.1",
     "gatsby-remark-prismjs": "^3.4.1",
     "gatsby-source-filesystem": "^2.1.46",
     "gatsby-transformer-remark": "^2.7.0",
     "gatsby-transformer-sharp": "^2.3.13",
     "less": "^3.11.1",
-    "mathjax-node": "^2.1.1",
     "prismjs": "^1.20.0",
     "prop-types": "^15.7.2",
     "react": "^16.12.0",
@@ -42,9 +42,9 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/gatsbyjs/gatsby-starter-default"
+    "url": "https://github.com/janmarthedal/janmr.com-new"
   },
   "bugs": {
-    "url": "https://github.com/gatsbyjs/gatsby/issues"
+    "url": "https://github.com/janmarthedal/janmr.com-new/issues"
   }
 }
