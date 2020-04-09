@@ -1,0 +1,225 @@
+---
+permalink: false
+---
+<!doctype html>
+<html>
+<head>
+  <title>Six Circles Theorem</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.0/normalize.min.css">
+  <style>
+    body {
+      overflow: hidden;
+    }
+    svg {
+      width: 100%;
+      height: 100%;
+    }
+    #triangle, .circle {
+      stroke-width: 0.01;
+      fill-opacity: 0;
+    }
+    #triangle {
+      stroke: #000;
+      stroke-linejoin: round;
+    }
+    #circle0, #circle1, #circle2 {
+      stroke: #3276b1;
+    }
+    #circle3, #circle4, #circle5 {
+      stroke: #47a447;
+    }
+    .knob {
+      stroke-width: 0;
+      fill: #000;
+      fill-opacity: 0.1;
+    }
+    .knob:hover {
+      fill-opacity: 0.5;
+      cursor: move;
+    }
+  </style>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/snap.svg/0.2.0/snap.svg-min.js"></script>
+  <script>
+    (function () {
+      function init(id, renderer) {
+        $(function () {
+          var scale, offsetX, offsetY;
+          var svgElement = document.getElementById(id);
+          var viewBox = $.map(svgElement.getAttribute('viewBox').split(' '), parseFloat);
+          var bx = viewBox[0], by = viewBox[1], bw = viewBox[2], bh = viewBox[3];
+          function set_trans() {
+            var width = svgElement.clientWidth || svgElement.parentNode.clientWidth;
+            var height = svgElement.clientHeight || svgElement.parentNode.clientHeight;
+            var sx = bw/width;
+            var sy = bh/height;
+            if (sy >= sx) {
+              scale = sy;
+              offsetX = bx - sy*(width - height * (bw / bh))/2;
+              offsetY = by;
+            } else {
+              scale = sx;
+              offsetX = bx;
+              offsetY = by - sx*(height - width * (bh / bw))/2;
+            }
+          }
+          $(window).resize(set_trans);
+          set_trans();
+          renderer(Snap('#' + id), {
+            x: function (x, y) { return x*scale + offsetX; },
+            y: function (x, y) { return y*scale + offsetY; },
+          });
+        });
+      }
+      function restrict(v, mn, mx) {
+        if (typeof mn === 'number' && v < mn) return mn;
+        if (typeof mx === 'number' && v > mx) return mx;
+        return v;
+      }
+      window.intgfx = {
+        init: init,
+        restrict: restrict
+      };
+    })();
+  </script>
+  <script>
+    intgfx.init('container', function (s, trans) {
+      var point = [s.select('#pointA'), s.select('#pointB'), s.select('#pointC')];
+      var circle = [s.select('#circle0'), s.select('#circle1'), s.select('#circle2'),
+                    s.select('#circle3'), s.select('#circle4'), s.select('#circle5')];
+      var triangle = s.select('#triangle');
+      var knob = s.select('#knob');
+      var p = [[0.2, 2.8], [1.5, 0.2], [3.8, 2.8]];
+      var triPath = [['M', 0, 0], ['L', 0, 0], ['L', 0, 0], ['Z']];
+      var ratio = 0.5, center, midDir = [], nextDir = [], c = [], r = [], k;
+
+      function plus(p1, p2) {
+        return [p1[0] + p2[0], p1[1] + p2[1]];
+      }
+      function minus(p1, p2) {
+        return [p1[0] - p2[0], p1[1] - p2[1]];
+      }
+      function vector(p1, p2) {
+        return minus(p2, p1);
+      }
+      function rotate(v) {
+        return [v[1], -v[0]];
+      }
+      function scale(v, s) {
+        return [v[0] * s, v[1] * s];        
+      }
+      function dot(v1, v2) {
+        return v1[0]*v2[0] + v1[1]*v2[1];
+      }
+      function norm(v) {
+        return Math.sqrt(dot(v, v));
+      }
+      function normalize(v) {
+        var n = norm(v);
+        return n === 0 ? v : scale(v, 1/n);
+      }
+      function matrix(v1, v2) {
+        return [v1, v2];
+      }
+      function transpose(M) {
+        return [[M[0][0], M[1][0]], [M[0][1], M[1][1]]];
+      }
+      function multiply(M, v) {
+        return [M[0][0]*v[0] + M[1][0]*v[1], M[0][1]*v[0] + M[1][1]*v[1]];
+      }
+      function line_intersection(p, v, q, w) {
+        var alpha = w[0]*v[1] - w[1]*v[0];
+        if (alpha === 0)
+          return [Number.Nan, Number.Nan];
+        var beta = w[0]*(q[1] - p[1]) - w[1]*(q[0] - p[0]);
+        return [p[0] + beta*v[0]/alpha, p[1] + beta*v[1]/alpha];
+      }
+      function line_point_dist(a, n, p) {
+        var d = minus(a, p);
+        return norm(minus(d, scale(n, dot(d, n))));
+      }
+
+      function update() {
+        for (k=0; k < 3; k++) {
+          point[k].attr({cx: p[k][0], cy: p[k][1]});
+          triPath[k][1] = p[k][0];
+          triPath[k][2] = p[k][1];
+        }
+        triangle.attr('path', triPath);
+        for (k=0; k < 3; k++) {
+          nextDir[k] = normalize(vector(p[k], p[(k+1)%3]));
+        }
+        for (k=0; k < 3; k++) {
+          midDir[k] = normalize(scale(minus(nextDir[k], nextDir[(k+2)%3]), 0.5));
+        }
+        center = line_intersection(p[0], midDir[0], p[1], midDir[1]);
+        c[0] = plus(p[0], scale(vector(p[0], center), ratio));
+        r[0] = line_point_dist(p[0], nextDir[0], c[0]);
+
+        for (k=1; k < 6; k++) {
+          var j = k % 3;
+          var M = transpose(matrix(rotate(midDir[j]), midDir[j]));
+          var s = Math.abs(multiply(M, nextDir[j])[0]);   // dist to line factor
+          var rc = multiply(M, minus(c[k-1], p[j]));      // rotated center of circle
+          var A = 1 - s*s;
+          var B = rc[1] + r[k-1]*s;
+          var C = rc[0]*rc[0] + rc[1]*rc[1] - r[k-1]*r[k-1];
+          var factor = (B - Math.sqrt(B*B - A*C))/A;
+          if (factor <= 0) console.log(factor);
+          c[k] = plus(p[j], scale(midDir[j], factor));
+          r[k] = s*factor;
+        }
+        for (k=0; k < 6; k++)
+          circle[k].attr({cx: c[k][0], cy: c[k][1], r: r[k]});
+        knob.attr({cx: c[0][0], cy: c[0][1]});
+      }
+
+      function setup_point_drag(k) {
+        point[k].drag(function (dx, dy, x, y) {
+          p[k][0] = trans.x(x, y);
+          p[k][1] = trans.y(x, y);
+          update();
+        });
+      }
+
+      for (k=0; k < 3; k++)
+        setup_point_drag(k);
+
+      function set_ratio(x, y) {
+        var dist = norm(vector(p[0], [trans.x(x, y), trans.y(x, y)]));
+        ratio = intgfx.restrict(dist / norm(vector(p[0], center)), 0.01, 1);
+        update();
+      }
+
+      knob.drag(function (dx, dy, x, y) {
+        set_ratio(x, y);
+      });
+      $('#container').dblclick(function (e) {
+        console.log('click');
+        e.preventDefault();
+        set_ratio(e.clientX, e.clientY);
+      });
+
+      update();
+    });
+  </script>
+</head>
+<body>
+  <div>
+    <svg id="container" viewbox="0 0 4 3" preserveAspectRatio="xMidYMid meet">
+      <path id="triangle" d="M0.2,2.8L1.5,0.2L3.8,2.8Z" />
+      <circle id="circle0" class="circle" cx="1" cy="2.3" r="0.5" />
+      <circle id="circle1" class="circle" cx="1.5" cy="1.3" r="0.5" />
+      <circle id="circle2" class="circle" cx="1.5" cy="1.3" r="0.5" />
+      <circle id="circle3" class="circle" cx="1.5" cy="1.3" r="0.5" />
+      <circle id="circle4" class="circle" cx="1.5" cy="1.3" r="0.5" />
+      <circle id="circle5" class="circle" cx="1.5" cy="1.3" r="0.5" />
+      <circle id="pointA" class="knob" cx="0.2" cy="2.8" r="0.015" />
+      <circle id="pointB" class="knob" cx="1.5" cy="0.2" r="0.015" />
+      <circle id="pointC" class="knob" cx="3.8" cy="2.8" r="0.015" />
+      <circle id="knob" class="knob" cx="2" cy="1.5" r="0.015" />
+    </svg>
+  </div>
+</body>
+</html>
+
