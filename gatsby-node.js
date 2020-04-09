@@ -1,5 +1,13 @@
 const path = require(`path`)
 
+// begin hack to serve html pages from static folder
+// https://github.com/gatsbyjs/gatsby/issues/17761#issuecomment-533816520
+const express= require('express');
+exports.onCreateDevServer=({app})=>{
+    app.use(express.static('public'))
+}
+// end hack
+
 exports.createPages = async ({ actions, graphql, reporter }) => {
   const { createPage } = actions
 
