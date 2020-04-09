@@ -16,60 +16,60 @@ excerpt: >-
 
   This post will deal with one way of typesetting fractions, inspired by the
   approach taken by Kahn Academy's KaTeX project. 
-inhead: |
-  <style>
-      @font-face{font-family:KaTeX_Main;src:url(https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/fonts/KaTeX_Main-Regular.woff2) format('woff2'),url(https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/fonts/KaTeX_Main-Regular.woff) format('woff'),url(https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/fonts/KaTeX_Main-Regular.ttf) format('truetype');font-weight:400;font-style:normal}
-      .well {
-          min-height: 20px;
-          padding: 19px;
-          margin-bottom: 20px;
-          background-color: #f5f5f5;
-          border: 1px solid #e3e3e3;
-          border-radius: 4px;
-          -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,0.05);
-          box-shadow: inset 0 1px 1px rgba(0,0,0,0.05);
-          font-family: 'KaTeX_Main', sans-serif;
-          font-size: 200%;
-          text-align: center;
-      }
-      .math-box {
-          display: inline-block;
-      }
-      .math-box .strut {
-          display: inline-block;
-      }
-      .math-box .frac-line {
-          width: 100%;
-          display: inline-block;
-      }
-      .math-box .baseline-fix {
-          display: inline-table;
-          table-layout: fixed;
-      }
-      .math-box .vstack {
-          display: inline-block;
-          position: relative;
-      }
-      .math-box .vstack > div {
-          position: relative;
-          height: 0;
-          text-align: center;
-      }
-      .math-box .frac-line:before {
-          display: block;
-          border-bottom-style: solid;
-          content: "";
-          border-bottom-width: 1px;
-      }
-      .math-box .frac-line:after {
-          display: block;
-          border-bottom-style: solid;
-          content: "";
-          border-bottom-width: 0.04em;
-          margin-top: -1px;
-      }
-  </style>
 ---
+<style>
+    @font-face{font-family:KaTeX_Main;src:url(https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/fonts/KaTeX_Main-Regular.woff2) format('woff2'),url(https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/fonts/KaTeX_Main-Regular.woff) format('woff'),url(https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/fonts/KaTeX_Main-Regular.ttf) format('truetype');font-weight:400;font-style:normal}
+    .well {
+        min-height: 20px;
+        padding: 19px;
+        margin-bottom: 20px;
+        background-color: #f5f5f5;
+        border: 1px solid #e3e3e3;
+        border-radius: 4px;
+        -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,0.05);
+        box-shadow: inset 0 1px 1px rgba(0,0,0,0.05);
+        font-family: 'KaTeX_Main', sans-serif;
+        font-size: 200%;
+        text-align: center;
+    }
+    .math-box {
+        display: inline-block;
+    }
+    .math-box .strut {
+        display: inline-block;
+    }
+    .math-box .frac-line {
+        width: 100%;
+        display: inline-block;
+    }
+    .math-box .baseline-fix {
+        display: inline-table;
+        table-layout: fixed;
+    }
+    .math-box .vstack {
+        display: inline-block;
+        position: relative;
+    }
+    .math-box .vstack > div {
+        position: relative;
+        height: 0;
+        text-align: center;
+    }
+    .math-box .frac-line:before {
+        display: block;
+        border-bottom-style: solid;
+        content: "";
+        border-bottom-width: 1px;
+    }
+    .math-box .frac-line:after {
+        display: block;
+        border-bottom-style: solid;
+        content: "";
+        border-bottom-width: 0.04em;
+        margin-top: -1px;
+    }
+</style>
+
 Currently, there is no best way of showing math on the web. An HTML5 standard exists, [MathML](http://www.w3.org/TR/MathML/), but unfortunately it doesn't have broad [browser support](http://caniuse.com/#feat=mathml). Instead, many alternatives exist, all with varying quality and speed.
 
 I would like to explore how far you can get by using just HTML and CSS (including [web fonts](https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face)). My findings should be considered experimental and in no way authoritative.
