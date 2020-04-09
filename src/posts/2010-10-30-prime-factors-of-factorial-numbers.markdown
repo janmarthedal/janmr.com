@@ -39,7 +39,9 @@ $$
 
 The trick here is not to consider the right-hand side term by term, but rather as a whole. Let us take
 
-> 42! = 1405006117752879898543142606244511569936384000000000
+$$
+42! = 1405006117752879898543142606244511569936384000000000
+$$
 
 and $p=3$ as an example. How many of the numbers 1, 2, &#8230;, 42 are divisible by 3? Exactly $\lfloor 42/3 \rfloor = 14$ of them. But this is not the total count, because some of them are divisible by 3 multiple times. So how many are divisible by $3^2$? $\lfloor 42/3^2 \rfloor = 4$ of them. Similarly, $\lfloor 42/3^3 \rfloor = 1$. And $\lfloor 42/3^4 \rfloor = \lfloor 42/3^5 \rfloor = \ldots = 0$. So we have
 
@@ -50,6 +52,7 @@ $$
 This procedure is easily generalized and we have
 
 <div class="pull-right">(1)</div>
+
 $$
 d_p(n!) = \sum_{k=1}^\infty \left\lfloor \frac{n}{p^k} \right\rfloor = \sum_{k=1}^{\lfloor \log_p(n) \rfloor} \left\lfloor \frac{n}{p^k} \right\rfloor.
 $$
@@ -58,14 +61,17 @@ This [identity](http://en.wikipedia.org/wiki/Factorial#Number_theory) was found 
 
 Doing this for all primes in our example, we get
 
-> $42! = 2^{39} \cdot 3^{19} \cdot 5^9 \cdot 7^6 \cdot 11^3 \cdot 13^3 \cdot 17^2 \cdot 19^2 \cdot 23 \cdot 29 \cdot 31 \cdot 37 \cdot 41$.
+$$
+42! = 2^{39} \cdot 3^{19} \cdot 5^9 \cdot 7^6 \cdot 11^3 \cdot 13^3 \cdot 17^2 \cdot 19^2 \cdot 23 \cdot 29 \cdot 31 \cdot 37 \cdot 41.
+$$
 
 Notice how the exponents do not increase as the prime numbers increase. This is true in general. Assume that $p$ and $q$ are both primes and $p < q$. Then $\log_p(n) \geq \log_q(n)$ and $n/p^k \geq n/q^k$ for all positive integers $k$. Using this in equation&nbsp;(1) we get
 
 <div class="pull-right">(2)</div>
-<div style="text-align: center;">
-$d_p(n!) \geq d_q(n!)$ for primes $p$, $q$ with $p < q$
-</div>
+
+$$
+d_p(n!) \geq d_q(n!) \; \text{for primes $p$, $q$ with $p < q$}
+$$
 
 and thus
 
@@ -87,6 +93,8 @@ $$
 
 For instance,
 
-> $d_{10}(42!) = d_5(42!) = \lfloor 42/5 \rfloor + \lfloor 42/5^2 \rfloor = 8 + 1 = 9$,
+$$
+d_{10}(42!) = d_5(42!) = \lfloor 42/5 \rfloor + \lfloor 42/5^2 \rfloor = 8 + 1 = 9,
+$$
 
 so there are 9 trailing zeros in the decimal representation of 42!.
