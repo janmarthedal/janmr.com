@@ -40,18 +40,17 @@ Nim is an important special case of impartial games.
 
 A combinatorial game is a game for two players where both players have perfect information, that is, everything about the game is visible at all times, and where no part of the game is left to chance. An impartial game is a combinatorial game with further restrictions:
 
-<ul>
-<li>Two players who take turns at moving.</li>
-<li>The legal moves depend only on the position and not which player it is to move.</li>
-<li>A player unable to move loses.</li>
-<li>Any game will come to an end, that is, no sequence of moves are possible for which the game will continue forever.</li>
-</ul>
-<p>Let an impartial game be identified by *the set of all the (sub)games that every legal move can lead to*. Note the recursive nature of this definition. The terminal game, where no legal move can be made, is thus the empty set, $\{\}$. As an aside, note how any (finite) set of sets is a game.</p>
-<p>In Nim, we represent a game consisting of a single pile of $n$ sticks by $\star n$. The set representation of this trivial, but important type of game is</p>
-<ul>
-<li>$\star 0 = \{\}$.</li>
-<li>$\star n = \{ \star (n-1), \star (n-2), \ldots, \star 0 \}$.</li>
-</ul>
+* Two players who take turns at moving.
+* The legal moves depend only on the position and not which player it is to move.
+* A player unable to move loses.
+* Any game will come to an end, that is, no sequence of moves are possible for which the game will continue forever.
+
+Let an impartial game be identified by *the set of all the (sub)games that every legal move can lead to*. Note the recursive nature of this definition. The terminal game, where no legal move can be made, is thus the empty set, $\{\}$. As an aside, note how any (finite) set of sets is a game.
+
+In Nim, we represent a game consisting of a single pile of $n$ sticks by $\star n$. The set representation of this trivial, but important type of game is
+
+* $\star 0 = \{\}$.
+* $\star n = \{ \star (n-1), \star (n-2), \ldots, \star 0 \}$.
 
 For instance, $\star 1 = \{\{\}\}$, $\star 2 = \{\{\},\{\{\}\}\}$, and $\star 3 = \{\{\},\{\{\}\},\{\{\},\{\{\}\}\}\}$. A graph representation of all possible game positions in a Nim game starting with the position $\star 4$ can be seen in Figure 2.
 
@@ -87,11 +86,7 @@ We now move on to different facts about impartial games. Some of them are intere
 
 **Theorem 1.** $G + G \in {\cal S}_P$ for any game $G$.
 
-<button class="proof">*Proof*</button>
-
-<div class="proof">
-We use structural induction (we consider a topologically sorted graph of a game from the terminal game and backwards). For $G = \{\}$ the statement is trivially true. Now assume that $G = \{ G_1, G_2, \ldots, G_n \}$ where $G_k + G_k \in {\cal S}_P$ for $k = 1, 2, \ldots, n$. If, in the position $G + G$, the player to move chooses the position $G_j + G$, the other player can make the same move in the &#8220;other part&#8221;, leading to $G_j + G_j$, which was assumed to lie in ${\cal S}_P$. This shows that $G_j + G \in {\cal S}_N$ and since $j$ was chosen arbitrarily $G + G \in {\cal S}_P$.
-</div>
+*Proof*. We use structural induction (we consider a topologically sorted graph of a game from the terminal game and backwards). For $G = \{\}$ the statement is trivially true. Now assume that $G = \{ G_1, G_2, \ldots, G_n \}$ where $G_k + G_k \in {\cal S}_P$ for $k = 1, 2, \ldots, n$. If, in the position $G + G$, the player to move chooses the position $G_j + G$, the other player can make the same move in the &#8220;other part&#8221;, leading to $G_j + G_j$, which was assumed to lie in ${\cal S}_P$. This shows that $G_j + G \in {\cal S}_N$ and since $j$ was chosen arbitrarily $G + G \in {\cal S}_P$.&emsp;&#9724;
 
 Next is the very important concept of *equivalence* between games.
 
@@ -101,43 +96,27 @@ It is clear that $\sim$ is an equivalence relation (it is reflexive, $G \sim G$,
 
 **Theorem 3.** For all $G, H \in {\cal S}_P$ we have $G + H \in {\cal S}_P$.
 
-<button class="proof">*Proof*</button>
-
-<div class="proof">
-Again, we use structural induction. If $G = \{\}$ the result follows easily. Now assume that $G'' + H \in {\cal S}_P$ for all $G'' \in {\cal S}_P$ where $G'' \in G'$ and $G' \in G$. If a move is made from $G + H$ to $G' + H$, where $G' \in G$, we can go to a position $G'' + H$ where $G'' \in G'$ and $G'' \in {\cal S}_P$. This last position lies in ${\cal S}_P$ by assumption and then $G + H \in {\cal S}_P$ does too. By symmetry the same arguments can be used if a move is made in the $H$ part.
-</div>
+*Proof*. Again, we use structural induction. If $G = \{\}$ the result follows easily. Now assume that $G'' + H \in {\cal S}_P$ for all $G'' \in {\cal S}_P$ where $G'' \in G'$ and $G' \in G$. If a move is made from $G + H$ to $G' + H$, where $G' \in G$, we can go to a position $G'' + H$ where $G'' \in G'$ and $G'' \in {\cal S}_P$. This last position lies in ${\cal S}_P$ by assumption and then $G + H \in {\cal S}_P$ does too. By symmetry the same arguments can be used if a move is made in the $H$ part.&emsp;&#9724;
 
 The following important theorem shows that any game in ${\cal S}_P$ is equivalent to the terminal game.
 
 **Theorem 4.** $G \sim \{\}$ for all $G \in {\cal S}_P$.
 
-<button class="proof">*Proof*</button>
+*Proof*. We need to show $G + X \in {\cal S}_P \Leftrightarrow X \in {\cal S}_P$ for all games $X$. First we show $X \in {\cal S}_P \Rightarrow G + X \in {\cal S}_P$ so let $X \in {\cal S}_P$ and consider the position $G + X$. But that $G + X \in {\cal S}_P$ follows immediately from Theorem 3.
 
-<div class="proof">
-We need to show $G + X \in {\cal S}_P \Leftrightarrow X \in {\cal S}_P$ for all games $X$. First we show $X \in {\cal S}_P \Rightarrow G + X \in {\cal S}_P$ so let $X \in {\cal S}_P$ and consider the position $G + X$. But that $G + X \in {\cal S}_P$ follows immediately from Theorem 3.
-
-Next we show $G + X \in {\cal S}_P \Rightarrow X \in {\cal S}_P$ which is equivalent to $X \in {\cal S}_N \Rightarrow G + X \in {\cal S}_N$. So let $X \in {\cal S}_N$ and consider the position $G + X$. We can now make a move to $G + X'$ where $X' \in X$ and $X' \in {\cal S}_P$. From Theorem 3 follows that $G + X' \in {\cal S}_P$ and thus $G + X \in {\cal S}_N$.
-</div>
+Next we show $G + X \in {\cal S}_P \Rightarrow X \in {\cal S}_P$ which is equivalent to $X \in {\cal S}_N \Rightarrow G + X \in {\cal S}_N$. So let $X \in {\cal S}_N$ and consider the position $G + X$. We can now make a move to $G + X'$ where $X' \in X$ and $X' \in {\cal S}_P$. From Theorem 3 follows that $G + X' \in {\cal S}_P$ and thus $G + X \in {\cal S}_N$.&emsp;&#9724;
 
 The next theorem shows that we can add and &#8220;subtract&#8221; on both sides of a $\sim$.
 
 **Theorem 5.** $G \sim H \Leftrightarrow F + G \sim F + H$ for all games $F, G, H$.
 
-<button class="proof">*Proof*</button>
-
-<div class="proof">
-Let $G \sim H$, meaning $G + X \in {\cal S}_P \Leftrightarrow H + X \in {\cal S}_P$ for all games $X$. Now assume $F + G + Y \in {\cal S}_P$ for some $Y \in \cal S$ and by setting $X = F + Y$ we have $H + X = H + F + Y \in \cal S$, showing that $F + G + Y \in {\cal S}_P \Rightarrow F + H + Y \in {\cal S}_P$ for all $Y \in \cal S$. Analogously we can show the same statement with $G$ and $H$ interchanged. Hence, $F + G \sim F + H$. Now assume $F + G \sim F + H$. We then have $G = G + \{\} \sim G + (F + F) = (G + F) + F \sim (H + F) + F = H + (F + F) \sim H + \{\} = H$.
-</div>
+*Proof*. Let $G \sim H$, meaning $G + X \in {\cal S}_P \Leftrightarrow H + X \in {\cal S}_P$ for all games $X$. Now assume $F + G + Y \in {\cal S}_P$ for some $Y \in \cal S$ and by setting $X = F + Y$ we have $H + X = H + F + Y \in \cal S$, showing that $F + G + Y \in {\cal S}_P \Rightarrow F + H + Y \in {\cal S}_P$ for all $Y \in \cal S$. Analogously we can show the same statement with $G$ and $H$ interchanged. Hence, $F + G \sim F + H$. Now assume $F + G \sim F + H$. We then have $G = G + \{\} \sim G + (F + F) = (G + F) + F \sim (H + F) + F = H + (F + F) \sim H + \{\} = H$.&emsp;&#9724;
 
 Finally a theorem essential for the next section.
 
 **Theorem 6.** $G \sim H \Leftrightarrow G + H \in {\cal S}_P$ for all games $G$ and $H$.
 
-<button class="proof">*Proof*</button>
-
-<div class="proof">
-$G \sim H \Leftrightarrow G + H \sim H + H \sim \{\} \Leftrightarrow G + H \in {\cal S}_P$.
-</div>
+*Proof*. $G \sim H \Leftrightarrow G + H \sim H + H \sim \{\} \Leftrightarrow G + H \in {\cal S}_P$.&emsp;&#9724;
 
 ### Characterizing Winning Positions
 
@@ -203,7 +182,7 @@ This makes it possible to tabulate the values of the $\circ$-operator:
 <table>
 <tbody>
 <tr>
-<th>$\circ$</th>
+<th>&cir;</th>
 <th>0</th>
 <th>1</th>
 <th>2</th>
@@ -215,7 +194,7 @@ This makes it possible to tabulate the values of the $\circ$-operator:
 <th>8</th>
 <th>9</th>
 <th>10</th>
-<th>$\cdots$</th>
+<th>&#8943;</th>
 </tr>
 <tr>
 <th>0</th>
@@ -230,7 +209,7 @@ This makes it possible to tabulate the values of the $\circ$-operator:
 <td>8</td>
 <td>9</td>
 <td>10</td>
-<td>$\cdots$</td>
+<td>&#8943;</td>
 </tr>
 <tr>
 <th>1</th>
@@ -245,7 +224,7 @@ This makes it possible to tabulate the values of the $\circ$-operator:
 <td>9</td>
 <td>8</td>
 <td>11</td>
-<td>$\cdots$</td>
+<td>&#8943;</td>
 </tr>
 <tr>
 <th>2</th>
@@ -260,7 +239,7 @@ This makes it possible to tabulate the values of the $\circ$-operator:
 <td>10</td>
 <td>11</td>
 <td>8</td>
-<td>$\cdots$</td>
+<td>&#8943;</td>
 </tr>
 <tr>
 <th>3</th>
@@ -275,7 +254,7 @@ This makes it possible to tabulate the values of the $\circ$-operator:
 <td>11</td>
 <td>10</td>
 <td>9</td>
-<td>$\cdots$</td>
+<td>&#8943;</td>
 </tr>
 <tr>
 <th>4</th>
@@ -290,7 +269,7 @@ This makes it possible to tabulate the values of the $\circ$-operator:
 <td>12</td>
 <td>13</td>
 <td>14</td>
-<td>$\cdots$</td>
+<td>&#8943;</td>
 </tr>
 <tr>
 <th>5</th>
@@ -305,7 +284,7 @@ This makes it possible to tabulate the values of the $\circ$-operator:
 <td>13</td>
 <td>12</td>
 <td>15</td>
-<td>$\cdots$</td>
+<td>&#8943;</td>
 </tr>
 <tr>
 <th>6</th>
@@ -320,7 +299,7 @@ This makes it possible to tabulate the values of the $\circ$-operator:
 <td>14</td>
 <td>15</td>
 <td>12</td>
-<td>$\cdots$</td>
+<td>&#8943;</td>
 </tr>
 <tr>
 <th>7</th>
@@ -335,7 +314,7 @@ This makes it possible to tabulate the values of the $\circ$-operator:
 <td>15</td>
 <td>14</td>
 <td>13</td>
-<td>$\cdots$</td>
+<td>&#8943;</td>
 </tr>
 <tr>
 <th>8</th>
@@ -350,7 +329,7 @@ This makes it possible to tabulate the values of the $\circ$-operator:
 <td>0</td>
 <td>1</td>
 <td>2</td>
-<td>$\cdots$</td>
+<td>&#8943;</td>
 </tr>
 <tr>
 <th>9</th>
@@ -365,7 +344,7 @@ This makes it possible to tabulate the values of the $\circ$-operator:
 <td>1</td>
 <td>0</td>
 <td>3</td>
-<td>$\cdots$</td>
+<td>&#8943;</td>
 </tr>
 <tr>
 <th>10</th>
@@ -380,22 +359,22 @@ This makes it possible to tabulate the values of the $\circ$-operator:
 <td>2</td>
 <td>3</td>
 <td>0</td>
-<td>$\cdots$</td>
+<td>&#8943;</td>
 </tr>
 <tr>
-<th>$\vdots$</th>
-<td>$\vdots$</td>
-<td>$\vdots$</td>
-<td>$\vdots$</td>
-<td>$\vdots$</td>
-<td>$\vdots$</td>
-<td>$\vdots$</td>
-<td>$\vdots$</td>
-<td>$\vdots$</td>
-<td>$\vdots$</td>
-<td>$\vdots$</td>
-<td>$\vdots$</td>
-<td>$\ddots$</td>
+<th>&#8942;</th>
+<td>&#8942;</td>
+<td>&#8942;</td>
+<td>&#8942;</td>
+<td>&#8942;</td>
+<td>&#8942;</td>
+<td>&#8942;</td>
+<td>&#8942;</td>
+<td>&#8942;</td>
+<td>&#8942;</td>
+<td>&#8942;</td>
+<td>&#8942;</td>
+<td>&#8945;</td>
 </tr>
 </tbody>
 </table>
@@ -410,15 +389,11 @@ $$
 
 where $S \oplus y = \{ x \oplus y \mid x \in S \}$ and $x \oplus T = \{ x \oplus y \mid y \in T \}$.
 
-<button class="proof">*Proof*</button>
-
-<div class="proof">
-We need to show two things: (a) $x \oplus y \not\in (S \oplus y) \cup (x \oplus T)$ and (b) $k \in (S \oplus y) \cup (x \oplus T)$ for all $0 \leq k < x \oplus y$.
+*Proof*. We need to show two things: (a) $x \oplus y \not\in (S \oplus y) \cup (x \oplus T)$ and (b) $k \in (S \oplus y) \cup (x \oplus T)$ for all $0 \leq k < x \oplus y$.
 
 To show (a) we assume $x \oplus y = s \oplus y$ for some $s \in S$. But this implies $s = x$ and $x \not\in S$ by the definition of $\text{mex}$. Similarly $x \oplus y \in x \oplus T$ is impossible. So $x \oplus y \not\in (S \oplus y) \cup (x \oplus T)$.
 
-To show (b) we choose a $k$ such that $0 \leq k < x \oplus y$. We now set $x \oplus y = (\alpha 1 \alpha')_2$ and $k = (\alpha 0 \alpha'')_2$ where $\alpha$, $\alpha'$, and $\alpha''$ are binary strings and $|\alpha'| = |\alpha''|$. Let now $x = (\beta 1 \beta')_2$ and $y = (\gamma 0 \gamma')_2$ where $|\beta| = |\gamma| = |\alpha|$ (the ($|\alpha|+1$)th bits of $x$ and $y$ must be different and we assume, without loss of generality, that $x$ has a $1$). Note how we have $\beta \oplus \gamma = \alpha$ and therefore $k \oplus y = (\beta 0 \beta'')_2 < x$ and thus $k \oplus y \in S$. We now see that $k = (k \oplus y) \oplus y \in S \oplus y$.
-</div>
+To show (b) we choose a $k$ such that $0 \leq k < x \oplus y$. We now set $x \oplus y = (\alpha 1 \alpha')_2$ and $k = (\alpha 0 \alpha'')_2$ where $\alpha$, $\alpha'$, and $\alpha''$ are binary strings and $|\alpha'| = |\alpha''|$. Let now $x = (\beta 1 \beta')_2$ and $y = (\gamma 0 \gamma')_2$ where $|\beta| = |\gamma| = |\alpha|$ (the ($|\alpha|+1$)th bits of $x$ and $y$ must be different and we assume, without loss of generality, that $x$ has a $1$). Note how we have $\beta \oplus \gamma = \alpha$ and therefore $k \oplus y = (\beta 0 \beta'')_2 < x$ and thus $k \oplus y \in S$. We now see that $k = (k \oplus y) \oplus y \in S \oplus y$.&emsp;&#9724;
 
 From this theorem we see that if $S = \{ 0, 1, \ldots, x-1 \}$ and $T = \{ 0, 1, \ldots, y-1 \}$ we have the desired equality. We now have
 
