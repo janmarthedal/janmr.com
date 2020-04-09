@@ -48,7 +48,19 @@ module.exports = {
         plugins: [
           {
             resolve: `gatsby-remark-mathjax`
-          }
+          },
+          {
+            resolve: `gatsby-remark-prismjs`,
+            options: {
+              classPrefix: "language-",
+              inlineCodeMarker: null,
+              aliases: {},
+              showLineNumbers: false,
+              noInlineHighlight: false,
+              languageExtensions: [],
+              escapeEntities: {},
+            },
+          },
         ],
       },
     },

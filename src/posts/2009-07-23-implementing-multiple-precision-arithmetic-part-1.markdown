@@ -178,7 +178,7 @@ $$
 \begin{aligned}
 (z_1 z_0)_h &\leftarrow (y_1 y_0)_h, \\
 c &\leftarrow k_0, \\
-t &\leftarrow z_0 + \alpha_0 x_0 + c, \quad z_0 \leftarrow t \;\text{mod}\; b, \quad c \leftarrow \lfloor t/ \rfloor, \\
+t &\leftarrow z_0 + \alpha_0 x_0 + c, \quad z_0 \leftarrow t \;\text{mod}\; b, \quad c \leftarrow \lfloor t/b \rfloor, \\
 t &\leftarrow z_1 + \alpha_0 x_1 + c, \quad z_1 \leftarrow t \;\text{mod}\; b, \quad c \leftarrow \lfloor t/b \rfloor, \\
 z_2 &\leftarrow c, \\
 c &\leftarrow k_1, \\
