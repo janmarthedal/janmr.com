@@ -30,15 +30,12 @@ to applied mathematics (part of a larger exercise),
 
 > Suppose that we can produce merchant ships at a rate $\mu$ (ships per unit time) and that we lose merchant ships at a rate $\lambda$ (ships per ship afloat per unit time). Explain briefly why, with this model, the size $x(t)$ of our fleet is governed by the differential equation
 >
-> $$
-\dot{x} = \lambda x + \mu,
-$$
+> $\dot{x} = \lambda x + \mu,$
 >
 > and deduce that
 >
-> $$
-x(t) = \frac{\mu}{\lambda} + \left( X - \frac{\mu}{\lambda} \right) e^{-\lambda t},
-$$
+> $x(t) = \frac{\mu}{\lambda} + \left( X - \frac{\mu}{\lambda} \right) e^{-\lambda t},$
+>
 > where $X$ is the size of the fleet when $t=0$.
 
 to more pure-mathematics exercises (also part of a larger exercise),

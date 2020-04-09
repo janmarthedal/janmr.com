@@ -36,21 +36,25 @@ Most of the theory in this article is based on Section&nbsp;4.5.3 from [The Art 
 Some properties suggest themselves immediately from the definition:
 
 <div class="pull-right">(1)</div>
+
 $$
 /\!/ a_1, a_2, \ldots, a_n /\!/ = 1 / \left( a_1 + /\!/ a_2, \ldots, a_n /\!/ \right), \quad n \geq 1,
 $$
 
 <div class="pull-right">(2)</div>
+
 $$
 /\!/ a_1, \ldots, a_n /\!/ = /\!/ a_1, \ldots, a_k + /\!/ a_{k+1}, \ldots, a_n /\!/ /\!/, \quad 1 \leq k \leq n,
 $$
 
 <div class="pull-right">(3)</div>
+
 $$
 /\!/ 0, a_1, \ldots, a_n /\!/ = a_1 + /\!/ a_2, \ldots, a_n /\!/, \quad n \geq 1,
 $$
 
 <div class="pull-right">(4)</div>
+
 $$
 /\!/ a_1, \ldots, a_{n-1}, a_n, 1 /\!/ = /\!/ a_1, \ldots, a_{n-1}, a_n + 1 /\!/, \quad n \geq 1.
 $$
@@ -58,6 +62,7 @@ $$
 The relations (2) and (3) can be combined into the following,
 
 <div class="pull-right">(5)</div>
+
 $$
 \begin{aligned} &/\!/ a_1, \ldots, a_{k-1}, a_k, 0, a_{k+1}, a_{k+2}, \ldots, a_n /\!/ \\ & \qquad = /\!/ a_1, \ldots, a_{k-1}, a_k + a_{k+1}, a_{k+2}, \ldots, a_n /\!/, \quad 1 \leq k < n. \end{aligned}
 $$
@@ -79,6 +84,7 @@ We now turn to continuant polynomials or simply continuants. They are defined as
 The subscripts are included to make clear how many parameters there are. Note how
 
 <div class="pull-right">(6)</div>
+
 $$
 F_{n+1} = K_n(1, \ldots, 1),
 $$
@@ -88,6 +94,7 @@ where $F_0, F_1, \ldots$ are the well-known [Fibonacci numbers](http://en.wikipe
 We also have
 
 <div class="pull-right">(7)</div>
+
 $$
 K_n(x_1, \ldots, x_n) \geq K(y_1, \ldots, y_n), \quad \text{when } x_k \geq y_k,
 $$
@@ -97,6 +104,7 @@ which can be shown straightforwardly by induction. We will use this fact later o
 Continuants are connected to continued fractions in several ways, an essential one being
 
 <div class="pull-right">(8)</div>
+
 $$
 a_0 + /\!/ a_1, a_2, \ldots, a_n /\!/ = \frac{K_{n+1}(a_0, a_1, \ldots, a_n)}{K_n(a_1, a_2, \ldots, a_n)}.
 $$
@@ -104,6 +112,7 @@ $$
 To prove this identity, we need
 
 <div class="pull-right">(9)</div>
+
 $$
 \begin{aligned} K_n(x_1, \ldots, x_{n-1}, x_n + y) &= K_{n-1}(x_1, \ldots, x_{n-1}) (x_n + y) + K_{n-2}(x_1, \ldots, x_{n-2}) \\ &= K_{n-1}(x_1, \ldots, x_{n-1}) x_n + K_{n-1}(x_1, \ldots, x_{n-1}) y + K_{n-2}(x_1, \ldots, x_{n-2}) \\ &= K_n(x_1, \ldots, x_{n-1}, x_n) + K_{n-1}(x_1, \ldots, x_{n-1}) y. \\ \end{aligned}
 $$
@@ -125,6 +134,7 @@ which was what we wanted.
 A useful equality for continuants is
 
 <div class="pull-right">(10)</div>
+
 $$
 \left[ \begin{matrix} K_n(x_1, \ldots, x_n) & K_{n-1}(x_1, \ldots, x_{n-1}) \\ K_{n-1}(x_2, \ldots, x_n) & K_{n-2}(x_2, \ldots, x_{n-1}) \end{matrix} \right] = \left[ \begin{matrix} x_1 & 1 \\ 1 & 0 \end{matrix} \right] \left[ \begin{matrix} x_2 & 1 \\ 1 & 0 \end{matrix} \right] \cdots \left[ \begin{matrix} x_n & 1 \\ 1 & 0 \end{matrix} \right]
 $$
@@ -138,6 +148,7 @@ $$
 and the general case is easily shown using induction. Taking the determinant of both sides of (10) leads to
 
 <div class="pull-right">(11)</div>
+
 $$
 K_n(x_1, \ldots, x_n) K_{n-2}(x_2, \ldots, x_{n-1}) - K_{n-1}(x_2, \ldots, x_n) K_{n-1}(x_1, \ldots, x_{n-1}) = (-1)^n.
 $$
@@ -171,6 +182,7 @@ NUM evaluate_continued_fraction_rec2(In first, In last)
 A drawback to this approach is the recursive calls. Another way to evaluate is to use a special case of Equation&nbsp;(2),
 
 <div class="pull-right">(12)</div>
+
 $$
 /\!/ a_1, \ldots, a_{n-1}, a_n /\!/ = /\!/ a_1, \ldots, a_{n-1} + 1/a_n /\!/, \quad \text{for } n \geq 2.
 $$
@@ -276,17 +288,20 @@ using (1), (8), (11), and&nbsp;(12). This relation shows several important thing
 
 *   $a_0 + /\!/ a_1, a_2, \ldots, a_k /\!/$ is *less* than $x$ for even $k$ and *greater* than $x$ for odd $k$.
 *   Using (8) and (9) we see that the function $y \mapsto a_0 + /\!/ a_1, a_2, \ldots, a_k+y /\!/$ is continuous and strictly increasing ($k$ even) or strictly decreasing ($k$ odd) when $y$ goes from 0 to 1, and since $0 < x_k < 1$ we have that $x$ always lies *between* $a_0 + /\!/ a_1, a_2, \ldots, a_k /\!/$ and $a_0 + /\!/ a_1, a_2, \ldots, a_k+1 /\!/$.
-*   The denominator of the error term grows, at least, exponentially,
+*   The denominator of the error term grows, at least, exponentially (using (6), (7) and with $\phi = (1+\sqrt{5})/2 \sim 1.618$),
 
-    <div class="pull-right">(13)</div>
-    $$
-\begin{aligned} &K_k(a_1, a_2, \ldots, a_k) K_{k+1}(a_1, \ldots, a_k, 1/x_k) \\ &\qquad \geq K_k(1, \ldots, 1) K_{k+1}(1, \ldots, 1) = F_{k+1} F_{k+2} \geq (\phi+1)^{k+1}/5, \end{aligned}
+<div class="pull-right">(13)</div>
+
+$$
+\begin{aligned}
+&K_k(a_1, a_2, \ldots, a_k) K_{k+1}(a_1, \ldots, a_k, 1/x_k) \\
+&\qquad \geq K_k(1, \ldots, 1) K_{k+1}(1, \ldots, 1) = F_{k+1} F_{k+2} \geq (\phi+1)^{k+1}/5,
+\end{aligned}
 $$
 
-    using (6), (7) and with $\phi = (1+\sqrt{5})/2 \sim 1.618$.
 *   Since the error term goes to zero as $n \rightarrow \infty$, infinite continued fractions make sense as the following limit,
 
-    $$
+$$
 a_0 + /\!/ a_1, a_2, \ldots /\!/ = a_0 + \lim_{k\rightarrow\infty} /\!/ a_1, a_2, \ldots, a_k /\!/.
 $$
 

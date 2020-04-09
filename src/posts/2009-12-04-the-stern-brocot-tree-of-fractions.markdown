@@ -16,6 +16,7 @@ excerpt: >-
 Consider two fractions $\frac{m_1}{n_1}$ and $\frac{m_2}{n_2}$ with positive numerators and denominators. The fraction $\frac{m_1+m_2}{n_1+n_2}$ is called the *mediant* of $\frac{m_1}{n_1}$ and $\frac{m_2}{n_2}$. It is straightforward to show that the mediant is placed numerically between the original fractions,
 
 <div class="pull-right">(1)</div>
+
 $$
 \frac{m_1}{n_1} < \frac{m_2}{n_2} \quad \Rightarrow \quad \frac{m_1}{n_1} < \frac{m_1+m_2}{n_1+n_2} < \frac{m_2}{n_2}.
 $$
@@ -23,6 +24,7 @@ $$
 Consider now the following simple procedure. Start with the two fractions,
 
 <div class="pull-right">(2)</div>
+
 $$
 \frac{0}{1}, \frac{1}{0}.
 $$
@@ -30,6 +32,7 @@ $$
 (If you don't like calling $\frac{1}{0}$ a fraction just consider tuples of integers instead, where inequality $(m_1,n_1) < (m_2,n_2)$, for instance, means $m_1 n_2 < m_2 n_1$. However, $\frac{1}{0}$ is just an auxiliary fraction that makes everything simpler.) Insert now the mediant in between the two,
 
 <div class="pull-right">(3)</div>
+
 $$
 \frac{0}{1}, \frac{\mathbf{1}}{\mathbf{1}}, \frac{1}{0}.
 $$
@@ -37,11 +40,13 @@ $$
 and repeat the process, inserting mediants between any two consequtive fractions, obtaining
 
 <div class="pull-right">(4)</div>
+
 $$
 \frac{0}{1}, \frac{\mathbf{1}}{\mathbf{2}}, \frac{1}{1}, \frac{\mathbf{2}}{\mathbf{1}}, \frac{1}{0},
 $$
 
 <div class="pull-right">(5)</div>
+
 $$
 \frac{0}{1}, \frac{\mathbf{1}}{\mathbf{3}}, \frac{1}{2}, \frac{\mathbf{2}}{\mathbf{3}}, \frac{1}{1}, \frac{\mathbf{3}}{\mathbf{2}}, \frac{2}{1}, \frac{\mathbf{3}}{\mathbf{1}}, \frac{1}{0},
 $$
@@ -53,6 +58,7 @@ and so on. At any stage of the process we see that the values of the fractions s
 A lot more can be said about these sequences, but first we arrange the fractions in the so-called Stern-Brocot tree. To simplify the definition and the properties of this structure, we use $2 \times 2$ matrices with non-negative integers as elements. The initial two fractions from&nbsp;(2) will be represented by
 
 <div class="pull-right">(6)</div>
+
 $$
 I=\begin{bmatrix} 1 & 0 \\ 0 & 1 \end{bmatrix},
 $$
@@ -68,6 +74,7 @@ which is seen to be the mediant of the two fractions represented by the columns 
 We now introduce
 
 <div class="pull-right">(7)</div>
+
 $$
 \begin{aligned} L=\begin{bmatrix} 1 & 0 \\ 1 & 1 \end{bmatrix}, \quad \text{so} \quad &\begin{bmatrix} m_2 & m_1 \\ n_2 & n_1 \end{bmatrix} L = \begin{bmatrix} m_2+m_1 & m_1 \\ n_2+n_1 & n_1 \end{bmatrix} \quad \text{and} \\ R=\begin{bmatrix} 1 & 1 \\ 0 & 1 \end{bmatrix}, \quad \text{so} \quad &\begin{bmatrix} m_2 & m_1 \\ n_2 & n_1 \end{bmatrix} R = \begin{bmatrix} m_2 & m_2+m_1 \\ n_2 & n_2+n_1 \end{bmatrix}. \end{aligned}
 $$
@@ -90,6 +97,7 @@ Consider any subtree $T(M)$ of the Stern-Brocot tree with root $f(M)$. Note that
 From the definition we see that for any node $f(M)$ of the Stern-Brocot tree we have
 
 <div class="pull-right">(8)</div>
+
 $$
 M=R^{a_0} L^{a_1} R^{a_2} L^{a_3} \cdots L^{a_{n-1}},
 $$
@@ -97,6 +105,7 @@ $$
 for even $n$ and non-negative integers $a_k$. Insisting that $n$ must be even is just a technicality which will be clarified later. Any $a_k$ can be zero so its not a restriction. Computing the [determinants](http://en.wikipedia.org/wiki/Determinant) of the simple matrices in&nbsp;(6) and&nbsp;(7) we get $\det I = \det L = \det R = 1$. Since $\det (A B) = \det A \, \det B$ it follows that
 
 <div class="pull-right">(9)</div>
+
 $$
 \det M = 1 \text{ for any subtree } T(M) \text{ of the Stern-Brocot tree.}
 $$

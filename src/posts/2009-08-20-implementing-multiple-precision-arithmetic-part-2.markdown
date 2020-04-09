@@ -104,10 +104,7 @@ This approximate quotient is never too small, as the following theorem states.
 
 **Theorem 1.** With $\hat{q}$ as defined above we have $q \leq \hat{q}$.
 
-<button class="proof">*Proof*</button>
-
-<div class="proof">
-If $\hat{q}=b-1$ then since $q \leq b-1$ by assumption, the statement is true. Assume then that $\hat{q} = \lfloor (u_n b + u_{n-1})/v_{n-1} \rfloor$. From the properties of the [floor function](http://en.wikipedia.org/wiki/Floor_function) we have $u_n b + u_{n-1} \leq \hat{q} v_{n-1} + v_{n-1} - 1$ and therefore $\hat{q} v_{n-1} \geq u_n b + u_{n-1} - v_{n-1} + 1$. We then get
+*Proof*. If $\hat{q}=b-1$ then since $q \leq b-1$ by assumption, the statement is true. Assume then that $\hat{q} = \lfloor (u_n b + u_{n-1})/v_{n-1} \rfloor$. From the properties of the [floor function](http://en.wikipedia.org/wiki/Floor_function) we have $u_n b + u_{n-1} \leq \hat{q} v_{n-1} + v_{n-1} - 1$ and therefore $\hat{q} v_{n-1} \geq u_n b + u_{n-1} - v_{n-1} + 1$. We then get
 
 $$
 \begin{aligned}
@@ -117,17 +114,13 @@ u - \hat{q} v &\leq u - \hat{q} v_{n-1} b^{n-1} \\
 \end{aligned}
 $$
 
-So $u - \hat{q} v < v$ and since $0 \leq u - q v < v$ we must have $q \leq \hat{q}$.
-</div>
+So $u - \hat{q} v < v$ and since $0 \leq u - q v < v$ we must have $q \leq \hat{q}$.&emsp;&#9724;
 
 If $u$ and $v$ are scaled appropriately, $\hat{q}$ will never be too large, either.
 
 **Theorem 2.** With $\hat{q}$ as defined above and $v_{n-1} \geq \lfloor b/2 \rfloor$, we have $\hat{q} \leq q+2$.
 
-<button class="proof">*Proof*</button>
-
-<div class="proof">
-Assume that $\hat{q} \geq q+3$. We get
+*Proof*. Assume that $\hat{q} \geq q+3$. We get
 
 $$
 \hat{q} \leq \frac{u_n b u_{n-1}}{v_{n-1}} = \frac{u_n b^n u_{n-1} b^{n-1}}{v_{n-1} b^{n-1}} \leq \frac{u}{v_{n-1} b^{n-1}} < \frac{u}{v - b^{n-1}},
@@ -151,8 +144,7 @@ $$
 b-4 \geq \hat{q}-3 \geq q = \lfloor u/v \rfloor \geq 2(v_{n-1}-1),
 $$
 
-which implies $v_{n-1} < \lfloor b/2 \rfloor$.
-</div>
+which implies $v_{n-1} < \lfloor b/2 \rfloor$.&emsp;&#9724;
 
 We would expect to come even closer if we consider the 'second order' approximate quotient,
 
@@ -176,10 +168,7 @@ By studying the sign of the second order residual we can now get closer to the t
 
 **Theorem 3.** Let $\hat{q}$ be any approximate quotient and $\hat{r}$ the corresponding first order residual. Now if $\hat{q} v_{n-2} > b \hat{r} + u_{n-2}$ then $q < \hat{q}$.
 
-<button class="proof">*Proof*</button>
-
-<div class="proof">
-Assume $\hat{q} v_{n-2} > b \hat{r} + u_{n-2}$, equivalent to $\hat{r} b + u_{n-2} - \hat{q} v_{n-2} + 1 \leq 0$. We then have
+*Proof*. Assume $\hat{q} v_{n-2} > b \hat{r} + u_{n-2}$, equivalent to $\hat{r} b + u_{n-2} - \hat{q} v_{n-2} + 1 \leq 0$. We then have
 
 $$
 \begin{aligned}
@@ -190,15 +179,11 @@ u - \hat{q} v &\leq u - \hat{q} v_{n-1} b^{n-1} - \hat{q} v_{n-2} b^{n-2} \\
 \end{aligned}
 $$
 
-So $u - \hat{q} v < 0 \leq u - q v$ which implies $q < \hat{q}$.
-</div>
+So $u - \hat{q} v < 0 \leq u - q v$ which implies $q < \hat{q}$.&emsp;&#9724;
 
 **Theorem 4.** Let $\hat{q}$ be any approximate quotient and $\hat{r}$ the corresponding first order residual. Now if $\hat{q} v_{n-2} \leq b \hat{r} + u_{n-2}$ then $\hat{q} \leq q+1$.
 
-<button class="proof">*Proof*</button>
-
-<div class="proof">
-Let $\hat{q} v_{n-2} \leq b \hat{r} + u_{n-2}$ and assume $\hat{q} \geq q+2$. Now since $u - q v < v$ we get
+*Proof*. Let $\hat{q} v_{n-2} \leq b \hat{r} + u_{n-2}$ and assume $\hat{q} \geq q+2$. Now since $u - q v < v$ we get
 
 $$
 \begin{aligned}
@@ -210,8 +195,7 @@ u &< (q+1) v \leq (\hat{q}-1) v < \hat{q} (v_{n-1} b^{n-1} + v_{n-2} b^{n-2} + b
 \end{aligned}
 $$
 
-This claims that $u < u$, a contradiction, so our assumption $\hat{q} \geq q+2$ must have been wrong.
-</div>
+This claims that $u < u$, a contradiction, so our assumption $\hat{q} \geq q+2$ must have been wrong.&emsp;&#9724;
 
 We now have the following procedure for computing $\hat{q}$, a very close estimate to $q$:
 
