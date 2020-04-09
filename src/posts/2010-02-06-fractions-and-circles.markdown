@@ -21,6 +21,7 @@ Fractions produced by mediants have some very interesting properties. We saw som
 Let us consider a way to construct fractions. We always start out with the sequence
 
 <div class="pull-right">(1)</div>
+
 $$
 \frac{0}{1}, \frac{1}{0}
 $$

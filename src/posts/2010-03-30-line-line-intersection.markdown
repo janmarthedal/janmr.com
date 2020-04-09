@@ -15,11 +15,10 @@ excerpt: >-
 ---
 How do you calculate the point where two lines in the plane intersect? It is not very hard to do, but the formula can look [quite complicated](http://en.wikipedia.org/w/index.php?title=Line-line_intersection&oldid=330824670), depending on how you write it up. This article is a reminder that it can be expressed in a simple manner.
 
-<span></span>
-
 We start out by not restricting ourselves to the plane, but any [vector space](http://en.wikipedia.org/wiki/Vector_space) with an [inner product](http://en.wikipedia.org/wiki/Inner_product) $\langle \cdot, \cdot \rangle$. Let two lines be represented as
 
 <div class="pull-right">(1)</div>
+
 $$
 \text{p} + s \text{v}, \quad s \in \mathbb{R}
 $$
@@ -40,6 +39,7 @@ where $\text{p}$, $\text{q}$, $\text{v}$, and $\text{w}$ are vectors. We assume 
 We look for values of $s$ and $t$ such that
 
 <div class="pull-right">(2)</div>
+
 $$
 \text{p} + s \text{v} = \text{q} + t \text{w}.
 $$
@@ -47,6 +47,7 @@ $$
 Let $\hat{\text{w}} \neq 0$ be a vector perpendicular to $\text{w}$, $\langle \text{w}, \hat{\text{w}} \rangle = 0$. We get
 
 <div class="pull-right">(3)</div>
+
 $$
 s \langle \text{v}, \hat{\text{w}} \rangle = \langle \text{q} - \text{p}, \hat{\text{w}} \rangle
 $$
@@ -72,6 +73,7 @@ The derivation above is actually a little careless. If&nbsp;(2) is to hold for s
 Assume that&nbsp;(3) holds for some value of&nbsp;$s$,
 
 <div class="pull-right">(4)</div>
+
 $$
 \langle s \text{v} + \text{p} - \text{q}, \hat{\text{w}} \rangle = 0.
 $$

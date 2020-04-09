@@ -41,161 +41,24 @@ This makes bitwise not equivalent to a simple subtraction. Notice how bitwise no
 
 Let us turn to general bitwise operators. Consider a function that maps two bits to a single bit. Given such a function and two non-negative integers, we can apply the function to the zeroth bit of both numbers to obtain the zeroth bit of the result, then apply the function to the first bit of both numbers to obtain the first bit of the result, and so forth. In this way, any binary bit-operator $\{0,1\}^2 \mapsto \{0,1\}$ can be extended to work on any non-negative integer (and as we shall see, any integer). There are 16 possible binary bit-operators:
 
-<table>
-<colgroup span="1"></colgroup>
-<colgroup span="1"></colgroup>
-<colgroup span="4"></colgroup>
-<thead>
-<tr>
-<td></td>
-<td>$x$</td>
-<td>$0$</td>
-<td>$1$</td>
-<td>$0$</td>
-<td>$1$</td>
-</tr>
-<tr>
-<td></td>
-<td>$y$</td>
-<td>$0$</td>
-<td>$0$</td>
-<td>$1$</td>
-<td>$1$</td>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>0</td>
-<td>$0$</td>
-<td>$0$</td>
-<td>$0$</td>
-<td>$0$</td>
-<td>$0$</td>
-</tr>
-<tr>
-<td>1</td>
-<td>$x \mathbin{\&} y$</td>
-<td>$0$</td>
-<td>$0$</td>
-<td>$0$</td>
-<td>$1$</td>
-</tr>
-<tr>
-<td>2</td>
-<td>$\overline{x} \mathbin{\&} y$</td>
-<td>$0$</td>
-<td>$0$</td>
-<td>$1$</td>
-<td>$0$</td>
-</tr>
-<tr>
-<td>3</td>
-<td>$y$</td>
-<td>$0$</td>
-<td>$0$</td>
-<td>$1$</td>
-<td>$1$</td>
-</tr>
-<tr>
-<td>4</td>
-<td>$x \mathbin{\&} \overline{y}$</td>
-<td>$0$</td>
-<td>$1$</td>
-<td>$0$</td>
-<td>$0$</td>
-</tr>
-<tr>
-<td>5</td>
-<td>$x$</td>
-<td>$0$</td>
-<td>$1$</td>
-<td>$0$</td>
-<td>$1$</td>
-</tr>
-<tr>
-<td>6</td>
-<td>$x \oplus y$</td>
-<td>$0$</td>
-<td>$1$</td>
-<td>$1$</td>
-<td>$0$</td>
-</tr>
-<tr>
-<td>7</td>
-<td>$x \mathbin{|} y$</td>
-<td>$0$</td>
-<td>$1$</td>
-<td>$1$</td>
-<td>$1$</td>
-</tr>
-</tbody>
-<tbody>
-<tr>
-<td>8</td>
-<td>$\overline{x \mathbin{|} y}$</td>
-<td>$1$</td>
-<td>$0$</td>
-<td>$0$</td>
-<td>$0$</td>
-</tr>
-<tr>
-<td>9</td>
-<td>$\overline{x \oplus y}$</td>
-<td>$1$</td>
-<td>$0$</td>
-<td>$0$</td>
-<td>$1$</td>
-</tr>
-<tr>
-<td>10</td>
-<td>$\overline{x}$</td>
-<td>$1$</td>
-<td>$0$</td>
-<td>$1$</td>
-<td>$0$</td>
-</tr>
-<tr>
-<td>11</td>
-<td>$\overline{x} \mathbin{|} y$</td>
-<td>$1$</td>
-<td>$0$</td>
-<td>$1$</td>
-<td>$1$</td>
-</tr>
-<tr>
-<td>12</td>
-<td>$\overline{y}$</td>
-<td>$1$</td>
-<td>$1$</td>
-<td>$0$</td>
-<td>$0$</td>
-</tr>
-<tr>
-<td>13</td>
-<td>$x \mathbin{|} \overline{y}$</td>
-<td>$1$</td>
-<td>$1$</td>
-<td>$0$</td>
-<td>$1$</td>
-</tr>
-<tr>
-<td>14</td>
-<td>$\overline{x \mathbin{\&} y}$</td>
-<td>$1$</td>
-<td>$1$</td>
-<td>$1$</td>
-<td>$0$</td>
-</tr>
-<tr>
-<td>15</td>
-<td>$1$</td>
-<td>$1$</td>
-<td>$1$</td>
-<td>$1$</td>
-<td>$1$</td>
-</tr>
-</tbody>
-</table>
+|     | $(x, y)$                        | $(0, 0)$ | $(1, 0)$ | $(0, 1)$ | $(1, 1)$ |
+| --- | ------------------------------- | -------- | -------- | -------- | -------- |
+|  0  | $0$                             | $0$      | $0$      | $0$      | $0$      |
+|  1  | $x \mathbin{\&} y$              | $0$      | $0$      | $0$      | $1$      |
+|  2  | $\overline{x} \mathbin{\&} y$   | $0$      | $0$      | $1$      | $0$      |
+|  3  | $y$                             | $0$      | $0$      | $1$      | $1$      |
+|  4  | $x \mathbin{\&} \overline{y}$   | $0$      | $1$      | $0$      | $0$      |
+|  5  | $x$                             | $0$      | $1$      | $0$      | $1$      |
+|  6  | $x \oplus y$                    | $0$      | $1$      | $1$      | $0$      |
+|  7  | $x \mathbin{\mid} y$            | $0$      | $1$      | $1$      | $1$      |
+|  8  | $\overline{x \mathbin{\mid} y}$ | $1$      | $0$      | $0$      | $0$      |
+|  9  | $\overline{x \oplus y}$         | $1$      | $0$      | $0$      | $1$      |
+| 10  | $\overline{x}$                  | $1$      | $0$      | $1$      | $0$      |
+| 11  | $\overline{x} \mathbin{\mid} y$ | $1$      | $0$      | $1$      | $1$      |
+| 12  | $\overline{y}$                  | $1$      | $1$      | $0$      | $0$      |
+| 13  | $x \mathbin{\mid} \overline{y}$ | $1$      | $1$      | $0$      | $1$      |
+| 14  | $\overline{x \mathbin{\&} y}$   | $1$      | $1$      | $1$      | $0$      |
+| 15  | $1$                             | $1$      | $1$      | $1$      | $1$      |
 
 The first column of the table enumerates the functions from 0 to 15 (such that the binary representation of each number corresponds to the outputs). We see that exactly the functions 0&ndash;7 map $(0,0)$ to $0$, meaning that only these functions will map two non-negative integers to a non-negative integer.
 
@@ -225,71 +88,16 @@ All of these are easily proved since they (by definition) operate *bitwise*. Thi
 
 The only non-trivial operators among the functions 0&ndash;7 are $x \mathbin{\&} y$, $x \mathbin{|} y$, $x \oplus y$, and $x \mathbin{\&} \overline{y}$. We will use the notation $x \mathbin{\overline{\&}} y = x \mathbin{\&} \overline{y}$. Note how $\mathbin{\overline{\&}}$ is *not* symmetric. The only non-trivial operators among the functions 8&ndash;15 are $\overline{x \mathbin{\&} y}$, $\overline{x \mathbin{|} y}$, $x \mathbin{|} \overline{y}$, and $\overline{x \oplus y}$. Considering these eight cases, along with whether $x$ and $y$ are negative or not, we get the following table:
 
-<table>
-<tr>
-<td></td>
-<td>$x \geq 0$, $y \geq 0$</td>
-<td>$x \geq 0$, $y < 0$</td>
-<td>$x < 0$, $y \geq 0$</td>
-<td>$x < 0$, $y < 0$</td>
-</tr>
-<tr>
-<td>$x \mathbin{\&} y$</td>
-<td>$x \mathbin{\&} y$</td>
-<td>$x \mathbin{\overline{\&}} \overline{y}$</td>
-<td>$y \mathbin{\overline{\&}} \overline{x}$</td>
-<td>$\overline{\overline{x} \mathbin{|} \overline{y}}$</td>
-</tr>
-<tr>
-<td>$x \mathbin{|} y$</td>
-<td>$x \mathbin{|} y$</td>
-<td>$\overline{\overline{y} \mathbin{\overline{\&}} x}$</td>
-<td>$\overline{\overline{x} \mathbin{\overline{\&}} y}$</td>
-<td>$\overline{\overline{x} \mathbin{\&} \overline{y}}$</td>
-</tr>
-<tr>
-<td>$x \mathbin{\overline{\&}} y$</td>
-<td>$x \mathbin{\overline{\&}} y$</td>
-<td>$x \mathbin{\&} \overline{y}$</td>
-<td>$\overline{\overline{x} \mathbin{|} y}$</td>
-<td>$\overline{y} \mathbin{\overline{\&}} \overline{x}$</td>
-</tr>
-<tr>
-<td>$x \oplus y$</td>
-<td>$x \oplus y$</td>
-<td>$\overline{x \oplus \overline{y}}$</td>
-<td>$\overline{\overline{x} \oplus y}$</td>
-<td>$\overline{x} \oplus \overline{y}$</td>
-</tr>
-<tr>
-<td>$\overline{x \mathbin{\&} y}$</td>
-<td>$\overline{x \mathbin{\&} y}$</td>
-<td>$\overline{x \mathbin{\overline{\&}} \overline{y}}$</td>
-<td>$\overline{y \mathbin{\overline{\&}} \overline{x}}$</td>
-<td>$\overline{x} \mathbin{|} \overline{y}$</td>
-</tr>
-<tr>
-<td>$\overline{x \mathbin{|} y}$</td>
-<td>$\overline{x \mathbin{|} y}$</td>
-<td>$\overline{y} \mathbin{\overline{\&}} x$</td>
-<td>$\overline{x} \mathbin{\overline{\&}} y$</td>
-<td>$\overline{x} \mathbin{\&} \overline{y}$</td>
-</tr>
-<tr>
-<td>$x \mathbin{|} \overline{y}$</td>
-<td>$\overline{y \mathbin{\overline{\&}} x}$</td>
-<td>$x \mathbin{|} \overline{y}$</td>
-<td>$\overline{\overline{x} \mathbin{\&} y}$</td>
-<td>$\overline{\overline{x} \mathbin{\overline{\&}} \overline{y}}$</td>
-</tr>
-<tr>
-<td>$\overline{x \oplus y}$</td>
-<td>$\overline{x \oplus y}$</td>
-<td>$x \oplus \overline{y}$</td>
-<td>$\overline{x} \oplus y$</td>
-<td>$\overline{\overline{x} \oplus \overline{y}}$</td>
-</tr>
-</table>
+|     | $x \geq 0, y \geq 0$ | $x \geq 0, y < 0$ | $x < 0, y \geq 0$ | $x < 0, y < 0$ |
+| --- | ---------------------- | ------------------- | ------------------- | ---------------- |
+| $x \mathbin{\&} y$ | $x \mathbin{\&} y$ | $x \mathbin{\overline{\&}} \overline{y}$ | $y \mathbin{\overline{\&}} \overline{x}$ | $\overline{\overline{x} \mathbin{\mid} \overline{y}}$ |
+| $x \mathbin{\mid} y$ | $x \mathbin{\mid} y$ | $\overline{\overline{y} \mathbin{\overline{\&}} x}$ | $\overline{\overline{x} \mathbin{\overline{\&}} y}$ | $\overline{\overline{x} \mathbin{\&} \overline{y}}$ |
+| $x \mathbin{\overline{\&}} y$ | $x \mathbin{\overline{\&}} y$ | $x \mathbin{\&} \overline{y}$ | $\overline{\overline{x} \mathbin{\mid} y}$ | $\overline{y} \mathbin{\overline{\&}} \overline{x}$ |
+| $x \oplus y$ | $x \oplus y$ | $\overline{x \oplus \overline{y}}$ | $\overline{\overline{x} \oplus y}$ | $\overline{x} \oplus \overline{y}$ |
+| $\overline{x \mathbin{\&} y}$ | $\overline{x \mathbin{\&} y}$ | $\overline{x \mathbin{\overline{\&}} \overline{y}}$ | $\overline{y \mathbin{\overline{\&}} \overline{x}}$ | $\overline{x} \mathbin{\mid} \overline{y}$ |
+| $\overline{x \mathbin{\mid} y}$ | $\overline{x \mathbin{\mid} y}$ | $\overline{y} \mathbin{\overline{\&}} x$ | $\overline{x} \mathbin{\overline{\&}} y$ | $\overline{x} \mathbin{\&} \overline{y}$ |
+| $x \mathbin{\mid} \overline{y}$ | $\overline{y \mathbin{\overline{\&}} x}$ | $x \mathbin{\mid} \overline{y}$ | $\overline{\overline{x} \mathbin{\&} y}$ | $\overline{\overline{x} \mathbin{\overline{\&}} \overline{y}}$ |
+| $\overline{x \oplus y}$ | $\overline{x \oplus y}$ | $x \oplus \overline{y}$ | $\overline{x} \oplus y$ | $\overline{\overline{x} \oplus \overline{y}}$ |
 
 Here, we have used only the identities shown earlier. Of course, we need to convert each bitwise not into a subtraction to complete the task. For instance, with $x < 0$, $y \geq 0$ we have
 
