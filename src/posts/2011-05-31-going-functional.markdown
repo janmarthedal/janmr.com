@@ -28,13 +28,13 @@ I find functional programming languages very interesting. First of all, pure fun
 
 The first functional programming language I ever encountered was [Standard ML](http://en.wikipedia.org/wiki/Standard_ML) (actually, we used a light-weight implementation called [Moscow ML](http://www.itu.dk/~sestoft/mosml.html)). It enables assignments and is thus not pure. It features, among other things, type inference which is very nice. For instance, an exponentation function `power` could have the type
 
-```
+``` none
 val power = fn : real * int -> real
 ```
 
 Similarly, a `map` function which applies a user-supplied function to each element of a list could get the type
 
-```
+``` none
 val map = fn : ('a -> 'b) -> 'a list -> 'b list
 ```
 

@@ -71,3 +71,14 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     })
   })
 }
+
+exports.onCreateNode = ({ node, actions }) => {
+  const { createNodeField } = actions
+  if (node.internal.type === `MarkdownRemark`) {
+    createNodeField({
+      name: `slug`,
+      node,
+      value: node.frontmatter.path,
+    })
+  }
+}
