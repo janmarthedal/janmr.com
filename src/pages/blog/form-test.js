@@ -4,8 +4,20 @@ import BlogPage from "../../components/blog-page"
 
 const FormTest = () => (
   <BlogPage>
-    <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" netlify>
-      <input type="hidden" name="bot-field" />
+    <form
+      name="contact"
+      action="/blog/"
+      method="POST"
+      data-netlify="true"
+      data-netlify-honeypot="bot-field"
+    >
+      <input type="hidden" name="form-name" value="contact" />
+      <div hidden>
+        <label>
+          Don’t fill this out:{" "}
+          <input name="bot-field" />
+        </label>
+      </div>
       <p>
         <label>
           Your Name: <input type="text" name="name" />
