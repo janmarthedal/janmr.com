@@ -4,7 +4,8 @@ import BlogPage from "../../components/blog-page"
 
 const FormTest = () => (
   <BlogPage>
-    <form name="contact" method="POST" data-netlify="true">
+    <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" netlify>
+      <input type="hidden" name="bot-field" />
       <p>
         <label>
           Your Name: <input type="text" name="name" />
@@ -13,15 +14,6 @@ const FormTest = () => (
       <p>
         <label>
           Your Email: <input type="email" name="email" />
-        </label>
-      </p>
-      <p>
-        <label>
-          Your Role:{" "}
-          <select name="role[]" multiple>
-            <option value="leader">Leader</option>
-            <option value="follower">Follower</option>
-          </select>
         </label>
       </p>
       <p>
