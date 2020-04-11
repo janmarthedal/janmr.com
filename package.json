@@ -4,6 +4,7 @@
   "version": "0.1.0",
   "author": "Jan Marthedal Rasmussen <jan@janmr.com>",
   "dependencies": {
+    "dotenv": "^8.2.0",
     "gatsby": "^2.19.7",
     "gatsby-image": "^2.2.39",
     "gatsby-plugin-feed": "^2.4.1",

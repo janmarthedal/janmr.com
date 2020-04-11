@@ -1,3 +1,5 @@
+require("dotenv").config()
+
 module.exports = {
   siteMetadata: {
     title: `janmr.com`,
@@ -68,7 +70,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
-        trackingId: "UA-46471633-1",
+        trackingId: process.env.GA_TRACKING_ID,
       },
     },
     {
