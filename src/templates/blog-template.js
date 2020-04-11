@@ -11,12 +11,14 @@ export default function Template({
   const { markdownRemark } = data // data.markdownRemark holds your post data
   const { frontmatter, html } = markdownRemark
   const { prev, next } = pageContext
+  const url = `https://janmr.com${frontmatter.path}/index.html`
 
   const disqusConfig = {
     shortname: process.env.GATSBY_DISQUS_NAME,
     config: {
+      url: url,
+      identifier: url,
       title: frontmatter.title,
-      identifier: `https://janmr.com${frontmatter.path}/index.html`
     }
   }
 
