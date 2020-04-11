@@ -1,6 +1,6 @@
 ---
 layout: post.html
-title: Typesetting Math Using HTML and CSS &mdash; Fractions
+title: "Typesetting Math Using HTML and CSS: Fractions"
 tags: math-typesetting
 categories: programming
 excerpt: "Currently, there is no best way of showing math on the web. An HTML5 standard exists, MathML, but unfortunately it doesn't have broad browser support. Instead, many alternatives exist, all with varying quality and speed.
