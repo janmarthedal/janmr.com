@@ -1,7 +1,12 @@
 import React from "react"
 import { graphql, Link } from "gatsby"
+import { DiscussionEmbed } from "disqus-react"
 
 import BlogPage from "../components/blog-page"
+
+function normalizePath(path) {
+  return path.slice(-1) === '/' ? path + 'index.html' : path
+}
 
 export default function Template({
   data, // this prop will be injected by the GraphQL query below
@@ -10,6 +15,15 @@ export default function Template({
   const { markdownRemark } = data // data.markdownRemark holds your post data
   const { frontmatter, html } = markdownRemark
   const { prev, next } = pageContext
+
+  const disqusConfig = {
+    shortname: process.env.GATSBY_DISQUS_NAME,
+    config: {
+      title: frontmatter.title,
+      identifier: 'https://janmr.com' + normalizePath(frontmatter.path)
+    }
+  }
+
   return (
     <BlogPage>
       <h2>
@@ -28,7 +42,7 @@ export default function Template({
           { next && <Link to={ next.frontmatter.path } title={ "Next post: " + next.frontmatter.title }>{ next.frontmatter.title } &raquo;</Link> }
         </div>
       </div>
-      <div id="disqus_thread"></div>
+      <DiscussionEmbed {...disqusConfig} />
     </BlogPage>
   )
 }
