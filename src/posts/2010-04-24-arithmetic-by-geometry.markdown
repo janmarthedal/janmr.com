@@ -36,6 +36,7 @@ Let A be a point in the [Euclidean](http://en.wikipedia.org/wiki/Euclidean_geome
 We see that the triangles ABC and ADE are [similar](http://en.wikipedia.org/wiki/Similarity_(geometry)) and this implies that
 
 <div class="pull-right">(1)</div>
+
 $$
 \frac{|AD|}{|AB|} = \frac{|AE|}{|AC|}
 $$

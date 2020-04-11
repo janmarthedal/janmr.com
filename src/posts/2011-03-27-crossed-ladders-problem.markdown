@@ -48,6 +48,7 @@ $$
 Assume now, without loss of generality, that $a > b$. The Pythegorean theorem gives us
 
 <div class="pull-right">(1)</div>
+
 $$
 w^2 = a^2-p^2 = b^2-q^2 \quad \Leftrightarrow \quad a^2-b^2 = p^2-q^2 = (p+q)(p-q).
 $$
@@ -67,6 +68,7 @@ $$
 We use this equality to get
 
 <div class="pull-right">(2)</div>
+
 $$
 \begin{align} (p-q)^2 &= p^2+q^2-2 p q = p^2+q^2+2 p q-4 p q \\ &= (p+q)^2-4 h(p+q) = (p+q)(p+q-4h). \end{align}
 $$
@@ -80,6 +82,7 @@ $$
 We finally divide each side by $\sqrt{a^2-b^2}^4$ and obtain
 
 <div class="pull-right">(3)</div>
+
 $$
 x^3 (x-c) - 1 = 0
 $$
@@ -87,6 +90,7 @@ $$
 where
 
 <div class="pull-right">(4)</div>
+
 $$
 x = \frac{p+q}{\sqrt{a^2-b^2}} \quad\text{and}\quad c = \frac{4h}{\sqrt{a^2-b^2}}.
 $$

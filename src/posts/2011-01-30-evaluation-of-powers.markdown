@@ -31,6 +31,7 @@ We see that $a(15)=5$, which shows that the addition chain 1,2,3,5,10,15 is inde
 Since the numbers in an addition chain grows the fastest by doubling the previous item, it is fairly easy to see that
 
 <div class="pull-right">(1)</div>
+
 $$
 a(n) \geq \lceil \log_2(n) \rceil \quad .
 $$
