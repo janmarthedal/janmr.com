@@ -4,10 +4,6 @@ import { DiscussionEmbed } from "disqus-react"
 
 import BlogPage from "../components/blog-page"
 
-function normalizePath(path) {
-  return path.slice(-1) === '/' ? path + 'index.html' : path
-}
-
 export default function Template({
   data, // this prop will be injected by the GraphQL query below
   pageContext
@@ -20,7 +16,7 @@ export default function Template({
     shortname: process.env.GATSBY_DISQUS_NAME,
     config: {
       title: frontmatter.title,
-      identifier: 'https://janmr.com' + normalizePath(frontmatter.path)
+      identifier: `https://janmr.com${frontmatter.path}/index.html`
     }
   }
 
