@@ -4,6 +4,11 @@ import BlogPage from "../../components/blog-page"
 
 const Contact = () => (
   <BlogPage>
+    <h2>Contact</h2>
+    <p>
+      Feel free to reach out using this form. It can be about a blog post or just
+      a general comment. If you provide an email address, I will get back to you.
+    </p>
     <form
       name="contact"
       action="/blog/"
@@ -18,24 +23,21 @@ const Contact = () => (
           <input name="bot-field" />
         </label>
       </div>
-      <p>
-        <label>
-          Your Name: <input required type="text" name="name" />
-        </label>
-      </p>
-      <p>
-        <label>
-          Your Email: <input type="email" name="email" />
-        </label>
-      </p>
-      <p>
-        <label>
-          Message: <textarea required name="message"></textarea>
-        </label>
-      </p>
-      <p>
+      <div>
+        <label for="name">Your name</label>
+        <input id="name" required type="text" name="name" />
+      </div>
+      <div>
+        <label for="email">Your email (optional)</label>
+        <input id="email" type="email" name="email" />
+      </div>
+      <div>
+        <label for="message">Message</label>
+        <textarea id="message" name="message" required style={{ height: "5em" }}></textarea>
+      </div>
+      <div>
         <button type="submit">Send</button>
-      </p>
+      </div>
     </form>
   </BlogPage>
 )
