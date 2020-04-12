@@ -2,7 +2,7 @@ import React from "react"
 
 import BlogPage from "../../components/blog-page"
 
-const FormTest = () => (
+const Contact = () => (
   <BlogPage>
     <form
       name="contact"
@@ -20,7 +20,7 @@ const FormTest = () => (
       </div>
       <p>
         <label>
-          Your Name: <input type="text" name="name" />
+          Your Name: <input required type="text" name="name" />
         </label>
       </p>
       <p>
@@ -30,7 +30,7 @@ const FormTest = () => (
       </p>
       <p>
         <label>
-          Message: <textarea name="message"></textarea>
+          Message: <textarea required name="message"></textarea>
         </label>
       </p>
       <p>
@@ -40,4 +40,4 @@ const FormTest = () => (
   </BlogPage>
 )
 
-export default FormTest
+export default Contact

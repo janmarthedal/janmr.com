@@ -21,6 +21,10 @@ export default function Template({
         { frontmatter.tags.map(tag => <Link key={ tag } className="label" to={ `/blog/tags/${tag}` }>{ tag }</Link>) }
       </div>
       <div className="post-body" dangerouslySetInnerHTML={{ __html: html }} />
+      <div className="post-note">
+        A comment system is not enabled for this site, but feel free to leave
+        a question, correction or any comment by using the <Link to="/blog/contact">contact page</Link>.
+      </div>
       <div className="page-navigation">
         <div className="prev-post">
           { prev && <Link to={ prev.frontmatter.path } title={ "Previous post: " + prev.frontmatter.title }>&laquo; { prev.frontmatter.title }</Link> }
