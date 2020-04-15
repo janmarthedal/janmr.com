@@ -24,15 +24,15 @@ const Contact = () => (
         </label>
       </div>
       <div>
-        <label for="name">Your name</label>
+        <label htmlFor="name">Your name</label>
         <input id="name" required type="text" name="name" />
       </div>
       <div>
-        <label for="email">Your email (optional)</label>
+        <label htmlFor="email">Your email (optional)</label>
         <input id="email" type="email" name="email" />
       </div>
       <div>
-        <label for="message">Message</label>
+        <label htmlFor="message">Message</label>
         <textarea id="message" name="message" required style={{ height: "5em" }}></textarea>
       </div>
       <div>
