@@ -3,7 +3,7 @@ import PropTypes from "prop-types"
 
 import "./normalize.css"
 import "./extra.less"
-import "gatsby-remark-mathjax-ssr/mathjax.css"
+import "katex/dist/katex.min.css"
 
 const Layout = ({ children }) => {
   return (
