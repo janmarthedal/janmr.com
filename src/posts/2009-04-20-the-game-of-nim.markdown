@@ -71,75 +71,75 @@ Recall the initial Nim game in Figure 1 with three piles of 2, 3, and 4 sticks, 
 
 ### Properties of Impartial Games
 
-Given an impartial game, let $\cal S$ be the set of all possible game positions. We now  introduce two subsets of $\cal S$ in the following way:
+Given an impartial game, let $\mathcal{S}$ be the set of all possible game positions. We now  introduce two subsets of $\mathcal{S}$ in the following way:
 
-*   ${\cal S}_P$ consists of the terminal position $\{\}$, from where no legal move can be made, and every position for which *every* move will lead to a position in ${\cal S}_N$ ($\{G_1,\ldots,G_n\} \in {\cal S}_P \Leftrightarrow \forall k: G_k \in {\cal S}_N$).
-*   ${\cal S}_N$ consists of every position for which *at least one* move will lead to a position in ${\cal S}_P$ ($\{G_1,\ldots,G_n\} \in {\cal S}_N \Leftrightarrow \exists k: G_k \in {\cal S}_P$).
+*   $\mathcal{S}_P$ consists of the terminal position $\{\}$, from where no legal move can be made, and every position for which *every* move will lead to a position in $\mathcal{S}_N$ ($\{G_1,\ldots,G_n\} \in \mathcal{S}_P \Leftrightarrow \forall k: G_k \in \mathcal{S}_N$).
+*   $\mathcal{S}_N$ consists of every position for which *at least one* move will lead to a position in $\mathcal{S}_P$ ($\{G_1,\ldots,G_n\} \in \mathcal{S}_N \Leftrightarrow \exists k: G_k \in \mathcal{S}_P$).
 
-Consider a graph in which every game position is a node and where there is an arc (directed edge) from position $G$ to position $g$ if and only if $g \in G$. Since any game will terminate, this graph contains no cycles and is thus a [Directed Acyclic Graph (DAG)](http://en.wikipedia.org/wiki/Directed_acyclic_graph). This makes it possible to [topologically sort](http://en.wikipedia.org/wiki/Topological_sorting) the nodes/positions, starting from the terminal position and working backwards through every possible position, placing each position in ${\cal S}_P$ or ${\cal S}_N$ in the process. We have, in this way, divided ${\cal S}$ into two disjoint subsets.
+Consider a graph in which every game position is a node and where there is an arc (directed edge) from position $G$ to position $g$ if and only if $g \in G$. Since any game will terminate, this graph contains no cycles and is thus a [Directed Acyclic Graph (DAG)](http://en.wikipedia.org/wiki/Directed_acyclic_graph). This makes it possible to [topologically sort](http://en.wikipedia.org/wiki/Topological_sorting) the nodes/positions, starting from the terminal position and working backwards through every possible position, placing each position in $\mathcal{S}_P$ or $\mathcal{S}_N$ in the process. We have, in this way, divided $\mathcal{S}$ into two disjoint subsets.
 
-Such a [graph](/media/graph234.svg) for the game $\star 2 + \star 3 + \star 4$ would consists of 27 vertices and 114 arcs. Only 4 of the vertices represent games/positions in ${\cal S}_P$.
+Such a [graph](/media/graph234.svg) for the game $\star 2 + \star 3 + \star 4$ would consists of 27 vertices and 114 arcs. Only 4 of the vertices represent games/positions in $\mathcal{S}_P$.
 
-From the definitions of ${\cal S}_P$ and ${\cal S}_N$ we have something essential. Given a position in ${\cal S}_N$, the **n**ext player to move will always win, assuming a perfect play on his/her part. Similarly, given a position in ${\cal S}_P$, the **p**revious player will always win, again assuming a perfect play.
+From the definitions of $\mathcal{S}_P$ and $\mathcal{S}_N$ we have something essential. Given a position in $\mathcal{S}_N$, the **n**ext player to move will always win, assuming a perfect play on his/her part. Similarly, given a position in $\mathcal{S}_P$, the **p**revious player will always win, again assuming a perfect play.
 
 We now move on to different facts about impartial games. Some of them are interesting and useful in themselves, others simply stepping stones towards showing the central theorem, the Sprague–Grundy Theorem.
 
-**Theorem 1.** $G + G \in {\cal S}_P$ for any game $G$.
+**Theorem 1.** $G + G \in \mathcal{S}_P$ for any game $G$.
 
-*Proof*. We use structural induction (we consider a topologically sorted graph of a game from the terminal game and backwards). For $G = \{\}$ the statement is trivially true. Now assume that $G = \{ G_1, G_2, \ldots, G_n \}$ where $G_k + G_k \in {\cal S}_P$ for $k = 1, 2, \ldots, n$. If, in the position $G + G$, the player to move chooses the position $G_j + G$, the other player can make the same move in the &#8220;other part&#8221;, leading to $G_j + G_j$, which was assumed to lie in ${\cal S}_P$. This shows that $G_j + G \in {\cal S}_N$ and since $j$ was chosen arbitrarily $G + G \in {\cal S}_P$.&emsp;&#9724;
+*Proof*. We use structural induction (we consider a topologically sorted graph of a game from the terminal game and backwards). For $G = \{\}$ the statement is trivially true. Now assume that $G = \{ G_1, G_2, \ldots, G_n \}$ where $G_k + G_k \in \mathcal{S}_P$ for $k = 1, 2, \ldots, n$. If, in the position $G + G$, the player to move chooses the position $G_j + G$, the other player can make the same move in the &#8220;other part&#8221;, leading to $G_j + G_j$, which was assumed to lie in $\mathcal{S}_P$. This shows that $G_j + G \in \mathcal{S}_N$ and since $j$ was chosen arbitrarily $G + G \in \mathcal{S}_P$.&emsp;&#9724;
 
 Next is the very important concept of *equivalence* between games.
 
-**Definition 2.** The games $G$ and $H$ are *equivalent*, written $G \sim H$, if and only if $G + X \in {\cal S}_P \Leftrightarrow H + X \in {\cal S}_P$ for all games $X$.
+**Definition 2.** The games $G$ and $H$ are *equivalent*, written $G \sim H$, if and only if $G + X \in \mathcal{S}_P \Leftrightarrow H + X \in \mathcal{S}_P$ for all games $X$.
 
 It is clear that $\sim$ is an equivalence relation (it is reflexive, $G \sim G$, symmetric, $G \sim H$ if and only if $H \sim G$, and transitive, $G \sim F$ and $F \sim H$ implies $G \sim H$).
 
-**Theorem 3.** For all $G, H \in {\cal S}_P$ we have $G + H \in {\cal S}_P$.
+**Theorem 3.** For all $G, H \in \mathcal{S}_P$ we have $G + H \in \mathcal{S}_P$.
 
-*Proof*. Again, we use structural induction. If $G = \{\}$ the result follows easily. Now assume that $G'' + H \in {\cal S}_P$ for all $G'' \in {\cal S}_P$ where $G'' \in G'$ and $G' \in G$. If a move is made from $G + H$ to $G' + H$, where $G' \in G$, we can go to a position $G'' + H$ where $G'' \in G'$ and $G'' \in {\cal S}_P$. This last position lies in ${\cal S}_P$ by assumption and then $G + H \in {\cal S}_P$ does too. By symmetry the same arguments can be used if a move is made in the $H$ part.&emsp;&#9724;
+*Proof*. Again, we use structural induction. If $G = \{\}$ the result follows easily. Now assume that $G'' + H \in \mathcal{S}_P$ for all $G'' \in \mathcal{S}_P$ where $G'' \in G'$ and $G' \in G$. If a move is made from $G + H$ to $G' + H$, where $G' \in G$, we can go to a position $G'' + H$ where $G'' \in G'$ and $G'' \in \mathcal{S}_P$. This last position lies in $\mathcal{S}_P$ by assumption and then $G + H \in \mathcal{S}_P$ does too. By symmetry the same arguments can be used if a move is made in the $H$ part.&emsp;&#9724;
 
-The following important theorem shows that any game in ${\cal S}_P$ is equivalent to the terminal game.
+The following important theorem shows that any game in $\mathcal{S}_P$ is equivalent to the terminal game.
 
-**Theorem 4.** $G \sim \{\}$ for all $G \in {\cal S}_P$.
+**Theorem 4.** $G \sim \{\}$ for all $G \in \mathcal{S}_P$.
 
-*Proof*. We need to show $G + X \in {\cal S}_P \Leftrightarrow X \in {\cal S}_P$ for all games $X$. First we show $X \in {\cal S}_P \Rightarrow G + X \in {\cal S}_P$ so let $X \in {\cal S}_P$ and consider the position $G + X$. But that $G + X \in {\cal S}_P$ follows immediately from Theorem 3.
+*Proof*. We need to show $G + X \in \mathcal{S}_P \Leftrightarrow X \in \mathcal{S}_P$ for all games $X$. First we show $X \in \mathcal{S}_P \Rightarrow G + X \in \mathcal{S}_P$ so let $X \in \mathcal{S}_P$ and consider the position $G + X$. But that $G + X \in \mathcal{S}_P$ follows immediately from Theorem 3.
 
-Next we show $G + X \in {\cal S}_P \Rightarrow X \in {\cal S}_P$ which is equivalent to $X \in {\cal S}_N \Rightarrow G + X \in {\cal S}_N$. So let $X \in {\cal S}_N$ and consider the position $G + X$. We can now make a move to $G + X'$ where $X' \in X$ and $X' \in {\cal S}_P$. From Theorem 3 follows that $G + X' \in {\cal S}_P$ and thus $G + X \in {\cal S}_N$.&emsp;&#9724;
+Next we show $G + X \in \mathcal{S}_P \Rightarrow X \in \mathcal{S}_P$ which is equivalent to $X \in \mathcal{S}_N \Rightarrow G + X \in \mathcal{S}_N$. So let $X \in \mathcal{S}_N$ and consider the position $G + X$. We can now make a move to $G + X'$ where $X' \in X$ and $X' \in \mathcal{S}_P$. From Theorem 3 follows that $G + X' \in \mathcal{S}_P$ and thus $G + X \in \mathcal{S}_N$.&emsp;&#9724;
 
 The next theorem shows that we can add and &#8220;subtract&#8221; on both sides of a $\sim$.
 
 **Theorem 5.** $G \sim H \Leftrightarrow F + G \sim F + H$ for all games $F, G, H$.
 
-*Proof*. Let $G \sim H$, meaning $G + X \in {\cal S}_P \Leftrightarrow H + X \in {\cal S}_P$ for all games $X$. Now assume $F + G + Y \in {\cal S}_P$ for some $Y \in \cal S$ and by setting $X = F + Y$ we have $H + X = H + F + Y \in \cal S$, showing that $F + G + Y \in {\cal S}_P \Rightarrow F + H + Y \in {\cal S}_P$ for all $Y \in \cal S$. Analogously we can show the same statement with $G$ and $H$ interchanged. Hence, $F + G \sim F + H$. Now assume $F + G \sim F + H$. We then have $G = G + \{\} \sim G + (F + F) = (G + F) + F \sim (H + F) + F = H + (F + F) \sim H + \{\} = H$.&emsp;&#9724;
+*Proof*. Let $G \sim H$, meaning $G + X \in \mathcal{S}_P \Leftrightarrow H + X \in \mathcal{S}_P$ for all games $X$. Now assume $F + G + Y \in \mathcal{S}_P$ for some $Y \in \mathcal{S}$ and by setting $X = F + Y$ we have $H + X = H + F + Y \in \mathcal{S}$, showing that $F + G + Y \in \mathcal{S}_P \Rightarrow F + H + Y \in \mathcal{S}_P$ for all $Y \in \mathcal{S}$. Analogously we can show the same statement with $G$ and $H$ interchanged. Hence, $F + G \sim F + H$. Now assume $F + G \sim F + H$. We then have $G = G + \{\} \sim G + (F + F) = (G + F) + F \sim (H + F) + F = H + (F + F) \sim H + \{\} = H$.&emsp;&#9724;
 
 Finally a theorem essential for the next section.
 
-**Theorem 6.** $G \sim H \Leftrightarrow G + H \in {\cal S}_P$ for all games $G$ and $H$.
+**Theorem 6.** $G \sim H \Leftrightarrow G + H \in \mathcal{S}_P$ for all games $G$ and $H$.
 
-*Proof*. $G \sim H \Leftrightarrow G + H \sim H + H \sim \{\} \Leftrightarrow G + H \in {\cal S}_P$.&emsp;&#9724;
+*Proof*. $G \sim H \Leftrightarrow G + H \sim H + H \sim \{\} \Leftrightarrow G + H \in \mathcal{S}_P$.&emsp;&#9724;
 
 ### Characterizing Winning Positions
 
-The goal is now to characterize ${\cal S}_P$ or, equivalently, the games $G$ for which $G \sim \{\}$ (see Theorem 4). If a player always chooses a move that leads to a position $G \in {\cal S}_P$, then that player is going to win.
+The goal is now to characterize $\mathcal{S}_P$ or, equivalently, the games $G$ for which $G \sim \{\}$ (see Theorem 4). If a player always chooses a move that leads to a position $G \in \mathcal{S}_P$, then that player is going to win.
 
-We do this by constructing a function $E: {\cal S} \rightarrow \{0, 1, 2, \ldots \}$ such that
+We do this by constructing a function $E: \mathcal{S} \rightarrow \{0, 1, 2, \ldots \}$ such that
 
 $$
 G \sim \star E(G)
 $$
 
-for all games $G$. This will identify ${\cal S}_P$ since we will have $G \sim \{\} \Leftrightarrow E(G) = 0$.
+for all games $G$. This will identify $\mathcal{S}_P$ since we will have $G \sim \{\} \Leftrightarrow E(G) = 0$.
 
-Naturally we have $E(\{\}) = 0$. Let us now define $E(G)$ using an inductive approach. Since $G = \{\}$ is already taken care of, we let $G=\{G_1, G_2, \ldots, G_n\}$ and assume that the values $p_j=E(G_j)$ are known. Using Theorem 8 this means that $G_j + \star p_j \in {\cal S}_P$ for all $j$. We now wish to find $k$ such that $G + \star k \in {\cal S}_P$.
+Naturally we have $E(\{\}) = 0$. Let us now define $E(G)$ using an inductive approach. Since $G = \{\}$ is already taken care of, we let $G=\{G_1, G_2, \ldots, G_n\}$ and assume that the values $p_j=E(G_j)$ are known. Using Theorem 8 this means that $G_j + \star p_j \in \mathcal{S}_P$ for all $j$. We now wish to find $k$ such that $G + \star k \in \mathcal{S}_P$.
 
 We can get an idea of what we need from $E$ if we let $k$ be fixed and then consider the four possible classes of moves from the position $G + \star k$:
 
-*   $G_j + \star k \sim \star p_j + \star k$ with $k > p_j$. We could now move to $\star p_j + \star p_j \in {\cal S}_P$, implying $G_j + \star k \in {\cal S}_N$.
-*   $G_j + \star k \sim \star p_j + \star k$ with $k < p_j$. We could now move to $\star k + \star k \in {\cal S}_P$, implying $G_j + \star k \in {\cal S}_N$.
-*   $G_j + \star k$ with $k = p_j$. We would like to avoid this situation since then $G_j + \star k \in {\cal S}_P$, implying $G + \star k \in {\cal S}_N$.
-*   $G + \star k'$ where $k' < k$. We would now like to choose a position $G_j$ for which $E(G_j) = k'$ since then $G_j + \star k' \in {\cal S}_P$, implying $G + \star k \in {\cal S}_P$.
+*   $G_j + \star k \sim \star p_j + \star k$ with $k > p_j$. We could now move to $\star p_j + \star p_j \in \mathcal{S}_P$, implying $G_j + \star k \in \mathcal{S}_N$.
+*   $G_j + \star k \sim \star p_j + \star k$ with $k < p_j$. We could now move to $\star k + \star k \in \mathcal{S}_P$, implying $G_j + \star k \in \mathcal{S}_N$.
+*   $G_j + \star k$ with $k = p_j$. We would like to avoid this situation since then $G_j + \star k \in \mathcal{S}_P$, implying $G + \star k \in \mathcal{S}_N$.
+*   $G + \star k'$ where $k' < k$. We would now like to choose a position $G_j$ for which $E(G_j) = k'$ since then $G_j + \star k' \in \mathcal{S}_P$, implying $G + \star k \in \mathcal{S}_P$.
 
-If these points are fulfilled then, since $G_j$ and $k'$ could be chosen arbitrarily, we have covered all possible moves. We would then have $G + \star k \in {\cal S}_P$.
+If these points are fulfilled then, since $G_j$ and $k'$ could be chosen arbitrarily, we have covered all possible moves. We would then have $G + \star k \in \mathcal{S}_P$.
 
 These points actually give away the solution:
 
@@ -404,13 +404,13 @@ $$
 and thus
 
 $$
-G = \star p_1 + \star p_2 + \cdots + \star p_n \in {\cal S}_P \quad \Leftrightarrow \quad p_1 \oplus p_2 \oplus \cdots \oplus p_n = 0.
+G = \star p_1 + \star p_2 + \cdots + \star p_n \in \mathcal{S}_P \quad \Leftrightarrow \quad p_1 \oplus p_2 \oplus \cdots \oplus p_n = 0.
 $$
 
-Recalling the definitions of ${\cal S}_P$ and ${\cal S}_N$ we now have the ultimate strategy for Nim:
+Recalling the definitions of $\mathcal{S}_P$ and $\mathcal{S}_N$ we now have the ultimate strategy for Nim:
 
-*   Given a position $G = \star p_1 + \star p_2 + \cdots + \star p_n$ with $p_1 \oplus p_2 \oplus \cdots \oplus p_n \neq 0$ ($G \in {\cal S}_N$) it is possible to choose a move $G' = \star p'_1 + \star p'_2 + \cdots + \star p'_n \in G$ such that $p'_1 \oplus p'_2 \oplus \cdots \oplus p'_n = 0$ ($G' \in {\cal S}_P$).
-*   Given a position $G = \star p_1 + \star p_2 + \cdots + \star p_n$ with $p_1 \oplus p_2 \oplus \cdots \oplus p_n = 0$ ($G \in {\cal S}_P$), any move will lead to a position $G' = \star p'_1 + \star p'_2 + \cdots + \star p'_n \in G$ for which $p'_1 \oplus p'_2 \oplus \cdots \oplus p'_n \neq 0$ ($G' \in {\cal S}_N$).
+*   Given a position $G = \star p_1 + \star p_2 + \cdots + \star p_n$ with $p_1 \oplus p_2 \oplus \cdots \oplus p_n \neq 0$ ($G \in \mathcal{S}_N$) it is possible to choose a move $G' = \star p'_1 + \star p'_2 + \cdots + \star p'_n \in G$ such that $p'_1 \oplus p'_2 \oplus \cdots \oplus p'_n = 0$ ($G' \in \mathcal{S}_P$).
+*   Given a position $G = \star p_1 + \star p_2 + \cdots + \star p_n$ with $p_1 \oplus p_2 \oplus \cdots \oplus p_n = 0$ ($G \in \mathcal{S}_P$), any move will lead to a position $G' = \star p'_1 + \star p'_2 + \cdots + \star p'_n \in G$ for which $p'_1 \oplus p'_2 \oplus \cdots \oplus p'_n \neq 0$ ($G' \in \mathcal{S}_N$).
 
 In other words, if a game has $p_1 \oplus p_2 \oplus \cdots \oplus p_n \neq 0$ then the player to move is guaranteed to win—provided a perfect play on his/her part. On the other hand, if $p_1 \oplus p_2 \oplus \cdots \oplus p_n = 0$ then the player to move can only hope that the other player makes a mistake.
 

@@ -27,7 +27,10 @@ We now have the following straightforward algorithm:
 By the definition of integer division and modulus, the quantities in step **S2** imply $r_{k+1} b + u_k = q_k v + r_k$ for $k = 0, 1, \ldots, m-1$. Using this, we can show the correctness of the algorithm:
 
 $$
-\begin{align} u &= \sum_{k=0}^{m-1} u_k b^k = \sum_{k=0}^{m-1} (q_k v + r_k - r_{k+1} b) b^k = \sum_{k=0}^{m-1} q_k b^k v + \sum_{k=0}^{m-1} r_k b^k - \sum_{k=1}^m r_k b^k \\ &= q v + r_0 - r_m b^m = q v + r_0 \end{align}
+\begin{aligned}
+u &= \sum_{k=0}^{m-1} u_k b^k = \sum_{k=0}^{m-1} (q_k v + r_k - r_{k+1} b) b^k \\
+&= \sum_{k=0}^{m-1} q_k b^k v + \sum_{k=0}^{m-1} r_k b^k - \sum_{k=1}^m r_k b^k \\
+&= q v + r_0 - r_m b^m = q v + r_0 \end{aligned}
 $$
 
 since $r_m = 0$. It is clear from the definition of $r_k$ that $0 \leq r_k < v$ for $k = 0, 1, \ldots, m$. Considering now the definition of $q_k$ we see that since $r_{k+1} b + u_k \leq (v-1) b + b-1 = b v - 1$ we will have $0 \leq q_k < b$ for $k = 0, 1, \ldots, m-1$.

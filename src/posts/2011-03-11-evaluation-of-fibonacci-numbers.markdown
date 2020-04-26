@@ -50,7 +50,11 @@ Why is this important? Because now we have
 Notice how this type of reduction rules are very similar to those found in the [Evaluation of Powers post](/blog/2011/01/evaluation-of-powers). Let us look at an example and try to evaluate $F_{20} = r(T^{20}(1,0)) = r(T_{0,1}^{20}(1,0))$ using these rules:
 
 $$
-\begin{split} T_{0,1}^{20}(1,0) &= (T_{0,1}^2)^{10}(1,0) = T_{1,1}^{10}(1,0) = (T_{1,1}^2)^5(1,0) = T_{2,3}^5(1,0) = T_{2,3}^4(T_{2,3}(1,0)) \\ &= T_{2,3}^4(5,3) = (T_{2,3}^2)^2(5,3) = T_{13,21}^2(5,3) = T_{610,987}(5,3) = (10946,6765) \end{split}
+\begin{aligned}
+T_{0,1}^{20}(1,0) &= (T_{0,1}^2)^{10}(1,0) = T_{1,1}^{10}(1,0) = (T_{1,1}^2)^5(1,0) = T_{2,3}^5(1,0) \\
+&= T_{2,3}^4(T_{2,3}(1,0)) = T_{2,3}^4(5,3) = (T_{2,3}^2)^2(5,3) = T_{13,21}^2(5,3) \\
+&= T_{610,987}(5,3) = (10946,6765)
+\end{aligned}
 $$
 
 Then we just have to extract the second component (as done by applying the $r$ function) and we get $F_{20}=6765$.

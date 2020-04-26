@@ -70,7 +70,10 @@ We use this equality to get
 <div class="pull-right">(2)</div>
 
 $$
-\begin{align} (p-q)^2 &= p^2+q^2-2 p q = p^2+q^2+2 p q-4 p q \\ &= (p+q)^2-4 h(p+q) = (p+q)(p+q-4h). \end{align}
+\begin{aligned}
+(p-q)^2 &= p^2+q^2-2 p q = p^2+q^2+2 p q-4 p q \\
+&= (p+q)^2-4 h(p+q) = (p+q)(p+q-4h).
+\end{aligned}
 $$
 
 We now start from (1) and use (2) to get
