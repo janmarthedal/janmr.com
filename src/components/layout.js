@@ -2,8 +2,8 @@ import React from "react"
 import PropTypes from "prop-types"
 
 import "./normalize.css"
-import "./extra.less"
 import "katex/dist/katex.min.css"
+import "./extra.less"
 
 const Layout = ({ children }) => {
   return (
