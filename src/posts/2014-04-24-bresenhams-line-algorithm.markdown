@@ -58,8 +58,8 @@ chosen grid point is. It is straightforward to show that $-2\Delta x < \nabla_k 
 
 <figure>
   <img src="/media/bresenham.svg" alt="">
-  <figcaption><strong>Figure 1.</strong> Given that the previous point is at $(x_{k-1}, y_{k-1})$,
-    the dashed lines indicate the two extreme cases for the line being approximated. $\nabla_k$
+  <figcaption><strong>Figure 1.</strong> Given that the previous point is at (x<sub>k-1</sub>, y<sub>k-1</sub>),
+    the dashed lines indicate the two extreme cases for the line being approximated. &nabla;<sub>k</sub>
     will be negative if the line goes through the red area and positive if it goes through the blue
     area.</figcaption>
 </figure>
