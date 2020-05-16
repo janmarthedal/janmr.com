@@ -6,6 +6,7 @@ tags:
   - algorithms
   - multiple-precision
   - numbers-project
+  - post
 categories:
   - programming
 excerpt: >-

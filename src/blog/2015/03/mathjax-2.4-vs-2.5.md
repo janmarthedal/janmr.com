@@ -4,6 +4,7 @@ date: '2015-03-08'
 layout: layouts/post.njk
 tags:
   - mathjax
+  - post
 categories:
   - programming
 excerpt: >-

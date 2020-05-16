@@ -7,6 +7,7 @@ tags:
   - algorithms
   - multiple-precision
   - cpp
+  - post
 categories:
   - programming
 excerpt: >-

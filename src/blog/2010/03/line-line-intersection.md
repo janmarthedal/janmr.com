@@ -5,6 +5,7 @@ layout: layouts/post.njk
 tags:
   - geometry
   - lines
+  - post
 categories:
   - mathematics
 excerpt: >-

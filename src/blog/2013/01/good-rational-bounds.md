@@ -5,6 +5,7 @@ layout: layouts/post.njk
 tags:
   - continued-fraction
   - rational-approximation
+  - post
 categories:
   - mathematics
 excerpt: >-

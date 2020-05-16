@@ -5,6 +5,7 @@ layout: layouts/post.njk
 tags:
   - web-components
   - web-development
+  - post
 categories:
   - programming
 excerpt: >-

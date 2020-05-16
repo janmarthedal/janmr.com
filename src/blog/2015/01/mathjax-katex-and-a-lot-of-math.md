@@ -5,6 +5,7 @@ layout: layouts/post.njk
 tags:
   - mathjax
   - katex
+  - post
 categories:
   - programming
 excerpt: >-

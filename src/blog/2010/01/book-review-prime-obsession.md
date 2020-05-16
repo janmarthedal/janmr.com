@@ -5,6 +5,7 @@ layout: layouts/post.njk
 tags:
   - book-review
   - recommended-reading
+  - post
 categories:
   - book-review
 excerpt: >-

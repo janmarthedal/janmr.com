@@ -5,6 +5,7 @@ layout: layouts/post.njk
 tags:
   - visualization
   - theorem
+  - post
 excerpt: The green circles will always be of equal size
 ---
 <figure>

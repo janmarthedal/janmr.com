@@ -4,6 +4,7 @@ date: '2014-06-14'
 layout: layouts/post.njk
 tags:
   - pyramidal-numbers
+  - post
 categories:
   - mathematics
 excerpt: >-

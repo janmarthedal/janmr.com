@@ -5,6 +5,7 @@ layout: layouts/post.njk
 tags:
   - algorithms
   - numbers-project
+  - post
 categories:
   - programming
   - mathematics

@@ -4,6 +4,7 @@ date: '2015-01-24'
 layout: layouts/post.njk
 tags:
   - math-typesetting
+  - post
 categories:
   - programming
 excerpt: >-

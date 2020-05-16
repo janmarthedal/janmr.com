@@ -4,6 +4,7 @@ date: '2008-12-26'
 layout: layouts/post.njk
 tags:
   - combinatorics
+  - post
 categories:
   - mathematics
 excerpt: >-

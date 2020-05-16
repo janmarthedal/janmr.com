@@ -4,6 +4,7 @@ date: '2017-02-23'
 layout: layouts/post.njk
 tags:
   - mathml
+  - post
 categories:
   - web-math
 excerpt: >-

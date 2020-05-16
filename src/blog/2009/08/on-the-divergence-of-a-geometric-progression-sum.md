@@ -5,6 +5,7 @@ layout: layouts/post.njk
 tags:
   - proof
   - infinite-series
+  - post
 categories:
   - mathematics
 excerpt: >-

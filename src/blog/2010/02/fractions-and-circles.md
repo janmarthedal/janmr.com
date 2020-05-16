@@ -5,6 +5,7 @@ layout: layouts/post.njk
 tags:
   - stern-brocot-tree
   - fractions
+  - post
 categories:
   - mathematics
 excerpt: >-

@@ -4,6 +4,7 @@ date: '2015-04-26'
 layout: layouts/post.njk
 tags:
   - web-development
+  - post
 categories:
   - development
 excerpt: >-

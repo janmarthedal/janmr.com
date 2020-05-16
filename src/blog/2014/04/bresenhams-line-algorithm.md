@@ -5,6 +5,7 @@ layout: layouts/post.njk
 tags:
   - raster-graphics
   - algorithms
+  - post
 categories:
   - programming
   - mathematics

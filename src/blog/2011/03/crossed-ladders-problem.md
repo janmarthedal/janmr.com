@@ -5,6 +5,7 @@ layout: layouts/post.njk
 tags:
   - geometry
   - nerd-sniping
+  - post
 categories:
   - mathematics
 excerpt: >-

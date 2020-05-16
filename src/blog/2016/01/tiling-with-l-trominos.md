@@ -5,6 +5,7 @@ layout: layouts/post.njk
 tags:
   - polyomino
   - tiling
+  - post
 categories:
   - mathematics
 excerpt: >-

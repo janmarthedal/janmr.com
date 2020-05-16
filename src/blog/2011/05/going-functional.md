@@ -4,6 +4,7 @@ date: '2011-05-31'
 layout: layouts/post.njk
 tags:
   - functional-programming
+  - post
 categories:
   - programming
 excerpt: >-

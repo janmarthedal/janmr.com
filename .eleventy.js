@@ -1,14 +1,16 @@
-const inputFolder = 'src';
-
-module.exports = function (eleventyConfig) {
+function getMarkdownLib() {
   let markdownIt = require("markdown-it");
   let markdownItKaTeX = require("@janmarthedal/markdown-it-katex");
   let options = {
     html: true,
   };
-  let markdownLib = markdownIt(options).use(markdownItKaTeX);
+  return markdownIt(options).use(markdownItKaTeX);
+}
 
-  eleventyConfig.setLibrary("md", markdownLib);
+module.exports = function (eleventyConfig) {
+  const inputFolder = 'src';
+
+  eleventyConfig.setLibrary("md", getMarkdownLib());
 
   eleventyConfig.addPassthroughCopy(`${inputFolder}/lab`);
   eleventyConfig.addPassthroughCopy(`${inputFolder}/media`);

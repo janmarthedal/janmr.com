@@ -6,6 +6,7 @@ tags:
   - multiple-precision
   - numbers-project
   - bitwise-operators
+  - post
 categories:
   - mathematics
 excerpt: >-

@@ -5,6 +5,7 @@ layout: layouts/post.njk
 tags:
   - trigonometry
   - visualization
+  - post
 categories:
   - mathematics
 excerpt: >-

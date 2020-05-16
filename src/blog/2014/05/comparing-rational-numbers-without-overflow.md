@@ -6,6 +6,7 @@ tags:
   - arithmetic
   - algorithms
   - fractions
+  - post
 categories:
   - programming
 excerpt: >-

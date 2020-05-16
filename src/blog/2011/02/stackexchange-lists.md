@@ -5,6 +5,7 @@ layout: layouts/post.njk
 tags:
   - links
   - stackexchange
+  - post
 categories:
   - links
 excerpt: >-

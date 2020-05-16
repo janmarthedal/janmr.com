@@ -5,6 +5,7 @@ layout: layouts/post.njk
 tags:
   - catalan-numbers
   - knuth
+  - post
 categories:
   - mathematics
 excerpt: >-

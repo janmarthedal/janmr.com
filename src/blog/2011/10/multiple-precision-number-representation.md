@@ -5,6 +5,7 @@ layout: layouts/post.njk
 tags:
   - multiple-precision
   - numbers-project
+  - post
 categories:
   - programming
 excerpt: >-

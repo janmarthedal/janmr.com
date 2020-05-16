@@ -6,6 +6,7 @@ tags:
   - proof
   - visualization
   - infinite-series
+  - post
 categories:
   - mathematics
 excerpt: Badabing

@@ -5,6 +5,7 @@ layout: layouts/post.njk
 tags:
   - combinatorial-game
   - game-theory
+  - post
 categories:
   - mathematics
 excerpt: >-

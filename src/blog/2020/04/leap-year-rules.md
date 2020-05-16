@@ -4,6 +4,7 @@ date: '2020-04-15'
 layout: layouts/post.njk
 tags:
   - datetime
+  - post
 categories:
   - programming
 excerpt: >-

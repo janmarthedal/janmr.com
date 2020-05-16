@@ -5,6 +5,7 @@ layout: layouts/post.njk
 tags:
   - combinatorics
   - ode
+  - post
 categories:
   - mathematics
 excerpt: >-

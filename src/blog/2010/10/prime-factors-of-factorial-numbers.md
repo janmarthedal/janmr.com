@@ -5,6 +5,7 @@ layout: layouts/post.njk
 tags:
   - prime-numbers
   - factorials
+  - post
 categories:
   - mathematics
 excerpt: >-

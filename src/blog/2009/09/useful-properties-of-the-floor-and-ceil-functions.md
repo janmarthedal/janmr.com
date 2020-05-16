@@ -6,6 +6,7 @@ tags:
   - floor
   - ceil
   - discrete-continuous
+  - post
 categories:
   - mathematics
 excerpt: >-

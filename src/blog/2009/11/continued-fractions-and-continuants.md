@@ -6,6 +6,7 @@ tags:
   - algorithms
   - cpp
   - continued-fraction
+  - post
 categories:
   - programming
   - mathematics

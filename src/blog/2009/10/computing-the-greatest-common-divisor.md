@@ -8,6 +8,7 @@ tags:
   - gcd
   - numbers-project
   - number-theory
+  - post
 categories:
   - programming
 excerpt: >-
