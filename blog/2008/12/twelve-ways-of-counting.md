@@ -1,7 +1,7 @@
 ---
-path: /blog/2008/12/twelve-ways-of-counting
-date: '2008-12-26'
 title: Twelve Ways of Counting
+date: '2008-12-26'
+layout: layouts/post.njk
 tags:
   - combinatorics
 categories:

@@ -1,7 +1,7 @@
 ---
-path: /blog/2008/10/nice-geometric-progression-proof
-date: '2008-10-08'
 title: Nice Proof of a Geometric Progression Sum
+date: '2008-10-08'
+layout: layouts/post.njk
 tags:
   - proof
   - visualization
