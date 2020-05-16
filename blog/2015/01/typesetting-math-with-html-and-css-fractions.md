@@ -15,7 +15,7 @@ excerpt: >-
   (including web fonts). My findings should be considered experimental.
 
   This post will deal with one way of typesetting fractions, inspired by the
-  approach taken by Kahn Academy's KaTeX project. 
+  approach taken by Kahn Academy's KaTeX project.
 ---
 <style>
     @font-face{font-family:KaTeX_Main;src:url(https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/fonts/KaTeX_Main-Regular.woff2) format('woff2'),url(https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/fonts/KaTeX_Main-Regular.woff) format('woff'),url(https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/fonts/KaTeX_Main-Regular.ttf) format('truetype');font-weight:400;font-style:normal}

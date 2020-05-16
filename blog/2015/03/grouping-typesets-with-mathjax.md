@@ -14,8 +14,7 @@ excerpt: >-
   screen flickering and it also takes longer before the page is completed
   because of the increased work for the browser.
 
-  Sometimes you want to typeset and display a lot of equations dynamically
-  [...]
+  Sometimes you want to typeset and display a lot of equations dynamically [...]
 ---
 When [MathJax](http://mathjax.org) typesets the equations on a web page, it does a good job of grouping the work into chunks, so that a chunk of equations (see the [EqnChunk option](http://docs.mathjax.org/en/v2.5-latest/options/HTML-CSS.html) will be typeset before they are displayed and the next chunk is processed. Typesetting and displaying only one equation at a time would lead to a lot of screen flickering and it would also take longer before the page has been completed because of the increased work for the browser.
 

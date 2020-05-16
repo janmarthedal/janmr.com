@@ -7,9 +7,14 @@ tags:
 categories:
   - programming
 excerpt: >-
-  According to the The Astronomical Almanac, a tropical year comprises a complete cycle of seasons and is approximately 365 days, 5 hours, 48 minutes, 45 seconds, or 365.242188 days.
+  According to the The Astronomical Almanac, a tropical year comprises a
+  complete cycle of seasons and is approximately 365 days, 5 hours, 48 minutes,
+  45 seconds, or 365.242188 days.
 
-  Such a complete cycle of seasons could be measured as one solstice or equinox to the next corresponding solstice or equinox. The length of a tropical year, however, is not constant. For instance, the length of tropical years as measured from one March equinox to the next can vary up to 30 minutes.
+  Such a complete cycle of seasons could be measured as one solstice or equinox
+  to the next corresponding solstice or equinox. The length of a tropical year,
+  however, is not constant. For instance, the length of tropical years as
+  measured from one March equinox to the next can vary up to 30 minutes.
 ---
 According to the [The Astronomical Almanac](https://web.archive.org/web/20191003172307/http://asa.usno.navy.mil/SecM/Glossary.html), a *tropical year* comprises a complete cycle of seasons and is approximately 365 days, 5 hours, 48 minutes, 45 seconds, or 365.242188 days.
 
