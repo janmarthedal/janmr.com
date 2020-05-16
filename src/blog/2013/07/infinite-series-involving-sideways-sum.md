@@ -1,7 +1,7 @@
 ---
 title: An Infinite Series Involving a Sideways Sum
 date: '2013-07-03'
-layout: layouts/post.njk
+layout: post
 tags:
   - infinite-series
   - binary-numbers

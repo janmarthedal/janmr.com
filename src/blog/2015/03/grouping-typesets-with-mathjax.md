@@ -1,7 +1,7 @@
 ---
 title: Grouping Typesets With MathJax
 date: '2015-03-03'
-layout: layouts/post.njk
+layout: post
 tags:
   - mathjax
   - post

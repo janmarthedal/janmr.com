@@ -1,7 +1,7 @@
 ---
 title: Leap Year Rules
 date: '2020-04-15'
-layout: layouts/post.njk
+layout: post
 tags:
   - datetime
   - post

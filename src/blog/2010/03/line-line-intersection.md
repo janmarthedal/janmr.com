@@ -1,7 +1,7 @@
 ---
 title: Line-line Intersection in the Plane
 date: '2010-03-30'
-layout: layouts/post.njk
+layout: post
 tags:
   - geometry
   - lines

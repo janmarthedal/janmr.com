@@ -1,7 +1,7 @@
 ---
 title: Visualizing the Pythagorean Theorem
 date: '2010-02-14'
-layout: layouts/post.njk
+layout: post
 tags:
   - proof
   - pythagoras

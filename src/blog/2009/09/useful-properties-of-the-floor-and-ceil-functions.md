@@ -1,7 +1,7 @@
 ---
 title: Useful Properties of the Floor and Ceil Functions
 date: '2009-09-09'
-layout: layouts/post.njk
+layout: post
 tags:
   - floor
   - ceil

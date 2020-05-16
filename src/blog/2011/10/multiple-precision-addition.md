@@ -1,7 +1,7 @@
 ---
 title: Multiple-Precision Addition
 date: '2011-10-12'
-layout: layouts/post.njk
+layout: post
 tags:
   - algorithms
   - multiple-precision

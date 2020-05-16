@@ -1,7 +1,7 @@
 ---
 title: Six Circles Theorem Illustrated
 date: '2014-04-06'
-layout: layouts/post.njk
+layout: post
 tags:
   - visualization
   - theorem

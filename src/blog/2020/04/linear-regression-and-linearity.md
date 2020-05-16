@@ -1,7 +1,7 @@
 ---
 title: Linear Regression and Linearity
 date: '2020-04-20'
-layout: layouts/post.njk
+layout: post
 tags:
   - proof
   - visualization

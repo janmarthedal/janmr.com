@@ -1,7 +1,7 @@
 ---
 title: Going Functional
 date: '2011-05-31'
-layout: layouts/post.njk
+layout: post
 tags:
   - functional-programming
   - post

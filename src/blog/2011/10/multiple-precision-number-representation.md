@@ -1,7 +1,7 @@
 ---
 title: Multiple-Precision Number Representation
 date: '2011-10-05'
-layout: layouts/post.njk
+layout: post
 tags:
   - multiple-precision
   - numbers-project

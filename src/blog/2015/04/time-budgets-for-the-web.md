@@ -1,7 +1,7 @@
 ---
 title: Time Budgets for the Web
 date: '2015-04-26'
-layout: layouts/post.njk
+layout: post
 tags:
   - web-development
   - post

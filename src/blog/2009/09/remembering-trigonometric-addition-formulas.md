@@ -1,7 +1,7 @@
 ---
 title: Remembering Trigonometric Addition Formulas
 date: '2009-09-23'
-layout: layouts/post.njk
+layout: post
 tags:
   - trigonometry
   - visualization

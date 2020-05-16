@@ -1,7 +1,7 @@
 ---
 title: Continued Fractions and Continuants
 date: '2009-11-10'
-layout: layouts/post.njk
+layout: post
 tags:
   - algorithms
   - cpp

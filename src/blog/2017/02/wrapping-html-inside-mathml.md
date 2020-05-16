@@ -1,7 +1,7 @@
 ---
 title: Wrapping HTML inside MathML
 date: '2017-02-23'
-layout: layouts/post.njk
+layout: post
 tags:
   - mathml
   - post

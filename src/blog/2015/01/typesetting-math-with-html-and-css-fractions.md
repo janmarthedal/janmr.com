@@ -1,7 +1,7 @@
 ---
 title: 'Typesetting Math Using HTML and CSS: Fractions'
 date: '2015-01-24'
-layout: layouts/post.njk
+layout: post
 tags:
   - math-typesetting
   - post
