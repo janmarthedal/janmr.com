@@ -1,7 +1,7 @@
 ---
-path: /blog/2009/10/computing-the-greatest-common-divisor
-date: '2009-10-29'
 title: Computing the Greatest Common Divisor
+date: '2009-10-29'
+layout: layouts/post.njk
 tags:
   - algorithms
   - cpp

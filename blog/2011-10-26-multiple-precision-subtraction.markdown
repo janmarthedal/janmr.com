@@ -1,7 +1,7 @@
 ---
-path: /blog/2011/10/multiple-precision-subtraction
-date: '2011-10-26'
 title: Multiple-Precision Subtraction
+date: '2011-10-26'
+layout: layouts/post.njk
 tags:
   - algorithms
   - multiple-precision

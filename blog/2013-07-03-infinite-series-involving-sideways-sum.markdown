@@ -1,7 +1,7 @@
 ---
-path: /blog/2013/07/infinite-series-involving-sideways-sum
-date: '2013-07-03'
 title: An Infinite Series Involving a Sideways Sum
+date: '2013-07-03'
+layout: layouts/post.njk
 tags:
   - infinite-series
   - binary-numbers

@@ -1,7 +1,7 @@
 ---
-path: /blog/2009/11/book-review-the-pleasures-of-counting
-date: '2009-11-15'
 title: 'Book review: The Pleasures of Counting'
+date: '2009-11-15'
+layout: layouts/post.njk
 tags:
   - book-review
   - recommended-reading

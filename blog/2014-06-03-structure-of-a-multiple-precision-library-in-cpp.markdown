@@ -1,7 +1,7 @@
 ---
-path: /blog/2014/06/structure-of-a-multiple-precision-library-in-cpp
-date: '2014-06-03'
 title: Structure of a Multiple-Precision Library in C++
+date: '2014-06-03'
+layout: layouts/post.njk
 tags:
   - arithmetic
   - algorithms

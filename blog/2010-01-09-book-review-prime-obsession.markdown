@@ -1,7 +1,7 @@
 ---
-path: /blog/2010/01/book-review-prime-obsession
-date: '2010-01-09'
 title: 'Book Review: Prime Obsession'
+date: '2010-01-09'
+layout: layouts/post.njk
 tags:
   - book-review
   - recommended-reading

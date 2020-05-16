@@ -1,7 +1,7 @@
 ---
-path: /blog/2010/05/book-review-the-book-of-numbers
-date: '2010-05-23'
 title: 'Book Review: The Book of Numbers'
+date: '2010-05-23'
+layout: layouts/post.njk
 tags:
   - book-review
   - recommended-reading

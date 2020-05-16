@@ -1,7 +1,7 @@
 ---
-path: /blog/2009/12/the-stern-brocot-tree-of-fractions
-date: '2009-12-04'
 title: The Stern-Brocot Tree of Fractions
+date: '2009-12-04'
+layout: layouts/post.njk
 tags:
   - continued-fraction
   - stern-brocot-tree

@@ -1,7 +1,7 @@
 ---
-path: /blog/2014/07/entering-the-world-of-web-components
-date: '2014-07-02'
 title: Entering the World of Web Components
+date: '2014-07-02'
+layout: layouts/post.njk
 tags:
   - web-components
   - web-development

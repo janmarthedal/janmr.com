@@ -1,7 +1,7 @@
 ---
-path: /blog/2015/04/time-budgets-for-the-web
-date: '2015-04-26'
 title: Time Budgets for the Web
+date: '2015-04-26'
+layout: layouts/post.njk
 tags:
   - web-development
 categories:

@@ -1,7 +1,7 @@
 ---
-path: /blog/2009/09/remembering-trigonometric-addition-formulas
-date: '2009-09-23'
 title: Remembering Trigonometric Addition Formulas
+date: '2009-09-23'
+layout: layouts/post.njk
 tags:
   - trigonometry
   - visualization

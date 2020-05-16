@@ -1,7 +1,7 @@
 ---
-path: /blog/2009/04/the-game-of-nim
-date: '2009-04-20'
 title: The Game of Nim
+date: '2009-04-20'
+layout: layouts/post.njk
 tags:
   - combinatorial-game
   - game-theory

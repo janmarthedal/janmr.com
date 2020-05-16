@@ -1,7 +1,7 @@
 ---
-path: /blog/2014/04/six-circles-theorem-illustrated
-date: '2014-04-06'
 title: Six Circles Theorem Illustrated
+date: '2014-04-06'
+layout: layouts/post.njk
 tags:
   - visualization
   - theorem

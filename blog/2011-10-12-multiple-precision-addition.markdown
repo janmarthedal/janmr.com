@@ -1,7 +1,7 @@
 ---
-path: /blog/2011/10/multiple-precision-addition
-date: '2011-10-12'
 title: Multiple-Precision Addition
+date: '2011-10-12'
+layout: layouts/post.njk
 tags:
   - algorithms
   - multiple-precision

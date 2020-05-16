@@ -1,7 +1,7 @@
 ---
-path: /blog/2011/03/evaluation-of-fibonacci-numbers
-date: '2011-03-11'
 title: Fast Evaluation of Fibonacci Numbers
+date: '2011-03-11'
+layout: layouts/post.njk
 tags:
   - algorithms
   - numbers-project

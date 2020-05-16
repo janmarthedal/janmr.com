@@ -1,7 +1,7 @@
 ---
-path: /blog/2010/09/computing-the-integer-binary-logarithm
-date: '2010-09-27'
 title: Computing the Integer Binary Logarithm
+date: '2010-09-27'
+layout: layouts/post.njk
 tags:
   - algorithms
   - numbers-project

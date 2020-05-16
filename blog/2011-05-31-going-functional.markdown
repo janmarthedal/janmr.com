@@ -1,7 +1,7 @@
 ---
-path: /blog/2011/05/going-functional
-date: '2011-05-31'
 title: Going Functional
+date: '2011-05-31'
+layout: layouts/post.njk
 tags:
   - functional-programming
 categories:

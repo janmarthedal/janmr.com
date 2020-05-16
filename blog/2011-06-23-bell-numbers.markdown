@@ -1,7 +1,7 @@
 ---
-path: /blog/2011/06/bell-numbers
-date: '2011-06-23'
 title: Bell Numbers
+date: '2011-06-23'
+layout: layouts/post.njk
 tags:
   - combinatorics
   - ode

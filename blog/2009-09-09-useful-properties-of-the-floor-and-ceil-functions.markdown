@@ -1,7 +1,7 @@
 ---
-path: /blog/2009/09/useful-properties-of-the-floor-and-ceil-functions
-date: '2009-09-09'
 title: Useful Properties of the Floor and Ceil Functions
+date: '2009-09-09'
+layout: layouts/post.njk
 tags:
   - floor
   - ceil

@@ -1,7 +1,7 @@
 ---
-path: /blog/2009/08/on-the-divergence-of-a-geometric-progression-sum
-date: '2009-08-28'
 title: On the Divergence of a Geometric Progression Sum
+date: '2009-08-28'
+layout: layouts/post.njk
 tags:
   - proof
   - infinite-series

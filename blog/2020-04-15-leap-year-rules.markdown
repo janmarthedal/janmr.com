@@ -1,7 +1,7 @@
 ---
-path: /blog/2020/04/leap-year-rules
-date: '2020-04-15'
 title: Leap Year Rules
+date: '2020-04-15'
+layout: layouts/post.njk
 tags:
   - datetime
 categories:

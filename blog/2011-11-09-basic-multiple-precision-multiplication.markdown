@@ -1,7 +1,7 @@
 ---
-path: /blog/2011/11/basic-multiple-precision-multiplication
-date: '2011-11-09'
 title: Basic Multiple-Precision Multiplication
+date: '2011-11-09'
+layout: layouts/post.njk
 tags:
   - algorithms
   - multiple-precision

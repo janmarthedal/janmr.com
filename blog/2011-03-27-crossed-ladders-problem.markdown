@@ -1,7 +1,7 @@
 ---
-path: /blog/2011/03/crossed-ladders-problem
-date: '2011-03-27'
 title: The Crossed Ladders Problem
+date: '2011-03-27'
+layout: layouts/post.njk
 tags:
   - geometry
   - nerd-sniping

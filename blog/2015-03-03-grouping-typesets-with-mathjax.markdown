@@ -1,7 +1,7 @@
 ---
-path: /blog/2015/03/grouping-typesets-with-mathjax
-date: '2015-03-03'
 title: Grouping Typesets With MathJax
+date: '2015-03-03'
+layout: layouts/post.njk
 tags:
   - mathjax
 categories:

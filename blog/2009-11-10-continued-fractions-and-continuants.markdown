@@ -1,7 +1,7 @@
 ---
-path: /blog/2009/11/continued-fractions-and-continuants
-date: '2009-11-10'
 title: Continued Fractions and Continuants
+date: '2009-11-10'
+layout: layouts/post.njk
 tags:
   - algorithms
   - cpp

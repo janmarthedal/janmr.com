@@ -1,7 +1,7 @@
 ---
-path: /blog/2014/05/comparing-rational-numbers-without-overflow
-date: '2014-05-18'
 title: Comparing Rational Numbers Without Overflow
+date: '2014-05-18'
+layout: layouts/post.njk
 tags:
   - arithmetic
   - algorithms

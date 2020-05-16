@@ -1,7 +1,7 @@
 ---
-path: /blog/2011/02/stackexchange-lists
-date: '2011-02-03'
 title: Stackexchange Lists
+date: '2011-02-03'
+layout: layouts/post.njk
 tags:
   - links
   - stackexchange

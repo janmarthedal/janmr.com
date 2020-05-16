@@ -1,7 +1,7 @@
 ---
-path: /blog/2011/10/multiple-precision-number-representation
-date: '2011-10-05'
 title: Multiple-Precision Number Representation
+date: '2011-10-05'
+layout: layouts/post.njk
 tags:
   - multiple-precision
   - numbers-project

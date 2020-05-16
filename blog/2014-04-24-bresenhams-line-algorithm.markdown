@@ -1,7 +1,7 @@
 ---
-path: /blog/2014/04/bresenhams-line-algorithm
-date: '2014-04-24'
 title: Bresenham's Line Algorithm
+date: '2014-04-24'
+layout: layouts/post.njk
 tags:
   - raster-graphics
   - algorithms

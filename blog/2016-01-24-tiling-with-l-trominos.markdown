@@ -1,7 +1,7 @@
 ---
-path: /blog/2016/01/tiling-with-l-trominos
-date: '2016-01-24'
 title: Tiling with L-Trominos
+date: '2016-01-24'
+layout: layouts/post.njk
 tags:
   - polyomino
   - tiling

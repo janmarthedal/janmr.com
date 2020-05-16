@@ -1,7 +1,7 @@
 ---
-path: /blog/2011/01/evaluation-of-powers
-date: '2011-01-30'
 title: Evaluation of Powers
+date: '2011-01-30'
+layout: layouts/post.njk
 tags:
   - algorithms
   - numbers-project

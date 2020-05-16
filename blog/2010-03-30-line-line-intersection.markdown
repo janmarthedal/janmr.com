@@ -1,7 +1,7 @@
 ---
-path: /blog/2010/03/line-line-intersection
-date: '2010-03-30'
 title: Line-line Intersection in the Plane
+date: '2010-03-30'
+layout: layouts/post.njk
 tags:
   - geometry
   - lines

@@ -1,7 +1,7 @@
 ---
-path: /blog/2010/04/arithmetic-by-geometry
-date: '2010-04-24'
 title: Arithmetic by Geometry
+date: '2010-04-24'
+layout: layouts/post.njk
 tags:
   - arithmetic
   - geometry

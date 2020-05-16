@@ -1,7 +1,7 @@
 ---
-path: /blog/2010/07/bitwise-operators-and-negative-numbers
-date: '2010-07-24'
 title: Bitwise Operators and Negative Numbers
+date: '2010-07-24'
+layout: layouts/post.njk
 tags:
   - multiple-precision
   - numbers-project

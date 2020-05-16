@@ -1,7 +1,7 @@
 ---
-path: /blog/2017/02/wrapping-html-inside-mathml
-date: '2017-02-23'
 title: Wrapping HTML inside MathML
+date: '2017-02-23'
+layout: layouts/post.njk
 tags:
   - mathml
 categories:

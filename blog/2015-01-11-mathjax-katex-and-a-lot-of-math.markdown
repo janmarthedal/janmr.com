@@ -1,7 +1,7 @@
 ---
-path: /blog/2015/01/mathjax-katex-and-a-lot-of-math
-date: '2015-01-11'
 title: 'MathJax, KaTeX and a lot of Math'
+date: '2015-01-11'
+layout: layouts/post.njk
 tags:
   - mathjax
   - katex

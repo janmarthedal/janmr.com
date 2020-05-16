@@ -1,7 +1,7 @@
 ---
-path: /blog/2012/11/basic-multiple-precision-short-division
-date: '2012-11-28'
 title: Basic Multiple-Precision Short Division
+date: '2012-11-28'
+layout: layouts/post.njk
 tags:
   - algorithms
   - multiple-precision

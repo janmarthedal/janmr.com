@@ -1,7 +1,7 @@
 ---
-path: /blog/2009/07/implementing-multiple-precision-arithmetic-part-1
-date: '2009-07-23'
 title: 'Implementing Multiple-Precision Arithmetic, Part 1'
+date: '2009-07-23'
+layout: layouts/post.njk
 tags:
   - arithmetic
   - algorithms

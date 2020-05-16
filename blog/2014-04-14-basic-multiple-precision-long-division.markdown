@@ -1,7 +1,7 @@
 ---
-path: /blog/2014/04/basic-multiple-precision-long-division
-date: '2014-04-14'
 title: Basic Multiple-Precision Long Division
+date: '2014-04-14'
+layout: layouts/post.njk
 tags:
   - arithmetic
   - algorithms
