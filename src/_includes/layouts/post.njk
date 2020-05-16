@@ -1,5 +1,5 @@
 ---
-layout: layouts/blog-page.njk
+layout: blog-page
 ---
 <h2>{{ title }}<br>
     <small>
@@ -7,9 +7,9 @@ layout: layouts/blog-page.njk
     </small>
 </h2>
 <div class="post-tags">
-    {% for tag in tags | excludeElement("post") %}
+    {%- for tag in tags | excludeElement("post") -%}
         <a class="label" href="/blog/tags/{{tag}}">{{tag}}</a>
-    {% endfor %}
+    {%- endfor -%}
 </div>
 <div class="post-body">
     {{ content | safe }}
