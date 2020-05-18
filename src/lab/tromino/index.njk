@@ -1,0 +1,28 @@
+---
+title: L-Trominos
+---
+{% extends "layouts/base.njk" %}
+{% block head -%}
+<style>
+  * {
+    padding: 0;
+  }
+  html, body, svg {
+    margin: 0;
+    width: 100%;
+    height: 100%;
+  }
+  #tromino-fig {
+    width: 100vmin;
+    height: 100vmin;
+    margin: 0 auto;
+  }
+</style>
+{%- endblock %}
+{% block content -%}
+<div id="tromino-fig"></div>
+{%- endblock %}
+{% block bodyend -%}
+<script type="text/javascript" src="main.js"></script>
+{{ super() }}
+{%- endblock %}

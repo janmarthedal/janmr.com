@@ -13,7 +13,8 @@ module.exports = function (eleventyConfig) {
 
   eleventyConfig.setLibrary("md", markdownIt({ html: true }).use(markdownItKaTeX));
 
-  eleventyConfig.addPassthroughCopy(`${inputFolder}/lab`);
+  eleventyConfig.addPassthroughCopy(`${inputFolder}/lab/**/*.js`);
+  eleventyConfig.addPassthroughCopy(`${inputFolder}/lab/**/*.js.map`);
   eleventyConfig.addPassthroughCopy(`${inputFolder}/media`);
 
   eleventyConfig.addLayoutAlias("base", "layouts/base.njk");
