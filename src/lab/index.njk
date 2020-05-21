@@ -1,0 +1,14 @@
+---
+title: janmr lab
+layout: page
+---
+<h1>janmr lab</h1>
+
+<ul>
+{% for post in collections.lab | reverse -%}
+<li>
+  <a href="{{ post.url | url }}">{{ post.data.title }}</a>.
+  {{ post.data.description | safe }}.
+</li>
+{%- endfor %}
+</ul>
