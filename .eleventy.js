@@ -33,6 +33,9 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addFilter("excludeElement", (list, element) =>
     list.filter((item) => item !== element)
   );
+  eleventyConfig.addFilter("fixLineBreaks", (str) =>
+    str.replace(/ (\d+)/g, '&nbsp;$1')
+  );
 
   eleventyConfig.addPlugin(syntaxHighlight);
 

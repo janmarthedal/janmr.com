@@ -1,7 +1,7 @@
 ---
 layout: blog-page
 ---
-<h2>{{ title }}<br>
+<h2>{{ title | fixLineBreaks | safe }}<br>
   <small>
     <time datetime="{{ date | htmlDateString }}">{{ date | readableDate }}</time>
   </small>
