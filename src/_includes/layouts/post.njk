@@ -14,8 +14,12 @@ layout: blog-page
 <div class="post-body">
   {{ content | safe }}
 </div>
-{%- set prevPost = collections.post | getPreviousCollectionItem(page) -%}
-{%- set nextPost = collections.post | getNextCollectionItem(page) -%}
+<div class="post-note">
+  Commenting is not possible for this post, but feel free to leave a question,
+  correction or any comment by using the <a href="/contact/">contact page</a>
+</div>
+{% set prevPost = collections.post | getPreviousCollectionItem(page) -%}
+{% set nextPost = collections.post | getNextCollectionItem(page) -%}
 <div class="page-navigation">
   <div class="prev-post">
     {%- if prevPost -%}
