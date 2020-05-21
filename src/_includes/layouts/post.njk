@@ -1,0 +1,36 @@
+---
+layout: blog-page
+---
+<h2>{{ title | fixLineBreaks | safe }}<br>
+  <small>
+    <time datetime="{{ date | htmlDateString }}">{{ date | readableDate }}</time>
+  </small>
+</h2>
+<div class="post-tags">
+  {%- for tag in tags | excludeElement("post") -%}
+    <a class="label" href="/blog/tags/{{tag}}">{{tag}}</a>
+  {%- endfor -%}
+</div>
+<div class="post-body">
+  {{ content | safe }}
+</div>
+<div class="post-note">
+  Commenting is not possible for this post, but feel free to leave a question,
+  correction or any comment by using the <a href="/contact/">contact page</a>
+</div>
+{% set prevPost = collections.post | getPreviousCollectionItem(page) -%}
+{% set nextPost = collections.post | getNextCollectionItem(page) -%}
+<div class="page-navigation">
+  <div class="prev-post">
+    {%- if prevPost -%}
+      <a href="{{prevPost.url}}" title="Previous post: {{prevPost.data.title}}">&laquo;
+        {{prevPost.data.title}}</a>
+    {%- endif -%}
+  </div>
+  <div class="next-post">
+    {%- if nextPost -%}
+      <a href="{{nextPost.url}}" title="Next post: {{nextPost.data.title}}">{{nextPost.data.title}}
+        &raquo;</a>
+    {%- endif -%}
+  </div>
+</div>

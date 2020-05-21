@@ -1,0 +1,26 @@
+---
+title: Time Calculator
+---
+{% extends "layouts/base.njk" %}
+{% block head -%}
+<link rel="stylesheet" href="https://unpkg.com/purecss@1.0.1/build/pure-min.css">
+<link rel="stylesheet" href="https://unpkg.com/purecss@1.0.1/build/grids-responsive-min.css">
+<style>
+  main {
+    margin: 0 auto;
+    max-width: 60rem;
+    padding: 1rem;
+  }
+  section.pure-form {
+    margin-top: 1em;
+  }
+  section.pure-form > legend {
+    font-weight: bold;
+  }
+</style>
+{%- endblock %}
+{% block bodyend -%}
+<script src="https://unpkg.com/luxon@1.23.0/build/global/luxon.min.js"></script>
+<script src="app.js"></script>
+{{ super() }}
+{%- endblock %}

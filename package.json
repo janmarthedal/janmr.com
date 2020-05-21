@@ -1,47 +1,23 @@
 {
   "name": "janmr.com",
   "description": "Home of Jan Marthedal Rasmussen",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "author": "Jan Marthedal Rasmussen <jan@janmr.com>",
-  "dependencies": {
-    "dotenv": "^8.2.0",
-    "gatsby": "^2.19.7",
-    "gatsby-image": "^2.2.39",
-    "gatsby-plugin-feed": "^2.4.1",
-    "gatsby-plugin-google-analytics": "^2.2.2",
-    "gatsby-plugin-less": "^3.0.20",
-    "gatsby-plugin-manifest": "^2.2.39",
-    "gatsby-plugin-offline": "^3.0.32",
-    "gatsby-plugin-react-helmet": "^3.1.21",
-    "gatsby-plugin-sharp": "^2.4.3",
-    "gatsby-remark-katex": "^3.2.4",
-    "gatsby-remark-prismjs": "^3.4.1",
-    "gatsby-source-filesystem": "^2.1.46",
-    "gatsby-transformer-remark": "^2.7.0",
-    "gatsby-transformer-sharp": "^2.3.13",
-    "katex": "^0.11.1",
-    "less": "^3.11.1",
-    "prismjs": "^1.20.0",
-    "prop-types": "^15.7.2",
-    "react": "^16.12.0",
-    "react-dom": "^16.12.0",
-    "react-helmet": "^6.0.0-beta.2"
-  },
+  "dependencies": {},
   "devDependencies": {
-    "prettier": "^1.19.1"
+    "@11ty/eleventy": "^0.11.0",
+    "@11ty/eleventy-plugin-rss": "^1.0.7",
+    "@11ty/eleventy-plugin-syntaxhighlight": "^3.0.1",
+    "@janmarthedal/markdown-it-katex": "file:src/_includes/plugins/markdown-it-katex",
+    "clean-css": "^4.2.3",
+    "less": "^3.11.1",
+    "luxon": "^1.24.1",
+    "markdown-it": "^10.0.0"
   },
-  "keywords": [
-    "gatsby"
-  ],
+  "keywords": [],
   "license": "MIT",
   "scripts": {
-    "build": "gatsby build",
-    "develop": "gatsby develop",
-    "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
-    "start": "npm run develop",
-    "serve": "gatsby serve",
-    "clean": "gatsby clean",
-    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
