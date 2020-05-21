@@ -2,6 +2,7 @@ const { DateTime } = require("luxon");
 const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
 const markdownIt = require("markdown-it");
 const markdownItKaTeX = require("@janmarthedal/markdown-it-katex");
+const pluginRss = require("@11ty/eleventy-plugin-rss");
 
 const parseDate = (date) =>
   typeof date === "string"
@@ -34,6 +35,8 @@ module.exports = function (eleventyConfig) {
   );
 
   eleventyConfig.addPlugin(syntaxHighlight);
+
+  eleventyConfig.addPlugin(pluginRss);
 
   return {
     dir: {
