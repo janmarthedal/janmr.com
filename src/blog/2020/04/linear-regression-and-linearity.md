@@ -1,5 +1,6 @@
 ---
 title: Linear Regression and Linearity
+eleventyExcludeFromCollections: true
 date: '2020-04-20'
 layout: post
 tags:
