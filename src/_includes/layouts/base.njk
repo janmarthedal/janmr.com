@@ -3,12 +3,11 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ renderData.title or title or metadata.title }}</title>
-    <meta name="Description" content="{{ renderData.description or description or metadata.description }}">
+    <title>{{ title }}</title>
     <link rel="icon" type="image/png" href="/icon-48x48.png">
+    <link rel="alternate" href="{{ metadata.feed.url | url }}" type="application/atom+xml" title="{{ metadata.title }}">
     {% block head -%}
     {%- endblock %}
-    {# <link rel="alternate" href="{{ metadata.feed.path | url }}" type="application/atom+xml" title="{{ metadata.title }}"> #}
   </head>
   <body>
     {% block content -%}
