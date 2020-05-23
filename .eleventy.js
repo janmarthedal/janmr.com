@@ -10,7 +10,7 @@ const parseDate = (date) =>
     : DateTime.fromJSDate(date, { zone: "utc" });
 
 module.exports = function (eleventyConfig) {
-  const inputFolder = "src";
+  const inputFolder = "./src";
 
   eleventyConfig.setLibrary("md", markdownIt({ html: true }).use(markdownItKaTeX));
 
@@ -38,6 +38,8 @@ module.exports = function (eleventyConfig) {
   );
 
   eleventyConfig.addPlugin(syntaxHighlight);
+
+  eleventyConfig.addCollection("tagList", require(`${inputFolder}/_11ty/getTagList`));
 
   eleventyConfig.addPlugin(pluginRss);
 
