@@ -5,7 +5,7 @@ layout: post
 tags:
   - multiple-precision
   - numbers-project
-  - bitwise-operators
+  - bit-fiddling
   - post
 categories:
   - mathematics
