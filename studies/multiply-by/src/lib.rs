@@ -1,9 +1,9 @@
-pub struct MultiplyBy<T, I> {
+pub struct MultiplyBy<I, T> {
     iter: I,
     factor: T,
 }
 
-impl<T, I> Iterator for MultiplyBy<T, I>
+impl<I, T> Iterator for MultiplyBy<I, T>
 where
     I: Iterator<Item = T>,
     T: std::ops::Mul<Output = T> + Copy,
@@ -14,14 +14,14 @@ where
     }
 }
 
-impl<T, I> MultiplyBy<T, I> {
-    fn new(iter: I, factor: T) -> Self {
+impl<I, T> MultiplyBy<I, T> {
+    pub fn new(iter: I, factor: T) -> Self {
         Self { iter, factor }
     }
 }
 
 pub trait MultiplyByIterator<T>: Iterator<Item = T> + Sized {
-    fn multiply_by(self, factor: T) -> MultiplyBy<T, Self> {
+    fn multiply_by(self, factor: T) -> MultiplyBy<Self, T> {
         MultiplyBy::new(self, factor)
     }
 }
