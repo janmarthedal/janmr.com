@@ -17,6 +17,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy(`${inputFolder}/lab/**/*.js`);
   eleventyConfig.addPassthroughCopy(`${inputFolder}/lab/**/*.js.map`);
   eleventyConfig.addPassthroughCopy(`${inputFolder}/media`);
+  eleventyConfig.addPassthroughCopy(`${inputFolder}/files`);
   eleventyConfig.addPassthroughCopy(`${inputFolder}/icon-48x48.png`);
 
   eleventyConfig.addLayoutAlias("base", "layouts/base.njk");
