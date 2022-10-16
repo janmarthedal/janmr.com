@@ -1,8 +1,8 @@
 ---
-title: Free Online Ressources
+title: Free Online Resources
 layout: page
 ---
-# Free Online Ressources
+# Free Online Resources
 
 ## Classical Papers
 
