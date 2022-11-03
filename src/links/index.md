@@ -6,6 +6,7 @@ layout: page
 
 ### Classical Papers
 
+* [An O(ND) Difference Algorithm and Its Variations (Eugene W. Myers)](http://www.xmailserver.org/diff2.pdf)
 * [Learning representations by back-propagating errors (Geoffrey Hinton et. al.)](http://www.iro.umontreal.ca/~pift6266/A06/refs/backprop_old.pdf)
 * [Making reliable distributed systems in the presence of software errors (PhD thesis of Joe Armstrong, Erlang’s co-inventor, describing the origins of Erlang)](https://erlang.org/download/armstrong_thesis_2003.pdf)
 
