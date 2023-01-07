@@ -6,9 +6,13 @@ layout: page
 
 ### Classical Papers
 
-* [A Protocol for Packet Network Intercommunication (Vinton G. Cerf and Robert E. Kahn, 1974)](https://www.cs.princeton.edu/courses/archive/fall06/cos561/papers/cerf74.pdf)
-* [An O(ND) Difference Algorithm and Its Variations (Eugene W. Myers)](http://www.xmailserver.org/diff2.pdf)
-* [Learning representations by back-propagating errors (Geoffrey Hinton et. al.)](http://www.iro.umontreal.ca/~pift6266/A06/refs/backprop_old.pdf)
+* [A Protocol for Packet Network Intercommunication (Vinton G. Cerf and Robert E. Kahn, 1974)](https://www.cs.princeton.edu/courses/archive/fall06/cos561/papers/cerf74.pdf)  
+  TCP.
+* [An algorithm for the machine calculation of complex Fourier series](https://www.ams.org/journals/mcom/1965-19-090/S0025-5718-1965-0178586-1/) ([PDF](https://www.ams.org/journals/mcom/1965-19-090/S0025-5718-1965-0178586-1/S0025-5718-1965-0178586-1.pdf))
+* [An O(ND) Difference Algorithm and Its Variations (Eugene W. Myers)](http://www.xmailserver.org/diff2.pdf)  
+  diff.
+* [Learning representations by back-propagating errors (Geoffrey Hinton et. al.)](http://www.iro.umontreal.ca/~pift6266/A06/refs/backprop_old.pdf)  
+  Back-propagation in Artificial Neural Networks.
 * [Making reliable distributed systems in the presence of software errors (Joe Armstrong, 2003)](https://erlang.org/download/armstrong_thesis_2003.pdf)  
   PhD thesis of Joe Armstrong, Erlang’s co-inventor, describing the origins of Erlang
 * [On Computable Numbers, with an Application to the Entscheidungsproblem (Alan M. Turing, 1936)](https://www.cs.virginia.edu/~robins/Turing_Paper_1936.pdf)
