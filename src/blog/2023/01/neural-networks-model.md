@@ -3,12 +3,11 @@ title: Neural Networks From The Ground Up - The Model
 date: '2022-01-18'
 layout: post
 tags:
-  - post
   - neural network
 categories:
   - machine learning
 excerpt: >-
-  To do
+  We define the neural network that we will be looking at.
 ---
 A neural network has a specific structure given by
 1. the number of layers $L$,
@@ -17,7 +16,7 @@ A neural network has a specific structure given by
 4. weights $W^l_{ij}$ and biases $b^l_i$, $l=1,2,\ldots,L$, associated with each link going from a node in one layer to a node in the next.
 
 The parts 1-3 will always be *fixed* from the beginning.
-The weights, however, are initially unknown and finding their values is the goal of *training* the network.
+The weights and biases, however, are initially unknown and finding their values is the goal of *training* the network.
 We'll get back to that.
 
 There can be any number of layers, $L \geq 1$.
