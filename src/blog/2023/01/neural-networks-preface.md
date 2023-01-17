@@ -13,23 +13,26 @@ excerpt: >-
 Neural Networks, or more correctly Artificial Neural Networks, were originally inspired by biological neural networks
 (animal brains).
 This blog series will be based on a simple, but powerful, model of a neural network.
-In a classical paper on backpropagation from 1986 (we'll get back to that), the authors write
-"The learning procedure, in its current form, is not a plausible model of learning in brains."
-They seem almost apologetic that the model does not mimic brains better, but the similarity to brains, or lack thereof,
-will not be of importance to us. The model is very powerful in its own right.
 
-<figure>
-  <img src="/media/neural-network.svg" class="img-responsive" alt="Neural Network">
-</figure>
+In a classical paper on back-propagation from 1986 (we'll get back to that), the authors write
+"The learning procedure, in its current form, is not a plausible model of learning in brains."
+They seem almost apologetic that the model does not mimic brains better.
+
+The model's similarity to brains, or lack thereof, will not be of importance to us.
+The model is very powerful in its own right.
 
 In essense, a neural network is simply a mathematical function and we will look at them as such.
 We will, from first principles, build the theory of neural networks.
 We will then show how to turn the theory into code without the use of any Machine Learning framework
 (we will use [Numpy](https://numpy.org/) for efficient numerical linear algebra).
 
-Each post will be centered around a specific topic or challenge:
+<figure>
+  <img src="/media/neural-network.svg" class="img-responsive" alt="Neural Network">
+</figure>
 
-- [The Model](../neural-networks-model/)
+Each post will be centered around a specific topic:
+
+- The Model
 - Evaluating Multiple Inputs
 - Training (the optimization problem)
 - Back-propagation (single training set)
