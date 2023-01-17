@@ -1,0 +1,40 @@
+// dot -Tsvg -Gsize=10,10\! -O model-blank.dot
+digraph G {
+
+    rankdir=LR;
+	splines=line;
+    nodesep=.25;
+    ranksep=0.8;
+
+    node [label="", style=solid, shape=circle];
+    edge [arrowsize=0.5]
+
+    subgraph cluster_0 {
+		color=white;
+        node [color=blue];
+        x1 x2 x3;
+	}
+
+	subgraph cluster_1 {
+		color=white;
+		node [color=red];
+		a12 a22 a32 a42 a52;
+	}
+
+	subgraph cluster_2 {
+		color=white;
+		node [color=red];
+		a13 a23 a33 a43;
+	}
+
+	subgraph cluster_3 {
+		color=white;
+		node [color=green];
+		O1 O2;
+	}
+
+    { x1 x2 x3 } -> { a12 a22 a32 a42 a52 };
+    { a12 a22 a32 a42 a52 } -> { a13 a23 a33 a43 };
+    { a13 a23 a33 a43 } -> { O1 O2 };
+
+}

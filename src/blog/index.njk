@@ -5,7 +5,7 @@ layout: blog-page
 <div class="post-list">
   {%- for post in collections.post | reverse -%}
   <h5>
-    <a href="{{ post.url | url }}">{{post.data.title}}</a> <small>{{ post.date | readableDate }}</small>
+    <a href="{{ post.url | url }}">{{ post.data.title }}</a> <small>{{ post.date | readableDate }}</small>
   </h5>
   {%- endfor -%}
 </div>
