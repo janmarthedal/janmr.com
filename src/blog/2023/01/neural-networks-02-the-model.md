@@ -67,3 +67,6 @@ Note that we have here described a *fully connected* network:
 Each node in one layer is connected to each node in the next layer.
 It does not have to be fully connected, some of the weights can be absent or, equivalently, be fixed to zero.
 Similarly, the biases can also be left out.
+
+In the next post, we will look at vectorizing the evaluation when we have
+[multiple inputs](/blog/2023/01/neural-networks-03-multiple-inputs).
