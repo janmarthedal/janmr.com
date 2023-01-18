@@ -1,16 +1,17 @@
 ---
 title: Neural Networks - Multiple Inputs
-date: '2022-01-19'
+date: '2022-01-18'
 layout: post
 tags:
+  - post
   - neural network
 categories:
   - machine learning
 excerpt: >-
-  To do
+  We look at vectorizing the evaluation of a neural network when we have multiple inputs.
 ---
 When considering efficient implementations of evaluating a neural network as described in the
-[previous post](/blog/2023/01/neural-networks-02-the-model/), it becomes useful to be able to
+[previous post](/blog/2023/01/neural-networks-02-the-model), it becomes useful to be able to
 evaluate multiple inputs simultaneously. And utilizing efficient linear algebra routines becomes
 apparent.
 
@@ -46,4 +47,10 @@ A^l_{ic} = g^l(Z^l_{ic}),
 $$
 for $i=1,\ldots,n^l$, $c=1,\ldots,m$ and $l=1,\ldots,L$.
 
-Each column of $A^L$ will now represent the output.
+Each column of $A^L$ will now represent the output:
+$$
+\begin{bmatrix}
+N(A^0_{\ast,1}) & N(A^0_{\ast,2}) & \cdots & N(A^0_{\ast,m})
+\end{bmatrix}
+= A^L.
+$$

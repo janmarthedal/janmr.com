@@ -33,7 +33,7 @@ We will then show how to turn the theory into code without the use of any Machin
 Each post will be centered around a specific topic:
 
 - [The Model](/blog/2023/01/neural-networks-02-the-model)
-- Evaluating Multiple Inputs
+- [Evaluating Multiple Inputs](/blog/2023/01/neural-networks-03-multiple-inputs)
 - The Optimization Problem (Training)
 - Computing the Gradient (Back-propagation)
 - Activation Functions
