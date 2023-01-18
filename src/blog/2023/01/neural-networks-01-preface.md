@@ -1,6 +1,6 @@
 ---
 title: Neural Networks - Preface
-date: '2022-01-17'
+date: '2022-01-16'
 layout: post
 tags:
   - post
@@ -32,7 +32,7 @@ We will then show how to turn the theory into code without the use of any Machin
 
 Each post will be centered around a specific topic:
 
-- The Model
+- [The Model](/blog/2023/01/neural-networks-02-the-model)
 - Evaluating Multiple Inputs
 - The Optimization Problem (Training)
 - Computing the Gradient (Back-propagation)
