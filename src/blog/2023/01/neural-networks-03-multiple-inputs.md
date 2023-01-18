@@ -54,3 +54,6 @@ N(A^0_{\ast,1}) & N(A^0_{\ast,2}) & \cdots & N(A^0_{\ast,m})
 \end{bmatrix}
 = A^L.
 $$
+
+The [next post](/blog/2023/01/neural-networks-04-the-optimization-problem) will
+set the scene for training a neural network to best fit a set of input/output pairs.
