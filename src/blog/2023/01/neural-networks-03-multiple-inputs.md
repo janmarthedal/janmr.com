@@ -1,5 +1,5 @@
 ---
-title: Neural Networks From The Ground Up - Multiple Inputs
+title: Neural Networks - Multiple Inputs
 date: '2022-01-19'
 layout: post
 tags:
@@ -10,7 +10,7 @@ excerpt: >-
   To do
 ---
 When considering efficient implementations of evaluating a neural network as described in the
-[previous post](../neural-networks-model/), it becomes useful to be able to
+[previous post](/blog/2023/01/neural-networks-02-the-model/), it becomes useful to be able to
 evaluate multiple inputs simultaneously. And utilizing efficient linear algebra routines becomes
 apparent.
 

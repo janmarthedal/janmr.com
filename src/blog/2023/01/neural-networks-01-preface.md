@@ -1,5 +1,5 @@
 ---
-title: Neural Networks From The Ground Up - Preface
+title: Neural Networks - Preface
 date: '2022-01-17'
 layout: post
 tags:
@@ -10,8 +10,8 @@ categories:
 excerpt: >-
   We introduce a new blog series on Neural Networks
 ---
-Neural Networks, or more correctly Artificial Neural Networks, were originally inspired by biological neural networks
-(animal brains).
+Neural Networks, or more correctly Artificial Neural Networks, were originally inspired by
+biological neural networks (animal brains).
 This blog series will be based on a simple, but powerful, model of a neural network.
 
 In a classical paper on back-propagation from 1986 (we'll get back to that), the authors write
@@ -34,7 +34,7 @@ Each post will be centered around a specific topic:
 
 - The Model
 - Evaluating Multiple Inputs
-- Training (the optimization problem)
-- Back-propagation (single training set)
-- Back-propagation (multiple training set)
+- The Optimization Problem (Training)
+- Computing the Gradient (Back-propagation)
+- Activation Functions
 - Implementation

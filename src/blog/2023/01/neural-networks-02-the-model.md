@@ -1,5 +1,5 @@
 ---
-title: Neural Networks From The Ground Up - The Model
+title: Neural Networks - The Model
 date: '2022-01-18'
 layout: post
 tags:
