@@ -1,13 +1,14 @@
 ---
 title: Neural Networks - The Model
-date: '2022-01-18'
+date: '2022-01-17'
 layout: post
 tags:
+  - post
   - neural network
 categories:
   - machine learning
 excerpt: >-
-  We define the neural network that we will be looking at.
+  We define the neural network that we will be exploring in the following posts.
 ---
 A neural network has a specific structure given by
 1. the number of layers $L$,
@@ -15,7 +16,7 @@ A neural network has a specific structure given by
 3. an activation function for each layer $g^l$, $l=1,2,\ldots,L$,
 4. weights $W^l_{ij}$ and biases $b^l_i$, $l=1,2,\ldots,L$, associated with each link going from a node in one layer to a node in the next.
 
-The parts 1-3 will always be *fixed* from the beginning.
+The number of layers, number of nodes in each layer and the activation functions will be *fixed*.
 The weights and biases, however, are initially unknown and finding their values is the goal of *training* the network.
 We'll get back to that.
 
@@ -23,7 +24,7 @@ There can be any number of layers, $L \geq 1$.
 There are actually $L+1$ layers: The *input layer* (layer 0), the *output layer* (layer $L$) and $L-1$ *hidden layers*.
 
 Each layer can have any number of nodes, $n^l \geq 1$.
-$n^0$ will denote the number of *input nodes* and $n^L$ the number of *output nodes*.
+The number of *input nodes* will be denoted by $n^0$ and the number of *output nodes* by $n^L$.
 
 The following figure is an example network with $L=3$ and $(n^0,n^1,n^2,n^3)=(3,5,4,2)$:
 
@@ -31,7 +32,7 @@ The following figure is an example network with $L=3$ and $(n^0,n^1,n^2,n^3)=(3,
   <img src="/media/neural-network-vars.svg" class="img-responsive" alt="Neural Network">
 </figure>
 
-The activation functions can, for now, be any real function, $g^l \in \mathbb{R} \mapsto \mathbb{R}$.
+Each activation function can, for now, be any real function, $g^l \in \mathbb{R} \mapsto \mathbb{R}$.
 We will see later that certain properties are necessary, and others diserable.
 
 The input to the neural network will be a vector/tuple
@@ -42,18 +43,25 @@ $$
 z^l_i = \sum_{j=1}^{n^{l-1}} W^l_{ij} a^{l-1}_j + b^l_i,
 $$
 $i=1,\dots,n^l$, $l=1,\ldots,L$.
+Note how $W^l_{ij}$ is the weight for unit $j$ in layer $l-1$ to unit $i$ in layer $l$
 
-Inside each layer, the activation function transforms $\textbf{z}^l$ to $\textbf{a}^l$:
+For each layer $l$, the activation function $g^l$ transforms $\textbf{z}^l$ to $\textbf{a}^l$:
 $$
 a^l_i = g^l(z^l_i),
 $$
 $i=1,\ldots,n^l$, $l=1,\ldots,L$.
 
-By applying the two formulas above for $l=1,2,\ldots,L$, we can compute
+By iteratively applying the two formulas above for $l=1,2,\ldots,L$, we can compute
 $$
 \textbf{a}^0, \textbf{z}^1, \textbf{a}^1, \textbf{z}^2, \textbf{a}^2, \ldots, \textbf{z}^L, \textbf{a}^L,
 $$
 and $\textbf{a}^L$ is the output of the network.
+
+We have now defined a function $N: \mathbb{R}^{n^0} \mapsto \mathbb{R}^{n^L}$ that represents the
+neural network and whose input and output is related by
+$$
+N(\textbf{a}^0) = \textbf{a}^L.
+$$
 
 Note that we have here described a *fully connected* network:
 Each node in one layer is connected to each node in the next layer.
