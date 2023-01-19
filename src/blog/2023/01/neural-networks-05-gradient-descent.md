@@ -1,6 +1,6 @@
 ---
 title: Neural Networks - Gradient Descent
-date: '2022-01-20'
+date: '2022-01-18'
 layout: post
 tags:
   - post
