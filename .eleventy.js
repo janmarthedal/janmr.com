@@ -27,10 +27,10 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addLayoutAlias("reference", "layouts/reference.njk");
 
   eleventyConfig.addFilter("readableDate", (date) =>
-    parseDate(date).toFormat("LLLL dd, yyyy")
+    !date ? '' : date.length === 4 ? date : parseDate(date).toFormat("LLLL dd, yyyy")
   );
   eleventyConfig.addFilter("htmlDateString", (date) =>
-    parseDate(date).toISODate()
+    !date ? '' : date.length === 4 ? date : parseDate(date).toISODate()
   );
   eleventyConfig.addFilter("excludeElement", (list, element) =>
     list.filter((item) => item !== element)
