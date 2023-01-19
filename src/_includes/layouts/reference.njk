@@ -1,0 +1,14 @@
+---
+layout: blog-page
+---
+<p>Title: {{ title }}</p>
+
+{%- for author in authors -%}
+  <p>Author: {{ author }}</p>
+{%- endfor -%}
+
+<p>Date: <time datetime="{{ date | htmlDateString }}">{{ date | readableDate }}</time></p>
+
+<div class="post-body">
+  {{ content | safe }}
+</div>
