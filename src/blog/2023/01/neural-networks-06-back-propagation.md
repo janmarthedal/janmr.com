@@ -93,5 +93,6 @@ described for neural networks by David E. Rumelhart, Geoffrey E. Hinton and Rona
 in the paper [Learning representations by back-propagating errors](/refs/rumelhart86).
 
 If all these partial derivatives and indices are making you dizzy, I don't blame you.
-The next post will look at how to compute the gradient using matrix notation, which
+The [next post](/blog/2023/01/neural-networks-07-back-propagation-matrix-style)
+will look at how to compute the gradient using matrix notation, which
 should be easier to comprehend.
