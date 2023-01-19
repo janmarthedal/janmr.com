@@ -37,5 +37,6 @@ Each post will be centered around a specific topic:
 - [The Optimization Problem](/blog/2023/01/neural-networks-04-the-optimization-problem)
 - [Gradient Descent](/blog/2023/01/neural-networks-05-gradient-descent)
 - [Back-propagation](/blog/2023/01/neural-networks-06-back-propagation)
+- [Back-propagation Matrix-style](/blog/2023/01/neural-networks-07-back-propagation-matrix-style)
 - Activation Functions
 - Implementation
