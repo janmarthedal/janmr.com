@@ -1,6 +1,6 @@
 ---
 title: Neural Networks - The Optimization Problem
-date: '2022-01-19'
+date: '2022-01-17'
 layout: post
 tags:
   - post

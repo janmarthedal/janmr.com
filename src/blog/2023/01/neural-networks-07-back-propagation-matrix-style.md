@@ -1,6 +1,6 @@
 ---
 title: Neural Networks - Back-propagation Matrix-style
-date: '2022-01-22'
+date: '2022-01-20'
 layout: post
 tags:
   - post
@@ -39,7 +39,7 @@ dA^{l-1} = (W^l)^T dZ^l
 $$
 for $l=1,\ldots,L$. The matrices $dZ^l$ are best expressed element-wise,
 $$
-dZ^l_{ic} = dA^l_{ic} \; {g^l}'(Z^l_{ic})
+dZ^l_{ic} = dA^l_{ic} \cdot {g^l}'(Z^l_{ic})
 $$
 for $l=1,\ldots,L$, $i=1,\ldots,n^l$, $c=1,\ldots,m$.
 

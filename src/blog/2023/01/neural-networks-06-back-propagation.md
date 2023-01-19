@@ -1,6 +1,6 @@
 ---
 title: Neural Networks - Back-propagation
-date: '2022-01-21'
+date: '2022-01-19'
 layout: post
 tags:
   - post

@@ -1,6 +1,6 @@
 ---
 title: Neural Networks - Preface
-date: '2022-01-16'
+date: '2022-01-14'
 layout: post
 tags:
   - post
