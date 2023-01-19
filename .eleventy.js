@@ -24,6 +24,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addLayoutAlias("blog-page", "layouts/blog-page.njk");
   eleventyConfig.addLayoutAlias("page", "layouts/page.njk");
   eleventyConfig.addLayoutAlias("post", "layouts/post.njk");
+  eleventyConfig.addLayoutAlias("reference", "layouts/reference.njk");
 
   eleventyConfig.addFilter("readableDate", (date) =>
     parseDate(date).toFormat("LLLL dd, yyyy")
