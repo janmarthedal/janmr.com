@@ -1,6 +1,6 @@
 ---
 title: Neural Networks - Multiple Inputs
-date: '2022-01-16'
+date: '2023-01-16'
 layout: post
 tags:
   - post

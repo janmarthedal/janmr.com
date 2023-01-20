@@ -1,6 +1,6 @@
 ---
 title: Neural Networks - Implementation
-date: '2022-01-22'
+date: '2023-01-22'
 layout: post
 tags:
   - post

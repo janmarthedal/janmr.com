@@ -1,6 +1,6 @@
 ---
 title: Neural Networks - The Model
-date: '2022-01-15'
+date: '2023-01-15'
 layout: post
 tags:
   - post
