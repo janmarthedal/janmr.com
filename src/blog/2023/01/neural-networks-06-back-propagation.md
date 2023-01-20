@@ -75,11 +75,11 @@ each activation function $g^l$ is differentiable becomes apparent.
 
 The remaining quantities are
 $$
-\frac{\partial E}{\partial A^{l-1}_{ic}}
-= \sum_{j=1}^{n^l} \frac{\partial E}{\partial Z^l_{jc}} \frac{\partial Z^l_{jc}}{\partial A^{l-1}_{ic}}
-= \sum_{j=1}^{n^l} \frac{\partial E}{\partial Z^l_{jc}} W^l_{ji},
+\frac{\partial E}{\partial A^l_{ic}}
+= \sum_{j=1}^{n^{l+1}} \frac{\partial E}{\partial Z^{l+1}_{jc}} \frac{\partial Z^{l+1}_{jc}}{\partial A^l_{ic}}
+= \sum_{j=1}^{n^{l+1}} \frac{\partial E}{\partial Z^{l+1}_{jc}} W^{l+1}_{ji},
 $$
-for $i=1,\ldots,n^{l-1}$, $l=1,\ldots,L$, $c=1,\ldots,m$, where the final piece of the puzzle
+for $i=1,\ldots,n^l$, $l=1,\ldots,L-1$, $c=1,\ldots,m$, where the final piece of the puzzle
 can be obtained by differentiating $E$ directly:
 $$
 \frac{\partial E}{\partial A^L_{ic}}
