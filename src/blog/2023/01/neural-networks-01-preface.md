@@ -36,7 +36,7 @@ Each post will be centered around a specific topic:
 - [Evaluating Multiple Inputs](/blog/2023/01/neural-networks-03-multiple-inputs)
 - [The Optimization Problem](/blog/2023/01/neural-networks-04-the-optimization-problem)
 - [Gradient Descent](/blog/2023/01/neural-networks-05-gradient-descent)
-- [Back-propagation](/blog/2023/01/neural-networks-06-back-propagation)
+- [Back-propagation Derivation](/blog/2023/01/neural-networks-06-back-propagation-derivation)
 - [Back-propagation Matrix-style](/blog/2023/01/neural-networks-07-back-propagation-matrix-style)
 - Activation Functions
 - Implementation
