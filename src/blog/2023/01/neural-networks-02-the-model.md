@@ -29,7 +29,7 @@ The number of *input nodes* will be denoted by $n^0$ and the number of *output n
 The following figure is an example network with $L=3$ and $(n^0,n^1,n^2,n^3)=(3,5,4,2)$:
 
 <figure>
-  <img src="/media/neural-network-vars.svg" class="img-responsive" alt="Neural Network">
+  <img src="/media/nn/neural-network-vars.svg" class="img-responsive" alt="Neural Network">
 </figure>
 
 Each activation function can, for now, be any real function, $g^l \in \mathbb{R} \mapsto \mathbb{R}$.

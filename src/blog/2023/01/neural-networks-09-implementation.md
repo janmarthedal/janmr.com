@@ -38,10 +38,10 @@ Back-propagation can be performed using the expressions from the
 [Back-propagation Matrix-style post](/blog/2023/01/neural-networks-07-back-propagation-matrix-style).
 Some other things to note:
 - Remember to loop through the layers in reverse.
-- There is no need to save the $dA$'s and $dZ$'s for each layer and they can be overwritten as
-  we move back through the layers.
+- There is no need to save the $dA$'s and $dZ$'s for each layer and the variables
+  can be overwritten as we move back through the layers.
 
-First, we need to compute $dA$, where there is a special case for the output layer:
+First, we need to compute $dA$ where there is a special case for the output layer:
 
 ```python
 if l == L:
@@ -50,9 +50,9 @@ else:
     dA = np.dot(self.layers[l].W.T, dZ)
 ```
 
-Here, $dZ$ will be from the previous iteration (and, therefore, for layer $l+1$).
+Here, $dZ$ will be from the previous iteration (and, therefore, from layer $l+1$).
 (Note that `self.layers[l]` corresponds to layer $l+1$, since the `self.layers` array
-is shifted by one (layer 0 is not in the array)).
+is shifted by one&mdash;layer 0 is not needed in the array).
 
 The $dZ$ matrix is updated as
 
@@ -98,5 +98,5 @@ The code includes a small example of training a network (single input unit, a 20
 a sigmoid activation function and a single output unit) to fit a part of a sine wave:
 
 <figure>
-  <img src="/media/neural-network-sin-test.svg" class="img-responsive" alt="Neural Network">
+  <img src="/media/nn/neural-network-sin-test.svg" class="img-responsive" alt="Neural Network">
 </figure>
