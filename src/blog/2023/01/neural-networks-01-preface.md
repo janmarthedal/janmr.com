@@ -39,4 +39,4 @@ Each post will be centered around a specific topic:
 - [Back-propagation Derivation](/blog/2023/01/neural-networks-06-back-propagation-derivation)
 - [Back-propagation Matrix-style](/blog/2023/01/neural-networks-07-back-propagation-matrix-style)
 - Activation Functions
-- Implementation
+- [Implementation](/blog/2023/01/neural-networks-09-implementation)
