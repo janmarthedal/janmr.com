@@ -74,4 +74,4 @@ lead to divergence.
 
 There is also the question of how to compute the gradient of the error function. But,
 fortunately, this is surprisingly straightforward and is exactly what the
-[next post on back-propagation](/blog/2023/01/neural-networks-06-back-propagation) deals with.
+[next post on back-propagation](/blog/2023/01/neural-networks-06-back-propagation-derivation) deals with.

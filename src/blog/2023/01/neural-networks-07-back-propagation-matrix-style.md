@@ -11,7 +11,7 @@ excerpt: >-
   We express the back-propagation formulas using matrix notation.
 ---
 This post continues from the notation and formulas introduced in the
-[previous post](/blog/2023/01/neural-networks-06-back-propagation).
+[previous post](/blog/2023/01/neural-networks-06-back-propagation-derivation).
 The goal is to express (most of) the summations as matrix-matrix or
 matrix-vector multiplications.
 
