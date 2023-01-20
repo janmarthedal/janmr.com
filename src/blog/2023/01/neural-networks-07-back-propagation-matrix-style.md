@@ -1,6 +1,6 @@
 ---
 title: Neural Networks - Back-propagation Matrix-style
-date: '2022-01-20'
+date: '2023-01-20'
 layout: post
 tags:
   - post
