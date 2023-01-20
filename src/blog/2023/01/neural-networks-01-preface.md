@@ -14,8 +14,9 @@ Neural Networks, or more correctly Artificial Neural Networks, were originally i
 biological neural networks (animal brains).
 This blog series will be based on a simple, but powerful, model of a neural network.
 
-In a classical paper on back-propagation from 1986 (we'll get back to that), the authors write
-"The learning procedure, in its current form, is not a plausible model of learning in brains."
+In a [classical paper](/refs/rumelhart86) on back-propagation from 1986 (we'll get back to that),
+the authors write "The learning procedure, in its current form, is not a plausible model of learning
+in brains."
 They seem almost apologetic that the model does not mimic brains better.
 
 The model's similarity to brains, or lack thereof, will not be of importance to us.
@@ -38,5 +39,5 @@ Each post will be centered around a specific topic:
 - [Gradient Descent](/blog/2023/01/neural-networks-05-gradient-descent)
 - [Back-propagation Derivation](/blog/2023/01/neural-networks-06-back-propagation-derivation)
 - [Back-propagation Matrix-style](/blog/2023/01/neural-networks-07-back-propagation-matrix-style)
-- Activation Functions
+- [Activation Functions](/blog/2023/01/neural-networks-08-activation-functions)
 - [Implementation](/blog/2023/01/neural-networks-09-implementation)
