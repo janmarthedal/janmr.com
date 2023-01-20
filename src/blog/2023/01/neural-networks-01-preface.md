@@ -27,7 +27,7 @@ We will then show how to turn the theory into code without the use of any Machin
 (we will use [Numpy](https://numpy.org/) for efficient numerical linear algebra).
 
 <figure>
-  <img src="/media/neural-network.svg" class="img-responsive" alt="Neural Network">
+  <img src="/media/nn/neural-network.svg" class="img-responsive" alt="Neural Network">
 </figure>
 
 Each post will be centered around a specific topic:

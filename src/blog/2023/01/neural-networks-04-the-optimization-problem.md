@@ -56,4 +56,5 @@ The set of $m$ input/output pairs $(\textbf{x}_c, \textbf{y}_c)$ is typically ca
 a *training set*. It is called so because given a training set, we can seek the weights and biases of
 the neural network that *minimizes* the error $E$.
 
-How do you find the parameters that minimizes a given function? That is the subject of the next post.
+How do you find the parameters that minimizes a given function? That is the subject of the
+[next post](/blog/2023/01/neural-networks-05-gradient-descent).
