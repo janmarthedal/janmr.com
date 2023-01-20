@@ -35,9 +35,9 @@ dA^L = \tfrac{1}{m} (A^L - Y)
 $$
 and
 $$
-dA^{l-1} = (W^l)^T dZ^l
+dA^l = (W^{l+1})^T dZ^{l+1}
 $$
-for $l=1,\ldots,L$. The matrices $dZ^l$ are best expressed element-wise,
+for $l=1,\ldots,L-1$. The matrices $dZ^l$ are best expressed element-wise,
 $$
 dZ^l_{ic} = dA^l_{ic} \cdot {g^l}'(Z^l_{ic})
 $$
