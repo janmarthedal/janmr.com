@@ -80,7 +80,7 @@ $$
 = \sum_{j=1}^{n^{l+1}} \frac{\partial E}{\partial Z^{l+1}_{jc}} W^{l+1}_{ji},
 $$
 for $i=1,\ldots,n^l$, $l=1,\ldots,L-1$, $c=1,\ldots,m$, where the final piece of the puzzle
-can be obtained by differentiating $E$ directly:
+can be obtained by differentiating $E$ directly (no chain rule!):
 $$
 \frac{\partial E}{\partial A^L_{ic}}
 = \tfrac{1}{m} \left( A^L_{ic} - Y_{ic} \right)
