@@ -38,7 +38,7 @@ If you are into online courses then I highly recommend
 which also inspired some the approaches in this blog series.
 
 <figure>
-  <img src="/media/nn/neural-network.svg" class="img-responsive" alt="Neural Network">
+  <img src="/media/nn/neural-network.svg" class="img-responsive width30rem" alt="Neural Network">
 </figure>
 
 Each post will be centered around a specific topic:
