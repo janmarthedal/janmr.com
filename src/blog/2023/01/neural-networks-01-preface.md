@@ -27,6 +27,16 @@ We will, from first principles, build the theory of neural networks.
 We will then look at how to turn the theory into code
 (using [Numpy](https://numpy.org/) for efficient numerical linear algebra).
 
+A disclaimer: I am not a Machine Learning expert, I have a background in applied mathematics
+and scientific computing. Everything should be correct (I hope! If not, please
+[write me](/contact/) and I will correct it), but some terminology or approaches may be off
+compared to what is usually done (again, let me know).
+
+If you are into online courses then I highly recommend
+[Andrew Ng](https://www.andrewng.org/about/)'s course
+[Neural Networks and Deep Learning](https://www.coursera.org/learn/neural-networks-deep-learning),
+which also inspired some the approaches in this blog series.
+
 <figure>
   <img src="/media/nn/neural-network.svg" class="img-responsive" alt="Neural Network">
 </figure>
