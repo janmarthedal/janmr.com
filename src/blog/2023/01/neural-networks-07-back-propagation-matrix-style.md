@@ -55,3 +55,6 @@ db^l &= dZ^l \begin{bmatrix}
 \end{aligned}
 $$
 for $l=1,\ldots,L$.
+
+Now, before looking into an implementation, let us look a bit more at
+[activation functions](/blog/2023/01/neural-networks-08-activation-functions).
