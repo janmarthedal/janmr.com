@@ -111,3 +111,6 @@ A plot of $g_{\scriptscriptstyle \text{ReLU}}$ and $g'_{\scriptscriptstyle \text
   <img src="/media/nn/relu.svg" class="img-responsive" alt="Neural Network">
   <figcaption><strong>Figure 2.</strong> The ReLU activation function and its derivative.</figcaption>
 </figure>
+
+Let us now open our favourite code editor and look at an
+[implementation](/blog/2023/01/neural-networks-09-implementation).
