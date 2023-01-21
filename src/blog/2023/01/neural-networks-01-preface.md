@@ -8,24 +8,24 @@ tags:
 categories:
   - machine learning
 excerpt: >-
-  We introduce a new blog series on Neural Networks
+  Kicking off a new blog series on Neural Networks
 ---
-Neural Networks, or more correctly Artificial Neural Networks, were originally inspired by
-biological neural networks (animal brains).
-This blog series will be based on a simple, but powerful, model of a neural network.
+Neural Networks, or more correctly Artificial Neural Networks, have turned out to be
+a very versatile tool in the world of Machine Learning, Artificial Intelligence and
+Data Science. They were originally inspired by biological neural networks (animal brains),
+but have shown to be powerful in their own right.
 
-In a [classical paper](/refs/rumelhart86) on back-propagation from 1986 (we'll get back to that),
-the authors write "The learning procedure, in its current form, is not a plausible model of learning
-in brains."
-They seem almost apologetic that the model does not mimic brains better.
+[Many](https://www.tensorflow.org)
+[frameworks](https://pytorch.org)
+[exist](https://scikit-learn.org)
+that with relative ease allow users to create complex models
+within a diverse field of applications.
 
-The model's similarity to brains, or lack thereof, will not be of importance to us.
-The model is very powerful in its own right.
-
+This blog series will go back and look at the fundamentals of neural networks.
 In essense, a neural network is simply a mathematical function and we will look at them as such.
 We will, from first principles, build the theory of neural networks.
-We will then show how to turn the theory into code without the use of any Machine Learning framework
-(we will use [Numpy](https://numpy.org/) for efficient numerical linear algebra).
+We will then look at how to turn the theory into code
+(using [Numpy](https://numpy.org/) for efficient numerical linear algebra).
 
 <figure>
   <img src="/media/nn/neural-network.svg" class="img-responsive" alt="Neural Network">
