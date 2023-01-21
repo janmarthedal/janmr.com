@@ -29,8 +29,11 @@ for layer in self.layers:
     A = layer.g[0](Z)
 ```
 
-Note that it is necessary to save the $Z$'s and the $A$'s for *each* layer,
-as they will be needed during back-propagation.
+Note that the activation function `g[0]` (and similarly for the derivative
+`g[1]`) should be able to apply the activation function to each element of the input.
+
+Note also that it is necessary to save the $Z$'s and the $A$'s for *each* layer,
+as they will be referenced during back-propagation.
 
 **Back-propagation**
 
@@ -60,7 +63,9 @@ The $dZ$ matrix is updated as
 dZ = dA * self.layers[l - 1].g[1](values[l].Z)
 ```
 
-Two things to note here: `g[1]` is the first derivative of the activation function
+Some things to note here: `*` does
+[element-wise multiplication](https://numpy.org/doc/stable/reference/generated/numpy.multiply.html),
+`g[1]` is the first derivative of the activation function
 for layer $l$ and `values[l].Z` is $Z^l$ from the evaluation of the network.
 
 Now we can compute
