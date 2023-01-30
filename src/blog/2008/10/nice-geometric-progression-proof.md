@@ -43,6 +43,5 @@ The figure also shows that the sum converges for all $0 < r < 1$ since the proo
 
 (I don't know who to attribute this proof to, unfortunately. I saw it in a magazine for elementary school teachers.)
 
-<div style="float: right;"><a href="https://en.wikipedia.org/wiki/Special:BookSources/0883857006"><img src="/media/books/pww1.jpg" alt=""></a></div>
-
-*Update 2009-08-22: Apparently, the proof was discovered by Benjamin G. Klein and Irl C. Bivens, and it appears on page 120 of <a href="https://en.wikipedia.org/wiki/Special:BookSources/0883857006">Proofs without Words: Exercises in Visual Thinking</a> by Roger B. Nelson (thanks for the reference, David Radcliffe).*
+*Update 2009-08-22: Apparently, the proof was discovered by Benjamin G. Klein and Irl C. Bivens, and it appears on page 120 of
+[Proofs without Words: Exercises in Visual Thinking](/refs/nelson93) by Roger B. Nelson (thanks for the reference, David Radcliffe).*
