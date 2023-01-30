@@ -153,9 +153,7 @@ $$
 C_3(m,n) = \sum_{k=1}^m \left\{ {n \atop k} \right\}.
 $$
 
-<div style="float:right"><a href="https://en.wikipedia.org/wiki/Special:BookSources/0201558025"><img src="/media/books/concrete.jpg" alt=""></a></div>
-
-You can read more about Sterling numbers in, e.g., [Concrete Mathematics](http://www-cs-faculty.stanford.edu/~uno/gkp.html) by Graham, Knuth, and Patashnik.
+You can read more about Sterling numbers in, e.g., [Concrete Mathematics](/refs/concrete/) by Graham, Knuth, and Patashnik.
 
 ### Integer Compositions (10)
 

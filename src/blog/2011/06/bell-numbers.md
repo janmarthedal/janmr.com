@@ -54,5 +54,5 @@ for $n \geq 1$ and using $B_0 = 1$ we can now compute $B_n$ for any value of $n$
 
 Bell numbers are closely related to Stirling numbers of the second kind, see, e.g., my previous post [Twelve Ways of Counting](/blog/2008/12/twelve-ways-of-counting).
 
-The excellent books [The Book of Numbers](https://en.wikipedia.org/wiki/Special:BookSources/038797993X) and [Concrete Mathematics](https://en.wikipedia.org/wiki/Special:BookSources/0201558025) have more information on Bell numbers.
+The excellent books [The Book of Numbers](https://en.wikipedia.org/wiki/Special:BookSources/038797993X) and [Concrete Mathematics](/refs/concrete) have more information on Bell numbers.
 

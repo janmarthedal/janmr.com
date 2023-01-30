@@ -27,10 +27,9 @@ $$
 where $/\!/ \, /\!/ = 0$ for $n=0$.
 
 <div class="pull-right"><a href="https://en.wikipedia.org/wiki/Special:BookSources/0486696308"><img src="/media/books/khinchin.jpg" alt=""></a></div>
-<div class="pull-right"><a href="https://en.wikipedia.org/wiki/Special:BookSources/0201558025"><img src="/media/books/concrete.jpg" alt=""></a></div>
 <div class="pull-right"><a href="https://en.wikipedia.org/wiki/Special:BookSources/0201896842"><img src="/media/books/taocp2.jpg" alt=""></a></div>
 
-Most of the theory in this article is based on Section&nbsp;4.5.3 from [The Art of Computer Programming](http://www-cs-faculty.stanford.edu/~uno/taocp.html), Volume&nbsp;2, by [Donald E. Knuth](http://www-cs-faculty.stanford.edu/~uno/) and Section&nbsp;6.7 from [Concrete Mathematics](http://www-cs-faculty.stanford.edu/~uno/gkp.html) by [Graham](http://math.ucsd.edu/~fan/ron/), [Knuth](http://www-cs-faculty.stanford.edu/~uno/), and [Patashnik](http://en.wikipedia.org/wiki/Oren_Patashnik). See also [Continued Fractions](https://en.wikipedia.org/wiki/Special:BookSources/0486696308) by A. Ya. Khinchin.
+Most of the theory in this article is based on Section&nbsp;4.5.3 from [The Art of Computer Programming](http://www-cs-faculty.stanford.edu/~uno/taocp.html), Volume&nbsp;2, by [Donald E. Knuth](http://www-cs-faculty.stanford.edu/~uno/) and Section&nbsp;6.7 from [Concrete Mathematics](/refs/concrete) by [Graham](http://math.ucsd.edu/~fan/ron/), [Knuth](http://www-cs-faculty.stanford.edu/~uno/), and [Patashnik](http://en.wikipedia.org/wiki/Oren_Patashnik). See also [Continued Fractions](https://en.wikipedia.org/wiki/Special:BookSources/0486696308) by A. Ya. Khinchin.
 
 ### Basic Properties
 
