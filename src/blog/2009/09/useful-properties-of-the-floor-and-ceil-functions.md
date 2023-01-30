@@ -154,9 +154,8 @@ for integer $k$ and all $b > 0$, $b \neq 1$.
 
 ### References
 
-<div style="float:right"><a href="https://en.wikipedia.org/wiki/Special:BookSources/0201558025"><img src="/media/books/concrete.jpg" alt=""></a></div>
 <div style="float:right"><a href="https://en.wikipedia.org/wiki/Special:BookSources/0201896834"><img src="/media/books/taocp1.jpg" alt=""></a></div>
 
-Most of the material presented in this article can be found in some form in [Concrete Mathematics](http://www-cs-faculty.stanford.edu/~uno/gkp.html) by [R. L. Graham](http://math.ucsd.edu/~fan/ron/), [D. E. Knuth](http://www-cs-faculty.stanford.edu/~uno/), and [O. Patashnik](http://en.wikipedia.org/wiki/Oren_Patashnik), and in [The Art of Computer Programming](http://www-cs-faculty.stanford.edu/~uno/taocp.html), Volume&nbsp;1, by [Donald E. Knuth](http://www-cs-faculty.stanford.edu/~uno/).
+Most of the material presented in this article can be found in some form in [Concrete Mathematics](/refs/concrete) by [R. L. Graham](http://math.ucsd.edu/~fan/ron/), [D. E. Knuth](http://www-cs-faculty.stanford.edu/~uno/) and [O. Patashnik](http://en.wikipedia.org/wiki/Oren_Patashnik), and in [The Art of Computer Programming](http://www-cs-faculty.stanford.edu/~uno/taocp.html), Volume&nbsp;1, by [Donald E. Knuth](http://www-cs-faculty.stanford.edu/~uno/).
 
 The [Wikipedia](http://www.wikipedia.org) page [Floor and ceiling functions](http://en.wikipedia.org/wiki/Floor_and_ceiling_functions) furthermore lists a lot of properties (very few proofs or derivations, though).
