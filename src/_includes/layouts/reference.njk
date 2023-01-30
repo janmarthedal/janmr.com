@@ -9,6 +9,10 @@ layout: blog-page
 
 <p>Date: <time datetime="{{ date | htmlDateString }}">{{ date | readableDate }}</time></p>
 
+{%- if isbn -%}
+<p>ISBN: <a href="https://en.wikipedia.org/wiki/Special:BookSources?isbn={{ isbn }}">{{ isbn }}</a></p>
+{%- endif -%}
+
 <div class="post-body">
   {{ content | safe }}
 </div>
