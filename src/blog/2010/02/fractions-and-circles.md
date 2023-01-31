@@ -15,9 +15,7 @@ excerpt: >-
   discovered in 1938 by Lester R. Ford and is also mentioned in Conway and Guy's
   The Book of Numbers.
 ---
-<div class="pull-right"><a href="https://en.wikipedia.org/wiki/Special:BookSources/038797993X"><img src="/media/books/conway-guy.jpg" alt=""></a></div>
-
-Fractions produced by mediants have some very interesting properties. We saw some of them in connection with the [Stern-Brocot tree](/blog/2009/12/the-stern-brocot-tree-of-fractions). This articles explores a more curious property, relating fractions to circles in the plane. It was [discovered](http://www.jstor.org/pss/2302799) in 1938 by [Lester R. Ford](http://en.wikipedia.org/wiki/Lester_R._Ford) and is also mentioned in Conway and Guy's [The Book of Numbers](http://books.google.com/books?id=0--3rcO7dMYC&amp;printsec=frontcover&amp;source=gbs_ge_summary_r&amp;cad=0#v=onepage&amp;q&amp;f=false).<span></span>
+Fractions produced by mediants have some very interesting properties. We saw some of them in connection with the [Stern-Brocot tree](/blog/2009/12/the-stern-brocot-tree-of-fractions). This articles explores a more curious property, relating fractions to circles in the plane. It was [discovered](http://www.jstor.org/pss/2302799) in 1938 by [Lester R. Ford](http://en.wikipedia.org/wiki/Lester_R._Ford) and is also mentioned in Conway and Guy's [The Book of Numbers](/refs/conway-guy).<span></span>
 
 Let us consider a way to construct fractions. We always start out with the sequence
 
