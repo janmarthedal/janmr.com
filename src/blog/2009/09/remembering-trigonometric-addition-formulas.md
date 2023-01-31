@@ -38,7 +38,7 @@ Flicking through *Proofs Without Words II* by Roger B. Nelsen, I saw the followi
 
 <div style="float:right"><a href="https://en.wikipedia.org/wiki/Special:BookSources/0883857219"><img src="/media/books/pww2.jpg" alt=""></a></div>
 
-[Both](/refs/nelson93) volumes of *Proofs Without Words* contain other &#8220;visual proofs&#8221; of the addition formulas.
+[Both](/refs/pww1) volumes of *Proofs Without Words* contain other &#8220;visual proofs&#8221; of the addition formulas.
 Some of these can also be found [online](http://mathworld.wolfram.com/TrigonometricAdditionFormulas.html).
 
 How do you remember the addition formulas for sine and cosine?
