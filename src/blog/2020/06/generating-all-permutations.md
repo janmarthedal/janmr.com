@@ -31,7 +31,7 @@ Common for the underlying methods above is that they are basically rearranging i
 
 which may not be what you want (since each arrangement appears twice).
 
-In [The Art of Computer Programming, Volume 4A](https://en.wikipedia.org/wiki/Special:BookSources?isbn=978-0201038040), Section 7.2.1.2, Donald E. Knuth lists an algorithm which does take equality into account and would produce the expected
+In [The Art of Computer Programming, Volume 4A](/refs/taocp4a), Section 7.2.1.2, Donald E. Knuth lists an algorithm which does take equality into account and would produce the expected
 
 > 1223, 1232, 1322, 2123, 2132, 2213, 2231, 2312, 2321, 3122, 3212, 3221
 
