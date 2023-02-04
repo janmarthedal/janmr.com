@@ -21,4 +21,4 @@ Given a triangle, start with a circle tangent to two sides. Then draw a new circ
 
 In the illustration above, the corners of the triangle can be dragged around. Similarly, the center of one of the circles is marked with a little dot which can also be dragged to change the size of the first circle of the chain. A [full-screen version](/media/intgfx/six-circles-theorem.html) of the illustration is also available.
 
-*Update 2014-05-31:* The paper [*The Six Circles Theorem revisited* (pdf)](http://www.math.psu.edu/tabachni/prints/Circles.pdf) by D.&nbsp;Ivanov and [S.&nbsp;Tabachnikov](http://www.math.psu.edu/tabachni/) looks at some generalization of the theorem (thanks to [@theoremoftheday](https://twitter.com/theoremoftheday) for the link).
+*Update 2014-05-31:* The paper [*The Six Circles Theorem revisited*](https://arxiv.org/abs/1312.5260) by D.&nbsp;Ivanov and [S.&nbsp;Tabachnikov](http://www.math.psu.edu/tabachni/) looks at some generalization of the theorem (thanks to [@theoremoftheday](https://twitter.com/theoremoftheday) for the link).
