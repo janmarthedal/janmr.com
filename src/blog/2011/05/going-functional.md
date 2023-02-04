@@ -55,12 +55,12 @@ list_max([Head|Rest], Result_so_far) -> list_max(Rest, Result_so_far).
 ```
 
 <div class="pull-right">
-  <a href="https://en.wikipedia.org/wiki/Special:BookSources/0262510871"><img src="/media/books/sicp.jpg" alt=""></a>
+  <a href="/refs/sicp"><img src="/media/books/sicp.jpg" alt=""></a>
 </div>
 
 The guard here is the `when Head ...` part.
 
-I was recently introduced to [Lisp](http://en.wikipedia.org/wiki/Lisp_(programming_language)) through the classic book [Structure and Interpretation of Computer Programs](https://en.wikipedia.org/wiki/Special:BookSources/0262510871). Actually, that book treats [MIT Scheme](http://groups.csail.mit.edu/mac/projects/scheme/), one of many flavours of Lisp. The syntax and semantics of Lisp is extremely simple and (almost) everything is composed by parentheses, identifiers and white-space. Reading Lisp code takes some getting used to, consider, e.g., the following function definition:
+I was recently introduced to [Lisp](http://en.wikipedia.org/wiki/Lisp_(programming_language)) through the classic book [Structure and Interpretation of Computer Programs](/refs/sicp). Actually, that book treats [MIT Scheme](http://groups.csail.mit.edu/mac/projects/scheme/), one of many flavours of Lisp. The syntax and semantics of Lisp is extremely simple and (almost) everything is composed by parentheses, identifiers and white-space. Reading Lisp code takes some getting used to, consider, e.g., the following function definition:
 
 ``` scheme
 (define (fib n) (cond ((= n 0) 0) ((= n 1) 1) (else (+ (fib (- n 1)) (fib (- n 2))))))
