@@ -37,9 +37,7 @@ $$
 a(n) \geq \lceil \log_2(n) \rceil \quad .
 $$
 
-<div class="pull-right"><a href="https://en.wikipedia.org/wiki/Special:BookSources/0201896842"><img src="/media/books/taocp2.jpg" alt=""></a></div>
-
-(This, and other results related to the evaluation of powers and addition chains can be found in <a href="https://en.wikipedia.org/wiki/Special:BookSources/0201896842">The Art of Computer Programming, Volume 2</a>, Section 4.6.3.)
+(This, and other results related to the evaluation of powers and addition chains can be found in <a href="/refs/taocp2">The Art of Computer Programming, Volume 2</a>, Section 4.6.3.)
 
 An algorithm that comes close to this optimal bound is the binary method, which relies on these simple relations:
 
