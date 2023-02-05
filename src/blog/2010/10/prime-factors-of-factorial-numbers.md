@@ -20,9 +20,7 @@ We will make use of the following fundamental theorem:
 
 > $p \mid a b$ for a prime $p$, then $p \mid a$ or $p \mid b$.
 
-<div class="pull-right"><a href="https://en.wikipedia.org/wiki/Special:BookSources/0198531710"><img src="/media/books/hardy-wright.jpg" alt=""></a></div>
-
-(Here, $p \mid a$ means that $p$ divides $a$.) This is called Euclid's First Theorem or [Euclid's Lemma](http://en.wikipedia.org/wiki/Euclid's_lemma). For most, it is intuitively clear, but a proof can be found in, e.g., <a href="https://en.wikipedia.org/wiki/Special:BookSources/0198531710">Hardy and Wright: An Introduction to the Theory of Numbers</a>.
+(Here, $p \mid a$ means that $p$ divides $a$.) This is called Euclid's First Theorem or [Euclid's Lemma](http://en.wikipedia.org/wiki/Euclid's_lemma). For most, it is intuitively clear, but a proof can be found in, e.g., <a href="/refs/hardy-wright">Hardy and Wright: An Introduction to the Theory of Numbers</a>.
 
 An application of this theorem to factorial numbers is that if a prime $p$ is a divisor of $n!$ then $p$ must be a divisor of at least one of the numbers $1, 2, \ldots, n$. This immediately implies
 
@@ -58,7 +56,7 @@ $$
 d_p(n!) = \sum_{k=1}^\infty \left\lfloor \frac{n}{p^k} \right\rfloor = \sum_{k=1}^{\lfloor \log_p(n) \rfloor} \left\lfloor \frac{n}{p^k} \right\rfloor.
 $$
 
-This [identity](http://en.wikipedia.org/wiki/Factorial#Number_theory) was found by the french mathematician [Adrien-Marie Legendre](http://en.wikipedia.org/wiki/Adrien-Marie_Legendre) (see also <a href="https://en.wikipedia.org/wiki/Special:BookSources/3540404600">Aigner and Ziegler: Proofs from The Book</a>, page 8, where it is called Legendre's Theorem).
+This [identity](http://en.wikipedia.org/wiki/Factorial#Number_theory) was found by the french mathematician [Adrien-Marie Legendre](http://en.wikipedia.org/wiki/Adrien-Marie_Legendre) (see also <a href="/refs/proofs-from-the-book">Proofs From The Book</a>, page 8, where it is called Legendre's Theorem).
 
 Doing this for all primes in our example, we get
 
