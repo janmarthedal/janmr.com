@@ -24,7 +24,7 @@ If you add a `short int` and a `char` in C++, what is the resulting type? What i
 
 ### Introduction
 
-Let me first note that I will be referring to the current C++ standard from 1998 (with a minor revision in 2003). This standard is described in <a href="/refs/stroustrup">The C++ Programming Language</a> by [Bjarne Stroustrup](http://www.stroustrup.com).
+Let me first note that I will be referring to the current C++ standard from 1998 (with a minor revision in 2003). This standard is described in <a href="/refs/stroustrup">The C++ Programming Language</a> by [Bjarne Stroustrup](http://www.stroustrup.com). ~~It can also be found online.~~
 
 In C++, the *integer types* are `short int`, `int`, `long int` and the unsigned versions of these. The integer types together with the boolean type (`bool`) and the character types (plain/`signed`/`unsigned` `char` and `wchar_t`) are called *integral types*. The integral types together with the floating-point types (`float`, `double`, and `long double`) are called *arithmetic types*.
 
