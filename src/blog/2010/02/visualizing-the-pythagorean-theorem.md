@@ -23,7 +23,7 @@ In this article I show my favorite three visualizations of the theorem. Note tha
 
 ### Visualization 1
 
-This first one is a classic, at least for me, see Figure&nbsp;1. It is very simple to understand and was the first visualization of the Pythagorean theorem I knew of. According to Nelsen's [Proofs Without Words](/refs/pww1), it appeared in the chinese [Chou pei suan ching](http://en.wikipedia.org/wiki/Chou_Pei_Suan_Ching) around 200 B.C. A similar figure also appears in [Euclid](http://en.wikipedia.org/wiki/Euclid)&#8216;s [Elements](/refs/elements), [Book II, Proposition 4](http://aleph0.clarku.edu/~djoyce/java/elements/bookII/propII4.html).
+This first one is a classic, at least for me, see Figure&nbsp;1. It is very simple to understand and was the first visualization of the Pythagorean theorem I knew of. According to Nelsen's [Proofs Without Words](/refs/pww1), it appeared in the chinese [Chou pei suan ching](http://en.wikipedia.org/wiki/Chou_Pei_Suan_Ching) around 200 B.C. A similar figure also appears in [Euclid](http://en.wikipedia.org/wiki/Euclid)&#8216;s [Elements](/refs/elements), [Book II, Proposition 4](http://aleph0.clarku.edu/~djoyce/java/elements/bookII/propII4.html) (same [proposition in Byrne's Euclid](https://www.c82.net/euclid/book2/#prop4)).
 
 <figure>
   <img src="/media/pythagoras1.svg" class="img-responsive" alt="Pythagoras 1">
