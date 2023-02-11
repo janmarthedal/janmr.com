@@ -2,6 +2,8 @@
 title: The Art of Computer Programming, Volume 2
 date: '1998'
 layout: reference
+tags:
+  - reference
 authors:
   - Donald Ervin Knuth
 isbn: '0-201-89684-2'

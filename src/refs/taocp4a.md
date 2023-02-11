@@ -2,6 +2,8 @@
 title: The Art of Computer Programming, Volume 4A
 date: '2011'
 layout: reference
+tags:
+  - reference
 authors:
   - Donald Ervin Knuth
 isbn: '0-201-03804-8'
