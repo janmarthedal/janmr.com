@@ -2,6 +2,8 @@
 title: The Pleasures of Counting
 date: '1996'
 layout: reference
+tags:
+  - reference
 authors:
   - Thomas William Körner
 isbn: 0521568234

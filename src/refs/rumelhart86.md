@@ -2,6 +2,8 @@
 title: Learning representations by back-propagating errors
 date: '1986-10-09'
 layout: reference
+tags:
+  - reference
 authors:
   - David E. Rumelhart
   - Geoffrey E. Hinton

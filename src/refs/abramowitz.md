@@ -2,6 +2,8 @@
 title: Handbook of Mathematical Functions
 date: '1965'
 layout: reference
+tags:
+  - reference
 authors:
   - Milton Abramowitz
   - Irene A. Stegun

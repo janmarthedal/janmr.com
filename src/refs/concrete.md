@@ -2,6 +2,8 @@
 title: Concrete Mathematics
 date: '1994'
 layout: reference
+tags:
+  - reference
 authors:
   - Ronald Graham
   - Donald Knuth

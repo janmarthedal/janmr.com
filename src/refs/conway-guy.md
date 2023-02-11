@@ -2,6 +2,8 @@
 title: The Book of Numbers
 date: '1996'
 layout: reference
+tags:
+  - reference
 authors:
   - John H. Conway
   - Richard Guy

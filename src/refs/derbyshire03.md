@@ -2,6 +2,8 @@
 title: Prime Obsession
 date: '2004'
 layout: reference
+tags:
+  - reference
 authors:
   - John Derbyshire
 isbn: '0452285259'

@@ -2,6 +2,8 @@
 title: The Art of Computer Programming, Volume 1
 date: '1997'
 layout: reference
+tags:
+  - reference
 authors:
   - Donald Ervin Knuth
 isbn: '0-201-89683-4'
