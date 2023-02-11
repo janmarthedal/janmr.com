@@ -20,9 +20,7 @@ excerpt: >-
 ---
 ### Introduction
 
-<div style="float:right"><a href="https://en.wikipedia.org/wiki/Special:BookSources/0201896842"><img src="/media/books/taocp2.jpg" alt=""></a></div>
-
-This article is a follow-up to [part 1](/blog/2009/07/implementing-multiple-precision-arithmetic-part-1) where multiple-precision addition, subtraction, and multiplication for non-negative integers was discussed. This article deals with division. Again, the theoretic foundation is based on Section&nbsp;4.3.1, *The Classical Algorithms*, of [The Art of Computer Programming](http://www-cs-faculty.stanford.edu/~uno/taocp.html), Volume&nbsp;2, by [Donald E. Knuth](http://www-cs-faculty.stanford.edu/~uno/).
+This article is a follow-up to [part 1](/blog/2009/07/implementing-multiple-precision-arithmetic-part-1) where multiple-precision addition, subtraction, and multiplication for non-negative integers was discussed. This article deals with division. Again, the theoretic foundation is based on Section&nbsp;4.3.1, *The Classical Algorithms*, of [The Art of Computer Programming, Volume&nbsp;2](/refs/taocp2), by [Donald E. Knuth](http://www-cs-faculty.stanford.edu/~uno/).
 
 ### Fundamentals
 
