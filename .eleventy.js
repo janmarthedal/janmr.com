@@ -38,6 +38,9 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addFilter("fixLineBreaks", (str) =>
     str.replace(/ (\d+)/g, '&nbsp;$1')
   );
+  eleventyConfig.addFilter('sortByTitle', values => {
+    return values.slice().sort((a, b) => a.data.title.localeCompare(b.data.title))
+  })
 
   eleventyConfig.addPlugin(syntaxHighlight);
 

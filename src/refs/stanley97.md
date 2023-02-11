@@ -1,5 +1,5 @@
 ---
-title: Enumerative Combinatorics, Volume&nbsp;1
+title: Enumerative Combinatorics, Volume 1
 date: '2011'
 layout: reference
 tags:
