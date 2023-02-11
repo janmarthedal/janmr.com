@@ -12,17 +12,15 @@ excerpt: >-
   I have known the game of Nim for many years. Once, a friend of mine beat me
   repeatedly in one game after another and I had no idea how he did it. Looking
   back, I am not sure he knew the perfect Nim-strategy, but he knew enough to
-  frustrate me immensely. A year ago or so, I was flicking through Fascicle 1 of
-  The Art of Computer Programming, Volume 4 by Donald E. Knuth, and I read about
+  frustrate me immensely. A year ago or so, I was flicking through
+  The Art of Computer Programming, Volume 4A by Donald E. Knuth, and I read about
   the strategy of Nim. The strategy is very simple but I could not possibly
   understand why it worked. This article shows why the strategy works,
   introducing the necessary game theory along the way. [...]
 ---
 ### Introduction
 
-<div style="float:right"><a href="https://en.wikipedia.org/wiki/Special:BookSources/0321580508"><img src="/media/books/taocp4f1.jpg" alt=""></a></div>
-
-I have known the game of Nim for many years. Once, a friend of mine beat me repeatedly in one game after another and I had no idea how he did it. Looking back, I am not sure he knew the perfect Nim-strategy, but he knew enough to frustrate me immensely. A year ago or so, I was flicking through Fascicle 1 of [The Art of Computer Programming](http://www-cs-faculty.stanford.edu/~uno/taocp.html), Volume 4 by [Donald E. Knuth](http://www-cs-faculty.stanford.edu/~uno/), and I read about the strategy of Nim. The strategy is *very* simple but I could not possibly understand *why* it worked.
+I have known the game of Nim for many years. Once, a friend of mine beat me repeatedly in one game after another and I had no idea how he did it. Looking back, I am not sure he knew the perfect Nim-strategy, but he knew enough to frustrate me immensely. A year ago or so, I was flicking through [The Art of Computer Programming, Volume 4A](/refs/taocp4a) by [Donald E. Knuth](http://www-cs-faculty.stanford.edu/~uno/), and I read about the strategy of Nim. The strategy is *very* simple but I could not possibly understand *why* it worked.
 
 This article shows why the strategy works, introducing the necessary game theory along the way.
 
@@ -417,10 +415,8 @@ In other words, if a game has $p_1 \oplus p_2 \oplus \cdots \oplus p_n \neq 0$ t
 
 ### Finishing Remarks
 
-According to Fascicle 1 of [The Art of Computer Programming](http://www-cs-faculty.stanford.edu/~uno/taocp.html), Volume 4, by [Donald E. Knuth](http://www-cs-faculty.stanford.edu/~uno/), the binary operator XOR, $\oplus$, was known long before operators such as binary *AND* and binary *OR*, because it is so intimately tied to the Nim game. For the same reason, the XOR operator has often been called the &#8220;nim sum&#8221;.
+According to [The Art of Computer Programming, Volume 4A](/refs/taocp4a), by [Donald E. Knuth](http://www-cs-faculty.stanford.edu/~uno/), the binary operator XOR, $\oplus$, was known long before operators such as binary *AND* and binary *OR*, because it is so intimately tied to the Nim game. For the same reason, the XOR operator has often been called the &#8220;nim sum&#8221;.
 
-<div style="float:right"><a href="https://en.wikipedia.org/wiki/Special:BookSources/1568811276"><img src="/media/books/numbers-games.jpg" alt=""></a></div>
-
-Note how the definition of the $\star n$-games resembles one of the standard ways to construct the [natural numbers](http://en.wikipedia.org/wiki/Natural_number). Other than its obvious relation to the Nim-game, this is perhaps one of the reasons that $\star n$-games are sometimes called *nimbers*. Generalized numbers and games are the subject of the book [On Numbers and Games](http://en.wikipedia.org/wiki/On_Numbers_and_Games) by [John H. Conway](http://en.wikipedia.org/wiki/John_Horton_Conway).
+Note how the definition of the $\star n$-games resembles one of the standard ways to construct the [natural numbers](http://en.wikipedia.org/wiki/Natural_number). Other than its obvious relation to the Nim-game, this is perhaps one of the reasons that $\star n$-games are sometimes called *nimbers*. Generalized numbers and games are the subject of the book [On Numbers and Games](/refs/numbers-games) by [John H. Conway](http://en.wikipedia.org/wiki/John_Horton_Conway).
 
 [Wikipedia](http://www.wikipedia.org) has some relevant pages in relation to this article, see [impartial game](http://en.wikipedia.org/wiki/Impartial_game), [combinatorial game theory](http://en.wikipedia.org/wiki/Combinatorial_game_theory), and [Sprague–Grundy Theorem](http://en.wikipedia.org/wiki/Sprague–Grundy_theorem). See also the blog entry on [The Universe of Discourse](http://blog.plover.com/math/sprague-grundy.html).
