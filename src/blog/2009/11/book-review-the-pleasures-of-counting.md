@@ -15,7 +15,7 @@ excerpt: >-
   The uses of abstraction, Meditations on measurement, The pleasures of
   computation, Enigma variations, and The pleasures of thought.
 ---
-<div class="pull-right"><a href="https://en.wikipedia.org/wiki/Special:BookSources/0521568234"><img src="/media/books/korner.jpg" alt=""></a></div>
+<div class="pull-right"><a href="/refs/korner"><img src="/media/books/korner.jpg" alt=""></a></div>
 
 *The Pleasures of Counting* is a book about people working with mathematics and challenges they have faced. The book has 544 pages with a total of 19 chapters and 3 appendices. It contains a lot of material and is split into five parts: The uses of abstraction, Meditations on measurement, The pleasures of computation, Enigma variations, and The pleasures of thought.
 
@@ -58,7 +58,7 @@ This history book-type narrative was too much for me, however. In hindsight I wi
 Book facts:
 
 *   Author: [Thomas William K&ouml;rner](https://www.dpmms.cam.ac.uk/~twk/).
-*   Book title: [The Pleasures of Counting](https://www.dpmms.cam.ac.uk/~twk/my-book.html).
+*   Book title: [The Pleasures of Counting](/refs/korner).
 *   Publication year: 1996.
 *   Publisher: [Cambridge University Press](http://www.cambridge.org).
 *   ISBN: Paperback [0521568234](http://en.wikipedia.org/w/index.php?title=Special:BookSources&isbn=0521568234), hardback [052156087X](http://en.wikipedia.org/w/index.php?title=Special:BookSources&isbn=052156087X).
