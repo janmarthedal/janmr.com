@@ -49,7 +49,9 @@ Properties 5 and 6 follow from this equality.
 
 ### Euclid's Algorithm
 
-Euclid's algorithm appeared in [Euclid](http://en.wikipedia.org/wiki/Euclid)&#8216;s [Elements](http://aleph0.clarku.edu/~djoyce/java/elements/toc.html) (Propositions&nbsp;1 and&nbsp;2 of [Book VII](http://aleph0.clarku.edu/~djoyce/java/elements/bookVII/bookVII.html)) around 300 BC, but was probably known before this.
+Euclid's algorithm appeared in [Euclid](http://en.wikipedia.org/wiki/Euclid)&#8216;s [Elements](/refs/elements)
+([Proposition&nbsp;1](http://aleph0.clarku.edu/~djoyce/java/elements/bookVII/propVII1.html) and
+[Proposition&nbsp;2](http://aleph0.clarku.edu/~djoyce/java/elements/bookVII/propVII2.html)) around 300 BC, but was probably known before this.
 
 The algorithm builds upon Properties&nbsp;1 and&nbsp;4 from above. The value of $n$ in Property&nbsp;4 is chosen to be $n=-\lfloor v/u \rfloor$ which leads to the equality $\text{gcd}(u,v) = \text{gcd}(u, v \text{ mod } u)$.
 
@@ -70,7 +72,7 @@ The algorithm can be implemented quite concisely in C++, one way of doing it bei
 
 Note that this implementation is almost identical to the [Boost](http://www.boost.org) [implementation](http://www.boost.org/doc/libs/1_43_0/boost/math/common_factor_rt.hpp), which, however, checks for zero-valued variables by comparing to an actual zero-object instead of relying on an object-to-bool conversion.
 
-This generic implementation works for both built-in integer C++ types and number objects such as `natural_number` from the [SputArithmetic](https://github.com/janmarthedal/kanooth-numbers) library.
+This generic implementation works for both built-in integer C++ types and number objects such as `natural_number` from the [Kanooth Numbers](https://github.com/janmarthedal/kanooth-numbers) library.
 
 Note that every time `u %= v` is executed we have $u \leftarrow r$ where $u = q v + r$ and $0 \leq r < v$ behind the scenes. With the exception of the very first time this statement executes (where we may have $u < v$) we have $q \geq 1$. This implies
 
@@ -78,9 +80,7 @@ $$
 u = q v + r \geq v + r > 2r,
 $$
 
-<div style="float:right"><a href="https://en.wikipedia.org/wiki/Special:BookSources/0201896842"><img src="/media/books/taocp2.jpg" alt=""></a></div>
-
-which in turn means that the value of $u$ at least halves every time `u %= v` is executed. Of course, a similar statement holds for `v %= u`. This shows that Euclid's algorithm computes a remainder (roughly) at most $\log_2 u + \log_2 v$ times. For a thorough analysis see Section&nbsp;4.5.3 of [The Art of Computer Programming](http://www-cs-faculty.stanford.edu/~knuth/taocp.html), Volume&nbsp;2, by [Donald E. Knuth](http://www-cs-faculty.stanford.edu/~knuth/).
+which in turn means that the value of $u$ at least halves every time `u %= v` is executed. Of course, a similar statement holds for `v %= u`. This shows that Euclid's algorithm computes a remainder (roughly) at most $\log_2 u + \log_2 v$ times. For a thorough analysis see Section&nbsp;4.5.3 of [The Art of Computer Programming, Volume&nbsp;2](/refs/taocp2), by [Donald E. Knuth](http://www-cs-faculty.stanford.edu/~knuth/).
 
 Two interesting things about Euclid's algorithm should be noted. First, the analysis of Euclid's algorithm is intimately tied to [continued fractions](http://en.wikipedia.org/wiki/Continued_fraction) (*update 2009-11-10:* See also [Continued Fractions and Continuants](/blog/2009/11/continued-fractions-and-continuants)). Second, the input numbers that make the algorithm perform the most remainder-computations are two consecutive [Fibonacci](http://en.wikipedia.org/wiki/Fibonacci_number) numbers&#8212;supposedly the first practical application of the Fibonacci sequence.
 
@@ -90,7 +90,7 @@ Another way to compute the greatest common divisor was published by Josef Stein 
 
 A possible implementation is this:
 
-``` cpp
+```cpp
   template <typename NUM>
   NUM gcd_stein(NUM u, NUM v)
   {
@@ -133,13 +133,11 @@ The `shift_to_uneven` function could have the following implementation.
 
 Some remarks are in order with regard to efficiency. Every time `shift_to_uneven` is executed inside the while-loop we *know* that the number is even, so the initial check `!(n & 1u)` is superfluous. Similarly the return value of `shift_to_uneven` is not used inside the while-loop, but it should be fairly easy for the compiler to observe this.
 
-Finally, if working with multiple-precision numbers, the binary shift operation can be expensive compared to a (constant-time) test-bit method, which tests whether a certain bit is set. Given a test-bit method, zero bits could be counted, starting from the least-significant bit, followed by a single binary shift operation. Both [SputArithmetic](https://github.com/janmarthedal/kanooth-numbers) and [GMP](https://gmplib.org) has such a test-bit method, but the code naturally becomes less generic.
+Finally, if working with multiple-precision numbers, the binary shift operation can be expensive compared to a (constant-time) test-bit method, which tests whether a certain bit is set. Given a test-bit method, zero bits could be counted, starting from the least-significant bit, followed by a single binary shift operation. Both [Kanooth Numbers](https://github.com/janmarthedal/kanooth-numbers) and [GMP](https://gmplib.org) has such a test-bit method, but the code naturally becomes less generic.
 
 How many times is the while-loop executed, in the worst case? Either $u$ or $v$ is reduced by at least a factor two, so, similar to Euclid's algorithm, the loop is executed at most $\log_2 u + \log_2 v$ times.
 
-<div style="float:right"><a href="https://en.wikipedia.org/wiki/Special:BookSources/032163537X"><img src="/media/books/stepanov09.jpg" alt=""></a></div>
-
-It should be noted that [Alex Stepanov](http://www.stepanovpapers.com) has written [some notes](http://www.stepanovpapers.com/notes.pdf) that, among many other things, deal with generic implementations of both Euclid's and Stein's gcd algorithms (see Section&nbsp;10.2). Stepanov has also written the book [Elements of Programming](http://www.elementsofprogramming.com) with [Paul McJones](http://www.mcjones.org/paul/), which presents a mathematical approach to programming. The book also mentions Euclid's and Stein's algorithms, but the treatment in the notes is more comprehensive.
+It should be noted that [Alex Stepanov](http://www.stepanovpapers.com) has written [some notes](http://www.stepanovpapers.com/notes.pdf) that, among many other things, deal with generic implementations of both Euclid's and Stein's gcd algorithms (see Section&nbsp;10.2). Stepanov has also written the book [Elements of Programming](/refs/stepanov) with [Paul McJones](http://www.mcjones.org/paul/), which presents a mathematical approach to programming. The book also mentions Euclid's and Stein's algorithms, but the treatment in the notes is more comprehensive.
 
 ### Running Time Comparisons
 
@@ -163,14 +161,14 @@ The results can be summarized as follows.
 *   For 8 and 16 bit unsigned integers, Euclid's algorithm was faster than Stein's by around 13% (I am not sure why these smaller word sizes changed the faster algorithm).
 *   The [`gcd_binary` version](http://www.boost.org/doc/libs/1_43_0/boost/math/common_factor_rt.hpp) of Stein's algorithm from [Boost](http://www.boost.org) performed worst of all for all built-in data types, around 70-75% slower than the Stein's algorithm from this article.
 
-#### The SputArithmetic Library
+#### The Kanooth Numbers Library
 
 A number of files were created. One with 100 random numbers consisting of 1-2000 bits, with the bit length also chosen at random. Another file with numbers consisting of 1-4000 bits, and so on, thereby ending up with several files where the average bit size for each file were around 1000, 2000, 4000, 8000, 12000, and so on.
 
 The procedure was then the same as for the built-in types, see steps&nbsp;2 and&nbsp;3 from the previous section. Similarly, Euclid's and Stein's algorithm from this article and from Boost were used, along with an optimized version of Stein's algorithm (using a test-bit method as mentioned earlier).
 
 <figure>
-  <img class="img-responsive" alt="Figure 1" src="/media/gcd_sputarith.png" title="GCD algorithms using SputArithmetic">
+  <img class="img-responsive" alt="Figure 1" src="/media/gcd_sputarith.png" title="GCD algorithms using Kanooth Numbers">
   <figcaption><strong>Figure 1.</strong> Average number of bits per input number along the 1. axis, and average milliseconds per gcd along the 2. axis.</figcaption>
 </figure>
 
@@ -186,14 +184,14 @@ Note that although Boost's version of Stein's algorithm was relatively slow for 
 
 #### The GMP Library
 
-The same test method and data files as the SputArithmetic test were used, and GMP equivalents of this article's Euclid and optimized Stein algorithms were tested. The results can be seen in Figure&nbsp;2. This time, Euclid's algorithm was faster than Stein's for all number sizes.
+The same test method and data files as the Kanooth Numbers test were used, and GMP equivalents of this article's Euclid and optimized Stein algorithms were tested. The results can be seen in Figure&nbsp;2. This time, Euclid's algorithm was faster than Stein's for all number sizes.
 
 <figure>
   <img class="img-responsive" alt="Figure 2" src="/media/gcd_gmp.png" title="GCD algorithms using GMP">
   <figcaption><strong>Figure 2.</strong> Average number of bits per input number along the 1. axis, and average milliseconds per gcd along the 2. axis.</figcaption>
 </figure>
 
-Although this article is by no means a SputArithmetic versus GMP face-off, a comparison can rightly be made. The exact same input data and equivalent algorithms were used. For Euclid's algorithm, the GMP algorithm was consistently 4.5-5.0 times faster. The same was the case for Stein's algorithm, although the running times approached each other as the bit size of the input numbers went down.
+Although this article is by no means a Kanooth Numbers versus GMP face-off, a comparison can rightly be made. The exact same input data and equivalent algorithms were used. For Euclid's algorithm, the GMP algorithm was consistently 4.5-5.0 times faster. The same was the case for Stein's algorithm, although the running times approached each other as the bit size of the input numbers went down.
 
 One more algorithm was tested, by the way, and that was GMP's own gcd algorithm. The results were not shown in the figure, however, because they were (as good as) identical to the results of the Stein algorithm. According to the [GMP manual](https://gmplib.org/manual/Binary-GCD.html), the binary Stein's algorithm is in fact used. For large input numbers, however, GMP's own gcd function apparently switches to another method. The same page also states that the *&#8220;binary algorithm has so far been found to be faster than the Euclidean algorithm everywhere.&#8221;* Well, not everywhere.
 
