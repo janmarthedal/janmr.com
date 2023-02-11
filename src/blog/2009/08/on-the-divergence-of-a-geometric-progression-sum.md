@@ -73,6 +73,4 @@ $$
 
 but circles around the value $1/(1-r)$ when $|r|=1$, $r \neq 1$. In fact, $1/(1-r)$ makes sense for all $r \neq 1$, so can this value be assigned to $s_r$ in some meaningful way? (When $|r| < 1$, I would suspect that the values of $s_r(n)$ spirals inward towards $1/(1-r)$ as $n$ grows and spirals outwards when $|r| > 1$; I have not verified this, though.)
 
-<div style="float:right"><a href="https://en.wikipedia.org/wiki/Special:BookSources/0821826492"><img src="/media/books/hardy-div.jpg" alt=""></a></div>
-
-This reminded me that [G. H. Hardy](http://en.wikipedia.org/wiki/G._H._Hardy) has written a book called <em>Divergent Series</em>, where he manipulates infinite series with an &#8220;entirely uncritical spirit&#8221;. Therein, he also considers the series $s_r$ and, e.g., $s_{-1} = 1/2$ can somehow make sense. I have only flicked through the book ([excerpt](http://books.google.com/books?id=jPccoUKsLdQC&#038;printsec=frontcover&#038;source=gbs_v2_summary_r&#038;cad=0)), but I think I should take a closer look&#8230;
+This reminded me that [G. H. Hardy](http://en.wikipedia.org/wiki/G._H._Hardy) has written a book called [Divergent Series](/refs/hardy-div), where he manipulates infinite series with an &#8220;entirely uncritical spirit&#8221;. Therein, he also considers the series $s_r$ and, e.g., $s_{-1} = 1/2$ can somehow make sense. I have only flicked through the book ([excerpt](https://books.google.dk/books?id=fa9QaUJWLz0C&printsec=frontcover#v=onepage&q&f=false)), but I think I should take a closer look&#8230;
