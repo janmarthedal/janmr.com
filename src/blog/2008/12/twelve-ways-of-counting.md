@@ -240,8 +240,4 @@ All twelve case can be summarized in the following table:
 </tbody>
 </table>
 
-<div style="float:right"><a href="https://en.wikipedia.org/wiki/Special:BookSources/0201853949"><img src="/media/books/taocp4f3.jpg" alt=""></a></div>
-
-<div style="float:right"><a href="https://en.wikipedia.org/wiki/Special:BookSources/0521663512"><img src="/media/books/stanley97.jpg" alt=""></a></div>
-
-This table also appears in in Section&nbsp;7.2.1.4, Fascicle&nbsp;3, Volume&nbsp;4 of [The Art of Computer Programming](http://www-cs-faculty.stanford.edu/~uno/taocp.html) by [Donald E. Knuth](http://www-cs-faculty.stanford.edu/~uno/) where The Twelvefold Way is briefly mentioned. The Twelvefold Way is originally treated in the book [Enumerative Combinatorics, Volume&nbsp;1](http://www-math.mit.edu/~rstan/ec/) by [Richard P. Stanley](http://www-math.mit.edu/~rstan/).
+This table also appears in Section&nbsp;7.2.1.4 of [The Art of Computer Programming, Volume&nbsp;4A](/refs/taocp4a) by [Donald E. Knuth](http://www-cs-faculty.stanford.edu/~uno/) where The Twelvefold Way is briefly mentioned. The Twelvefold Way is originally treated in the book [Enumerative Combinatorics, Volume&nbsp;1](/refs/stanley97) by [Richard P. Stanley](http://www-math.mit.edu/~rstan/).
