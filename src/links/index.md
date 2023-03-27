@@ -8,6 +8,7 @@ layout: page
 
 * [A Protocol for Packet Network Intercommunication (Vinton G. Cerf and Robert E. Kahn, 1974)](https://www.cs.princeton.edu/courses/archive/fall06/cos561/papers/cerf74.pdf)  
   TCP.
+* [A Universal Algorithm for Sequential Data Compression (Jacob Ziv and Abraham Lempel, 1977)](https://courses.cs.duke.edu/spring03/cps296.5/papers/ziv_lempel_1977_universal_algorithm.pdf)
 * [An algorithm for the machine calculation of complex Fourier series](https://www.ams.org/journals/mcom/1965-19-090/S0025-5718-1965-0178586-1/) ([PDF](https://www.ams.org/journals/mcom/1965-19-090/S0025-5718-1965-0178586-1/S0025-5718-1965-0178586-1.pdf))
 * [An O(ND) Difference Algorithm and Its Variations (Eugene W. Myers)](http://www.xmailserver.org/diff2.pdf)  
   diff.
