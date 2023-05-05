@@ -7,7 +7,9 @@ tags:
 categories:
   - machine learning
 excerpt: >-
-  bla bla
+  Linear regression is a common and powerful method for modelling the relationship
+  between some input vectors and some output scalars. This post explains the basics
+  of linear regression.
 ---
 Linear regression is a common and powerful method for modelling the relationship
 between some input vectors and some output scalars.
@@ -69,3 +71,6 @@ a fairly efficient way (see, e.g., Section&nbsp;5.5 in
 [Matrix Computations](/refs/matrix-comp/)).
 A solution to this optimization problem is also computed by the NumPy function
 [`numpy.linalg.lstsq`](https://numpy.org/doc/stable/reference/generated/numpy.linalg.lstsq.html).
+
+See the [following post](/blog/2023/05/linear-regression-applied/) for some examples
+of how to apply linear regression to some problems.
