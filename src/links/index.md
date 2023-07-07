@@ -6,6 +6,7 @@ layout: page
 
 ### Classical Papers
 
+* [A Mathematical Theory of Communication (C. E. Shannon, 1948)](https://people.math.harvard.edu/~ctm/home/text/others/shannon/entropy/entropy.pdf)
 * [A Protocol for Packet Network Intercommunication (Vinton G. Cerf and Robert E. Kahn, 1974)](https://www.cs.princeton.edu/courses/archive/fall06/cos561/papers/cerf74.pdf)  
   TCP.
 * [A Universal Algorithm for Sequential Data Compression (Jacob Ziv and Abraham Lempel, 1977)](https://courses.cs.duke.edu/spring03/cps296.5/papers/ziv_lempel_1977_universal_algorithm.pdf)
