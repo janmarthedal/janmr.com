@@ -3,11 +3,11 @@ import { dirname, extname, join } from 'path';
 import { globIterateSync } from 'glob';
 
 const SOURCE_DIR = 'content';
+const COPY_PATTERNS = ['files/**/*', 'media/**/*', 'lab/**/*.js', 'lab/**/*.js.map', 'icon-48x48.png'];
+const CSS_INPUT = ['css/normalize.css', 'css/styles.less'];
 const SOURCE_PATTERN = '**/*';
-const COPY_EXTENSIONS = ['.svg', '.png', '.jpg', '.html', '.txt', '.pdf', '.js', '.map'];
 const SITE_DIR = '_site';
-
-const ignoreFiles = new Set<string>();
+const IGNORE_PATTERNS = [...COPY_PATTERNS, ...CSS_INPUT];
 
 function writeFile(filename: string, contents: string | Buffer) {
     console.log('write', filename);
@@ -16,28 +16,19 @@ function writeFile(filename: string, contents: string | Buffer) {
     writeFileSync(path, contents);
 }
 
-function copyFile(filename: string) {
+for (const filename of globIterateSync(COPY_PATTERNS, { cwd: SOURCE_DIR, nodir: true })) {
     const path = join(SOURCE_DIR, filename);
     const buffer = readFileSync(path);
     writeFile(filename, buffer);
 }
 
-ignoreFiles.add('css/normalize.css');
-ignoreFiles.add('css/styles.less');
-
-for (const filename of globIterateSync(SOURCE_PATTERN, { cwd: SOURCE_DIR, nodir: true })) {
-    if (ignoreFiles.has(filename)) {
-        console.log('ignore', filename);
-        continue;
-    }
+for (const filename of globIterateSync(SOURCE_PATTERN, { cwd: SOURCE_DIR, nodir: true, ignore: IGNORE_PATTERNS })) {
     const ext = extname(filename);
-    if (COPY_EXTENSIONS.includes(ext)) {
-        copyFile(filename);
-    } else if (ext === '.md') {
+    if (ext === '.md') {
         console.log('markdown', filename);
     } else if (ext === '.njk') {
         console.log('nunjucks', filename);
     } else {
-        throw new Error(`Unsupported extension ${ext}`);
+        throw new Error(`Unsupported extension ${ext} for ${filename}`);
     }
 }
