@@ -5,10 +5,14 @@ layout: page
 <h1>janmr lab</h1>
 
 <ul>
-{% for post in collections.lab | reverse -%}
 <li>
-  <a href="{{ post.url | url }}">{{ post.data.title }}</a>.
-  {{ post.data.description | safe }}.
+  <a href="/lab/time/">Time Calculator</a>.
+  A tool that can convert between timezones and convert to/from <a href="https://en.wikipedia.org/wiki/Unix_time">Unix time</a>.
+</li><li>
+  <a href="/lab/math-tex/">math-tex demo</a>.
+  A demo that combines <a href="https://developer.mozilla.org/en-US/docs/Web/Web_Components">Web Components</a> (custom elements and shadow DOM) and <a href="https://www.mathjax.org/">MathJax</a>.
+</li><li>
+  <a href="/lab/tromino/">L-Trominos</a>.
+  A demo to accompany the blog post  <a href="/blog/2016/01/tiling-with-l-trominos/">Tiling with L-Trominos</a>.
 </li>
-{%- endfor %}
 </ul>
