@@ -2,9 +2,12 @@ import { mkdirSync, readFileSync, writeFileSync } from 'fs';
 import { dirname, extname, join } from 'path';
 import { globIterateSync } from 'glob';
 import { read as matterRead } from 'gray-matter';
+import { DateTime } from 'luxon';
 import nunjucks from 'nunjucks';
 import less from 'less';
 import cleanCSS from 'clean-css';
+import MarkdownIt from 'markdown-it';
+import mk from '@byronwan/markdown-it-katex';
 
 const SOURCE_DIR = 'content';
 const COPY_PATTERNS = ['files/**/*', 'media/**/*', 'lab/**/*.js', 'lab/**/*.js.map', 'icon-48x48.png'];
@@ -29,8 +32,22 @@ const metadata = {
     }
 };
 
+const parseDate = (date: unknown) =>
+    date instanceof Date
+        ? DateTime.fromJSDate(date, { zone: 'utc' })
+        : DateTime.fromISO('' + date, { zone: 'utc' })
+
 const env = new nunjucks.Environment(new nunjucks.FileSystemLoader(LAYOUT_DIR), { autoescape: true });
 env.addFilter('url', (path: string) => '' + path);
+env.addFilter('fixLineBreaks', str => str.replace(/ (\d+)/g, '&nbsp;$1'));
+env.addFilter('htmlDateString', (date) => !date ? '' : date.length === 4 ? date : parseDate(date).toISODate());
+env.addFilter('readableDate', (date) => !date ? '' : date.length === 4 ? date : parseDate(date).toFormat("LLLL dd, yyyy"));
+env.addFilter('excludeElement', _ => []);
+env.addFilter('getPreviousCollectionItem', _ => undefined);
+env.addFilter('getNextCollectionItem', _ => undefined);
+
+const md = new MarkdownIt();
+md.use(mk);
 
 function readFile(filename: string): string {
     const path = join(SOURCE_DIR, filename);
@@ -72,18 +89,18 @@ function processFiles() {
         if (!['.md', '.njk'].includes(ext)) {
             throw new Error(`Unsupported extension ${ext} for ${filename}`);
         }
+        let { data, content } = matterRead(join(SOURCE_DIR, filename));
         if (ext === '.md') {
-            // ignore for now
-            continue;
+            content = md.render(content);
         }
-        const { data, content } = matterRead(join(SOURCE_DIR, filename));
         let output;
         if (data.layout) {
             output = env.render(data.layout + '.njk', { ...data, metadata, content });
         } else {
             output = env.renderString(content, { ...data, metadata });
         }
-        const outFilename = filename.slice(0, -ext.length) + '.html';
+        const isBlogPost = filename.startsWith('blog/');
+        const outFilename = filename.slice(0, -ext.length) + (isBlogPost ? '/index.html' : '.html');
         writeFile(outFilename, output);
     }
 }

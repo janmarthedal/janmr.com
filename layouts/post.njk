@@ -1,6 +1,4 @@
----
-layout: blog-page
----
+{% extends "blog-page.njk" %}
 <h2>{{ title | fixLineBreaks | safe }}<br>
   <small>
     <time datetime="{{ date | htmlDateString }}">{{ date | readableDate }}</time>
