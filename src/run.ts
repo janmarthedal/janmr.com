@@ -1,3 +1,4 @@
+import assert from 'assert';
 import { mkdirSync, readFileSync, writeFileSync } from 'fs';
 import { dirname, extname, join } from 'path';
 import { globIterateSync } from 'glob';
@@ -32,6 +33,12 @@ const metadata = {
     }
 };
 
+type Post = {
+    permalink: string;
+    date: string;
+    content: string;
+} & Record<string, unknown>;
+
 // new Intl.DateTimeFormat('en-US', { year: 'numeric', month: 'short', day: 'numeric' }).format(new Date())
 
 const parseDate = (date: unknown) =>
@@ -40,7 +47,10 @@ const parseDate = (date: unknown) =>
         : DateTime.fromISO('' + date, { zone: 'utc' })
 
 const env = new nunjucks.Environment(new nunjucks.FileSystemLoader(LAYOUT_DIR), { autoescape: true });
-env.addFilter('url', (path: string) => '' + path);
+env.addFilter('url', (name: string) => {
+    const path = join('/', name);
+    return path.endsWith('/index.html') ? path.slice(0, -10) : path;
+});
 env.addFilter('fixLineBreaks', str => str.replace(/ (\d+)/g, '&nbsp;$1'));
 env.addFilter('htmlDateString', (date) => !date ? '' : date.length === 4 ? date : parseDate(date).toISODate());
 env.addFilter('readableDate', (date) => !date ? '' : date.length === 4 ? date : parseDate(date).toFormat("LLLL dd, yyyy"));
@@ -48,7 +58,7 @@ env.addFilter('excludeElement', arg => arg);
 env.addFilter('getPreviousCollectionItem', _ => undefined);
 env.addFilter('getNextCollectionItem', _ => undefined);
 
-const md = new MarkdownIt();
+const md = new MarkdownIt({ html: true });
 md.use(mk);
 
 function readFile(filename: string): string {
@@ -99,7 +109,8 @@ function renderLayout(layout: string, data: Record<string, unknown>): string {
     }
 }
 
-function processFiles() {
+function processFiles(): Array<Post> {
+    const posts: Array<Post> = [];
     for (const filename of globIterateSync(SOURCE_PATTERN, { cwd: SOURCE_DIR, nodir: true, ignore: IGNORE_PATTERNS })) {
         console.log('process', filename);
         const ext = extname(filename);
@@ -107,23 +118,44 @@ function processFiles() {
             throw new Error(`Unsupported extension ${ext} for ${filename}`);
         }
         let { data, content } = matter.read(join(SOURCE_DIR, filename));
+        let permalink = data.permalink;
+        if (!permalink) {
+            permalink = filename.slice(0, -ext.length);
+            if (!(permalink === 'index' || permalink.endsWith('/index'))) {
+                permalink += '/index';
+            }
+            permalink += '.html';
+        }
         if (ext === '.md') {
             content = md.render(content);
         }
-        let output;
-        if (data.layout) {
-            output = renderLayout(data.layout, { ...data, metadata, content });
+        if (filename.startsWith('blog/')) {
+            assert(typeof data.date === 'string', 'Missing date');
+            posts.push({ ...data, date: data.date, permalink, content });
         } else {
-            output = env.renderString(content, { ...data, metadata });
+            const output = data.layout
+                ? renderLayout(data.layout, { ...data, metadata, content })
+                : env.renderString(content, { ...data, metadata });
+            writeFile(permalink, output);
         }
-        const isBlogPost = filename.startsWith('blog/');
-        const outFilename = filename.slice(0, -ext.length) + (isBlogPost ? '/index.html' : '.html');
-        writeFile(outFilename, output);
+    }
+    return posts;
+}
+
+function writePosts(posts: Array<Post>) {
+    posts.sort((a, b) => a.date.localeCompare(b.date));
+    for (let i = 0; i < posts.length; i++) {
+        const post = posts[i];
+        const prevPost = i - 1 >= 0 ? posts[i - 1] : undefined;
+        const nextPost = i + 1 < posts.length ? posts[i + 1] : undefined;
+        const output = renderLayout('post', { ...post, metadata, prevPost, nextPost });
+        writeFile(post.permalink, output);
     }
 }
 
 (async () => {
     await processCss();
     copyFiles();
-    processFiles();
+    const posts = processFiles();
+    writePosts(posts);
 })();

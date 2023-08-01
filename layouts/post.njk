@@ -18,18 +18,16 @@ layout: blog-page
   Commenting is not possible for this post, but feel free to leave a question,
   correction or any comment by using the <a href="/contact/">contact page</a>
 </div>
-{% set prevPost = collections.post | getPreviousCollectionItem(page) -%}
-{% set nextPost = collections.post | getNextCollectionItem(page) -%}
 <div class="page-navigation">
   <div class="prev-post">
     {%- if prevPost -%}
-      <a href="{{prevPost.url}}" title="Previous post: {{prevPost.data.title}}">&laquo;
-        {{prevPost.data.title}}</a>
+      <a href="{{ prevPost.permalink | url }}" title="Previous post: {{ prevPost.title }}">&laquo;
+        {{ prevPost.title }}</a>
     {%- endif -%}
   </div>
   <div class="next-post">
     {%- if nextPost -%}
-      <a href="{{nextPost.url}}" title="Next post: {{nextPost.data.title}}">{{nextPost.data.title}}
+      <a href="{{ nextPost.permalink | url }}" title="Next post: {{ nextPost.title }}">{{ nextPost.title }}
         &raquo;</a>
     {%- endif -%}
   </div>
