@@ -1,8 +1,8 @@
 import { mkdirSync, readFileSync, writeFileSync } from 'fs';
 import { dirname, extname, join } from 'path';
 import { globIterateSync } from 'glob';
-import { read as matterRead } from 'gray-matter';
 import { DateTime } from 'luxon';
+import matter from 'gray-matter';
 import nunjucks from 'nunjucks';
 import less from 'less';
 import cleanCSS from 'clean-css';
@@ -32,6 +32,8 @@ const metadata = {
     }
 };
 
+// new Intl.DateTimeFormat('en-US', { year: 'numeric', month: 'short', day: 'numeric' }).format(new Date())
+
 const parseDate = (date: unknown) =>
     date instanceof Date
         ? DateTime.fromJSDate(date, { zone: 'utc' })
@@ -42,7 +44,7 @@ env.addFilter('url', (path: string) => '' + path);
 env.addFilter('fixLineBreaks', str => str.replace(/ (\d+)/g, '&nbsp;$1'));
 env.addFilter('htmlDateString', (date) => !date ? '' : date.length === 4 ? date : parseDate(date).toISODate());
 env.addFilter('readableDate', (date) => !date ? '' : date.length === 4 ? date : parseDate(date).toFormat("LLLL dd, yyyy"));
-env.addFilter('excludeElement', _ => []);
+env.addFilter('excludeElement', arg => arg);
 env.addFilter('getPreviousCollectionItem', _ => undefined);
 env.addFilter('getNextCollectionItem', _ => undefined);
 
@@ -82,6 +84,21 @@ function copyFiles() {
     }
 }
 
+function renderLayout(layout: string, data: Record<string, unknown>): string {
+    const buffer = readFileSync(join(LAYOUT_DIR, layout + '.njk'), 'utf8');
+    if (buffer.startsWith('---\n')) {
+        const { data: baseData, content: baseContent } = matter(buffer);
+        const content = env.renderString(baseContent, data);
+        if (baseData.layout) {
+            return renderLayout(baseData.layout, { ...data, ...baseData, content });
+        } else {
+            return content;
+        }
+    } else {
+        return env.renderString(buffer, data);
+    }
+}
+
 function processFiles() {
     for (const filename of globIterateSync(SOURCE_PATTERN, { cwd: SOURCE_DIR, nodir: true, ignore: IGNORE_PATTERNS })) {
         console.log('process', filename);
@@ -89,13 +106,13 @@ function processFiles() {
         if (!['.md', '.njk'].includes(ext)) {
             throw new Error(`Unsupported extension ${ext} for ${filename}`);
         }
-        let { data, content } = matterRead(join(SOURCE_DIR, filename));
+        let { data, content } = matter.read(join(SOURCE_DIR, filename));
         if (ext === '.md') {
             content = md.render(content);
         }
         let output;
         if (data.layout) {
-            output = env.render(data.layout + '.njk', { ...data, metadata, content });
+            output = renderLayout(data.layout, { ...data, metadata, content });
         } else {
             output = env.renderString(content, { ...data, metadata });
         }
