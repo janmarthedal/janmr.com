@@ -31,7 +31,8 @@ const metadata = {
         "subtitle": "The blog of Jan Marthedal Rasmussen",
         "url": "https://janmr.com/blog/feed.xml",
         "id": "https://janmr.com/blog/"
-    }
+    },
+    ga_tracking_id: process.env.GA_TRACKING_ID,
 };
 
 interface Post {
@@ -176,7 +177,6 @@ function writePosts(posts: Array<Post>) {
 }
 
 function writePostList(posts: Array<Post>) {
-    posts.sort((a, b) => a.date.localeCompare(b.date));
     const output = renderLayout('post-list', { posts, metadata });
     writeFile('blog/index.html', output);
 }
@@ -199,6 +199,7 @@ function writeTagPages(tagMap: Map<string, Array<Post>>) {
     await processCss();
     copyFiles();
     const posts = processFiles();
+    posts.sort((a, b) => a.date.localeCompare(b.date));
     writePosts(posts);
     writePostList(posts);
     const tagMap = makeTagMap(posts);
