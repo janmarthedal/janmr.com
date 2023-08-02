@@ -1,0 +1,12 @@
+---
+layout: blog-page
+---
+<h2>Posts tagged <em>{{ tag }}</em></h2>
+
+<div class="post-list">
+{% for post in posts -%}
+  <h5>
+    <a href="{{ post.permalink | url }}">{{ post.title }}</a> <small>{{ post.date | readableDate }}</small>
+  </h5>
+{%- endfor %}
+</div>
