@@ -8,7 +8,8 @@ import nunjucks from 'nunjucks';
 import less from 'less';
 import cleanCSS from 'clean-css';
 import MarkdownIt from 'markdown-it';
-import mk from '@byronwan/markdown-it-katex';
+import markdownKaTeX from '@byronwan/markdown-it-katex';
+import markdownPrism from 'markdown-it-prism';
 
 const SOURCE_DIR = 'content';
 const COPY_PATTERNS = ['files/**/*', 'media/**/*', 'lab/**/*.js', 'lab/**/*.js.map', 'icon-48x48.png'];
@@ -33,11 +34,12 @@ const metadata = {
     }
 };
 
-type Post = {
+interface Post {
     permalink: string;
     date: string;
     content: string;
-} & Record<string, unknown>;
+    [key: string]: unknown;
+}
 
 // new Intl.DateTimeFormat('en-US', { year: 'numeric', month: 'short', day: 'numeric' }).format(new Date())
 
@@ -59,7 +61,8 @@ env.addFilter('getPreviousCollectionItem', _ => undefined);
 env.addFilter('getNextCollectionItem', _ => undefined);
 
 const md = new MarkdownIt({ html: true });
-md.use(mk);
+md.use(markdownKaTeX);
+md.use(markdownPrism);
 
 function readFile(filename: string): string {
     const path = join(SOURCE_DIR, filename);
@@ -128,6 +131,7 @@ function processFiles(): Array<Post> {
         }
         if (ext === '.md') {
             content = md.render(content);
+            content = content.replaceAll('\n</code></pre>', '</code></pre>');
         }
         if (filename.startsWith('blog/')) {
             assert(typeof data.date === 'string', 'Missing date');
