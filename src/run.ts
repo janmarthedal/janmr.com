@@ -38,6 +38,7 @@ interface Post {
     permalink: string;
     date: string;
     content: string;
+    tags?: Array<string>;
     [key: string]: unknown;
 }
 
@@ -146,6 +147,24 @@ function processFiles(): Array<Post> {
     return posts;
 }
 
+function makeTagMap(posts: Array<Post>): Map<string, Array<Post>> {
+    const tagMap = new Map<string, Array<Post>>();
+    for (const post of posts) {
+        if (post.tags) {
+            for (const tag of post.tags) {
+                let list = tagMap.get(tag);
+                if (!list) {
+                    list = [];
+                    tagMap.set(tag, list);
+                }
+                list.push(post);
+            }
+        }
+    }
+    tagMap.delete('post');
+    return tagMap;
+}
+
 function writePosts(posts: Array<Post>) {
     for (let i = 0; i < posts.length; i++) {
         const post = posts[i];
@@ -157,15 +176,32 @@ function writePosts(posts: Array<Post>) {
 }
 
 function writePostList(posts: Array<Post>) {
+    posts.sort((a, b) => a.date.localeCompare(b.date));
     const output = renderLayout('post-list', { posts, metadata });
     writeFile('blog/index.html', output);
+}
+
+function writeTagList(tags: Array<string>) {
+    tags.sort((a, b) => a.localeCompare(b));
+    const output = renderLayout('tag-list', { tags, metadata });
+    writeFile('blog/tags/index.html', output);
+}
+
+function writeTagPages(tagMap: Map<string, Array<Post>>) {
+    for (const [tag, posts] of tagMap) {
+        posts.sort((a, b) => b.date.localeCompare(a.date));
+        const output = renderLayout('tag-page', { tag, posts, metadata });
+        writeFile(`blog/tags/${tag}/index.html`, output);
+    }
 }
 
 (async () => {
     await processCss();
     copyFiles();
     const posts = processFiles();
-    posts.sort((a, b) => a.date.localeCompare(b.date));
     writePosts(posts);
     writePostList(posts);
+    const tagMap = makeTagMap(posts);
+    writeTagList(Array.from(tagMap.keys()));
+    writeTagPages(tagMap);
 })();
