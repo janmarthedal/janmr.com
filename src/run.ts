@@ -147,7 +147,6 @@ function processFiles(): Array<Post> {
 }
 
 function writePosts(posts: Array<Post>) {
-    posts.sort((a, b) => a.date.localeCompare(b.date));
     for (let i = 0; i < posts.length; i++) {
         const post = posts[i];
         const prevPost = i - 1 >= 0 ? posts[i - 1] : undefined;
@@ -157,9 +156,16 @@ function writePosts(posts: Array<Post>) {
     }
 }
 
+function writePostList(posts: Array<Post>) {
+    const output = renderLayout('post-list', { posts, metadata });
+    writeFile('blog/index.html', output);
+}
+
 (async () => {
     await processCss();
     copyFiles();
     const posts = processFiles();
+    posts.sort((a, b) => a.date.localeCompare(b.date));
     writePosts(posts);
+    writePostList(posts);
 })();
