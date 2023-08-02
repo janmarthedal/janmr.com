@@ -54,7 +54,7 @@ env.addFilter('url', (name: string) => {
 env.addFilter('fixLineBreaks', str => str.replace(/ (\d+)/g, '&nbsp;$1'));
 env.addFilter('htmlDateString', (date) => !date ? '' : date.length === 4 ? date : parseDate(date).toISODate());
 env.addFilter('readableDate', (date) => !date ? '' : date.length === 4 ? date : parseDate(date).toFormat("LLLL dd, yyyy"));
-env.addFilter('excludeElement', arg => arg);
+env.addFilter('excludeElement', (list: Array<string>, element) => list.filter(item => item !== element));
 env.addFilter('getPreviousCollectionItem', _ => undefined);
 env.addFilter('getNextCollectionItem', _ => undefined);
 
