@@ -15,12 +15,12 @@
     {%- endblock %}
     {% block bodyend -%}
     {%- if environment.eleventy_env == "production" -%}
-    <script async src="https://www.googletagmanager.com/gtag/js?id={{ environment.ga_tracking_id }}"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id={{ metadata.ga_tracking_id }}"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-      gtag('config', '{{ environment.ga_tracking_id }}');
+      gtag('config', '{{ metadata.ga_tracking_id }}');
     </script>
     {%- endif -%}
     {%- endblock %}
