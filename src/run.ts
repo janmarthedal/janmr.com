@@ -1,4 +1,3 @@
-import assert from 'assert';
 import { mkdirSync, readFileSync, writeFileSync } from 'fs';
 import { dirname, extname, join } from 'path';
 import { globIterateSync } from 'glob';
@@ -35,11 +34,13 @@ const metadata = {
     ga_tracking_id: process.env.GA_TRACKING_ID,
 };
 
-interface Post {
+interface Page {
     permalink: string;
-    date: string;
     content: string;
+    title?: string;
+    date?: string;
     tags?: Array<string>;
+    layout?: string;
     [key: string]: unknown;
 }
 
@@ -114,8 +115,10 @@ function renderLayout(layout: string, data: Record<string, unknown>): string {
     }
 }
 
-function processFiles(): Array<Post> {
-    const posts: Array<Post> = [];
+function processFiles(): { posts: Array<Page>, refs: Array<Page> } {
+    const posts: Array<Page> = [];
+    const refs: Array<Page> = [];
+
     for (const filename of globIterateSync(SOURCE_PATTERN, { cwd: SOURCE_DIR, nodir: true, ignore: IGNORE_PATTERNS })) {
         console.log('process', filename);
         const ext = extname(filename);
@@ -136,8 +139,9 @@ function processFiles(): Array<Post> {
             content = content.replaceAll('\n</code></pre>', '</code></pre>');
         }
         if (filename.startsWith('blog/')) {
-            assert(typeof data.date === 'string', 'Missing date');
-            posts.push({ ...data, date: data.date, permalink, content });
+            posts.push({ ...data, permalink, content });
+        } else if (filename.startsWith('refs/')) {
+            refs.push({ ...data, permalink, content });
         } else {
             const output = data.layout
                 ? renderLayout(data.layout, { ...data, metadata, content })
@@ -145,11 +149,12 @@ function processFiles(): Array<Post> {
             writeFile(permalink, output);
         }
     }
-    return posts;
+
+    return { posts, refs };
 }
 
-function makeTagMap(posts: Array<Post>): Map<string, Array<Post>> {
-    const tagMap = new Map<string, Array<Post>>();
+function makeTagMap(posts: Array<Page>): Map<string, Array<Page>> {
+    const tagMap = new Map<string, Array<Page>>();
     for (const post of posts) {
         if (post.tags) {
             for (const tag of post.tags) {
@@ -166,7 +171,7 @@ function makeTagMap(posts: Array<Post>): Map<string, Array<Post>> {
     return tagMap;
 }
 
-function writePosts(posts: Array<Post>) {
+function writePosts(posts: Array<Page>) {
     for (let i = 0; i < posts.length; i++) {
         const post = posts[i];
         const prevPost = i - 1 >= 0 ? posts[i - 1] : undefined;
@@ -176,7 +181,7 @@ function writePosts(posts: Array<Post>) {
     }
 }
 
-function writePostList(posts: Array<Post>) {
+function writePostList(posts: Array<Page>) {
     const output = renderLayout('post-list', { posts, metadata });
     writeFile('blog/index.html', output);
 }
@@ -187,22 +192,37 @@ function writeTagList(tags: Array<string>) {
     writeFile('blog/tags/index.html', output);
 }
 
-function writeTagPages(tagMap: Map<string, Array<Post>>) {
+function writeTagPages(tagMap: Map<string, Array<Page>>) {
     for (const [tag, posts] of tagMap) {
-        posts.sort((a, b) => b.date.localeCompare(a.date));
+        posts.sort((a, b) => b.date!.localeCompare(a.date!));
         const output = renderLayout('tag-page', { tag, posts, metadata });
         writeFile(`blog/tags/${tag}/index.html`, output);
     }
 }
 
+function writeRefs(refs: Array<Page>) {
+    for (const ref of refs) {
+        const output = renderLayout(ref.layout!, { ...ref, metadata });
+        writeFile(ref.permalink, output);
+    }
+}
+
+function writeRefList(refs: Array<Page>) {
+    const output = renderLayout('ref-list', { refs, metadata });
+    writeFile('refs/index.html', output);
+}
+
 (async () => {
     await processCss();
     copyFiles();
-    const posts = processFiles();
-    posts.sort((a, b) => a.date.localeCompare(b.date));
+    const { posts, refs } = processFiles();
+    posts.sort((a, b) => a.date!.localeCompare(b.date!));
     writePosts(posts);
     writePostList(posts);
     const tagMap = makeTagMap(posts);
     writeTagList(Array.from(tagMap.keys()));
     writeTagPages(tagMap);
+    refs.sort((a, b) => a.title!.localeCompare(b.title!));
+    writeRefs(refs);
+    writeRefList(refs);
 })();

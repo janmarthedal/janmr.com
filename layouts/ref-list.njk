@@ -1,0 +1,11 @@
+---
+title: References
+layout: blog-page
+---
+<div>
+  {%- for post in refs -%}
+  <h5>
+    <a href="{{ post.permalink | url }}">{{ post.title }}</a></small>
+  </h5>
+  {%- endfor -%}
+</div>
