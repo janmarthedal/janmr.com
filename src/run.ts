@@ -25,18 +25,19 @@ const IGNORE_PATTERNS = [...COPY_PATTERNS, ...CSS_INPUT];
 const LAYOUT_DIR = 'layouts';
 
 const metadata = {
-    "title": "janmr blog",
-    "url": "https://janmr.com/blog/",
-    "author": {
-        "name": "Jan Marthedal Rasmussen",
-        "email": "jan@janmr.com"
+    title: "janmr blog",
+    url: "https://janmr.com/blog/",
+    author: {
+        name: "Jan Marthedal Rasmussen",
+        email: "jan@janmr.com"
     },
-    "feed": {
-        "subtitle": "The blog of Jan Marthedal Rasmussen",
-        "url": "https://janmr.com/blog/feed.xml",
-        "id": "https://janmr.com/blog/"
+    feed: {
+        subtitle: "The blog of Jan Marthedal Rasmussen",
+        url: "https://janmr.com/blog/feed.xml",
+        id: "https://janmr.com/blog/"
     },
     ga_tracking_id: process.env.GA_TRACKING_ID,
+    environment: process.env.BUILD_ENV,
 };
 
 interface Page {

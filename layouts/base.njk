@@ -14,7 +14,7 @@
     {{ content | safe }}
     {%- endblock %}
     {% block bodyend -%}
-    {%- if environment.eleventy_env == "production" -%}
+    {%- if metadata.environment == "production" -%}
     <script async src="https://www.googletagmanager.com/gtag/js?id={{ metadata.ga_tracking_id }}"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
