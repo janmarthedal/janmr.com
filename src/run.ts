@@ -12,9 +12,6 @@ import { absoluteUrl } from './rss/absoluteUrl';
 import { rssLastUpdatedDate } from './rss/rssLastUpdatedDate';
 import { dateRfc3339 } from './rss/dateRfc3339';
 
-// TODO remove dependency on luxon
-import { DateTime } from 'luxon';
-
 const SOURCE_DIR = 'content';
 const COPY_PATTERNS = ['files/**/*', 'media/**/*', 'lab/**/*.js', 'lab/**/*.js.map', 'icon-48x48.png'];
 const CSS_INPUT = ['css/normalize.css', 'css/styles.less'];
@@ -50,12 +47,7 @@ interface Page {
     [key: string]: unknown;
 }
 
-// new Intl.DateTimeFormat('en-US', { year: 'numeric', month: 'short', day: 'numeric' }).format(new Date())
-
-const parseDate = (date: unknown) =>
-    date instanceof Date
-        ? DateTime.fromJSDate(date, { zone: 'utc' })
-        : DateTime.fromISO('' + date, { zone: 'utc' })
+const readableDateFormat = new Intl.DateTimeFormat('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
 
 const env = new nunjucks.Environment(new nunjucks.FileSystemLoader(LAYOUT_DIR), { autoescape: true });
 env.addFilter('url', (name: string) => {
@@ -63,8 +55,8 @@ env.addFilter('url', (name: string) => {
     return path.endsWith('/index.html') ? path.slice(0, -10) : path;
 });
 env.addFilter('fixLineBreaks', str => str.replace(/ (\d+)/g, '&nbsp;$1'));
-env.addFilter('htmlDateString', (date) => !date ? '' : date.length === 4 ? date : parseDate(date).toISODate());
-env.addFilter('readableDate', (date) => !date ? '' : date.length === 4 ? date : parseDate(date).toFormat("LLLL dd, yyyy"));
+env.addFilter('htmlDateString', (date) => !date ? '' : date.length === 4 ? date : new Date(date).toISOString().substring(0, 10));
+env.addFilter('readableDate', (date) => !date ? '' : date.length === 4 ? date : readableDateFormat.format(new Date(date)));
 env.addFilter('excludeElement', (list: Array<string>, element) => list.filter(item => item !== element));
 env.addFilter('rssLastUpdatedDate', rssLastUpdatedDate);
 env.addFilter('absoluteUrl', absoluteUrl);
