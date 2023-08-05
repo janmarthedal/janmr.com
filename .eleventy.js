@@ -1,7 +1,7 @@
 const { DateTime } = require("luxon");
 const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
 const markdownIt = require("markdown-it");
-const markdownItKaTeX = require("@janmarthedal/markdown-it-katex");
+const markdownItKaTeX = require("@byronwan/markdown-it-katex");
 const pluginRss = require("@11ty/eleventy-plugin-rss");
 
 const parseDate = (date) =>
@@ -42,7 +42,7 @@ module.exports = function (eleventyConfig) {
     return values.slice().sort((a, b) => a.data.title.localeCompare(b.data.title))
   })
 
-  eleventyConfig.addPlugin(syntaxHighlight);
+  eleventyConfig.addPlugin(syntaxHighlight, { lineSeparator: '\n' });
 
   eleventyConfig.addCollection("tagList", require(`${inputFolder}/_11ty/getTagList`));
 
