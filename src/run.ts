@@ -143,7 +143,6 @@ function processFiles(): { posts: Array<Page>, refs: Array<Page> } {
         }
         if (ext === '.md') {
             content = md.render(content);
-            content = content.replaceAll('\n</code></pre>', '</code></pre>');
         }
         if (filename.startsWith('blog/')) {
             posts.push({ ...data, permalink, content });
