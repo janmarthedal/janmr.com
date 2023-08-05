@@ -1,7 +1,6 @@
 import { mkdirSync, readFileSync, writeFileSync } from 'fs';
 import { dirname, extname, join } from 'path';
 import { globIterateSync } from 'glob';
-import { DateTime } from 'luxon';
 import matter from 'gray-matter';
 import nunjucks from 'nunjucks';
 import less from 'less';
@@ -9,6 +8,12 @@ import cleanCSS from 'clean-css';
 import MarkdownIt from 'markdown-it';
 import markdownKaTeX from '@byronwan/markdown-it-katex';
 import markdownPrism from 'markdown-it-prism';
+import { absoluteUrl } from './rss/absoluteUrl';
+import { rssLastUpdatedDate } from './rss/rssLastUpdatedDate';
+import { dateRfc3339 } from './rss/dateRfc3339';
+
+// TODO remove dependency on luxon
+import { DateTime } from 'luxon';
 
 const SOURCE_DIR = 'content';
 const COPY_PATTERNS = ['files/**/*', 'media/**/*', 'lab/**/*.js', 'lab/**/*.js.map', 'icon-48x48.png'];
@@ -60,8 +65,9 @@ env.addFilter('fixLineBreaks', str => str.replace(/ (\d+)/g, '&nbsp;$1'));
 env.addFilter('htmlDateString', (date) => !date ? '' : date.length === 4 ? date : parseDate(date).toISODate());
 env.addFilter('readableDate', (date) => !date ? '' : date.length === 4 ? date : parseDate(date).toFormat("LLLL dd, yyyy"));
 env.addFilter('excludeElement', (list: Array<string>, element) => list.filter(item => item !== element));
-env.addFilter('getPreviousCollectionItem', _ => undefined);
-env.addFilter('getNextCollectionItem', _ => undefined);
+env.addFilter('rssLastUpdatedDate', rssLastUpdatedDate);
+env.addFilter('absoluteUrl', absoluteUrl);
+env.addFilter('dateToRfc3339', date => dateRfc3339(new Date(date)));
 
 const md = new MarkdownIt({ html: true });
 md.use(markdownKaTeX);
@@ -212,6 +218,11 @@ function writeRefList(refs: Array<Page>) {
     writeFile('refs/index.html', output);
 }
 
+function writeFeed(posts: Array<Page>) {
+    const output = renderLayout('feed', { posts, metadata });
+    writeFile('blog/feed.xml', output);
+}
+
 (async () => {
     await processCss();
     copyFiles();
@@ -225,4 +236,5 @@ function writeRefList(refs: Array<Page>) {
     refs.sort((a, b) => a.title!.localeCompare(b.title!));
     writeRefs(refs);
     writeRefList(refs);
+    writeFeed(posts);
 })();
