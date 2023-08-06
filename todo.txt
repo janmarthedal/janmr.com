@@ -1,0 +1,6 @@
+- Remove post from tags (and excludeElement)
+- Remove tags and layout from references
+- Check date is present on posts
+- Check title is present on refs
+- Include stylesheets katex/prism only when needed
+- Tag neural networks -> neural-networks
