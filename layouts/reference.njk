@@ -3,14 +3,16 @@ layout: blog-page
 ---
 <p>Title: {{ title }}</p>
 
-{%- for author in authors -%}
+{%- for author in data.authors -%}
   <p>Author: {{ author }}</p>
 {%- endfor -%}
 
-<p>Date: <time datetime="{{ date | htmlDateString }}">{{ date | readableDate }}</time></p>
+{%- if data.date -%}
+<p>Date: <time datetime="{{ data.date }}">{{ data.date | refReadableDate }}</time></p>
+{%- endif -%}
 
-{%- if isbn -%}
-<p>ISBN: <a href="https://en.wikipedia.org/wiki/Special:BookSources?isbn={{ isbn }}">{{ isbn }}</a></p>
+{%- if data.isbn -%}
+<p>ISBN: <a href="https://en.wikipedia.org/wiki/Special:BookSources?isbn={{ data.isbn }}">{{ data.isbn }}</a></p>
 {%- endif -%}
 
 <div class="post-body">
