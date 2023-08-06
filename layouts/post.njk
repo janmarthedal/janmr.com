@@ -7,7 +7,7 @@ layout: blog-page
   </small>
 </h2>
 <div class="post-tags">
-  {%- for tag in tags | excludeElement("post") -%}
+  {%- for tag in data.tags | excludeElement("post") -%}
     <a class="label" href="/blog/tags/{{tag}}">{{tag}}</a>
   {%- endfor -%}
 </div>
@@ -21,13 +21,13 @@ layout: blog-page
 <div class="page-navigation">
   <div class="prev-post">
     {%- if prevPost -%}
-      <a href="{{ prevPost.permalink | url }}" title="Previous post: {{ prevPost.title }}">&laquo;
+      <a href="{{ prevPost.url | url }}" title="Previous post: {{ prevPost.title }}">&laquo;
         {{ prevPost.title }}</a>
     {%- endif -%}
   </div>
   <div class="next-post">
     {%- if nextPost -%}
-      <a href="{{ nextPost.permalink | url }}" title="Next post: {{ nextPost.title }}">{{ nextPost.title }}
+      <a href="{{ nextPost.url | url }}" title="Next post: {{ nextPost.title }}">{{ nextPost.title }}
         &raquo;</a>
     {%- endif -%}
   </div>

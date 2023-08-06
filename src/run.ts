@@ -38,13 +38,11 @@ const metadata = {
 };
 
 interface Page {
-    permalink: string;
-    content: string;
+    url: string;
     title?: string;
-    date?: string;
-    tags?: Array<string>;
-    layout?: string;
-    [key: string]: unknown;
+    date?: Date;
+    content: string;
+    data: Record<string, string | Array<string>>;
 }
 
 const readableDateFormat = new Intl.DateTimeFormat('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
@@ -55,8 +53,10 @@ env.addFilter('url', (name: string) => {
     return path.endsWith('/index.html') ? path.slice(0, -10) : path;
 });
 env.addFilter('fixLineBreaks', str => str.replace(/ (\d+)/g, '&nbsp;$1'));
-env.addFilter('htmlDateString', (date) => !date ? '' : date.length === 4 ? date : new Date(date).toISOString().substring(0, 10));
-env.addFilter('readableDate', (date) => !date ? '' : date.length === 4 ? date : readableDateFormat.format(new Date(date)));
+env.addFilter('parseDate', (date) => date.length === 4 ? new Date(`${date}-01-01`) : new Date(date));
+env.addFilter('refReadableDate', (date) => date.length === 4 ? date : readableDateFormat.format(new Date(date)));
+env.addFilter('htmlDateString', (date) => date.toISOString().substring(0, 10));
+env.addFilter('readableDate', (date) => readableDateFormat.format(new Date(date)));
 env.addFilter('excludeElement', (list: Array<string>, element) => list.filter(item => item !== element));
 env.addFilter('rssLastUpdatedDate', rssLastUpdatedDate);
 env.addFilter('absoluteUrl', absoluteUrl);
@@ -99,18 +99,18 @@ function copyFiles() {
     }
 }
 
-function renderLayout(layout: string, data: Record<string, unknown>): string {
+function renderLayout(layout: string, page: Record<string, unknown>): string {
     const buffer = readFileSync(join(LAYOUT_DIR, layout + '.njk'), 'utf8');
     if (buffer.startsWith('---\n')) {
         const { data: baseData, content: baseContent } = matter(buffer);
-        const content = env.renderString(baseContent, data);
+        const content = env.renderString(baseContent, page);
         if (baseData.layout) {
-            return renderLayout(baseData.layout, { ...data, ...baseData, content });
+            return renderLayout(baseData.layout, { ...page, content });
         } else {
             return content;
         }
     } else {
-        return env.renderString(buffer, data);
+        return env.renderString(buffer, page);
     }
 }
 
@@ -125,26 +125,28 @@ function processFiles(): { posts: Array<Page>, refs: Array<Page> } {
             throw new Error(`Unsupported extension ${ext} for ${filename}`);
         }
         let { data, content } = matter.read(join(SOURCE_DIR, filename));
-        let permalink = data.permalink;
-        if (!permalink) {
-            permalink = filename.slice(0, -ext.length);
-            if (!(permalink === 'index' || permalink.endsWith('/index'))) {
-                permalink += '/index';
+        let url = data.permalink;
+        if (!url) {
+            url = filename.slice(0, -ext.length);
+            if (!(url === 'index' || url.endsWith('/index'))) {
+                url += '/index';
             }
-            permalink += '.html';
+            url += '.html';
         }
         if (ext === '.md') {
             content = md.render(content);
         }
+        const date = data.date ? new Date(data.date as string) : undefined;
+        const title = data.title as string;
         if (filename.startsWith('blog/')) {
-            posts.push({ ...data, permalink, content });
+            posts.push({ url, title, date, data, content });
         } else if (filename.startsWith('refs/')) {
-            refs.push({ ...data, permalink, content });
+            refs.push({ url, title, date, data, content });
         } else {
             const output = data.layout
-                ? renderLayout(data.layout, { ...data, metadata, content })
-                : env.renderString(content, { ...data, metadata });
-            writeFile(permalink, output);
+                ? renderLayout(data.layout, { title, data, metadata, content })
+                : env.renderString(content, { title, data, metadata });
+            writeFile(url, output);
         }
     }
 
@@ -154,17 +156,16 @@ function processFiles(): { posts: Array<Page>, refs: Array<Page> } {
 function makeTagMap(posts: Array<Page>): Map<string, Array<Page>> {
     const tagMap = new Map<string, Array<Page>>();
     for (const post of posts) {
-        if (post.tags) {
-            for (const tag of post.tags) {
-                let list = tagMap.get(tag);
-                if (!list) {
-                    list = [];
-                    tagMap.set(tag, list);
-                }
-                list.push(post);
+        for (const tag of post.data.tags || []) {
+            let list = tagMap.get(tag);
+            if (!list) {
+                list = [];
+                tagMap.set(tag, list);
             }
+            list.push(post);
         }
     }
+    // TODO should not be necessary
     tagMap.delete('post');
     return tagMap;
 }
@@ -175,12 +176,13 @@ function writePosts(posts: Array<Page>) {
         const prevPost = i - 1 >= 0 ? posts[i - 1] : undefined;
         const nextPost = i + 1 < posts.length ? posts[i + 1] : undefined;
         const output = renderLayout('post', { ...post, metadata, prevPost, nextPost });
-        writeFile(post.permalink, output);
+        writeFile(post.url, output);
     }
 }
 
 function writePostList(posts: Array<Page>) {
-    const output = renderLayout('post-list', { posts, metadata });
+    // move title to front matter when possible
+    const output = renderLayout('post-list', { title: metadata.title, posts, metadata });
     writeFile('blog/index.html', output);
 }
 
@@ -192,7 +194,7 @@ function writeTagList(tags: Array<string>) {
 
 function writeTagPages(tagMap: Map<string, Array<Page>>) {
     for (const [tag, posts] of tagMap) {
-        posts.sort((a, b) => b.date!.localeCompare(a.date!));
+        posts.sort((a, b) => +a.date! - +b.date!);
         const output = renderLayout('tag-page', { tag, posts, metadata });
         writeFile(`blog/tags/${tag}/index.html`, output);
     }
@@ -200,13 +202,14 @@ function writeTagPages(tagMap: Map<string, Array<Page>>) {
 
 function writeRefs(refs: Array<Page>) {
     for (const ref of refs) {
-        const output = renderLayout(ref.layout!, { ...ref, metadata });
-        writeFile(ref.permalink, output);
+        const output = renderLayout(ref.data.layout as string, { ...ref, metadata });
+        writeFile(ref.url, output);
     }
 }
 
 function writeRefList(refs: Array<Page>) {
-    const output = renderLayout('ref-list', { refs, metadata });
+    // move title to front matter when possible
+    const output = renderLayout('ref-list', { title: 'References', refs, metadata });
     writeFile('refs/index.html', output);
 }
 
@@ -219,13 +222,13 @@ function writeFeed(posts: Array<Page>) {
     await processCss();
     copyFiles();
     const { posts, refs } = processFiles();
-    posts.sort((a, b) => a.date!.localeCompare(b.date!));
+    posts.sort((a, b) => +a.date! - +b.date!);
     writePosts(posts);
     writePostList(posts);
     const tagMap = makeTagMap(posts);
     writeTagList(Array.from(tagMap.keys()));
     writeTagPages(tagMap);
-    refs.sort((a, b) => a.title!.localeCompare(b.title!));
+    refs.sort((a, b) => (a.title as string).localeCompare((b.title as string)));
     writeRefs(refs);
     writeRefList(refs);
     writeFeed(posts);

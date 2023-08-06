@@ -1,11 +1,10 @@
 ---
-title: janmr blog
 layout: blog-page
 ---
 <div class="post-list">
   {%- for post in posts | reverse -%}
   <h5>
-    <a href="{{ post.permalink | url }}">{{ post.title }}</a> <small>{{ post.date | readableDate }}</small>
+    <a href="{{ post.url | url }}">{{ post.title }}</a> <small>{{ post.date | readableDate }}</small>
   </h5>
   {%- endfor -%}
 </div>
