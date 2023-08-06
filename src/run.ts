@@ -131,19 +131,18 @@ function permalinkFromFilename(filename: string): string {
 }
 
 function loadPages(): Array<Page> {
-    const pages: Array<Page> = [];
-
-    for (const filename of globIterateSync(SOURCE_PATTERN, { cwd: SOURCE_DIR, nodir: true, ignore: IGNORE_PATTERNS })) {
-        console.log('read', filename);
-        const extension = extname(filename);
-        const { data, content } = matter.read(join(SOURCE_DIR, filename));
-        const url = data.permalink || permalinkFromFilename(filename);
-        const date = data.date ? new Date(data.date as string) : undefined;
-        const title = data.title as string | undefined;
-        pages.push({ type: data.type || PageType.Other, extension, url, title, date, data, content });
-    }
-
-    return pages;
+    return Array.from(
+        globIterateSync(SOURCE_PATTERN, { cwd: SOURCE_DIR, nodir: true, ignore: IGNORE_PATTERNS }),
+        (filename: string): Page => {
+            console.log('read', filename);
+            const extension = extname(filename);
+            const { data, content } = matter.read(join(SOURCE_DIR, filename));
+            const url = data.permalink || permalinkFromFilename(filename);
+            const date = data.date ? new Date(data.date as string) : undefined;
+            const title = data.title as string | undefined;
+            return { type: data.type || PageType.Other, extension, url, title, date, data, content };
+        }
+    );
 }
 
 function processMarkdown(pages: Array<Page>) {
