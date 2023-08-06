@@ -2,7 +2,6 @@
 title: The nth Bit of a Negative Number
 date: '2021-01-09'
 layout: post
-type: post
 tags:
   - bit-fiddling
 excerpt: >-

@@ -1,5 +1,5 @@
 ---
-type: reference
+layout: reference
 title: Hacker's Delight
 date: '2003'
 authors:

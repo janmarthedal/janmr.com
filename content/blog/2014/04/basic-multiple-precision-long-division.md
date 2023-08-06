@@ -2,7 +2,6 @@
 title: Basic Multiple-Precision Long Division
 date: '2014-04-14'
 layout: post
-type: post
 tags:
   - arithmetic
   - algorithms

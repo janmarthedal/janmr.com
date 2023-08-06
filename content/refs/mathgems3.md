@@ -1,5 +1,5 @@
 ---
-type: reference
+layout: reference
 title: Mathematical Gems III
 date: '1997'
 authors:

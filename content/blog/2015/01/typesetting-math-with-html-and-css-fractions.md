@@ -2,7 +2,6 @@
 title: 'Typesetting Math Using HTML and CSS: Fractions'
 date: '2015-01-24'
 layout: post
-type: post
 tags:
   - math-typesetting
 categories:

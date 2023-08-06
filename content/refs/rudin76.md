@@ -1,5 +1,5 @@
 ---
-type: reference
+layout: reference
 title: Principles of Mathematical Analysis
 date: '1976'
 authors:

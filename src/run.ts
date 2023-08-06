@@ -140,7 +140,13 @@ function loadPages(): Array<Page> {
             const url = data.permalink || permalinkFromFilename(filename);
             const date = data.date ? new Date(data.date as string) : undefined;
             const title = data.title as string | undefined;
-            return { type: data.type || PageType.Other, extension, url, title, date, data, content };
+            let type = PageType.Other;
+            if (data.layout === 'post') {
+                type = PageType.Post;
+            } else if (data.layout === 'reference') {
+                type = PageType.Reference;
+            }
+            return { type, extension, url, title, date, data, content };
         }
     );
 }
@@ -195,20 +201,11 @@ function makeTagPages(posts: Array<Page>): Array<Page> {
     }));
 }
 
-function writePosts(posts: Array<Page>) {
+function decoratePosts(posts: Array<Page>) {
     for (let i = 0; i < posts.length; i++) {
         const post = posts[i];
-        const prevPost = i - 1 >= 0 ? posts[i - 1] : undefined;
-        const nextPost = i + 1 < posts.length ? posts[i + 1] : undefined;
-        const output = renderLayout('post', { ...post, metadata, prevPost, nextPost });
-        writeFile(post.url, output);
-    }
-}
-
-function writeRefs(refs: Array<Page>) {
-    for (const ref of refs) {
-        const output = renderLayout('reference', { ...ref, metadata });
-        writeFile(ref.url, output);
+        post.data.prevPost = i - 1 >= 0 ? posts[i - 1] : undefined;
+        post.data.nextPost = i + 1 < posts.length ? posts[i + 1] : undefined;
     }
 }
 
@@ -223,9 +220,8 @@ function writeRefs(refs: Array<Page>) {
     refs.sort((a, b) => (a.title as string).localeCompare((b.title as string)));
     tags.sort((a, b) => (a.data.tag as string).localeCompare(b.data.tag as string));
     pages.push(...tags);
+    decoratePosts(posts);
     processMarkdown(pages);
     processNunjucks(pages, { posts, refs, tags });
-    writePages(pages.filter(p => p.type === PageType.Other));
-    writePosts(posts);
-    writeRefs(refs);
+    writePages(pages);
 })();

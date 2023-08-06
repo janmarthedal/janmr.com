@@ -1,5 +1,5 @@
 ---
-type: reference
+layout: reference
 title: 'Proofs Without Words: Exercises in Visual Thinking'
 date: '1993'
 authors:

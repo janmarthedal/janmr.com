@@ -20,14 +20,14 @@ layout: blog-page
 </div>
 <div class="page-navigation">
   <div class="prev-post">
-    {%- if prevPost -%}
-      <a href="{{ prevPost.url | url }}" title="Previous post: {{ prevPost.title }}">&laquo;
-        {{ prevPost.title }}</a>
+    {%- if data.prevPost -%}
+      <a href="{{ data.prevPost.url | url }}" title="Previous post: {{ data.prevPost.title }}">&laquo;
+        {{ data.prevPost.title }}</a>
     {%- endif -%}
   </div>
   <div class="next-post">
-    {%- if nextPost -%}
-      <a href="{{ nextPost.url | url }}" title="Next post: {{ nextPost.title }}">{{ nextPost.title }}
+    {%- if data.nextPost -%}
+      <a href="{{ data.nextPost.url | url }}" title="Next post: {{ data.nextPost.title }}">{{ data.nextPost.title }}
         &raquo;</a>
     {%- endif -%}
   </div>

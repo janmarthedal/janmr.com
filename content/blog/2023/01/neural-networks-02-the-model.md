@@ -2,7 +2,6 @@
 title: Neural Networks - The Model
 date: '2023-01-15'
 layout: post
-type: post
 tags:
   - neural-network
 categories:
