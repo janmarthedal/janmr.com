@@ -2,7 +2,6 @@
 title: Stackexchange Lists
 date: '2011-02-03'
 layout: post
-type: post
 tags:
   - links
   - stackexchange

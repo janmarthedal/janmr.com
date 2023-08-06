@@ -1,5 +1,5 @@
 ---
-type: reference
+layout: reference
 title: Structure and Interpretation of Computer Programs
 date: '1996'
 authors:

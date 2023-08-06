@@ -1,5 +1,5 @@
 ---
-type: reference
+layout: reference
 title: Continued Fractions
 date: '1997'
 authors:

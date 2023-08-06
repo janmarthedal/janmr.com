@@ -1,5 +1,5 @@
 ---
-type: reference
+layout: reference
 title: Learning representations by back-propagating errors
 date: '1986-10-09'
 authors:

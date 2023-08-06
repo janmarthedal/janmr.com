@@ -1,5 +1,5 @@
 ---
-type: reference
+layout: reference
 title: The C++ Programming Language
 date: '1997'
 authors:

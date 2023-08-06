@@ -1,5 +1,5 @@
 ---
-type: reference
+layout: reference
 title: The Art of Computer Programming, Volume 4A
 date: '2011'
 authors:

@@ -2,7 +2,6 @@
 title: On the Divergence of a Geometric Progression Sum
 date: '2009-08-28'
 layout: post
-type: post
 tags:
   - proof
   - infinite-series

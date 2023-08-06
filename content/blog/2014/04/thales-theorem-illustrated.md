@@ -2,7 +2,6 @@
 title: Thales' Theorem Illustrated
 date: '2014-04-02'
 layout: post
-type: post
 tags:
   - visualization
   - theorem

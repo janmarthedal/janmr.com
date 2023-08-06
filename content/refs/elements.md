@@ -1,5 +1,5 @@
 ---
-type: reference
+layout: reference
 title: Elements
 authors:
   - Euclid

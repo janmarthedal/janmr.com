@@ -2,7 +2,6 @@
 title: Basic Multiple-Precision Short Division
 date: '2012-11-28'
 layout: post
-type: post
 tags:
   - algorithms
   - multiple-precision

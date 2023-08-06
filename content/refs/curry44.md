@@ -1,5 +1,5 @@
 ---
-type: reference
+layout: reference
 title: The method of steepest descent for non-linear minimization problems
 date: '1944-01-22'
 authors:

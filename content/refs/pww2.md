@@ -1,5 +1,5 @@
 ---
-type: reference
+layout: reference
 title: Proofs without Words II
 date: '2000'
 authors:

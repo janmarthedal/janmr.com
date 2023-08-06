@@ -1,5 +1,5 @@
 ---
-type: reference
+layout: reference
 title: Proofs From The Book
 date: '2004'
 authors:

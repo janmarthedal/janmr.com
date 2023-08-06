@@ -2,7 +2,6 @@
 title: The Game of Nim
 date: '2009-04-20'
 layout: post
-type: post
 tags:
   - combinatorial-game
   - game-theory

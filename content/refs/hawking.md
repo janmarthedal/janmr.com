@@ -1,5 +1,5 @@
 ---
-type: reference
+layout: reference
 title: God Created The Integers
 date: '2007'
 authors:

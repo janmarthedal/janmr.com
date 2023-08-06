@@ -2,7 +2,6 @@
 title: Continued Fractions and Continuants
 date: '2009-11-10'
 layout: post
-type: post
 tags:
   - algorithms
   - cpp

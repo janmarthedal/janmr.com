@@ -2,7 +2,6 @@
 title: 'MathJax, KaTeX and a lot of Math'
 date: '2015-01-11'
 layout: post
-type: post
 tags:
   - mathjax
   - katex

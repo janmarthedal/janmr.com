@@ -1,5 +1,5 @@
 ---
-type: reference
+layout: reference
 title: Concrete Mathematics
 date: '1994'
 authors:
