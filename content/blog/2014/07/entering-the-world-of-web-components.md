@@ -5,7 +5,6 @@ layout: post
 tags:
   - web-components
   - web-development
-  - post
 categories:
   - programming
 excerpt: >-

@@ -6,7 +6,6 @@ tags:
   - proof
   - pythagoras
   - visualization
-  - post
 categories:
   - mathematics
 excerpt: >-

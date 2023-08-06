@@ -4,7 +4,6 @@ date: '2017-02-23'
 layout: post
 tags:
   - mathml
-  - post
 categories:
   - web-math
 excerpt: >-

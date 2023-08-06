@@ -5,7 +5,6 @@ layout: post
 tags:
   - multiple-precision
   - numbers-project
-  - post
 categories:
   - programming
 excerpt: >-

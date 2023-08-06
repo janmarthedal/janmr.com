@@ -5,7 +5,6 @@ layout: post
 tags:
   - links
   - stackexchange
-  - post
 categories:
   - links
 excerpt: >-

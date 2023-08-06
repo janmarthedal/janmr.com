@@ -5,7 +5,6 @@ layout: post
 tags:
   - visualization
   - theorem
-  - post
 excerpt: The green circles will always be of equal size
 ---
 <figure>

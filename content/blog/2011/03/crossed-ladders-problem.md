@@ -5,7 +5,6 @@ layout: post
 tags:
   - geometry
   - nerd-sniping
-  - post
 categories:
   - mathematics
 excerpt: >-

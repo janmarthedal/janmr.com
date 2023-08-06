@@ -5,7 +5,6 @@ layout: post
 tags:
   - geometry
   - lines
-  - post
 categories:
   - mathematics
 excerpt: >-

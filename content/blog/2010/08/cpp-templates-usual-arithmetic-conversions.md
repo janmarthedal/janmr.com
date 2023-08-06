@@ -6,7 +6,6 @@ tags:
   - cpp
   - templates
   - data-types
-  - post
 categories:
   - programming
 excerpt: >-

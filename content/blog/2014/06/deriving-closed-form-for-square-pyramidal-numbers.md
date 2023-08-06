@@ -4,7 +4,6 @@ date: '2014-06-14'
 layout: post
 tags:
   - pyramidal-numbers
-  - post
 categories:
   - mathematics
 excerpt: >-

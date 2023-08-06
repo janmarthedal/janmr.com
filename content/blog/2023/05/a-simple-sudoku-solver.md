@@ -3,7 +3,6 @@ title: A Simple Sudoku Solver
 date: '2023-05-02'
 layout: post
 tags:
-  - post
   - rust
   - combinatorics
 categories:

@@ -5,7 +5,6 @@ layout: post
 tags:
   - trigonometry
   - visualization
-  - post
 categories:
   - mathematics
 excerpt: >-

@@ -5,7 +5,6 @@ layout: post
 tags:
   - combinatorics
   - ode
-  - post
 categories:
   - mathematics
 excerpt: >-

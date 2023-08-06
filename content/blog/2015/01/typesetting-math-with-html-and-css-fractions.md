@@ -4,7 +4,6 @@ date: '2015-01-24'
 layout: post
 tags:
   - math-typesetting
-  - post
 categories:
   - programming
 excerpt: >-

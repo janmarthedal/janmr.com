@@ -4,7 +4,6 @@ date: '2020-04-15'
 layout: post
 tags:
   - datetime
-  - post
 categories:
   - programming
 excerpt: >-

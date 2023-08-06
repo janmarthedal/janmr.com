@@ -5,7 +5,6 @@ layout: post
 tags:
   - combinatorial-game
   - game-theory
-  - post
 categories:
   - mathematics
 excerpt: >-

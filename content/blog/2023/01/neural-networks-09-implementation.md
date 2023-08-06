@@ -3,7 +3,6 @@ title: Neural Networks - Implementation
 date: '2023-01-22'
 layout: post
 tags:
-  - post
   - neural network
 categories:
   - machine learning

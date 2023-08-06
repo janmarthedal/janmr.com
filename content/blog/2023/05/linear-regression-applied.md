@@ -3,7 +3,6 @@ title: Linear Regression Applied
 date: '2023-05-05'
 layout: post
 tags:
-  - post
 categories:
   - machine learning
 excerpt: >-

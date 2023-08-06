@@ -3,7 +3,6 @@ title: Neural Networks - Back-propagation Derivation
 date: '2023-01-19'
 layout: post
 tags:
-  - post
   - neural network
 categories:
   - machine learning

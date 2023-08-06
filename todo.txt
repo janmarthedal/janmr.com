@@ -1,4 +1,3 @@
-- Remove post from tags (and excludeElement)
 - Remove tags and layout from references
 - Check date is present on posts
 - Check title is present on refs

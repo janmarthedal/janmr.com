@@ -4,7 +4,6 @@ date: '2011-05-31'
 layout: post
 tags:
   - functional-programming
-  - post
 categories:
   - programming
 excerpt: >-
