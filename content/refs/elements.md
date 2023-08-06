@@ -1,8 +1,5 @@
 ---
 title: Elements
-layout: reference
-tags:
-  - reference
 authors:
   - Euclid
 ---

@@ -1,9 +1,6 @@
 ---
 title: Elements of Programming
 date: '2007'
-layout: reference
-tags:
-  - reference
 authors:
   - Alexander A. Stepanov
   - Paul McJones

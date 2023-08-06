@@ -1,9 +1,6 @@
 ---
 title: Proofs without Words II
 date: '2000'
-layout: reference
-tags:
-  - reference
 authors:
   - Roger B. Nelsen
 isbn: '0883857219'

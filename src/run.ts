@@ -199,7 +199,7 @@ function writeTagPages(tagMap: Map<string, Array<Page>>) {
 
 function writeRefs(refs: Array<Page>) {
     for (const ref of refs) {
-        const output = renderLayout(ref.data.layout as string, { ...ref, metadata });
+        const output = renderLayout('reference', { ...ref, metadata });
         writeFile(ref.url, output);
     }
 }

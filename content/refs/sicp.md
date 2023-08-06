@@ -1,9 +1,6 @@
 ---
 title: Structure and Interpretation of Computer Programs
 date: '1996'
-layout: reference
-tags:
-  - reference
 authors:
   - Harold Abelson
   - Gerald Jay Sussman
