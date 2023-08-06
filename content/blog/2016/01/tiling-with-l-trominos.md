@@ -5,7 +5,6 @@ layout: post
 tags:
   - polyomino
   - tiling
-  - post
 categories:
   - mathematics
 excerpt: >-

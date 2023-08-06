@@ -5,7 +5,6 @@ layout: post
 tags:
   - book-review
   - recommended-reading
-  - post
 categories:
   - book-review
 excerpt: >-

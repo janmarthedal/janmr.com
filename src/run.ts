@@ -57,7 +57,6 @@ env.addFilter('parseDate', (date) => date.length === 4 ? new Date(`${date}-01-01
 env.addFilter('refReadableDate', (date) => date.length === 4 ? date : readableDateFormat.format(new Date(date)));
 env.addFilter('htmlDateString', (date) => date.toISOString().substring(0, 10));
 env.addFilter('readableDate', (date) => readableDateFormat.format(new Date(date)));
-env.addFilter('excludeElement', (list: Array<string>, element) => list.filter(item => item !== element));
 env.addFilter('rssLastUpdatedDate', rssLastUpdatedDate);
 env.addFilter('absoluteUrl', absoluteUrl);
 env.addFilter('dateToRfc3339', date => dateRfc3339(new Date(date)));
@@ -165,8 +164,6 @@ function makeTagMap(posts: Array<Page>): Map<string, Array<Page>> {
             list.push(post);
         }
     }
-    // TODO should not be necessary
-    tagMap.delete('post');
     return tagMap;
 }
 

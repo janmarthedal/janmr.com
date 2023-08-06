@@ -6,7 +6,6 @@ tags:
   - algorithms
   - numbers-project
   - binary-numbers
-  - post
 categories:
   - programming
 excerpt: >-

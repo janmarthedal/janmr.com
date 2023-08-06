@@ -5,7 +5,6 @@ layout: post
 tags:
   - prime-numbers
   - factorials
-  - post
 categories:
   - mathematics
 excerpt: >-

@@ -4,7 +4,6 @@ date: '2008-12-26'
 layout: post
 tags:
   - combinatorics
-  - post
 categories:
   - mathematics
 excerpt: >-

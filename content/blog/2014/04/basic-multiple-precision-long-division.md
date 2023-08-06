@@ -6,7 +6,6 @@ tags:
   - arithmetic
   - algorithms
   - multiple-precision
-  - post
 categories:
   - programming
 excerpt: >-

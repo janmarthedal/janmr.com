@@ -5,7 +5,6 @@ layout: post
 tags:
   - continued-fraction
   - rational-approximation
-  - post
 categories:
   - mathematics
 excerpt: >-

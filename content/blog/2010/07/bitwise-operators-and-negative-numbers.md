@@ -6,7 +6,6 @@ tags:
   - multiple-precision
   - numbers-project
   - bit-fiddling
-  - post
 categories:
   - mathematics
 excerpt: >-

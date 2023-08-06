@@ -6,7 +6,6 @@ tags:
   - proof
   - visualization
   - infinite-series
-  - post
 categories:
   - mathematics
 excerpt: "Consider the geometric series, s_r = sum_{k=0}^infty r^k = 1 + r + r^2 + r^3 + ..., for\_0 < r < 1. The goal is to find a closed-form expression for s_r. [...]"

@@ -8,7 +8,6 @@ tags:
   - cpp
   - multiple-precision
   - numbers-project
-  - post
 categories:
   - programming
 excerpt: "This article is the first in a series dealing with algorithms for multiple-precision arithmetic. The goal is to present both a theoretical foundation with high-level algorithm descriptions (based on Section\_4.3.1, The Classical Algorithms, of The Art of Computer Programming, Volume\_2, by Donald E. Knuth) and a portable C++ implementation of the algorithms. The theory and high-level algorithms will be quite universal and generic, whereas the presented code will be just one way to implement the algorithms in a specific programming language."

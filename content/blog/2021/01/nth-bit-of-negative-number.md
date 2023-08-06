@@ -4,7 +4,6 @@ date: '2021-01-09'
 layout: post
 tags:
   - bit-fiddling
-  - post
 excerpt: >-
   Assume a positive integer is given and we wish to get the value of the nth bit of the number's
   two's complement. Now if a fixed number of bits is used to represent the number, say 32 or 64, the two's

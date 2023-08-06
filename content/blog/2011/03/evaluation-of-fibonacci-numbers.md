@@ -5,7 +5,6 @@ layout: post
 tags:
   - algorithms
   - numbers-project
-  - post
 categories:
   - programming
   - mathematics

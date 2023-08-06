@@ -8,7 +8,6 @@ tags:
   - algorithms
   - python
   - rust
-  - post
 excerpt: Python and Rust library routines for generating all permutations of a list of objects is mentioned, as well as an algorithm for lexicographic r-permutation generation (in both pseudo and Rust code)
 ---
 Sometimes you would like to loop through all the different arrangements/permutations of a list of objects. For instance, all permutations of {A, B, C, D} are

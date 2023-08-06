@@ -5,7 +5,6 @@ layout: post
 tags:
   - visualization
   - theorem
-  - post
 excerpt: >-
   Given a triangle, start with a circle tangent to two sides. Then draw a new
   circle tangent to this first circle and a different pair of sides. Continue

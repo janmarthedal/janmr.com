@@ -6,7 +6,6 @@ tags:
   - arithmetic
   - geometry
   - visualization
-  - post
 categories:
   - mathematics
 excerpt: >-

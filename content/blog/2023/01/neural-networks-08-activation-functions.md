@@ -3,7 +3,6 @@ title: Neural Networks - Activation Functions
 date: '2023-01-21'
 layout: post
 tags:
-  - post
   - neural network
 categories:
   - machine learning

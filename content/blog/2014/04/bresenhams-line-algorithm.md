@@ -5,7 +5,6 @@ layout: post
 tags:
   - raster-graphics
   - algorithms
-  - post
 categories:
   - programming
   - mathematics

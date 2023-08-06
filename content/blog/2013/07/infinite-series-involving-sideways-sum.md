@@ -7,7 +7,6 @@ tags:
   - binary-numbers
   - stackexchange
   - nerd-sniping
-  - post
 categories:
   - mathematics
 excerpt: >-

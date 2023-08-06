@@ -3,7 +3,6 @@ title: Linear Regression Basics
 date: '2023-05-04'
 layout: post
 tags:
-  - post
 categories:
   - machine learning
 excerpt: >-

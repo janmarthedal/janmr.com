@@ -4,7 +4,6 @@ date: '2015-04-26'
 layout: post
 tags:
   - web-development
-  - post
 categories:
   - development
 excerpt: >-
