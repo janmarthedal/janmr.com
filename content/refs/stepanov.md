@@ -1,4 +1,5 @@
 ---
+type: reference
 title: Elements of Programming
 date: '2007'
 authors:

@@ -2,6 +2,7 @@
 title: Evaluation of Powers
 date: '2011-01-30'
 layout: post
+type: post
 tags:
   - algorithms
   - numbers-project

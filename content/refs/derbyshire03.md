@@ -1,4 +1,5 @@
 ---
+type: reference
 title: Prime Obsession
 date: '2004'
 authors:

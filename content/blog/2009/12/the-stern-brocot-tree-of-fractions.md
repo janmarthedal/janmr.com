@@ -2,6 +2,7 @@
 title: The Stern-Brocot Tree of Fractions
 date: '2009-12-04'
 layout: post
+type: post
 tags:
   - continued-fraction
   - stern-brocot-tree

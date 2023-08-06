@@ -11,6 +11,7 @@ import markdownPrism from 'markdown-it-prism';
 import { absoluteUrl } from './rss/absoluteUrl';
 import { rssLastUpdatedDate } from './rss/rssLastUpdatedDate';
 import { dateRfc3339 } from './rss/dateRfc3339';
+import assert from 'assert';
 
 const SOURCE_DIR = 'content';
 const COPY_PATTERNS = ['files/**/*', 'media/**/*', 'lab/**/*.js', 'lab/**/*.js.map', 'icon-48x48.png'];
@@ -38,9 +39,9 @@ const metadata = {
 };
 
 enum PageType {
-    Post,
-    Reference,
-    Other,
+    Post = 'post',
+    Reference = 'reference',
+    Other = 'other',
 }
 
 interface Page {
@@ -50,7 +51,7 @@ interface Page {
     title?: string;
     date?: Date;
     content: string;
-    data: Record<string, string | Array<string>>;
+    data: Record<string, unknown>;
 }
 
 const readableDateFormat = new Intl.DateTimeFormat('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
@@ -123,30 +124,23 @@ function renderLayout(layout: string, page: Record<string, unknown>): string {
     }
 }
 
+function permalinkFromFilename(filename: string): string {
+    const extension = extname(filename);
+    const base = filename.slice(0, -extension.length);
+    return base === 'index' || base.endsWith('/index') ? base + '.html' : base + '/index.html';
+}
+
 function loadPages(): Array<Page> {
     const pages: Array<Page> = [];
 
     for (const filename of globIterateSync(SOURCE_PATTERN, { cwd: SOURCE_DIR, nodir: true, ignore: IGNORE_PATTERNS })) {
         console.log('read', filename);
         const extension = extname(filename);
-        let { data, content } = matter.read(join(SOURCE_DIR, filename));
-        let url = data.permalink;
-        if (!url) {
-            url = filename.slice(0, -extension.length);
-            if (!(url === 'index' || url.endsWith('/index'))) {
-                url += '/index';
-            }
-            url += '.html';
-        }
+        const { data, content } = matter.read(join(SOURCE_DIR, filename));
+        const url = data.permalink || permalinkFromFilename(filename);
         const date = data.date ? new Date(data.date as string) : undefined;
         const title = data.title as string | undefined;
-        let type = PageType.Other;
-        if (filename.startsWith('blog/')) {
-            type = PageType.Post;
-        } else if (filename.startsWith('refs/')) {
-            type = PageType.Reference;
-        }
-        pages.push({ type, extension, url, title, date, data, content });
+        pages.push({ type: data.type || PageType.Other, extension, url, title, date, data, content });
     }
 
     return pages;
@@ -161,8 +155,18 @@ function processMarkdown(pages: Array<Page>) {
     }
 }
 
+function processNunjucks(pages: Array<Page>, collections: Record<string, Array<Page>>) {
+    for (const page of pages) {
+        if (page.extension === '.njk') {
+            page.content = env.renderString(page.content, { ...page, collections, metadata, content: undefined });
+            page.extension = '.html';
+        }
+    }
+}
+
 function writePages(pages: Array<Page>) {
     for (const page of pages) {
+        assert(page.extension === '.html');
         const output = page.data.layout
             ? renderLayout(page.data.layout as string, { ...page, metadata })
             : env.renderString(page.content, { ...page, metadata, content: undefined });
@@ -170,10 +174,10 @@ function writePages(pages: Array<Page>) {
     }
 }
 
-function makeTagMap(posts: Array<Page>): Map<string, Array<Page>> {
+function makeTagPages(posts: Array<Page>): Array<Page> {
     const tagMap = new Map<string, Array<Page>>();
     for (const post of posts) {
-        for (const tag of post.data.tags || []) {
+        for (const tag of (post.data.tags as Array<string> | undefined) || []) {
             let list = tagMap.get(tag);
             if (!list) {
                 list = [];
@@ -182,7 +186,14 @@ function makeTagMap(posts: Array<Page>): Map<string, Array<Page>> {
             list.push(post);
         }
     }
-    return tagMap;
+    return Array.from(tagMap.entries(), ([tag, posts]): Page => ({
+        type: PageType.Other,
+        extension: '.njk',
+        url: `blog/tags/${tag}/index.html`,
+        title: `Posts tagged ${tag}`,  // TODO move to layout
+        data: { layout: 'tag-page', tag, posts: posts.sort((a, b) => +a.date! - +b.date!)},
+        content: '',
+    }));
 }
 
 function writePosts(posts: Array<Page>) {
@@ -195,26 +206,6 @@ function writePosts(posts: Array<Page>) {
     }
 }
 
-function writePostList(posts: Array<Page>) {
-    // move title to front matter when possible
-    const output = renderLayout('post-list', { title: metadata.title, posts, metadata });
-    writeFile('blog/index.html', output);
-}
-
-function writeTagList(tags: Array<string>) {
-    tags.sort((a, b) => a.localeCompare(b));
-    const output = renderLayout('tag-list', { tags, metadata });
-    writeFile('blog/tags/index.html', output);
-}
-
-function writeTagPages(tagMap: Map<string, Array<Page>>) {
-    for (const [tag, posts] of tagMap) {
-        posts.sort((a, b) => +a.date! - +b.date!);
-        const output = renderLayout('tag-page', { tag, posts, metadata });
-        writeFile(`blog/tags/${tag}/index.html`, output);
-    }
-}
-
 function writeRefs(refs: Array<Page>) {
     for (const ref of refs) {
         const output = renderLayout('reference', { ...ref, metadata });
@@ -222,33 +213,20 @@ function writeRefs(refs: Array<Page>) {
     }
 }
 
-function writeRefList(refs: Array<Page>) {
-    // move title to front matter when possible
-    const output = renderLayout('ref-list', { title: 'References', refs, metadata });
-    writeFile('refs/index.html', output);
-}
-
-function writeFeed(posts: Array<Page>) {
-    const output = renderLayout('feed', { posts, metadata });
-    writeFile('blog/feed.xml', output);
-}
-
 (async () => {
     await processCss();
     copyFiles();
     const pages = loadPages();
-    processMarkdown(pages);
-    writePages(pages.filter(p => p.type === PageType.Other));
     const posts = pages.filter(p => p.type === PageType.Post);
-    posts.sort((a, b) => +a.date! - +b.date!);
-    writePosts(posts);
-    writePostList(posts);
-    const tagMap = makeTagMap(posts);
-    writeTagList(Array.from(tagMap.keys()));
-    writeTagPages(tagMap);
     const refs = pages.filter(p => p.type === PageType.Reference);
+    const tags = makeTagPages(posts);
+    posts.sort((a, b) => +a.date! - +b.date!);
     refs.sort((a, b) => (a.title as string).localeCompare((b.title as string)));
+    tags.sort((a, b) => (a.data.tag as string).localeCompare(b.data.tag as string));
+    pages.push(...tags);
+    processMarkdown(pages);
+    processNunjucks(pages, { posts, refs, tags });
+    writePages(pages.filter(p => p.type === PageType.Other));
+    writePosts(posts);
     writeRefs(refs);
-    writeRefList(refs);
-    writeFeed(posts);
 })();

@@ -1,8 +1,9 @@
 ---
+title: janmr blog
 layout: blog-page
 ---
 <div class="post-list">
-  {%- for post in posts | reverse -%}
+  {%- for post in collections.posts | reverse -%}
   <h5>
     <a href="{{ post.url | url }}">{{ post.title }}</a> <small>{{ post.date | readableDate }}</small>
   </h5>

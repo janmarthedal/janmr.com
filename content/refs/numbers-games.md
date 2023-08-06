@@ -1,4 +1,5 @@
 ---
+type: reference
 title: On Numbers and Games
 date: '2001'
 authors:

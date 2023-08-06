@@ -1,8 +1,9 @@
 ---
+title: References
 layout: blog-page
 ---
 <div>
-  {%- for post in refs -%}
+  {%- for post in collections.refs -%}
   <h5>
     <a href="{{ post.url | url }}">{{ post.title }}</a></small>
   </h5>

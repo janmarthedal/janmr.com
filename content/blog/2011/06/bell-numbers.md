@@ -2,6 +2,7 @@
 title: Bell Numbers
 date: '2011-06-23'
 layout: post
+type: post
 tags:
   - combinatorics
   - ode

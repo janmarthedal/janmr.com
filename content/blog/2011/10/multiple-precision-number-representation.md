@@ -2,6 +2,7 @@
 title: Multiple-Precision Number Representation
 date: '2011-10-05'
 layout: post
+type: post
 tags:
   - multiple-precision
   - numbers-project

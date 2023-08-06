@@ -2,6 +2,7 @@
 title: Wrapping HTML inside MathML
 date: '2017-02-23'
 layout: post
+type: post
 tags:
   - mathml
 categories:

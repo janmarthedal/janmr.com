@@ -1,4 +1,5 @@
 ---
+type: reference
 title: Matrix Computations
 date: '1996'
 authors:

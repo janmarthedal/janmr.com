@@ -1,4 +1,5 @@
 ---
+type: reference
 title: The Art of Computer Programming, Volume 1
 date: '1997'
 authors:

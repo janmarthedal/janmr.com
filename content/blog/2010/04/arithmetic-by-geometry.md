@@ -2,6 +2,7 @@
 title: Arithmetic by Geometry
 date: '2010-04-24'
 layout: post
+type: post
 tags:
   - arithmetic
   - geometry

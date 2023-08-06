@@ -2,6 +2,7 @@
 title: 'Implementing Multiple-Precision Arithmetic, Part 2'
 date: '2009-08-20'
 layout: post
+type: post
 tags:
   - arithmetic
   - algorithms

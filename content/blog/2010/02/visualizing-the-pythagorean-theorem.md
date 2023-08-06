@@ -2,6 +2,7 @@
 title: Visualizing the Pythagorean Theorem
 date: '2010-02-14'
 layout: post
+type: post
 tags:
   - proof
   - pythagoras

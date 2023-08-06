@@ -1,4 +1,5 @@
 ---
+type: reference
 title: The Book of Numbers
 date: '1996'
 authors:

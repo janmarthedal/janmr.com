@@ -2,6 +2,7 @@
 title: Multiple-Precision Addition
 date: '2011-10-12'
 layout: post
+type: post
 tags:
   - algorithms
   - multiple-precision

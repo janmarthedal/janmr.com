@@ -1,9 +1,0 @@
----
-layout: blog-page
----
-<h2>Tags</h2>
-
-{% for tag in tags %}
-  {% set tagUrl %}/blog/tags/{{ tag }}/{% endset %}
-  <a class="label" href="{{ tagUrl | url }}" class="tag">{{ tag }}</a>
-{% endfor %}

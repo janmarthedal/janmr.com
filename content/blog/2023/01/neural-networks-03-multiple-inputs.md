@@ -2,6 +2,7 @@
 title: Neural Networks - Multiple Inputs
 date: '2023-01-16'
 layout: post
+type: post
 tags:
   - neural-network
 categories:
