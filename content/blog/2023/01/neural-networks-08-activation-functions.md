@@ -3,9 +3,9 @@ title: Neural Networks - Activation Functions
 date: '2023-01-21'
 layout: post
 tags:
-  - neural network
+  - neural-network
 categories:
-  - machine learning
+  - machine-learning
 excerpt: >-
   On activation functions for neural networks.
 ---

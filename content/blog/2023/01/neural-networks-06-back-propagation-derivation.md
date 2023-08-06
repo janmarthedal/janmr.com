@@ -3,9 +3,9 @@ title: Neural Networks - Back-propagation Derivation
 date: '2023-01-19'
 layout: post
 tags:
-  - neural network
+  - neural-network
 categories:
-  - machine learning
+  - machine-learning
 excerpt: >-
   We show how to compute the gradient of a neural network error function.
 ---

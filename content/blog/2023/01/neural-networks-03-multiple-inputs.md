@@ -3,9 +3,9 @@ title: Neural Networks - Multiple Inputs
 date: '2023-01-16'
 layout: post
 tags:
-  - neural network
+  - neural-network
 categories:
-  - machine learning
+  - machine-learning
 excerpt: >-
   We look at vectorizing the evaluation of a neural network when we have multiple inputs.
 ---

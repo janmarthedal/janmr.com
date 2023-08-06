@@ -3,9 +3,9 @@ title: Neural Networks - Gradient Descent
 date: '2023-01-18'
 layout: post
 tags:
-  - neural network
+  - neural-network
 categories:
-  - machine learning
+  - machine-learning
 excerpt: >-
   We describe a method for finding a local minimum for a function of several real variables, Gradient Descent.
 ---

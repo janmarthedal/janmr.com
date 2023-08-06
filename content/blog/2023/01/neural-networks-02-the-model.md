@@ -3,9 +3,9 @@ title: Neural Networks - The Model
 date: '2023-01-15'
 layout: post
 tags:
-  - neural network
+  - neural-network
 categories:
-  - machine learning
+  - machine-learning
 excerpt: >-
   We define the neural network that we will be exploring in the following posts.
 ---

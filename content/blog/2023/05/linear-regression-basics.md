@@ -4,7 +4,7 @@ date: '2023-05-04'
 layout: post
 tags:
 categories:
-  - machine learning
+  - machine-learning
 excerpt: >-
   Linear regression is a common and powerful method for modelling the relationship
   between some input vectors and some output scalars. This post explains the basics

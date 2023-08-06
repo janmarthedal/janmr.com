@@ -4,7 +4,7 @@ date: '2023-05-05'
 layout: post
 tags:
 categories:
-  - machine learning
+  - machine-learning
 excerpt: >-
   This post looks at some examples of linear regression, as introduced in
   a previous post
