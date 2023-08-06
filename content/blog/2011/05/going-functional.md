@@ -2,6 +2,7 @@
 title: Going Functional
 date: '2011-05-31'
 layout: post
+type: post
 tags:
   - functional-programming
 categories:

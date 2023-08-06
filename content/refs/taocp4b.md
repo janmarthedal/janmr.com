@@ -1,4 +1,5 @@
 ---
+type: reference
 title: The Art of Computer Programming, Volume 4B
 date: '2023'
 authors:

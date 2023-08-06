@@ -2,6 +2,7 @@
 title: Neural Networks - Implementation
 date: '2023-01-22'
 layout: post
+type: post
 tags:
   - neural-network
 categories:

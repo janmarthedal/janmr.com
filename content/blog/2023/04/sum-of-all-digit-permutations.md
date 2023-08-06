@@ -2,6 +2,7 @@
 title: A Sum of All Digit Permutations
 date: '2023-04-10'
 layout: post
+type: post
 tags:
   - nerd-sniping
   - combinatorics

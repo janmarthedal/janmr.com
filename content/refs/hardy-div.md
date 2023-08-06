@@ -1,4 +1,5 @@
 ---
+type: reference
 title: Divergent Series
 date: '2000'
 authors:

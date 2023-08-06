@@ -2,6 +2,7 @@
 title: Fast Evaluation of Fibonacci Numbers
 date: '2011-03-11'
 layout: post
+type: post
 tags:
   - algorithms
   - numbers-project

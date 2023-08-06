@@ -1,4 +1,5 @@
 ---
+type: reference
 title: Continued Fractions
 date: '1997'
 authors:

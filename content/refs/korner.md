@@ -1,4 +1,5 @@
 ---
+type: reference
 title: The Pleasures of Counting
 date: '1996'
 authors:

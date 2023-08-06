@@ -2,6 +2,7 @@
 title: Remembering Trigonometric Addition Formulas
 date: '2009-09-23'
 layout: post
+type: post
 tags:
   - trigonometry
   - visualization

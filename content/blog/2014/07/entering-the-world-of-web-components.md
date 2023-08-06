@@ -2,6 +2,7 @@
 title: Entering the World of Web Components
 date: '2014-07-02'
 layout: post
+type: post
 tags:
   - web-components
   - web-development

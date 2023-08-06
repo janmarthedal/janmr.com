@@ -1,4 +1,5 @@
 ---
+type: reference
 title: Handbook of Mathematical Functions
 date: '1965'
 authors:

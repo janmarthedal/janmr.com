@@ -2,6 +2,7 @@
 title: Neural Networks - The Optimization Problem
 date: '2023-01-17'
 layout: post
+type: post
 tags:
   - neural-network
 categories:

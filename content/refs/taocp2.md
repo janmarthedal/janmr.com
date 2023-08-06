@@ -1,4 +1,5 @@
 ---
+type: reference
 title: The Art of Computer Programming, Volume 2
 date: '1998'
 authors:

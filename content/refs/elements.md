@@ -1,4 +1,5 @@
 ---
+type: reference
 title: Elements
 authors:
   - Euclid
