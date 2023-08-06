@@ -88,17 +88,17 @@ function writeFile(filename: string, contents: string | Buffer) {
     writeFileSync(path, contents);
 }
 
-async function processCss() {
+async function processCss(): Promise<Page> {
     let input = '';
     for (const filename of CSS_INPUT) {
-        let content = readFile(filename);
+        let buffer = readFile(filename);
         if (filename.endsWith('.less')) {
-            content = (await less.render(content)).css;
+            buffer = (await less.render(buffer)).css;
         }
-        input += content;
+        input += buffer;
     }
-    const output = new cleanCSS({}).minify(input).styles;
-    writeFile(CSS_OUTPUT, output);
+    const content = new cleanCSS({}).minify(input).styles;
+    return { type: PageType.Other, extension: '.css', url: CSS_OUTPUT, content, data: {} };
 }
 
 function copyFiles() {
@@ -171,7 +171,7 @@ function processNunjucks(pages: Array<Page>, collections: Record<string, Array<P
 
 function writePages(pages: Array<Page>) {
     for (const page of pages) {
-        assert(page.extension === '.html');
+        assert(page.extension === '.html' || page.extension === '.css');
         const output = page.data.layout
             ? renderLayout(page.data.layout as string, { ...page, metadata })
             : env.renderString(page.content, { ...page, metadata, content: undefined });
@@ -210,9 +210,10 @@ function decoratePosts(posts: Array<Page>) {
 }
 
 (async () => {
-    await processCss();
     copyFiles();
     const pages = loadPages();
+    const cssPage = await processCss();
+    pages.push(cssPage);
     const posts = pages.filter(p => p.type === PageType.Post);
     const refs = pages.filter(p => p.type === PageType.Reference);
     const tags = makeTagPages(posts);
