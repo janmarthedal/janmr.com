@@ -37,7 +37,15 @@ const metadata = {
     environment: process.env.BUILD_ENV,
 };
 
+enum PageType {
+    Post,
+    Reference,
+    Other,
+}
+
 interface Page {
+    type: PageType;
+    extension: string;
     url: string;
     title?: string;
     date?: Date;
@@ -115,43 +123,51 @@ function renderLayout(layout: string, page: Record<string, unknown>): string {
     }
 }
 
-function processFiles(): { posts: Array<Page>, refs: Array<Page> } {
-    const posts: Array<Page> = [];
-    const refs: Array<Page> = [];
+function loadPages(): Array<Page> {
+    const pages: Array<Page> = [];
 
     for (const filename of globIterateSync(SOURCE_PATTERN, { cwd: SOURCE_DIR, nodir: true, ignore: IGNORE_PATTERNS })) {
-        console.log('process', filename);
-        const ext = extname(filename);
-        if (!['.md', '.njk'].includes(ext)) {
-            throw new Error(`Unsupported extension ${ext} for ${filename}`);
-        }
+        console.log('read', filename);
+        const extension = extname(filename);
         let { data, content } = matter.read(join(SOURCE_DIR, filename));
         let url = data.permalink;
         if (!url) {
-            url = filename.slice(0, -ext.length);
+            url = filename.slice(0, -extension.length);
             if (!(url === 'index' || url.endsWith('/index'))) {
                 url += '/index';
             }
             url += '.html';
         }
-        if (ext === '.md') {
-            content = md.render(content);
-        }
         const date = data.date ? new Date(data.date as string) : undefined;
-        const title = data.title as string;
+        const title = data.title as string | undefined;
+        let type = PageType.Other;
         if (filename.startsWith('blog/')) {
-            posts.push({ url, title, date, data, content });
+            type = PageType.Post;
         } else if (filename.startsWith('refs/')) {
-            refs.push({ url, title, date, data, content });
-        } else {
-            const output = data.layout
-                ? renderLayout(data.layout, { title, data, metadata, content })
-                : env.renderString(content, { title, data, metadata });
-            writeFile(url, output);
+            type = PageType.Reference;
         }
+        pages.push({ type, extension, url, title, date, data, content });
     }
 
-    return { posts, refs };
+    return pages;
+}
+
+function processMarkdown(pages: Array<Page>) {
+    for (const page of pages) {
+        if (page.extension === '.md') {
+            page.content = md.render(page.content);
+            page.extension = '.html';
+        }
+    }
+}
+
+function writePages(pages: Array<Page>) {
+    for (const page of pages) {
+        const output = page.data.layout
+            ? renderLayout(page.data.layout as string, { ...page, metadata })
+            : env.renderString(page.content, { ...page, metadata, content: undefined });
+        writeFile(page.url, output);
+    }
 }
 
 function makeTagMap(posts: Array<Page>): Map<string, Array<Page>> {
@@ -220,13 +236,17 @@ function writeFeed(posts: Array<Page>) {
 (async () => {
     await processCss();
     copyFiles();
-    const { posts, refs } = processFiles();
+    const pages = loadPages();
+    processMarkdown(pages);
+    writePages(pages.filter(p => p.type === PageType.Other));
+    const posts = pages.filter(p => p.type === PageType.Post);
     posts.sort((a, b) => +a.date! - +b.date!);
     writePosts(posts);
     writePostList(posts);
     const tagMap = makeTagMap(posts);
     writeTagList(Array.from(tagMap.keys()));
     writeTagPages(tagMap);
+    const refs = pages.filter(p => p.type === PageType.Reference);
     refs.sort((a, b) => (a.title as string).localeCompare((b.title as string)));
     writeRefs(refs);
     writeRefList(refs);
