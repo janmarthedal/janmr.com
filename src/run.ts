@@ -46,6 +46,8 @@ interface Page {
 }
 
 const readableDateFormat = new Intl.DateTimeFormat('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+const jsDateToISO = (date: Date) => date.toISOString().slice(0, 10);
+const jsDateToReadable = (date: Date) => readableDateFormat.format(date);
 
 const env = new nunjucks.Environment(new nunjucks.FileSystemLoader(LAYOUT_DIR), { autoescape: true });
 env.addFilter('url', (name: string) => {
@@ -53,13 +55,13 @@ env.addFilter('url', (name: string) => {
     return path.endsWith('/index.html') ? path.slice(0, -10) : path;
 });
 env.addFilter('fixLineBreaks', str => str.replace(/ (\d+)/g, '&nbsp;$1'));
-env.addFilter('parseDate', (date) => date.length === 4 ? new Date(`${date}-01-01`) : new Date(date));
-env.addFilter('refReadableDate', (date) => date.length === 4 ? date : readableDateFormat.format(new Date(date)));
-env.addFilter('htmlDateString', (date) => date.toISOString().substring(0, 10));
-env.addFilter('readableDate', (date) => readableDateFormat.format(new Date(date)));
+env.addFilter('refHtmlDateString', (date) => date.length === 4 ? date : jsDateToISO(new Date(date)));
+env.addFilter('refReadableDate', (date) => date.length === 4 ? date : jsDateToReadable(new Date(date)));
+env.addFilter('htmlDateString', jsDateToISO);
+env.addFilter('readableDate', jsDateToReadable);
 env.addFilter('rssLastUpdatedDate', rssLastUpdatedDate);
 env.addFilter('absoluteUrl', absoluteUrl);
-env.addFilter('dateToRfc3339', date => dateRfc3339(new Date(date)));
+env.addFilter('dateToRfc3339', dateRfc3339);
 
 const md = new MarkdownIt({ html: true });
 md.use(markdownKaTeX);
