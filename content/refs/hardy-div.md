@@ -1,9 +1,6 @@
 ---
 title: Divergent Series
 date: '2000'
-layout: reference
-tags:
-  - reference
 authors:
   - Godfrey Harold Hardy
 isbn: 0821826492
