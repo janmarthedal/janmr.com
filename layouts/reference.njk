@@ -8,7 +8,7 @@ layout: blog-page
 {%- endfor -%}
 
 {%- if data.date -%}
-<p>Date: <time datetime="{{ data.date }}">{{ data.date | refReadableDate }}</time></p>
+<p>Date: <time datetime="{{ data.date | refHtmlDateString }}">{{ data.date | refReadableDate }}</time></p>
 {%- endif -%}
 
 {%- if data.isbn -%}
