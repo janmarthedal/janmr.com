@@ -3,9 +3,9 @@ title: Neural Networks - The Optimization Problem
 date: '2023-01-17'
 layout: post
 tags:
-  - neural network
+  - neural-network
 categories:
-  - machine learning
+  - machine-learning
 excerpt: >-
   We introduce an error function to minimize in order to fit a training set as best as possible.
 ---

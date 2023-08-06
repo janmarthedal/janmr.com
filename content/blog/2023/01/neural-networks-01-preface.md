@@ -3,9 +3,9 @@ title: Neural Networks - Preface
 date: '2023-01-14'
 layout: post
 tags:
-  - neural network
+  - neural-network
 categories:
-  - machine learning
+  - machine-learning
 excerpt: >-
   Kicking off a new blog series on Neural Networks
 ---
