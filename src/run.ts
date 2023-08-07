@@ -1,3 +1,4 @@
+import assert from 'assert';
 import { mkdirSync, readFileSync, writeFileSync } from 'fs';
 import { dirname, extname, join } from 'path';
 import { globIterateSync } from 'glob';
@@ -11,7 +12,6 @@ import markdownPrism from 'markdown-it-prism';
 import { absoluteUrl } from './rss/absoluteUrl';
 import { rssLastUpdatedDate } from './rss/rssLastUpdatedDate';
 import { dateRfc3339 } from './rss/dateRfc3339';
-import assert from 'assert';
 
 const SOURCE_DIR = 'content';
 const COPY_PATTERNS = ['files/**/*', 'media/**/*', 'lab/**/*.js', 'lab/**/*.js.map', 'icon-48x48.png'];
@@ -19,7 +19,7 @@ const CSS_INPUT = ['css/normalize.css', 'css/styles.less'];
 const CSS_OUTPUT = 'css/styles.css';
 const SOURCE_PATTERN = '**/*';
 const SITE_DIR = '_site';
-const IGNORE_PATTERNS = [...COPY_PATTERNS, ...CSS_INPUT];
+const IGNORE_PATTERNS = COPY_PATTERNS;
 const LAYOUT_DIR = 'layouts';
 
 const metadata = {
@@ -38,10 +38,10 @@ const metadata = {
     environment: process.env.BUILD_ENV,
 };
 
-enum PageType {
-    Post = 'post',
-    Reference = 'reference',
-    Other = 'other',
+const enum PageType {
+    Post,
+    Reference,
+    Other,
 }
 
 interface Page {
@@ -76,11 +76,6 @@ const md = new MarkdownIt({ html: true });
 md.use(markdownKaTeX);
 md.use(markdownPrism);
 
-function readFile(filename: string): string {
-    const path = join(SOURCE_DIR, filename);
-    return readFileSync(path, 'utf8');
-}
-
 function writeFile(filename: string, contents: string | Buffer) {
     console.log('write', filename);
     const path = join(SITE_DIR, filename);
@@ -88,17 +83,13 @@ function writeFile(filename: string, contents: string | Buffer) {
     writeFileSync(path, contents);
 }
 
-async function processCss(): Promise<Page> {
+function minifyCss(cssPages: Array<Page>, url: string): Page {
     let input = '';
-    for (const filename of CSS_INPUT) {
-        let buffer = readFile(filename);
-        if (filename.endsWith('.less')) {
-            buffer = (await less.render(buffer)).css;
-        }
-        input += buffer;
+    for (const page of cssPages) {
+        input += page.content;
     }
     const content = new cleanCSS({}).minify(input).styles;
-    return { type: PageType.Other, extension: '.css', url: CSS_OUTPUT, content, data: {} };
+    return { type: PageType.Other, extension: '.css', url, content, data: {} };
 }
 
 function copyFiles() {
@@ -135,20 +126,36 @@ function loadPages(): Array<Page> {
         globIterateSync(SOURCE_PATTERN, { cwd: SOURCE_DIR, nodir: true, ignore: IGNORE_PATTERNS }),
         (filename: string): Page => {
             console.log('read', filename);
-            const extension = extname(filename);
-            const { data, content } = matter.read(join(SOURCE_DIR, filename));
-            const url = data.permalink || permalinkFromFilename(filename);
-            const date = data.date ? new Date(data.date as string) : undefined;
-            const title = data.title as string | undefined;
-            let type = PageType.Other;
-            if (data.layout === 'post') {
-                type = PageType.Post;
-            } else if (data.layout === 'reference') {
-                type = PageType.Reference;
+            const buffer = readFileSync(join(SOURCE_DIR, filename), 'utf8');
+            if (buffer.startsWith('---\n')) {
+                const { data, content } = matter.read(join(SOURCE_DIR, filename));
+                const url = data.permalink || permalinkFromFilename(filename);
+                const date = data.date ? new Date(data.date as string) : undefined;
+                const title = data.title as string | undefined;
+                let type = PageType.Other;
+                if (data.layout === 'post') {
+                    type = PageType.Post;
+                } else if (data.layout === 'reference') {
+                    type = PageType.Reference;
+                }
+                const extension = extname(filename);
+                return { type, extension, url, title, date, data, content };
+            } else {
+                const extension = extname(filename);
+                return { type: PageType.Other, extension, url: filename, data: {}, content: buffer };
             }
-            return { type, extension, url, title, date, data, content };
         }
     );
+}
+
+async function processLess(pages: Array<Page>) {
+    for (const page of pages) {
+        if (page.extension === '.less') {
+            const renderOutput = await less.render(page.content);
+            page.content = renderOutput.css;
+            page.extension = '.css';
+        }
+    }
 }
 
 function processMarkdown(pages: Array<Page>) {
@@ -209,10 +216,19 @@ function decoratePosts(posts: Array<Page>) {
     }
 }
 
+function extractPage(pages: Array<Page>, url: string): Page {
+    const index = pages.findIndex(p => p.url === url);
+    if (index === -1) {
+        throw new Error(`extractPage: page ${url} not found`);
+    }
+    return pages.splice(index, 1)[0];
+}
+
 (async () => {
     copyFiles();
     const pages = loadPages();
-    const cssPage = await processCss();
+    await processLess(pages);
+    const cssPage = minifyCss(CSS_INPUT.map(url => extractPage(pages, url)), CSS_OUTPUT);
     pages.push(cssPage);
     const posts = pages.filter(p => p.type === PageType.Post);
     const refs = pages.filter(p => p.type === PageType.Reference);
