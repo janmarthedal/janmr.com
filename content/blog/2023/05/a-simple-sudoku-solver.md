@@ -97,3 +97,8 @@ with more than 20000 nodes.
 [The Art of Computer Programming, Volume 4B](/refs/taocp4b), Section 7.2.2.1, also
 considers sudoku puzzles along with a method for solving them and other
 interesting information on these puzzles and backtracking in general.
+
+<div class="post-note">
+  Feel free to leave any question, correction or comment in this
+  <a href="https://mathstodon.xyz/@janmr/110298506018153202">Mastodon thread</a>.
+</div>

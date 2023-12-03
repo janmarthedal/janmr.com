@@ -57,3 +57,8 @@ Some extra resources to check out:
 - [The Art of Computer Programming, Volume&nbsp;2](/refs/taocp2/), Section&nbsp;4.2.2, by Donald&nbsp;E. Knuth.
 - [Theory behind floating point comparisons](https://www.boost.org/doc/libs/1_83_0/libs/test/doc/html/boost_test/testing_tools/extended_comparison/floating_point/floating_points_comparison_theory.html) from the Boost C++ library.
 - [What Every Computer Scientist Should Know About Floating-Point Arithmetic](/refs/floating-point-arithmetic/) by David Goldberg.
+
+<div class="post-note">
+  Feel free to leave any question, correction or comment in this
+  <a href="https://mathstodon.xyz/@janmr/111515835930659320">Mastodon thread</a>.
+</div>
