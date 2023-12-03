@@ -49,3 +49,8 @@ $$
 b_{nd} = \frac{(10^d-1)(n+1)!}{18(n-d)!}
 $$
 where, of course, $a_n=b_{nn}$.
+
+<div class="post-note">
+  Feel free to leave any question, correction or comment in this
+  <a href="https://mathstodon.xyz/@janmr/110184431051809645">Mastodon thread</a>.
+</div>
