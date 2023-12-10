@@ -51,6 +51,8 @@ interface Page {
     title?: string;
     date?: Date;
     content: string;
+    useKaTeX?: boolean;
+    usePrism?: boolean;
     data: Record<string, unknown>;
 }
 
@@ -158,11 +160,21 @@ async function processLess(pages: Array<Page>) {
     }
 }
 
+function contentUsesKaTeX(content: string): boolean {
+    return content.includes('<span class="katex">');
+}
+
+function contentUsesPrism(content: string): boolean {
+    return content.includes('<pre class="language-');
+}
+
 function processMarkdown(pages: Array<Page>) {
     for (const page of pages) {
         if (page.extension === '.md') {
             page.content = md.render(page.content);
             page.extension = '.html';
+            page.useKaTeX = contentUsesKaTeX(page.content);
+            page.usePrism = contentUsesPrism(page.content);
         }
     }
 }

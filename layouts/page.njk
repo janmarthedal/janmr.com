@@ -1,7 +1,11 @@
 {% extends "base.njk" %}
 {% block head -%}
+{%- if useKaTeX -%}
 <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/katex@0.16.7/dist/katex.min.css">
+{% endif -%}
+{%- if usePrism -%}
 <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/prismjs@1.20.0/themes/prism.css">
+{% endif -%}
 <link rel="stylesheet" href="{{ '/css/styles.css' | url }}">
 {%- endblock %}
 {% block content -%}
