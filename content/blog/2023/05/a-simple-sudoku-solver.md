@@ -10,6 +10,7 @@ categories:
 excerpt: >-
   This post will describe a simple way to computationally find all solutions of a
   given sudoku puzzle
+mastodon: https://mathstodon.xyz/@janmr/110298506018153202
 ---
 Sudoku is a popular puzzle and for the past 15 years or so, it has been hard to
 find a newspaper that didn't contain at least one sudoku puzzle.
@@ -97,8 +98,3 @@ with more than 20000 nodes.
 [The Art of Computer Programming, Volume 4B](/refs/taocp4b), Section 7.2.2.1, also
 considers sudoku puzzles along with a method for solving them and other
 interesting information on these puzzles and backtracking in general.
-
-<div class="post-note">
-  Feel free to leave any question, correction or comment in this
-  <a href="https://mathstodon.xyz/@janmr/110298506018153202">Mastodon thread</a>.
-</div>
