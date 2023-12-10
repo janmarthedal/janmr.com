@@ -14,6 +14,12 @@ layout: blog-page
 <div class="post-body">
   {{ content | safe }}
 </div>
+{%- if data.mastodon -%}
+<div class="post-note">
+  Feel free to leave any question, correction or comment in this
+  <a href="{{data.mastodon}}">Mastodon thread</a>.
+</div>
+{%- endif -%}
 <div class="page-navigation">
   <div class="prev-post">
     {%- if data.prevPost -%}

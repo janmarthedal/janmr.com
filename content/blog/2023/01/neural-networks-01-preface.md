@@ -8,6 +8,7 @@ categories:
   - machine-learning
 excerpt: >-
   Kicking off a new blog series on Neural Networks
+mastodon: https://mathstodon.xyz/@janmr/109726377459697082
 ---
 Neural Networks, or more correctly Artificial Neural Networks, have turned out to be
 a very versatile tool in the world of Machine Learning, Artificial Intelligence and
@@ -50,8 +51,3 @@ Each post will be centered around a specific topic:
 - [Back-propagation Matrix-style](/blog/2023/01/neural-networks-07-back-propagation-matrix-style)
 - [Activation Functions](/blog/2023/01/neural-networks-08-activation-functions)
 - [Implementation](/blog/2023/01/neural-networks-09-implementation)
-
-<div class="post-note">
-  Feel free to leave any question, correction or comment in this
-  <a href="https://mathstodon.xyz/@janmr/109726377459697082">Mastodon thread</a>.
-</div>
