@@ -18,3 +18,12 @@ layout: blog-page
 <div class="post-body">
   {{ content | safe }}
 </div>
+
+{%- if backlinks -%}
+<p>Posts linking to this reference:</p>
+<ul>
+  {%- for post in backlinks | sort(attribute='title') -%}
+  <li><a href="{{ post.url | url }}">{{ post.title }}</a></li>
+  {%- endfor -%}
+</ul>
+{%- endif -%}
