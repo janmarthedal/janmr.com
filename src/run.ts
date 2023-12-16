@@ -53,6 +53,7 @@ interface Page {
     content: string;
     useKaTeX?: boolean;
     usePrism?: boolean;
+    backlinks?: Array<Page>;
     data: Record<string, unknown>;
 }
 
@@ -220,11 +221,32 @@ function makeTagPages(posts: Array<Page>): Array<Page> {
     }));
 }
 
-function decoratePosts(posts: Array<Page>) {
+function normalizeLocalLink(link: string): string {
+    if (!link.endsWith('/')) {
+        link += '/';
+    }
+    return link + 'index.html';
+}
+
+function decoratePosts(posts: Array<Page>, refMap: Map<string, Page>) {
     for (let i = 0; i < posts.length; i++) {
         const post = posts[i];
         post.data.prevPost = i - 1 >= 0 ? posts[i - 1] : undefined;
         post.data.nextPost = i + 1 < posts.length ? posts[i + 1] : undefined;
+
+        const refUrls = new Set<string>();
+        for (const match of post.content.matchAll(/\[.*?\]\((\/refs\/.*?)\)/g)) {
+            const refUrl = normalizeLocalLink(match[1]);
+            if (!refUrls.has(refUrl)) {
+                const refPage = refMap.get(refUrl);
+                if (!refPage) {
+                    throw new Error(`decoratePosts: ref ${refUrl} not found`);
+                }
+                refPage.backlinks = refPage.backlinks || [];
+                refPage.backlinks.push(post);
+                refUrls.add(refUrl);
+            }
+        }
     }
 }
 
@@ -234,6 +256,10 @@ function extractPage(pages: Array<Page>, url: string): Page {
         throw new Error(`extractPage: page ${url} not found`);
     }
     return pages.splice(index, 1)[0];
+}
+
+function makeRefMap(refs: Array<Page>): Map<string, Page> {
+    return new Map(refs.map(ref => ['/' + ref.url, ref]));
 }
 
 (async () => {
@@ -249,7 +275,8 @@ function extractPage(pages: Array<Page>, url: string): Page {
     refs.sort((a, b) => (a.title as string).localeCompare((b.title as string)));
     tags.sort((a, b) => (a.data.tag as string).localeCompare(b.data.tag as string));
     pages.push(...tags);
-    decoratePosts(posts);
+    const refMap = makeRefMap(refs);
+    decoratePosts(posts, refMap);
     processMarkdown(pages);
     processNunjucks(pages, { posts, refs, tags });
     writePages(pages);
