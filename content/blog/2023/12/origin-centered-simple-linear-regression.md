@@ -1,6 +1,6 @@
 ---
 title: Origin-Centered Simple Linear Regression
-date: '2023-12-08'
+date: '2023-12-18'
 layout: post
 tags:
   - machine learning
@@ -42,7 +42,7 @@ $$
 That is, we want to minimize the sum of the squares of the vertical distances between
 the points and the line.
 
-To find the stationary points of $J$, we first set the partial derivative with respect to $b$ to zero:
+To find the stationary point of $J$, we first set the partial derivative with respect to $b$ to zero:
 
 $$
 0 = \frac{\partial J}{\partial b}
