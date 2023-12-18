@@ -21,6 +21,7 @@ const SOURCE_PATTERN = '**/*';
 const SITE_DIR = '_site';
 const IGNORE_PATTERNS = COPY_PATTERNS;
 const LAYOUT_DIR = 'layouts';
+const INCLUDE_DRAFTS = process.argv.includes('--drafts');
 
 const metadata = {
     title: "janmr blog",
@@ -268,7 +269,7 @@ function makeRefMap(refs: Array<Page>): Map<string, Page> {
     await processLess(pages);
     const cssPage = minifyCss(CSS_INPUT.map(url => extractPage(pages, url)), CSS_OUTPUT);
     pages.push(cssPage);
-    const posts = pages.filter(p => p.type === PageType.Post);
+    const posts = pages.filter(p => p.type === PageType.Post && (INCLUDE_DRAFTS || !p.data.draft));
     const refs = pages.filter(p => p.type === PageType.Reference);
     const tags = makeTagPages(posts);
     posts.sort((a, b) => +a.date! - +b.date!);
