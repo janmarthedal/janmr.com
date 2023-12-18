@@ -5,12 +5,13 @@
   "main": "index.js",
   "scripts": {
     "build": "tsc",
-    "make": "node --enable-source-maps build/run.js",
+    "make": "node build/run.js",
+    "make:dev": "node --enable-source-maps build/run.js -- --drafts",
     "clean": "rm -rf _site",
     "make:watch": "chokidar \"content/**/*\" -c \"npm run make\" --silent",
     "serve:py": "python3 -m http.server -d _site",
     "serve": "npx @11ty/eleventy-dev-server --dir=_site",
-    "dev": "npm-run-all clean make --parallel make:watch serve:py",
+    "dev": "npm-run-all clean make:dev --parallel make:watch serve:py",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
