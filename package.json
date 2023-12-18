@@ -8,8 +8,9 @@
     "make": "node --enable-source-maps build/run.js",
     "clean": "rm -rf _site",
     "make:watch": "chokidar \"content/**/*\" -c \"npm run make\" --silent",
+    "serve:py": "python3 -m http.server -d _site",
     "serve": "npx @11ty/eleventy-dev-server --dir=_site",
-    "dev": "npm-run-all clean make --parallel make:watch serve",
+    "dev": "npm-run-all clean make --parallel make:watch serve:py",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
