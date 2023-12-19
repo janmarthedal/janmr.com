@@ -10,7 +10,7 @@ excerpt: >-
   Let us consider the task of finding the line that best fits a set of points in the plane.
   We will, however, insist the the points' center of mass is at the origin,
   as this turns out to simplify the solution.
-# mastodon: https://mathstodon.xyz/@janmr/111515835930659320
+mastodon: https://mathstodon.xyz/@janmr/111605595198122738
 ---
 Let us consider the task of finding the line that best fits a set of points in the plane.
 We will, however, insist the the points' center of mass is at the origin,
@@ -51,7 +51,7 @@ $$
   = n b,
 $$
 
-where we use the center of mass restriction to easily see that $b=0$.
+where we use the center of mass restriction to see that $b=0$.
 
 We now set the partial derivative of $J$ with respect to $a$ equal to zero:
 
@@ -76,6 +76,8 @@ In conclusion, we have
 $$
 a = \frac{s_{xy}}{s_{xx}} \quad \text{and} \quad b = 0.
 $$
+
+Note how, when given mass-centered points, the best fitting line always passes through the origin.
 
 <figure>
   <img src="/media/simple-linreg/origin-line.svg" class="img-responsive" alt="The line that best fits a set of points in the plane with center of mass at the origin">
