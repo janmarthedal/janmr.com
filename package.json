@@ -8,7 +8,7 @@
     "make": "node build/run.js",
     "make:dev": "node --enable-source-maps build/run.js -- --drafts",
     "clean": "rm -rf _site",
-    "make:watch": "chokidar \"content/**/*\" -c \"npm run make\" --silent",
+    "make:watch": "chokidar \"content/**/*\" -c \"npm run make:dev\" --silent",
     "serve:py": "python3 -m http.server -d _site",
     "serve": "npx @11ty/eleventy-dev-server --dir=_site",
     "dev": "npm-run-all clean make:dev --parallel make:watch serve:py",
