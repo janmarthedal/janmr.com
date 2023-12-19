@@ -2,7 +2,6 @@
 title: No-Intercept Simple Linear Regression
 date: '2023-12-19'
 layout: post
-draft: true
 tags:
   - machine learning
 categories:
@@ -22,8 +21,8 @@ with the additional restriction that the points' center of mass was at the origi
 This post will consider points without any restrictions, but the line, however,
 must pass through the origin.
 
-To be more specific, let the points be given as $(x_i, y_i)$ for $i=1, \ldots, n$,
-where $n \geq 1$ is the number of points.
+Let the points be given as $(x_i, y_i)$ for $i=1, \ldots, n$, where $n \geq 1$
+is the number of points.
 We will furthermore require that not all $x_i$ are equal to zero or,
 equivalently, that $\sum_{i=1}^n x_i^2 > 0$.
 
@@ -33,7 +32,7 @@ equivalently, that $\sum_{i=1}^n x_i^2 > 0$.
 </figure>
 
 Again, we will look for a least squares definition of *best*.
-So given the line $y = a x$ we want to minimize the following error function:
+So we seek a line $y = a x$ that minimizes the following error function:
 
 $$
 J = \tfrac{1}{2} \sum_{i=1}^n (a x_i - y_i)^2.
