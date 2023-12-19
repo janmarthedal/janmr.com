@@ -36,16 +36,16 @@ There are several ways to define what is meant by *best*, but here we want to fi
 $y = a x + b$ such that the following error function is *minimized*:
 
 $$
-J = \tfrac{1}{2} \sum_{i=1}^n (a x_i + b - y_i)^2.
+J = \sum_{i=1}^n (a x_i + b - y_i)^2.
 $$
 
 That is, we want to minimize the sum of the squares of the vertical distances between
-the points and the line.
+the points and the line, or [least squares](https://en.wikipedia.org/wiki/Least_squares) for short.
 
 To find the stationary point of $J$, we first set the partial derivative with respect to $b$ to zero:
 
 $$
-0 = \frac{\partial J}{\partial b}
+0 = \tfrac{1}{2} \frac{\partial J}{\partial b}
   = \sum_{i=1}^n (a x_i + b - y_i)
   = a \sum_{i=1}^n x_i + n b - \sum_{i=1}^n y_i
   = n b,
@@ -57,7 +57,7 @@ We now set the partial derivative of $J$ with respect to $a$ equal to zero:
 
 $$
 \begin{align*}
-0 = \frac{\partial J}{\partial a}
+0 = \tfrac{1}{2} \frac{\partial J}{\partial a}
   &= \sum_{i=1}^n x_i (a x_i + b - y_i)
   = a \sum_{i=1}^n x_i^2 + b \sum_{i=1}^n x_i - \sum_{i=1}^n x_i y_i \\
   &= a \sum_{i=1}^n x_i^2 - \sum_{i=1}^n x_i y_i

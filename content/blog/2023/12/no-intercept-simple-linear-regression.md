@@ -31,18 +31,18 @@ equivalently, that $\sum_{i=1}^n x_i^2 > 0$.
   <figcaption><strong>Figure 1.</strong> A set of points in the plane.</figcaption>
 </figure>
 
-Again, we will look for a least squares definition of *best*.
+Again, we will look for a [least squares](https://en.wikipedia.org/wiki/Least_squares) definition of *best*.
 So we seek a line $y = a x$ that minimizes the following error function:
 
 $$
-J = \tfrac{1}{2} \sum_{i=1}^n (a x_i - y_i)^2.
+J = \sum_{i=1}^n (a x_i - y_i)^2.
 $$
 
 To find the stationary point of $J$, we set the partial derivative with respect to $a$ to zero:
 
 $$
 \begin{align*}
-0 = \frac{\partial J}{\partial a}
+0 = \tfrac{1}{2} \frac{\partial J}{\partial a}
   &= \sum_{i=1}^n x_i (a x_i - y_i)
   = a \sum_{i=1}^n x_i^2 - \sum_{i=1}^n x_i y_i \\
   &= a s_{xx} - s_{xy} \; ,
