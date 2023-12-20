@@ -2,9 +2,8 @@
 title: Simple Linear Regression
 date: '2023-12-20'
 layout: post
-draft: true
 tags:
-  - machine learning
+  - machine-learning
 categories:
   - mathematics
 excerpt: >-
