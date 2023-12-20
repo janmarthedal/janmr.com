@@ -3,7 +3,7 @@ title: Origin-Centered Simple Linear Regression
 date: '2023-12-18'
 layout: post
 tags:
-  - machine learning
+  - machine-learning
 categories:
   - mathematics
 excerpt: >-
