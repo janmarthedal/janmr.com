@@ -12,7 +12,7 @@ excerpt: >-
   center of mass was at the origin.
   This post will consider points without any restrictions, but the line, however,
   must pass through the origin.
-# mastodon: https://mathstodon.xyz/@janmr/111515835930659320
+mastodon: https://mathstodon.xyz/@janmr/111611187727950915
 ---
 The [previous post](/blog/2023/12/origin-centered-simple-linear-regression/) considered
 the problem of finding the line that best fits a set of points in the plane,
