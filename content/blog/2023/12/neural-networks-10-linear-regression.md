@@ -2,7 +2,6 @@
 title: Neural Networks - Linear Regression
 date: '2023-12-21'
 layout: post
-draft: true
 tags:
   - neural-network
 categories:
