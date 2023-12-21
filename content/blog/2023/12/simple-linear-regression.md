@@ -10,7 +10,7 @@ excerpt: >-
   We now turn to the general case of fitting a line to a set of points in the plane.
   The two previous posts considered the special cases where the points' center of mass
   was at the origin and where the line had to pass through the origin.
-# mastodon: https://mathstodon.xyz/@janmr/111515835930659320
+mastodon: https://mathstodon.xyz/@janmr/111616905800145493
 ---
 We now turn to the general case of fitting a line to a set of points in the plane.
 The two previous posts considered the special cases where
