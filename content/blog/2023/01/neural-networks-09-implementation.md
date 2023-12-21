@@ -97,7 +97,7 @@ for epoch in range(epochs):
 **Code**
 
 A full implementation
-[is available](https://github.com/janmarthedal/machine-learning-from-the-ground-up/blob/blog/simple_neural_network.py).
+[is available](https://github.com/janmarthedal/machine-learning-from-the-ground-up/blob/blog/implementation/simple_neural_network.py).
 The code includes a small example of training a network (single input unit, a 20-unit hidden layer with
 a sigmoid activation function and a single output unit) to fit a part of a sine wave:
 
