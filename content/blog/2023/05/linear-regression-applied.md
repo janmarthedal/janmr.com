@@ -35,7 +35,7 @@ As example data we use the following points $y_1, \ldots, y_{100}$ as
 target/output values:
 
 <figure>
-  <img src="/media/linreg/points.svg" class="width30rem">
+  <img src="/media/linreg/points.svg" class="w30">
 </figure>
 
 Note that in this plot, and all the following related to these particular data,
@@ -57,7 +57,7 @@ By considering the feature vectors of $\mathbf{x}_i$ we see that we have
 a constant vector and a vector with the $t_i$-values as components:
 
 <figure>
-  <img src="/media/linreg/simple_linreg_feat.svg" class="width30rem">
+  <img src="/media/linreg/simple_linreg_feat.svg" class="w30">
 </figure>
 
 The solution to this optimization problem (a
@@ -65,7 +65,7 @@ The solution to this optimization problem (a
 is available for this special case) can be visualized as follows:
 
 <figure>
-  <img src="/media/linreg/simple_linreg_fit.svg" class="width30rem">
+  <img src="/media/linreg/simple_linreg_fit.svg" class="w30">
 </figure>
 
 Not a particularly good fit, but it is the best we can do with a line.
@@ -76,13 +76,13 @@ A line is not a particularly flexible model, so let us try a cubic polynomium in
 We use $\mathbf{x}_i = (1, t_i, t_i^2, t_i^3)$ and get the following four feature vectors:
 
 <figure>
-  <img src="/media/linreg/cubic_feat.svg" class="width30rem">
+  <img src="/media/linreg/cubic_feat.svg" class="w30">
 </figure>
 
 The solution to the optimization problem now leads to a much better fit:
 
 <figure>
-  <img src="/media/linreg/cubic_fit.svg" class="width30rem">
+  <img src="/media/linreg/cubic_fit.svg" class="w30">
 </figure>
 
 #### Piecewise Linear Features
@@ -105,14 +105,14 @@ $\mathbf{x}_i = (p_1(t_i), p_2(t_i), p_3(t_i))$.
 The feature vectors now look like this:
 
 <figure>
-  <img src="/media/linreg/piecewise_feat.svg" class="width30rem">
+  <img src="/media/linreg/piecewise_feat.svg" class="w30">
 </figure>
 
 It is easy to see that any linear combination of these vectors will
 have a constant value for $2 < t < 6$, but that may be ok:
 
 <figure>
-  <img src="/media/linreg/piecewise_fit.svg" class="width30rem">
+  <img src="/media/linreg/piecewise_fit.svg" class="w30">
 </figure>
 
 #### Fitting an Ellipse
@@ -131,7 +131,7 @@ Now consider the following set of points $(u_i, v_i)$, $i=1,\ldots,100$,
 in the $(u,v)$-plane:
 
 <figure>
-  <img src="/media/linreg/ellipse_feat.svg" class="width30rem">
+  <img src="/media/linreg/ellipse_feat.svg" class="w30">
 </figure>
 
 Is it possible to find the coefficients $f_1, f_2$ such that
@@ -151,7 +151,7 @@ of the "best" ellipse are given by $1/\sqrt{f_1}$ and $1/\sqrt{f_2}$.
 For the data points shown above we get the following ellipse:
 
 <figure>
-  <img src="/media/linreg/ellipse.svg" class="width30rem">
+  <img src="/media/linreg/ellipse.svg" class="w30">
 </figure>
 
 (All the computations and plots in this post can be found as a
