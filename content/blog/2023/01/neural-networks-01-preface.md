@@ -51,3 +51,5 @@ Each post will be centered around a specific topic:
 - [Back-propagation Matrix-style](/blog/2023/01/neural-networks-07-back-propagation-matrix-style)
 - [Activation Functions](/blog/2023/01/neural-networks-08-activation-functions)
 - [Implementation](/blog/2023/01/neural-networks-09-implementation)
+- [Linear Regression](/blog/2023/12/neural-networks-10-linear-regression)
+- [Digit Recognition](/blog/2023/12/neural-networks-11-digit-recognition)
