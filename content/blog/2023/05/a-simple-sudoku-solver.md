@@ -24,7 +24,7 @@ square, following the rules above.
 A puzzle could look like this:
 
 <figure>
-  <img src="/media/sudoku-med-setup.svg" class="width30rem" alt="A sudoku setup">
+  <img src="/media/sudoku-med-setup.svg" class="w30" alt="A sudoku setup">
 </figure>
 
 This post will describe a simple way to computationally find all solutions of a
@@ -44,7 +44,7 @@ The legal digits for each empty cell in the grid (step 1) would look like this f
 the example grid above:
 
 <figure>
-  <img src="/media/sudoku-med-cand.svg" class="width30rem" alt="Candidates for each free cell">
+  <img src="/media/sudoku-med-cand.svg" class="w30" alt="Candidates for each free cell">
 </figure>
 
 We could maintain a set of legal digits for each empty cell and updating these sets
