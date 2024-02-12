@@ -7,9 +7,9 @@ layout: page
 
 ## During study
 
-- Ph.D. thesis: [Boundary Control of Linear Evolution PDEs - Continuous and Discrete](https://www2.imm.dtu.dk/pubdb/pubs/3379-full.html) (2004, [PDF](https://www2.imm.dtu.dk/pubdb/edoc/imm3379.pdf), [PS](https://www2.imm.dtu.dk/pubdb/views/edoc_download.php/3379/ps/imm3379.ps), [local copy](/files/rasmussen04-boundary-control.pdf))
+- Ph.D. thesis: [Boundary Control of Linear Evolution PDEs - Continuous and Discrete](https://www2.imm.dtu.dk/pubdb/pubs/3379-full.html) (2004, [PDF](https://www2.imm.dtu.dk/pubdb/edoc/imm3379.pdf), [local copy](/files/rasmussen04-boundary-control.pdf))
 - Master's thesis: [Krylov Subspace Methods for Linear Compact Operators](https://www2.imm.dtu.dk/pubdb/pubs/468-full.html) (2001, [PDF](https://www2.imm.dtu.dk/pubdb/edoc/imm468.pdf), [local copy](/files/rasmussen01-compact-linear.pdf))
-- [The LINPACK benchmark in Co-Array Fortran](https://www2.imm.dtu.dk/pubdb/pubs/1236-full.html) (2000, [pdf](https://www2.imm.dtu.dk/documents/ftp/tr00/tr14_00.pdf))
+- [The LINPACK benchmark in Co-Array Fortran](https://www2.imm.dtu.dk/pubdb/pubs/1236-full.html) (2000, [pdf](https://www2.imm.dtu.dk/documents/ftp/tr00/tr14_00.pdf) [local copy](/files/reid00-co-array-fortran.pdf))
 
 ## Online Courses
 
@@ -28,3 +28,8 @@ layout: page
 - [Games without Chance: Combinatorial Game Theory](https://class.coursera.org/cgt-001) (2013, [statement](/files/mooc/gametheory.pdf))
 - [Functional Programming Principles in Scala](https://class.coursera.org/progfun-2012-001) (2012, [statement](/files/mooc/scala.pdf))
 - [Algorithms: Design and Analysis, Part 1](https://class.coursera.org/algo) (2012, [statement](/files/mooc/algo1.pdf))
+
+## Open Source
+
+- [Get/set n-th bit of `BigUint` and `BigInt`](https://github.com/rust-num/num-bigint/pull/183)
+- [Use least_squares solver from ndarray-linalg](https://github.com/rust-ml/linfa/pull/125)
