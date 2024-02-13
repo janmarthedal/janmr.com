@@ -7,9 +7,9 @@ layout: page
 
 ## During study
 
-- Ph.D. thesis: [Boundary Control of Linear Evolution PDEs - Continuous and Discrete](https://www2.imm.dtu.dk/pubdb/pubs/3379-full.html) (2004, [PDF](https://www2.imm.dtu.dk/pubdb/edoc/imm3379.pdf), [local copy](/files/rasmussen04-boundary-control.pdf))
-- Master's thesis: [Krylov Subspace Methods for Linear Compact Operators](https://www2.imm.dtu.dk/pubdb/pubs/468-full.html) (2001, [PDF](https://www2.imm.dtu.dk/pubdb/edoc/imm468.pdf), [local copy](/files/rasmussen01-compact-linear.pdf))
-- [The LINPACK benchmark in Co-Array Fortran](https://www2.imm.dtu.dk/pubdb/pubs/1236-full.html) (2000, [pdf](https://www2.imm.dtu.dk/documents/ftp/tr00/tr14_00.pdf) [local copy](/files/reid00-co-array-fortran.pdf))
+- Ph.D. thesis: [Boundary Control of Linear Evolution PDEs - Continuous and Discrete](https://www2.imm.dtu.dk/pubdb/pubs/3379-full.html) (2004, [pdf](https://www2.imm.dtu.dk/pubdb/edoc/imm3379.pdf), [local copy](/files/rasmussen04-boundary-control.pdf))
+- Master's thesis: [Krylov Subspace Methods for Linear Compact Operators](https://www2.imm.dtu.dk/pubdb/pubs/468-full.html) (2001, [pdf](https://www2.imm.dtu.dk/pubdb/edoc/imm468.pdf), [local copy](/files/rasmussen01-compact-linear.pdf))
+- [The LINPACK benchmark in Co-Array Fortran](https://www2.imm.dtu.dk/pubdb/pubs/1236-full.html) (2000, [pdf](https://www2.imm.dtu.dk/documents/ftp/tr00/tr14_00.pdf), [local copy](/files/reid00-co-array-fortran.pdf))
 
 ## Online Courses
 
