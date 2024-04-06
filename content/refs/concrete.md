@@ -7,7 +7,8 @@ authors:
   - Donald Knuth
   - Oren Patashnik
 isbn: '0201558025'
+links:
+  - name: Book homepage
+    url: http://www-cs-faculty.stanford.edu/~uno/gkp.html
 ---
-[Homepage](http://www-cs-faculty.stanford.edu/~uno/gkp.html)
-
 ![](/media/books/concrete.jpg)

@@ -5,7 +5,8 @@ date: '2011'
 authors:
   - Richard P. Stanley
 isbn: 9781107602625
+links:
+  - name: Book homepage
+    url: http://www-math.mit.edu/~rstan/ec/
 ---
-[Homepage](http://www-math.mit.edu/~rstan/ec/)
-
 ![](/media/books/stanley97.jpg)

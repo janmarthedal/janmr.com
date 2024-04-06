@@ -6,7 +6,9 @@ authors:
   - David E. Rumelhart
   - Geoffrey E. Hinton
   - Ronald J. Williams
+links:
+  - name: Article page at Nature
+    url: https://www.nature.com/articles/323533a0
+  - name: PDF
+    url: http://www.iro.umontreal.ca/~pift6266/A06/refs/backprop_old.pdf
 ---
-[Article page at Nature](https://www.nature.com/articles/323533a0)
-
-[PDF](http://www.iro.umontreal.ca/~pift6266/A06/refs/backprop_old.pdf)

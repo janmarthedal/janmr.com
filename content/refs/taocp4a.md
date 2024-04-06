@@ -5,5 +5,7 @@ date: '2011'
 authors:
   - Donald Ervin Knuth
 isbn: '0-201-03804-8'
+links:
+  - name: Book homepage
+    url: https://www-cs-faculty.stanford.edu/~knuth/taocp.html#vol4
 ---
-[Book homepage](https://www-cs-faculty.stanford.edu/~knuth/taocp.html#vol4)

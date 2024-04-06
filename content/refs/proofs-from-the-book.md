@@ -6,5 +6,7 @@ authors:
   - Martin Aigner
   - Günter M. Ziegler
 isbn: '3540404600'
+links:
+  - name: Online version
+    url: https://proofsfromthebook.github.io
 ---
-[Online version](https://proofsfromthebook.github.io)
