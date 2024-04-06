@@ -7,11 +7,15 @@ authors:
   - Léon Bottou
   - Yoshua Bengio
   - Patrick Haffner
+journal: "Proceedings of the IEEE (Volume: 86, Issue: 11, November 1998)"
+links:
+  - name: Journal page
+    url: https://ieeexplore.ieee.org/document/726791
+  - name: Yann LeCun's Publications
+    about: (page <a href="https://twitter.com/ylecun/status/1628746102827630593">not accessible in Chrome</a>)
+    url: http://yann.lecun.com/exdb/publis/index.html#lecun-98
+  - name: PDF
+    url: http://yann.lecun.com/exdb/publis/pdf/lecun-98.pdf
+  - name: Local PDF
+    url: /files/papers/lecun-98.pdf
 ---
-Journal: Proceedings of the IEEE (Volume: 86, Issue: 11, November 1998)
-
-[Journal page](https://ieeexplore.ieee.org/document/726791)
-
-[Yann LeCun's Publications](http://yann.lecun.com/exdb/publis/index.html#lecun-98)
-([PDF](http://yann.lecun.com/exdb/publis/pdf/lecun-98.pdf))
-(note: [not accessible in Chrome](https://twitter.com/ylecun/status/1628746102827630593))

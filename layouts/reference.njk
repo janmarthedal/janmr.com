@@ -1,26 +1,41 @@
 ---
 layout: blog-page
 ---
-<p>Title: {{ title }}</p>
+<h2>{{ title }}</h2>
 
-{%- for author in data.authors -%}
-  <p>Author: {{ author }}</p>
-{%- endfor -%}
+{%- if data.authors | length == 1 -%}
+<p><b>Author</b>: {{ data.authors[0] }}</p>
+{%- else -%}
+<p><b>Authors</b>: {{ data.authors | join(", ") }}</p>
+{%- endif -%}
 
 {%- if data.date -%}
-<p>Date: <time datetime="{{ data.date | refHtmlDateString }}">{{ data.date | refReadableDate }}</time></p>
+<p><b>Date</b>: <time datetime="{{ data.date | refHtmlDateString }}">{{ data.date | refReadableDate }}</time></p>
+{%- endif -%}
+
+{%- if data.journal -%}
+<p><b>Journal</b>: {{ data.journal }}</p>
 {%- endif -%}
 
 {%- if data.isbn -%}
-<p>ISBN: <a href="https://en.wikipedia.org/wiki/Special:BookSources?isbn={{ data.isbn }}">{{ data.isbn }}</a></p>
+<p><b>ISBN</b>: <a href="https://en.wikipedia.org/wiki/Special:BookSources?isbn={{ data.isbn }}">{{ data.isbn }}</a></p>
 {%- endif -%}
 
 <div class="post-body">
   {{ content | safe }}
 </div>
 
+{%- if data.links -%}
+Links:
+<ul>
+  {%- for link in data.links -%}
+  <li><a href="{{ link.url }}">{{ link.name }}</a>{% if link.about %} {{ link.about | safe }}{% endif %}</li>
+  {%- endfor -%}
+</ul>
+{%- endif -%}
+
 {%- if backlinks -%}
-<p>Posts linking to this reference:</p>
+Posts linking to this reference:
 <ul>
   {%- for post in backlinks | sort(attribute='title') -%}
   <li><a href="{{ post.url | url }}">{{ post.title }}</a></li>

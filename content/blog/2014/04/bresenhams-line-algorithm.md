@@ -17,11 +17,12 @@ excerpt: >-
   originally devised for a plotter, capable of moving from one grid point to one
   of the adjacent eight grid points. We consider drawing a line...
 ---
-In 1965 Jack Elton Bresenham published the paper *Algorithm for computer control of a digital
-plotter* in the IBM Systems Journal, volume&nbsp;4, number&nbsp;1. It explained how a line could be
-approximated on an integer grid. The algorithm is still used today as a
-[rasterization](http://en.wikipedia.org/wiki/Rasterisation) technique for rendering lines on video
-displays or printers. As Bresenham's paper suggests, however, it was originally devised for a
+In 1965 Jack Elton Bresenham published the paper *[Algorithm for computer control of a digital
+plotter](/refs/bresenham65)* in the IBM Systems Journal, volume&nbsp;4, number&nbsp;1.
+It explained how a line could be approximated on an integer grid.
+The algorithm is still used today as a [rasterization](http://en.wikipedia.org/wiki/Rasterisation)
+technique for rendering lines on video displays or printers.
+As Bresenham's paper suggests, however, it was originally devised for a
 [plotter](http://en.wikipedia.org/wiki/Plotter), capable of moving from one grid point to one of
 the adjacent eight grid points.
 
