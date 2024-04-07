@@ -75,6 +75,8 @@ env.addFilter('readableDate', jsDateToReadable);
 env.addFilter('rssLastUpdatedDate', rssLastUpdatedDate);
 env.addFilter('absoluteUrl', absoluteUrl);
 env.addFilter('dateToRfc3339', dateRfc3339);
+// env.addFilter('selectattrvalue', (array, key, value) => array.filter((item: Record<string, unknown>) => item[key] === value));
+env.addFilter('selectclassics', (posts, value) => posts.filter((item: { data: Record<string, unknown> }) => item.data?.classic === value));
 
 const md = new MarkdownIt({ html: true });
 md.use(markdownKaTeX);
