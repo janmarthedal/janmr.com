@@ -1,5 +1,6 @@
 ---
 title: Classics
+permalink: refs/classics.html
 layout: blog-page
 ---
 <h3>Computer Graphics</h3>
@@ -12,6 +13,13 @@ layout: blog-page
 <h3>Data Science and Machine Learning</h3>
 <ul>
 {%- for post in collections.refs | selectclassics("data-science") -%}
+<li><a href="{{ post.url | url }}">{{ post.title }}</a></li>
+{%- endfor -%}
+</ul>
+
+<h3>Numerical Analysis</h3>
+<ul>
+{%- for post in collections.refs | selectclassics("numerical-analysis") -%}
 <li><a href="{{ post.url | url }}">{{ post.title }}</a></li>
 {%- endfor -%}
 </ul>
