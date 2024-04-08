@@ -10,6 +10,13 @@ layout: blog-page
 {%- endfor -%}
 </ul>
 
+<h3>Computer Science</h3>
+<ul>
+{%- for post in collections.refs | selectclassics("computer-science") -%}
+<li><a href="{{ post.url | url }}">{{ post.title }}</a></li>
+{%- endfor -%}
+</ul>
+
 <h3>Data Science and Machine Learning</h3>
 <ul>
 {%- for post in collections.refs | selectclassics("data-science") -%}
