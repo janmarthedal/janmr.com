@@ -1,6 +1,6 @@
 ---
 title: The Computer as Brain Breaker
-date: '2024-04-23'
+date: '2024-04-25'
 layout: post
 tags:
   - computer-science
@@ -12,7 +12,7 @@ excerpt: >-
   up a secret code of four colored pegs, having five different colors to choose from for each peg.
   The other person (the codebreaker) then tries to guess the code using as few guesses as possible,
   using only feedback provided by the codemaker.
-# mastodon: https://mathstodon.xyz/@janmr/111611187727950915
+mastodon: https://mathstodon.xyz/@janmr/112330701367106701
 ---
 At our house we have a game called Brain Breaker.
 To play the game one person (the *codemaker*) sets up a secret code of four colored pegs,
