@@ -1,7 +1,6 @@
 ---
 title: A Kronecker Product and Vec Operator Identity
 date: '2024-04-26'
-draft: true
 layout: post
 tags:
   - kronecker-product
@@ -9,7 +8,7 @@ tags:
 categories:
   - numerical-analysis
 excerpt: >-
-  TODO
+  Let us prove an identity involving the Kronecker product and the vec operator.
 # mastodon: https://mathstodon.xyz/@janmr/112330701367106701
 ---
 Let $A$ be a $q \times n$ matrix and $B$ a $p \times m$ matrix.
@@ -45,11 +44,11 @@ $$
 (A \otimes B) \operatorname{vec}(X) = \operatorname{vec}(B X A^T).
 $$
 
-First, we rewrite the $k$th column, of $B X A^T$ as
+First, we rewrite the $k$th column of $B X A^T$ as
 
 $$
 \begin{aligned}
-(B X A^T)_{:,k} &= B X A_{k,:}^T = B \sum_{i=1}^n A_{k,i} X_{:,i} \\
+(B X A^T)_{:,k} &= B X (A_{k,:})^T = B \sum_{i=1}^n A_{k,i} X_{:,i} \\
 &= \begin{bmatrix}
   A_{k,1} B \; A_{k,2} B \; \cdots \; A_{k,n} B
 \end{bmatrix}
@@ -82,3 +81,24 @@ $$
 \end{bmatrix} \operatorname{vec}(X)
 = (A \otimes B) \operatorname{vec}(X).
 $$
+
+A very cool result!
+
+Note how the identity has some useful corollaries:
+
+$$
+(I_n \otimes B) \operatorname{vec}(X) = \operatorname{vec}(B X)
+$$
+
+and
+
+$$
+(A \otimes I_m) \operatorname{vec}(X) = \operatorname{vec}(X A^T)
+$$
+
+where $I_n$ and $I_m$ are the identity matrices of size $n$ and $m$, respectively.
+
+In the paper [The vec-permutation matrix, the vec operator and Kronecker products: a review](/refs/henderson-searle81),
+the authors point to the 1934 paper [On direct product matrices](/refs/roth34) by W.&nbsp;E. Roth as the
+origin of this identity.
+They also call the identity *Roth's column lemma*, although that name does not seem to be widely used.
