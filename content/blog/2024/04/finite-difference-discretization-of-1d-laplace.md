@@ -11,7 +11,7 @@ excerpt: >-
   Let us consider how to approximate the Laplace operator in one dimension.
   The method considered here is based on finite differences and will allow us
   to approximate the Laplace operator on a regular grid in a simple and efficient way.
-# mastodon: https://mathstodon.xyz/@janmr/112336690679603118
+mastodon: https://mathstodon.xyz/@janmr/112342447991352435
 ---
 Let us consider how to approximate the Laplace operator in one dimension.
 The method considered here is based on finite differences and will allow us
