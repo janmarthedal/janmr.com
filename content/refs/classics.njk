@@ -3,28 +3,35 @@ title: Classics
 permalink: refs/classics.html
 layout: blog-page
 ---
-<h3>Computer Graphics</h3>
+<h5>Computer Graphics</h5>
 <ul>
 {%- for post in collections.refs | selectclassics("computer-graphics") -%}
 <li><a href="{{ post.url | url }}">{{ post.title }}</a></li>
 {%- endfor -%}
 </ul>
 
-<h3>Computer Science</h3>
+<h5>Computer Science</h5>
 <ul>
 {%- for post in collections.refs | selectclassics("computer-science") -%}
 <li><a href="{{ post.url | url }}">{{ post.title }}</a></li>
 {%- endfor -%}
 </ul>
 
-<h3>Data Science and Machine Learning</h3>
+<h5>Data Science and Machine Learning</h5>
 <ul>
 {%- for post in collections.refs | selectclassics("data-science") -%}
 <li><a href="{{ post.url | url }}">{{ post.title }}</a></li>
 {%- endfor -%}
 </ul>
 
-<h3>Numerical Analysis</h3>
+<h5>Information Theory</h5>
+<ul>
+{%- for post in collections.refs | selectclassics("information-theory") -%}
+<li><a href="{{ post.url | url }}">{{ post.title }}</a></li>
+{%- endfor -%}
+</ul>
+
+<h5>Numerical Analysis</h5>
 <ul>
 {%- for post in collections.refs | selectclassics("numerical-analysis") -%}
 <li><a href="{{ post.url | url }}">{{ post.title }}</a></li>
