@@ -10,7 +10,7 @@ categories:
   - numerical-analysis
 excerpt: >-
   Let us now consider the discretization of the 2D Laplace operator using finite differences.
-# mastodon: https://mathstodon.xyz/@janmr/112342447991352435
+mastodon: https://mathstodon.xyz/@janmr/112382856825334474
 ---
 Let us now consider the discretization of the 2D Laplace operator using finite differences.
 Recall that the Laplace operator is defined as
