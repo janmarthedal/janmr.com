@@ -11,7 +11,7 @@ categories:
 excerpt: >-
   Let us consider the wave equation on the unit square
   and how to solve it numerically using Python's numpy and scipy libraries.
-# mastodon: https://mathstodon.xyz/@janmr/112342447991352435
+mastodon: https://mathstodon.xyz/@janmr/112398139863794212
 ---
 Let us consider the wave equation
 
