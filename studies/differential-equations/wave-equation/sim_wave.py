@@ -1,65 +1,46 @@
+import matplotlib.pyplot as plt
 import time
 import numpy as np
-from scipy.integrate import solve_ivp
-from scipy.sparse import dia_matrix
-import matplotlib.pyplot as plt
+import scipy
 
-def get_test_data(delta=0.05):
-    x = y = np.arange(-1.0, 1.0, delta)
-    X, Y = np.meshgrid(x, y)
-    R = np.sqrt((X - 0.2)**2 + (Y - 0.1)**2)
-    Z = np.exp(-R**2) * np.cos(4 * R) * (1 - X**2) * (1 - Y**2)
-    return X, Y, Z
+n = 199
+h = 1 / (n + 1)
+x = y = np.linspace(0, 1, n + 2)
 
-def laplace_stencil_1d(n, h):
-    data = np.outer([1, -2, 1], np.ones(n))
-    offsets = np.array([-1, 0, 1])
-    L = dia_matrix((data, offsets), shape=(n, n)) / h**2
-    return L.toarray()
+X, Y = np.meshgrid(x, y)
+R = np.sqrt((X - 0.45)**2 + (Y - 0.4)**2)
+U = 20 * np.exp(-R**2) * np.cos(4 * R) * X * (1 - X) * Y * (1 - Y)
 
-def laplace_stencil_2d(m, n, h):
-    A1d = laplace_stencil_1d(m, h)
-    B1d = laplace_stencil_1d(n, h)
-    return np.kron(np.eye(n), A1d) + np.kron(B1d, np.eye(m))
+L = (scipy.sparse.eye(n, k=-1) - 2 * scipy.sparse.eye(n)
+     + scipy.sparse.eye(n, k=1)) / h**2
+D = scipy.sparse.kronsum(L, L)
 
-def dydt(_, y, Sm, Sn):
-    m = Sm.shape[0]
-    n = Sn.shape[0]
-    v = y[:m*n].reshape(m, n)
-    vt = y[m*n:]
-    return np.concatenate((vt, (Sm @ v + v @ Sn.T).reshape(-1)))
-
-h = 0.02
-X, Y, Z = get_test_data(h)
-
-Zinner = Z[1:-1, 1:-1]
-m, n = Zinner.shape
-
-Sm = laplace_stencil_1d(m, h)
-Sn = laplace_stencil_1d(n, h)
-v = Zinner.reshape(-1)
-vt = np.zeros_like(v)
-y0 = np.concatenate((v, vt))
-
-sample_times = np.linspace(0, 4, 100)
-time_span = [sample_times[0], sample_times[-1]]
+u0 = U[1:-1, 1:-1].reshape(-1)
+ut0 = np.zeros_like(u0)
+timespan = [0, 5]
+sample_times = np.linspace(*timespan, 200)
 
 start_time = time.time()
-R = solve_ivp(dydt, time_span, y0, t_eval=sample_times, args=(Sm, Sn))
-print("solve_ivp time: {:.2f} seconds".format(time.time() - start_time))
+R = scipy.integrate.solve_ivp(
+    lambda _, u: np.concatenate((u[n*n:], D @ u[:n*n])),
+    timespan,
+    np.concatenate((u0, ut0)),
+    t_eval=sample_times
+)
+print("solve_ivp time: {:.3f} seconds".format(time.time() - start_time))
 
-# with plt.ion():
+
 fig = plt.figure()
 fig.set_size_inches(20, 20)
 ax = fig.add_subplot(projection='3d')
 for i in range(0, R.y.shape[1], 1):
     print("t = {:.2f}".format(R.t[i]))
-    Z[1:-1, 1:-1] = R.y[:m*n, i].reshape(m, n)
+    Z = np.pad(R.y[:n*n, i].reshape(n, n), pad_width=1)
     ax.set_zlim(-1, 1)
     ax.set_axis_off()
-    ax.plot_wireframe(X, Y, Z, rstride=10, cstride=10, linewidth=4, antialiased=True)
+    ax.plot_wireframe(X, Y, Z, rstride=10, cstride=10,
+                      linewidth=2, antialiased=True)
     plt.savefig("wave{:03}.png".format(i + 1), bbox_inches='tight')
-    # plt.pause(1)
     ax.clear()
 
-# ffmpeg -framerate 4 -i wave%03d.png -c:v libx264 -r 25 -vf "crop=4/5*in_w:1/2*in_h" -pix_fmt yuv420p output.mp4
+# ffmpeg -framerate 8 -i wave%03d.png -c:v libx264 -r 25 -vf "crop=4/5*in_w:1/2*in_h:1/10*in_w:11/50*in_h" -pix_fmt yuv420p output.mp4
