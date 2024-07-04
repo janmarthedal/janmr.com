@@ -17,6 +17,7 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@tsconfig/node20": "^20.1.4",
     "@types/clean-css": "^4.2.11",
     "@types/less": "^3.0.6",
     "@types/markdown-it": "^14.1.1",
