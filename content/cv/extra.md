@@ -22,7 +22,7 @@ layout: page
 - [Build Complex Express Sites with Redis and Socket IO](https://www.udemy.com/build-complex-express-sites-with-redis-and-socket-io) (2017)
 - [Modern React with Redux](https://www.udemy.com/react-redux/) (2017)
 - [Single Page Web Applications with AngularJS](https://www.coursera.org/learn/single-page-web-apps-with-angularjs/) (2017)
-- [Automata](https://class.coursera.org/automata-002) (2013, [statement](/files/mooc/automata.pdf))
+- [Automata](https://online.stanford.edu/courses/soe-ycsautomata-automata-theory) (2013, [statement](/files/mooc/automata.pdf))
 - [HTML5 Game Development](https://www.udacity.com/course/cs255) (2013, [statement](/files/mooc/html5gamedev.pdf))
 - [Algorithms: Design and Analysis, Part 2](https://class.coursera.org/algo2-002) (2013, [statement](/files/mooc/algo2.pdf))
 - [Games without Chance: Combinatorial Game Theory](https://class.coursera.org/cgt-001) (2013, [statement](/files/mooc/gametheory.pdf))
