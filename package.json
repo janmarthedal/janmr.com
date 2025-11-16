@@ -8,7 +8,7 @@
     "make": "node build/run.js",
     "make:dev": "node --enable-source-maps build/run.js -- --drafts",
     "clean": "rm -rf _site",
-    "make:watch": "chokidar \"content/**/*\" -c \"npm run make:dev\" --silent",
+    "make:watch": "node --watch-path=content --enable-source-maps build/run.js -- --drafts",
     "serve": "npx sirv _site --dev",
     "dev": "npm-run-all clean make:dev --parallel make:watch serve",
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -23,7 +23,6 @@
     "@types/markdown-it": "^14.1.1",
     "@types/node": "^22.19.1",
     "@types/nunjucks": "^3.2.6",
-    "chokidar-cli": "^3.0.0",
     "npm-run-all": "^4.1.5",
     "sirv-cli": "^2.0.2",
     "typescript": "^5.9.3"
