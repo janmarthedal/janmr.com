@@ -32,9 +32,13 @@
     "clean-css": "^5.3.3",
     "glob": "^10.4.2",
     "gray-matter": "^4.0.3",
+    "js-yaml": "^4.1.1",
     "less": "^4.2.0",
     "markdown-it": "^14.1.0",
     "markdown-it-prism": "^2.3.0",
     "nunjucks": "^3.2.4"
+  },
+  "overrides": {
+    "js-yaml": "^4.1.1"
   }
 }
