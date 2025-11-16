@@ -10,3 +10,4 @@ Perhaps useful for others.
 
 - [CLI Tools](cli-tools/)
 - [Links](links/)
+- [People](people/)
