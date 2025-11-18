@@ -30,7 +30,7 @@
   "dependencies": {
     "@byronwan/markdown-it-katex": "^3.3.0",
     "clean-css": "^5.3.3",
-    "glob": "^10.4.2",
+    "glob": "^11.1.0",
     "gray-matter": "^4.0.3",
     "less": "^4.2.0",
     "markdown-it": "^14.1.0",
