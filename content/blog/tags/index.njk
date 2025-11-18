@@ -1,8 +1,0 @@
----
-layout: blog-page
----
-<h2>Tags</h2>
-
-{% for tag in collections.tags %}
-  <a class="label" href="{{ tag.url | url }}" class="tag">{{ tag.data.tag }}</a>
-{% endfor %}

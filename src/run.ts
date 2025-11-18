@@ -202,28 +202,6 @@ function writePages(pages: Array<Page>) {
     }
 }
 
-function makeTagPages(posts: Array<Page>): Array<Page> {
-    const tagMap = new Map<string, Array<Page>>();
-    for (const post of posts) {
-        for (const tag of (post.data.tags as Array<string> | undefined) || []) {
-            let list = tagMap.get(tag);
-            if (!list) {
-                list = [];
-                tagMap.set(tag, list);
-            }
-            list.push(post);
-        }
-    }
-    return Array.from(tagMap.entries(), ([tag, posts]): Page => ({
-        type: PageType.Other,
-        extension: '.njk',
-        url: `blog/tags/${tag}/index.html`,
-        title: `Posts tagged ${tag}`,  // TODO move to layout
-        data: { layout: 'tag-page', tag, posts: posts.sort((a, b) => +a.date! - +b.date!)},
-        content: '',
-    }));
-}
-
 function normalizeLocalLink(link: string): string {
     if (!link.endsWith('/')) {
         link += '/';
@@ -273,14 +251,11 @@ function makeRefMap(refs: Array<Page>): Map<string, Page> {
     pages.push(cssPage);
     const posts = pages.filter(p => p.type === PageType.Post && (INCLUDE_DRAFTS || !p.data.draft));
     const refs = pages.filter(p => p.type === PageType.Reference);
-    const tags = makeTagPages(posts);
     posts.sort((a, b) => +a.date! - +b.date!);
     refs.sort((a, b) => (a.title as string).localeCompare((b.title as string)));
-    tags.sort((a, b) => (a.data.tag as string).localeCompare(b.data.tag as string));
-    pages.push(...tags);
     const refMap = makeRefMap(refs);
     decoratePosts(posts, refMap);
     processMarkdown(pages);
-    processNunjucks(pages, { posts, refs, tags });
+    processNunjucks(pages, { posts, refs });
     writePages(pages);
 })();
