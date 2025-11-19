@@ -79,7 +79,7 @@ env.addFilter('dateToRfc3339', dateRfc3339);
 // env.addFilter('selectattrvalue', (array, key, value) => array.filter((item: Record<string, unknown>) => item[key] === value));
 env.addFilter('selectclassics', (posts, value) => posts.filter((item: { data: Record<string, unknown> }) => item.data?.classic === value));
 
-const md = new MarkdownIt({ html: true });
+const md = new MarkdownIt({ html: true, linkify: true });
 md.use(markdownKaTeX);
 md.use(markdownPrism);
 
@@ -189,6 +189,7 @@ function processMarkdown(pages: Array<Page>) {
 function processNunjucks(pages: Array<Page>, collections: Record<string, Array<Page>>) {
     for (const page of pages) {
         if (page.extension === '.njk') {
+            console.log('Processing Nunjucks page:', page.url);
             page.content = env.renderString(page.content, { ...page, collections, metadata, content: undefined });
             page.extension = '.html';
         }
@@ -245,20 +246,19 @@ function makeRefMap(refs: Array<Page>): Map<string, Page> {
 
 async function run() {
     copyFiles();
-    const pages = loadPages();
+    const pages = loadPages().filter(p => INCLUDE_DRAFTS || !p.data.draft);
     await processLess(pages);
     const cssPage = minifyCss(CSS_INPUT.map(url => extractPage(pages, url)), CSS_OUTPUT);
     pages.push(cssPage);
-    const posts = pages.filter(p => p.type === PageType.Post && (INCLUDE_DRAFTS || !p.data.draft));
     const refs = pages.filter(p => p.type === PageType.Reference);
-    posts.sort((a, b) => +a.date! - +b.date!);
     refs.sort((a, b) => (a.title as string).localeCompare((b.title as string)));
     const refMap = makeRefMap(refs);
-    decoratePosts(posts, refMap);
     processMarkdown(pages);
     const updates = pages.filter(page => page.type === PageType.Update);
     const publishPages = pages.filter(page => page.type !== PageType.Update);
-    processNunjucks(publishPages, { posts, refs, updates });
+    updates.sort((a, b) => +a.date! - +b.date!);
+    decoratePosts(publishPages, refMap);
+    processNunjucks(publishPages, { refs, updates });
     writePages(publishPages);
 }
 

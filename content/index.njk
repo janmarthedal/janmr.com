@@ -4,20 +4,10 @@ layout: page
 ---
 <h1>janmr.com</h1>
 
-<p>This is the website of Jan Marthedal Rasmussen.</p>
-
-<p>
-  Some online profiles:
-  <a rel="me" href="https://bsky.app/profile/janmr.com">Bluesky</a>,
-  <a rel="me" href="https://www.facebook.com/jan.marthedal">Facebook</a>,
-  <a rel="me" href="https://github.com/janmarthedal">GitHub</a>,
-  <a rel="me" href="https://www.linkedin.com/in/janmr">LinkedIn</a>,
-  <a rel="me" href="https://mathstodon.xyz/@janmr">Mastodon</a>,
-  <a rel="me" href="https://twitter.com/janmarthedal">Twitter</a>.
-</p>
-
-<p><a href="/blog/">A blog</a> on mathematics and computer programming.</p>
-
-<p><a href="/lab/">The lab</a> contains some tools and demos.</p>
-
-<p>My <a href="/cv/">resume</a>.</p>
+<div class="update-list">
+  {%- for update in collections.updates | reverse -%}
+  <p>
+    {{ update.date | refHtmlDateString }} {{ update.content | safe }}
+  </p>
+  {%- endfor -%}
+</div>
