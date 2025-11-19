@@ -252,6 +252,73 @@ table {
     display: none;
 }
 
+// Update list - social media style posts
+.update-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 2em;
+
+    & > li {
+        border: 1px solid #d3d3d3;
+        padding: 1rem 1.25rem;
+        margin-bottom: -1px;
+        background-color: #fff;
+        transition: box-shadow 0.2s ease;
+        max-width: 600px;
+
+        &:hover {
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    .update-header {
+        display: flex;
+        align-items: center;
+        margin-bottom: 0.75rem;
+        padding-bottom: 0.75rem;
+        border-bottom: 1px solid #f0f0f0;
+
+        .update-avatar {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            margin-right: 0.75rem;
+            background-color: #e8e8e8;
+        }
+
+        .update-author {
+            flex: 1;
+
+            .author-name {
+                font-weight: 600;
+                font-size: 0.95rem;
+                margin: 0;
+                color: @text-color;
+            }
+
+            time {
+                font-size: 0.85rem;
+                color: @dimmed-color;
+                margin: 0;
+            }
+        }
+    }
+
+    .update-content {
+        margin: 0;
+        line-height: 1.5;
+        color: @text-color;
+
+        & > p:last-child {
+            margin-bottom: 0;
+        }
+    }
+}
+
 @media print {
     html {
         font-size: 10px;
