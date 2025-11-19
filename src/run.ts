@@ -1,39 +1,39 @@
-import assert from 'assert';
-import { mkdirSync, readFileSync, writeFileSync } from 'fs';
-import { dirname, extname, join } from 'path';
-import { globIterateSync } from 'glob';
-import matter from 'gray-matter';
-import nunjucks from 'nunjucks';
-import less from 'less';
-import cleanCSS from 'clean-css';
-import MarkdownIt from 'markdown-it';
-import markdownKaTeX from '@byronwan/markdown-it-katex';
-import markdownPrism from 'markdown-it-prism';
-import { absoluteUrl } from './rss/absoluteUrl';
-import { rssLastUpdatedDate } from './rss/rssLastUpdatedDate';
-import { dateRfc3339 } from './rss/dateRfc3339';
+import assert from "assert";
+import { mkdirSync, readFileSync, writeFileSync } from "fs";
+import { dirname, extname, join } from "path";
+import { globIterateSync } from "glob";
+import matter from "gray-matter";
+import nunjucks from "nunjucks";
+import less from "less";
+import cleanCSS from "clean-css";
+import MarkdownIt from "markdown-it";
+import markdownKaTeX from "@byronwan/markdown-it-katex";
+import markdownPrism from "markdown-it-prism";
+import { absoluteUrl } from "./rss/absoluteUrl";
+import { rssLastUpdatedDate } from "./rss/rssLastUpdatedDate";
+import { dateRfc3339 } from "./rss/dateRfc3339";
 
-const SOURCE_DIR = 'content';
-const COPY_PATTERNS = ['files/**/*', 'media/**/*', 'lab/**/*.js', 'lab/**/*.js.map', 'icon-48x48.png'];
-const CSS_INPUT = ['css/normalize.css', 'css/styles.less'];
-const CSS_OUTPUT = 'css/styles.css';
-const SOURCE_PATTERN = '**/*';
-const SITE_DIR = '_site';
+const SOURCE_DIR = "content";
+const COPY_PATTERNS = ["files/**/*", "media/**/*", "lab/**/*.js", "lab/**/*.js.map", "icon-48x48.png"];
+const CSS_INPUT = ["css/normalize.css", "css/styles.less"];
+const CSS_OUTPUT = "css/styles.css";
+const SOURCE_PATTERN = "**/*";
+const SITE_DIR = "_site";
 const IGNORE_PATTERNS = COPY_PATTERNS;
-const LAYOUT_DIR = 'layouts';
-const INCLUDE_DRAFTS = process.argv.includes('--drafts');
+const LAYOUT_DIR = "layouts";
+const INCLUDE_DRAFTS = process.argv.includes("--drafts");
 
 const metadata = {
     title: "janmr blog",
     url: "https://janmr.com/blog/",
     author: {
         name: "Jan Marthedal Rasmussen",
-        email: "jan@janmr.com"
+        email: "jan@janmr.com",
     },
     feed: {
         subtitle: "The blog of Jan Marthedal Rasmussen",
         url: "https://janmr.com/blog/feed.xml",
-        id: "https://janmr.com/blog/"
+        id: "https://janmr.com/blog/",
     },
     ga_tracking_id: process.env.GA_TRACKING_ID,
     environment: process.env.BUILD_ENV,
@@ -59,45 +59,45 @@ interface Page {
     data: Record<string, unknown>;
 }
 
-const readableDateFormat = new Intl.DateTimeFormat('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+const readableDateFormat = new Intl.DateTimeFormat("en-US", { year: "numeric", month: "long", day: "numeric" });
 const jsDateToISO = (date: Date) => date.toISOString().slice(0, 10);
 const jsDateToFullISO = (date: Date) => date.toISOString();
 const jsDateToReadable = (date: Date) => readableDateFormat.format(date);
 
 const env = new nunjucks.Environment(new nunjucks.FileSystemLoader(LAYOUT_DIR), { autoescape: true });
-env.addFilter('url', (name: string) => {
-    const path = join('/', name);
-    return path.endsWith('/index.html') ? path.slice(0, -10) : path;
+env.addFilter("url", (name: string) => {
+    const path = join("/", name);
+    return path.endsWith("/index.html") ? path.slice(0, -10) : path;
 });
-env.addFilter('fixLineBreaks', str => str.replace(/ (\d+)/g, '&nbsp;$1'));
-env.addFilter('refHtmlDateString', (date) => date.length === 4 ? date : jsDateToISO(new Date(date)));
-env.addFilter('dateToISO', (date) => date.length === 4 ? date : jsDateToFullISO(new Date(date)));
-env.addFilter('refReadableDate', (date) => date.length === 4 ? date : jsDateToReadable(new Date(date)));
-env.addFilter('htmlDateString', jsDateToISO);
-env.addFilter('readableDate', jsDateToReadable);
-env.addFilter('rssLastUpdatedDate', rssLastUpdatedDate);
-env.addFilter('absoluteUrl', absoluteUrl);
-env.addFilter('dateToRfc3339', dateRfc3339);
-env.addFilter('selectclassics', (posts, value) => posts.filter((item: { data: Record<string, unknown> }) => item.data?.classic === value));
+env.addFilter("fixLineBreaks", (str) => str.replace(/ (\d+)/g, "&nbsp;$1"));
+env.addFilter("refHtmlDateString", (date) => (date.length === 4 ? date : jsDateToISO(new Date(date))));
+env.addFilter("dateToISO", (date) => (date.length === 4 ? date : jsDateToFullISO(new Date(date))));
+env.addFilter("refReadableDate", (date) => (date.length === 4 ? date : jsDateToReadable(new Date(date))));
+env.addFilter("htmlDateString", jsDateToISO);
+env.addFilter("readableDate", jsDateToReadable);
+env.addFilter("rssLastUpdatedDate", rssLastUpdatedDate);
+env.addFilter("absoluteUrl", absoluteUrl);
+env.addFilter("dateToRfc3339", dateRfc3339);
+env.addFilter("selectclassics", (posts, value) =>
+    posts.filter((item: { data: Record<string, unknown> }) => item.data?.classic === value),
+);
 
-const md = new MarkdownIt({ html: true, linkify: true });
-md.use(markdownKaTeX);
-md.use(markdownPrism);
+const md = new MarkdownIt({ html: true, linkify: true }).use(markdownKaTeX).use(markdownPrism);
 
 function writeFile(filename: string, contents: string | Buffer) {
-    console.log('write', filename);
+    console.log("write", filename);
     const path = join(SITE_DIR, filename);
     mkdirSync(dirname(path), { recursive: true });
     writeFileSync(path, contents);
 }
 
 function minifyCss(cssPages: Array<Page>, url: string): Page {
-    let input = '';
+    let input = "";
     for (const page of cssPages) {
         input += page.content;
     }
     const content = new cleanCSS({}).minify(input).styles;
-    return { type: PageType.Other, extension: '.css', url, content, data: {} };
+    return { type: PageType.Other, extension: ".css", url, content, data: {} };
 }
 
 function copyFiles() {
@@ -109,8 +109,8 @@ function copyFiles() {
 }
 
 function renderLayout(layout: string, page: Record<string, unknown>): string {
-    const buffer = readFileSync(join(LAYOUT_DIR, layout + '.njk'), 'utf8');
-    if (buffer.startsWith('---\n')) {
+    const buffer = readFileSync(join(LAYOUT_DIR, layout + ".njk"), "utf8");
+    if (buffer.startsWith("---\n")) {
         const { data: baseData, content: baseContent } = matter(buffer);
         const content = env.renderString(baseContent, page);
         if (baseData.layout) {
@@ -126,26 +126,26 @@ function renderLayout(layout: string, page: Record<string, unknown>): string {
 function permalinkFromFilename(filename: string): string {
     const extension = extname(filename);
     const base = filename.slice(0, -extension.length);
-    return base === 'index' || base.endsWith('/index') ? base + '.html' : base + '/index.html';
+    return base === "index" || base.endsWith("/index") ? base + ".html" : base + "/index.html";
 }
 
 function loadPages(): Array<Page> {
     return Array.from(
         globIterateSync(SOURCE_PATTERN, { cwd: SOURCE_DIR, nodir: true, ignore: IGNORE_PATTERNS }),
         (filename: string): Page => {
-            console.log('read', filename);
-            const buffer = readFileSync(join(SOURCE_DIR, filename), 'utf8');
-            if (buffer.startsWith('---\n')) {
+            console.log("read", filename);
+            const buffer = readFileSync(join(SOURCE_DIR, filename), "utf8");
+            if (buffer.startsWith("---\n")) {
                 const { data, content } = matter.read(join(SOURCE_DIR, filename));
                 const url = data.permalink || permalinkFromFilename(filename);
                 const date = data.date ? new Date(data.date as string) : undefined;
                 const title = data.title as string | undefined;
                 let type = PageType.Other;
-                if (filename.startsWith('updates/')) {
+                if (filename.startsWith("updates/")) {
                     type = PageType.Update;
-                } else if (data.layout === 'post') {
+                } else if (data.layout === "post") {
                     type = PageType.Post;
-                } else if (data.layout === 'reference') {
+                } else if (data.layout === "reference") {
                     type = PageType.Reference;
                 }
                 const extension = extname(filename);
@@ -154,16 +154,16 @@ function loadPages(): Array<Page> {
                 const extension = extname(filename);
                 return { type: PageType.Other, extension, url: filename, data: {}, content: buffer };
             }
-        }
+        },
     );
 }
 
 async function processLess(pages: Array<Page>) {
     for (const page of pages) {
-        if (page.extension === '.less') {
+        if (page.extension === ".less") {
             const renderOutput = await less.render(page.content);
             page.content = renderOutput.css;
-            page.extension = '.css';
+            page.extension = ".css";
         }
     }
 }
@@ -176,11 +176,26 @@ function contentUsesPrism(content: string): boolean {
     return content.includes('<pre class="language-');
 }
 
+function truncateLinks(s: string): string {
+    return s.replaceAll(/<a href="(.+?)">\1<\/a>/g, (_match, link) => {
+        let text: string = link;
+        if (text.startsWith("https://")) {
+            text = text.slice(8);
+        } else if (text.startsWith("http://")) {
+            text = text.slice(7);
+        }
+        if (text.length > 34) {
+            text = `${text.slice(0, 34)}…`;
+        }
+        return `<a href="${link}">${text}</a>`;
+    });
+}
+
 function processMarkdown(pages: Array<Page>) {
     for (const page of pages) {
-        if (page.extension === '.md') {
-            page.content = md.render(page.content);
-            page.extension = '.html';
+        if (page.extension === ".md") {
+            page.content = truncateLinks(md.render(page.content));
+            page.extension = ".html";
             page.useKaTeX = contentUsesKaTeX(page.content);
             page.usePrism = contentUsesPrism(page.content);
         }
@@ -189,17 +204,17 @@ function processMarkdown(pages: Array<Page>) {
 
 function processNunjucks(pages: Array<Page>, collections: Record<string, Array<Page>>) {
     for (const page of pages) {
-        if (page.extension === '.njk') {
-            console.log('Processing Nunjucks page:', page.url);
+        if (page.extension === ".njk") {
+            console.log("Processing Nunjucks page:", page.url);
             page.content = env.renderString(page.content, { ...page, collections, metadata, content: undefined });
-            page.extension = '.html';
+            page.extension = ".html";
         }
     }
 }
 
 function writePages(pages: Array<Page>) {
     for (const page of pages) {
-        assert(page.extension === '.html' || page.extension === '.css');
+        assert(page.extension === ".html" || page.extension === ".css");
         const output = page.data.layout
             ? renderLayout(page.data.layout as string, { ...page, metadata })
             : env.renderString(page.content, { ...page, metadata, content: undefined });
@@ -208,10 +223,10 @@ function writePages(pages: Array<Page>) {
 }
 
 function normalizeLocalLink(link: string): string {
-    if (!link.endsWith('/')) {
-        link += '/';
+    if (!link.endsWith("/")) {
+        link += "/";
     }
-    return link + 'index.html';
+    return link + "index.html";
 }
 
 function decoratePosts(posts: Array<Page>, refMap: Map<string, Page>) {
@@ -234,7 +249,7 @@ function decoratePosts(posts: Array<Page>, refMap: Map<string, Page>) {
 }
 
 function extractPage(pages: Array<Page>, url: string): Page {
-    const index = pages.findIndex(p => p.url === url);
+    const index = pages.findIndex((p) => p.url === url);
     if (index === -1) {
         throw new Error(`extractPage: page ${url} not found`);
     }
@@ -242,21 +257,24 @@ function extractPage(pages: Array<Page>, url: string): Page {
 }
 
 function makeRefMap(refs: Array<Page>): Map<string, Page> {
-    return new Map(refs.map(ref => ['/' + ref.url, ref]));
+    return new Map(refs.map((ref) => ["/" + ref.url, ref]));
 }
 
 async function run() {
     copyFiles();
-    const pages = loadPages().filter(p => INCLUDE_DRAFTS || !p.data.draft);
+    const pages = loadPages().filter((p) => INCLUDE_DRAFTS || !p.data.draft);
     await processLess(pages);
-    const cssPage = minifyCss(CSS_INPUT.map(url => extractPage(pages, url)), CSS_OUTPUT);
+    const cssPage = minifyCss(
+        CSS_INPUT.map((url) => extractPage(pages, url)),
+        CSS_OUTPUT,
+    );
     pages.push(cssPage);
-    const refs = pages.filter(p => p.type === PageType.Reference);
-    refs.sort((a, b) => (a.title as string).localeCompare((b.title as string)));
+    const refs = pages.filter((p) => p.type === PageType.Reference);
+    refs.sort((a, b) => (a.title as string).localeCompare(b.title as string));
     const refMap = makeRefMap(refs);
     processMarkdown(pages);
-    const updates = pages.filter(page => page.type === PageType.Update);
-    const publishPages = pages.filter(page => page.type !== PageType.Update);
+    const updates = pages.filter((page) => page.type === PageType.Update);
+    const publishPages = pages.filter((page) => page.type !== PageType.Update);
     updates.sort((a, b) => +a.date! - +b.date!);
     decoratePosts(publishPages, refMap);
     processNunjucks(publishPages, { refs, updates });
@@ -264,5 +282,5 @@ async function run() {
 }
 
 run().then(() => {
-    console.log('Done!');
+    console.log("Done!");
 });
