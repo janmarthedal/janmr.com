@@ -1,6 +1,6 @@
 ---
 title: CV Extra
-permalink: cv/extra.html
+permalink: me/cv/extra.html
 layout: page
 ---
 # CV Extra
