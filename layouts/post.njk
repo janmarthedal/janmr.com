@@ -20,17 +20,3 @@ layout: blog-page
   <a href="{{data.mastodon}}">Mastodon thread</a>.
 </div>
 {%- endif -%}
-<div class="page-navigation">
-  <div class="prev-post">
-    {%- if data.prevPost -%}
-      <a href="{{ data.prevPost.url | url }}" title="Previous post: {{ data.prevPost.title }}">&laquo;
-        {{ data.prevPost.title }}</a>
-    {%- endif -%}
-  </div>
-  <div class="next-post">
-    {%- if data.nextPost -%}
-      <a href="{{ data.nextPost.url | url }}" title="Next post: {{ data.nextPost.title }}">{{ data.nextPost.title }}
-        &raquo;</a>
-    {%- endif -%}
-  </div>
-</div>
