@@ -29,7 +29,7 @@ We will then look at how to turn the theory into code
 
 A disclaimer: I am not a Machine Learning expert, I have a background in applied mathematics
 and scientific computing. Everything should be correct (I hope! If not, please
-[write me](/contact/) and I will correct it), but some terminology or approaches may be off
+contact me and I will correct it), but some terminology or approaches may be off
 compared to what is usually done (again, let me know).
 
 If you are into online courses then I highly recommend
