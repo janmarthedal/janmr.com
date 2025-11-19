@@ -42,6 +42,7 @@ const metadata = {
 const enum PageType {
     Post,
     Reference,
+    Update,
     Other,
 }
 
@@ -139,7 +140,9 @@ function loadPages(): Array<Page> {
                 const date = data.date ? new Date(data.date as string) : undefined;
                 const title = data.title as string | undefined;
                 let type = PageType.Other;
-                if (data.layout === 'post') {
+                if (filename.startsWith('updates/')) {
+                    type = PageType.Update;
+                } else if (data.layout === 'post') {
                     type = PageType.Post;
                 } else if (data.layout === 'reference') {
                     type = PageType.Reference;
@@ -240,7 +243,7 @@ function makeRefMap(refs: Array<Page>): Map<string, Page> {
     return new Map(refs.map(ref => ['/' + ref.url, ref]));
 }
 
-(async () => {
+async function run() {
     copyFiles();
     const pages = loadPages();
     await processLess(pages);
@@ -253,6 +256,12 @@ function makeRefMap(refs: Array<Page>): Map<string, Page> {
     const refMap = makeRefMap(refs);
     decoratePosts(posts, refMap);
     processMarkdown(pages);
-    processNunjucks(pages, { posts, refs });
-    writePages(pages);
-})();
+    const updates = pages.filter(page => page.type === PageType.Update);
+    const publishPages = pages.filter(page => page.type !== PageType.Update);
+    processNunjucks(publishPages, { posts, refs, updates });
+    writePages(publishPages);
+}
+
+run().then(() => {
+    console.log('Done!');
+});
