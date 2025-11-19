@@ -212,9 +212,6 @@ function normalizeLocalLink(link: string): string {
 function decoratePosts(posts: Array<Page>, refMap: Map<string, Page>) {
     for (let i = 0; i < posts.length; i++) {
         const post = posts[i];
-        post.data.prevPost = i - 1 >= 0 ? posts[i - 1] : undefined;
-        post.data.nextPost = i + 1 < posts.length ? posts[i + 1] : undefined;
-
         const refUrls = new Set<string>();
         for (const match of post.content.matchAll(/\[.*?\]\((\/refs\/.*?)\)/g)) {
             const refUrl = normalizeLocalLink(match[1]);
