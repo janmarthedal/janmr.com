@@ -61,6 +61,7 @@ interface Page {
 
 const readableDateFormat = new Intl.DateTimeFormat('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
 const jsDateToISO = (date: Date) => date.toISOString().slice(0, 10);
+const jsDateToFullISO = (date: Date) => date.toISOString();
 const jsDateToReadable = (date: Date) => readableDateFormat.format(date);
 
 const env = new nunjucks.Environment(new nunjucks.FileSystemLoader(LAYOUT_DIR), { autoescape: true });
@@ -70,13 +71,13 @@ env.addFilter('url', (name: string) => {
 });
 env.addFilter('fixLineBreaks', str => str.replace(/ (\d+)/g, '&nbsp;$1'));
 env.addFilter('refHtmlDateString', (date) => date.length === 4 ? date : jsDateToISO(new Date(date)));
+env.addFilter('dateToISO', (date) => date.length === 4 ? date : jsDateToFullISO(new Date(date)));
 env.addFilter('refReadableDate', (date) => date.length === 4 ? date : jsDateToReadable(new Date(date)));
 env.addFilter('htmlDateString', jsDateToISO);
 env.addFilter('readableDate', jsDateToReadable);
 env.addFilter('rssLastUpdatedDate', rssLastUpdatedDate);
 env.addFilter('absoluteUrl', absoluteUrl);
 env.addFilter('dateToRfc3339', dateRfc3339);
-// env.addFilter('selectattrvalue', (array, key, value) => array.filter((item: Record<string, unknown>) => item[key] === value));
 env.addFilter('selectclassics', (posts, value) => posts.filter((item: { data: Record<string, unknown> }) => item.data?.classic === value));
 
 const md = new MarkdownIt({ html: true, linkify: true });
