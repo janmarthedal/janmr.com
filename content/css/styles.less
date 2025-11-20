@@ -260,11 +260,12 @@ table {
 
     & > li {
         border: 1px solid #d3d3d3;
-        padding: 1rem 1.25rem;
-        margin-bottom: -1px;
+        border-radius: .25rem;
+        padding: 1rem 1rem 0.5rem;
+        margin-bottom: 1rem;
         background-color: #fff;
         transition: box-shadow 0.2s ease;
-        max-width: 600px;
+        max-width: 40rem;
 
         &:hover {
             box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
@@ -272,39 +273,6 @@ table {
 
         &:last-child {
             margin-bottom: 0;
-        }
-    }
-
-    .update-header {
-        display: flex;
-        align-items: center;
-        margin-bottom: 0.75rem;
-        padding-bottom: 0.75rem;
-        border-bottom: 1px solid #f0f0f0;
-
-        .update-avatar {
-            width: 48px;
-            height: 48px;
-            border-radius: 50%;
-            margin-right: 0.75rem;
-            background-color: #e8e8e8;
-        }
-
-        .update-author {
-            flex: 1;
-
-            .author-name {
-                font-weight: 600;
-                font-size: 0.95rem;
-                margin: 0;
-                color: @text-color;
-            }
-
-            time {
-                font-size: 0.85rem;
-                color: @dimmed-color;
-                margin: 0;
-            }
         }
     }
 
@@ -316,6 +284,19 @@ table {
         & > p:last-child {
             margin-bottom: 0;
         }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+    }
+
+    .update-footer {
+        margin-top: 0.5rem;
+        padding-top: 0.5rem;
+        border-top: 1px solid #f0f0f0;
+        font-size: 0.85rem;
+        color: @dimmed-color;
     }
 }
 

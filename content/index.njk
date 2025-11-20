@@ -7,27 +7,22 @@ layout: page
 <ul class="update-list">
   {%- for update in collections.updates | reverse -%}
   <li>
-    <div class="update-header">
-      <img class="update-avatar" src="/media/updates/avatar.jpeg" alt="User">
-      <div class="update-author">
-        <p class="author-name">Jan Marthedal Rasmussen</p>
-        <time datetime="{{ update.date | dateToISO }}">{{ update.date | refHtmlDateString }}</time>
-      </div>
-    </div>
     <div class="update-content">
       {{ update.content | safe }}
+    </div>
+    <div class="update-footer">
+      Published
+      <time datetime="{{ update.date | dateToISO }}">{{ update.date | refHtmlDateString }}</time>
+      {% if update.data.crossPosting %}
+      on
+      {% if update.data.crossPosting.bluesky %}
+      <a href="{{ update.data.crossPosting.bluesky }}">Bluesky</a>
+      {% endif %}
+      {% if update.data.crossPosting.mastodon %}
+      <a href="{{ update.data.crossPosting.mastodon }}">Mastodon</a>
+      {% endif %}
+      {% endif %}
     </div>
   </li>
   {%- endfor -%}
 </ul>
-
-{#
-<div class="update-list">
-  {%- for update in collections.updates | reverse -%}
-  <div>
-    <time datetime="{{ update.date | dateToISO }}">{{ update.date | refHtmlDateString }}</time>
-    <div>{{ update.content | safe }}</div>
-  </div>
-  {%- endfor -%}
-</div>
-#}
