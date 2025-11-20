@@ -13,12 +13,12 @@ import { absoluteUrl } from './rss/absoluteUrl';
 import { rssLastUpdatedDate } from './rss/rssLastUpdatedDate';
 import { dateRfc3339 } from './rss/dateRfc3339';
 
-const SOURCE_DIR = 'content';
-const COPY_PATTERNS = ['files/**/*', 'media/**/*', 'lab/**/*.js', 'lab/**/*.js.map', 'icon-48x48.png'];
-const CSS_INPUT = ['css/normalize.css', 'css/styles.less'];
-const CSS_OUTPUT = 'css/styles.css';
-const SOURCE_PATTERN = '**/*';
-const SITE_DIR = '_site';
+const SOURCE_DIR = "content";
+const COPY_PATTERNS = ["files/**/*", "media/**/*", "lab/**/*.js", "lab/**/*.js.map", "icon-48x48.png", "_redirects"];
+const CSS_INPUT = ["css/normalize.css", "css/styles.less"];
+const CSS_OUTPUT = "css/styles.css";
+const SOURCE_PATTERN = "**/*";
+const SITE_DIR = "_site";
 const IGNORE_PATTERNS = COPY_PATTERNS;
 const LAYOUT_DIR = 'layouts';
 const INCLUDE_DRAFTS = process.argv.includes('--drafts');
