@@ -206,6 +206,12 @@ function processNunjucks(pages: Array<Page>, collections: Record<string, Array<P
     for (const page of pages) {
         if (page.extension === ".njk") {
             console.log("Processing Nunjucks page:", page.url);
+            const pageCollection = page.data.collection;
+            if (typeof pageCollection === "string") {
+                const collection = collections[pageCollection];
+                page.useKaTeX = page.useKaTeX || collection.some(p => p.useKaTeX);
+                page.usePrism = page.usePrism || collection.some(p => p.usePrism);
+            }
             page.content = env.renderString(page.content, { ...page, collections, metadata, content: undefined });
             page.extension = ".html";
         }
