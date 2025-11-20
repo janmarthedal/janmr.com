@@ -2,13 +2,14 @@
 title: Equality of Floating-Point Numbers
 date: '2023-12-03'
 layout: post
-tags:
 categories:
   - mathematics
   - programming
 excerpt: >-
-  When using floating-point numbers then exact, bit-for-bit, equality is almost never what you want.
-mastodon: https://mathstodon.xyz/@janmr/111515835930659320
+  When using floating-point numbers then exact, bit-for-bit, equality is almost
+  never what you want.
+mastodon: 'https://mathstodon.xyz/@janmr/111515835930659320'
+_redirect: /blog/2023/12/equality-of-numbers/
 ---
 When using floating-point numbers then exact, bit-for-bit, equality is almost never what you want.
 The result of most floating-point operations like addition, multiplication and trigonometric functions cannot be represented exactly due to the [limited precision](/refs/floating-point-arithmetic/) of floating-point numbers.

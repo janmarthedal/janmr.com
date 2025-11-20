@@ -12,6 +12,7 @@ categories:
 excerpt: >-
   I found a recent question on Mathematics Stack Exchange quite interesting. It
   simply asked: How does one easily calculate ...
+_redirect: /blog/2013/07/infinite-series-involving-sideways-sum/
 ---
 
 I found a recent [question](http://math.stackexchange.com/questions/432250/how-does-one-easily-calculate-sum-limits-n-1-infty-frac-mathrmpopn) on [Mathematics Stack Exchange](http://math.stackexchange.com) quite interesting. It simply asked

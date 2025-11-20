@@ -6,8 +6,8 @@ tags:
   - neural-network
 categories:
   - machine-learning
-excerpt: >-
-  We express the back-propagation formulas using matrix notation.
+excerpt: We express the back-propagation formulas using matrix notation.
+_redirect: /blog/2023/01/neural-networks-07-back-propagation-matrix-style/
 ---
 This post continues from the notation and formulas introduced in the
 [previous post](/blog/2023/01/neural-networks-06-back-propagation-derivation).

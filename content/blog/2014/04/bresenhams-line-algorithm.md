@@ -16,6 +16,7 @@ excerpt: >-
   on video displays or printers. As Bresenham's paper suggests, however, it was
   originally devised for a plotter, capable of moving from one grid point to one
   of the adjacent eight grid points. We consider drawing a line...
+_redirect: /blog/2014/04/bresenhams-line-algorithm/
 ---
 In 1965 Jack Elton Bresenham published the paper *[Algorithm for computer control of a digital
 plotter](/refs/bresenham65)* in the IBM Systems Journal, volume&nbsp;4, number&nbsp;1.

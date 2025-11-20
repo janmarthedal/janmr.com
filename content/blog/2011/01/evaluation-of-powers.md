@@ -12,6 +12,7 @@ excerpt: >-
   How do you efficiently compute x^n for a positive integer n? Take x^{15} as an
   example. You could take x and repeatedly multiply by x 14 times. A better way
   to do it, however, is this: [...]
+_redirect: /blog/2011/01/evaluation-of-powers/
 ---
 How do you efficiently compute $x^n$ for a positive integer $n$? Take $x^{15}$ as an example. You could take $x$ and repeatedly multiply by $x$ 14 times. A better way to do it, however, is this:
 

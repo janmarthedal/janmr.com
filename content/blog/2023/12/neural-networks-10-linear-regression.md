@@ -8,8 +8,10 @@ categories:
   - machine-learning
 excerpt: >-
   Looking at the basic model for a neural network, it is natural to consider:
-  What is the simplest possible neural network? And is such a network useful for anything?
-mastodon: https://mathstodon.xyz/@janmr/111623015185013040
+  What is the simplest possible neural network? And is such a network useful for
+  anything?
+mastodon: 'https://mathstodon.xyz/@janmr/111623015185013040'
+_redirect: /blog/2023/12/neural-networks-10-linear-regression/
 ---
 Looking at the [basic model for a neural network](/blog/2023/01/neural-networks-02-the-model),
 it is natural to consider: What is the simplest possible neural network?

@@ -16,6 +16,7 @@ excerpt: >-
   Richard K. Guy is professor emeritus of mathematics at the University of
   Calgary and has (co)authored several hundred publications on combinatorial
   game theory, number theory and graph theory.
+_redirect: /blog/2010/05/book-review-the-book-of-numbers/
 ---
 <div class="pull-right"><a href="/refs/conway-guy"><img src="/media/books/conway-guy.jpg" alt=""></a></div>
 

@@ -12,6 +12,7 @@ excerpt: >-
   not very hard to do, but the formula can look quite complicated, depending on
   how you write it up. This article is a reminder that it can be expressed in a
   simple manner.
+_redirect: /blog/2010/03/line-line-intersection/
 ---
 How do you calculate the point where two lines in the plane intersect? It is not very hard to do, but the formula can look [quite complicated](http://en.wikipedia.org/w/index.php?title=Line-line_intersection&oldid=330824670), depending on how you write it up. This article is a reminder that it can be expressed in a simple manner.
 

@@ -7,7 +7,9 @@ tags:
 categories:
   - machine-learning
 excerpt: >-
-  We look at vectorizing the evaluation of a neural network when we have multiple inputs.
+  We look at vectorizing the evaluation of a neural network when we have
+  multiple inputs.
+_redirect: /blog/2023/01/neural-networks-03-multiple-inputs/
 ---
 When considering efficient implementations of evaluating a neural network as described in the
 [previous post](/blog/2023/01/neural-networks-02-the-model), it becomes useful to be able to

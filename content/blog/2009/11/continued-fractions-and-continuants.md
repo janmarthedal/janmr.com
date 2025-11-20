@@ -10,6 +10,7 @@ categories:
   - programming
   - mathematics
 excerpt: 'We will be considering continued fractions of the form [...]'
+_redirect: /blog/2009/11/continued-fractions-and-continuants/
 ---
 We will be considering continued fractions of the form
 

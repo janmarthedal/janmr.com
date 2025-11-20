@@ -14,6 +14,7 @@ excerpt: >-
   n. This approach assumes that you know (or guess) the correct formula
   beforehand, though. This post will show a derivation which is a formalization
   of the derivation shown on wikipedia.
+_redirect: /blog/2014/06/deriving-closed-form-for-square-pyramidal-numbers/
 ---
 The sum of the first $n$ squares is
 

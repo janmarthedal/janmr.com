@@ -9,10 +9,10 @@ categories:
 excerpt: >-
   The previous post considered the problem of finding the line that best fits a
   set of points in the plane, with the additional restriction that the points'
-  center of mass was at the origin.
-  This post will consider points without any restrictions, but the line, however,
-  must pass through the origin.
-mastodon: https://mathstodon.xyz/@janmr/111611187727950915
+  center of mass was at the origin. This post will consider points without any
+  restrictions, but the line, however, must pass through the origin.
+mastodon: 'https://mathstodon.xyz/@janmr/111611187727950915'
+_redirect: /blog/2023/12/no-intercept-simple-linear-regression/
 ---
 The [previous post](/blog/2023/12/origin-centered-simple-linear-regression/) considered
 the problem of finding the line that best fits a set of points in the plane,
