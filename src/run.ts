@@ -176,7 +176,7 @@ function contentUsesPrism(content: string): boolean {
     return content.includes('<pre class="language-');
 }
 
-function truncateLinks(s: string): string {
+function truncateSelfLinks(s: string): string {
     return s.replaceAll(/<a href="(.+?)">\1<\/a>/g, (_match, link) => {
         let text: string = link;
         if (text.startsWith("https://")) {
@@ -194,7 +194,7 @@ function truncateLinks(s: string): string {
 function processMarkdown(pages: Array<Page>) {
     for (const page of pages) {
         if (page.extension === ".md") {
-            page.content = truncateLinks(md.render(page.content));
+            page.content = truncateSelfLinks(md.render(page.content));
             page.extension = ".html";
             page.useKaTeX = contentUsesKaTeX(page.content);
             page.usePrism = contentUsesPrism(page.content);
