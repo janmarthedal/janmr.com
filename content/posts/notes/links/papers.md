@@ -1,11 +1,7 @@
 ---
 title: Papers
-layout: page
+layout: new-page
 ---
-# Papers
-
-## Classics
-
 * [A Mathematical Theory of Communication (C. E. Shannon, 1948)](https://people.math.harvard.edu/~ctm/home/text/others/shannon/entropy/entropy.pdf)
 * [A Protocol for Packet Network Intercommunication (Vinton G. Cerf and Robert E. Kahn, 1974)](https://www.cs.princeton.edu/courses/archive/fall06/cos561/papers/cerf74.pdf)  
   TCP.

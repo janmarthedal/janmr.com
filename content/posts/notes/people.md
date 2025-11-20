@@ -1,9 +1,7 @@
 ---
 title: People
-layout: page
+layout: new-page
 ---
-# People
-
 - [Andrew Kelley](https://andrewkelley.me/)
   Creator of Zig
 - [Donald E. Knuth](https://www-cs-faculty.stanford.edu/~knuth/)

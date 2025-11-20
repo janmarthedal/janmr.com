@@ -1,12 +1,10 @@
 ---
 title: bash
-layout: page
+layout: new-page
 ---
-# bash
+### for loop
 
-## for loop
-
-### value list
+#### value list
 
 ```bash
 for i in 1 2 3
@@ -15,7 +13,7 @@ do
 done
 ```
 
-### sequence of numbers
+#### sequence of numbers
 
 ```bash
 for i in $(seq 1 10)
@@ -32,7 +30,7 @@ do
 done
 ```
 
-### loop through lines of file
+#### loop through lines of file
 
 ```bash
 while read p; do

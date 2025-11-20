@@ -3,8 +3,6 @@ title: CV Extra
 permalink: me/cv/extra.html
 layout: page
 ---
-# CV Extra
-
 ## During study
 
 - Ph.D. thesis: [Boundary Control of Linear Evolution PDEs - Continuous and Discrete](https://www2.imm.dtu.dk/pubdb/pubs/3379-full.html) (2004, [pdf](https://www2.imm.dtu.dk/pubdb/edoc/imm3379.pdf), [local copy](/files/rasmussen04-boundary-control.pdf))

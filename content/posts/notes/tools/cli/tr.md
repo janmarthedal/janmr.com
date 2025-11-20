@@ -1,9 +1,7 @@
 ---
 title: tr
-layout: page
+layout: new-page
 ---
-# tr
-
 Remove all occurrences of `"` from input
 ```bash
 cat input.txt | tr -d '"'

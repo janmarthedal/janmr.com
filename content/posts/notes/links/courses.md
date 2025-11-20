@@ -1,10 +1,8 @@
 ---
 title: Courses
-layout: page
+layout: new-page
 ---
-# Courses
-
-## Computer Science
+### Computer Science
 
 * [A Computer Science Curriculum with Rust flavor](https://github.com/AbdesamedBendjeddou/Rusty-CS)
 * [An Introduction to Physically Based Modeling](http://www.cs.cmu.edu/~baraff/pbm/pbm.html)

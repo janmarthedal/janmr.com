@@ -1,23 +1,21 @@
 ---
 title: Books
-layout: page
+layout: new-page
 ---
-# Books
-
-## Collections
+### Collections
 
 * [Freely available programming books](https://github.com/EbookFoundation/free-programming-books/)
 
-## Computer Science
+### Computer Science
 
 * [Algorithms (Jeff Erickson)](https://jeffe.cs.illinois.edu/teaching/algorithms/)
 * [Category Theory for Programmers (Bartosz Milewski)](https://github.com/hmemcpy/milewski-ctfp-pdf)
 * [Introduction to the Theory of Programming Languages (Bertrand Meyer)](https://bertrandmeyer.com/itpl/)
 
-## Mathematics
+### Mathematics
 
 * [Calculus Made Easy (Silvanus P. Thompson)](http://calculusmadeeasy.org)
 
-## Tools
+### Tools
 
 * [Pro Git](https://git-scm.com/book/en/v2)

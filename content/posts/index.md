@@ -1,7 +1,5 @@
 ---
 title: Posts
-layout: page
+layout: new-page
 ---
-# Posts
-
 - [Notes](notes/)

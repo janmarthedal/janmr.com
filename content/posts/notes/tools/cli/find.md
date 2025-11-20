@@ -1,9 +1,7 @@
 ---
 title: find
-layout: page
+layout: new-page
 ---
-# find
-
 Run command for each file:
 ```bash
 find . -name '*.csv' -exec grep needle {} \;

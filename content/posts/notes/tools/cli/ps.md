@@ -1,9 +1,7 @@
 ---
 title: ps
-layout: page
+layout: new-page
 ---
-# ps
-
 ### How long has a process been running
 ```bash
 ps -o etime= -p "$$"
