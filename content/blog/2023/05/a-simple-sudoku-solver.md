@@ -8,9 +8,10 @@ tags:
 categories:
   - programming
 excerpt: >-
-  This post will describe a simple way to computationally find all solutions of a
-  given sudoku puzzle
-mastodon: https://mathstodon.xyz/@janmr/110298506018153202
+  This post will describe a simple way to computationally find all solutions of
+  a given sudoku puzzle
+mastodon: 'https://mathstodon.xyz/@janmr/110298506018153202'
+_redirect: /blog/2023/05/a-simple-sudoku-solver/
 ---
 Sudoku is a popular puzzle and for the past 15 years or so, it has been hard to
 find a newspaper that didn't contain at least one sudoku puzzle.

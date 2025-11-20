@@ -11,6 +11,7 @@ excerpt: >-
   [...] where did that pi come from? What do trees have to do with pi? That was
   the subject of Donald E. Knuth's 16th Annual Christmas Tree Lecture, given on
   December 6, 2010.
+_redirect: /blog/2011/01/where-did-pi-come-from/
 ---
 The [Catalan](http://en.wikipedia.org/wiki/Catalan_number) [number](http://oeis.org/A000108) $C_n$ denotes the number of forests with $n$ nodes. In fact, the Catalan numbers relate to many different structures, see, e.g., the pages linked to above and the references on those pages.
 

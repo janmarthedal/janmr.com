@@ -6,8 +6,8 @@ tags:
   - neural-network
 categories:
   - machine-learning
-excerpt: >-
-  How to implement a simple neural network in Python/NumPy.
+excerpt: How to implement a simple neural network in Python/NumPy.
+_redirect: /blog/2023/01/neural-networks-09-implementation/
 ---
 This post will describe how to implement a simple, trainable neural network in
 [Python](https://www.python.org) using [NumPy](https://numpy.org).

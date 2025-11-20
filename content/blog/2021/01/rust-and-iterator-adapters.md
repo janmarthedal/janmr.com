@@ -7,7 +7,15 @@ tags:
 categories:
   - programming
 excerpt: >-
-  Iterators are a big part of writing good, idiomatic Rust code. Creating an iterator is quite simple in that it requires you to implement the `Iterator` trait for a struct that holds the iterator's state. The Rust documentation does a good job of documenting how to do this. If we have an iterator adapter, that is, a function which take an `Iterator` and returns another `Iterator`, then Rust makes it possible to chain iterators together. But how do you implement your own iterator adapter and make it available as a method on any iterator? Here, the Rust documentation is much less explicit.
+  Iterators are a big part of writing good, idiomatic Rust code. Creating an
+  iterator is quite simple in that it requires you to implement the `Iterator`
+  trait for a struct that holds the iterator's state. The Rust documentation
+  does a good job of documenting how to do this. If we have an iterator adapter,
+  that is, a function which take an `Iterator` and returns another `Iterator`,
+  then Rust makes it possible to chain iterators together. But how do you
+  implement your own iterator adapter and make it available as a method on any
+  iterator? Here, the Rust documentation is much less explicit.
+_redirect: /blog/2021/01/rust-and-iterator-adapters/
 ---
 Iterators are a big part of writing good, idiomatic Rust code. Creating an iterator is quite simple in that it requires you to implement the `Iterator` trait for a struct that holds the iterator's state. The Rust documentation does a good job of [documenting how to do this](https://doc.rust-lang.org/stable/std/iter/index.html#implementing-iterator).
 

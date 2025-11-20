@@ -2,12 +2,12 @@
 title: Linear Regression Applied
 date: '2023-05-05'
 layout: post
-tags:
 categories:
   - machine-learning
 excerpt: >-
-  This post looks at some examples of linear regression, as introduced in
-  a previous post
+  This post looks at some examples of linear regression, as introduced in a
+  previous post
+_redirect: /blog/2023/05/linear-regression-applied/
 ---
 This post looks at some examples of linear regression, as introduced in
 a [previous post](/blog/2023/05/linear-regression-basics/).

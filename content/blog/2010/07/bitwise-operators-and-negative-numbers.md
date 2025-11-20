@@ -14,6 +14,7 @@ excerpt: >-
   two's complement of a number x with 0 <= x < 2^n is (-x) mod 2^n = 2^n - x.
   But what do you do if you want to work with unbounded/multiple-precision
   integers? [...]
+_redirect: /blog/2010/07/bitwise-operators-and-negative-numbers/
 ---
 When representing integers using a fixed number of bits, negative numbers are typically represented using [two's complement](http://en.wikipedia.org/wiki/Two's_complement). If using $n$ bit numbers, the two's complement of a number $x$ with $0 \leq x < 2^n$ is $(-x) \mathbin{\text{mod}} 2^n = 2^n - x$. But what do you do if you want to work with unbounded/multiple-precision integers? Fixing $x$ and letting the number of bits go to infinity, you will notice that increasing $n$ by one simply adds a 1 at the left. For instance,
 

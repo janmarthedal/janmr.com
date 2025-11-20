@@ -7,11 +7,13 @@ tags:
 categories:
   - machine-learning
 excerpt: >-
-  This post will look at digit recognition using a neural network as described in earlier posts.
-  We will use the MNIST dataset, which is a collection of 70,000 imagesof handwritten digits.
-  Each image is 28x28 pixels, and each pixel is represented by an integer value between 0 and 255.
-  The dataset is split into 60,000 training images and 10,000 test images.
-mastodon: https://mathstodon.xyz/@janmr/111624103090324970
+  This post will look at digit recognition using a neural network as described
+  in earlier posts. We will use the MNIST dataset, which is a collection of
+  70,000 imagesof handwritten digits. Each image is 28x28 pixels, and each pixel
+  is represented by an integer value between 0 and 255. The dataset is split
+  into 60,000 training images and 10,000 test images.
+mastodon: 'https://mathstodon.xyz/@janmr/111624103090324970'
+_redirect: /blog/2023/12/neural-networks-11-digit-recognition/
 ---
 This post will look at digit recognition using a neural network as described in
 [earlier posts](/blog/2023/01/neural-networks-02-the-model/).

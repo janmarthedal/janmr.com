@@ -16,6 +16,7 @@ excerpt: >-
   of some line segment and, e.g., the product of two numbers was identified by
   the area of a rectangle with side-lengths equal to the two numbers. This made
   sense from a physical/applied point of view, but it had certain shortcomings.
+_redirect: /blog/2010/04/arithmetic-by-geometry/
 ---
 
 Today [real numbers](http://en.wikipedia.org/wiki/Real_number) are most often represented by applying ([elementary](http://en.wikipedia.org/wiki/Elementary_function_(differential_algebra))) [functions](http://en.wikipedia.org/wiki/Function_(mathematics)) to ([decimal](http://en.wikipedia.org/wiki/Decimal)) [integers](http://en.wikipedia.org/wiki/Integer). Throughout history, though, arithmetic and propositions involving (positive) real numbers were often considered from a purely geometrical point of view. Real numbers were identified by the length of some line segment and, e.g., the product of two numbers was identified by the area of a rectangle with side-lengths equal to the two numbers. This made sense from a physical/applied point of view, but it had certain shortcomings.

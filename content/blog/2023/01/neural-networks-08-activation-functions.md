@@ -6,8 +6,8 @@ tags:
   - neural-network
 categories:
   - machine-learning
-excerpt: >-
-  On activation functions for neural networks.
+excerpt: On activation functions for neural networks.
+_redirect: /blog/2023/01/neural-networks-08-activation-functions/
 ---
 As mentioned in a [previous post](/blog/2023/01/neural-networks-05-gradient-descent), the activation
 functions used in a [neural network](/blog/2023/01/neural-networks-02-the-model)

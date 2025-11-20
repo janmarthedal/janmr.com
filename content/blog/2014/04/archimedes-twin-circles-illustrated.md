@@ -6,6 +6,7 @@ tags:
   - visualization
   - theorem
 excerpt: The green circles will always be of equal size
+_redirect: /blog/2014/04/archimedes-twin-circles-illustrated/
 ---
 <figure>
   <div class="aspect-ratio" style="padding-bottom: 55%"><iframe src="/media/intgfx/archimedes-twin-circles.html"></iframe></div>

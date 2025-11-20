@@ -15,6 +15,7 @@ excerpt: >-
   to the next corresponding solstice or equinox. The length of a tropical year,
   however, is not constant. For instance, the length of tropical years as
   measured from one March equinox to the next can vary up to 30 minutes.
+_redirect: /blog/2020/04/leap-year-rules/
 ---
 According to the [The Astronomical Almanac](https://aa.usno.navy.mil/faq/asa_glossary#year,-tropical),
 a *tropical year* comprises a complete cycle of seasons and is approximately

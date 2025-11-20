@@ -11,6 +11,7 @@ excerpt: >-
   I was recently reminded of the crossed ladders problem. The following simple
   figure should be adequate in defining the problem: [...]. If you haven't seen
   the problem before, I highly recommend trying to solve it before reading on.
+_redirect: /blog/2011/03/crossed-ladders-problem/
 ---
 I was [recently reminded](https://twitter.com/divbyzero/status/44871018350784512) of the crossed ladders problem. The following simple figure should be adequate in defining the problem:
 

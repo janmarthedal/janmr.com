@@ -13,6 +13,7 @@ excerpt: >-
   identifiers to large, multi-line equations. That's an avarage of 51 math items
   per post, ranging from a few posts containing no math at all to one containing
   267 items. From the beginning I have used MathJax to display the math [...]
+_redirect: /blog/2015/01/mathjax-katex-and-a-lot-of-math/
 ---
 Prior to the current post, this blog contained 45&nbsp;posts with a total of 2307&nbsp;math items, where a math item is anything from single-letter variable identifiers to large, multi-line equations. That's an avarage of 51&nbsp;math items per post, ranging from a few posts containing no math at all to [one](/blog/2009/04/the-game-of-nim) containing 267&nbsp;items.
 

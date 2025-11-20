@@ -9,10 +9,11 @@ tags:
 categories:
   - numerical-analysis
 excerpt: >-
-  Let us consider the matrix representation of the Laplace operator in one dimension
-  and how to create it using NumPy and SciPy. Furthermore, we compare the dense and
-  sparse matrix representations for matrix-matrix multiplication.
-mastodon: https://mathstodon.xyz/@janmr/112348997048554139
+  Let us consider the matrix representation of the Laplace operator in one
+  dimension and how to create it using NumPy and SciPy. Furthermore, we compare
+  the dense and sparse matrix representations for matrix-matrix multiplication.
+mastodon: 'https://mathstodon.xyz/@janmr/112348997048554139'
+_redirect: /blog/2024/04/the-1d-laplace-matrix-using-numpy-and-scipy/
 ---
 Let us consider the $n \times n$ matrix representation of the Laplace operator in one dimension,
 as introduced in the post

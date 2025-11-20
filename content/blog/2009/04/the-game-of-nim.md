@@ -11,11 +11,12 @@ excerpt: >-
   I have known the game of Nim for many years. Once, a friend of mine beat me
   repeatedly in one game after another and I had no idea how he did it. Looking
   back, I am not sure he knew the perfect Nim-strategy, but he knew enough to
-  frustrate me immensely. A year ago or so, I was flicking through
-  The Art of Computer Programming, Volume 4A by Donald E. Knuth, and I read about
-  the strategy of Nim. The strategy is very simple but I could not possibly
+  frustrate me immensely. A year ago or so, I was flicking through The Art of
+  Computer Programming, Volume 4A by Donald E. Knuth, and I read about the
+  strategy of Nim. The strategy is very simple but I could not possibly
   understand why it worked. This article shows why the strategy works,
   introducing the necessary game theory along the way. [...]
+_redirect: /blog/2009/04/the-game-of-nim/
 ---
 ### Introduction
 

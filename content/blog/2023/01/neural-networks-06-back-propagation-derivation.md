@@ -6,8 +6,8 @@ tags:
   - neural-network
 categories:
   - machine-learning
-excerpt: >-
-  We show how to compute the gradient of a neural network error function.
+excerpt: We show how to compute the gradient of a neural network error function.
+_redirect: /blog/2023/01/neural-networks-06-back-propagation-derivation/
 ---
 Consider a neural network as [previously described](/blog/2023/01/neural-networks-02-the-model).
 The structure of the neural network is fixed, that is, the number of layers and the number of

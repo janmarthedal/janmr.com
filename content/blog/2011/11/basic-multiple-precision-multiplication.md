@@ -16,6 +16,7 @@ excerpt: >-
   basic, pencil-and-paper-like method. Basically, it consists of two parts:
   Multiplying a number by a single digit and adding together the sub-results,
   aligned appropriately. [...]
+_redirect: /blog/2011/11/basic-multiple-precision-multiplication/
 ---
 After addressing multiple-precision [addition](/blog/2011/10/multiple-precision-addition) and [subtraction](/blog/2011/10/multiple-precision-subtraction), we now turn to multiplication of two multiple-precision numbers. Once again, we use the number representation and notation [introduced earlier](/blog/2011/10/multiple-precision-number-representation).
 
