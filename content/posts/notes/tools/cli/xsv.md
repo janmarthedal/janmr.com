@@ -1,9 +1,7 @@
 ---
 title: xsv
-layout: page
+layout: new-page
 ---
-# xsv
-
 Extract first column (using `;` as separator):
 ```bash
 xsv select -d ';' 1 in.csv > out.csv

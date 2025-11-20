@@ -1,9 +1,7 @@
 ---
 title: CLI tools
-layout: page
+layout: new-page
 ---
-# CLI tools
-
 - [bash](bash/)
 - [curl](curl/)
 - [diff](diff/)

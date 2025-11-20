@@ -1,9 +1,7 @@
 ---
 title: curl
-layout: page
+layout: new-page
 ---
-# curl
-
 [curl POST examples](https://gist.github.com/subfuzion/08c5d85437d5d4f00e58)
 
 ### POST with json data

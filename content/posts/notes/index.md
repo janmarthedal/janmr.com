@@ -1,9 +1,7 @@
 ---
 title: Notes
-layout: page
+layout: new-page
 ---
-# Notes
-
 A personal collection of notes and links.
 Not complete or objective in any way.
 Perhaps useful for others.

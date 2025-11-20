@@ -1,9 +1,7 @@
 ---
 title: git
-layout: page
+layout: new-page
 ---
-# git
-
 ### Pretty logging
 
 ```

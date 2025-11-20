@@ -1,14 +1,12 @@
 ---
 title: sed
-layout: page
+layout: new-page
 ---
-# sed
-
 [Manual](https://www.gnu.org/software/sed/manual/sed.html)
 
-## Examples
+### Examples
 
-### Prepend/append to each line of file
+#### Prepend/append to each line of file
 
 Command:
 ```bash
@@ -23,7 +21,7 @@ before value3 after
 before value4 after
 ```
 
-### Extract specific line
+#### Extract specific line
 
 Extract line 4:
 ```bash
