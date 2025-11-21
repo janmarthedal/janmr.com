@@ -43,13 +43,13 @@ which also inspired some the approaches in this blog series.
 
 Each post will be centered around a specific topic:
 
-- [The Model](/blog/2023/01/neural-networks-02-the-model)
-- [Evaluating Multiple Inputs](/blog/2023/01/neural-networks-03-multiple-inputs)
-- [The Optimization Problem](/blog/2023/01/neural-networks-04-the-optimization-problem)
-- [Gradient Descent](/blog/2023/01/neural-networks-05-gradient-descent)
-- [Back-propagation Derivation](/blog/2023/01/neural-networks-06-back-propagation-derivation)
-- [Back-propagation Matrix-style](/blog/2023/01/neural-networks-07-back-propagation-matrix-style)
-- [Activation Functions](/blog/2023/01/neural-networks-08-activation-functions)
-- [Implementation](/blog/2023/01/neural-networks-09-implementation)
-- [Linear Regression](/blog/2023/12/neural-networks-10-linear-regression)
-- [Digit Recognition](/blog/2023/12/neural-networks-11-digit-recognition)
+- [The Model](/posts/machine-learning/neural-networks/02-the-model)
+- [Evaluating Multiple Inputs](/posts/machine-learning/neural-networks/03-multiple-inputs)
+- [The Optimization Problem](/posts/machine-learning/neural-networks/04-the-optimization-problem)
+- [Gradient Descent](/posts/machine-learning/neural-networks/05-gradient-descent)
+- [Back-propagation Derivation](/posts/machine-learning/neural-networks/06-back-propagation-derivation)
+- [Back-propagation Matrix-style](/posts/machine-learning/neural-networks/07-back-propagation-matrix-style)
+- [Activation Functions](/posts/machine-learning/neural-networks/08-activation-functions)
+- [Implementation](/posts/machine-learning/neural-networks/09-implementation)
+- [Linear Regression](/posts/machine-learning/neural-networks/10-linear-regression)
+- [Digit Recognition](/posts/machine-learning/neural-networks/11-digit-recognition)
