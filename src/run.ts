@@ -1,5 +1,5 @@
 import assert from "assert";
-import { mkdirSync, readFileSync, writeFileSync } from "fs";
+import { mkdirSync, appendFileSync, readFileSync, writeFileSync } from "fs";
 import { dirname, extname, join } from "path";
 import { globIterateSync } from "glob";
 import matter from "gray-matter";
@@ -19,6 +19,7 @@ const CSS_INPUT = ["css/normalize.css", "css/styles.less"];
 const CSS_OUTPUT = "css/styles.css";
 const SOURCE_PATTERN = "**/*";
 const SITE_DIR = "_site";
+const REDIRECT_FILE = join(SITE_DIR, "_redirects");
 const IGNORE_PATTERNS = COPY_PATTERNS;
 const LAYOUT_DIR = "layouts";
 const INCLUDE_DRAFTS = process.argv.includes("--drafts");
@@ -89,6 +90,12 @@ function writeFile(filename: string, contents: string | Buffer) {
     const path = join(SITE_DIR, filename);
     mkdirSync(dirname(path), { recursive: true });
     writeFileSync(path, contents);
+}
+
+function appendRedirect(src: string, dst: string) {
+    console.log("append redirect", src, dst);
+    const line = `${src}\t${dst}\n`;
+    appendFileSync(REDIRECT_FILE, line);
 }
 
 function minifyCss(cssPages: Array<Page>, url: string): Page {
@@ -225,6 +232,17 @@ function writePages(pages: Array<Page>) {
             ? renderLayout(page.data.layout as string, { ...page, metadata })
             : env.renderString(page.content, { ...page, metadata, content: undefined });
         writeFile(page.url, output);
+        if (page.data.redirect) {
+            const src = page.data.redirect as string;
+            let dst = `/${page.url}`;
+            if (dst.endsWith("/index.html")) {
+                dst = dst.slice(0, -10);
+            }
+            appendRedirect(src, dst);
+            if (src.endsWith("/")) {
+                appendRedirect(`${src}index.html`, dst);
+            }
+        }
     }
 }
 
@@ -263,7 +281,7 @@ function extractPage(pages: Array<Page>, url: string): Page {
 }
 
 function makeRefMap(refs: Array<Page>): Map<string, Page> {
-    return new Map(refs.map((ref) => ["/" + ref.url, ref]));
+    return new Map(refs.map((ref) => [`/${ref.url}`, ref]));
 }
 
 async function run() {

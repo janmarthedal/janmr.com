@@ -1,13 +1,13 @@
 ---
 title: Neural Networks - Implementation
 date: '2023-01-22'
-layout: post
+layout: new-page
 tags:
   - neural-network
 categories:
   - machine-learning
 excerpt: How to implement a simple neural network in Python/NumPy.
-_redirect: /blog/2023/01/neural-networks-09-implementation/
+redirect: /blog/2023/01/neural-networks-09-implementation/
 ---
 This post will describe how to implement a simple, trainable neural network in
 [Python](https://www.python.org) using [NumPy](https://numpy.org).

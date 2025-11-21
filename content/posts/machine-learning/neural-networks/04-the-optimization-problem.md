@@ -1,7 +1,7 @@
 ---
 title: Neural Networks - The Optimization Problem
 date: '2023-01-17'
-layout: post
+layout: new-page
 tags:
   - neural-network
 categories:
@@ -9,7 +9,7 @@ categories:
 excerpt: >-
   We introduce an error function to minimize in order to fit a training set as
   best as possible.
-_redirect: /blog/2023/01/neural-networks-04-the-optimization-problem/
+redirect: /blog/2023/01/neural-networks-04-the-optimization-problem/
 ---
 Consider a neural network as [previously described](/blog/2023/01/neural-networks-02-the-model).
 As before, we fix the structure of the neural network: The number of layers and the number of
