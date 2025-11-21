@@ -1,13 +1,13 @@
 ---
 title: Neural Networks - The Model
 date: '2023-01-15'
-layout: post
+layout: new-page
 tags:
   - neural-network
 categories:
   - machine-learning
 excerpt: We define the neural network that we will be exploring in the following posts.
-_redirect: /blog/2023/01/neural-networks-02-the-model/
+redirect: /blog/2023/01/neural-networks-02-the-model/
 ---
 A neural network has a specific structure given by
 1. the number of layers $L$,
