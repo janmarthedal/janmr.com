@@ -32,7 +32,7 @@ so $u$ is an $m$-digit number and $v$ is an $n$-digit number (see [previous post
 Two special cases are easily dealt with:
 
  * If $m < n$ then $u < v$ and so $q = 0$ and $r = u$ is the simple answer.
- * If $n = 1$ then $v$ is just a single digit and we use a [short division algorithm](/blog/2012/11/basic-multiple-precision-short-division) instead.
+ * If $n = 1$ then $v$ is just a single digit and we use a [short division algorithm](/posts/multiple-precision/05-basic-short-division) instead.
 
 So in the following we assume that $m \geq n > 1$.
 
