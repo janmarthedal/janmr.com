@@ -11,7 +11,7 @@ excerpt: >-
   best as possible.
 redirect: /blog/2023/01/neural-networks-04-the-optimization-problem/
 ---
-Consider a neural network as [previously described](/posts/machine-learning/neural-networks/02-the-model).
+Consider a neural network as [previously described](/posts/neural-networks/02-the-model).
 As before, we fix the structure of the neural network: The number of layers and the number of
 nodes and the activation functions for each layer. Now, given the weights and biases
 for each layers, we can compute the output vector
@@ -58,4 +58,4 @@ a *training set*. It is called so because given a training set, we can seek the 
 the neural network that *minimizes* the error $E$.
 
 How do you find the parameters that minimizes a given function? That is the subject of the
-[next post](/posts/machine-learning/neural-networks/05-gradient-descent).
+[next post](/posts/neural-networks/05-gradient-descent).

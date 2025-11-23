@@ -9,7 +9,7 @@ categories:
 excerpt: We show how to compute the gradient of a neural network error function.
 redirect: /blog/2023/01/neural-networks-06-back-propagation-derivation/
 ---
-Consider a neural network as [previously described](/posts/machine-learning/neural-networks/02-the-model).
+Consider a neural network as [previously described](/posts/neural-networks/02-the-model).
 The structure of the neural network is fixed, that is, the number of layers and the number of
 nodes and the activation functions for each layer.
 
@@ -23,9 +23,9 @@ Y &= [\textbf{y}_1 \; \textbf{y}_2 \; \cdots \; \textbf{y}_m], \\
 \end{aligned}
 $$
 and $A^1, Z^1, \ldots, A^L, Z^L$, are computed as described in the
-[multiple inputs post](/posts/machine-learning/neural-networks/03-multiple-inputs).
+[multiple inputs post](/posts/neural-networks/03-multiple-inputs).
 
-We now have the [error function](/posts/machine-learning/neural-networks/04-the-optimization-problem)
+We now have the [error function](/posts/neural-networks/04-the-optimization-problem)
 defined as
 $$
 E = \tfrac{1}{2m} \sum_{c=1}^m \sum_{i=1}^{n^L} \left( A_{ic}^L - Y_{ic} \right)^2,
@@ -54,7 +54,7 @@ $$
 = \sum_{c=1}^m \frac{\partial E}{\partial Z^l_{ic}} A^{l-1}_{jc},
 $$
 for $i=1,\ldots,n^l$, $j=1,\ldots,n^{l-1}$, $l=1,\ldots,L$, where we use
-[the definition](/posts/machine-learning/neural-networks/03-multiple-inputs) of $Z^l_{ic}$.
+[the definition](/posts/neural-networks/03-multiple-inputs) of $Z^l_{ic}$.
 Similarly for $b^l_i$:
 $$
 \frac{\partial E}{\partial b^l_i}
@@ -92,6 +92,6 @@ described for neural networks by David E. Rumelhart, Geoffrey E. Hinton and Rona
 in the paper [Learning representations by back-propagating errors](/refs/rumelhart86).
 
 If all these partial derivatives and indices are making you dizzy, I don't blame you.
-The [next post](/posts/machine-learning/neural-networks/07-back-propagation-matrix-style)
+The [next post](/posts/neural-networks/07-back-propagation-matrix-style)
 will look at how to compute the gradient using matrix notation, which
 should be easier to comprehend.
