@@ -18,7 +18,7 @@ _redirect: /blog/2010/09/computing-the-integer-binary-logarithm/
 ---
 The binary logarithm, or the logarithm to the base 2, of a number $x > 0$ is the number $y = log_2 x$ such that $2^y = x$. This article looks at how we can determine the integer part of the binary logarithm using integer arithmetic only. Naturally, the binary logarithm is especially easy to work with on (binary) computers and bitwise operations come in handy.
 
-As we saw in a [previous post](/blog/2009/09/useful-properties-of-the-floor-and-ceil-functions), we have
+As we saw in a [previous post](/posts/useful-properties-of-the-floor-and-ceil-functions), we have
 
 $$
 k = \lfloor \log_2 n \rfloor \quad \Leftrightarrow \quad 2^k \leq n < 2^{k+1}.
@@ -26,7 +26,7 @@ $$
 
 This means that we seek an integer $k$ such that $\lfloor n/2^k \rfloor \neq 0$ and $\lfloor n/2^{k+1} \rfloor = 0$. We see that $k$ is the position of the left-most bit or, equivalently, that it takes $k + 1$ bits, but no fewer, to represent the number $n$.
 
-The [ceil/floor post](/blog/2009/09/useful-properties-of-the-floor-and-ceil-functions) also states
+The [ceil/floor post](/posts/useful-properties-of-the-floor-and-ceil-functions) also states
 
 $$
 \lfloor \ldots \lfloor \lfloor n/2 \rfloor /2 \rfloor \ldots /2 \rfloor = \left\lfloor \frac{n}{2 \cdot 2 \cdots 2} \right\rfloor,
@@ -45,7 +45,7 @@ unsigned floor_log2(T v) {
 
 The good thing about this algorithm is that it works for all (positive) integer types, provided that bitwise shift right `>>` or integer division by two is defined. The bad thing is that it is not very fast.
 
-An observation that can lead to faster algorithms is the fact that, as mentioned above, $\lfloor \log_2 n \rfloor$ is the position of the left-most bit. Let us address multiple-precision numbers first. Assume that a positive integer $n$ is represented as in a [previous post](/blog/2009/07/implementing-multiple-precision-arithmetic-part-1) as
+An observation that can lead to faster algorithms is the fact that, as mentioned above, $\lfloor \log_2 n \rfloor$ is the position of the left-most bit. Let us address multiple-precision numbers first. Assume that a positive integer $n$ is represented as in a [previous post](/posts/implementing-multiple-precision-arithmetic-part-1) as
 
 $$
 n = (n_{d-1} \ldots n_1 u_0)_b = \sum_{i=0}^{d-1} n_i b^i

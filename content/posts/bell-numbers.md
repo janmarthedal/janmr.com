@@ -52,6 +52,6 @@ $$
 
 for $n \geq 1$ and using $B_0 = 1$ we can now compute $B_n$ for any value of $n$ (no closed-form expression is known).
 
-Bell numbers are closely related to Stirling numbers of the second kind, see, e.g., my previous post [Twelve Ways of Counting](/blog/2008/12/twelve-ways-of-counting).
+Bell numbers are closely related to Stirling numbers of the second kind, see, e.g., my previous post [Twelve Ways of Counting](/posts/twelve-ways-of-counting).
 
 The excellent books [The Book of Numbers](/refs/conway-guy) and [Concrete Mathematics](/refs/concrete) have more information on Bell numbers.

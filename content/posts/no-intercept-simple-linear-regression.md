@@ -14,7 +14,7 @@ excerpt: >-
 mastodon: 'https://mathstodon.xyz/@janmr/111611187727950915'
 _redirect: /blog/2023/12/no-intercept-simple-linear-regression/
 ---
-The [previous post](/blog/2023/12/origin-centered-simple-linear-regression/) considered
+The [previous post](/posts/origin-centered-simple-linear-regression) considered
 the problem of finding the line that best fits a set of points in the plane,
 with the additional restriction that the points' center of mass was at the origin.
 
@@ -62,7 +62,7 @@ a = \frac{s_{xy}}{s_{xx}}.
 $$
 
 Note how this is the exact same slope as the case where the
-[center of mass was at the origin](/blog/2023/12/origin-centered-simple-linear-regression/).
+[center of mass was at the origin](/posts/origin-centered-simple-linear-regression).
 
 <figure>
   <img src="/media/simple-linreg/no-intercept-line.svg" class="img-responsive" alt="The line that best fits a set of points when the line must pass through the origin">

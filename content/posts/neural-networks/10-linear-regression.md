@@ -45,6 +45,6 @@ This means that the simple network described above is *equivalent* to
 linear regression (with a least squares error function, as is the most common).
 
 This means that
-- a single input node $n^0=1$ and no bias corresponds to [no-intercept simple linear regression](/blog/2023/12/no-intercept-simple-linear-regression/),
-- a single input node $n^0=1$ and a bias corresponds to [simple linear regression](/blog/2023/12/simple-linear-regression/),
-- any number of input nodes $n^0 \geq 1$ (with or without bias) corresponds to (general) [linear regression](/blog/2023/05/linear-regression-basics/).
+- a single input node $n^0=1$ and no bias corresponds to [no-intercept simple linear regression](/posts/no-intercept-simple-linear-regression),
+- a single input node $n^0=1$ and a bias corresponds to [simple linear regression](/posts/simple-linear-regression),
+- any number of input nodes $n^0 \geq 1$ (with or without bias) corresponds to (general) [linear regression](/posts/linear-regression-basics).
