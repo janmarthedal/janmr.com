@@ -1,7 +1,7 @@
 ---
 title: Stackexchange Lists
 date: '2011-02-03'
-layout: post
+layout: page
 tags:
   - links
   - stackexchange

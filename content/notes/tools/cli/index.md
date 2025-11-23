@@ -1,6 +1,6 @@
 ---
 title: CLI tools
-layout: new-page
+layout: page
 ---
 - [bash](bash/)
 - [curl](curl/)

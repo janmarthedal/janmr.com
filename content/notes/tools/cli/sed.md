@@ -1,6 +1,6 @@
 ---
 title: sed
-layout: new-page
+layout: page
 ---
 [Manual](https://www.gnu.org/software/sed/manual/sed.html)
 

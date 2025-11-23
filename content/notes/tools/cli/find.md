@@ -1,6 +1,6 @@
 ---
 title: find
-layout: new-page
+layout: page
 ---
 Run command for each file:
 ```bash

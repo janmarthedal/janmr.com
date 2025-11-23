@@ -1,7 +1,7 @@
 ---
 title: Fractions and Circles
 date: '2010-02-06'
-layout: post
+layout: page
 tags:
   - stern-brocot-tree
   - fractions

@@ -1,6 +1,6 @@
 ---
 title: curl
-layout: new-page
+layout: page
 ---
 [curl POST examples](https://gist.github.com/subfuzion/08c5d85437d5d4f00e58)
 

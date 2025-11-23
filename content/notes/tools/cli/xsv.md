@@ -1,6 +1,6 @@
 ---
 title: xsv
-layout: new-page
+layout: page
 ---
 Extract first column (using `;` as separator):
 ```bash

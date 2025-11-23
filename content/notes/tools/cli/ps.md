@@ -1,6 +1,6 @@
 ---
 title: ps
-layout: new-page
+layout: page
 ---
 ### How long has a process been running
 ```bash

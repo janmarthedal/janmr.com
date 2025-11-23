@@ -1,7 +1,7 @@
 ---
 title: Entering the World of Web Components
 date: '2014-07-02'
-layout: post
+layout: page
 tags:
   - web-components
   - web-development

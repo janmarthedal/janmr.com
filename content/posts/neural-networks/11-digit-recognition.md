@@ -1,7 +1,7 @@
 ---
 title: Neural Networks - Digit Recognition
 date: '2023-12-22'
-layout: new-page
+layout: page
 tags:
   - neural-network
 categories:

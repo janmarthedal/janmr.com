@@ -1,7 +1,7 @@
 ---
 title: a to the bth power versus b to the ath power
 date: '2024-08-04'
-layout: post
+layout: page
 tags:
   - nerd-sniping
   - inequality

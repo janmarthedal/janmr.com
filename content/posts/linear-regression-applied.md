@@ -1,7 +1,7 @@
 ---
 title: Linear Regression Applied
 date: '2023-05-05'
-layout: post
+layout: page
 categories:
   - machine-learning
 excerpt: >-

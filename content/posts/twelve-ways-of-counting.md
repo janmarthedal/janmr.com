@@ -1,7 +1,7 @@
 ---
 title: Twelve Ways of Counting
 date: '2008-12-26'
-layout: post
+layout: page
 tags:
   - combinatorics
 categories:

@@ -1,7 +1,7 @@
 ---
 title: Prime Factors of Factorial Numbers
 date: '2010-10-30'
-layout: post
+layout: page
 tags:
   - prime-numbers
   - factorials

@@ -1,7 +1,7 @@
 ---
 title: A Kronecker Product and Vec Operator Identity
 date: '2024-04-26'
-layout: post
+layout: page
 tags:
   - kronecker-product
   - vec-operator

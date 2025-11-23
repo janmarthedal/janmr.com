@@ -1,6 +1,6 @@
 ---
 title: People
-layout: new-page
+layout: page
 ---
 - [Andrew Kelley](https://andrewkelley.me/)
   Creator of Zig

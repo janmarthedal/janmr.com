@@ -1,7 +1,7 @@
 ---
 title: Neural Networks - The Model
 date: '2023-01-15'
-layout: new-page
+layout: page
 tags:
   - neural-network
 categories:

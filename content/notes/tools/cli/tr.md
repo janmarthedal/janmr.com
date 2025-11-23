@@ -1,6 +1,6 @@
 ---
 title: tr
-layout: new-page
+layout: page
 ---
 Remove all occurrences of `"` from input
 ```bash

@@ -1,7 +1,7 @@
 ---
 title: Neural Networks - Activation Functions
 date: '2023-01-21'
-layout: new-page
+layout: page
 tags:
   - neural-network
 categories:

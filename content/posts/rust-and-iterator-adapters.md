@@ -1,7 +1,7 @@
 ---
 title: Rust and Iterator Adapters
 date: '2021-01-24'
-layout: post
+layout: page
 tags:
   - rust
 categories:

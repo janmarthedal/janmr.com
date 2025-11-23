@@ -28,11 +28,8 @@ janmr.com/
 │   └── *.njk        # Top-level Nunjucks templates
 ├── layouts/         # Nunjucks layout templates
 │   ├── base.njk
-│   ├── blog-page.njk
 │   ├── page.njk
-│   ├── post.njk
-│   ├── reference.njk
-│   └── tag-page.njk
+│   └── reference.njk
 ├── src/             # TypeScript source code
 │   ├── rss/         # RSS feed generation utilities
 │   └── run.ts       # Main build script

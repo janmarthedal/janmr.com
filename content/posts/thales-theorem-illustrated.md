@@ -1,7 +1,7 @@
 ---
 title: Thales' Theorem Illustrated
 date: '2014-04-02'
-layout: post
+layout: page
 tags:
   - visualization
   - theorem

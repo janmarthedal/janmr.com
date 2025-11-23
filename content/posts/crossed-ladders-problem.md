@@ -1,7 +1,7 @@
 ---
 title: The Crossed Ladders Problem
 date: '2011-03-27'
-layout: post
+layout: page
 tags:
   - geometry
   - nerd-sniping

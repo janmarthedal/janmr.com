@@ -1,6 +1,6 @@
 ---
 title: Courses
-layout: new-page
+layout: page
 ---
 ### Computer Science
 

@@ -1,7 +1,7 @@
 ---
 title: Neural Networks - Implementation
 date: '2023-01-22'
-layout: new-page
+layout: page
 tags:
   - neural-network
 categories:

@@ -1,7 +1,7 @@
 ---
 title: Linear Regression Basics
 date: '2023-05-04'
-layout: post
+layout: page
 categories:
   - machine-learning
 excerpt: >-

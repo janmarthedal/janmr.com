@@ -1,7 +1,7 @@
 ---
 title: Generating All Permutations
 date: '2020-06-14'
-layout: post
+layout: page
 tags:
   - combinatorics
   - permutations

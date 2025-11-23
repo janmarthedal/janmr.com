@@ -1,7 +1,7 @@
 ---
 title: 'Book Review: Prime Obsession'
 date: '2010-01-09'
-layout: post
+layout: page
 tags:
   - book-review
   - recommended-reading
