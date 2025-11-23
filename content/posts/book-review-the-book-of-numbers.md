@@ -1,7 +1,7 @@
 ---
 title: 'Book Review: The Book of Numbers'
 date: '2010-05-23'
-layout: post
+layout: page
 tags:
   - book-review
   - recommended-reading

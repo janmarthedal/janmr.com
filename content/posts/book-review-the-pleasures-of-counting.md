@@ -1,7 +1,7 @@
 ---
 title: 'Book review: The Pleasures of Counting'
 date: '2009-11-15'
-layout: post
+layout: page
 tags:
   - book-review
   - recommended-reading

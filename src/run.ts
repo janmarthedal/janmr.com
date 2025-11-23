@@ -150,7 +150,7 @@ function loadPages(): Array<Page> {
                 let type = PageType.Other;
                 if (filename.startsWith("updates/")) {
                     type = PageType.Update;
-                } else if (data.layout === "post") {
+                } else if (filename.startsWith("posts/")) {
                     type = PageType.Post;
                 } else if (data.layout === "reference") {
                     type = PageType.Reference;
@@ -257,7 +257,7 @@ function decoratePosts(posts: Array<Page>, refMap: Map<string, Page>) {
     for (let i = 0; i < posts.length; i++) {
         const post = posts[i];
         const refUrls = new Set<string>();
-        for (const match of post.content.matchAll(/\[.*?\]\((\/refs\/.*?)\)/g)) {
+        for (const match of post.content.matchAll(/\[.*?\]\((\/refs\/.*?)\)/gs)) {
             const refUrl = normalizeLocalLink(match[1]);
             if (!refUrls.has(refUrl)) {
                 const refPage = refMap.get(refUrl);
@@ -293,16 +293,19 @@ async function run() {
         CSS_OUTPUT,
     );
     pages.push(cssPage);
+
     const posts = pages.filter(p => p.type === PageType.Post);
-    posts.sort((a, b) => +a.date! - +b.date!);
     const refs = pages.filter((p) => p.type === PageType.Reference);
-    refs.sort((a, b) => (a.title as string).localeCompare(b.title as string));
-    const refMap = makeRefMap(refs);
-    processMarkdown(pages);
     const updates = pages.filter((page) => page.type === PageType.Update);
     const publishPages = pages.filter((page) => page.type !== PageType.Update);
+
+    posts.sort((a, b) => +a.date! - +b.date!);
+    refs.sort((a, b) => (a.title as string).localeCompare(b.title as string));
+    const refMap = makeRefMap(refs);
     updates.sort((a, b) => +a.date! - +b.date!);
+
     decoratePosts(publishPages, refMap);
+    processMarkdown(pages);
     processNunjucks(publishPages, { posts, refs, updates });
     writePages(publishPages);
 }

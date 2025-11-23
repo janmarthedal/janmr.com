@@ -1,7 +1,7 @@
 ---
 title: Equality of Floating-Point Numbers
 date: '2023-12-03'
-layout: post
+layout: page
 categories:
   - mathematics
   - programming

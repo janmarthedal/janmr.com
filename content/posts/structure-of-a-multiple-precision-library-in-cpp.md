@@ -1,7 +1,7 @@
 ---
 title: Structure of a Multiple-Precision Library in C++
 date: '2014-06-03'
-layout: post
+layout: page
 tags:
   - arithmetic
   - algorithms

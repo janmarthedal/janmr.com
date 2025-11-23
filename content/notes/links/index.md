@@ -1,6 +1,6 @@
 ---
 title: Links
-layout: new-page
+layout: page
 ---
 - [Books](books/)
 - [Courses](courses/)

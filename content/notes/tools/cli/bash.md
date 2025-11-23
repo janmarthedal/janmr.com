@@ -1,6 +1,6 @@
 ---
 title: bash
-layout: new-page
+layout: page
 ---
 ### for loop
 

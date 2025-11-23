@@ -1,6 +1,6 @@
 ---
 title: Books
-layout: new-page
+layout: page
 ---
 ### Collections
 

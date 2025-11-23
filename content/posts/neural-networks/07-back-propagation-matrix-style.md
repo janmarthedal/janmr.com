@@ -1,7 +1,7 @@
 ---
 title: Neural Networks - Back-propagation Matrix-style
 date: '2023-01-20'
-layout: new-page
+layout: page
 tags:
   - neural-network
 categories:

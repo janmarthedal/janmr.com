@@ -1,6 +1,6 @@
 ---
 title: git
-layout: new-page
+layout: page
 ---
 ### Pretty logging
 

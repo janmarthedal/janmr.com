@@ -1,7 +1,7 @@
 ---
 title: Bell Numbers
 date: '2011-06-23'
-layout: post
+layout: page
 tags:
   - combinatorics
   - ode

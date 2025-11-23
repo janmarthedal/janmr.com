@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
-    <title>{{ title }}</title>
+    <title>janmr.com{% if title %} | {{ title }}{% endif %}</title>
     <link rel="icon" type="image/png" href="/icon-48x48.png">
     <link rel="alternate" href="{{ metadata.feed.url }}" type="application/atom+xml" title="{{ metadata.title }}">
     {% block head -%}

@@ -1,7 +1,7 @@
 ---
 title: No-Intercept Simple Linear Regression
 date: '2023-12-19'
-layout: post
+layout: page
 tags:
   - machine-learning
 categories:

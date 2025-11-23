@@ -1,6 +1,6 @@
 ---
 title: Notes
-layout: new-page
+layout: page
 ---
 A personal collection of notes and links.
 Not complete or objective in any way.

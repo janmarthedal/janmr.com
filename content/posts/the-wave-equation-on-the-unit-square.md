@@ -1,7 +1,7 @@
 ---
 title: The Wave Equation on the Unit Square
 date: '2024-05-07'
-layout: post
+layout: page
 tags:
   - laplace-operator
   - finite-differences

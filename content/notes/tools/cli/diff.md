@@ -1,6 +1,6 @@
 ---
 title: diff
-layout: new-page
+layout: page
 ---
 Count number of different lines
 ```bash

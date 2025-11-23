@@ -1,7 +1,7 @@
 ---
 title: The 1D Laplace Matrix Using NumPy and SciPy
 date: '2024-04-28'
-layout: post
+layout: page
 tags:
   - laplace-matrix
   - numpy

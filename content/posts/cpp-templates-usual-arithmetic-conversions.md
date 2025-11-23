@@ -1,7 +1,7 @@
 ---
 title: C++ Templates and Usual Arithmetic Conversions
 date: '2010-08-28'
-layout: post
+layout: page
 tags:
   - cpp
   - templates

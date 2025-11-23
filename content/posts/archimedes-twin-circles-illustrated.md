@@ -1,7 +1,7 @@
 ---
 title: Archimedes' Twin Circles Illustrated
 date: '2014-04-03'
-layout: post
+layout: page
 tags:
   - visualization
   - theorem
