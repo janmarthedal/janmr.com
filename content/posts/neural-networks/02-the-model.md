@@ -68,4 +68,4 @@ It does not have to be fully connected, some of the weights can be absent or, eq
 Similarly, the biases can also be left out.
 
 In the next post, we will look at vectorizing the evaluation when we have
-[multiple inputs](/posts/machine-learning/neural-networks/03-multiple-inputs).
+[multiple inputs](/posts/neural-networks/03-multiple-inputs).
