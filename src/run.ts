@@ -93,7 +93,7 @@ function writeFile(filename: string, contents: string | Buffer) {
 }
 
 function appendRedirect(src: string, dst: string) {
-    console.log("append redirect", src, dst);
+    // console.log("append redirect", src, dst);
     const line = `${src}\t${dst}\n`;
     appendFileSync(REDIRECT_FILE, line);
 }
@@ -293,6 +293,8 @@ async function run() {
         CSS_OUTPUT,
     );
     pages.push(cssPage);
+    const posts = pages.filter(p => p.type === PageType.Post);
+    posts.sort((a, b) => +a.date! - +b.date!);
     const refs = pages.filter((p) => p.type === PageType.Reference);
     refs.sort((a, b) => (a.title as string).localeCompare(b.title as string));
     const refMap = makeRefMap(refs);
@@ -301,7 +303,7 @@ async function run() {
     const publishPages = pages.filter((page) => page.type !== PageType.Update);
     updates.sort((a, b) => +a.date! - +b.date!);
     decoratePosts(publishPages, refMap);
-    processNunjucks(publishPages, { refs, updates });
+    processNunjucks(publishPages, { posts, refs, updates });
     writePages(publishPages);
 }
 
