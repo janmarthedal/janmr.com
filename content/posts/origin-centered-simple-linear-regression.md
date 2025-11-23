@@ -11,7 +11,7 @@ excerpt: >-
   the plane. We will, however, insist the the points' center of mass is at the
   origin, as this turns out to simplify the solution.
 mastodon: 'https://mathstodon.xyz/@janmr/111605595198122738'
-_redirect: /blog/2023/12/origin-centered-simple-linear-regression/
+redirect: /blog/2023/12/origin-centered-simple-linear-regression/
 ---
 Let us consider the task of finding the line that best fits a set of points in the plane.
 We will, however, insist the the points' center of mass is at the origin,

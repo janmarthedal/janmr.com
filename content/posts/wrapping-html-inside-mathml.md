@@ -14,7 +14,7 @@ excerpt: >-
   However, putting math markup in a structured way inside math elements has many
   advantages, such as accessibility and search engines. So let's put the HTML
   inside the `math` element, alongside the MathML.
-_redirect: /blog/2017/02/wrapping-html-inside-mathml/
+redirect: /blog/2017/02/wrapping-html-inside-mathml/
 ---
 [MathML](https://www.w3.org/Math/) is a mathematical markup language that can be used to integrate math into web pages. For example,
 

@@ -19,7 +19,7 @@ excerpt: >-
   computes the continued fraction representation of each fraction
   simultaneously, but stops as soon as they differ. It is also the algorithm
   used for comparisons in the Boost C++ library Rational.
-_redirect: /blog/2014/05/comparing-rational-numbers-without-overflow/
+redirect: /blog/2014/05/comparing-rational-numbers-without-overflow/
 ---
 Say you want to know if the inequality
 

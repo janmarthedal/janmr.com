@@ -7,7 +7,7 @@ categories:
 excerpt: >-
   This post looks at some examples of linear regression, as introduced in a
   previous post
-_redirect: /blog/2023/05/linear-regression-applied/
+redirect: /blog/2023/05/linear-regression-applied/
 ---
 This post looks at some examples of linear regression, as introduced in
 a [previous post](/posts/linear-regression-basics).

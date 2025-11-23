@@ -11,7 +11,7 @@ excerpt: >-
   this process in the same direction. The sixth circle will be tangent to both
   the fifth and the first circle, thus producing a cyclic chain of touching
   circles.
-_redirect: /blog/2014/04/six-circles-theorem-illustrated/
+redirect: /blog/2014/04/six-circles-theorem-illustrated/
 ---
 <figure>
   <div class="aspect-ratio" style="padding-bottom: 75%"><iframe src="/media/intgfx/six-circles-theorem.html"></iframe></div>

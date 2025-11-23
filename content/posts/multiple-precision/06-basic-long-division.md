@@ -15,7 +15,7 @@ excerpt: >-
   Algorithms, Section 4.3.1, of The Art of Computer Programming, Volume 2, by
   Donald E. Knuth. The material is quite theory-heavy and if you are just
   looking for the main algorithm, you can skip to the bottom and Algorithm L.
-_redirect: /blog/2014/04/basic-multiple-precision-long-division/
+redirect: /blog/2014/04/basic-multiple-precision-long-division/
 ---
 We consider the task of dividing a positive integer $u$ by another positive integer $v$, thus obtaining a quotient $q=\lfloor u/v \rfloor$ and a remainder $r$ such that $u = q v + r$ with $0 \leq r < v$.
 

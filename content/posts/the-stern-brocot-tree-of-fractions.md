@@ -12,7 +12,7 @@ excerpt: >-
   denominators. The fraction (m_1+m_2)/(n_1+n_2) is called the mediant of
   m_1/n_1 and m_2/n_2. It is straightforward to show that the mediant is placed
   numerically between the original fractions,
-_redirect: /blog/2009/12/the-stern-brocot-tree-of-fractions/
+redirect: /blog/2009/12/the-stern-brocot-tree-of-fractions/
 ---
 Consider two fractions $\frac{m_1}{n_1}$ and $\frac{m_2}{n_2}$ with positive numerators and denominators. The fraction $\frac{m_1+m_2}{n_1+n_2}$ is called the *mediant* of $\frac{m_1}{n_1}$ and $\frac{m_2}{n_2}$. It is straightforward to show that the mediant is placed numerically between the original fractions,
 

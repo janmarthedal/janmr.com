@@ -12,7 +12,7 @@ excerpt: >-
   center of mass was at the origin and where the line had to pass through the
   origin.
 mastodon: 'https://mathstodon.xyz/@janmr/111616905800145493'
-_redirect: /blog/2023/12/simple-linear-regression/
+redirect: /blog/2023/12/simple-linear-regression/
 ---
 We now turn to the general case of fitting a line to a set of points in the plane.
 The two previous posts considered the special cases where

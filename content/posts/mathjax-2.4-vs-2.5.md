@@ -12,7 +12,7 @@ excerpt: >-
   light of my recent experiments with MathJax and KaTeX, it was straightforward
   to set up an experiment that compared MathJax versions 2.4 and 2.5 with
   respect to rendering speed. [...]
-_redirect: /blog/2015/03/mathjax-2.4-vs-2.5/
+redirect: /blog/2015/03/mathjax-2.4-vs-2.5/
 ---
 MathJax version 2.5 was [released around a month ago](http://www.mathjax.org/mathjax-v2-5-now-available/). One of that version's features were speed improvements and that's always a good thing. Seen in the light of my recent [experiments with MathJax and KaTeX](/posts/mathjax-katex-and-a-lot-of-math), it was straightforward to set up an experiment that compared MathJax versions 2.4 and 2.5 with respect to rendering speed.
 

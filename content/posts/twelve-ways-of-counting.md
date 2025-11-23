@@ -16,7 +16,7 @@ excerpt: >-
   or unlabeled, whether the urns are labeled or unlabeled, and whether each urn
   can contain any number of balls, at most one or at least one, leading to 2*2*3
   = 12 cases. [...]
-_redirect: /blog/2008/12/twelve-ways-of-counting/
+redirect: /blog/2008/12/twelve-ways-of-counting/
 ---
 I have for a long time had an ambition of getting better at [combinatorics](http://en.wikipedia.org/wiki/Combinatorics), especially *enumerative combinatorics*, the discipline of counting the number of arrangements, given some pattern.
 

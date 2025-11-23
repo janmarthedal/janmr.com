@@ -16,7 +16,7 @@ excerpt: >-
   article deals with division. Again, the theoretic foundation is based on
   Section 4.3.1, The Classical Algorithms, of The Art of Computer Programming,
   Volume 2, by Donald E. Knuth.
-_redirect: /blog/2009/08/implementing-multiple-precision-arithmetic-part-2/
+redirect: /blog/2009/08/implementing-multiple-precision-arithmetic-part-2/
 ---
 ### Introduction
 

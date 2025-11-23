@@ -11,7 +11,7 @@ categories:
 excerpt: >-
   Let us consider short division, by which we mean a multiple-digit number u
   divided by a single digit v [...]
-_redirect: /blog/2012/11/basic-multiple-precision-short-division/
+redirect: /blog/2012/11/basic-multiple-precision-short-division/
 ---
 Let us consider short division, by which we mean a multiple-digit number $u = (u_{m-1} \ldots u_1 u_0)_b$ divided by a single digit $v$ (see, e.g., [post on number representation](/posts/multiple-precision-number-representation)). We will assume $m \geq 1$, $u_{m-1} \neq 0$ and $0 < v < b$.
 

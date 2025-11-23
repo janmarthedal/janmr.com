@@ -13,7 +13,7 @@ excerpt: >-
   algorithm is very similar to that of multiple-precision addition, but some
   minor differences make it worth while considering subtraction separately.
   [...]
-_redirect: /blog/2011/10/multiple-precision-subtraction/
+redirect: /blog/2011/10/multiple-precision-subtraction/
 ---
 We now turn to multiple-precision subtraction for non-negative integers. The algorithm is very similar to that of [multiple-precision addition](/posts/multiple-precision/02-addition), but some minor differences make it worth while considering subtraction separately.
 
