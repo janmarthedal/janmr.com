@@ -10,7 +10,7 @@ excerpt: >-
 _redirect: /blog/2023/05/linear-regression-applied/
 ---
 This post looks at some examples of linear regression, as introduced in
-a [previous post](/blog/2023/05/linear-regression-basics/).
+a [previous post](/posts/linear-regression-basics).
 
 To summerize the objective and the notation:
 A set of $n$ of data points $(\mathbf{x}_i, y_i)$, $i=1,\ldots,n$, are given

@@ -23,7 +23,7 @@ $$
 
 for some sufficiently smooth function $u: \mathbb{R}^2 \mapsto \mathbb{R}$.
 
-By following the procedure as in the [previous post](/blog/2024/04/finite-difference-discretization-of-1d-laplace),
+By following the procedure as in the [previous post](/posts/finite-difference-discretization-of-1d-laplace),
 we get:
 
 $$
@@ -77,7 +77,7 @@ $$
 D = L_m U + U L_n^T,
 $$
 
-where $L_k$ is the [1D Laplace matrix](/blog/2024/04/finite-difference-discretization-of-1d-laplace) of order $k$:
+where $L_k$ is the [1D Laplace matrix](/posts/finite-difference-discretization-of-1d-laplace) of order $k$:
 
 $$
 L_k = \frac{1}{h^2} \begin{bmatrix}
@@ -102,7 +102,7 @@ That is a total of $12 m n$ operations to compute $D$ from $U$.
 
 Another approach is to use the identities related to the $\operatorname{vec}$ and
 Kronecker product operators as seen in an
-[earlier post](/blog/2024/04/a-kronecker-product-and-vec-operator-identity).
+[earlier post](/posts/a-kronecker-product-and-vec-operator-identity).
 Using these, we get
 
 $$

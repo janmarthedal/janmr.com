@@ -25,7 +25,7 @@ $v|_{\partial \Omega} = 0$.
 
 We would like to solve this partial differential equation numerically.
 First, we discretize in space using a finite difference discretization as described in a
-[previous post](/blog/2024/05/finite-difference-discretization-of-2d-laplace/).
+[previous post](/posts/finite-difference-discretization-of-2d-laplace).
 More specifically, we use $n$ interior points in each direction and a grid spacing of $h = 1/(n+1)$.
 We introduce the matrix $U \in \mathbb{R}^{n \times n}$ with entries $U_{ij} = v(ih,jh)$
 for $i,j = 1,2,\ldots,n$. Finally, we set $u = \operatorname{vec}(U)$, where the $\operatorname{vec}$
@@ -51,7 +51,7 @@ L = \frac{1}{h^2} \begin{bmatrix}
 \end{bmatrix}
 $$
 
-(see the [previous post](/blog/2024/05/finite-difference-discretization-of-2d-laplace/) for the definition
+(see the [previous post](/posts/finite-difference-discretization-of-2d-laplace) for the definition
 of $\oplus$ and other details).
 
 So now we have a system of ordinary differential equations.

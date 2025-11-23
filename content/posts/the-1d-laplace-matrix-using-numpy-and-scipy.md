@@ -17,7 +17,7 @@ _redirect: /blog/2024/04/the-1d-laplace-matrix-using-numpy-and-scipy/
 ---
 Let us consider the $n \times n$ matrix representation of the Laplace operator in one dimension,
 as introduced in the post
-[Finite Difference Discretization of the 1D Laplace Operator](/blog/2024/04/finite-difference-discretization-of-1d-laplace):
+[Finite Difference Discretization of the 1D Laplace Operator](/posts/finite-difference-discretization-of-1d-laplace):
 
 $$
 \begin{bmatrix}

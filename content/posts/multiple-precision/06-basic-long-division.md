@@ -27,7 +27,7 @@ $$
 u = (u_{m-1} \ldots u_1 u_0)_b \quad \text{and} \quad v = (v_{n-1} \ldots v_1 v_0)_b \; ,
 $$
 
-so $u$ is an $m$-digit number and $v$ is an $n$-digit number (see [previous post](/blog/2011/10/multiple-precision-number-representation) for more details on representing multiple-precision numbers).
+so $u$ is an $m$-digit number and $v$ is an $n$-digit number (see [previous post](/posts/multiple-precision-number-representation) for more details on representing multiple-precision numbers).
 
 Two special cases are easily dealt with:
 
@@ -91,7 +91,7 @@ This approximate quotient is never too small, as the following theorem states.
 
 *Proof*. If $\hat{q}=b-1$ then since $q \leq b-1$ by assumption, the statement is true.
 
-Assume then that $\hat{q} = \lfloor (u_n b + u_{n-1})/v_{n-1} \rfloor$. From the properties of the [floor function](/blog/2009/09/useful-properties-of-the-floor-and-ceil-functions) we have $u_n b + u_{n-1} \leq \hat{q} v_{n-1} + v_{n-1} - 1$ and therefore $\hat{q} v_{n-1} \geq u_n b + u_{n-1} - v_{n-1} + 1$. We then get
+Assume then that $\hat{q} = \lfloor (u_n b + u_{n-1})/v_{n-1} \rfloor$. From the properties of the [floor function](/posts/useful-properties-of-the-floor-and-ceil-functions) we have $u_n b + u_{n-1} \leq \hat{q} v_{n-1} + v_{n-1} - 1$ and therefore $\hat{q} v_{n-1} \geq u_n b + u_{n-1} - v_{n-1} + 1$. We then get
 
 $$
 \begin{aligned} u - \hat{q} v &\leq u - \hat{q} v_{n-1} b^{n-1} \\ &\leq u_n b^n + \cdots + u_0 - (u_n b + u_{n-1} - v_{n-1} + 1) b^{n-1} \\ &= u_{n-2} b^{n-2} + \cdots + u_0 - b^{n-1} + v_{n-1} b^{n-1} < v_{n-1} b^{n-1} \leq v. \end{aligned}

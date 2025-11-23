@@ -20,7 +20,7 @@ _redirect: /blog/2009/08/implementing-multiple-precision-arithmetic-part-2/
 ---
 ### Introduction
 
-This article is a follow-up to [part 1](/blog/2009/07/implementing-multiple-precision-arithmetic-part-1) where multiple-precision addition, subtraction, and multiplication for non-negative integers was discussed. This article deals with division. Again, the theoretic foundation is based on Section&nbsp;4.3.1, *The Classical Algorithms*, of [The Art of Computer Programming, Volume&nbsp;2](/refs/taocp2), by [Donald E. Knuth](http://www-cs-faculty.stanford.edu/~uno/).
+This article is a follow-up to [part 1](/posts/implementing-multiple-precision-arithmetic-part-1) where multiple-precision addition, subtraction, and multiplication for non-negative integers was discussed. This article deals with division. Again, the theoretic foundation is based on Section&nbsp;4.3.1, *The Classical Algorithms*, of [The Art of Computer Programming, Volume&nbsp;2](/refs/taocp2), by [Donald E. Knuth](http://www-cs-faculty.stanford.edu/~uno/).
 
 ### Fundamentals
 
@@ -75,7 +75,7 @@ Finally, how do we compute the quotient in step&nbsp;**G3**? That is in fact the
 
 ### Simple Division
 
-Let us first consider computing the quotient of step&nbsp;**G3** in the special case $n=1$. So let us assume that $u < b^2$, $0 < v < b$ and $\lfloor u/v \rfloor < b$. As in [part 1](/blog/2009/07/implementing-multiple-precision-arithmetic-part-1) we wish to use $b = b_T$ for some intrinsic integer (C++) type `T`, and just as most CPUs have built-in instructions for the most basic addition, subtraction, and multiplication operations, this is also the case for division. More specifically, obtaining the quotient $q$ and remainder $r$ such that $u = q v + r$, where $0 \leq q < b$, $0 \leq r < v$, is a quite common instruction. And that instruction is exactly what we need in steps&nbsp;**G3** and&nbsp;**G4** above.
+Let us first consider computing the quotient of step&nbsp;**G3** in the special case $n=1$. So let us assume that $u < b^2$, $0 < v < b$ and $\lfloor u/v \rfloor < b$. As in [part 1](/posts/implementing-multiple-precision-arithmetic-part-1) we wish to use $b = b_T$ for some intrinsic integer (C++) type `T`, and just as most CPUs have built-in instructions for the most basic addition, subtraction, and multiplication operations, this is also the case for division. More specifically, obtaining the quotient $q$ and remainder $r$ such that $u = q v + r$, where $0 \leq q < b$, $0 \leq r < v$, is a quite common instruction. And that instruction is exactly what we need in steps&nbsp;**G3** and&nbsp;**G4** above.
 
 However, it is not possible to access such an instruction directly through standard C++. As we did for multiplication, we therefore split $u$ and $v$ into smaller parts and do the operation at this smaller scale. So let us assume a number $h$ exists such that $h^2 = b$. We now set $u = (u'_3 u'_2 u'_1 u'_0)_h$ and $v = (v'_1 v'_0)_h$ and use the algorithms of this article on this representation. A 'simple division' is now of the type $(u'_3 h + u'_2)/v'_1$ and we can do that directly in C++.
 
@@ -219,6 +219,6 @@ The normalization in step&nbsp;**L1** such that $v_{n-1} \geq \lfloor b/2 \rfloo
 
 ### Concluding Remarks
 
-This and the [previous](/blog/2009/07/implementing-multiple-precision-arithmetic-part-1) article have now covered addition, subtraction, multiplication, and division of non-negative integers.
+This and the [previous](/posts/implementing-multiple-precision-arithmetic-part-1) article have now covered addition, subtraction, multiplication, and division of non-negative integers.
 
 *Update 2010-07-03: See the [project page](https://github.com/janmarthedal/kanooth-numbers) for more information.*
