@@ -150,7 +150,7 @@ function loadPages(): Array<Page> {
                 let type = PageType.Other;
                 if (filename.startsWith("updates/")) {
                     type = PageType.Update;
-                } else if (filename.startsWith("posts/")) {
+                } else if (filename.startsWith("posts/") && date) {
                     type = PageType.Post;
                 } else if (data.layout === "reference") {
                     type = PageType.Reference;
