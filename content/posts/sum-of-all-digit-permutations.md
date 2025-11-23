@@ -9,7 +9,7 @@ categories:
   - mathematics
 excerpt: Finding the sum of all digit permutations
 mastodon: 'https://mathstodon.xyz/@janmr/110184431051809645'
-_redirect: /blog/2023/04/sum-of-all-digit-permutations/
+redirect: /blog/2023/04/sum-of-all-digit-permutations/
 ---
 Recently, user [preshtalwalkar](https://twitter.com/preshtalwalkar) on Twitter posed the following
 [question](https://twitter.com/preshtalwalkar/status/1640552185296551938):

@@ -15,7 +15,7 @@ excerpt: >-
   All variables are immutable, that is, when a value has been assigned to a
   variable, it can never change. Purely functional programming languages
   describe what to compute, but not explicitly how.
-_redirect: /blog/2011/05/going-functional/
+redirect: /blog/2011/05/going-functional/
 ---
 [Imperative programming](http://en.wikipedia.org/wiki/Imperative_programming) languages&mdash;such as C++, Java, Perl and assembly&mdash;are by far the [most common](https://web.archive.org/web/20110430164550/http://www.langpop.com/). They all lie fairly close to the underlying computer architecture by executing one statement at a time, changing a state along the way. They describe *how* to compute something.
 

@@ -9,7 +9,7 @@ categories:
   - numerical-analysis
 excerpt: Let us prove an identity involving the Kronecker product and the vec operator.
 mastodon: 'https://mathstodon.xyz/@janmr/112336690679603118'
-_redirect: /blog/2024/04/a-kronecker-product-and-vec-operator-identity/
+redirect: /blog/2024/04/a-kronecker-product-and-vec-operator-identity/
 ---
 Let $A$ be a $q \times n$ matrix and $B$ a $p \times m$ matrix.
 The Kronecker product $A \otimes B$ is then a $pq \times nm$ matrix defined as

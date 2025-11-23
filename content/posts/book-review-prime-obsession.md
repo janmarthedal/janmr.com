@@ -14,7 +14,7 @@ excerpt: >-
   mathematical conjectures remaining today. It is among David Hilbert's list of
   twenty-three mathematical problems and one of the seven millennium problems
   presented by the Clay Mathematics Institute.
-_redirect: /blog/2010/01/book-review-prime-obsession/
+redirect: /blog/2010/01/book-review-prime-obsession/
 ---
 <div class="pull-right"><a href="/refs/derbyshire03"><img src="/media/books/derbyshire03.jpg" alt=""></a></div>
 

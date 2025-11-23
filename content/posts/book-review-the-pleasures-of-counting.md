@@ -13,7 +13,7 @@ excerpt: >-
   and 3 appendices. It contains a lot of material and is split into five parts:
   The uses of abstraction, Meditations on measurement, The pleasures of
   computation, Enigma variations, and The pleasures of thought.
-_redirect: /blog/2009/11/book-review-the-pleasures-of-counting/
+redirect: /blog/2009/11/book-review-the-pleasures-of-counting/
 ---
 <div class="pull-right"><a href="/refs/korner"><img src="/media/books/korner.jpg" alt=""></a></div>
 

@@ -10,7 +10,7 @@ categories:
 excerpt: >-
   The addition formulas for sine and cosine look like this: [...] I can never
   remember them. [...]
-_redirect: /blog/2009/09/remembering-trigonometric-addition-formulas/
+redirect: /blog/2009/09/remembering-trigonometric-addition-formulas/
 ---
 The addition formulas for sine and cosine look like this:
 

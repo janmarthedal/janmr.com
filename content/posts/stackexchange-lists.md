@@ -14,7 +14,7 @@ excerpt: >-
   Theoretical Computer Science, and StackOverflow. I recently looked through
   those sites for interesting questions tagged big-list. These questions
   typically encourage many different answers. I recommend the following:
-_redirect: /blog/2011/02/stackexchange-lists/
+redirect: /blog/2011/02/stackexchange-lists/
 ---
 [Stack Exchange](http://stackexchange.com/) is a network of free, community-driven Q&amp;A sites (in their own words). There are [a lot of them](http://stackexchange.com/sites) and [more are coming](http://area51.stackexchange.com/). The most relevant of them, in relation to this blog, are probably [MathOverflow](http://mathoverflow.net/), [Mathematics](http://math.stackexchange.com/), [Theoretical Computer Science](http://cstheory.stackexchange.com/), and [StackOverflow](http://stackoverflow.com/).
 

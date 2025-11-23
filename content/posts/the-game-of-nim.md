@@ -16,7 +16,7 @@ excerpt: >-
   strategy of Nim. The strategy is very simple but I could not possibly
   understand why it worked. This article shows why the strategy works,
   introducing the necessary game theory along the way. [...]
-_redirect: /blog/2009/04/the-game-of-nim/
+redirect: /blog/2009/04/the-game-of-nim/
 ---
 ### Introduction
 

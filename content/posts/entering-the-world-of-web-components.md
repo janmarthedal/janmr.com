@@ -13,7 +13,7 @@ excerpt: >-
   information and links related to Web Components. The specification is still
   being developed, but the overall parts have been decided upon. To quote
   Introduction to Web Components, Web Components consists of five main parts...
-_redirect: /blog/2014/07/entering-the-world-of-web-components/
+redirect: /blog/2014/07/entering-the-world-of-web-components/
 ---
 I am very excited about Web Components. It is going to fundamentally change the way we do web development. This post is going to contain miscellaneous information and links related to Web Components.
 
