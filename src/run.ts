@@ -191,6 +191,9 @@ function truncateSelfLinks(s: string): string {
         } else if (text.startsWith("http://")) {
             text = text.slice(7);
         }
+        if (text.endsWith("/")) {
+            text = text.slice(0, -1);
+        }
         if (text.length > 34) {
             text = `${text.slice(0, 34)}…`;
         }
