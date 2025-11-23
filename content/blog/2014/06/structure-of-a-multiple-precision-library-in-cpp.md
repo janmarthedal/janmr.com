@@ -36,11 +36,11 @@ Some of the most important low-level functions are:
 
 Many of these functions have several preconditions. A theoretical foundation behind most of these functions can be found among earlier posts:
 
- * [Multiple-Precision Addition](/blog/2011/10/multiple-precision-addition)
- * [Multiple-Precision Subtraction](/blog/2011/10/multiple-precision-subtraction)
- * [Basic Multiple-Precision Multiplication](/blog/2011/11/basic-multiple-precision-multiplication)
- * [Basic Multiple-Precision Short Division](/blog/2012/11/basic-multiple-precision-short-division)
- * [Basic Multiple-Precision Long Division](/blog/2014/04/basic-multiple-precision-long-division)
+ * [Multiple-Precision Addition](/posts/multiple-precision/02-addition)
+ * [Multiple-Precision Subtraction](/posts/multiple-precision/03-subtraction)
+ * [Basic Multiple-Precision Multiplication](/posts/multiple-precision/04-basic-multiplication)
+ * [Basic Multiple-Precision Short Division](/posts/multiple-precision/05-basic-short-division)
+ * [Basic Multiple-Precision Long Division](/posts/multiple-precision/06-basic-long-division)
 
 An [example implementation](https://github.com/janmarthedal/kanooth-numbers/blob/28268a02e943629cb64cd4b68c4911f11674c6fb/kanooth/numbers/lowlevel/generic_has_double.hpp) of these low-level functions can be seen as part the library code.
 
