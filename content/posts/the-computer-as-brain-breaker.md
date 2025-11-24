@@ -90,7 +90,7 @@ in at most five guesses (4.07 on average) for the four pegs and five colors case
 It will also find the correct code in at most five guesses (4.57 on average) for the Mastermind case
 (four pegs and six colors).
 This latter case was also analyzed by Donald Knuth in 1976 in his
-paper [The Computer as Master Mind](/refs/knuth-mastermind76).
+paper [The Computer as Master Mind](/refs/knuth-mastermind76/).
 
 Note how, interestingly, the best guess is not always part of the current pool of possible codes.
 This means that making a guess outside the current pool is sometimes worth it to shrink the pool as much as possible.

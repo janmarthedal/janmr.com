@@ -154,6 +154,6 @@ for integer $k$ and all $b > 0$, $b \neq 1$.
 
 ### References
 
-Most of the material presented in this article can be found in some form in [Concrete Mathematics](/refs/concrete) by [R. L. Graham](http://math.ucsd.edu/~fan/ron/), [D. E. Knuth](http://www-cs-faculty.stanford.edu/~uno/) and [O. Patashnik](http://en.wikipedia.org/wiki/Oren_Patashnik), and in [The Art of Computer Programming, Volume&nbsp;1](/refs/taocp1), by [Donald E. Knuth](http://www-cs-faculty.stanford.edu/~uno/).
+Most of the material presented in this article can be found in some form in [Concrete Mathematics](/refs/concrete/) by [R. L. Graham](http://math.ucsd.edu/~fan/ron/), [D. E. Knuth](http://www-cs-faculty.stanford.edu/~uno/) and [O. Patashnik](http://en.wikipedia.org/wiki/Oren_Patashnik), and in [The Art of Computer Programming, Volume&nbsp;1](/refs/taocp1/), by [Donald E. Knuth](http://www-cs-faculty.stanford.edu/~uno/).
 
 The [Wikipedia](http://www.wikipedia.org) page [Floor and ceiling functions](http://en.wikipedia.org/wiki/Floor_and_ceiling_functions) furthermore lists a lot of properties (very few proofs or derivations, though).

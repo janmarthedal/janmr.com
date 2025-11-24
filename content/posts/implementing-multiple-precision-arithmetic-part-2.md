@@ -20,7 +20,7 @@ redirect: /blog/2009/08/implementing-multiple-precision-arithmetic-part-2/
 ---
 ### Introduction
 
-This article is a follow-up to [part 1](/posts/implementing-multiple-precision-arithmetic-part-1/) where multiple-precision addition, subtraction, and multiplication for non-negative integers was discussed. This article deals with division. Again, the theoretic foundation is based on Section&nbsp;4.3.1, *The Classical Algorithms*, of [The Art of Computer Programming, Volume&nbsp;2](/refs/taocp2), by [Donald E. Knuth](http://www-cs-faculty.stanford.edu/~uno/).
+This article is a follow-up to [part 1](/posts/implementing-multiple-precision-arithmetic-part-1/) where multiple-precision addition, subtraction, and multiplication for non-negative integers was discussed. This article deals with division. Again, the theoretic foundation is based on Section&nbsp;4.3.1, *The Classical Algorithms*, of [The Art of Computer Programming, Volume&nbsp;2](/refs/taocp2/), by [Donald E. Knuth](http://www-cs-faculty.stanford.edu/~uno/).
 
 ### Fundamentals
 

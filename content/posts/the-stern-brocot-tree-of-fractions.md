@@ -177,4 +177,4 @@ For instance, $\frac{7}{5} = 1 + /\!/ 2, 2 /\!/ = 1 + /\!/ 2, 1, 1 /\!/$, so $\f
 
 ### Further Reading
 
-The Stern-Brocot tree is mentioned in Exercise&nbsp;4.5.3-(40) of [The Art of Computer Programming, Volume&nbsp;2](/refs/taocp2), by [Donald E. Knuth](http://www-cs-faculty.stanford.edu/~uno/) and treated in more detail in Section&nbsp;4.5 of [Concrete Mathematics](/refs/concrete) by [Graham](http://math.ucsd.edu/~fan/ron/), [Knuth](http://www-cs-faculty.stanford.edu/~uno/), and [Patashnik](http://en.wikipedia.org/wiki/Oren_Patashnik).
+The Stern-Brocot tree is mentioned in Exercise&nbsp;4.5.3-(40) of [The Art of Computer Programming, Volume&nbsp;2](/refs/taocp2/), by [Donald E. Knuth](http://www-cs-faculty.stanford.edu/~uno/) and treated in more detail in Section&nbsp;4.5 of [Concrete Mathematics](/refs/concrete/) by [Graham](http://math.ucsd.edu/~fan/ron/), [Knuth](http://www-cs-faculty.stanford.edu/~uno/), and [Patashnik](http://en.wikipedia.org/wiki/Oren_Patashnik).

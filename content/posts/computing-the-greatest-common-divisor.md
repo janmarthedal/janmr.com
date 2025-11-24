@@ -49,7 +49,7 @@ Properties 5 and 6 follow from this equality.
 
 ### Euclid's Algorithm
 
-Euclid's algorithm appeared in [Euclid](http://en.wikipedia.org/wiki/Euclid)&#8216;s [Elements](/refs/elements)
+Euclid's algorithm appeared in [Euclid](http://en.wikipedia.org/wiki/Euclid)&#8216;s [Elements](/refs/elements/)
 ([Proposition&nbsp;1](http://aleph0.clarku.edu/~djoyce/java/elements/bookVII/propVII1.html) and
 [Proposition&nbsp;2](http://aleph0.clarku.edu/~djoyce/java/elements/bookVII/propVII2.html)) around 300 BC, but was probably known before this.
 
@@ -80,7 +80,7 @@ $$
 u = q v + r \geq v + r > 2r,
 $$
 
-which in turn means that the value of $u$ at least halves every time `u %= v` is executed. Of course, a similar statement holds for `v %= u`. This shows that Euclid's algorithm computes a remainder (roughly) at most $\log_2 u + \log_2 v$ times. For a thorough analysis see Section&nbsp;4.5.3 of [The Art of Computer Programming, Volume&nbsp;2](/refs/taocp2), by [Donald E. Knuth](http://www-cs-faculty.stanford.edu/~knuth/).
+which in turn means that the value of $u$ at least halves every time `u %= v` is executed. Of course, a similar statement holds for `v %= u`. This shows that Euclid's algorithm computes a remainder (roughly) at most $\log_2 u + \log_2 v$ times. For a thorough analysis see Section&nbsp;4.5.3 of [The Art of Computer Programming, Volume&nbsp;2](/refs/taocp2/), by [Donald E. Knuth](http://www-cs-faculty.stanford.edu/~knuth/).
 
 Two interesting things about Euclid's algorithm should be noted. First, the analysis of Euclid's algorithm is intimately tied to [continued fractions](http://en.wikipedia.org/wiki/Continued_fraction) (*update 2009-11-10:* See also [Continued Fractions and Continuants](/posts/continued-fractions-and-continuants)/). Second, the input numbers that make the algorithm perform the most remainder-computations are two consecutive [Fibonacci](http://en.wikipedia.org/wiki/Fibonacci_number) numbers&#8212;supposedly the first practical application of the Fibonacci sequence.
 
@@ -137,7 +137,7 @@ Finally, if working with multiple-precision numbers, the binary shift operation 
 
 How many times is the while-loop executed, in the worst case? Either $u$ or $v$ is reduced by at least a factor two, so, similar to Euclid's algorithm, the loop is executed at most $\log_2 u + \log_2 v$ times.
 
-It should be noted that [Alex Stepanov](http://www.stepanovpapers.com) has written [some notes](http://www.stepanovpapers.com/notes.pdf) that, among many other things, deal with generic implementations of both Euclid's and Stein's gcd algorithms (see Section&nbsp;10.2). Stepanov has also written the book [Elements of Programming](/refs/stepanov) with [Paul McJones](http://www.mcjones.org/paul/), which presents a mathematical approach to programming. The book also mentions Euclid's and Stein's algorithms, but the treatment in the notes is more comprehensive.
+It should be noted that [Alex Stepanov](http://www.stepanovpapers.com) has written [some notes](http://www.stepanovpapers.com/notes.pdf) that, among many other things, deal with generic implementations of both Euclid's and Stein's gcd algorithms (see Section&nbsp;10.2). Stepanov has also written the book [Elements of Programming](/refs/stepanov/) with [Paul McJones](http://www.mcjones.org/paul/), which presents a mathematical approach to programming. The book also mentions Euclid's and Stein's algorithms, but the treatment in the notes is more comprehensive.
 
 ### Running Time Comparisons
 

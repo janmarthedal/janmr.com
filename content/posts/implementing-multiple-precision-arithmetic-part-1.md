@@ -15,7 +15,7 @@ redirect: /blog/2009/07/implementing-multiple-precision-arithmetic-part-1/
 ---
 ### Introduction
 
-This article is the first in a series dealing with algorithms for multiple-precision arithmetic. The goal is to present both a theoretical foundation with high-level algorithm descriptions (based on Section 4.3.1, *The Classical Algorithms*, of [The Art of Computer Programming, Volume 2](/refs/taocp2), by [Donald E. Knuth](http://www-cs-faculty.stanford.edu/~uno/)) and a portable C++ implementation of the algorithms. The theory and high-level algorithms will be quite universal and generic, whereas the presented code will be just one way to implement the algorithms in a specific programming language.
+This article is the first in a series dealing with algorithms for multiple-precision arithmetic. The goal is to present both a theoretical foundation with high-level algorithm descriptions (based on Section 4.3.1, *The Classical Algorithms*, of [The Art of Computer Programming, Volume 2](/refs/taocp2/), by [Donald E. Knuth](http://www-cs-faculty.stanford.edu/~uno/)) and a portable C++ implementation of the algorithms. The theory and high-level algorithms will be quite universal and generic, whereas the presented code will be just one way to implement the algorithms in a specific programming language.
 
 We start out by considering only non-negative integers. A number $u \geq 0$ will be represented in radix $b \geq 2$ using the notation
 

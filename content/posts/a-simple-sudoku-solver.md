@@ -96,6 +96,6 @@ also contains [a file](https://github.com/t-dillon/tdoku/blob/master/data.zip)
 with many hard puzzles. Some of them result in search trees
 with more than 20000 nodes.
 
-[The Art of Computer Programming, Volume 4B](/refs/taocp4b), Section 7.2.2.1, also
+[The Art of Computer Programming, Volume 4B](/refs/taocp4b/), Section 7.2.2.1, also
 considers sudoku puzzles along with a method for solving them and other
 interesting information on these puzzles and backtracking in general.

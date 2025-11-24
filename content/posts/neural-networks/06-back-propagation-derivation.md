@@ -43,7 +43,7 @@ for $i=1,\dots,n^l$, $j=1,\ldots,n^{l-1}$, $l=1,\ldots,L$.
 The key to computing these quantities is by applying the
 [chain rule](https://en.wikipedia.org/wiki/Chain_rule#Multivariable_case)
 in appropriate ways (see also, e.g., Theorem 9.15 of Walter Rudin's
-[Principles of Mathematical Analysis](/refs/rudin76)).
+[Principles of Mathematical Analysis](/refs/rudin76)/).
 
 First, for fixed $l, i, j$, we view $E$ as a function of $Z^l_{i1}, \ldots, Z^l_{im}$ and
 each $Z^l_{ic}$, in turn, as a function of $W^l_{ij}$:
@@ -89,7 +89,7 @@ for $i=1,\ldots,n^{l-1}$, $c=1,\ldots,m$.
 By careful observation, we see that the quantities above can be computed by working your
 way *backwards* through the layers. Hence, the name *back-propagation*, which was first
 described for neural networks by David E. Rumelhart, Geoffrey E. Hinton and Ronald J. Williams
-in the paper [Learning representations by back-propagating errors](/refs/rumelhart86).
+in the paper [Learning representations by back-propagating errors](/refs/rumelhart86/).
 
 If all these partial derivatives and indices are making you dizzy, I don't blame you.
 The [next post](/posts/neural-networks/07-back-propagation-matrix-style/)

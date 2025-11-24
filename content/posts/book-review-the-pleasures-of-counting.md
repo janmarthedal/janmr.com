@@ -58,7 +58,7 @@ This history book-type narrative was too much for me, however. In hindsight I wi
 Book facts:
 
 *   Author: [Thomas William K&ouml;rner](https://www.dpmms.cam.ac.uk/~twk/).
-*   Book title: [The Pleasures of Counting](/refs/korner).
+*   Book title: [The Pleasures of Counting](/refs/korner/).
 *   Publication year: 1996.
 *   Publisher: [Cambridge University Press](http://www.cambridge.org).
 *   ISBN: Paperback [0521568234](http://en.wikipedia.org/w/index.php?title=Special:BookSources&isbn=0521568234), hardback [052156087X](http://en.wikipedia.org/w/index.php?title=Special:BookSources&isbn=052156087X).

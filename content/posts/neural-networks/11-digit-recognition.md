@@ -70,5 +70,5 @@ and 91.5% after 9880 iterations
 
 An accuracy of 91.5% is not bad, but it is not great either.
 It does show, however, that this basic use of a neural network can be used for digit recognition.
-The paper [Gradient-Based Learning Applied to Document Recognition](/refs/lecun-98) describes several
+The paper [Gradient-Based Learning Applied to Document Recognition](/refs/lecun-98/) describes several
 other methods that have much better accuracy, some reaching 99.7%, by using more advanced techniques.

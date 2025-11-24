@@ -26,7 +26,7 @@ $$
 
 where $/\!/ \, /\!/ = 0$ for $n=0$.
 
-Most of the theory in this article is based on Section&nbsp;4.5.3 from [The Art of Computer Programming, Volume&nbsp;2](/refs/taocp2), by [Donald E. Knuth](http://www-cs-faculty.stanford.edu/~uno/) and Section&nbsp;6.7 from [Concrete Mathematics](/refs/concrete) by [Graham](http://math.ucsd.edu/~fan/ron/), [Knuth](http://www-cs-faculty.stanford.edu/~uno/), and [Patashnik](http://en.wikipedia.org/wiki/Oren_Patashnik). See also [Continued Fractions](/refs/khinchin) by Aleksandr Ya. Khinchin.
+Most of the theory in this article is based on Section&nbsp;4.5.3 from [The Art of Computer Programming, Volume&nbsp;2](/refs/taocp2/), by [Donald E. Knuth](http://www-cs-faculty.stanford.edu/~uno/) and Section&nbsp;6.7 from [Concrete Mathematics](/refs/concrete/) by [Graham](http://math.ucsd.edu/~fan/ron/), [Knuth](http://www-cs-faculty.stanford.edu/~uno/), and [Patashnik](http://en.wikipedia.org/wiki/Oren_Patashnik). See also [Continued Fractions](/refs/khinchin/) by Aleksandr Ya. Khinchin.
 
 ### Basic Properties
 

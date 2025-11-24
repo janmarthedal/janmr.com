@@ -20,7 +20,7 @@ redirect: /blog/2010/05/book-review-the-book-of-numbers/
 ---
 <div class="pull-right"><a href="/refs/conway-guy"><img src="/media/books/conway-guy.jpg" alt=""></a></div>
 
-[The Book of Numbers](/refs/conway-guy) is a wonderful book about, well, numbers. And lots of them. From ancient ways of writing numbers to [Gaussian integers](http://en.wikipedia.org/wiki/Gaussian_integer) to [surreal numbers](http://en.wikipedia.org/wiki/Surreal_number). The authors are some tough mathematicians, too. [John H. Conway](http://en.wikipedia.org/wiki/John_Horton_Conway) is Professor of Mathematics at [Princeton University](http://www.princeton.edu), an authority in game theory and group theory, and the inventor of the [Game of Life](http://en.wikipedia.org/wiki/Conway's_Game_of_Life) and [surreal numbers](http://en.wikipedia.org/wiki/Surreal_numbers). [Richard K.](http://en.wikipedia.org/wiki/Richard_Guy) [Guy](http://math.ucalgary.ca/profiles/richard-guy) is professor emeritus of mathematics at the [University of Calgary](http://www.ucalgary.ca/) and has (co)authored several hundred publications on combinatorial game theory, number theory and graph theory.<span></span>
+[The Book of Numbers](/refs/conway-guy/) is a wonderful book about, well, numbers. And lots of them. From ancient ways of writing numbers to [Gaussian integers](http://en.wikipedia.org/wiki/Gaussian_integer) to [surreal numbers](http://en.wikipedia.org/wiki/Surreal_number). The authors are some tough mathematicians, too. [John H. Conway](http://en.wikipedia.org/wiki/John_Horton_Conway) is Professor of Mathematics at [Princeton University](http://www.princeton.edu), an authority in game theory and group theory, and the inventor of the [Game of Life](http://en.wikipedia.org/wiki/Conway's_Game_of_Life) and [surreal numbers](http://en.wikipedia.org/wiki/Surreal_numbers). [Richard K.](http://en.wikipedia.org/wiki/Richard_Guy) [Guy](http://math.ucalgary.ca/profiles/richard-guy) is professor emeritus of mathematics at the [University of Calgary](http://www.ucalgary.ca/) and has (co)authored several hundred publications on combinatorial game theory, number theory and graph theory.<span></span>
 
 The number of topics in the book is huge. Some of them are listed here, according to the chapters in which they appear:
 
@@ -45,7 +45,7 @@ It was a joy to read this book. I *highly* recommend it.
 
 Book facts:
 
-*   Book title: [The Book of Numbers](/refs/conway-guy).
+*   Book title: [The Book of Numbers](/refs/conway-guy/).
 *   Authors: [John H. Conway](http://en.wikipedia.org/wiki/John_Horton_Conway) and [Richard K.](http://en.wikipedia.org/wiki/Richard_Guy) [Guy](http://math.ucalgary.ca/profiles/richard-guy).
 *   Publication year: 1996.
 *   Publisher: [Springer](http://www.springer.com/).

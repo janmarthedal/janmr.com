@@ -28,7 +28,7 @@ $$
 
 By equating the real and imaginary parts you get the answer.
 
-Flicking through [Proofs Without Words II](/refs/pww2) by Roger B. Nelsen, I saw the following wonderful figure. It could be a contender to an easier way to remember the addition formulas.
+Flicking through [Proofs Without Words II](/refs/pww2/) by Roger B. Nelsen, I saw the following wonderful figure. It could be a contender to an easier way to remember the addition formulas.
 
 <figure>
   <img src="/media/trigadd.svg" class="img-responsive" alt="Addition formulas for sine and cosine">
@@ -36,7 +36,7 @@ Flicking through [Proofs Without Words II](/refs/pww2) by Roger B. Nelsen, I saw
 
 (Attributed to the author himself.) It should be pretty much self-explanatory. Apart from using sine and cosine to assign side-lengths to the four relevant right-angled triangles, all you need know is that the sum of the angles in a triangle is equal to two right angles (to realize that the two $\alpha$-angles are indeed equal).
 
-Both volumes of [Proofs Without Words](/refs/pww1) contain other &#8220;visual proofs&#8221; of the addition formulas.
+Both volumes of [Proofs Without Words](/refs/pww1/) contain other &#8220;visual proofs&#8221; of the addition formulas.
 Some of these can also be found [online](http://mathworld.wolfram.com/TrigonometricAdditionFormulas.html).
 
 How do you remember the addition formulas for sine and cosine?
