@@ -5,7 +5,7 @@ layout: page
 - [Kanooth Numbers](https://github.com/janmarthedal/kanooth-numbers).
   A portable multiple-precision library in C++.
   Developed as a part of understanding multiple-precision arithmetic.
-  The algorithms used are described in the [multiple-precision posts](/posts/multiple-precision).
+  The algorithms used are described in the [multiple-precision posts](/posts/multiple-precision/).
   The project is no longer being maintained.
 - [L-Trominos](/lab/tromino/).
   A demo to accompany the blog post [Tiling with L-Trominos](/posts/tiling-with-l-trominos/).

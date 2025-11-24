@@ -15,7 +15,7 @@ excerpt: >-
   267 items. From the beginning I have used MathJax to display the math [...]
 redirect: /blog/2015/01/mathjax-katex-and-a-lot-of-math/
 ---
-Prior to the current post, this blog contained 45&nbsp;posts with a total of 2307&nbsp;math items, where a math item is anything from single-letter variable identifiers to large, multi-line equations. That's an avarage of 51&nbsp;math items per post, ranging from a few posts containing no math at all to [one](/posts/the-game-of-nim) containing 267&nbsp;items.
+Prior to the current post, this blog contained 45&nbsp;posts with a total of 2307&nbsp;math items, where a math item is anything from single-letter variable identifiers to large, multi-line equations. That's an avarage of 51&nbsp;math items per post, ranging from a few posts containing no math at all to [one](/posts/the-game-of-nim/) containing 267&nbsp;items.
 
 From the beginning I have used [MathJax](http://www.mathjax.org) to display the math (actually, the first few years I used [jsMath](http://www.math.union.edu/~dpvc/jsmath/), the predecessor of MathJax). MathJax does a great job of typesetting math according to the rules of [TeX](http://en.wikipedia.org/wiki/TeX). It is basically a JavaScript library which takes care of scanning a web page for math content and then typesetting it using HTML and CSS *on the fly* by inserting elements into the DOM, loading fonts, querying DOM elements for, e.g., widths when doing alignments, and so on. (Note that MathJax has other [output modes](http://docs.mathjax.org/en/latest/output.html) than HTML+CSS, but this is what I use and by far the most used.) This on-the-fly behaviour is necessary to enable all the complex scenarious that MathJax support:
 

@@ -16,9 +16,9 @@ redirect: /blog/2023/12/simple-linear-regression/
 ---
 We now turn to the general case of fitting a line to a set of points in the plane.
 The two previous posts considered the special cases where
-[the points' center of mass was at the origin](/posts/origin-centered-simple-linear-regression)
+[the points' center of mass was at the origin](/posts/origin-centered-simple-linear-regression/)
 and where
-[the line had to pass through the origin](/posts/no-intercept-simple-linear-regression).
+[the line had to pass through the origin](/posts/no-intercept-simple-linear-regression/).
 
 Let the points be given as $(x_i, y_i)$ for $i=1, \ldots, n$, where $n \geq 2$
 is the number of points.
@@ -53,7 +53,7 @@ with $s_x = \sum_{i=1}^n x_i$ and $s_y = \sum_{i=1}^n y_i$.
 
 We now have $\sum_{i=1}^n \tilde{x}_i = \sum_{i=1}^n \tilde{y}_i = 0$,
 so we can apply the results from the
-[previous posts](/posts/origin-centered-simple-linear-regression)
+[previous posts](/posts/origin-centered-simple-linear-regression/)
 to find the best fitting line $\tilde{y} = \tilde{a} \tilde{x}$ for the
 translated points and we get
 

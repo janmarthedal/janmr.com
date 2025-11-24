@@ -13,7 +13,7 @@ excerpt: >-
   divided by a single digit v [...]
 redirect: /blog/2012/11/basic-multiple-precision-short-division/
 ---
-Let us consider short division, by which we mean a multiple-digit number $u = (u_{m-1} \ldots u_1 u_0)_b$ divided by a single digit $v$ (see, e.g., [post on number representation](/posts/multiple-precision-number-representation)). We will assume $m \geq 1$, $u_{m-1} \neq 0$ and $0 < v < b$.
+Let us consider short division, by which we mean a multiple-digit number $u = (u_{m-1} \ldots u_1 u_0)_b$ divided by a single digit $v$ (see, e.g., [post on number representation](/posts/multiple-precision-number-representation)/). We will assume $m \geq 1$, $u_{m-1} \neq 0$ and $0 < v < b$.
 
 We are interested in a quotient $q = \lfloor u/v \rfloor$ and a remainder $r$ such that $u = q v + r$ with $0 \leq r < v$. Using that $b^{m-1} \leq u < b^m$ and $0 < v < b$ we can deduce that $b^{m-2} < q < b^m$ which means that $q$ can be represented using $m-1$ or $m$ digits: $q = (q_{m-1} \ldots q_1 q_0)_b$ (we may have $q_{m-1} = 0$ in which case $q_{m-2} \neq 0$).
 

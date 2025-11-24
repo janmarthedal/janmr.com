@@ -63,7 +63,7 @@ Let the line segment CD have length $x$ and extend the line from D to a point A 
   <figcaption><strong>Figure 2.</strong> Square root by geometry.</figcaption>
 </figure>
 
-Why is this so? It can be shown by using the [Pythagorean theorem](/posts/visualizing-the-pythagorean-theorem) and a bit of algebra, but it is most easily seen by considering similar triangles again. First, we argue that the angle at B in the triangle ABC in Figure&nbsp;3 is a right angle. This is so because the two triangles ABM and BCM are isosceles [triangles](http://en.wikipedia.org/wiki/Triangle) and the sum of the angles in the triangle ABC is thus $2\alpha+2\beta=\pi$, implying that $\alpha+\beta$ is equal to a right angle.
+Why is this so? It can be shown by using the [Pythagorean theorem](/posts/visualizing-the-pythagorean-theorem/) and a bit of algebra, but it is most easily seen by considering similar triangles again. First, we argue that the angle at B in the triangle ABC in Figure&nbsp;3 is a right angle. This is so because the two triangles ABM and BCM are isosceles [triangles](http://en.wikipedia.org/wiki/Triangle) and the sum of the angles in the triangle ABC is thus $2\alpha+2\beta=\pi$, implying that $\alpha+\beta$ is equal to a right angle.
 
 <figure>
   <img src="/media/root2.svg" class="img-responsive" alt="Any triangle inscribed in a semicircle has a right angle">
