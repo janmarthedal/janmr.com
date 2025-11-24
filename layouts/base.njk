@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <title>janmr.com{% if title %} | {{ title }}{% endif %}</title>
     <link rel="icon" type="image/png" href="/icon-48x48.png">
+    <link rel="canonical" href="{{ url | url }}">
     <link rel="alternate" href="{{ metadata.feed.url }}" type="application/atom+xml" title="{{ metadata.title }}">
     {% block head -%}
     {%- endblock %}
