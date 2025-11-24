@@ -63,7 +63,7 @@ and [Haskell](https://www.haskell.org/) are named after him) in the paper
 That was some theory, but what happens when we apply the Gradient Descent method to some
 neural network? Firstly, we do have one requirement if we plan to use Gradient Descent for a
 neural network: The activation functions must be differentiable, which, in turn, will make the
-[error function](/posts/neural-networks/04-the-optimization-problem) $E$
+[error function](/posts/neural-networks/04-the-optimization-problem/) $E$
 differentiable.
 
 In general, a neural network is not convex and may contain several local minima. There is
@@ -75,4 +75,4 @@ lead to divergence.
 
 There is also the question of how to compute the gradient of the error function. But,
 fortunately, this is surprisingly straightforward and is exactly what the
-[next post on back-propagation](/posts/neural-networks/06-back-propagation-derivation) deals with.
+[next post on back-propagation](/posts/neural-networks/06-back-propagation-derivation/) deals with.

@@ -12,7 +12,7 @@ excerpt: >-
 redirect: /blog/2023/01/neural-networks-03-multiple-inputs/
 ---
 When considering efficient implementations of evaluating a neural network as described in the
-[previous post](/posts/neural-networks/02-the-model), it becomes useful to be able to
+[previous post](/posts/neural-networks/02-the-model/), it becomes useful to be able to
 evaluate multiple inputs simultaneously. And utilizing efficient linear algebra routines becomes
 apparent.
 
@@ -56,5 +56,5 @@ N(A^0_{\ast,1}) & N(A^0_{\ast,2}) & \cdots & N(A^0_{\ast,m})
 = A^L.
 $$
 
-The [next post](/posts/neural-networks/04-the-optimization-problem) will
+The [next post](/posts/neural-networks/04-the-optimization-problem/) will
 set the scene for training a neural network to best fit a set of input/output pairs.

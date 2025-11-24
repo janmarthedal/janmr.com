@@ -13,7 +13,7 @@ redirect: /blog/2011/10/multiple-precision-addition/
 ---
 <div class="pull-right"><a href="https://en.wikipedia.org/wiki/Special:BookSources/0201896842"><img src="/media/books/taocp2.jpg" alt=""></a></div>
 
-This post will cover a basic addition algorithm for multiple-precision non-negative integers. The algorithm is based upon that presented in Section 4.3.1, *The Classical Algorithms*, of [The Art of Computer Programming, Volume 2](/refs/taocp2), by [Donald E. Knuth](http://www-cs-faculty.stanford.edu/~uno/). The notation and bounds used in this post were presented in a [previous post](/posts/multiple-precision-number-representation).
+This post will cover a basic addition algorithm for multiple-precision non-negative integers. The algorithm is based upon that presented in Section 4.3.1, *The Classical Algorithms*, of [The Art of Computer Programming, Volume 2](/refs/taocp2), by [Donald E. Knuth](http://www-cs-faculty.stanford.edu/~uno/). The notation and bounds used in this post were presented in a [previous post](/posts/multiple-precision-number-representation/).
 
 We consider adding two $n$-digit numbers with $n \geq 1$, $u=(u_{n-1} \ldots u_1 u_0)_b$ and $v=(v_{n-1} \ldots v_1 v_0)_b$. Since $b^{n-1} \leq u, v \leq b^n - 1$ we have $2 b^{n-1} \leq u+v \leq 2 b^n - 2$ which, when using the fact that $b \geq 2$, leads to $b^{n-1} \leq u+v \leq b^{n+1} - 1$ (note how a tighter bound of the form $b^p \leq u+v \leq b^q - 1$ is not possible).
 

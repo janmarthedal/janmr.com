@@ -141,7 +141,7 @@ This inequality must hold for the infinite sequence of matrices from the search 
 
 ### Relation to Continued Fractions
 
-The Stern-Brocot tree is intimately tied to continued fractions. See the post [Continued Fractions and Continuants](/posts/continued-fractions-and-continuants) for some basic properties that we will use below. Especially equations&nbsp;(8) and&nbsp;(10) from that post are essential to the following. Observe that
+The Stern-Brocot tree is intimately tied to continued fractions. See the post [Continued Fractions and Continuants](/posts/continued-fractions-and-continuants/) for some basic properties that we will use below. Especially equations&nbsp;(8) and&nbsp;(10) from that post are essential to the following. Observe that
 
 $$
 \begin{aligned} P L^a &= \begin{bmatrix} 0 & 1 \\ 1 & 0 \end{bmatrix} \begin{bmatrix} 1 & 0 \\ a & 1 \end{bmatrix} = \begin{bmatrix} a & 1 \\ 1 & 0 \end{bmatrix}, \\ R^a P &= \begin{bmatrix} 1 & a \\ 0 & 1 \end{bmatrix} \begin{bmatrix} 0 & 1 \\ 1 & 0 \end{bmatrix} = \begin{bmatrix} a & 1 \\ 1 & 0 \end{bmatrix}, \end{aligned}
@@ -153,7 +153,7 @@ $$
 \begin{aligned} M &= R^{a_0} L^{a_1} R^{a_2} L^{a_3} \cdots L^{a_{n-1}} \\ &= (R^{a_0} P) (P L^{a_1}) (R^{a_2} P) (P L^{a_3}) \cdots (R^{a_{n-2}} P) (P L^{a_{n-1}}) \\ &= \begin{bmatrix} a_0 & 1 \\ 1 & 0 \end{bmatrix} \begin{bmatrix} a_1 & 1 \\ 1 & 0 \end{bmatrix} \cdots \begin{bmatrix} a_{n-1} & 1 \\ 1 & 0 \end{bmatrix} \\ &= \begin{bmatrix} K_n(a_0, \ldots, a_{n-1}) & K_{n-1}(a_0, \ldots, a_{n-2}) \\ K_{n-1}(a_1, \ldots, a_{n-1}) & K_{n-2}(a_1, \ldots, a_{n-2}) \end{bmatrix} \end{aligned}
 $$
 
-where we assume that $n \geq 2$ is even. The $K_n$ functions are so-called [continuants](/posts/continued-fractions-and-continuants). We now have
+where we assume that $n \geq 2$ is even. The $K_n$ functions are so-called [continuants](/posts/continued-fractions-and-continuants/). We now have
 
 $$
 \begin{aligned} f(M) &= f(R^{a_0} L^{a_1} R^{a_2} L^{a_3} \cdots L^{a_{n-1}}) \\ &= f \left( \begin{bmatrix} K_n(a_0, \ldots, a_{n-1}) & K_{n-1}(a_0, \ldots, a_{n-2}) \\ K_{n-1}(a_1, \ldots, a_{n-1}) & K_{n-2}(a_1, \ldots, a_{n-2}) \end{bmatrix} \right) \\ &= \frac{K_n(a_0, \ldots, a_{n-1}) + K_{n-1}(a_0, \ldots, a_{n-2})}{K_{n-1}(a_1, \ldots, a_{n-1}) + K_{n-2}(a_1, \ldots, a_{n-2})} \\ &= \frac{K_n(a_0, \ldots, a_{n-1}, 1)}{K_{n-1}(a_1, \ldots, a_{n-1}, 1)} \\ &= a_0 + /\!/ a_1, \ldots, a_{n-1}, 1 /\!/. \end{aligned}

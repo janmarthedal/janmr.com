@@ -13,7 +13,7 @@ excerpt: >-
   number. For what values of r does this infinite sum make sense? [...]
 redirect: /blog/2009/08/on-the-divergence-of-a-geometric-progression-sum/
 ---
-Let us revisit the geometric progression sum considered in an [earlier article](/posts/nice-geometric-progression-proof),
+Let us revisit the geometric progression sum considered in an [earlier article](/posts/nice-geometric-progression-proof/),
 
 $$
 s_r = \sum_{k=0}^\infty r^k = 1 + r + r^2 + r^3 + \ldots,

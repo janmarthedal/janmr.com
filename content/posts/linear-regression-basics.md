@@ -71,5 +71,5 @@ a fairly efficient way (see, e.g., Section&nbsp;5.5 in
 A solution to this optimization problem is also computed by the NumPy function
 [`numpy.linalg.lstsq`](https://numpy.org/doc/stable/reference/generated/numpy.linalg.lstsq.html).
 
-See the [following post](/posts/linear-regression-applied) for some examples
+See the [following post](/posts/linear-regression-applied/) for some examples
 of how to apply linear regression to some problems.
