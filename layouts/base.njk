@@ -15,13 +15,7 @@
     {%- endblock %}
     {% block bodyend -%}
     {%- if metadata.environment == "production" -%}
-    <script async src="https://www.googletagmanager.com/gtag/js?id={{ metadata.ga_tracking_id }}"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', '{{ metadata.ga_tracking_id }}');
-    </script>
+    <script data-goatcounter="https://janmr.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
     {%- endif -%}
     {%- endblock %}
   </body>
