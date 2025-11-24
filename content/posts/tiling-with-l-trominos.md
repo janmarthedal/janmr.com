@@ -40,5 +40,5 @@ As an example, here is a complete tiling for a $32 \times 32$ grid:
 
 ([Interactive, full-screen example](/lab/tromino/).)
 
-The theorem is mentioned in [Proof Without Words II](/refs/pww2) by Roger B. Nelsen and in [Mathematical Gems III](/refs/mathgems3) by Ross Honsberger.
+The theorem is mentioned in [Proof Without Words II](/refs/pww2/) by Roger B. Nelsen and in [Mathematical Gems III](/refs/mathgems3/) by Ross Honsberger.
 The theorem itself is attributed to [Solomon W. Golomb](https://en.wikipedia.org/wiki/Solomon_W._Golomb).

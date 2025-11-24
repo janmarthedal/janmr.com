@@ -110,4 +110,4 @@ This way, the bitwise and-operation is being applied to non-negative numbers and
 
 We can now, with assistance from the table above, apply any of the 16 binary bitwise operators to *any* pair of integers, without restricting ourselves to working with a fixed number of bits.
 
-For further reading related to the binary representation of numbers, I recommend <a href="/refs/taocp4a">The Art of Computer Programming, Volume 4A</a>, Section 7.1.3: Bitwise Tricks &amp; Techniques by [Donald E. Knuth](http://www-cs-faculty.stanford.edu/~knuth/) and [Hacker's Delight](/refs/hackers-delight) by Henry S. Warren, Jr.
+For further reading related to the binary representation of numbers, I recommend <a href="/refs/taocp4a">The Art of Computer Programming, Volume 4A</a>, Section 7.1.3: Bitwise Tricks &amp; Techniques by [Donald E. Knuth](http://www-cs-faculty.stanford.edu/~knuth/) and [Hacker's Delight](/refs/hackers-delight/) by Henry S. Warren, Jr.

@@ -98,7 +98,7 @@ $$
 
 where $I_n$ and $I_m$ are the identity matrices of size $n$ and $m$, respectively.
 
-In the paper [The vec-permutation matrix, the vec operator and Kronecker products: a review](/refs/henderson-searle81),
-the authors point to the 1934 paper [On direct product matrices](/refs/roth34) by W.&nbsp;E. Roth as the
+In the paper [The vec-permutation matrix, the vec operator and Kronecker products: a review](/refs/henderson-searle81/),
+the authors point to the 1934 paper [On direct product matrices](/refs/roth34/) by W.&nbsp;E. Roth as the
 origin of this identity.
 They also call the identity *Roth's column lemma*, although that name does not seem to be widely used.

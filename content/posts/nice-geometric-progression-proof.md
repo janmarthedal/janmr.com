@@ -45,4 +45,4 @@ The figure also shows that the sum converges for all $0 < r < 1$ since the proo
 (I don't know who to attribute this proof to, unfortunately. I saw it in a magazine for elementary school teachers.)
 
 *Update 2009-08-22: Apparently, the proof was discovered by Benjamin G. Klein and Irl C. Bivens, and it appears on page 120 of
-[Proofs without Words: Exercises in Visual Thinking](/refs/pww1) by Roger B. Nelson (thanks for the reference, David Radcliffe).*
+[Proofs without Words: Exercises in Visual Thinking](/refs/pww1/) by Roger B. Nelson (thanks for the reference, David Radcliffe).*

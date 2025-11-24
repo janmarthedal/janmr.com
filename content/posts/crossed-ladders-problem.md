@@ -122,7 +122,7 @@ $$
 And that is the width we were looking for. Note, however, that if $p > a$ then no solution is possible. This can happen, for example, if the crossing height $h$ is larger than the shortest ladder.
 
 But how do we solve (3) and find $x$?
-It is possible to solve a quartic equation analytically, so let us turn to [Abramowitz and Stegun](/refs/abramowitz) and
+It is possible to solve a quartic equation analytically, so let us turn to [Abramowitz and Stegun](/refs/abramowitz/) and
 [solve it](https://personal.math.ubc.ca/~cbm/aands/page_17.htm). By carefully inserting to retrieve the positive root we get
 
 $$

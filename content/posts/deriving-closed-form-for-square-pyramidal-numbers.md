@@ -24,7 +24,7 @@ $$
 
 The numbers $s_0, s_1, s_2, \ldots$ are called the [square pyramidal numbers](http://oeis.org/A000330).
 
-Many different proofs exist. Seven different proofs can be found in [Concrete Mathematics](/refs/concrete) and even a [visual proof](http://www.maa.org/programs/faculty-and-departments/classroom-capsules-and-notes/proof-without-words-sum-of-squares-0) has been published (via [@MathUpdate](https://twitter.com/MathUpdate)).
+Many different proofs exist. Seven different proofs can be found in [Concrete Mathematics](/refs/concrete/) and even a [visual proof](http://www.maa.org/programs/faculty-and-departments/classroom-capsules-and-notes/proof-without-words-sum-of-squares-0) has been published (via [@MathUpdate](https://twitter.com/MathUpdate)).
 
 One of the simplest proofs uses induction on *n*. This approach assumes that you know (or guess) the correct formula beforehand, though.
 

@@ -19,7 +19,7 @@ excerpt: >-
 redirect: /blog/2014/04/bresenhams-line-algorithm/
 ---
 In 1965 Jack Elton Bresenham published the paper *[Algorithm for computer control of a digital
-plotter](/refs/bresenham65)* in the IBM Systems Journal, volume&nbsp;4, number&nbsp;1.
+plotter](/refs/bresenham65/)* in the IBM Systems Journal, volume&nbsp;4, number&nbsp;1.
 It explained how a line could be approximated on an integer grid.
 The algorithm is still used today as a [rasterization](http://en.wikipedia.org/wiki/Rasterisation)
 technique for rendering lines on video displays or printers.

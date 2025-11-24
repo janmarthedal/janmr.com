@@ -58,7 +58,7 @@ on a closed set $S$, then the Gradient Descent method will either run into the b
 or converge to a stationary point. This was shown by [Haskell B. Curry](https://en.wikipedia.org/wiki/Haskell_Curry)
 (yes, *that* Haskell Curry, both [currying](https://en.wikipedia.org/wiki/Currying)
 and [Haskell](https://www.haskell.org/) are named after him) in the paper
-[The method of steepest descent for non-linear minimization problems](/refs/curry44).
+[The method of steepest descent for non-linear minimization problems](/refs/curry44/).
 
 That was some theory, but what happens when we apply the Gradient Descent method to some
 neural network? Firstly, we do have one requirement if we plan to use Gradient Descent for a

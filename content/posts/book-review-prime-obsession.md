@@ -18,7 +18,7 @@ redirect: /blog/2010/01/book-review-prime-obsession/
 ---
 <div class="pull-right"><a href="/refs/derbyshire03"><img src="/media/books/derbyshire03.jpg" alt=""></a></div>
 
-[Prime Obsession: Bernhard Riemann and the Greatest Unsolved Problem in Mathematics](/refs/derbyshire03) is a book about the [Riemann Hypothesis](http://en.wikipedia.org/wiki/Riemann_hypothesis), posed by [Bernhard Riemann](http://en.wikipedia.org/wiki/Bernhard_Riemann) in 1859. As the book title says, it is one of the greatest unsettled mathematical conjectures remaining today. It is among [David Hilbert](http://en.wikipedia.org/wiki/David_Hilbert)'s [list of twenty-three mathematical problems](http://en.wikipedia.org/wiki/Hilbert_problems) and one of the seven millennium problems presented by the [Clay Mathematics Institute](http://www.claymath.org).
+[Prime Obsession: Bernhard Riemann and the Greatest Unsolved Problem in Mathematics](/refs/derbyshire03/) is a book about the [Riemann Hypothesis](http://en.wikipedia.org/wiki/Riemann_hypothesis), posed by [Bernhard Riemann](http://en.wikipedia.org/wiki/Bernhard_Riemann) in 1859. As the book title says, it is one of the greatest unsettled mathematical conjectures remaining today. It is among [David Hilbert](http://en.wikipedia.org/wiki/David_Hilbert)'s [list of twenty-three mathematical problems](http://en.wikipedia.org/wiki/Hilbert_problems) and one of the seven millennium problems presented by the [Clay Mathematics Institute](http://www.claymath.org).
 
 The Riemann Hypothesis concerns the zeros of the [Riemann zeta function](http://en.wikipedia.org/wiki/Riemann_zeta_function),
 
@@ -49,7 +49,7 @@ I would recommend it to anyone interested in mathematics and who has some basic 
 Book facts:
 
 *   Author: [John Derbyshire](http://www.johnderbyshire.com/).
-*   Book title: [Prime Obsession](/refs/derbyshire03).
+*   Book title: [Prime Obsession](/refs/derbyshire03/).
 *   Publication year: 2004.
 *   Publisher: Plume Books.
 *   ISBN: Paperback [0452285259](http://en.wikipedia.org/w/index.php?title=Special:BookSources&isbn=0452285259).
