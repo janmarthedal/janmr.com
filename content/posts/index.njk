@@ -2,10 +2,10 @@
 title: Posts
 layout: page
 ---
-<div class="post-list">
+<ul class="post-list">
   {%- for post in collections.posts | reverse -%}
-  <h5>
+  <li>
     <a href="{{ post.url | url }}">{{ post.title }}</a> <small>{{ post.date | readableDate }}</small>
-  </h5>
+  </li>
   {%- endfor -%}
-</div>
+</ul>
