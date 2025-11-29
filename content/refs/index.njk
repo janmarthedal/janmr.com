@@ -2,10 +2,10 @@
 title: References
 layout: page
 ---
-<div>
+<ul>
   {%- for post in collections.refs -%}
-  <h5>
+  <li>
     <a href="{{ post.url | url }}">{{ post.title }}</a></small>
-  </h5>
+  </li>
   {%- endfor -%}
-</div>
+</ul>
