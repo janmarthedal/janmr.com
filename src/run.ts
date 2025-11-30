@@ -14,7 +14,7 @@ import { rssLastUpdatedDate } from "./rss/rssLastUpdatedDate";
 import { dateRfc3339 } from "./rss/dateRfc3339";
 
 const SOURCE_DIR = "content";
-const COPY_PATTERNS = ["files/**/*", "media/**/*", "lab/**/*.js", "lab/**/*.js.map", "icon-48x48.png", "janmr-logo.png", "_redirects"];
+const COPY_PATTERNS = ["files/**/*", "media/**/*", "lab/**/*.js", "lab/**/*.js.map", "icon-48x48.png", "_redirects"];
 const CSS_INPUT = ["css/normalize.css", "css/styles.less"];
 const CSS_OUTPUT = "css/styles.css";
 const SOURCE_PATTERN = "**/*";
