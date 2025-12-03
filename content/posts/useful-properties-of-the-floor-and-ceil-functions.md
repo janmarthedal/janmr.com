@@ -35,7 +35,12 @@ $$
 At the same time, we have the right-going implications of the following statements ($x$ is a real number and $n$ an integer):
 
 $$
-\begin{aligned} n=\lfloor x \rfloor \quad &\Longleftrightarrow \quad n \leq x < n+1, \\ n=\lfloor x \rfloor \quad &\Longleftrightarrow \quad x-1 < n \leq x, \\ n=\lceil x \rceil   \quad &\Longleftrightarrow \quad n-1 < x \leq n, \\ n=\lceil x \rceil   \quad &\Longleftrightarrow \quad x \leq n < x+1. \\ \end{aligned}
+\begin{aligned}
+n=\lfloor x \rfloor \quad &\Longleftrightarrow \quad n \leq x < n+1, \\
+n=\lfloor x \rfloor \quad &\Longleftrightarrow \quad x-1 < n \leq x, \\
+n=\lceil x \rceil   \quad &\Longleftrightarrow \quad n-1 < x \leq n, \\
+n=\lceil x \rceil   \quad &\Longleftrightarrow \quad x \leq n < x+1. \\
+\end{aligned}
 $$
 
 Let us show the fourth left-going implication. Assume $x \leq n < x+1$ and set $k=\lceil x \rceil$. We then have $x \leq k < x+1$ from which we get $n < x+1 \leq k+1$ and $k < x+1 \leq n+1$, so $n=k=\lceil x \rceil$. The remaining three left-going implication can be proved in much the same way.

@@ -6,4 +6,11 @@ crossPosting:
 ---
 Useful Properties of the Floor and Ceil Functions https://janmr.com/posts/useful-properties-of-the-floor-and-ceil-functions/ #floor #ceil #functions #math #programming
 
-![](/media/updates/0044.png)
+$$
+\begin{aligned}
+n=\lfloor x \rfloor \quad &\Longleftrightarrow \quad n \leq x < n+1, \\
+n=\lfloor x \rfloor \quad &\Longleftrightarrow \quad x-1 < n \leq x, \\
+n=\lceil x \rceil   \quad &\Longleftrightarrow \quad n-1 < x \leq n, \\
+n=\lceil x \rceil   \quad &\Longleftrightarrow \quad x \leq n < x+1
+\end{aligned}
+$$
