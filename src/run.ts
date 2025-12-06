@@ -45,6 +45,7 @@ const enum PageType {
     Post,
     Reference,
     Update,
+    Note,
     Other,
 }
 
@@ -52,8 +53,8 @@ interface Page {
     type: PageType;
     extension: string;
     url: string;
-    // sourcePath: string;
     content: string;
+    sourcePath?: string;
     title?: string;
     date?: Date;
     useKaTeX?: boolean;
@@ -96,6 +97,7 @@ env.addFilter("selectclassics", (posts, value) =>
     posts.filter((item: { data: Record<string, unknown> }) => item.data?.classic === value),
 );
 env.addFilter("head", (array, n) => array.slice(0, n));
+env.addFilter("sourceLink", path => metadata.sourceBase + path);
 
 const md = new MarkdownIt({ html: true, linkify: true }).use(markdownKaTeX).use(markdownPrism);
 
@@ -107,7 +109,6 @@ function writeFile(filename: string, contents: string | Buffer) {
 }
 
 function appendRedirect(src: string, dst: string) {
-    // console.log("append redirect", src, dst);
     const line = `${src}\t${dst}\n`;
     appendFileSync(REDIRECT_FILE, line);
 }
@@ -155,7 +156,6 @@ function loadPages(): Array<Page> {
         globIterateSync(SOURCE_PATTERN, { cwd: SOURCE_DIR, nodir: true, ignore: IGNORE_PATTERNS }),
         (filename: string): Page => {
             console.log("read", filename);
-            const extension = extname(filename);
             const buffer = readFileSync(join(SOURCE_DIR, filename), "utf8");
             let type = PageType.Other;
             let url = filename;
@@ -167,18 +167,20 @@ function loadPages(): Array<Page> {
                 const frontmatter = matter(buffer);
                 data = frontmatter.data;
                 content = frontmatter.content;
-                url = data.permalink as string || permalinkFromFilename(filename);
+                url = (data.permalink as string) || permalinkFromFilename(filename);
                 date = data.date ? new Date(data.date as string) : undefined;
                 title = data.title as string | undefined;
                 if (filename.startsWith("updates/")) {
                     type = PageType.Update;
                 } else if (filename.startsWith("posts/") && date) {
                     type = PageType.Post;
+                } else if (filename.startsWith("notes/")) {
+                    type = PageType.Note;
                 } else if (data.layout === "reference") {
                     type = PageType.Reference;
                 }
             }
-            return { type, extension, url, title, date, data, content };
+            return { type, extension: extname(filename), url, sourcePath: filename, title, date, data, content };
         },
     );
 }
@@ -292,15 +294,22 @@ function decoratePosts(posts: Array<Page>, refMap: Map<string, Page>) {
     }
 }
 
-function decorateUpdates(posts: Array<Page>) {
-    for (const post of posts) {
-        const plain = plainifyHtml(post.content);
-        post.data.plainHtml = plain;
-        if (!post.title) {
+function decorateUpdates(pages: Array<Page>) {
+    for (const page of pages) {
+        const plain = plainifyHtml(page.content);
+        page.data.plainHtml = plain;
+        if (!page.title) {
             const match = plain.match(/<p>([^<]+)/);
             assert(match);
-            post.title = match[1].trim();
+            page.title = match[1].trim();
         }
+    }
+}
+
+function decorateNotes(pages: Array<Page>) {
+    for (const page of pages) {
+        page.data.showEditLink = true;
+        console.log(page);
     }
 }
 
@@ -326,9 +335,10 @@ async function run() {
     );
     pages.push(cssPage);
 
-    const posts = pages.filter((p) => p.type === PageType.Post);
-    const refs = pages.filter((p) => p.type === PageType.Reference);
+    const posts = pages.filter((page) => page.type === PageType.Post);
+    const refs = pages.filter((page) => page.type === PageType.Reference);
     const updates = pages.filter((page) => page.type === PageType.Update);
+    const notes = pages.filter((page) => page.type === PageType.Note);
     const publishPages = pages.filter((page) => page.type !== PageType.Update);
 
     posts.sort((a, b) => +a.date! - +b.date!);
@@ -339,6 +349,7 @@ async function run() {
     decoratePosts(publishPages, refMap);
     processMarkdown(pages);
     decorateUpdates(updates);
+    decorateNotes(notes);
     processNunjucks(publishPages, { posts, refs, updates });
     writePages(publishPages);
 }
