@@ -9,6 +9,7 @@ import cleanCSS from "clean-css";
 import MarkdownIt from "markdown-it";
 import markdownKaTeX from "@byronwan/markdown-it-katex";
 import markdownPrism from "markdown-it-prism";
+import { load as parseHtml } from "cheerio";
 import { absoluteUrl } from "./rss/absoluteUrl";
 import { rssLastUpdatedDate } from "./rss/rssLastUpdatedDate";
 import { dateRfc3339 } from "./rss/dateRfc3339";
@@ -25,18 +26,17 @@ const LAYOUT_DIR = "layouts";
 const INCLUDE_DRAFTS = process.argv.includes("--drafts");
 
 const metadata = {
-    title: "janmr blog",
-    url: "https://janmr.com/blog/",
+    title: "janmr.com",
+    url: "https://janmr.com",
     author: {
         name: "Jan Marthedal Rasmussen",
         email: "jan@janmr.com",
     },
     feed: {
-        subtitle: "The blog of Jan Marthedal Rasmussen",
-        url: "https://janmr.com/blog/feed.xml",
-        id: "https://janmr.com/blog/",
+        subtitle: "Jan Marthedal Rasmussen updates",
+        url: "https://janmr.com/feed.xml",
+        id: "https://janmr.com/",
     },
-    ga_tracking_id: process.env.GA_TRACKING_ID,
     environment: process.env.BUILD_ENV,
 };
 
@@ -65,6 +65,17 @@ const jsDateToISO = (date: Date) => date.toISOString().slice(0, 10);
 const jsDateToFullISO = (date: Date) => date.toISOString();
 const jsDateToReadable = (date: Date) => readableDateFormat.format(date);
 
+function plainifyHtml(content: string) {
+    const $ = parseHtml(content, null, false);
+    $("span.katex").remove();
+    $("p.katex-block").remove();
+    $("img").each((_, img) => {
+        const src = $(img).attr("src");
+        if (src) $(img).attr("src", absoluteUrl(src, metadata.url));
+    });
+    return $.html().trim();
+}
+
 const env = new nunjucks.Environment(new nunjucks.FileSystemLoader(LAYOUT_DIR), { autoescape: true });
 env.addFilter("url", (name: string) => {
     const path = join("/", name);
@@ -82,6 +93,7 @@ env.addFilter("dateToRfc3339", dateRfc3339);
 env.addFilter("selectclassics", (posts, value) =>
     posts.filter((item: { data: Record<string, unknown> }) => item.data?.classic === value),
 );
+env.addFilter("head", (array, n) => array.slice(0, n));
 
 const md = new MarkdownIt({ html: true, linkify: true }).use(markdownKaTeX).use(markdownPrism);
 
@@ -219,8 +231,8 @@ function processNunjucks(pages: Array<Page>, collections: Record<string, Array<P
             const pageCollection = page.data.collection;
             if (typeof pageCollection === "string") {
                 const collection = collections[pageCollection];
-                page.useKaTeX = page.useKaTeX || collection.some(p => p.useKaTeX);
-                page.usePrism = page.usePrism || collection.some(p => p.usePrism);
+                page.useKaTeX = page.useKaTeX || collection.some((p) => p.useKaTeX);
+                page.usePrism = page.usePrism || collection.some((p) => p.usePrism);
             }
             page.content = env.renderString(page.content, { ...page, collections, metadata, content: undefined });
             page.extension = ".html";
@@ -257,8 +269,7 @@ function normalizeLocalLink(link: string): string {
 }
 
 function decoratePosts(posts: Array<Page>, refMap: Map<string, Page>) {
-    for (let i = 0; i < posts.length; i++) {
-        const post = posts[i];
+    for (const post of posts) {
         const refUrls = new Set<string>();
         for (const match of post.content.matchAll(/\[.*?\]\((\/refs\/.*?)\)/gs)) {
             const refUrl = normalizeLocalLink(match[1]);
@@ -271,6 +282,18 @@ function decoratePosts(posts: Array<Page>, refMap: Map<string, Page>) {
                 refPage.backlinks.push(post);
                 refUrls.add(refUrl);
             }
+        }
+    }
+}
+
+function decorateUpdates(posts: Array<Page>) {
+    for (const post of posts) {
+        const plain = plainifyHtml(post.content);
+        post.data.plainHtml = plain;
+        if (!post.title) {
+            const match = plain.match(/<p>([^<]+)/);
+            assert(match);
+            post.title = match[1].trim();
         }
     }
 }
@@ -297,7 +320,7 @@ async function run() {
     );
     pages.push(cssPage);
 
-    const posts = pages.filter(p => p.type === PageType.Post);
+    const posts = pages.filter((p) => p.type === PageType.Post);
     const refs = pages.filter((p) => p.type === PageType.Reference);
     const updates = pages.filter((page) => page.type === PageType.Update);
     const publishPages = pages.filter((page) => page.type !== PageType.Update);
@@ -309,6 +332,7 @@ async function run() {
 
     decoratePosts(publishPages, refMap);
     processMarkdown(pages);
+    decorateUpdates(updates);
     processNunjucks(publishPages, { posts, refs, updates });
     writePages(publishPages);
 }

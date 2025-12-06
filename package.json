@@ -29,6 +29,7 @@
   },
   "dependencies": {
     "@byronwan/markdown-it-katex": "^3.3.0",
+    "cheerio": "^1.1.2",
     "clean-css": "^5.3.3",
     "glob": "^11.1.0",
     "gray-matter": "^4.0.3",
