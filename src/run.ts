@@ -164,7 +164,7 @@ function loadPages(): Array<Page> {
             let title: string | undefined;
             let date: Date | undefined;
             if (buffer.startsWith("---\n")) {
-                const frontmatter = matter.read(join(SOURCE_DIR, filename));
+                const frontmatter = matter(buffer);
                 data = frontmatter.data;
                 content = frontmatter.content;
                 url = data.permalink as string || permalinkFromFilename(filename);
