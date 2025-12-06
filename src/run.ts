@@ -28,6 +28,7 @@ const INCLUDE_DRAFTS = process.argv.includes("--drafts");
 const metadata = {
     title: "janmr.com",
     url: "https://janmr.com",
+    sourceBase: "https://github.com/janmarthedal/janmr.com/blob/main/content/",
     author: {
         name: "Jan Marthedal Rasmussen",
         email: "jan@janmr.com",
@@ -51,9 +52,10 @@ interface Page {
     type: PageType;
     extension: string;
     url: string;
+    // sourcePath: string;
+    content: string;
     title?: string;
     date?: Date;
-    content: string;
     useKaTeX?: boolean;
     usePrism?: boolean;
     backlinks?: Array<Page>;
@@ -153,13 +155,21 @@ function loadPages(): Array<Page> {
         globIterateSync(SOURCE_PATTERN, { cwd: SOURCE_DIR, nodir: true, ignore: IGNORE_PATTERNS }),
         (filename: string): Page => {
             console.log("read", filename);
+            const extension = extname(filename);
             const buffer = readFileSync(join(SOURCE_DIR, filename), "utf8");
+            let type = PageType.Other;
+            let url = filename;
+            let data: Record<string, unknown> = {};
+            let content = buffer;
+            let title: string | undefined;
+            let date: Date | undefined;
             if (buffer.startsWith("---\n")) {
-                const { data, content } = matter.read(join(SOURCE_DIR, filename));
-                const url = data.permalink || permalinkFromFilename(filename);
-                const date = data.date ? new Date(data.date as string) : undefined;
-                const title = data.title as string | undefined;
-                let type = PageType.Other;
+                const frontmatter = matter.read(join(SOURCE_DIR, filename));
+                data = frontmatter.data;
+                content = frontmatter.content;
+                url = data.permalink as string || permalinkFromFilename(filename);
+                date = data.date ? new Date(data.date as string) : undefined;
+                title = data.title as string | undefined;
                 if (filename.startsWith("updates/")) {
                     type = PageType.Update;
                 } else if (filename.startsWith("posts/") && date) {
@@ -167,12 +177,8 @@ function loadPages(): Array<Page> {
                 } else if (data.layout === "reference") {
                     type = PageType.Reference;
                 }
-                const extension = extname(filename);
-                return { type, extension, url, title, date, data, content };
-            } else {
-                const extension = extname(filename);
-                return { type: PageType.Other, extension, url: filename, data: {}, content: buffer };
             }
+            return { type, extension, url, title, date, data, content };
         },
     );
 }
