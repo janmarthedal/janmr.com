@@ -1,5 +1,5 @@
 ---
-permalink: blog/feed.xml
+permalink: feed.xml
 ---
 {%- set posts = collections.posts | reverse -%}
 <?xml version="1.0" encoding="utf-8"?>
@@ -14,14 +14,13 @@ permalink: blog/feed.xml
     <name>{{ metadata.author.name }}</name>
     <email>{{ metadata.author.email }}</email>
   </author>
-  {%- for post in posts %}
-  {% set absolutePostUrl %}{{ post.url | url | absoluteUrl(metadata.url) }}{% endset %}
+  {%- for update in collections.updates | reverse | head(50) %}
+  {% set absolutePostUrl %}{{ update.url | url | absoluteUrl(metadata.url) }}{% endset %}
   <entry>
-    <title>{{ post.title }}</title>
-    <link href="{{ absolutePostUrl }}"/>
-    <updated>{{ post.date | dateToRfc3339 }}</updated>
     <id>{{ absolutePostUrl }}</id>
-    <content type="html">{{ post.data.excerpt }}</content>
+    <updated>{{ update.date | dateToRfc3339 }}</updated>
+    <title>{{ update.title }}</title>
+    <content type="html">{{ update.data.plainHtml }}</content>
   </entry>
   {%- endfor %}
 </feed>
