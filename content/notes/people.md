@@ -2,7 +2,10 @@
 title: People
 layout: page
 ---
-- [Andrew Kelley](https://andrewkelley.me/)
-  Creator of Zig
-- [Donald E. Knuth](https://www-cs-faculty.stanford.edu/~knuth/)
-  Author of The Art of Computer Programming, creator of TeX
+- [Andrew Kelley](https://andrewkelley.me/).
+  Creator of Zig.
+- [Donald E. Knuth](https://www-cs-faculty.stanford.edu/~knuth/).
+  Author of The Art of Computer Programming, creator of TeX.
+- [Terence Tao](https://www.math.ucla.edu/~tao/).
+  Professor at the Department of Mathematics, UCLA.
+  [What's new (blog)](https://terrytao.wordpress.com/).
