@@ -3,6 +3,6 @@ title: Links
 layout: page
 ---
 - [Books](books/)
-- [Courses](courses/)
+- [Educational Resources](learn/)
 - [List of lists](lists/)
 - [Papers](papers/)

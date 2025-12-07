@@ -19,3 +19,5 @@ layout: page
 * [Lecture notes in computer science everyone should read](http://cstheory.stackexchange.com/questions/4074/what-lecture-notes-should-everyone-read/)
 * [Recent computer science books with online drafts available](http://cstheory.stackexchange.com/questions/3540/what-are-the-recent-tcs-books-whose-drafts-are-available-online/)
 * [Videos on computer science everyone should watch](http://cstheory.stackexchange.com/questions/1198/what-videos-should-everybody-watch)
+
+Many awesome lists: [![Awesome](https://awesome.re/badge.svg)](https://awesome.re)
