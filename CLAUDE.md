@@ -17,15 +17,18 @@ This is a custom static site generator for janmr.com, a personal website and blo
 ```
 janmr.com/
 ├── content/          # Source content files
-│   ├── blog/        # Blog posts (Markdown with front matter)
 │   ├── css/         # CSS and LESS files
-│   ├── cv/          # CV/resume content
 │   ├── files/       # Static files (copied as-is)
 │   ├── lab/         # Lab/experiments
-│   ├── links/       # Links pages
+│   ├── me/          # About/personal pages
 │   ├── media/       # Media files (images, etc.)
+│   ├── notes/       # Notes and reference content
+│   │   ├── links/   # Curated links
+│   │   └── tools/   # Tools references
+│   ├── posts/       # Blog posts (Markdown with front matter)
 │   ├── refs/        # Reference pages
-│   └── *.njk        # Top-level Nunjucks templates
+│   ├── updates/     # Updates/changelog content
+│   └── *.njk        # Top-level Nunjucks templates (index, feed)
 ├── layouts/         # Nunjucks layout templates
 │   ├── base.njk
 │   ├── page.njk
@@ -33,7 +36,10 @@ janmr.com/
 ├── src/             # TypeScript source code
 │   ├── rss/         # RSS feed generation utilities
 │   └── run.ts       # Main build script
+├── so-me-posts/     # Social media post archive
+├── studies/         # Study materials
 ├── build/           # Compiled JavaScript (generated)
 ├── _site/           # Generated static site (output)
-└── package.json
+├── package.json
+└── tsconfig.json
 ```
