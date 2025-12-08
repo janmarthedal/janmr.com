@@ -21,7 +21,7 @@ const CSS_OUTPUT = "css/styles.css";
 const SOURCE_PATTERN = "**/*";
 const SITE_DIR = "_site";
 const REDIRECT_FILE = join(SITE_DIR, "_redirects");
-const IGNORE_PATTERNS = COPY_PATTERNS;
+const IGNORE_PATTERNS = [...COPY_PATTERNS, "**/CLAUDE.md"];
 const LAYOUT_DIR = "layouts";
 const INCLUDE_DRAFTS = process.argv.includes("--drafts");
 
