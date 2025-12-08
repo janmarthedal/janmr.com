@@ -29,5 +29,6 @@ layout: page
 
 ## Open Source
 
-- [Get/set n-th bit of `BigUint` and `BigInt`](https://github.com/rust-num/num-bigint/pull/183)
-- [Use least_squares solver from ndarray-linalg](https://github.com/rust-ml/linfa/pull/125)
+- [Get/set n-th bit of `BigUint` and `BigInt`](https://github.com/rust-num/num-bigint/pull/183) (2021-02-24)
+- [Use least_squares solver from ndarray-linalg](https://github.com/rust-ml/linfa/pull/125) (2021-05-02)
+- [Allow using 0 as file descriptor](https://github.com/nacholibre/node-readlines/pull/34) (2025-12-08)
