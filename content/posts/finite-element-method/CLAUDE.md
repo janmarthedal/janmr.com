@@ -27,8 +27,11 @@ implementations, the following tools will be used:
 
 ## Table of Contents
 
-- [The continuous problem](the-continuous-problem.md)
-- Weak formulation
+- [Introduction](index.md)
+- [The Poisson Problem](01-the-poisson-problem.md)
+- [A More General Formulation](02-a-more-general-formulation.md)
+- [Weak Formulation of the Poisson Problem](03-weak-formulation-of-poisson-problem.md)
+- Weak Formulation of General Formulation
 - A finite solution space
 - Elements
 	- 1d
