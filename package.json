@@ -4,13 +4,13 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "clean": "rm -rf _site",
+    "serve": "npx sirv _site --dev",
     "build": "tsc",
     "make": "node build/run.js",
-    "make:dev": "node --enable-source-maps build/run.js -- --drafts",
-    "clean": "rm -rf _site",
-    "make:watch": "node --watch-path=content --enable-source-maps build/run.js -- --drafts",
-    "serve": "npx sirv _site --dev",
-    "dev": "npm-run-all clean make:dev --parallel make:watch serve",
+    "make:dev": "node --enable-source-maps build/run.js",
+    "make:watch": "node --watch-path=content --enable-source-maps build/run.js",
+    "dev": "npm-run-all clean --parallel make:watch serve",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],

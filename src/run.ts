@@ -172,7 +172,7 @@ function loadPages(): Array<Page> {
                 title = data.title as string | undefined;
                 if (filename.startsWith("updates/")) {
                     type = PageType.Update;
-                } else if (filename.startsWith("posts/") && date) {
+                } else if (filename.startsWith("posts/")) {
                     type = PageType.Post;
                 } else if (filename.startsWith("notes/")) {
                     type = PageType.Note;
@@ -335,7 +335,7 @@ async function run() {
     );
     pages.push(cssPage);
 
-    const posts = pages.filter((page) => page.type === PageType.Post);
+    const posts = pages.filter((page) => page.type === PageType.Post && page.date);
     const refs = pages.filter((page) => page.type === PageType.Reference);
     const updates = pages.filter((page) => page.type === PageType.Update);
     const notes = pages.filter((page) => page.type === PageType.Note);
