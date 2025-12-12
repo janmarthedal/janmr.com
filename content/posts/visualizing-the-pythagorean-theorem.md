@@ -1,6 +1,7 @@
 ---
 title: Visualizing the Pythagorean Theorem
 date: '2010-02-14'
+update: 2025-12-12T09:25Z
 layout: page
 tags:
   - proof
@@ -15,6 +16,7 @@ excerpt: >-
   Pythagoras, a Greek mathematician who lived around 500 B.C. The theorem is
   also included in Euclid's Elements, an encyclopedia of all known mathematics
   around 300 B.C. But how do you actually prove the Pythagorean theorem?
+mastodon: https://mathstodon.xyz/@janmr/115705876552127902
 redirect: /blog/2010/02/visualizing-the-pythagorean-theorem/
 ---
 Most people are familiar with the Pythagorean theorem: In a right-angled triangle the square of the hypotenuse is equal to the sum of the squares of the other two sides. As the name of the theorem implies, it is attributed to [Pythagoras](http://en.wikipedia.org/wiki/Pythagoras), a Greek mathematician who lived around 500 B.C. The theorem is also included in [Euclid](http://en.wikipedia.org/wiki/Euclid)&#8216;s [Elements](/refs/elements/), an encyclopedia of all known mathematics around 300 B.C. But how do you actually prove the Pythagorean theorem?
@@ -32,7 +34,10 @@ This first one is a classic, at least for me, see Figure&nbsp;1. It is very simp
 
 ### Visualization 2
 
-The second visualization, seen in Figure&nbsp;2, is attributed [Thābit ibn Qurra](http://en.wikipedia.org/wiki/Thābit_ibn_Qurra) who lived around 900 A.D. It is probably my current favorite, partly because only a single figure/drawing is needed. Two colorings of this figure, however, is shown to ease the understanding.
+The second visualization, seen in Figure&nbsp;2, is attributed
+[Thābit ibn Qurra](http://en.wikipedia.org/wiki/Thābit_ibn_Qurra) who lived around 900 A.D.
+~~It is probably my current favorite, partly because~~ only a single figure/drawing is needed.
+Two colorings of this figure, however, is shown to ease the understanding.
 
 <figure>
   <img src="/media/pythagoras2.svg" class="img-responsive" alt="Pythagoras 2">
@@ -48,14 +53,19 @@ The third visualization is due to the 12. century Indian mathematician and astro
   <figcaption><strong>Figure 3.</strong></figcaption>
 </figure>
 
-Stephen Hawking, in [God Created the Integers](/refs/hawking/), claims that Bhāskara did not show the figure to the right in Figure&nbsp;3, but simply said &#8220;see!&#8221;. Hawking then observes: If the sides of the triangles are $a$, $b$, and $c$, with $c$ the length of the hypotenuse and $a > b$, we have
+Stephen Hawking, in [God Created the Integers](/refs/hawking/),
+claims that Bhāskara did not show the figure to the right in Figure&nbsp;3, but simply said &#8220;see!&#8221;.
+We can be a bit more explicit by equating the areas of the two figures as
 
 $$
-c^2 = 4 \frac{a b}{2} + (a-b)^2 = a^2 + b^2.
+2 \frac{a b}{2} + a^2 + b^2 = 2 \frac{a b}{2} + c^2
 $$
+
+if the sides of the triangles are $a$, $b$, and hypotenuse $c$.
 
 ### Other
 
 The three books mentioned in this article contains at least 10 other (visual) proofs of the Pythagorean theorem. The three shown above are my current favorites, though. Feel free to post a comment if you know of some visualization which is, in some sense, better.
 
-*(Update 2010-02-14: An amazing [~~84~~ 104 proofs](http://www.cut-the-knot.org/pythagoras/index.shtml) have been collected at [cut-the-knot](http://www.cut-the-knot.org/).)*
+An amazing [122 proofs](http://www.cut-the-knot.org/pythagoras/index.shtml)
+have been collected at [cut-the-knot](http://www.cut-the-knot.org/).
