@@ -1,5 +1,12 @@
 {% extends "base.njk" %}
 {% block head -%}
+{%- if data.includeMeLinks -%}
+<link rel="me" href="https://bsky.app/profile/janmr.com">
+<link rel="me" href="https://github.com/janmarthedal">
+<link rel="me" href="https://www.linkedin.com/in/janmr">
+<link rel="me" href="https://mathstodon.xyz/@janmr">
+<link rel="me" href="https://x.com/janmarthedal">
+{% endif -%}
 {%- if useKaTeX -%}
 <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/katex@0.16.7/dist/katex.min.css">
 {% endif -%}
