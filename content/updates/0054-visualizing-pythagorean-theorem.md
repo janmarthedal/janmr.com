@@ -6,4 +6,4 @@ crossPosting:
 ---
 Visualizing the Pythagorean Theorem https://janmr.com/posts/visualizing-the-pythagorean-theorem/ #math #visualization #proof
 
-![](/media/pythagoras3.svg)
+![](/media/pythagoras2.svg)
