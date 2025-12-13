@@ -1,7 +1,7 @@
 ---
 title: Visualizing the Pythagorean Theorem
 date: '2010-02-14'
-update: 2025-12-12T09:25Z
+update: 2025-12-13T12:58Z
 layout: page
 tags:
   - proof
@@ -36,7 +36,7 @@ This first one is a classic, at least for me, see Figure&nbsp;1. It is very simp
 
 The second visualization, seen in Figure&nbsp;2, is attributed
 [Thābit ibn Qurra](http://en.wikipedia.org/wiki/Thābit_ibn_Qurra) who lived around 900 A.D.
-~~It is probably my current favorite, partly because~~ only a single figure/drawing is needed.
+It is probably my current favorite, partly because only a single figure/drawing is needed.
 Two colorings of this figure, however, is shown to ease the understanding.
 
 <figure>
@@ -54,14 +54,14 @@ The third visualization is due to the 12. century Indian mathematician and astro
 </figure>
 
 Stephen Hawking, in [God Created the Integers](/refs/hawking/),
-claims that Bhāskara did not show the figure to the right in Figure&nbsp;3, but simply said &#8220;see!&#8221;.
-We can be a bit more explicit by equating the areas of the two figures as
+claims that Bhāskara did not show the figure to the right in Figure&nbsp;3,
+but simply said &#8220;see!&#8221;.
+Hawking then observes: If the sides of the triangles are $a$, $b$, and $c$,
+with $c$ the length of the hypotenuse and $a > b$, we have
 
 $$
-2 \frac{a b}{2} + a^2 + b^2 = 2 \frac{a b}{2} + c^2
+c^2 = 4 \frac{a b}{2} + (a-b)^2 = a^2 + b^2.
 $$
-
-if the sides of the triangles are $a$, $b$, and hypotenuse $c$.
 
 ### Other
 
