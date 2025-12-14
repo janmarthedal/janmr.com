@@ -8,7 +8,6 @@ categories:
 excerpt: >-
   When using floating-point numbers then exact, bit-for-bit, equality is almost
   never what you want.
-mastodon: 'https://mathstodon.xyz/@janmr/111515835930659320'
 redirect: /blog/2023/12/equality-of-numbers/
 ---
 When using floating-point numbers then exact, bit-for-bit, equality is almost never what you want.

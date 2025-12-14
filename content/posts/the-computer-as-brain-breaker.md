@@ -13,7 +13,6 @@ excerpt: >-
   different colors to choose from for each peg. The other person (the
   codebreaker) then tries to guess the code using as few guesses as possible,
   using only feedback provided by the codemaker.
-mastodon: 'https://mathstodon.xyz/@janmr/112330701367106701'
 redirect: /blog/2024/04/the-computer-as-brain-breaker/
 ---
 At our house we have a game called Brain Breaker.

@@ -11,7 +11,6 @@ categories:
 excerpt: >-
   Let us now consider the discretization of the 2D Laplace operator using finite
   differences.
-mastodon: 'https://mathstodon.xyz/@janmr/112382856825334474'
 redirect: /blog/2024/05/finite-difference-discretization-of-2d-laplace/
 ---
 Let us now consider the discretization of the 2D Laplace operator using finite differences.

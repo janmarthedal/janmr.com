@@ -11,7 +11,6 @@ excerpt: >-
   Which quantity is larger, a^b or b^a, for positive numbers a and b? As it
   turns out, sometimes a^b is the larger number, other times it is b^a and it
   may even be the case that the two quantities are equal, even though a != b.
-mastodon: 'https://mathstodon.xyz/@janmr/112909352648333051'
 redirect: /blog/2024/08/atob-vs-btoa/
 ---
 Which quantity is larger, $a^b$ or $b^a$, for positive numbers $a$ and $b$?
