@@ -12,4 +12,4 @@ https://doc.rust-lang.org/1.92.0/std/primitive.slice.html#method.sort_unstable
 
 #sorting #algorithm #rust
 
-[![](/media/updates/0055.png)](https://github.com/Voultapher/sort-research-rs/)
+[![github:Voultapher/sort-research-rs](https://gh-card.dev/repos/Voultapher/sort-research-rs.svg)](https://github.com/Voultapher/sort-research-rs/)

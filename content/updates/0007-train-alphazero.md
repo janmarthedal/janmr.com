@@ -5,3 +5,5 @@ crossPosting:
   mastodon: https://mathstodon.xyz/@janmr/111697556353724204
 ---
 Easily train AlphaZero-like agents on any environment you want https://github.com/s-casci/tinyzero
+
+[![github:s-casci/tinyzero](https://gh-card.dev/repos/s-casci/tinyzero.svg)](https://github.com/s-casci/tinyzero/)

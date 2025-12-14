@@ -7,3 +7,5 @@ crossPosting:
 MarkItDown: Python tool for converting various files to Markdown. It presently supports: PDF, PowerPoint, Word, Excel, Images, Audio, HTML, csv, json, xml, etc.
 https://github.com/microsoft/markitdown
 #python #microsoft
+
+[![github:microsoft/markitdown](https://gh-card.dev/repos/microsoft/markitdown.svg)](https://github.com/microsoft/markitdown/)
