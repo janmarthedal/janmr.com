@@ -13,6 +13,7 @@ excerpt: >-
   m_1/n_1 and m_2/n_2. It is straightforward to show that the mediant is placed
   numerically between the original fractions,
 redirect: /blog/2009/12/the-stern-brocot-tree-of-fractions/
+mastodon: https://mathstodon.xyz/@janmr/115678116167566389
 ---
 Consider two fractions $\frac{m_1}{n_1}$ and $\frac{m_2}{n_2}$ with positive numerators and denominators. The fraction $\frac{m_1+m_2}{n_1+n_2}$ is called the *mediant* of $\frac{m_1}{n_1}$ and $\frac{m_2}{n_2}$. It is straightforward to show that the mediant is placed numerically between the original fractions,
 
