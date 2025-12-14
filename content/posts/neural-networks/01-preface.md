@@ -7,7 +7,6 @@ tags:
 categories:
   - machine-learning
 excerpt: Kicking off a new blog series on Neural Networks
-mastodon: 'https://mathstodon.xyz/@janmr/109726377459697082'
 redirect: /blog/2023/01/neural-networks-01-preface/
 ---
 Neural Networks, or more correctly Artificial Neural Networks, have turned out to be

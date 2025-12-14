@@ -8,7 +8,6 @@ tags:
 categories:
   - numerical-analysis
 excerpt: Let us prove an identity involving the Kronecker product and the vec operator.
-mastodon: 'https://mathstodon.xyz/@janmr/112336690679603118'
 redirect: /blog/2024/04/a-kronecker-product-and-vec-operator-identity/
 ---
 Let $A$ be a $q \times n$ matrix and $B$ a $p \times m$ matrix.
