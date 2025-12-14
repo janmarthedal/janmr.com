@@ -5,3 +5,5 @@ crossPosting:
   mastodon: https://mathstodon.xyz/@janmr/111863786064189226
 ---
 A curated list of awesome mathematics resources #math https://github.com/rossant/awesome-math
+
+[![github:rossant/awesome-math](https://gh-card.dev/repos/rossant/awesome-math.svg)](https://github.com/rossant/awesome-math/)

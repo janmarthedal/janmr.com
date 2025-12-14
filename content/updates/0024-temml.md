@@ -4,3 +4,5 @@ crossPosting:
   bluesky: https://bsky.app/profile/janmr.com/post/3lf2w7prnbs2e
 ---
 Temml is a LaTeX-to-MathML JavaScript conversion utility. Useful online converter on homepage. https://temml.org #math #tex #mathml
+
+[![github:ronkok/Temml](https://gh-card.dev/repos/ronkok/Temml.svg)](https://github.com/ronkok/Temml/)

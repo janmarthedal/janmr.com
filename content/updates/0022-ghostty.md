@@ -4,3 +4,5 @@ crossPosting:
   bluesky: https://bsky.app/profile/janmr.com/post/3legexhjot22u
 ---
 👻 Ghostty is a fast, feature-rich, and cross-platform terminal emulator that uses platform-native UI and GPU acceleration. https://ghostty.org
+
+[![github:ghostty-org/ghostty](https://gh-card.dev/repos/ghostty-org/ghostty.svg)](https://github.com/ghostty-org/ghostty/)

@@ -5,3 +5,5 @@ crossPosting:
   mastodon: https://mathstodon.xyz/@janmr/113485580640936344
 ---
 Beating OpenBLAS and MKL in FP32 Matrix Multiplication From Scratch https://salykova.github.io/matmul-cpu
+
+[![github:salykova/sgemm.c](https://gh-card.dev/repos/salykova/sgemm.c.svg)](https://github.com/salykova/sgemm.c/)
