@@ -15,24 +15,22 @@ layout: page
 - *1979-09-01*. BLAS is announced: Basic Linear Algebra Subprograms for Fortran Usage. https://dl.acm.org/doi/10.1145/355841.355847
 - *2006-10*. NumPy 1.0 was released. https://arxiv.org/abs/1907.10121
 - *2012-10-01*. TypeScript is released (version 0.8.0). https://web.archive.org/web/20150403224440/https://typescript.codeplex.com/releases/view/95554
+- *1986-10-09*. The paper "Learning representations by back-propagating errors" is published. https://www.nature.com/articles/323533a0
 - *1985-10-14*. (*1985-10*). First official reference guide for the C++ programming language is published. https://www.stroustrup.com/C++.html https://www.stroustrup.com/1st.html
 - *2009-11-10*. Go was released. https://go.dev/blog/1year
 - *1995-12-04*. JavaScript is first released. https://web.archive.org/web/20070916144913/https://wp.netscape.com/newsref/pr/newsrelease67.html
+- *2004-12*. The paper "MapReduce: Simplified Data Processing on Large Clusters" is published. https://research.google.com/archive/mapreduce.html
  
 TODO:
 - Internet
 - Haskell
-- Erlang
+- Erlang http://erlang.org/course/history.html
 - Scala
 - C
 - Pascal
-- TeX
+- TeX 1978 (more specific possible?)
 - LaTeX
-- The Art of Computer Programming
-- Map Reduce
-- Discrete Fourier Transform?
-- FEM?
-- Back Propagation
+- The Art of Computer Programming (1968)
 
 Links:
 - https://softwarepreservation.computerhistory.org/
