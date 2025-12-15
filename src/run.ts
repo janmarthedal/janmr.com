@@ -309,7 +309,6 @@ function decorateUpdates(pages: Array<Page>) {
 function decorateNotes(pages: Array<Page>) {
     for (const page of pages) {
         page.data.showEditLink = true;
-        console.log(page);
     }
 }
 
