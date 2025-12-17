@@ -4,9 +4,11 @@ layout: page
 ---
 - *2012-01-20*. The first Rust compiler is released. https://web.archive.org/web/20120124160628/https://mail.mozilla.org/pipermail/rust-dev/2012-January/001256.html
 - *1996-01-23*. Java is released. https://www.java.com/releases/
+- *1978-02-01*. The "RSA paper" "A method for obtaining digital signatures and public-key cryptosystems" was published. https://dl.acm.org/doi/10.1145/359340.359342, https://people.csail.mit.edu/rivest/pubs.html
 - *2016-02-08*. Zig was introduced. https://andrewkelley.me/post/intro-to-zig.html
 - *1991-02-20*. (*1991-02*) First release of Python (version 0.9.0). https://raw.githubusercontent.com/python/cpython/master/Misc/HISTORY https://www.tuhs.org/Usenet/alt.sources/1991-February/001749.html
 - *1960-03-01*. LISP I Programmer's Manual is published. https://softwarepreservation.computerhistory.org/LISP/lisp15_family.html#LISP_I_1960_ http://jmc.stanford.edu/articles/lisp.html
+- *1965-04*. The paper "An algorithm for the machine calculation of complex Fourier series" was published. https://www.ams.org/journals/mcom/1965-19-090/home.html
 - *1964-05-01*. The first BASIC program runs. https://cis-alumni.org/TKurtz.html
 - *1997-05-11*. Deep Blue defeats Garry Kasparov. https://www.ibm.com/history/deep-blue
 - *2015-05-15*. The first stable release of Rust, version 1.0, is released. https://blog.rust-lang.org/2015/05/15/Rust-1.0/
@@ -20,7 +22,7 @@ layout: page
 - *2009-11-10*. Go was released. https://go.dev/blog/1year
 - *1995-12-04*. JavaScript is first released. https://web.archive.org/web/20070916144913/https://wp.netscape.com/newsref/pr/newsrelease67.html
 - *2004-12*. The paper "MapReduce: Simplified Data Processing on Large Clusters" is published. https://research.google.com/archive/mapreduce.html
- 
+
 TODO:
 - Internet
 - Haskell
@@ -31,6 +33,7 @@ TODO:
 - TeX 1978 (more specific possible?)
 - LaTeX
 - The Art of Computer Programming (1968)
+- Linux
 
 Links:
 - https://softwarepreservation.computerhistory.org/
