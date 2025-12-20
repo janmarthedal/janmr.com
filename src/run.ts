@@ -15,7 +15,16 @@ import { rssLastUpdatedDate } from "./rss/rssLastUpdatedDate";
 import { dateRfc3339 } from "./rss/dateRfc3339";
 
 const SOURCE_DIR = "content";
-const COPY_PATTERNS = ["files/**/*", "media/**/*", "lab/**/*.js", "lab/**/*.js.map", "icon.svg", "_redirects"];
+const COPY_PATTERNS = [
+    "files/**/*",
+    "media/**/*",
+    "lab/**/*.js",
+    "lab/**/*.js.map",
+    "icon.svg",
+    "icon-*.png",
+    "apple-touch-icon.png",
+    "_redirects",
+];
 const CSS_INPUT = ["css/normalize.css", "css/styles.less"];
 const CSS_OUTPUT = "css/styles.css";
 const SOURCE_PATTERN = "**/*";
@@ -97,7 +106,7 @@ env.addFilter("selectclassics", (posts, value) =>
     posts.filter((item: { data: Record<string, unknown> }) => item.data?.classic === value),
 );
 env.addFilter("head", (array, n) => array.slice(0, n));
-env.addFilter("sourceLink", path => metadata.sourceBase + path);
+env.addFilter("sourceLink", (path) => metadata.sourceBase + path);
 
 const md = new MarkdownIt({ html: true, linkify: true }).use(markdownKaTeX).use(markdownPrism);
 
