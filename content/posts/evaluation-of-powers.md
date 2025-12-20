@@ -16,12 +16,12 @@ redirect: /blog/2011/01/evaluation-of-powers/
 ---
 How do you efficiently compute $x^n$ for a positive integer $n$? Take $x^{15}$ as an example. You could take $x$ and repeatedly multiply by $x$ 14 times. A better way to do it, however, is this:
 
-*   $t_0=x$
-*   $t_1=t_0 \cdot t_0 = x^2$
-*   $t_2=t_0 \cdot t_1 = x^3$
-*   $t_3=t_1 \cdot t_2 = x^5$
-*   $t_4=t_3 \cdot t_3 = x^{10}$
-*   $t_5=t_3 \cdot t_4 = x^{15}$
+* $t_0=x$
+* $t_1=t_0 \cdot t_0 = x^2$
+* $t_2=t_0 \cdot t_1 = x^3$
+* $t_3=t_1 \cdot t_2 = x^5$
+* $t_4=t_3 \cdot t_3 = x^{10}$
+* $t_5=t_3 \cdot t_4 = x^{15}$
 
 A shorter way to write this is $x^1,x^2,x^3,x^5,x^{10},x^{15}$, where each quantity is obtained by multiplying two of the previous quantities together. We can write it even shorter as 1,2,3,5,10,15, where only the exponents are written. Here each number is obtained by adding together two of the previous numbers. This is called an [addition chain](http://en.wikipedia.org/wiki/Addition_chain) and is at the heart of studying the optimal way of evaluating powers. There is no simple expression that computes the minimal number of multiplications $a(n)$ needed to evaluate $x$<sup>$n$</sup>. A [list](http://oeis.org/A003313), however, is available from [The On-Line Encyclopedia of Integer Sequences](http://oeis.org), where the first 40 entries are
 
@@ -41,15 +41,15 @@ $$
 
 An algorithm that comes close to this optimal bound is the binary method, which relies on these simple relations:
 
-*   $x^0 = 1$
-*   $x^{2k} = (x^k)^2$
-*   $x^{2k+1} = x \cdot x^{2k}$
+* $x^0 = 1$
+* $x^{2k} = (x^k)^2$
+* $x^{2k+1} = x \cdot x^{2k}$
 
 A recursive algorithm could readily be made from these, but we wish to have an iterative algorithm. The key here is to consider the slightly more general problem of evaluating $y \cdot x^n$. Here we have the relations:
 
-*   $y \cdot x^0 = y$
-*   $y \cdot x^{2k} = y \cdot (x^2)^k$
-*   $y \cdot x^{2k+1} = (y \cdot x) \cdot x^{2k}$
+* $y \cdot x^0 = y$
+* $y \cdot x^{2k} = y \cdot (x^2)^k$
+* $y \cdot x^{2k+1} = (y \cdot x) \cdot x^{2k}$
 
 This leads immediately to the following `C++` code:
 
