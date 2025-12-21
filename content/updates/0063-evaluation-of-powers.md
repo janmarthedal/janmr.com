@@ -6,6 +6,10 @@ crossPosting:
 ---
 Evaluation of Powers https://janmr.com/posts/evaluation-of-powers/ #programming #algorithm #cpp #exponentiation #optimality
 
-* $x^0 = 1$
-* $x^{2k} = (x^k)^2$
-* $x^{2k+1} = x \cdot x^{2k}$
+$$
+\begin{aligned}
+x^0 &= 1 \\
+x^{2k} &= (x^k)^2 \\
+x^{2k+1} &= x \cdot x^{2k} \\
+\end{aligned}
+$$
