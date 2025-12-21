@@ -14,6 +14,11 @@
 <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/prismjs@1.20.0/themes/prism.css">
 {% endif -%}
 <link rel="stylesheet" href="{{ '/css/styles.css' | url }}">
+{%- if data.styles %}
+<style>
+{{ data.styles | safe }}
+</style>
+{%- endif %}
 {%- endblock %}
 {% block content -%}
 <header>
