@@ -12,6 +12,7 @@ layout: page
   YouTube playlist.
 * [Introduction To Algorithms](https://ocw.mit.edu/courses/6-006-introduction-to-algorithms-spring-2020/)
 * [The Missing Semester of Your CS Education](https://missing.csail.mit.edu/)
+* [The Ray Tracer Challenge](http://raytracerchallenge.com/)
 
 ## Mathematics
 
