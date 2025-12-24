@@ -345,7 +345,7 @@ async function run() {
 
     const posts = pages.filter((page) => page.type === PageType.Post && page.date);
     const refs = pages.filter((page) => page.type === PageType.Reference);
-    const updates = pages.filter((page) => page.type === PageType.Update);
+    const updates = pages.filter((page) => page.type === PageType.Update && page.date);
     const notes = pages.filter((page) => page.type === PageType.Note);
     const publishPages = pages.filter((page) => page.type !== PageType.Update);
 

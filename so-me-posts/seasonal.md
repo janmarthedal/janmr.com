@@ -1,0 +1,8 @@
+- *01-01*. About the year's number
+- *01-04*. Statement about twin somethings
+- *03-06*. Related to David Hilbert
+- ~*03-21*. March equinox
+- ~*06-21*. June solstice
+- ~*09-21*. September equinox
+- ~*12-21*. December solstice
+- *12-24*. Knuth's christmas lectures
