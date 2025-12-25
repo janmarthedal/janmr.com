@@ -66,8 +66,6 @@ interface Page {
     sourcePath?: string;
     title?: string;
     date?: Date;
-    useKaTeX?: boolean;
-    usePrism?: boolean;
     backlinks?: Array<Page>;
     data: Record<string, unknown>;
 }
@@ -204,14 +202,6 @@ async function processLess(pages: Array<Page>) {
     }
 }
 
-function contentUsesKaTeX(content: string): boolean {
-    return content.includes('<span class="katex">');
-}
-
-function contentUsesPrism(content: string): boolean {
-    return content.includes('<pre class="language-');
-}
-
 function truncateSelfLinks(s: string): string {
     return s.replaceAll(/<a href="(.+?)">\1<\/a>/g, (_match, link) => {
         let text: string = link;
@@ -235,8 +225,6 @@ function processMarkdown(pages: Array<Page>) {
         if (page.extension === ".md") {
             page.content = truncateSelfLinks(md.render(page.content));
             page.extension = ".html";
-            page.useKaTeX = contentUsesKaTeX(page.content);
-            page.usePrism = contentUsesPrism(page.content);
         }
     }
 }
@@ -245,25 +233,47 @@ function processNunjucks(pages: Array<Page>, collections: Record<string, Array<P
     for (const page of pages) {
         if (page.extension === ".njk") {
             console.log("Processing Nunjucks page:", page.url);
-            const pageCollection = page.data.collection;
-            if (typeof pageCollection === "string") {
-                const collection = collections[pageCollection];
-                page.useKaTeX = page.useKaTeX || collection.some((p) => p.useKaTeX);
-                page.usePrism = page.usePrism || collection.some((p) => p.usePrism);
-            }
             page.content = env.renderString(page.content, { ...page, collections, metadata, content: undefined });
             page.extension = ".html";
         }
     }
 }
 
-function writePages(pages: Array<Page>) {
+function renderPages(pages: Array<Page>) {
     for (const page of pages) {
         assert(page.extension === ".html" || page.extension === ".css");
-        const output = page.data.layout
+        page.content = page.data.layout
             ? renderLayout(page.data.layout as string, { ...page, metadata })
             : env.renderString(page.content, { ...page, metadata, content: undefined });
-        writeFile(page.url, output);
+    }
+}
+
+function postProcessPages(pages: Array<Page>) {
+    for (const page of pages) {
+        const $ = parseHtml(page.content);
+        const hasKaTeX = $("span.katex").length > 0;
+        const hasPrism = $('pre[class^="language-"]').length > 0;
+        if (hasKaTeX || hasPrism) {
+            const head = $("head");
+            if (hasKaTeX) {
+                head.append(`<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/katex@0.16.7/dist/katex.min.css">`);
+            }
+            if (hasPrism) {
+                head.append(`<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/prismjs@1.20.0/themes/prism.css">`);
+            }
+            page.content = $.html().trim();
+        }
+    }
+}
+
+function writePages(pages: Array<Page>) {
+    for (const page of pages) {
+        writeFile(page.url, page.content);
+    }
+}
+
+function addRedirects(pages: Array<Page>) {
+    for (const page of pages) {
         if (page.data.redirect) {
             const src = page.data.redirect as string;
             let dst = `/${page.url}`;
@@ -345,7 +355,7 @@ async function run() {
 
     const posts = pages.filter((page) => page.type === PageType.Post && page.date);
     const refs = pages.filter((page) => page.type === PageType.Reference);
-    const updates = pages.filter((page) => page.type === PageType.Update && page.date);
+    const updates = pages.filter((page) => page.type === PageType.Update);
     const notes = pages.filter((page) => page.type === PageType.Note);
     const publishPages = pages.filter((page) => page.type !== PageType.Update);
 
@@ -359,7 +369,10 @@ async function run() {
     decorateUpdates(updates);
     decorateNotes(notes);
     processNunjucks(publishPages, { posts, refs, updates });
+    renderPages(publishPages);
+    postProcessPages(publishPages);
     writePages(publishPages);
+    addRedirects(publishPages);
 }
 
 run().then(() => {
