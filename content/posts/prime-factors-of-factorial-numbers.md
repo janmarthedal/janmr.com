@@ -13,6 +13,7 @@ excerpt: >-
   of a factorial number, however, are all relatively small, and the complete
   factorization of n! is quite easy to obtain.
 redirect: /blog/2010/10/prime-factors-of-factorial-numbers/
+mastodon: https://mathstodon.xyz/@janmr/115739190333664454
 ---
 Factorial numbers, $n! = 1 \cdot 2 \cdots n$, grow very fast with $n$. In fact, $n! \sim \sqrt{2 \pi n} (n/e)^n$ according to [Stirling's approximation](http://en.wikipedia.org/wiki/Stirling's_approximation). The [prime factors](http://en.wikipedia.org/wiki/Prime_factor) of a factorial number, however, are all relatively small, and the complete factorization of $n!$ is quite easy to obtain.
 
