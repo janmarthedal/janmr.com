@@ -15,6 +15,7 @@ excerpt: >-
   but that leads to a highly inefficient algorithm that is both recursive and
   which uses a number of additions which grows exponentially with n.
 redirect: /blog/2011/03/evaluation-of-fibonacci-numbers/
+mastodon: https://mathstodon.xyz/@janmr/115779844025385901
 ---
 The integer [sequence](http://oeis.org/A000045) 0, 1, 1, 2, 3, 5, 8, 13, &#8230; is well known as the [Fibonacci](http://en.wikipedia.org/wiki/Fibonacci) sequence. It is easily defined by $F_0 = 0$, $F_1 = 1$ and $F_n = F_{n-1} + F_{n-2}$ for $n \geq 2$.
 
