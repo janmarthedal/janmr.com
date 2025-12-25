@@ -33,6 +33,8 @@ const REDIRECT_FILE = join(SITE_DIR, "_redirects");
 const IGNORE_PATTERNS = [...COPY_PATTERNS, "**/CLAUDE.md"];
 const LAYOUT_DIR = "layouts";
 const INCLUDE_DRAFTS = process.argv.includes("--drafts");
+const KATEX_LINK = '<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/katex@0.16.7/dist/katex.min.css">';
+const PRISM_LINK = '<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/prismjs@1.20.0/themes/prism.css">';
 
 const metadata = {
     title: "janmr.com",
@@ -202,28 +204,26 @@ async function processLess(pages: Array<Page>) {
     }
 }
 
-function truncateSelfLinks(s: string): string {
-    return s.replaceAll(/<a href="(.+?)">\1<\/a>/g, (_match, link) => {
-        let text: string = link;
-        if (text.startsWith("https://")) {
-            text = text.slice(8);
-        } else if (text.startsWith("http://")) {
-            text = text.slice(7);
-        }
-        if (text.endsWith("/")) {
-            text = text.slice(0, -1);
-        }
-        if (text.length > 34) {
-            text = `${text.slice(0, 34)}…`;
-        }
-        return `<a href="${link}">${text}</a>`;
-    });
+function truncateLinkText(s: string): string {
+    let text = s;
+    if (text.startsWith("https://")) {
+        text = text.slice(8);
+    } else if (text.startsWith("http://")) {
+        text = text.slice(7);
+    }
+    if (text.endsWith("/")) {
+        text = text.slice(0, -1);
+    }
+    if (text.length > 34) {
+        text = `${text.slice(0, 34)}…`;
+    }
+    return text;
 }
 
 function processMarkdown(pages: Array<Page>) {
     for (const page of pages) {
         if (page.extension === ".md") {
-            page.content = truncateSelfLinks(md.render(page.content));
+            page.content = md.render(page.content);
             page.extension = ".html";
         }
     }
@@ -251,16 +251,25 @@ function renderPages(pages: Array<Page>) {
 function postProcessPages(pages: Array<Page>) {
     for (const page of pages) {
         const $ = parseHtml(page.content);
-        const hasKaTeX = $("span.katex").length > 0;
-        const hasPrism = $('pre[class^="language-"]').length > 0;
-        if (hasKaTeX || hasPrism) {
-            const head = $("head");
-            if (hasKaTeX) {
-                head.append(`<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/katex@0.16.7/dist/katex.min.css">`);
-            }
-            if (hasPrism) {
-                head.append(`<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/prismjs@1.20.0/themes/prism.css">`);
-            }
+        let anyChanges = false;
+        if ($("span.katex").length > 0) {
+            $("head").append(KATEX_LINK);
+            anyChanges = true;
+        }
+        if ($('pre[class^="language-"]').length > 0) {
+            $("head").append(PRISM_LINK);
+            anyChanges = true;
+        }
+        $('a').each((_, el) => {
+          const $el = $(el);
+          const href = $el.attr('href');
+          if ($el.children().length === 0 && href === $el.text().trim()) {
+              const text = truncateLinkText(href);
+              $el.text(text);
+              anyChanges = true;
+          }
+        });
+        if (anyChanges) {
             page.content = $.html().trim();
         }
     }
