@@ -9,6 +9,7 @@ layout: page
 * [Colorful language in serious math papers](http://mathoverflow.net/questions/22299/what-are-some-examples-of-colorful-language-in-serious-mathematics-papers)
 * [Counter-intuitive theorems that can be translated into everyday language](http://math.stackexchange.com/questions/250/a-challenge-by-r-p-feynman-give-counter-intuitive-theorems-that-can-be-transl)
 * [Examples of common false beliefs in mathematics](http://mathoverflow.net/questions/23478/examples-of-common-false-beliefs-in-mathematics)
+* [Interesting but short math papers?](https://math.stackexchange.com/questions/627736/interesting-but-short-math-papers)
 * [Math puzzles for dinner](http://mathoverflow.net/questions/29323/math-puzzles-for-dinner)
 * [Math proofs without words](http://mathoverflow.net/questions/8846/proofs-without-words)
 
