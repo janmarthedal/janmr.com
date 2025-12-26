@@ -1,20 +1,20 @@
 ---
 permalink: feed.xml
 ---
-{%- set posts = collections.posts | reverse -%}
+{%- set updates = collections.updates | head(50) -%}
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>{{ metadata.title }}</title>
   <subtitle>{{ metadata.feed.subtitle }}</subtitle>
   <link href="{{ metadata.feed.url }}" rel="self"/>
   <link href="{{ metadata.url }}"/>
-  <updated>{{ posts | rssLastUpdatedDate }}</updated>
+  <updated>{{ updates | rssLastUpdatedDate }}</updated>
   <id>{{ metadata.feed.id }}</id>
   <author>
     <name>{{ metadata.author.name }}</name>
     <email>{{ metadata.author.email }}</email>
   </author>
-  {%- for update in collections.updates | reverse | head(50) %}
+  {%- for update in updates %}
   {% set absolutePostUrl %}{{ update.url | url | absoluteUrl(metadata.url) }}{% endset %}
   <entry>
     <id>{{ absolutePostUrl }}</id>
