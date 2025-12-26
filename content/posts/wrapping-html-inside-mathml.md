@@ -1,7 +1,7 @@
 ---
 title: Wrapping HTML inside MathML
-date: '2017-02-23'
-layout: page
+date: 2017-02-23T12:00Z
+layout: post
 tags:
   - mathml
 categories:

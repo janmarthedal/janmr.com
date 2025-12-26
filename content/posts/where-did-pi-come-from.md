@@ -1,7 +1,7 @@
 ---
 title: Where Did pi Come From?
-date: '2011-01-09'
-layout: page
+date: 2011-01-09T12:00Z
+layout: post
 tags:
   - catalan-numbers
   - knuth

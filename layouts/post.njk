@@ -1,0 +1,19 @@
+{% extends "page.njk" %}
+{% block pagecontent %}
+  {#- A post draft does not have a date -#}
+  {% if date -%}
+  <div class="post-publication-date">
+  Published on <time datetime="{{ date | dateToISO }}">{{ date | refHtmlDateString }}</time>
+  {%- if data.update -%}
+  , updated on <time datetime="{{ data.update | dateToISO }}">{{ data.update | refHtmlDateString }}</time>
+  {%- endif -%}
+  </div>
+  {%- endif %}
+  {{ super() }}
+  {%- if data.mastodon %}
+  <div class="post-note">
+    Feel free to leave any question, correction or comment in this
+    <a href="{{data.mastodon}}">Mastodon thread</a>.
+  </div>
+  {% endif -%}
+{% endblock %}

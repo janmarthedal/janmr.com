@@ -1,7 +1,7 @@
 ---
 title: Neural Networks - Multiple Inputs
-date: '2023-01-16'
-layout: page
+date: 2023-01-16T12:00Z
+layout: post
 tags:
   - neural-network
 categories:

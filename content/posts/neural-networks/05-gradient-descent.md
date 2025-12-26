@@ -1,7 +1,7 @@
 ---
 title: Neural Networks - Gradient Descent
-date: '2023-01-18'
-layout: page
+date: 2023-01-18T12:00Z
+layout: post
 tags:
   - neural-network
 categories:

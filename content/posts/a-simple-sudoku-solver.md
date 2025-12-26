@@ -1,7 +1,7 @@
 ---
 title: A Simple Sudoku Solver
-date: '2023-05-02'
-layout: page
+date: 2023-05-02T12:00Z
+layout: post
 tags:
   - rust
   - combinatorics

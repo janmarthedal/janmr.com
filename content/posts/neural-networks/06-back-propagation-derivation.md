@@ -1,7 +1,7 @@
 ---
 title: Neural Networks - Back-propagation Derivation
-date: '2023-01-19'
-layout: page
+date: 2023-01-19T12:00Z
+layout: post
 tags:
   - neural-network
 categories:

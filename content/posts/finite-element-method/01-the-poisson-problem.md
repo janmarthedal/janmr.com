@@ -1,6 +1,6 @@
 ---
 title: The Poisson Problem
-layout: page
+layout: post
 ---
 Let us begin with one of the most fundamental PDEs: the Poisson problem.
 

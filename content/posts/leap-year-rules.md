@@ -1,7 +1,7 @@
 ---
 title: Leap Year Rules
-date: '2020-04-15'
-layout: page
+date: 2020-04-15T12:00Z
+layout: post
 tags:
   - datetime
 categories:

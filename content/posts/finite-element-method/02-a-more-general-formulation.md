@@ -1,6 +1,6 @@
 ---
 title: A More General Formulation
-layout: page
+layout: post
 ---
 Let us, again, consider a bounded domain $\Omega$ with boundary $\partial\Omega$.
 We now formulate the problem as

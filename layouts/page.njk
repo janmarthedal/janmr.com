@@ -24,13 +24,9 @@
       {% if title -%}
       <h1>{{ title }}</h1>
       {%- endif %}
+      {% block pagecontent -%}
       {{ content | safe }}
-      {%- if data.mastodon -%}
-      <div class="post-note">
-        Feel free to leave any question, correction or comment in this
-        <a href="{{data.mastodon}}">Mastodon thread</a>.
-      </div>
-      {%- endif -%}
+      {%- endblock %}
     </div>
     <div class="sidebar">
       <p>

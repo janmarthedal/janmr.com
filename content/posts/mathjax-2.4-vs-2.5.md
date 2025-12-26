@@ -1,7 +1,7 @@
 ---
 title: MathJax 2.4 vs 2.5
-date: '2015-03-08'
-layout: page
+date: 2015-03-08T12:00Z
+layout: post
 tags:
   - mathjax
 categories:

@@ -1,7 +1,7 @@
 ---
 title: Multiple-Precision Addition
-date: '2011-10-12'
-layout: page
+date: 2011-10-12T12:00Z
+layout: post
 tags:
   - algorithms
   - multiple-precision
