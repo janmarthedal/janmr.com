@@ -1,7 +1,7 @@
 ---
 title: Neural Networks - Preface
-date: '2023-01-14'
-layout: page
+date: 2023-01-14T12:00Z
+layout: post
 tags:
   - neural-network
 categories:

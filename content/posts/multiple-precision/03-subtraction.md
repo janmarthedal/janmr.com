@@ -1,7 +1,7 @@
 ---
 title: Multiple-Precision Subtraction
-date: '2011-10-26'
-layout: page
+date: 2011-10-26T12:00Z
+layout: post
 tags:
   - algorithms
   - multiple-precision

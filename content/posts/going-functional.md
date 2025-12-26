@@ -1,7 +1,7 @@
 ---
 title: Going Functional
-date: '2011-05-31'
-layout: page
+date: 2011-05-31T12:00Z
+layout: post
 tags:
   - functional-programming
 categories:

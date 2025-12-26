@@ -1,7 +1,7 @@
 ---
 title: Simple Linear Regression
-date: '2023-12-20'
-layout: page
+date: 2023-12-20T12:00Z
+layout: post
 tags:
   - machine-learning
 categories:

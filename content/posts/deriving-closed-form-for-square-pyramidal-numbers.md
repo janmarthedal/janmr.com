@@ -1,7 +1,7 @@
 ---
 title: Deriving the Closed Form for Square Pyramidal Numbers
-date: '2014-06-14'
-layout: page
+date: 2014-06-14T12:00Z
+layout: post
 tags:
   - pyramidal-numbers
 categories:

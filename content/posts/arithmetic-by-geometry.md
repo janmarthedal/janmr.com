@@ -1,7 +1,7 @@
 ---
 title: Arithmetic by Geometry
-date: '2010-04-24'
-layout: page
+date: 2010-04-24T12:00Z
+layout: post
 tags:
   - arithmetic
   - geometry

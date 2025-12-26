@@ -1,7 +1,7 @@
 ---
 title: Basic Multiple-Precision Multiplication
-date: '2011-11-09'
-layout: page
+date: 2011-11-09T12:00Z
+layout: post
 tags:
   - algorithms
   - multiple-precision

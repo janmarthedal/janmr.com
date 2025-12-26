@@ -1,7 +1,7 @@
 ---
 title: Computing the Integer Binary Logarithm
-date: '2010-09-27'
-layout: page
+date: 2010-09-27T12:00Z
+layout: post
 tags:
   - algorithms
   - numbers-project

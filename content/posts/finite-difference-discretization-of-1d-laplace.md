@@ -1,7 +1,7 @@
 ---
 title: Finite Difference Discretization of the 1D Laplace Operator
-date: '2024-04-27'
-layout: page
+date: 2024-04-27T12:00Z
+layout: post
 tags:
   - laplace-operator
   - finite-differences

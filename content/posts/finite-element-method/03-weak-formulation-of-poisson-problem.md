@@ -1,6 +1,6 @@
 ---
 title: Weak Formulation of the Poisson Problem
-layout: page
+layout: post
 ---
 Let us consider the Poisson problem again, but in a slightly more general version:
 
