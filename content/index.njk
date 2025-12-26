@@ -30,9 +30,9 @@ pagination:
 
 <nav class="pagination-nav">
 {% if pagination.href.prev -%}
-  <a href="{{ pagination.href.prev }}">Previous</a>
+  <a href="{{ pagination.href.prev }}" aria-label="Previous page">&larr; Previous</a>
 {%- endif %}
 {% if pagination.href.next -%}
-  <a href="{{ pagination.href.next }}" class="pagination-next">Next</a>
+  <a href="{{ pagination.href.next }}" class="pagination-next" aria-label="Next page">Next &rarr;</a>
 {%- endif %}
 </nav>
