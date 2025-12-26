@@ -69,6 +69,15 @@ interface Page {
     title?: string;
     date?: Date;
     backlinks?: Array<Page>;
+    pagination?: {
+        items: Array<unknown>;
+        pageNumber: number;
+        pageCount: number;
+        href: {
+            prev?: string;
+            next?: string;
+        };
+    };
     data: Record<string, unknown>;
 }
 
@@ -229,11 +238,50 @@ function processMarkdown(pages: Array<Page>) {
     }
 }
 
+function processPagination(pages: Array<Page>, collections: Record<string, Array<Page>>) {
+    const pagesToPaginate = pages.filter((p) => p.data.pagination);
+    for (const page of pagesToPaginate) {
+        console.log("Applying pagination for", page.url);
+        const pagination = page.data.pagination as Record<string, string>;
+        const context = { ...page, collections, metadata, content: undefined } as Record<string, unknown>;
+        assert(typeof pagination.data === "string");
+        assert(typeof pagination.size === "number");
+        const allItems = pagination.data
+            .split(".")
+            .reduce((obj, key) => obj[key] as Record<string, unknown>, context) as unknown as Array<unknown>;
+        const pageSize = pagination.size;
+        const pageCount = Math.ceil(allItems.length / pageSize);
+        const hrefs = Array.from({ length: pageCount }, (_, i) =>
+            i === 0 ? page.url : page.url.replace(/\.html$/, `-${i + 1}.html`),
+        );
+        const props = hrefs.map((href, i) => ({
+            url: href,
+            pagination: {
+                items: allItems.slice(i * pageSize, (i + 1) * pageSize),
+                pageNumber: i,
+                pageCount,
+                href: {
+                    prev: i > 0 ? hrefs[i - 1] : undefined,
+                    next: i + 1 < pageCount ? hrefs[i + 1] : undefined,
+                },
+            },
+        }));
+        props.forEach((prop, i) => {
+            if (i === 0) {
+                Object.assign(page, prop);
+            } else {
+                pages.push({ ...page, ...prop });
+            }
+        });
+    }
+}
+
 function processNunjucks(pages: Array<Page>, collections: Record<string, Array<Page>>) {
     for (const page of pages) {
         if (page.extension === ".njk") {
             console.log("Processing Nunjucks page:", page.url);
-            page.content = env.renderString(page.content, { ...page, collections, metadata, content: undefined });
+            const context = { ...page, collections, metadata, content: undefined };
+            page.content = env.renderString(page.content, context);
             page.extension = ".html";
         }
     }
@@ -260,14 +308,14 @@ function postProcessPages(pages: Array<Page>) {
             $("head").append(PRISM_LINK);
             anyChanges = true;
         }
-        $('a').each((_, el) => {
-          const $el = $(el);
-          const href = $el.attr('href');
-          if ($el.children().length === 0 && href === $el.text().trim()) {
-              const text = truncateLinkText(href);
-              $el.text(text);
-              anyChanges = true;
-          }
+        $("a").each((_, el) => {
+            const $el = $(el);
+            const href = $el.attr("href");
+            if ($el.children().length === 0 && href === $el.text().trim()) {
+                const text = truncateLinkText(href);
+                $el.text(text);
+                anyChanges = true;
+            }
         });
         if (anyChanges) {
             page.content = $.html().trim();
@@ -371,13 +419,16 @@ async function run() {
     posts.sort((a, b) => +a.date! - +b.date!);
     refs.sort((a, b) => (a.title as string).localeCompare(b.title as string));
     const refMap = makeRefMap(refs);
-    updates.sort((a, b) => +a.date! - +b.date!);
+    // Sort updates in descending order by date
+    updates.sort((a, b) => +b.date! - +a.date!);
+    const collections = { posts, refs, updates };
 
     decoratePosts(publishPages, refMap);
     processMarkdown(pages);
     decorateUpdates(updates);
     decorateNotes(notes);
-    processNunjucks(publishPages, { posts, refs, updates });
+    processPagination(publishPages, collections);
+    processNunjucks(publishPages, collections);
     renderPages(publishPages);
     postProcessPages(publishPages);
     writePages(publishPages);

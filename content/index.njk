@@ -1,10 +1,12 @@
 ---
 layout: page
-collection: updates
 includeMeLinks: true
+pagination:
+  data: collections.updates
+  size: 50
 ---
 <ul class="update-list">
-  {%- for update in collections.updates | reverse -%}
+  {%- for update in pagination.items -%}
   <li>
     <div class="update-content">
       {{ update.content | safe }}
@@ -12,16 +14,25 @@ includeMeLinks: true
     <div class="update-footer">
       Published
       <time datetime="{{ update.date | dateToISO }}">{{ update.date | refHtmlDateString }}</time>
-      {% if update.data.crossPosting %}
+      {% if update.data.crossPosting -%}
       on
-      {% if update.data.crossPosting.bluesky %}
+      {%- if update.data.crossPosting.bluesky %}
       <a href="{{ update.data.crossPosting.bluesky }}">Bluesky</a>
-      {% endif %}
-      {% if update.data.crossPosting.mastodon %}
+      {%- endif -%}
+      {%- if update.data.crossPosting.mastodon %}
       <a href="{{ update.data.crossPosting.mastodon }}">Mastodon</a>
-      {% endif %}
-      {% endif %}
+      {%- endif -%}
+      {%- endif %}
     </div>
   </li>
   {%- endfor -%}
 </ul>
+
+<nav class="pagination-nav">
+{% if pagination.href.prev -%}
+  <a href="{{ pagination.href.prev }}">Previous</a>
+{%- endif %}
+{% if pagination.href.next -%}
+  <a href="{{ pagination.href.next }}" class="pagination-next">Next</a>
+{%- endif %}
+</nav>
