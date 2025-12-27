@@ -12,6 +12,7 @@ excerpt: >-
   figure should be adequate in defining the problem: [...]. If you haven't seen
   the problem before, I highly recommend trying to solve it before reading on.
 redirect: /blog/2011/03/crossed-ladders-problem/
+mastodon: https://mathstodon.xyz/@janmr/115791781810441047
 ---
 I was [recently reminded](https://twitter.com/divbyzero/status/44871018350784512) of the crossed ladders problem. The following simple figure should be adequate in defining the problem:
 
