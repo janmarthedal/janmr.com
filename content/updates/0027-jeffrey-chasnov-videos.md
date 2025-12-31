@@ -2,5 +2,9 @@
 date: 2025-01-24T11:54:06.704Z
 crossPosting:
   bluesky: https://bsky.app/profile/janmr.com/post/3lgidl67og22z
+tags:
+  - math
+  - lectures
+  - mooc
 ---
-Videos from Math Professor Jeffrey Chasnov. Some of the playlists are videos from his Coursera courses on Mathematics for Engineers. #math #lectures #mooc https://www.youtube.com/@Jeff-math/playlists https://www.math.hkust.edu.hk/~machas/?menu=1
+Videos from Math Professor Jeffrey Chasnov. Some of the playlists are videos from his Coursera courses on Mathematics for Engineers. https://www.youtube.com/@Jeff-math/playlists https://www.math.hkust.edu.hk/~machas/?menu=1

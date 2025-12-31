@@ -4,8 +4,13 @@ crossPosting:
   bluesky: https://bsky.app/profile/janmr.com/post/3mb7okbjgw22i
   mastodon: https://mathstodon.xyz/@janmr/115809266730138043
   x: https://x.com/janmarthedal/status/2006027564163158180
+tags:
+  - math
+  - combinatorics
+  - bell
+  - numbers
 ---
-Bell numbers, the number of ways to partition a set of labeled elements https://janmr.com/posts/bell-numbers/ #math #combinatorics #bell #numbers
+Bell numbers, the number of ways to partition a set of labeled elements https://janmr.com/posts/bell-numbers/
 
 $$
 \begin{aligned}

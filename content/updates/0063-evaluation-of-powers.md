@@ -3,8 +3,14 @@ date: 2025-12-20T12:37Z
 crossPosting:
   bluesky: https://bsky.app/profile/janmr.com/post/3mag7u3zkak2i
   mastodon: https://mathstodon.xyz/@janmr/115751932322262870
+tags:
+  - programming
+  - algorithm
+  - cpp
+  - exponentiation
+  - optimality
 ---
-Evaluation of Powers https://janmr.com/posts/evaluation-of-powers/ #programming #algorithm #cpp #exponentiation #optimality
+Evaluation of Powers https://janmr.com/posts/evaluation-of-powers/
 
 $$
 \begin{aligned}

@@ -2,5 +2,7 @@
 date: 2025-05-19T10:53:37.649Z
 crossPosting:
   bluesky: https://bsky.app/profile/janmr.com/post/3lpjfsvc2d22r
+tags:
+  - lean
 ---
-An ongoing multi-author open source project to formalise a proof of Fermat's Last Theorem in the Lean theorem prover https://imperialcollegelondon.github.io/FLT/ #lean
+An ongoing multi-author open source project to formalise a proof of Fermat's Last Theorem in the Lean theorem prover https://imperialcollegelondon.github.io/FLT/

@@ -2,5 +2,7 @@
 date: 2024-11-26T13:32:30.367Z
 crossPosting:
   bluesky: https://bsky.app/profile/janmr.com/post/3lbu5ks6wcs2k
+tags:
+  - python
 ---
-In Python, comparisons can be chained arbitrarily, e.g., `x < y <= z` is equivalent to `x < y and y <= z` https://docs.python.org/3/reference/expressions.html#comparisons #python
+In Python, comparisons can be chained arbitrarily, e.g., `x < y <= z` is equivalent to `x < y and y <= z` https://docs.python.org/3/reference/expressions.html#comparisons
