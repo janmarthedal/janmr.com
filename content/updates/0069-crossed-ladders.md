@@ -4,7 +4,13 @@ crossPosting:
   bluesky: https://bsky.app/profile/janmr.com/post/3maxw6oyt5k2i
   mastodon: https://mathstodon.xyz/@janmr/115791781810441047
   x: https://x.com/janmarthedal/status/2004908928233361428
+tags:
+  - math
+  - geometry
+  - algebra
+  - problem
+  - nerdsniping
 ---
-The Crossed Ladders Problem https://janmr.com/posts/crossed-ladders-problem/ #math #geometry #algebra #problem #nerdsniping
+The Crossed Ladders Problem https://janmr.com/posts/crossed-ladders-problem/
 
 ![](/media/updates/0069.svg)

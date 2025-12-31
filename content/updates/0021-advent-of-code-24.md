@@ -3,7 +3,9 @@ date: 2024-12-25T13:56:42.704Z
 crossPosting:
   bluesky: https://bsky.app/profile/janmr.com/post/3le54grmj5c2j
   mastodon: https://mathstodon.xyz/@janmr/113713812491476835
+tags:
+  - AdventOfCode
 ---
-#AdventOfCode 2024 complete!
+Advent of Code 2024 complete!
 
 ![](/media/updates/adventofcode2024.jpeg)

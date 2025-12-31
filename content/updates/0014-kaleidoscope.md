@@ -2,5 +2,8 @@
 date: 2024-11-17T10:50:13.953Z
 crossPosting:
   bluesky: https://bsky.app/profile/janmr.com/post/3lb5acdofjc22
+tags:
+  - llvm
+  - tutorial
 ---
-Kaleidoscope: Implementing a Language with LLVM https://llvm.org/docs/tutorial/ #llvm #tutorial
+Kaleidoscope: Implementing a Language with LLVM https://llvm.org/docs/tutorial/
