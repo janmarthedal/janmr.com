@@ -18,6 +18,7 @@ layout: page
 
 * [Deep Learning by Professor Bryce](https://youtube.com/playlist?list=PLgPbN3w-ia_PeT1_c5jiLW3RJdR7853b9&si=vffALSeFQBjtt5BJ)
 * [Linear Algebra by Gilbert Strang](https://ocw.mit.edu/courses/18-06-linear-algebra-spring-2010/)
+* [Linear Algebra by Terence Tao](https://www.math.ucla.edu/~tao/resource/general/115a.3.02f/)
 * [Math videos from Math Professor Jeffrey Chasnov](https://www.youtube.com/@Jeff-math/playlists).
   YouTube playlists. Seven of the playlists are videos from his Coursera courses.
 * [Stanford's "The Fourier Transform and Its Applications"](https://see.stanford.edu/course/ee261).

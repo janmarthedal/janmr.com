@@ -13,10 +13,12 @@ layout: page
 * [Introduction to Computer Graphics](https://math.hws.edu/graphicsbook/).
   Free, on-line textbook covering the fundamentals of computer graphics and computer graphics programming.
 * [Introduction to the Theory of Programming Languages (Bertrand Meyer)](https://bertrandmeyer.com/itpl/)
+* [Neural Networks and Deep Learning](http://neuralnetworksanddeeplearning.com)
 
 ### Mathematics
 
 * [Calculus Made Easy (Silvanus P. Thompson)](http://calculusmadeeasy.org)
+* [Linear Algebra (Friedberg, Stephen H)](https://archive.org/details/linearalgebra0000frie_y7b3_4ed) [pdf](https://archive.org/download/linear-algibra-4th-edition-by-friedberg/Linear%20Algibra%204th%20edition%20by%20Friedberg.pdf)
 
 ### Tools
 
