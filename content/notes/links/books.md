@@ -5,6 +5,7 @@ layout: page
 ### Collections
 
 * [Freely available programming books](https://github.com/EbookFoundation/free-programming-books/)
+* [Project Gutenberg: Mathematics](https://www.gutenberg.org/ebooks/bookshelf/672)
 
 ### Computer Science
 
