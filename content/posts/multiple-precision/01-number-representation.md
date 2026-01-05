@@ -1,6 +1,7 @@
 ---
 title: Multiple-Precision Number Representation
 date: 2011-10-05T12:00Z
+update: 2026-01-05T15:10Z
 layout: post
 tags:
   - multiple-precision
@@ -38,4 +39,8 @@ $$
 b^{n-1} \leq u < b^n \quad \Leftrightarrow \quad n-1 \leq \log_b(u) < n \quad \Leftrightarrow \quad \lfloor \log_b(u) \rfloor = n-1.
 $$
 
-This last relation can be quite useful since the number of needed digits can be found, given $u$ and $b$. For instance, the fact that $\lfloor \log_2(1317803400) \rfloor + 1 = 31$ means that the number 1317803400 can be represented using 31 binary digits.
+This last relation
+(see [Useful Properties of the Floor and Ceil Functions](/posts/useful-properties-of-the-floor-and-ceil-functions/))
+can be quite useful since the number of needed digits can be found, given $u$ and $b$.
+For instance, the fact that $\lfloor \log_2(1317803400) \rfloor + 1 = 31$ means that
+the number 1317803400 can be represented using 31 binary digits.
