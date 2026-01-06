@@ -15,6 +15,8 @@ layout: page
   Free, on-line textbook covering the fundamentals of computer graphics and computer graphics programming.
 * [Introduction to the Theory of Programming Languages (Bertrand Meyer)](https://bertrandmeyer.com/itpl/)
 * [Neural Networks and Deep Learning](http://neuralnetworksanddeeplearning.com)
+* [Structure and Interpretation of Computer Programs — JavaScript Edition](https://sourceacademy.org/sicpjs/).
+  An open-source community effort to adapt SICP to JavaScript.
 
 ### Mathematics
 
