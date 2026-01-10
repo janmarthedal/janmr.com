@@ -22,7 +22,10 @@ This means that $u+v$ can be represented using $n$ or $n+1$ digits, so we set $w
 Assuming $k_0$ is set to some initial value (more on this below) we now have the following algorithm:
 
 $$
-\begin{aligned} w_i     &\leftarrow (u_i + v_i + k_i) \;\text{mod}\; b \\ k_{i+1} &\leftarrow \lfloor (u_i + v_i + k_i)/b \rfloor \end{aligned}
+\begin{aligned}
+w_i     &\leftarrow (u_i + v_i + k_i) \;\text{mod}\; b \\
+k_{i+1} &\leftarrow \lfloor (u_i + v_i + k_i)/b \rfloor
+\end{aligned}
 $$
 
 for $i = 0, 1, \ldots, n-1$, and finally $w_n \leftarrow k_n$.
