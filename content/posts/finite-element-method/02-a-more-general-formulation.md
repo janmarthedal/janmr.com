@@ -31,3 +31,5 @@ $$
 $$
 
 where $h : \Gamma_N \to \mathbb{R}$ is a given boundary flux.
+
+Existence and uniqueness **TODO**
