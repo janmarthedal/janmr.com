@@ -17,6 +17,9 @@ layout: page
 * [Neural Networks and Deep Learning](http://neuralnetworksanddeeplearning.com)
 * [Structure and Interpretation of Computer Programs — JavaScript Edition](https://sourceacademy.org/sicpjs/).
   An open-source community effort to adapt SICP to JavaScript.
+* [The Joy of Cryptography](https://joyofcryptography.com)
+  An undergraduate-level textbook introducing students to the fundamentals of provable security.
+  The remaining chapters will become available in July 2026.
 
 ### Mathematics
 
