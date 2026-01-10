@@ -48,9 +48,9 @@ $$
 \int_\Omega a(x) \nabla u \cdot \nabla v \, dx = \int_\Omega f v \, dx + \int_{\partial\Omega} a(x) (\nabla u \cdot \mathbf{n}) v \, ds
 $$
 
-To apply Boundary Conditions, split the boundary integral:
-- On $\Gamma_D$, $v=0$, so it vanishes.   
-- On $\Gamma_N$, $a(x) \nabla u \cdot \mathbf{n} = h$, so:
+When applying the boundary conditions we split the boundary integral:
+- On $\Gamma_D$ we have $v=0$, so it vanishes.   
+- On $\Gamma_N$ we have $a(x) \nabla u \cdot \mathbf{n} = h$, so:
 
 $$
 \int_{\partial\Omega} a(x) (\nabla u \cdot \mathbf{n}) v \, ds = \int_{\Gamma_N} h v \, ds
