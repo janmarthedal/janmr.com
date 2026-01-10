@@ -1,6 +1,7 @@
 ---
 title: Basic Multiple-Precision Long Division
 date: 2014-04-14T12:00Z
+update: 2026-01-10T14:00Z
 layout: post
 tags:
   - arithmetic
@@ -19,7 +20,11 @@ redirect: /blog/2014/04/basic-multiple-precision-long-division/
 ---
 We consider the task of dividing a positive integer $u$ by another positive integer $v$, thus obtaining a quotient $q=\lfloor u/v \rfloor$ and a remainder $r$ such that $u = q v + r$ with $0 \leq r < v$.
 
-The method presented here is based on *The Classical Algorithms*, Section&nbsp;4.3.1, of [The Art of Computer Programming, Volume&nbsp;2](/refs/taocp2/), by [Donald E. Knuth](http://www-cs-faculty.stanford.edu/~uno/). The material is quite theory-heavy and if you are just looking for the main algorithm, you can skip to the bottom and [Algorithm&nbsp;L](#algorithm-L).
+The method presented here is based on *The Classical Algorithms*, Section&nbsp;4.3.1,
+of [The Art of Computer Programming, Volume&nbsp;2](/refs/taocp2/),
+by [Donald E. Knuth](http://www-cs-faculty.stanford.edu/~uno/).
+The material is quite theory-heavy and if you are just looking for the main algorithm,
+you can skip to the bottom and [Algorithm&nbsp;L](#algorithm-L).
 
 We represent the numbers using radix $b \geq 2$ and set
 
@@ -27,7 +32,7 @@ $$
 u = (u_{m-1} \ldots u_1 u_0)_b \quad \text{and} \quad v = (v_{n-1} \ldots v_1 v_0)_b \; ,
 $$
 
-so $u$ is an $m$-digit number and $v$ is an $n$-digit number (see [previous post](/posts/multiple-precision-number-representation/) for more details on representing multiple-precision numbers).
+so $u$ is an $m$-digit number and $v$ is an $n$-digit number (see [previous post](/posts/multiple-precision/01-number-representation/) for more details on representing multiple-precision numbers).
 
 Two special cases are easily dealt with:
 

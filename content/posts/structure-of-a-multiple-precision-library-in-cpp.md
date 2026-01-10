@@ -18,7 +18,7 @@ This post will present an overview of the implementation of [Kanooth Numbers](ht
 
 ### Low-level Functions
 
-The low-level functions are the building blocks for all number operations, heavily inspired by the [GNU MP low-level functions](https://gmplib.org/manual/Low_002dlevel-Functions.html). Each low-level function does one simple operation and operates on non-negative numbers. The numbers are represented by arrays where the radix corresponds to a memory word (typically the radix will be 2<sup>32</sup> or 2<sup>64</sup>), see [post on number representation](/posts/multiple-precision-number-representation/) (the most significant digit is not always non-zero, though). The functions make no memory allocations and it is the responsibility of the caller to make sure that, e.g., the result array is large enough.
+The low-level functions are the building blocks for all number operations, heavily inspired by the [GNU MP low-level functions](https://gmplib.org/manual/Low_002dlevel-Functions.html). Each low-level function does one simple operation and operates on non-negative numbers. The numbers are represented by arrays where the radix corresponds to a memory word (typically the radix will be 2<sup>32</sup> or 2<sup>64</sup>), see [post on number representation](/posts/multiple-precision/01-number-representation/) (the most significant digit is not always non-zero, though). The functions make no memory allocations and it is the responsibility of the caller to make sure that, e.g., the result array is large enough.
 
 Some of the most important low-level functions are:
 
