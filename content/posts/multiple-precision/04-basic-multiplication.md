@@ -1,6 +1,7 @@
 ---
 title: Basic Multiple-Precision Multiplication
 date: 2011-11-09T12:00Z
+update: 2026-01-10T14:00Z
 layout: post
 tags:
   - algorithms
@@ -18,7 +19,10 @@ excerpt: >-
   aligned appropriately. [...]
 redirect: /blog/2011/11/basic-multiple-precision-multiplication/
 ---
-After addressing multiple-precision [addition](/posts/multiple-precision/02-addition/) and [subtraction](/posts/multiple-precision/03-subtraction/), we now turn to multiplication of two multiple-precision numbers. Once again, we use the number representation and notation [introduced earlier](/posts/multiple-precision-number-representation/).
+After addressing multiple-precision [addition](/posts/multiple-precision/02-addition/)
+and [subtraction](/posts/multiple-precision/03-subtraction/),
+we now turn to multiplication of two multiple-precision numbers.
+Once again, we use the number representation and notation [introduced earlier](/posts/multiple-precision/01-number-representation/).
 
 Several algorithms exist for doing multiple-precision multiplication. This post will present the basic, pencil-and-paper-like method. Basically, it consists of two parts: Multiplying a number by a single digit and adding together the sub-results, aligned appropriately.
 
@@ -49,7 +53,14 @@ $$
 Then we have
 
 $$
-\begin{aligned} \alpha v + y &= \sum_{i=0}^{n-1} (\alpha v_i + y_i) b^i = \sum_{i=0}^{n-1} (\alpha v_i + y_i + k_i) b^i - \sum_{i=0}^{n-1} k_i b^i \\ &= \sum_{i=0}^{n-1} (z_i + k_{i+1} b) b^i - \sum_{i=0}^{n-1} k_i b^i = \sum_{i=0}^{n-1} z_i b^i + \sum_{i=0}^{n-1} k_{i+i} b^{i+1} - \sum_{i=0}^{n-1} k_i b^i \\ &= \sum_{i=0}^{n-1} z_i b^i + z_n b^n - k_0 = z - k_0, \end{aligned}
+\begin{aligned}
+\alpha v + y &= \sum_{i=0}^{n-1} (\alpha v_i + y_i) b^i
+              = \sum_{i=0}^{n-1} (\alpha v_i + y_i + k_i) b^i - \sum_{i=0}^{n-1} k_i b^i \\
+             &= \sum_{i=0}^{n-1} (z_i + k_{i+1} b) b^i - \sum_{i=0}^{n-1} k_i b^i
+              = \sum_{i=0}^{n-1} z_i b^i + \sum_{i=0}^{n-1} k_{i+i} b^{i+1} - \sum_{i=0}^{n-1} k_i b^i \\
+             &= \sum_{i=0}^{n-1} z_i b^i + z_n b^n - k_0
+              = z - k_0,
+\end{aligned}
 $$
 
 which is what we wanted.
@@ -80,7 +91,12 @@ We observe two things:
 Putting these pieces together we get:
 
 $$
-\begin{aligned} (w_n \ldots w_1 w_0)_b           &\leftarrow u_0 v, \\ (w_{n+1} \ldots w_2 w_1)_b       &\leftarrow (w_n \ldots w_2 w_1) + u_1 v, \\ &\vdots \\ (w_{n+m-1} \ldots w_m w_{m-1})_b &\leftarrow (w_{n+m-2} \ldots w_m w_{m-1})_b + u_{m-1} v. \end{aligned}
+\begin{aligned}
+(w_n \ldots w_1 w_0)_b           &\leftarrow u_0 v, \\
+(w_{n+1} \ldots w_2 w_1)_b       &\leftarrow (w_n \ldots w_2 w_1) + u_1 v, \\
+&\vdots \\
+(w_{n+m-1} \ldots w_m w_{m-1})_b &\leftarrow (w_{n+m-2} \ldots w_m w_{m-1})_b + u_{m-1} v.
+\end{aligned}
 $$
 
 The algorithm can actually be generalized slightly if we compute
@@ -94,3 +110,6 @@ instead. All we need to do is replace the first step in the algorithm by
 $$
 (w_n \ldots w_1 w_0)_b \leftarrow (w_{n-1} \ldots w_1 w_0)_b + u_0 v.
 $$
+
+We now move on to multiple-precision division by first adressing the
+relatively simple case of [short division](/posts/multiple-precision/05-basic-short-division/).

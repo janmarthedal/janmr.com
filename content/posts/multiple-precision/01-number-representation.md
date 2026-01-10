@@ -1,7 +1,7 @@
 ---
 title: Multiple-Precision Number Representation
 date: 2011-10-05T12:00Z
-update: 2026-01-05T15:10Z
+update: 2026-01-10T14:00Z
 layout: post
 tags:
   - multiple-precision
@@ -44,3 +44,5 @@ This last relation
 can be quite useful since the number of needed digits can be found, given $u$ and $b$.
 For instance, the fact that $\lfloor \log_2(1317803400) \rfloor + 1 = 31$ means that
 the number 1317803400 can be represented using 31 binary digits.
+
+We now proceed to look at how to [add multiple-precision numbers](/posts/multiple-precision/02-addition/).
