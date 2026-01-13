@@ -35,7 +35,10 @@ Let us first introduce a notation which [Donald E. Knuth](http://www-cs-faculty.
 We now have the algorithm:
 
 $$
-\begin{aligned} w_i     &\leftarrow (u_i - v_i - k_i) \;\text{mod}\; b, \\ k_{i+1} &\leftarrow [u_i < v_i + k_i], \end{aligned}
+\begin{aligned}
+w_i     &\leftarrow (u_i - v_i - k_i) \;\text{mod}\; b, \\
+k_{i+1} &\leftarrow [u_i < v_i + k_i],
+\end{aligned}
 $$
 
 for $i = 0, 1, \ldots, n-1$. This is really just a formalization of the familiar pencil-and-paper method, but let us show that it does the right thing.
