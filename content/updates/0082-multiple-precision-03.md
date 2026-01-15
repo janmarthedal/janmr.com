@@ -10,7 +10,7 @@ tags:
   - numbers
   - algorithms
 ---
-Multiple-Precision Subtraction, third post in a series of six on multiple-precision algorithms https://janmr.com/posts/multiple-precision/03-subtraction/ #computer-science #multiple-precision #numbers #algorithms
+Multiple-Precision Subtraction, third post in a series of six on multiple-precision algorithms https://janmr.com/posts/multiple-precision/03-subtraction/
 
 $$
 \begin{aligned}
