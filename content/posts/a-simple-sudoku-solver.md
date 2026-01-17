@@ -8,6 +8,7 @@ tags:
   - combinatorics
 categories:
   - programming
+mastodon: https://mathstodon.xyz/@janmr/115911074385706191
 excerpt: >-
   This post will describe a simple way to computationally find all solutions of
   a given Sudoku puzzle
