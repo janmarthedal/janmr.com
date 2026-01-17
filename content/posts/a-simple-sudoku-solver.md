@@ -1,6 +1,7 @@
 ---
 title: A Simple Sudoku Solver
 date: 2023-05-02T12:00Z
+update: 2026-01-17T14:50Z
 layout: post
 tags:
   - rust
@@ -9,26 +10,26 @@ categories:
   - programming
 excerpt: >-
   This post will describe a simple way to computationally find all solutions of
-  a given sudoku puzzle
+  a given Sudoku puzzle
 redirect: /blog/2023/05/a-simple-sudoku-solver/
 ---
 Sudoku is a popular puzzle and for the past 15 years or so, it has been hard to
-find a newspaper that didn't contain at least one sudoku puzzle.
+find a newspaper that didn't contain at least one Sudoku puzzle.
 
 The objective is to fill a 9 x 9 grid with digits such that each column, row and block
 contains each of the digits from 1 to 9 (the grid is divided into 3 x 3 blocks).
 
-Initially a partially completed grid is given and the task is to complete the sudoku
+Initially a partially completed grid is given and the task is to complete the Sudoku
 square, following the rules above.
 
 A puzzle could look like this:
 
 <figure>
-  <img src="/media/sudoku-med-setup.svg" class="w30" alt="A sudoku setup">
+  <img src="/media/sudoku-med-setup.svg" class="w30" alt="A Sudoku setup">
 </figure>
 
 This post will describe a simple way to computationally find all solutions of a
-sudoku puzzle.
+Sudoku puzzle.
 The method is based on [backtracking](https://en.wikipedia.org/wiki/Backtracking),
 which leads to the following algorithm:
 
@@ -85,16 +86,23 @@ Counting the number of times step 1 is performed is a measure of how large the s
 tree is. For the sample grid shown above the count is only 97. This is a very slim
 search tree, since the height of the tree is 53 (the number of empty cells).
 
-A supposedly "[world's most difficult Sudoku](https://abcnews.go.com/blogs/headlines/2012/06/can-you-solve-the-hardest-ever-sudoku)"
-was designed by the Finnish mathematician Arto Inkala. For this sudoku the method
-considers 18936 different grids while solving the puzzle, but it still solves in less
-than a second on my machine (a MacBook Pro with an Apple M1 Pro chip).
+A supposedly ["world's most difficult Sudoku"](https://abcnews.go.com/blogs/headlines/2012/06/can-you-solve-the-hardest-ever-sudoku)
+was designed by the Finnish mathematician Arto Inkala. For this Sudoku the method
+considers 10102 different grids while solving the puzzle, but it still solves in less
+than a second on my machine (a MacBook Pro with an Apple M2 Max chip).
 
-The repository for the sudoku solver [Tdoku](https://github.com/t-dillon/tdoku)
+The repository for the Sudoku solver [Tdoku](https://github.com/t-dillon/tdoku)
 also contains [a file](https://github.com/t-dillon/tdoku/blob/master/data.zip)
 with many hard puzzles. Some of them result in search trees
-with more than 20000 nodes.
+with more than 90000 nodes, but they all solve very fast.
 
-[The Art of Computer Programming, Volume 4B](/refs/taocp4b/), Section 7.2.2.1, also
-considers sudoku puzzles along with a method for solving them and other
+[The Art of Computer Programming, Volume 4B](/refs/taocp4b/), Section 7.2.2.1,
+considers Sudoku puzzles along with a method for solving them and other
 interesting information on these puzzles and backtracking in general.
+
+Peter Norvig has an essay (from 2006) about [Solving Every Sudoku Puzzle](https://norvig.com/sudoku.html).
+In it a simple solver in Python is described along with several test cases and results.
+The hardest puzzle for his solver is in some sense not a true Sudoku puzzle in that it
+has multiple solutions. It is also hard for the method described above and it goes
+through more than 5.3 million nodes before finding its first solution (which matches that 
+shown in the essay), but still with sub-second time.
