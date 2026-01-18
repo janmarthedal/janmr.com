@@ -1,0 +1,16 @@
+---
+date: 2026-01-10T12:45Z
+crossPosting:
+  bluesky: 
+  mastodon: 
+  x: 
+tags:
+  - computer-science
+  - multiple-precision
+  - numbers
+  - algorithms
+---
+Basic Multiple-Precision Short Division, fifth post in a series of six on multiple-precision algorithms https://janmr.com/posts/multiple-precision/05-basic-short-division/
+
+$$
+$$
