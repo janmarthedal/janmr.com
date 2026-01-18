@@ -8,6 +8,7 @@ tags:
   - numbers-project
 categories:
   - programming
+mastodon: https://mathstodon.xyz/@janmr/115843120325257187
 excerpt: >-
   Let us consider a common way to represent non-negative integers. An integer u
   >= 0 will be represented in radix b >= 2 using the notation [...]

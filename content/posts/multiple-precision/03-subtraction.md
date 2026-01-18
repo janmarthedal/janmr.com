@@ -9,6 +9,7 @@ tags:
   - numbers-project
 categories:
   - programming
+mastodon: https://mathstodon.xyz/@janmr/115888234592112995
 excerpt: >-
   We now turn to multiple-precision subtraction for non-negative integers. The
   algorithm is very similar to that of multiple-precision addition, but some
