@@ -12,4 +12,4 @@ tags:
 ---
 A Simple Sudoku Solver https://janmr.com/posts/a-simple-sudoku-solver/
 
-![Arto Inkala 2006](/media/updates/0084.png)
+![](/media/sudoku-med-cand.svg)
