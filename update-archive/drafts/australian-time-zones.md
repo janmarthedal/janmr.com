@@ -5,3 +5,5 @@ crossPosting:
   mastodon: 
 ---
 https://www.timeanddate.com/time/zone/australia
+
+https://uk.embassy.gov.au/lhlh/TimeDiff.html
