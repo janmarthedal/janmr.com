@@ -7,6 +7,7 @@ tags:
   - ode
 categories:
   - mathematics
+mastodon: https://mathstodon.xyz/@janmr/115809266730138043
 excerpt: >-
   I recently studied a system of linear ODEs, where n parameters, [...]
   described the system. It turned out that the structure of the solutions
