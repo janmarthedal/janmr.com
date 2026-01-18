@@ -10,6 +10,7 @@ layout: page
 ## Collections
 
 - [Mathematical Puzzles by Peter Winkler](https://math.dartmouth.edu/news-resources/electronic/puzzlebook/)
+- [The Moscow Puzzles](https://archive.org/details/boris-a.-kordemsky-the-moscow-puzzles-1972/page/2/mode/2up)
 
 ## Selected Problems
 
