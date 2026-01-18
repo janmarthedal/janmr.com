@@ -5,6 +5,7 @@ layout: page
 ## Computer Science
 
 * [A Computer Science Curriculum with Rust flavor](https://github.com/AbdesamedBendjeddou/Rusty-CS)
+* [Advanced Data Structures from MIT](https://courses.csail.mit.edu/6.851/spring21/)
 * [An Introduction to Physically Based Modeling](http://www.cs.cmu.edu/~baraff/pbm/pbm.html)
 * [Computer Science lectures by Tim Roughgarden](https://www.youtube.com/channel/UCcH4Ga14Y4ELFKrEYM1vXCg/playlists).
   YouTube playlist.
