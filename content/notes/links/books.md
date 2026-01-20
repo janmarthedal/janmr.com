@@ -15,6 +15,7 @@ layout: page
 * [Introduction to Computer Graphics](https://math.hws.edu/graphicsbook/).
   Free, on-line textbook covering the fundamentals of computer graphics and computer graphics programming.
 * [Introduction to the Theory of Programming Languages (Bertrand Meyer)](https://bertrandmeyer.com/itpl/)
+* [Mathematics for Computer Science](https://ocw.mit.edu/courses/6-042j-mathematics-for-computer-science-spring-2015/mit6_042js15_textbook.pdf)
 * [Neural Networks and Deep Learning](http://neuralnetworksanddeeplearning.com)
 * [Structure and Interpretation of Computer Programs — JavaScript Edition](https://sourceacademy.org/sicpjs/).
   An open-source community effort to adapt SICP to JavaScript.
@@ -26,6 +27,7 @@ layout: page
 
 * [Calculus Made Easy (Silvanus P. Thompson)](http://calculusmadeeasy.org)
 * [Linear Algebra (Friedberg, Stephen H)](https://archive.org/details/linearalgebra0000frie_y7b3_4ed) [pdf](https://archive.org/download/linear-algibra-4th-edition-by-friedberg/Linear%20Algibra%204th%20edition%20by%20Friedberg.pdf)
+* [Mathematics of Choice or How to Count Without Counting](https://dn721600.ca.archive.org/0/items/math-of-choice/Math%20Of%20Choice_text.pdf)
 
 ### Tools
 
