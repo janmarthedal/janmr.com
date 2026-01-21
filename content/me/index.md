@@ -1,6 +1,8 @@
 ---
 title: About me
 layout: page
+og:
+  type: profile
 ---
 My name is Jan Marthedal Rasmussen.
 
