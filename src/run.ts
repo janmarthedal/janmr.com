@@ -60,6 +60,13 @@ const enum PageType {
     Other,
 }
 
+interface OpenGraph {
+    type: string;
+    title?: string;
+    description?: string;
+    image?: string;
+}
+
 interface Page {
     type: PageType;
     extension: string;
@@ -78,6 +85,7 @@ interface Page {
             next?: string;
         };
     };
+    og?: OpenGraph;
     data: Record<string, unknown>;
 }
 
@@ -181,6 +189,9 @@ function loadPages(): Array<Page> {
             let content = buffer;
             let title: string | undefined;
             let date: Date | undefined;
+            const og: OpenGraph = {
+                type: "object"
+            };
             if (buffer.startsWith("---\n")) {
                 const frontmatter = matter(buffer);
                 data = frontmatter.data;
@@ -192,13 +203,18 @@ function loadPages(): Array<Page> {
                     type = PageType.Update;
                 } else if (filename.startsWith("posts/")) {
                     type = PageType.Post;
+                    og.type = "article";
                 } else if (filename.startsWith("notes/")) {
                     type = PageType.Note;
                 } else if (data.layout === "reference") {
                     type = PageType.Reference;
                 }
+                Object.assign(og, data.og);
+                if (title && !og.title) {
+                    og.title = `${metadata.title} | ${title}`;
+                }
             }
-            return { type, extension: extname(filename), url, sourcePath: filename, title, date, data, content };
+            return { type, extension: extname(filename), url, sourcePath: filename, title, date, og, data, content };
         },
     );
 }
