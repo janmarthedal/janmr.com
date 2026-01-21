@@ -39,7 +39,10 @@ Using this information it is straightforward to show that $b^{n-1} \leq z \leq b
 We now have the algorithm:
 
 $$
-\begin{aligned} z_i &\leftarrow (\alpha v_i + y_i + k_i) \;\text{mod}\; b, \\ k_{i+1} &\leftarrow \left\lfloor \frac{\alpha v_i + y_i + k_i}{b} \right\rfloor, \end{aligned}
+\begin{aligned}
+z_i     &\leftarrow (\alpha v_i + y_i + k_i) \;\text{mod}\; b, \\
+k_{i+1} &\leftarrow \left\lfloor \frac{\alpha v_i + y_i + k_i}{b} \right\rfloor,
+\end{aligned}
 $$
 
 for $i = 0, 1, \ldots, n-1$ and finally setting $z_n = k_n$.
