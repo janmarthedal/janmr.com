@@ -9,6 +9,7 @@ tags:
   - numbers-project
 categories:
   - programming
+mastodon: https://mathstodon.xyz/@janmr/115933661657152451
 excerpt: >-
   After addressing multiple-precision addition and subtraction, we now turn to
   multiplication of two multiple-precision numbers. Once again, we use the
