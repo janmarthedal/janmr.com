@@ -12,11 +12,13 @@ layout: page
 * [Donald Knuth Annual Christmas Lectures](https://youtube.com/playlist?list=PLoROMvodv4rOAvKVR_dyCigSBMcYjevYB).
   YouTube playlist.
 * [Introduction To Algorithms](https://ocw.mit.edu/courses/6-006-introduction-to-algorithms-spring-2020/)
+* [Parallel Computing from Stanford](https://www.youtube.com/playlist?list=PLoROMvodv4rMp7MTFr4hQsDEcX7Bx6Odp)
 * [The Missing Semester of Your CS Education](https://missing.csail.mit.edu/)
 * [The Ray Tracer Challenge](http://raytracerchallenge.com/)
 
 ## Mathematics
 
+* [Calculus by Gilbert Strang](https://ocw.mit.edu/courses/res-18-001-calculus-fall-2023/)
 * [Deep Learning by Professor Bryce](https://youtube.com/playlist?list=PLgPbN3w-ia_PeT1_c5jiLW3RJdR7853b9&si=vffALSeFQBjtt5BJ)
 * [Linear Algebra by Gilbert Strang](https://ocw.mit.edu/courses/18-06-linear-algebra-spring-2010/)
 * [Linear Algebra by Terence Tao](https://www.math.ucla.edu/~tao/resource/general/115a.3.02f/)
