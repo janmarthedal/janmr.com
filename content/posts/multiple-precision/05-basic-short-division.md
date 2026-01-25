@@ -7,12 +7,8 @@ tags:
   - algorithms
   - multiple-precision
   - numbers-project
-categories:
-  - programming
-excerpt: >-
-  Let us consider short division, by which we mean a multiple-digit number u
-  divided by a single digit v [...]
 redirect: /blog/2012/11/basic-multiple-precision-short-division/
+mastodon: https://mathstodon.xyz/@janmr/115955393367653601
 ---
 After [addition](/posts/multiple-precision/02-addition), [subtraction](/posts/multiple-precision/03-subtraction/),
 and [multiplication](/posts/multiple-precision/04-basic-multiplication/),
