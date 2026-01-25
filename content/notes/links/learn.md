@@ -9,9 +9,12 @@ layout: page
 * [An Introduction to Physically Based Modeling](http://www.cs.cmu.edu/~baraff/pbm/pbm.html)
 * [Computer Science lectures by Tim Roughgarden](https://www.youtube.com/channel/UCcH4Ga14Y4ELFKrEYM1vXCg/playlists).
   YouTube playlist.
+* [Crafting Interpreters by Robert Nystrom](https://craftinginterpreters.com)
+* [Dictionary of Algorithms and Data Structures](https://xlinux.nist.gov/dads/)
 * [Donald Knuth Annual Christmas Lectures](https://youtube.com/playlist?list=PLoROMvodv4rOAvKVR_dyCigSBMcYjevYB).
   YouTube playlist.
 * [Introduction To Algorithms](https://ocw.mit.edu/courses/6-006-introduction-to-algorithms-spring-2020/)
+* [Introduction to Compilers by Cornell University](https://www.cs.cornell.edu/courses/cs4120/2026sp/notes/)
 * [Parallel Computing from Stanford](https://www.youtube.com/playlist?list=PLoROMvodv4rMp7MTFr4hQsDEcX7Bx6Odp)
 * [The Missing Semester of Your CS Education](https://missing.csail.mit.edu/)
 * [The Ray Tracer Challenge](http://raytracerchallenge.com/)

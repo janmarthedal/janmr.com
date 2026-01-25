@@ -18,3 +18,5 @@ layout: page
 * [On Computable Numbers, with an Application to the Entscheidungsproblem (Alan M. Turing, 1936)](https://www.cs.virginia.edu/~robins/Turing_Paper_1936.pdf)
 * [Structured programming (O. J. Dahl, E. W. Dijkstra, C. A. R. Hoare, 1972)](https://dl.acm.org/doi/book/10.5555/1243380)   
   This is the book in which Dijkstra told us that `goto` might not be such a good idea. This is also the book in which Ole-Johan Dahl described the early principles of Object-Oriented Programming
+
+* [Continued Fraction Arithmetic by Bill Gosper](https://perl.plover.com/classes/cftalk/INFO/gosper.txt). See also contents of https://perl.plover.com/classes/cftalk/INFO/.
