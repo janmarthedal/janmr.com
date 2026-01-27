@@ -9,15 +9,10 @@ tags:
   - numbers-project
 categories:
   - programming
+og:
+  description: An algorithm for multiplying two multiple-precision numbers, using the basic O(n^2) algorithm
+  image: /media/og/multiple-precision-04.png
 mastodon: https://mathstodon.xyz/@janmr/115933661657152451
-excerpt: >-
-  After addressing multiple-precision addition and subtraction, we now turn to
-  multiplication of two multiple-precision numbers. Once again, we use the
-  number representation and notation introduced earlier. Several algorithms
-  exist for doing multiple-precision multiplication. This post will present the
-  basic, pencil-and-paper-like method. Basically, it consists of two parts:
-  Multiplying a number by a single digit and adding together the sub-results,
-  aligned appropriately. [...]
 redirect: /blog/2011/11/basic-multiple-precision-multiplication/
 ---
 After addressing multiple-precision [addition](/posts/multiple-precision/02-addition/)

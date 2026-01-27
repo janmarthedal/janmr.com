@@ -9,13 +9,9 @@ tags:
   - multiple-precision
 categories:
   - programming
-excerpt: >-
-  We consider the task of dividing a positive integer u by another positive
-  integer v, thus obtaining a quotient q=u/v and a remainder r such that u = q v
-  + r with 0 <= r < v. The method presented here is based on The Classical
-  Algorithms, Section 4.3.1, of The Art of Computer Programming, Volume 2, by
-  Donald E. Knuth. The material is quite theory-heavy and if you are just
-  looking for the main algorithm, you can skip to the bottom and Algorithm L.
+og:
+  description: An algorithm for dividing one multiple-precision number by another multiple-precision number
+  image: /media/og/multiple-precision-06.png
 redirect: /blog/2014/04/basic-multiple-precision-long-division/
 ---
 We consider the task of dividing a positive integer $u$ by another positive integer $v$, thus obtaining a quotient $q=\lfloor u/v \rfloor$ and a remainder $r$ such that $u = q v + r$ with $0 \leq r < v$.
