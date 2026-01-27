@@ -1,13 +1,15 @@
 #!/bin/bash
 
-OUT=../../content/media/og/multiple-precision-01.png
+OUT=../../content/media/og/multiple-precision-06.png
 
 # Create a temporary LaTeX file with the equation
 cat > /tmp/equation.tex << 'EOF'
 \documentclass{standalone}
 \usepackage{amsmath}
 \begin{document}
-$\displaystyle u = (u_{n-1} \ldots u_1 u_0)_b = \sum_{k=0}^{n-1} u_k b^k, \quad 0 \leq u_k \leq b-1$
+$\displaystyle
+\hat{q} = \min \left( \left\lfloor \frac{u_n b + u_{n-1}}{v_{n-1}} \right\rfloor, b-1 \right)
+$
 \end{document}
 EOF
 
@@ -20,8 +22,8 @@ magick -density 600 -background none /tmp/equation.pdf /tmp/equation.png
 # Composite the equation onto the background image and add title text
 magick ../base-with-logo.png \
   -gravity center -font Helvetica -fill black \
-  -pointsize 48 -annotate +0-100 "Multiple-Precision Number Representation" \
-  -pointsize 24 -annotate +0-50 "First post in a series of six on multiple-precision algorithms" \
+  -pointsize 48 -annotate +0-100 "Basic Multiple-Precision Long Division" \
+  -pointsize 24 -annotate +0-50 "Sixth post in a series of six on multiple-precision arithmetic" \
   \( /tmp/equation.png -resize 40% \) -geometry +0+80 -composite \
   $OUT
 

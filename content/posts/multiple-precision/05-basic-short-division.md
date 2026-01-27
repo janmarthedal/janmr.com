@@ -7,6 +7,9 @@ tags:
   - algorithms
   - multiple-precision
   - numbers-project
+og:
+  description: An algorithm for dividing a multiple-digit number by a single digit
+  image: /media/og/multiple-precision-05.png
 redirect: /blog/2012/11/basic-multiple-precision-short-division/
 mastodon: https://mathstodon.xyz/@janmr/115955393367653601
 ---

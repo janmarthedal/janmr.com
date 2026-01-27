@@ -10,11 +10,9 @@ tags:
 categories:
   - programming
 mastodon: https://mathstodon.xyz/@janmr/115888234592112995
-excerpt: >-
-  We now turn to multiple-precision subtraction for non-negative integers. The
-  algorithm is very similar to that of multiple-precision addition, but some
-  minor differences make it worth while considering subtraction separately.
-  [...]
+og:
+  description: An algorithm for subtracting two multiple-precision numbers
+  image: /media/og/multiple-precision-03.png
 redirect: /blog/2011/10/multiple-precision-subtraction/
 ---
 We now turn to multiple-precision subtraction for non-negative integers.
