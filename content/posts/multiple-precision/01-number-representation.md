@@ -12,9 +12,6 @@ og:
   description: The basic representation of multiple-precision numbers, in preparation for the following posts
   image: /media/og/multiple-precision-01.png
 mastodon: https://mathstodon.xyz/@janmr/115843120325257187
-excerpt: >-
-  Let us consider a common way to represent non-negative integers. An integer u
-  >= 0 will be represented in radix b >= 2 using the notation [...]
 redirect: /blog/2011/10/multiple-precision-number-representation/
 ---
 Let us consider a common way to represent non-negative integers. An integer $u \geq 0$ will be represented in radix $b \geq 2$ using the notation

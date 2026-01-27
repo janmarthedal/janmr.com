@@ -23,8 +23,8 @@
     <meta property="og:description" content="{{ og.description }}">
     {%- endif -%}
     {%- if og.image %}
-    <meta property="og:image" content="{{ og.image }}">
-    {%- endif -%}
+    <meta property="og:image" content="{{ og.image | absoluteUrl(metadata.url) }}">
+    {%- endif %}
     {% block head -%}
     {%- endblock %}
   </head>
