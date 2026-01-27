@@ -8,6 +8,9 @@ tags:
   - numbers-project
 categories:
   - programming
+og:
+  description: The basic representation of multiple-precision numbers, in preparation for the following posts
+  image: /media/og/multiple-precision-01.png
 mastodon: https://mathstodon.xyz/@janmr/115843120325257187
 excerpt: >-
   Let us consider a common way to represent non-negative integers. An integer u
