@@ -18,13 +18,13 @@
     <meta property="og:url" content="{{ url | url | absoluteUrl(metadata.url) }}">
     {%- if og.title %}
     <meta property="og:title" content="{{ og.title }}">
-    {% endif -%}
+    {%- endif -%}
     {%- if og.description %}
     <meta property="og:description" content="{{ og.description }}">
-    {% endif -%}
+    {%- endif -%}
     {%- if og.image %}
     <meta property="og:image" content="{{ og.image }}">
-    {% endif -%}
+    {%- endif -%}
     {% block head -%}
     {%- endblock %}
   </head>
