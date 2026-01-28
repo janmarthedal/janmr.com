@@ -23,11 +23,18 @@ layout: page
   An undergraduate-level textbook introducing students to the fundamentals of provable security.
   The remaining chapters will become available in July 2026.
 
+### Programming Languages
+
+* [The Rust Programming Language](https://doc.rust-lang.org/book/)
+* [The Scala 3 Book](https://docs.scala-lang.org/scala3/book/introduction.html)
+
 ### Mathematics
 
 * [Calculus Made Easy (Silvanus P. Thompson)](http://calculusmadeeasy.org)
+* [Combinatorics: The Art of Counting by Bruce Sagan](https://users.math.msu.edu/users/bsagan/)
 * [Linear Algebra (Friedberg, Stephen H)](https://archive.org/details/linearalgebra0000frie_y7b3_4ed) [pdf](https://archive.org/download/linear-algibra-4th-edition-by-friedberg/Linear%20Algibra%204th%20edition%20by%20Friedberg.pdf)
 * [Mathematics of Choice or How to Count Without Counting](https://dn721600.ca.archive.org/0/items/math-of-choice/Math%20Of%20Choice_text.pdf)
+* [Vector and Tensor Analysis by G. E. Hay](https://archive.org/details/vector_and_tensor_analysis_1953_-_g_hay)
 
 ### Tools
 

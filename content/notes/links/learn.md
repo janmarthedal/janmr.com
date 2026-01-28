@@ -22,6 +22,7 @@ layout: page
 ## Mathematics
 
 * [Calculus by Gilbert Strang](https://ocw.mit.edu/courses/res-18-001-calculus-fall-2023/)
+* [Combinatorics by Joy Morris](https://www.cs.uleth.ca/~morris/Combinatorics/Combinatorics.html). An upper-level introductory course in enumeration, graph theory, and design theory
 * [Deep Learning by Professor Bryce](https://youtube.com/playlist?list=PLgPbN3w-ia_PeT1_c5jiLW3RJdR7853b9&si=vffALSeFQBjtt5BJ)
 * [Linear Algebra by Gilbert Strang](https://ocw.mit.edu/courses/18-06-linear-algebra-spring-2010/)
 * [Linear Algebra by Terence Tao](https://www.math.ucla.edu/~tao/resource/general/115a.3.02f/)
