@@ -7,13 +7,11 @@ tags:
   - rational-approximation
 categories:
   - mathematics
-excerpt: >-
-  Say we have a k-bit integer and we want to allocate a character array to hold
-  the decimal digits of this number. How large must the array be? Well, the
-  exact formula is [...]
+og:
+  description: Using continued fractions to obtain good, rational bounds
+  image: /media/og/good-rational-bounds.png
 redirect: /blog/2013/01/good-rational-bounds/
 ---
-
 Say we have a k-bit integer and we want to allocate a character array to hold the decimal digits of this number. How large must the array be? Well, the exact formula is
 
 $$
