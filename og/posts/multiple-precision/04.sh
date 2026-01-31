@@ -1,6 +1,6 @@
 #!/bin/bash
 
-OUT=../../content/media/og/multiple-precision-02.png
+OUT=../../../content/media/og/multiple-precision-04.png
 
 # Create a temporary LaTeX file with the equation
 cat > /tmp/equation.tex << 'EOF'
@@ -9,8 +9,8 @@ cat > /tmp/equation.tex << 'EOF'
 \begin{document}
 $\displaystyle
 \begin{aligned}
-w_i     &\leftarrow (u_i + v_i + k_i) \;\text{mod}\; b \\
-k_{i+1} &\leftarrow \lfloor (u_i + v_i + k_i)/b \rfloor
+z_i     &\leftarrow (\alpha v_i + y_i + k_i) \;\text{mod}\; b, \\
+k_{i+1} &\leftarrow \left\lfloor \frac{\alpha v_i + y_i + k_i}{b} \right\rfloor
 \end{aligned}$
 \end{document}
 EOF
@@ -22,10 +22,10 @@ pdflatex -output-directory=/tmp /tmp/equation.tex > /dev/null 2>&1
 magick -density 600 -background none /tmp/equation.pdf /tmp/equation.png
 
 # Composite the equation onto the background image and add title text
-magick ../base-with-logo.png \
+magick ../../base-with-logo.png \
   -gravity center -font Helvetica -fill black \
-  -pointsize 48 -annotate +0-100 "Multiple-Precision Addition" \
-  -pointsize 24 -annotate +0-50 "Second post in a series of six on multiple-precision algorithms" \
+  -pointsize 48 -annotate +0-100 "Basic Multiple-Precision Multiplication" \
+  -pointsize 24 -annotate +0-50 "Fourth post in a series of six on multiple-precision algorithms" \
   \( /tmp/equation.png -resize 40% \) -geometry +0+80 -composite \
   $OUT
 

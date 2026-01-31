@@ -1,6 +1,6 @@
 #!/bin/bash
 
-OUT=../../content/media/og/multiple-precision-05.png
+OUT=../../../content/media/og/multiple-precision-05.png
 
 # Create a temporary LaTeX file with the equation
 cat > /tmp/equation.tex << 'EOF'
@@ -23,7 +23,7 @@ pdflatex -output-directory=/tmp /tmp/equation.tex > /dev/null 2>&1
 magick -density 600 -background none /tmp/equation.pdf /tmp/equation.png
 
 # Composite the equation onto the background image and add title text
-magick ../base-with-logo.png \
+magick ../../base-with-logo.png \
   -gravity center -font Helvetica -fill black \
   -pointsize 48 -annotate +0-100 "Basic Multiple-Precision Short Division" \
   -pointsize 24 -annotate +0-50 "Fifth post in a series of six on multiple-precision algorithms" \
