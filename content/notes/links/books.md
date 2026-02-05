@@ -11,6 +11,7 @@ layout: page
 
 * [Algorithms (Jeff Erickson)](https://jeffe.cs.illinois.edu/teaching/algorithms/)
 * [Category Theory for Programmers (Bartosz Milewski)](https://github.com/hmemcpy/milewski-ctfp-pdf)
+* [Complexity in Computer Science](https://complexityincs.com)
 * [Foundations of Computer Science](http://infolab.stanford.edu/~ullman/focs.html)
 * [Introduction to Computer Graphics](https://math.hws.edu/graphicsbook/).
   Free, on-line textbook covering the fundamentals of computer graphics and computer graphics programming.
@@ -32,8 +33,11 @@ layout: page
 
 * [Calculus Made Easy (Silvanus P. Thompson)](http://calculusmadeeasy.org)
 * [Combinatorics: The Art of Counting by Bruce Sagan](https://users.math.msu.edu/users/bsagan/)
+* [The Elements of Euclid (the first six books)](https://c82.net/euclid/)
+  A reproduction of Oliver Byrne’s celebrated work from 1847 plus interactive diagrams, cross references, and posters
 * [Linear Algebra (Friedberg, Stephen H)](https://archive.org/details/linearalgebra0000frie_y7b3_4ed) [pdf](https://archive.org/download/linear-algibra-4th-edition-by-friedberg/Linear%20Algibra%204th%20edition%20by%20Friedberg.pdf)
 * [Mathematics of Choice or How to Count Without Counting](https://dn721600.ca.archive.org/0/items/math-of-choice/Math%20Of%20Choice_text.pdf)
+* [Probabilities by Jean-Yves Ouvrard](https://arxiv.org/abs/2601.18853)
 * [Vector and Tensor Analysis by G. E. Hay](https://archive.org/details/vector_and_tensor_analysis_1953_-_g_hay)
 
 ### Tools
