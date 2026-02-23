@@ -11,6 +11,8 @@ layout: page
 
 * [Algorithms (Jeff Erickson)](https://jeffe.cs.illinois.edu/teaching/algorithms/)
 * [Category Theory for Programmers (Bartosz Milewski)](https://github.com/hmemcpy/milewski-ctfp-pdf)
+* [Competitive Programmer's Handbook](https://cses.fi/book/book.pdf)
+  [Source for book on GitHub](https://github.com/pllk/cphb/)
 * [Complexity in Computer Science](https://complexityincs.com)
 * [Foundations of Computer Science](http://infolab.stanford.edu/~ullman/focs.html)
 * [Introduction to Computer Graphics](https://math.hws.edu/graphicsbook/).
