@@ -23,4 +23,5 @@ layout: page
 - *1985-10-14*. (*1985-10*). First official reference guide for the C++ programming language is published. https://www.stroustrup.com/C++.html https://www.stroustrup.com/1st.html
 - *2009-11-10*. Go was released. https://go.dev/blog/1year
 - *1995-12-04*. JavaScript is first released. https://web.archive.org/web/20070916144913/https://wp.netscape.com/newsref/pr/newsrelease67.html
+- *1987-12-18*. Perl 1.0 was released?
 - *2004-12*. The paper "MapReduce: Simplified Data Processing on Large Clusters" is published. https://research.google.com/archive/mapreduce.html
