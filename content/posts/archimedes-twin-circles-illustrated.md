@@ -8,6 +8,7 @@ tags:
   - visualization
   - geometry
   - theorem
+mastodon: https://mathstodon.xyz/@janmr/116142145573769993
 redirect: /blog/2014/04/archimedes-twin-circles-illustrated/
 ---
 <figure>

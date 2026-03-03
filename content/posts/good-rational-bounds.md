@@ -5,11 +5,11 @@ layout: post
 tags:
   - continued-fraction
   - rational-approximation
-categories:
   - mathematics
 og:
   description: Using continued fractions to obtain good, rational bounds
   image: /media/og/good-rational-bounds.png
+mastodon: https://mathstodon.xyz/@janmr/115990465339141030
 redirect: /blog/2013/01/good-rational-bounds/
 ---
 Say we have a k-bit integer and we want to allocate a character array to hold the decimal digits of this number. How large must the array be? Well, the exact formula is

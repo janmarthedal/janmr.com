@@ -7,11 +7,11 @@ tags:
   - arithmetic
   - algorithms
   - multiple-precision
-categories:
   - programming
 og:
   description: An algorithm for dividing one multiple-precision number by another multiple-precision number
   image: /media/og/multiple-precision-06.png
+mastodon: https://mathstodon.xyz/@janmr/115967634037446950
 redirect: /blog/2014/04/basic-multiple-precision-long-division/
 ---
 We consider the task of dividing a positive integer $u$ by another positive integer $v$, thus obtaining a quotient $q=\lfloor u/v \rfloor$ and a remainder $r$ such that $u = q v + r$ with $0 \leq r < v$.

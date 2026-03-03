@@ -7,6 +7,7 @@ tags:
   - geometry
   - theorem
   - visualization
+mastodon: https://mathstodon.xyz/@janmr/116056275448741940
 redirect: /blog/2014/04/thales-theorem-illustrated/
 ---
 <figure>
