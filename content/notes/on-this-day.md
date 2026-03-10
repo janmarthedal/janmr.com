@@ -14,6 +14,7 @@ layout: page
 - *1964-05-01*. The first BASIC program runs. https://cis-alumni.org/TKurtz.html
 - *1997-05-11*. Deep Blue defeats Garry Kasparov. https://www.ibm.com/history/deep-blue
 - *2015-05-15*. The first stable release of Rust, version 1.0, is released. https://blog.rust-lang.org/2015/05/15/Rust-1.0/
+- *1977-05-31*. The paper A universal algorithm for sequential data compression is published. https://ieeexplore.ieee.org/document/1055714 https://www.semanticscholar.org/paper/A-universal-algorithm-for-sequential-data-Ziv-Lempel/59c9f2036e673d8bc9713eed851d12c6c9fe53cb
 - *2017-06-12*. The paper Attention is All You Need is published. https://arxiv.org/abs/1706.03762
 - *2001-08-19*. SciPy 0.1 is released. https://mail.python.org/pipermail/python-list/2001-August/106419.html https://web.archive.org/web/20010309040805/http://scipy.org:80/ https://arxiv.org/abs/1907.10121 https://www.nature.com/articles/s41592-019-0686-2
 - *1979-09-01*. BLAS is announced: Basic Linear Algebra Subprograms for Fortran Usage. https://dl.acm.org/doi/10.1145/355841.355847

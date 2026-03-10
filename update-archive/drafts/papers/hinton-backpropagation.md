@@ -10,4 +10,6 @@ tags:
 ---
 Learning representations by back-propagating errors by Rumelhart, Hinton, and Williams (1986) — the seminal paper that popularized backpropagation for training neural networks
 
+Published 1986-10-09
+
 http://www.iro.umontreal.ca/~pift6266/A06/refs/backprop_old.pdf
