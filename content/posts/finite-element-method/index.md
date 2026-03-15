@@ -1,0 +1,48 @@
+---
+title: Finite Element Method
+---
+
+- Continuous
+  - [The Poisson Problem](/posts/finite-element-method/continuous/poisson-problem/)
+  - [General Elliptic PDEs](/posts/finite-element-method/continuous/elliptic-pdes/)
+  - [Weak Formulation of the Poisson Problem](/posts/finite-element-method/continuous/poisson-weak-form/)
+  - [Weak Formulation of Elliptic PDEs](/posts/finite-element-method/continuous/elliptic-weak-form/)
+- Discrete
+  - [The Discrete Formulation](/posts/finite-element-method/discrete/discrete-formulation/)
+  - [From Basis to Shape Functions](/posts/finite-element-method/discrete/basis-to-shape-functions/)
+  - [Continuous Galerkin](/posts/finite-element-method/discrete/continuous-galerkin/)
+- Reference domains
+  - [Reference Domains and Quadrature](/posts/finite-element-method/ref-domains/overview/)
+  - 1D
+    - [The Line Domain](/posts/finite-element-method/ref-domains/line/)
+  - 2D
+    - [The Triangle Domain](/posts/finite-element-method/ref-domains/triangle/)
+    - [The Quadrilateral Domain](/posts/finite-element-method/ref-domains/quadrilateral/)
+  - 3D
+    - [The Tetrahedron Domain](/posts/finite-element-method/ref-domains/tetrahedron/)
+    - [The Hexahedron Domain](/posts/finite-element-method/ref-domains/hexahedron/)
+- Elements
+  - [Shape Functions on Reference Elements](/posts/finite-element-method/elements/overview/)
+  - 1D
+    - [The Line2 Element](/posts/finite-element-method/elements/line2/)
+    - [The Line3 Element](/posts/finite-element-method/elements/line3/)
+  - 2D
+    - [The Tri3 Element](/posts/finite-element-method/elements/tri3/)
+    - [The Tri6 Element](/posts/finite-element-method/elements/tri6/)
+    - [The Quad4 Element](/posts/finite-element-method/elements/quad4/)
+    - [The Quad9 Element](/posts/finite-element-method/elements/quad9/)
+  - 3D
+    - [The Tet4 Element](/posts/finite-element-method/elements/tet4/)
+    - [The Hex8 Element](/posts/finite-element-method/elements/hex8/)
+- Meshes
+  - Mesh Representation
+  - Mesh Boundaries
+  - MeshIO Interoperability
+- Assembly
+  - Computing the Jacobian
+  - Bilinear Form Assembly
+  - Load Vector Assembly
+  - L² Projection
+  - Dirichlet Boundary Conditions
+  - Neumann Boundary Conditions
+

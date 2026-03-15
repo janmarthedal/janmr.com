@@ -203,6 +203,7 @@ function loadPages(): Array<Page> {
                     type = PageType.Update;
                 } else if (filename.startsWith("posts/")) {
                     type = PageType.Post;
+                    if (!data.layout) data.layout = "post";
                     og.type = "article";
                 } else if (filename.startsWith("notes/")) {
                     type = PageType.Note;
