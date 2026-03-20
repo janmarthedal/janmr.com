@@ -7,6 +7,8 @@ layout: page
   Developed as a part of understanding multiple-precision arithmetic.
   The algorithms used are described in the [multiple-precision posts](/posts/multiple-precision/).
   The project is no longer being maintained.
+- [Reversi](/lab/reversi/).
+  A classic board game where you play Black against an AI opponent.
 - [L-Trominos](/lab/tromino/).
   A demo to accompany the blog post [Tiling with L-Trominos](/posts/tiling-with-l-trominos/).
 - [math-tex demo](/lab/math-tex/).
