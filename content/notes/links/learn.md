@@ -16,8 +16,11 @@ layout: page
 * [Introduction To Algorithms](https://ocw.mit.edu/courses/6-006-introduction-to-algorithms-spring-2020/)
 * [Introduction to Compilers by Cornell University](https://www.cs.cornell.edu/courses/cs4120/2026sp/notes/)
 * [Parallel Computing from Stanford](https://www.youtube.com/playlist?list=PLoROMvodv4rMp7MTFr4hQsDEcX7Bx6Odp)
+* [Pro Git](https://git-scm.com/book/en/v2)
 * [The Missing Semester of Your CS Education](https://missing.csail.mit.edu/)
 * [The Ray Tracer Challenge](http://raytracerchallenge.com/)
+* [The Rust Programming Language](https://doc.rust-lang.org/book/)
+* [The Scala 3 Book](https://docs.scala-lang.org/scala3/book/introduction.html)
 
 ## Mathematics
 

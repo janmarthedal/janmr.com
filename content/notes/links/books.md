@@ -2,13 +2,7 @@
 title: Books
 layout: page
 ---
-### Collections
-
-* [Freely available programming books](https://github.com/EbookFoundation/free-programming-books/)
-* [Project Gutenberg: Mathematics](https://www.gutenberg.org/ebooks/bookshelf/672)
-
 ### Computer Science
-
 * [Algorithms (Jeff Erickson)](https://jeffe.cs.illinois.edu/teaching/algorithms/)
 * [Category Theory for Programmers (Bartosz Milewski)](https://github.com/hmemcpy/milewski-ctfp-pdf)
 * [Competitive Programmer's Handbook](https://cses.fi/book/book.pdf)
@@ -26,13 +20,7 @@ layout: page
   An undergraduate-level textbook introducing students to the fundamentals of provable security.
   The remaining chapters will become available in July 2026.
 
-### Programming Languages
-
-* [The Rust Programming Language](https://doc.rust-lang.org/book/)
-* [The Scala 3 Book](https://docs.scala-lang.org/scala3/book/introduction.html)
-
 ### Mathematics
-
 * [Calculus Made Easy (Silvanus P. Thompson)](http://calculusmadeeasy.org)
 * [Combinatorics: The Art of Counting by Bruce Sagan](https://users.math.msu.edu/users/bsagan/)
 * [The Elements of Euclid (the first six books)](https://c82.net/euclid/)
@@ -43,7 +31,3 @@ layout: page
 * [Probabilities by Jean-Yves Ouvrard](https://arxiv.org/abs/2601.18853)
 * [The Power of Mathematical Visualization](https://archive.org/details/ThePowerOfMathematicalVisualization_25/)
 * [Vector and Tensor Analysis by G. E. Hay](https://archive.org/details/vector_and_tensor_analysis_1953_-_g_hay)
-
-### Tools
-
-* [Pro Git](https://git-scm.com/book/en/v2)
