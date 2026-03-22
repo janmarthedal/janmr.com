@@ -6,7 +6,12 @@ authors:
   - Harold Abelson
   - Gerald Jay Sussman
 isbn: '0262510871'
+tags:
+  - computer-science
+  - online
 links:
+  - name: Online book
+    url: https://mitp-content-server.mit.edu/books/content/sectbyfn/books_pres_0/6515/sicp.zip/index.html
   - name: PDF
     url: https://web.mit.edu/6.001/6.037/sicp.pdf
   - name: JavaScript Edition

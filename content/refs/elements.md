@@ -3,6 +3,9 @@ layout: reference
 title: Elements
 authors:
   - Euclid
+tags:
+  - mathematics
+  - online
 links:
   - name: Online version
     about: by David E. Joyce
