@@ -5,5 +5,7 @@ date: '2007'
 authors:
   - Stephen Hawking
 isbn: '0762430044'
+tags:
+  - mathematics
 ---
 ![](/media/books/hawking.jpg)

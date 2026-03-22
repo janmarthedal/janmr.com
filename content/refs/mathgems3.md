@@ -5,4 +5,6 @@ date: '1997'
 authors:
   - Ross Honsberger
 isbn: '0883853183'
+tags:
+  - mathematics
 ---

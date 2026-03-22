@@ -5,6 +5,9 @@ date: '1934'
 authors:
   - W. E. Roth
 journal: "Bull. Amer. Math. Soc. 40(6): 461-468 (June 1934)"
+tags:
+  - mathematics
+  - online
 links:
   - name: Journal page
     url: https://www.ams.org/journals/bull/1934-40-06/S0002-9904-1934-05899-3/

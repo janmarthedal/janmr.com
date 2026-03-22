@@ -6,6 +6,8 @@ authors:
   - Harold V. Henderson
   - S. R. Searle
 journal: "Linear and Multilinear Algebra 9(4):271-288"
+tags:
+  - mathematics
 links:
   - name: Journal page
     url: https://www.tandfonline.com/doi/epdf/10.1080/03081088108817379

@@ -5,6 +5,11 @@ date: '2011'
 authors:
   - Donald Ervin Knuth
 isbn: '0-201-03804-8'
+tags:
+  - classic
+  - computer-science
+  - algorithms
+  - combinatorics
 links:
   - name: Book homepage
     url: https://www-cs-faculty.stanford.edu/~knuth/taocp.html#vol4

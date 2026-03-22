@@ -5,6 +5,9 @@ date: '2011'
 authors:
   - Richard P. Stanley
 isbn: 9781107602625
+tags:
+  - mathematics
+  - combinatorics
 links:
   - name: Book homepage
     url: http://www-math.mit.edu/~rstan/ec/

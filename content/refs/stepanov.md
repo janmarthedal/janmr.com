@@ -6,6 +6,8 @@ authors:
   - Alexander A. Stepanov
   - Paul McJones
 isbn: 032163537X
+tags:
+  - computer-science
 links:
   - name: Homepage
     url: http://www.elementsofprogramming.com

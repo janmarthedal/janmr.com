@@ -6,4 +6,7 @@ authors:
   - Gene H. Golub
   - Charles F. Van Loan
 isbn: '0801854148'
+tags:
+  - mathematics
+  - numerical-analysis
 ---

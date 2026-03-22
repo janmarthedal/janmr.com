@@ -8,6 +8,11 @@ authors:
   - Yoshua Bengio
   - Patrick Haffner
 journal: "Proceedings of the IEEE (Volume: 86, Issue: 11, November 1998)"
+tags:
+  - classic
+  - computer-science
+  - data-science
+  - online
 links:
   - name: Journal page
     url: https://ieeexplore.ieee.org/document/726791

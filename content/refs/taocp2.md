@@ -5,6 +5,10 @@ date: '1998'
 authors:
   - Donald Ervin Knuth
 isbn: '0-201-89684-2'
+tags:
+  - classic
+  - computer-science
+  - algorithms
 links:
   - name: Book homepage
     url: https://www-cs-faculty.stanford.edu/~knuth/taocp.html#vol2

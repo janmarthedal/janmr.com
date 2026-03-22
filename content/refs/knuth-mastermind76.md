@@ -5,6 +5,10 @@ date: '1976'
 authors:
   - Donald E. Knuth
 journal: Journal of Recreational Mathematics 9 (1976), 1-6
+tags:
+  - computer-science
+  - algorithms
+  - online
 links:
   - name: PDF
     url: https://www.cs.uni.edu/~wallingf/teaching/cs3530/resources/knuth-mastermind.pdf

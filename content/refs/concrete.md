@@ -7,6 +7,10 @@ authors:
   - Donald Knuth
   - Oren Patashnik
 isbn: '0201558025'
+tags:
+  - mathematics
+  - computer-science
+  - combinatorics
 links:
   - name: Book homepage
     url: http://www-cs-faculty.stanford.edu/~uno/gkp.html

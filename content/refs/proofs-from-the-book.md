@@ -6,6 +6,8 @@ authors:
   - Martin Aigner
   - Günter M. Ziegler
 isbn: '3540404600'
+tags:
+  - mathematics
 links:
   - name: Online version
     url: https://proofsfromthebook.github.io

@@ -5,6 +5,10 @@ date: '1991-03-01'
 authors:
   - David Goldberg
 journal: ACM Computing Surveys, Vol 23, No 1, March 1991
+tags:
+  - computer-science
+  - numerical-analysis
+  - online
 links:
   - name: Journal page
     url: https://dl.acm.org/doi/10.1145/103162.103163
