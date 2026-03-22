@@ -1,0 +1,112 @@
+---
+title: Reversi
+date: 2026-03-22
+---
+{% extends "base.njk" %}
+{% block head %}
+<style>
+body {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  line-height: 1.43;
+  color: #333;
+  background-color: #fff;
+  margin: 0;
+}
+main {
+  max-width: 60em;
+  margin: 0 auto;
+  padding: 1em;
+}
+h1 {
+  font-size: 2em;
+  font-weight: 500;
+  line-height: 1.1;
+  margin-top: 0;
+}
+#settings {
+  margin-bottom: 1em;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5em 1em;
+}
+#settings label {
+  display: flex;
+  align-items: center;
+  gap: 0.3em;
+}
+#settings select {
+  font-size: 1em;
+  padding: 0.25em 0.4em;
+}
+#new-game {
+  font-size: 1em;
+  padding: 0.35em 0.8em;
+  background-color: #337ab7;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+#new-game:hover {
+  background-color: #286090;
+}
+#board-container {
+  max-width: 480px;
+  margin: 1em 0;
+}
+#board-container svg {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+#status {
+  font-size: 1.1em;
+  min-height: 1.5em;
+  margin-bottom: 0.5em;
+}
+#score {
+  display: flex;
+  gap: 2em;
+  font-size: 1.1em;
+  margin-bottom: 0.5em;
+}
+</style>
+{% endblock %}
+{% block content %}
+<main>
+  <h1>Reversi</h1>
+  <div id="settings">
+    <label>Board size
+      <select id="board-size">
+        <option value="6">6&times;6</option>
+        <option value="8" selected>8&times;8</option>
+        <option value="10">10&times;10</option>
+      </select>
+    </label>
+    <label>Your color
+      <select id="player-color">
+        <option value="1">Black (first)</option>
+        <option value="2">White (second)</option>
+      </select>
+    </label>
+    <label>Strength
+      <select id="difficulty">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3" selected>3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+      </select>
+    </label>
+    <button id="new-game">New Game</button>
+  </div>
+  <div id="score"></div>
+  <div id="status"></div>
+  <div id="board-container"></div>
+</main>
+{% endblock %}
+{% block bodyend %}
+<script src="reversi.js"></script>
+{{ super() }}
+{% endblock %}
