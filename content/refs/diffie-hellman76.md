@@ -15,6 +15,8 @@ links:
     url: http://ee.stanford.edu/%7Ehellman/publications/24.pdf
   - name: Local PDF
     url: /files/papers/diffie-hellman76.pdf
-classic: computer-science
+tags:
+  - classic
+  - computer-science
 ---
 Introduces the revolutionary concepts of public-key cryptography and digital signatures. These ideas fundamentally changed the way secure communication is achieved by enabling two parties to securely exchange keys in the presence of eavesdroppers, thereby solving the key distribution problem. This work laid the groundwork for the development of encryption protocols critical to secure communications on the internet, such as HTTPS. Diffie-Hellman key exchange and the concepts presented in this paper remain central to cryptographic operations and security protocols used across various digital platforms today.

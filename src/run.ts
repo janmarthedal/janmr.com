@@ -119,9 +119,6 @@ env.addFilter("readableDate", jsDateToReadable);
 env.addFilter("rssLastUpdatedDate", rssLastUpdatedDate);
 env.addFilter("absoluteUrl", absoluteUrl);
 env.addFilter("dateToRfc3339", dateRfc3339);
-env.addFilter("selectclassics", (posts, value) =>
-    posts.filter((item: { data: Record<string, unknown> }) => item.data?.classic === value),
-);
 env.addFilter("head", (array, n) => array.slice(0, n));
 env.addFilter("sourceLink", (path) => metadata.sourceBase + path);
 

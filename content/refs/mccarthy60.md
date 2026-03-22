@@ -14,6 +14,8 @@ links:
     url: https://www-formal.stanford.edu/jmc/recursive.pdf
   - name: Local PDF
     url: /files/papers/mccarthy60.pdf
-classic: computer-science
+tags:
+  - classic
+  - computer-science
 ---
 Introduces the fundamental concepts of Lisp programming language. It explores the use of recursive functions for symbolic computation, laying the groundwork for artificial intelligence research. McCarthy demonstrates how Lisp can manipulate symbolic expressions and implement recursion, showcasing its power for tasks such as list processing, pattern matching, and automatic theorem proving. This work not only pioneered the development of programming languages for AI but also established key principles in the field of computer science.
