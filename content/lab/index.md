@@ -10,6 +10,8 @@ layout: page
   (custom elements and shadow DOM) and [MathJax](https://www.mathjax.org/).
 
 ### Playable Games
+- [Chess](/lab/chess/).
+  Play chess against a Rust-powered AI opponent.
 - [Connect Four](/lab/connect-four/).
   The classic two-player connection game where you play against an AI opponent.
 - [Reversi](/lab/reversi/).
