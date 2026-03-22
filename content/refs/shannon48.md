@@ -15,5 +15,6 @@ links:
 tags:
   - classic
   - information-theory
+  - online
 ---
 The paper defines concepts like entropy, which measures the uncertainty or information content in a message, and provides formulas for encoding and compressing data. Shannon also introduces the idea of channel capacity, the maximum rate at which information can be reliably transmitted over a communication channel. The paper also explores methods to mitigate noise and errors during transmission, suggesting that error-correcting codes can help achieve reliable communication close to the theoretical channel capacity. Shannon's work revolutionized the field of communication, enabling advances in telecommunications, computing, and data compression, and it remains fundamental to understanding digital communication today.

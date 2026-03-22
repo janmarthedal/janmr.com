@@ -4,4 +4,3 @@ layout: page
 ---
 - [Educational Resources](learn/)
 - [List of lists](lists/)
-- [Papers](papers/)

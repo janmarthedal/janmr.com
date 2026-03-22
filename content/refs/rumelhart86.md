@@ -14,5 +14,6 @@ links:
 tags:
   - classic
   - data-science
+  - online
 ---
 A foundational work in the field of neural networks. It introduces the concept of backpropagation, a method for efficiently training multi-layer neural networks through the adjustment of weights based on the gradient of the error function. This technique allows networks to learn complex representations of data by minimizing errors in a systematic way. Backpropagation has become a central algorithm in deep learning, enabling significant advancements in areas such as image recognition, natural language processing, and beyond.

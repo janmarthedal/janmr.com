@@ -16,6 +16,7 @@ links:
 tags:
   - classic
   - numerical-analysis
+  - online
 ---
 Introduces the Fast Fourier Transform (FFT), a revolutionary algorithm that efficiently computes the Fourier transform of a sequence. The FFT algorithm drastically reduces the computational complexity of transforming signals from the time domain to the frequency domain, from O(n^2)
 to O(n log n), where n is the number of data points. This improvement has had a profound impact on digital signal processing, allowing for more efficient analysis and processing of digital signals in various applications, including audio processing, image analysis, and telecommunications.
