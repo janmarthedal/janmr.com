@@ -28,5 +28,6 @@ layout: page
 * [Linear Algebra by Terence Tao](https://www.math.ucla.edu/~tao/resource/general/115a.3.02f/)
 * [Math videos from Math Professor Jeffrey Chasnov](https://www.youtube.com/@Jeff-math/playlists).
   YouTube playlists. Seven of the playlists are videos from his Coursera courses.
-* [Stanford's "The Fourier Transform and Its Applications"](https://see.stanford.edu/course/ee261).
+* MIT's [Mathematics for Computer Science](https://www.youtube.com/playlist?list=PLUl4u3cNGP61VNvICqk2HXJTonnKgAc9d)
+* Stanford's [The Fourier Transform and Its Applications](https://see.stanford.edu/course/ee261).
   Videos, problem sets & more.

@@ -38,6 +38,7 @@ layout: page
 * [The Elements of Euclid (the first six books)](https://c82.net/euclid/)
   A reproduction of Oliver Byrne’s celebrated work from 1847 plus interactive diagrams, cross references, and posters
 * [Linear Algebra (Friedberg, Stephen H)](https://archive.org/details/linearalgebra0000frie_y7b3_4ed) [pdf](https://archive.org/download/linear-algibra-4th-edition-by-friedberg/Linear%20Algibra%204th%20edition%20by%20Friedberg.pdf)
+* [Mathematical Omnibus, Thirty Lectures on Classic Mathematics](https://drive.google.com/file/d/1FZ72XidOQKg8nkPEkTjrqJwxP0Ymj9np/view) by Dmitry Fuchs and [Serge Tabachnikov](https://sites.google.com/view/sergeitabachnikov)
 * [Mathematics of Choice or How to Count Without Counting](https://dn721600.ca.archive.org/0/items/math-of-choice/Math%20Of%20Choice_text.pdf)
 * [Probabilities by Jean-Yves Ouvrard](https://arxiv.org/abs/2601.18853)
 * [The Power of Mathematical Visualization](https://archive.org/details/ThePowerOfMathematicalVisualization_25/)
