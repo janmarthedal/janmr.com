@@ -2,26 +2,33 @@
 title: The lab
 layout: page
 ---
-- [Kanooth Numbers](https://github.com/janmarthedal/kanooth-numbers).
-  A portable multiple-precision library in C++.
-  Developed as a part of understanding multiple-precision arithmetic.
-  The algorithms used are described in the [multiple-precision posts](/posts/multiple-precision/).
-  The project is no longer being maintained.
-- [Connect Four](/lab/connect-four/).
-  The classic two-player connection game where you play against an AI opponent.
-- [Reversi](/lab/reversi/).
-  A classic board game where you play Black against an AI opponent.
+### Demos
 - [L-Trominos](/lab/tromino/).
   A demo to accompany the blog post [Tiling with L-Trominos](/posts/tiling-with-l-trominos/).
 - [math-tex demo](/lab/math-tex/).
   A demo that combines [Web Components](https://developer.mozilla.org/en-US/docs/Web/Web_Components)
   (custom elements and shadow DOM) and [MathJax](https://www.mathjax.org/).
+
+### Playable Games
+- [Connect Four](/lab/connect-four/).
+  The classic two-player connection game where you play against an AI opponent.
+- [Reversi](/lab/reversi/).
+  A classic board game where you play Black against an AI opponent.
+
+### Projects
 - [MathItems](https://mathitems.janmr.com).
   A collection of definitions, theorems, and proofs.
   A work in progress and highly experimental.
+- [Kanooth Numbers](https://github.com/janmarthedal/kanooth-numbers).
+  A portable multiple-precision library in C++.
+  Developed as a part of understanding multiple-precision arithmetic.
+  The algorithms used are described in the [multiple-precision posts](/posts/multiple-precision/).
+  The project is no longer being maintained.
 - [Sudokurs](https://github.com/janmarthedal/sudokurs).
   A Sudoku solver written in Rust.
   The method used is described in the blog post [A Simple Sudoku Solver](/posts/a-simple-sudoku-solver/).
+
+### Tools
 - [Time Calculator](/lab/time/).
   A tool that can convert between timezones and convert to/from
   [Unix time](https://en.wikipedia.org/wiki/Unix_time).
