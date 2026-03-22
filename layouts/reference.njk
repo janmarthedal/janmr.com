@@ -19,6 +19,10 @@ layout: page
 <p><b>ISBN</b>: <a href="https://en.wikipedia.org/wiki/Special:BookSources?isbn={{ data.isbn }}">{{ data.isbn }}</a></p>
 {%- endif -%}
 
+{%- if data.tags -%}
+<p>{%- for tag in data.tags %} <span class="label">{{ tag }}</span>{%- endfor -%}</p>
+{%- endif -%}
+
 <div class="post-body">
   {{ content | safe }}
 </div>

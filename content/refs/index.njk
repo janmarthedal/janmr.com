@@ -2,15 +2,16 @@
 title: References
 layout: page
 ---
-<ul>
+<div class="ref-list">
   {%- for post in collections.refs -%}
-  <li>
-    <a href="{{ post.url | url }}">{{ post.title }}</a>
+  <div class="ref-card">
+    <div class="ref-title"><a href="{{ post.url | url }}">{{ post.title }}</a></div>
+    <div class="ref-meta">{{ post.data.authors | shortAuthors }}{% if post.data.date %}, {{ post.data.date | refReadableDate }}{% endif %}</div>
     {%- if post.data.tags -%}
-    {%- for tag in post.data.tags %}
-    <span class="label">{{ tag }}</span>
-    {%- endfor -%}
+    <div class="ref-tags">
+      {%- for tag in post.data.tags %}<span class="label">{{ tag }}</span>{%- endfor -%}
+    </div>
     {%- endif -%}
-  </li>
+  </div>
   {%- endfor -%}
-</ul>
+</div>

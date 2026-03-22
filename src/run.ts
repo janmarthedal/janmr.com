@@ -119,6 +119,11 @@ env.addFilter("readableDate", jsDateToReadable);
 env.addFilter("rssLastUpdatedDate", rssLastUpdatedDate);
 env.addFilter("absoluteUrl", absoluteUrl);
 env.addFilter("dateToRfc3339", dateRfc3339);
+env.addFilter("shortAuthors", (authors: string[]) => {
+    const lastNames = authors.map((a) => a.split(" ").pop());
+    if (lastNames.length > 3) return lastNames[0] + " et al.";
+    return lastNames.join(", ");
+});
 env.addFilter("head", (array, n) => array.slice(0, n));
 env.addFilter("sourceLink", (path) => metadata.sourceBase + path);
 
