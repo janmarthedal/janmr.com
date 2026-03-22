@@ -21,6 +21,7 @@ const COPY_PATTERNS = [
     "lab/**/*.js",
     "lab/**/*.js.map",
     "lab/**/*.wasm",
+    "lab/**/*.svg",
     "icon.svg",
     "icon-*.png",
     "apple-touch-icon.png",

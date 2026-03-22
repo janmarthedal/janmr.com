@@ -1,9 +1,11 @@
 (function () {
     "use strict";
 
-    const PIECE_SYMBOLS = {
-        K: "\u2654", Q: "\u2655", R: "\u2656", B: "\u2657", N: "\u2658", P: "\u2659",
-        k: "\u265A", q: "\u265B", r: "\u265C", b: "\u265D", n: "\u265E", p: "\u265F",
+    const PIECE_IMAGES = {
+        K: "pieces/wK.svg", Q: "pieces/wQ.svg", R: "pieces/wR.svg",
+        B: "pieces/wB.svg", N: "pieces/wN.svg", P: "pieces/wP.svg",
+        k: "pieces/bK.svg", q: "pieces/bQ.svg", r: "pieces/bR.svg",
+        b: "pieces/bB.svg", n: "pieces/bN.svg", p: "pieces/bP.svg",
     };
 
     const DEPTH_MAP = { 1: 1, 2: 2, 3: 3, 4: 4, 5: 5 };
@@ -229,9 +231,9 @@
 
                 const piece = board[rank * 8 + file];
                 if (piece) {
-                    svg += `<text x="${x + sqSize / 2}" y="${y + sqSize / 2 + 2}" text-anchor="middle"
-                        dominant-baseline="central" font-size="${sqSize * 0.75}" pointer-events="none"
-                        >${PIECE_SYMBOLS[piece]}</text>`;
+                    const pad = sqSize * 0.05;
+                    svg += `<image href="${PIECE_IMAGES[piece]}" x="${x + pad}" y="${y + pad}"
+                        width="${sqSize - 2 * pad}" height="${sqSize - 2 * pad}" pointer-events="none"/>`;
                 }
 
                 // Draw move indicator dot
