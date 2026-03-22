@@ -5,7 +5,12 @@ layout: page
 <ul>
   {%- for post in collections.refs -%}
   <li>
-    <a href="{{ post.url | url }}">{{ post.title }}</a></small>
+    <a href="{{ post.url | url }}">{{ post.title }}</a>
+    {%- if post.data.tags -%}
+    {%- for tag in post.data.tags %}
+    <span class="label">{{ tag }}</span>
+    {%- endfor -%}
+    {%- endif -%}
   </li>
   {%- endfor -%}
 </ul>
