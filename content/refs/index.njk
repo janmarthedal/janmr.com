@@ -1,17 +1,143 @@
 ---
 title: References
-layout: page
 ---
-<div class="ref-list">
+{% extends "page.njk" %}
+{% block head %}
+{{ super() }}
+<style>
+.ref-card-tag {
+  cursor: pointer;
+}
+.ref-tag-filter .ref-filter-tag {
+  cursor: pointer;
+  display: inline-block;
+  margin-bottom: .3em;
+}
+.ref-tag-filter .ref-filter-tag.active {
+  background-color: #1d4167;
+}
+.ref-list.is-filtered .ref-card:first-child { border-radius: 0; }
+.ref-list.is-filtered .ref-card:last-child { border-radius: 0; }
+.ref-list.is-filtered .ref-card.filter-first { border-radius: .25em .25em 0 0; }
+.ref-list.is-filtered .ref-card.filter-last {
+  border-bottom: 1px solid #ddd;
+  border-radius: 0 0 .25em .25em;
+}
+.ref-list.is-filtered .ref-card.filter-first.filter-last { border-radius: .25em; }
+</style>
+{% endblock %}
+{% block pagecontent %}
+<div class="ref-list" id="ref-list">
   {%- for post in collections.refs -%}
-  <div class="ref-card">
+  <div class="ref-card" data-tags="{{ post.data.tags | join(',') }}">
     <div class="ref-title"><a href="{{ post.url | url }}">{{ post.title }}</a></div>
     <div class="ref-meta">{{ post.data.authors | shortAuthors }}{% if post.data.date %}, {{ post.data.date | refReadableDate }}{% endif %}</div>
     {%- if post.data.tags -%}
     <div class="ref-tags">
-      {%- for tag in post.data.tags %}<span class="label">{{ tag }}</span>{%- endfor -%}
+      {%- for tag in post.data.tags %}<span class="label ref-card-tag" data-tag="{{ tag }}">{{ tag }}</span>{%- endfor -%}
     </div>
     {%- endif -%}
   </div>
   {%- endfor -%}
 </div>
+{% endblock %}
+{% block bodyend %}
+{{ super() }}
+<script>
+(function () {
+  var list = document.getElementById('ref-list');
+  var cards = Array.from(list.querySelectorAll('.ref-card'));
+
+  // Collect all tags with counts
+  var tagCounts = {};
+  cards.forEach(function (card) {
+    (card.dataset.tags || '').split(',').filter(Boolean).forEach(function (tag) {
+      tagCounts[tag] = (tagCounts[tag] || 0) + 1;
+    });
+  });
+  var allTags = Object.keys(tagCounts).sort();
+
+  // Build sidebar tag filter section
+  var sidebar = document.querySelector('.sidebar');
+  var footer = sidebar.querySelector('footer');
+  var filterSection = document.createElement('div');
+  filterSection.className = 'ref-tag-filter';
+  var heading = document.createElement('p');
+  heading.innerHTML = '<strong>Filter by tag</strong>';
+  filterSection.appendChild(heading);
+  var tagContainer = document.createElement('p');
+  tagContainer.className = 'ref-tag-list';
+  allTags.forEach(function (tag) {
+    var btn = document.createElement('span');
+    btn.className = 'label ref-filter-tag';
+    btn.dataset.tag = tag;
+    btn.textContent = tag;
+    tagContainer.appendChild(btn);
+    tagContainer.appendChild(document.createTextNode(' '));
+  });
+  filterSection.appendChild(tagContainer);
+  sidebar.insertBefore(filterSection, footer);
+
+  // Active tags from/to URL hash
+  function getActiveTags() {
+    var hash = window.location.hash.slice(1);
+    if (!hash) return new Set();
+    return new Set(hash.split(',').map(decodeURIComponent).filter(Boolean));
+  }
+
+  function setActiveTags(tags) {
+    var sorted = Array.from(tags).sort();
+    var base = window.location.pathname + window.location.search;
+    history.replaceState(null, '', sorted.length ? base + '#' + sorted.map(encodeURIComponent).join(',') : base);
+  }
+
+  function applyFilter() {
+    var active = getActiveTags();
+
+    // Update sidebar button states
+    filterSection.querySelectorAll('.ref-filter-tag').forEach(function (btn) {
+      btn.classList.toggle('active', active.has(btn.dataset.tag));
+    });
+
+    // Show/hide cards and collect visible ones
+    var visible = [];
+    cards.forEach(function (card) {
+      var cardTags = new Set((card.dataset.tags || '').split(',').filter(Boolean));
+      var show = active.size === 0 || Array.from(active).every(function (t) { return cardTags.has(t); });
+      card.hidden = !show;
+      if (show) visible.push(card);
+    });
+
+    // Manage border-radius for filtered list
+    list.classList.toggle('is-filtered', active.size > 0);
+    cards.forEach(function (card) {
+      card.classList.remove('filter-first', 'filter-last');
+    });
+    if (visible.length > 0) {
+      visible[0].classList.add('filter-first');
+      visible[visible.length - 1].classList.add('filter-last');
+    }
+  }
+
+  function toggleTag(tag) {
+    var active = getActiveTags();
+    if (active.has(tag)) active.delete(tag); else active.add(tag);
+    setActiveTags(active);
+    applyFilter();
+  }
+
+  // Sidebar filter button clicks
+  filterSection.querySelectorAll('.ref-filter-tag').forEach(function (btn) {
+    btn.addEventListener('click', function () { toggleTag(this.dataset.tag); });
+  });
+
+  // Inline tag clicks on ref cards
+  list.querySelectorAll('.ref-card-tag').forEach(function (span) {
+    span.addEventListener('click', function () { toggleTag(this.dataset.tag); });
+  });
+
+  applyFilter();
+  window.addEventListener('hashchange', applyFilter);
+}());
+</script>
+{% endblock %}
