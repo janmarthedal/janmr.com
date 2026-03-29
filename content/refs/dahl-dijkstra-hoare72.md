@@ -1,7 +1,7 @@
 ---
 layout: reference
 title: Structured Programming
-date: '1972'
+date: '1972-01-01'
 authors:
   - Ole-Johan Dahl
   - Edsger W. Dijkstra

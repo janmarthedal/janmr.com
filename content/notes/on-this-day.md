@@ -9,20 +9,26 @@ layout: page
 - *2016-02-08*. Zig was introduced. https://andrewkelley.me/post/intro-to-zig.html
 - *1991-02-20*. (*1991-02*) First release of Python (version 0.9.0). https://raw.githubusercontent.com/python/cpython/master/Misc/HISTORY https://www.tuhs.org/Usenet/alt.sources/1991-February/001749.html
 - *1960-03-01*. LISP I Programmer's Manual is published. https://softwarepreservation.computerhistory.org/LISP/lisp15_family.html#LISP_I_1960_ http://jmc.stanford.edu/articles/lisp.html
-- *1965-04*. The paper "An algorithm for the machine calculation of complex Fourier series" was published. https://www.ams.org/journals/mcom/1965-19-090/home.html
+- *1965-04*. The paper "An algorithm for the machine calculation of complex Fourier series" by Cooley and Tukey was published. https://www.ams.org/journals/mcom/1965-19-090/home.html https://www.historyofinformation.com/detail.php?id=833
+- *1950-04-02*. Error Detecting and Error Correcting Codes by R. W. Hamming
 - *2005-04-07*. Git becomes self-hosted https://github.com/git/git/commit/e83c5163316f89bfbde7d9ab23ca2e25604af290 https://marc.info/?l=git&m=117254154130732
+- *1977-05*. A Universal Algorithm for Sequential Data Compression by Jacob Ziv and Abraham Lempel
 - *1964-05-01*. The first BASIC program runs. https://cis-alumni.org/TKurtz.html
+- *1974-05-05*. The paper A Protocol for Packet Network Intercommunication by Vinton G. Cerf and Robert E. Kahn was published
 - *1997-05-11*. Deep Blue defeats Garry Kasparov. https://www.ibm.com/history/deep-blue
 - *2015-05-15*. The first stable release of Rust, version 1.0, is released. https://blog.rust-lang.org/2015/05/15/Rust-1.0/
 - *1977-05-31*. The paper A universal algorithm for sequential data compression is published. https://ieeexplore.ieee.org/document/1055714 https://www.semanticscholar.org/paper/A-universal-algorithm-for-sequential-data-Ziv-Lempel/59c9f2036e673d8bc9713eed851d12c6c9fe53cb
 - *2017-06-12*. The paper Attention is All You Need is published. https://arxiv.org/abs/1706.03762
+- *1948-07*. A Mathematical Theory of Communication by C. E. Shannon
 - *2001-08-19*. SciPy 0.1 is released. https://mail.python.org/pipermail/python-list/2001-August/106419.html https://web.archive.org/web/20010309040805/http://scipy.org:80/ https://arxiv.org/abs/1907.10121 https://www.nature.com/articles/s41592-019-0686-2
 - *1979-09-01*. BLAS is announced: Basic Linear Algebra Subprograms for Fortran Usage. https://dl.acm.org/doi/10.1145/355841.355847
 - *2006-10*. NumPy 1.0 was released. https://arxiv.org/abs/1907.10121
 - *2012-10-01*. TypeScript is released (version 0.8.0). https://web.archive.org/web/20150403224440/https://typescript.codeplex.com/releases/view/95554
 - *1986-10-09*. The paper "Learning representations by back-propagating errors" is published. https://www.nature.com/articles/323533a0
 - *1985-10-14*. (*1985-10*). First official reference guide for the C++ programming language is published. https://www.stroustrup.com/C++.html https://www.stroustrup.com/1st.html
+- *1986-11*. An O(ND) Difference Algorithm and Its Variations by Eugene W. Myers
 - *2009-11-10*. Go was released. https://go.dev/blog/1year
+- *2003-11-20*. Making reliable distributed systems in the presence of software errors by Joe Armstrong
 - *1995-12-04*. JavaScript is first released. https://web.archive.org/web/20070916144913/https://wp.netscape.com/newsref/pr/newsrelease67.html
 - *1987-12-18*. Perl 1.0 was released?
 - *2004-12*. The paper "MapReduce: Simplified Data Processing on Large Clusters" is published. https://research.google.com/archive/mapreduce.html
