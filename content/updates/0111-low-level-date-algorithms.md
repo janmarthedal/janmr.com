@@ -8,6 +8,6 @@ tags:
   - calendar
   - algorithms
 ---
-Low-Level Date Algorithms (year/month/day to day epoch and the reverse, among others) https://howardhinnant.github.io/date_algorithms.html #calendar #algorithms
+Low-Level Date Algorithms (year/month/day to day epoch and the reverse, among others) https://howardhinnant.github.io/date_algorithms.html
 
 ![](/media/updates/0111.png)
