@@ -13,6 +13,7 @@ layout: page
 * [Dictionary of Algorithms and Data Structures](https://xlinux.nist.gov/dads/)
 * [Donald Knuth Annual Christmas Lectures](https://youtube.com/playlist?list=PLoROMvodv4rOAvKVR_dyCigSBMcYjevYB).
   YouTube playlist.
+* [Functional Programming in Lean](https://lean-lang.org/functional_programming_in_lean/)
 * [Introduction To Algorithms](https://ocw.mit.edu/courses/6-006-introduction-to-algorithms-spring-2020/)
 * [Introduction to Compilers by Cornell University](https://www.cs.cornell.edu/courses/cs4120/2026sp/notes/)
 * [Parallel Computing from Stanford](https://www.youtube.com/playlist?list=PLoROMvodv4rMp7MTFr4hQsDEcX7Bx6Odp)
