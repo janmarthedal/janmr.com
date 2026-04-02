@@ -11,11 +11,13 @@ layout: page
 
 ### Playable Games
 - [Chess](/lab/chess/).
-  Play chess against a Rust-powered AI opponent.
+  Play chess against a Rust-powered computer opponent.
 - [Connect Four](/lab/connect-four/).
-  The classic two-player connection game where you play against an AI opponent.
+  The classic two-player connection game where you play against a computer opponent.
+- [Go](/lab/go/).
+  The classic strategy board game. Play against another human or a computer opponent.
 - [Reversi](/lab/reversi/).
-  A classic board game where you play Black against an AI opponent.
+  A classic board game where you play against a computer opponent.
 
 ### Projects
 - [MathItems](https://mathitems.janmr.com).
