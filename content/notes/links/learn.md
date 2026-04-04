@@ -3,7 +3,6 @@ title: Educational Resources
 layout: page
 ---
 ## Computer Science
-
 * [A Computer Science Curriculum with Rust flavor](https://github.com/AbdesamedBendjeddou/Rusty-CS)
 * [Advanced Data Structures from MIT](https://courses.csail.mit.edu/6.851/spring21/)
 * [An Introduction to Physically Based Modeling](http://www.cs.cmu.edu/~baraff/pbm/pbm.html)
@@ -24,7 +23,6 @@ layout: page
 * [The Scala 3 Book](https://docs.scala-lang.org/scala3/book/introduction.html)
 
 ## Mathematics
-
 * [Calculus by Gilbert Strang](https://ocw.mit.edu/courses/res-18-001-calculus-fall-2023/)
 * [Combinatorics by Joy Morris](https://www.cs.uleth.ca/~morris/Combinatorics/Combinatorics.html). An upper-level introductory course in enumeration, graph theory, and design theory
 * [Deep Learning by Professor Bryce](https://youtube.com/playlist?list=PLgPbN3w-ia_PeT1_c5jiLW3RJdR7853b9&si=vffALSeFQBjtt5BJ)
