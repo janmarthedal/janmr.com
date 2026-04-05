@@ -8,6 +8,7 @@ tags:
   - astronomy
   - march
   - equinox
+  - calendar
 ---
 Yesterday marked the March equinox, the moment when the Sun crosses the celestial equator moving northward, resulting in nearly equal hours of day and night across the globe and marking the start of astronomical spring in the Northern Hemisphere https://janmr.com/posts/equinoxes-and-solstices/
 
