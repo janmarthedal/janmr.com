@@ -1,20 +1,11 @@
 ---
 title: Leap Year Rules
 date: 2020-04-15T12:00Z
+update: 2026-04-05T10:43Z
 layout: post
 tags:
   - datetime
-categories:
   - programming
-excerpt: >-
-  According to the The Astronomical Almanac, a tropical year comprises a
-  complete cycle of seasons and is approximately 365 days, 5 hours, 48 minutes,
-  45 seconds, or 365.242188 days.
-
-  Such a complete cycle of seasons could be measured as one solstice or equinox
-  to the next corresponding solstice or equinox. The length of a tropical year,
-  however, is not constant. For instance, the length of tropical years as
-  measured from one March equinox to the next can vary up to 30 minutes.
 redirect: /blog/2020/04/leap-year-rules/
 ---
 According to the [The Astronomical Almanac](https://aa.usno.navy.mil/faq/asa_glossary#year,-tropical),
@@ -59,3 +50,7 @@ pub fn is_leap_year(year: u64) -> bool {
 ```
 
 By first checking for the divisibily by 4 means that, on average, 75% of the tested years will resolve to `false` without having to check for divisibily by 100 or 400 (assuming [short-circuit evaluation](https://en.wikipedia.org/wiki/Short-circuit_evaluation)).
+
+See also [A leap year check in three instructions](https://hueffner.de/falk/blog/a-leap-year-check-in-three-instructions.html)
+for optimizing the leap year check.
+ 
