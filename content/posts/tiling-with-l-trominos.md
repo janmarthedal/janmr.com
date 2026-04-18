@@ -5,13 +5,7 @@ layout: post
 tags:
   - polyomino
   - tiling
-categories:
-  - mathematics
-excerpt: >-
-  An L-tromino is a figure in the plane made of three equal-sized squares
-  connected in an L-shape. Consider now the following question: Given a 2^n x
-  2^n square grid with exactly one cell occupied, is it possible to tile the
-  remaining area using L-trominos?
+mastodon: https://mathstodon.xyz/@janmr/116426029402321010
 redirect: /blog/2016/01/tiling-with-l-trominos/
 ---
 An L-tromino is a figure in the plane made of three equal-sized squares connected in an L-shape:
