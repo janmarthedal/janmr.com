@@ -6,19 +6,7 @@ tags:
   - arithmetic
   - algorithms
   - fractions
-categories:
-  - programming
-excerpt: >-
-  Say you want to know if the inequality n_1/d_1 < n_2/d_2 is true (n_1, n_2,
-  d_1, d_2 are all assumed to be positive integers). Of course, one could just
-  multiply both sides with d_1 d_2, obtaining the equivalent n_1 d_2 < n_2 d_1,
-  and we were done. But if our number representation allowed only numbers up to
-  a certain size, say 32 bit unsigned integers, the multiplication could
-  overflow. Of course, double-precision could be used to do the multiplication
-  anyway, but this post will present a different method. The method effectively
-  computes the continued fraction representation of each fraction
-  simultaneously, but stops as soon as they differ. It is also the algorithm
-  used for comparisons in the Boost C++ library Rational.
+mastodon: https://mathstodon.xyz/@janmr/116346938302091778
 redirect: /blog/2014/05/comparing-rational-numbers-without-overflow/
 ---
 Say you want to know if the inequality
