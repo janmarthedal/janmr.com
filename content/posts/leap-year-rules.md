@@ -6,6 +6,7 @@ layout: post
 tags:
   - datetime
   - programming
+mastodon: https://mathstodon.xyz/@janmr/116487339981087552
 redirect: /blog/2020/04/leap-year-rules/
 ---
 According to the [The Astronomical Almanac](https://aa.usno.navy.mil/faq/asa_glossary#year,-tropical),
