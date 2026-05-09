@@ -1,6 +1,7 @@
 ---
 title: Generating All Permutations
 date: 2020-06-14T12:00Z
+update: 2026-05-09T10:57Z
 layout: post
 tags:
   - combinatorics
@@ -8,17 +9,14 @@ tags:
   - algorithms
   - python
   - rust
-excerpt: >-
-  Python and Rust library routines for generating all permutations of a list of
-  objects is mentioned, as well as an algorithm for lexicographic r-permutation
-  generation (in both pseudo and Rust code)
+mastodon: https://mathstodon.xyz/@janmr/116544024304151233
 redirect: /blog/2020/06/generating-all-permutations/
 ---
 Sometimes you would like to loop through all the different arrangements/permutations of a list of objects. For instance, all permutations of {A, B, C, D} are
 
 > ABCD, ABDC, ACBD, ACDB, ADBC, ADCB, BACD, BADC, BCAD, BCDA, BDAC, BDCA, CABD, CADB, CBAD, CBDA, CDAB, CDBA, DABC, DACB, DBAC, DBCA, DCAB, DCBA
 
-(There are $n!$ such permutations of an $n$-element set.) These permutations were furthermore listed in [lexicographical order](https://en.wikipedia.org/wiki/Lexicographical_order). This is what Python's [itertools.permutations](https://docs.python.org/3/library/itertools.html#itertools.permutations) iterator produces. The documentation also lists Python code that produces output equal to what the library code does.
+(There are $n!$ such permutations of an $n$-element set.) These permutations were furthermore listed in [lexicographical order](https://en.wikipedia.org/wiki/Lexicographical_order). This is what Python's [itertools.permutations](https://docs.python.org/3/library/itertools.html#itertools.permutations) iterator produces. The documentation furthermore lists Python code that produces output equal to what the library code does.
 
 The Python iterator also makes it possible to generate all *r*-permutations of an *n*-element set ($0 \leq r \leq n$). For instance, all 2-permutations of {A, B, C, D} are
 
@@ -26,7 +24,7 @@ The Python iterator also makes it possible to generate all *r*-permutations of a
 
 (There are $n!/(n - r)!$ such *r*-permutations of an *n*-element set.)
 
-The Rust crate [itertools](https://crates.io/crates/itertools) has a similar method [permutations](https://docs.rs/itertools/0.9.0/itertools/trait.Itertools.html#method.permutations) that produces *r*-permutations.
+The Rust crate [itertools](https://crates.io/crates/itertools) has a similar method [permutations](https://docs.rs/itertools/0.14.0/itertools/trait.Itertools.html#method.permutations) that produces *r*-permutations.
 
 Common for the underlying methods above is that they are basically rearranging indices, without taking the actual list elements into account. For instance, the permutations of {1, 2, 2, 3} (a [multiset](https://en.wikipedia.org/wiki/Multiset)) become
 
