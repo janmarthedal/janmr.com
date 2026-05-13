@@ -9,4 +9,5 @@ Perhaps useful for others.
 - [CLI Tools](tools/cli/)
 - [Links](links/)
 - [People](people/)
+- [Unicode](unicode/)
 - [Web Tools](tools/web/)
