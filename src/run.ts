@@ -62,6 +62,21 @@ const enum PageType {
     Other,
 }
 
+interface UnicodeCharData {
+    name: string;
+    latex?: string;
+    html?: string;
+    mathml?: string;
+}
+
+let unicodeDataCache: Record<string, UnicodeCharData> | null = null;
+
+function getUnicodeData(): Record<string, UnicodeCharData> {
+    if (!unicodeDataCache)
+        unicodeDataCache = JSON.parse(readFileSync("data/unicode-data.json", "utf8"));
+    return unicodeDataCache!;
+}
+
 interface OpenGraph {
     type: string;
     title?: string;
@@ -409,6 +424,21 @@ function decorateNotes(pages: Array<Page>) {
     }
 }
 
+function decorateUnicodeBlockPages(pages: Array<Page>) {
+    const all = getUnicodeData();
+    for (const page of pages) {
+        if (page.data.layout === "unicode-block") {
+            const start = page.data.start as number;
+            const end = page.data.end as number;
+            const slice: Record<number, UnicodeCharData> = {};
+            for (let cp = start; cp <= end; cp++) {
+                if (all[String(cp)]) slice[cp] = all[String(cp)];
+            }
+            page.data.charDataJson = JSON.stringify(slice);
+        }
+    }
+}
+
 function extractPage(pages: Array<Page>, url: string): Page {
     const index = pages.findIndex((p) => p.url === url);
     if (index === -1) {
@@ -448,6 +478,7 @@ async function run() {
     processMarkdown(pages);
     decorateUpdates(updates);
     decorateNotes(notes);
+    decorateUnicodeBlockPages(pages);
     processPagination(publishPages, collections);
     processNunjucks(publishPages, collections);
     renderPages(publishPages);

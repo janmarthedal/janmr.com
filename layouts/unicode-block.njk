@@ -6,6 +6,7 @@
   display: flex;
   flex-wrap: wrap;
   gap: 4px;
+  margin-bottom: 1em;
 }
 .unicode-cell {
   width: 4em;
@@ -23,8 +24,9 @@
 .unicode-cell:hover {
   background: #e8e8e8;
 }
-.unicode-cell.copied {
-  background: #c8e6c9;
+.unicode-cell.active {
+  background: #d0e8ff;
+  border-color: #888;
 }
 .unicode-char {
   font-size: 1.8em;
@@ -34,36 +36,146 @@
   font-size: 0.6em;
   color: #888;
 }
+.unicode-detail {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #fff;
+  border-top: 2px solid #ccc;
+  padding: 0.8em 1.5em;
+  display: none;
+  gap: 1em;
+  align-items: center;
+  flex-wrap: wrap;
+  box-shadow: 0 -2px 8px rgba(0,0,0,0.1);
+  z-index: 100;
+}
+.unicode-detail.visible {
+  display: flex;
+}
+.unicode-detail-char {
+  font-size: 3em;
+  font-family: monospace;
+  min-width: 1.2em;
+  text-align: center;
+  line-height: 1;
+}
+.unicode-detail-fields {
+  flex: 1;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 0.15em 0.8em;
+  font-size: 0.9em;
+  font-family: monospace;
+}
+.unicode-detail-label {
+  color: #888;
+  text-align: right;
+  white-space: nowrap;
+  font-family: sans-serif;
+}
+.unicode-detail-copy {
+  cursor: pointer;
+}
 </style>
 {% endblock %}
 {% block pagecontent %}
 <p><a href="{{ data.blockUrl }}">Unicode Block: {{ data.blockName }}</a></p>
 <div id="unicode-grid" class="unicode-grid"></div>
+<div id="unicode-detail" class="unicode-detail">
+  <div class="unicode-detail-char" id="detail-char"></div>
+  <div class="unicode-detail-fields" id="detail-fields"></div>
+  <button class="unicode-detail-copy" id="detail-copy">Copy</button>
+</div>
 {% endblock %}
 {% block bodyend %}
 {{ super() }}
 <script>
 (function () {
+  var charData = {{ data.charDataJson | safe }};
   var grid = document.getElementById('unicode-grid');
+  var detail = document.getElementById('unicode-detail');
+  var detailChar = document.getElementById('detail-char');
+  var detailFields = document.getElementById('detail-fields');
+  var detailCopy = document.getElementById('detail-copy');
+  var activeCell = null;
+  var activeChar = null;
+
   for (var cp = {{ data.start }}; cp <= {{ data.end }}; cp++) {
     var ch = String.fromCodePoint(cp);
     var code = 'U+' + cp.toString(16).toUpperCase().padStart(4, '0');
     var cell = document.createElement('div');
     cell.className = 'unicode-cell';
-    cell.title = code;
+    cell.title = code + (charData[cp] ? '\n' + charData[cp].name : '');
     cell.innerHTML =
       '<span class="unicode-char">' + ch + '</span>' +
       '<span class="unicode-code">' + code + '</span>';
-    cell.addEventListener('click', (function (c, el) {
-      return function () {
-        navigator.clipboard.writeText(c).then(function () {
-          el.classList.add('copied');
-          setTimeout(function () { el.classList.remove('copied'); }, 600);
-        });
+    cell.addEventListener('click', (function (c, code, el) {
+      return function (e) {
+        e.stopPropagation();
+        if (activeCell) activeCell.classList.remove('active');
+        activeCell = el;
+        activeChar = c;
+        el.classList.add('active');
+        showDetail(c, code);
       };
-    })(ch, cell));
+    })(ch, code, cell));
     grid.appendChild(cell);
   }
+
+  function showDetail(ch, code) {
+    var info = charData[ch.codePointAt(0)] || {};
+    detailChar.textContent = ch;
+    detailFields.innerHTML = '';
+    var rows = [
+      ['Code point', code],
+      ['Name', info.name],
+      ['LaTeX', info.latex],
+      ['HTML', info.html],
+      ['MathML', info.mathml]
+    ];
+    rows.forEach(function (row) {
+      if (!row[1]) return;
+      var label = document.createElement('span');
+      label.className = 'unicode-detail-label';
+      label.textContent = row[0];
+      var value = document.createElement('span');
+      value.textContent = row[1];
+      detailFields.appendChild(label);
+      detailFields.appendChild(value);
+    });
+    detail.classList.add('visible');
+  }
+
+  detailCopy.addEventListener('click', function () {
+    if (!activeChar) return;
+    navigator.clipboard.writeText(activeChar).then(function () {
+      var orig = detailCopy.textContent;
+      detailCopy.textContent = 'Copied!';
+      setTimeout(function () { detailCopy.textContent = orig; }, 800);
+    });
+  });
+
+  document.addEventListener('click', function () {
+    detail.classList.remove('visible');
+    if (activeCell) activeCell.classList.remove('active');
+    activeCell = null;
+    activeChar = null;
+  });
+
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') {
+      detail.classList.remove('visible');
+      if (activeCell) activeCell.classList.remove('active');
+      activeCell = null;
+      activeChar = null;
+    }
+  });
+
+  detail.addEventListener('click', function (e) {
+    e.stopPropagation();
+  });
 }());
 </script>
 {% endblock %}
