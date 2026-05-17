@@ -8,4 +8,4 @@ tags:
   - multiple-precision
   - bit-fiddling
 ---
-The nth Bit of a Negative Number http://janmr.com/posts/nth-bit-of-negative-number/ #multipleprecision #bitfiddling
+The nth Bit of a Negative Number http://janmr.com/posts/nth-bit-of-negative-number/
