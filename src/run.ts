@@ -424,17 +424,27 @@ function decorateNotes(pages: Array<Page>) {
     }
 }
 
-function decorateUnicodeBlockPages(pages: Array<Page>) {
+interface UnicodeBlockDef {
+    name: string;
+    url: string;
+    start: number;
+    end: number;
+}
+
+function decorateUnicodePage(pages: Array<Page>) {
     const all = getUnicodeData();
     for (const page of pages) {
-        if (page.data.layout === "unicode-block") {
-            const start = page.data.start as number;
-            const end = page.data.end as number;
-            const slice: Record<number, UnicodeCharData> = {};
-            for (let cp = start; cp <= end; cp++) {
-                if (all[String(cp)]) slice[cp] = all[String(cp)];
-            }
-            page.data.charDataJson = JSON.stringify(slice);
+        if (page.data.blocks) {
+            const blockDefs = page.data.blocks as UnicodeBlockDef[];
+            const blocks = blockDefs.map((def) => {
+                const chars: Record<string, UnicodeCharData> = {};
+                for (let cp = def.start; cp <= def.end; cp++) {
+                    const key = String(cp);
+                    if (all[key]) chars[key] = all[key];
+                }
+                return { name: def.name, url: def.url, start: def.start, end: def.end, chars };
+            });
+            page.data.blocksJson = JSON.stringify(blocks);
         }
     }
 }
@@ -478,7 +488,7 @@ async function run() {
     processMarkdown(pages);
     decorateUpdates(updates);
     decorateNotes(notes);
-    decorateUnicodeBlockPages(pages);
+    decorateUnicodePage(pages);
     processPagination(publishPages, collections);
     processNunjucks(publishPages, collections);
     renderPages(publishPages);

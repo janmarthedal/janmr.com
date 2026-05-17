@@ -1,6 +1,28 @@
-{% extends "page.njk" %}
-{% block head %}
-{{ super() }}
+---
+title: Unicode
+layout: page
+blocks:
+  - name: Greek And Coptic
+    url: https://util.unicode.org/UnicodeJsps/list-unicodeset.jsp?a=%5Cp%7BBlock=Greek%20And%20Coptic%7D
+    start: 0x0370
+    end: 0x03FF
+  - name: Mathematical Operators
+    url: https://util.unicode.org/UnicodeJsps/list-unicodeset.jsp?a=%5Cp%7BBlock=Mathematical%20Operators%7D
+    start: 0x2200
+    end: 0x22FF
+  - name: Box Drawing
+    url: https://util.unicode.org/UnicodeJsps/list-unicodeset.jsp?a=%5Cp%7BBlock=Box%20Drawing%7D
+    start: 0x2500
+    end: 0x257F
+  - name: Block Elements
+    url: https://util.unicode.org/UnicodeJsps/list-unicodeset.jsp?a=%5Cp%7BBlock=Block%20Elements%7D
+    start: 0x2580
+    end: 0x259F
+  - name: Geometric Shapes
+    url: https://util.unicode.org/UnicodeJsps/list-unicodeset.jsp?a=%5Cp%7BBlock=Geometric%20Shapes%7D
+    start: 0x25A0
+    end: 0x25FF
+---
 <style>
 .unicode-grid {
   display: flex;
@@ -79,21 +101,26 @@
   cursor: pointer;
 }
 </style>
-{% endblock %}
-{% block pagecontent %}
-<p><a href="{{ data.blockUrl }}">Unicode Block: {{ data.blockName }}</a></p>
+<p>
+  <label for="block-select">Block:</label>
+  <select id="block-select">
+    {% for block in data.blocks %}
+    <option value="{{ loop.index0 }}">{{ block.name }}</option>
+    {% endfor %}
+  </select>
+  <a id="block-link" href="{{ data.blocks[0].url }}" target="_blank">Unicode reference</a>
+</p>
 <div id="unicode-grid" class="unicode-grid"></div>
 <div id="unicode-detail" class="unicode-detail">
   <div class="unicode-detail-char" id="detail-char"></div>
   <div class="unicode-detail-fields" id="detail-fields"></div>
   <button class="unicode-detail-copy" id="detail-copy">Copy</button>
 </div>
-{% endblock %}
-{% block bodyend %}
-{{ super() }}
 <script>
 (function () {
-  var charData = {{ data.charDataJson | safe }};
+  var blocks = {{ data.blocksJson | safe }};
+  var select = document.getElementById('block-select');
+  var blockLink = document.getElementById('block-link');
   var grid = document.getElementById('unicode-grid');
   var detail = document.getElementById('unicode-detail');
   var detailChar = document.getElementById('detail-char');
@@ -102,30 +129,40 @@
   var activeCell = null;
   var activeChar = null;
 
-  for (var cp = {{ data.start }}; cp <= {{ data.end }}; cp++) {
-    var ch = String.fromCodePoint(cp);
-    var code = 'U+' + cp.toString(16).toUpperCase().padStart(4, '0');
-    var cell = document.createElement('div');
-    cell.className = 'unicode-cell';
-    cell.title = code + (charData[cp] ? '\n' + charData[cp].name : '');
-    cell.innerHTML =
-      '<span class="unicode-char">' + ch + '</span>' +
-      '<span class="unicode-code">' + code + '</span>';
-    cell.addEventListener('click', (function (c, code, el) {
-      return function (e) {
-        e.stopPropagation();
-        if (activeCell) activeCell.classList.remove('active');
-        activeCell = el;
-        activeChar = c;
-        el.classList.add('active');
-        showDetail(c, code);
-      };
-    })(ch, code, cell));
-    grid.appendChild(cell);
+  function renderGrid(blockIndex) {
+    var block = blocks[blockIndex];
+    grid.innerHTML = '';
+    detail.classList.remove('visible');
+    if (activeCell) activeCell.classList.remove('active');
+    activeCell = null;
+    activeChar = null;
+    blockLink.href = block.url;
+    for (var cp = block.start; cp <= block.end; cp++) {
+      var ch = String.fromCodePoint(cp);
+      var code = 'U+' + cp.toString(16).toUpperCase().padStart(4, '0');
+      var info = block.chars[String(cp)];
+      var cell = document.createElement('div');
+      cell.className = 'unicode-cell';
+      cell.title = code + (info ? '\n' + info.name : '');
+      cell.innerHTML =
+        '<span class="unicode-char">' + ch + '</span>' +
+        '<span class="unicode-code">' + code + '</span>';
+      cell.addEventListener('click', (function (c, code, el, chars) {
+        return function (e) {
+          e.stopPropagation();
+          if (activeCell) activeCell.classList.remove('active');
+          activeCell = el;
+          activeChar = c;
+          el.classList.add('active');
+          showDetail(c, code, chars);
+        };
+      })(ch, code, cell, block.chars));
+      grid.appendChild(cell);
+    }
   }
 
-  function showDetail(ch, code) {
-    var info = charData[ch.codePointAt(0)] || {};
+  function showDetail(ch, code, chars) {
+    var info = chars[String(ch.codePointAt(0))] || {};
     detailChar.textContent = ch;
     detailFields.innerHTML = '';
     var rows = [
@@ -147,6 +184,10 @@
     });
     detail.classList.add('visible');
   }
+
+  select.addEventListener('change', function () {
+    renderGrid(parseInt(select.value, 10));
+  });
 
   detailCopy.addEventListener('click', function () {
     if (!activeChar) return;
@@ -176,6 +217,7 @@
   detail.addEventListener('click', function (e) {
     e.stopPropagation();
   });
+
+  renderGrid(0);
 }());
 </script>
-{% endblock %}
