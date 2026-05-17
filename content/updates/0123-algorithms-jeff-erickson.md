@@ -1,5 +1,5 @@
 ---
-date: 2026-10-10T14:01Z
+date: 2026-05-10T14:01Z
 crossPosting:
   bluesky: https://bsky.app/profile/janmr.com/post/3mliswzx7xc2n
   mastodon: https://mathstodon.xyz/@janmr/116550408543681999
