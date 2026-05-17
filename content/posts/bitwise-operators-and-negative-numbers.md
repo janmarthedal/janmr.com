@@ -3,17 +3,9 @@ title: Bitwise Operators and Negative Numbers
 date: 2010-07-24T12:00Z
 layout: post
 tags:
-  - multiple-precision
   - numbers-project
+  - multiple-precision
   - bit-fiddling
-categories:
-  - mathematics
-excerpt: >-
-  When representing integers using a fixed number of bits, negative numbers are
-  typically represented using two's complement. If using n bit numbers, the
-  two's complement of a number x with 0 <= x < 2^n is (-x) mod 2^n = 2^n - x.
-  But what do you do if you want to work with unbounded/multiple-precision
-  integers? [...]
 redirect: /blog/2010/07/bitwise-operators-and-negative-numbers/
 mastodon: https://mathstodon.xyz/@janmr/115718460167124599
 ---
