@@ -31,5 +31,5 @@ layout: page
 * [Math videos from Math Professor Jeffrey Chasnov](https://www.youtube.com/@Jeff-math/playlists).
   YouTube playlists. Seven of the playlists are videos from his Coursera courses.
 * MIT's [Mathematics for Computer Science](https://www.youtube.com/playlist?list=PLUl4u3cNGP61VNvICqk2HXJTonnKgAc9d)
-* Stanford's [The Fourier Transform and Its Applications](https://see.stanford.edu/course/ee261).
-  Videos, problem sets & more.
+* [Stanford Engineering Everywhere](https://see.stanford.edu).
+  Full lecture videos, syllabi, homework, and exams for courses spanning introductory computer science, artificial intelligence, linear systems & optimization, and logic.
