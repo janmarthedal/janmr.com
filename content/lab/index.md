@@ -33,6 +33,9 @@ layout: page
   The method used is described in the blog post [A Simple Sudoku Solver](/posts/a-simple-sudoku-solver/).
 
 ### Tools
+- [Count](/lab/count/).
+  A set of named counters with plus/minus buttons. Add, rename, and remove
+  counters; your configuration is saved in your browser.
 - [Time Calculator](/lab/time/).
   A tool that can convert between timezones and convert to/from
   [Unix time](https://en.wikipedia.org/wiki/Unix_time).

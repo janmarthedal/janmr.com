@@ -1,0 +1,108 @@
+---
+title: Count
+date: 2026-05-30
+---
+{% extends "base.njk" %}
+{% block head %}
+<style>
+body {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  line-height: 1.43;
+  color: #333;
+  background-color: #fff;
+  margin: 0;
+}
+main {
+  max-width: 40em;
+  margin: 0 auto;
+  padding: 1em;
+}
+h1 {
+  font-size: 2em;
+  font-weight: 500;
+  line-height: 1.1;
+  margin-top: 0;
+}
+#counters {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+  margin: 1em 0;
+}
+.counter {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+  padding: 0.5em;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+.counter-name {
+  flex: 1;
+  min-width: 0;
+  font-size: 1em;
+  padding: 0.3em 0.4em;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+.counter-value {
+  min-width: 2.5em;
+  text-align: center;
+  font-size: 1.2em;
+  font-variant-numeric: tabular-nums;
+}
+.btn {
+  font-size: 1em;
+  line-height: 1;
+  padding: 0.4em 0.7em;
+  background-color: #337ab7;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.btn:hover {
+  background-color: #286090;
+}
+.btn-step {
+  min-width: 2.4em;
+}
+.btn-remove {
+  background-color: #c9302c;
+}
+.btn-remove:hover {
+  background-color: #a02622;
+}
+#add-counter {
+  font-size: 1em;
+  padding: 0.4em 0.9em;
+  background-color: #5cb85c;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+#add-counter:hover {
+  background-color: #449d44;
+}
+#empty {
+  color: #888;
+  font-style: italic;
+}
+</style>
+{% endblock %}
+{% block content %}
+<main>
+  <p style="margin-bottom: 0.3em; font-size: 0.9em;"><a href="/lab/">&larr; The lab</a></p>
+  <h1>Count</h1>
+  <p>A simple set of named counters. Add as many as you like, rename them, and
+  count up or down. Your counters are saved in your browser and will still be
+  here when you return.</p>
+  <div id="counters"></div>
+  <button id="add-counter">+ Add counter</button>
+</main>
+{% endblock %}
+{% block bodyend %}
+<script src="count.js"></script>
+{{ super() }}
+{% endblock %}
