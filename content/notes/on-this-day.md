@@ -16,7 +16,7 @@ layout: page
 - *1974-05-05* [GCal]. The paper A Protocol for Packet Network Intercommunication by Vinton G. Cerf and Robert E. Kahn was published
 - *1997-05-11* [GCal]. Deep Blue defeats Garry Kasparov. https://www.ibm.com/history/deep-blue
 - *2015-05-15* [GCal]. The first stable release of Rust, version 1.0, is released. https://blog.rust-lang.org/2015/05/15/Rust-1.0/
-- *1977-05-31* [GCal]. (Day of month unknown.) The paper A universal algorithm for sequential data compression was published. https://ieeexplore.ieee.org/document/1055714 https://www.semanticscholar.org/paper/A-universal-algorithm-for-sequential-data-Ziv-Lempel/59c9f2036e673d8bc9713eed851d12c6c9fe53cb
+- *1977-05-31* [GCal]. (Day of month unknown.) The paper A universal algorithm for sequential data compression was published. https://ieeexplore.ieee.org/document/1055714 https://courses.cs.duke.edu/spring03/cps296.5/papers/ziv_lempel_1977_universal_algorithm.pdf
 - *2017-06-12* [GCal]. The paper Attention is All You Need is published. https://arxiv.org/abs/1706.03762
 - *1948-07-15* [GCal]. (Day of month unknown.) A Mathematical Theory of Communication by C. E. Shannon
 - *2001-08-19* [GCal]. SciPy 0.1 is released. https://mail.python.org/pipermail/python-list/2001-August/106419.html https://web.archive.org/web/20010309040805/http://scipy.org:80/ https://arxiv.org/abs/1907.10121 https://www.nature.com/articles/s41592-019-0686-2
