@@ -1,5 +1,5 @@
 ---
-title: Popular Mathematics
+title: Popular Mathematics and Computer Science
 layout: page
 ---
 ## Math Documentaries
