@@ -23,3 +23,7 @@ layout: page
 * [M.C. Escher: Journey into Infinity](https://www.youtube.com/watch?v=fcDFJrhfyJk)
 * [The Colours of Infinity](https://www.youtube.com/watch?v=CYrvSGTzUQE)
 * [N Is a Number: A Portrait of Paul Erdős](https://www.youtube.com/watch?v=EGc6rE24YSw)
+
+## Computer Science Documentaries
+
+* [The Story of C++: The World's Most Consequential Programming Language](https://www.youtube.com/watch?v=lI7tMxzSJ7w)
