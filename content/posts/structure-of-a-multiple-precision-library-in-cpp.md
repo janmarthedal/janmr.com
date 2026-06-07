@@ -7,7 +7,6 @@ tags:
   - algorithms
   - multiple-precision
   - cpp
-categories:
   - programming
 excerpt: >-
   This post will present an overview of the implementation of Kanooth Numbers, a

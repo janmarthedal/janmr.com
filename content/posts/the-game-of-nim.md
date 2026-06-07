@@ -5,7 +5,6 @@ layout: post
 tags:
   - combinatorial-game
   - game-theory
-categories:
   - mathematics
 excerpt: >-
   I have known the game of Nim for many years. Once, a friend of mine beat me

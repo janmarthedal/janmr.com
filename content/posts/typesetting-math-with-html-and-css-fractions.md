@@ -4,7 +4,6 @@ date: 2015-01-24T12:00Z
 layout: post
 tags:
   - math-typesetting
-categories:
   - programming
 excerpt: >-
   Currently, there is no best way of showing math on the web. An HTML5 standard

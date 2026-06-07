@@ -5,7 +5,6 @@ layout: post
 tags:
   - book-review
   - recommended-reading
-categories:
   - book-review
 excerpt: >-
   'The Book of Numbers' is a wonderful book about, well, numbers. And lots of

@@ -5,7 +5,6 @@ layout: post
 tags:
   - nerd-sniping
   - inequality
-categories:
   - mathematics
 excerpt: >-
   Which quantity is larger, a^b or b^a, for positive numbers a and b? As it

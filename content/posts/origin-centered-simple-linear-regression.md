@@ -3,8 +3,7 @@ title: Origin-Centered Simple Linear Regression
 date: 2023-12-18T12:00Z
 layout: post
 tags:
-  - machine-learning
-categories:
+  - machinelearning
   - mathematics
 excerpt: >-
   Let us consider the task of finding the line that best fits a set of points in

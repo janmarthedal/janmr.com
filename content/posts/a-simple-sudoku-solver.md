@@ -6,7 +6,6 @@ layout: post
 tags:
   - rust
   - combinatorics
-categories:
   - programming
 mastodon: https://mathstodon.xyz/@janmr/115911074385706191
 excerpt: >-

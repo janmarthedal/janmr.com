@@ -4,8 +4,7 @@ date: 2023-01-17T12:00Z
 layout: post
 tags:
   - neural-network
-categories:
-  - machine-learning
+  - machinelearning
 excerpt: >-
   We introduce an error function to minimize in order to fit a training set as
   best as possible.

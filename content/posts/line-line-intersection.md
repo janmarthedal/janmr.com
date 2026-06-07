@@ -5,7 +5,6 @@ layout: post
 tags:
   - geometry
   - lines
-categories:
   - mathematics
 excerpt: >-
   How do you calculate the point where two lines in the plane intersect? It is

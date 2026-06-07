@@ -4,7 +4,6 @@ date: 2014-06-14T12:00Z
 layout: post
 tags:
   - pyramidal-numbers
-categories:
   - mathematics
 excerpt: >-
   The sum of the first n squares is s_n = 1/6 n (n+1) (2n+1). The numbers s_0,

@@ -4,7 +4,6 @@ date: 2015-04-26T12:00Z
 layout: post
 tags:
   - web-development
-categories:
   - development
 excerpt: >-
   I was recently introduced to the so-called RAIL principle in the Udacity MOOC

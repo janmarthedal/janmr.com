@@ -4,8 +4,7 @@ date: 2023-01-16T12:00Z
 layout: post
 tags:
   - neural-network
-categories:
-  - machine-learning
+  - machinelearning
 excerpt: >-
   We look at vectorizing the evaluation of a neural network when we have
   multiple inputs.

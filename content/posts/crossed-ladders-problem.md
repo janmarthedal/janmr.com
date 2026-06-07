@@ -5,7 +5,6 @@ layout: post
 tags:
   - geometry
   - nerd-sniping
-categories:
   - mathematics
 excerpt: >-
   I was recently reminded of the crossed ladders problem. The following simple

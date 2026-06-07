@@ -6,7 +6,6 @@ tags:
   - algorithms
   - numbers-project
   - binary-numbers
-categories:
   - programming
 excerpt: >-
   The binary logarithm, or the logarithm to the base 2, of a number x > 0 is the

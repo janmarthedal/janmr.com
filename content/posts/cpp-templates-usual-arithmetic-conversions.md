@@ -6,7 +6,6 @@ tags:
   - cpp
   - templates
   - data-types
-categories:
   - programming
 excerpt: >-
   If you add a short int and a char in C++, what is the resulting type? What if

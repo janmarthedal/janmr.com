@@ -5,7 +5,6 @@ layout: post
 tags:
   - continued-fraction
   - stern-brocot-tree
-categories:
   - mathematics
 excerpt: >-
   Consider two fractions m_1/n_1 and m_2/n_2 with positive numerators and

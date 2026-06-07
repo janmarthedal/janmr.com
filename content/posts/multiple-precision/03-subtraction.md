@@ -7,7 +7,6 @@ tags:
   - algorithms
   - multiple-precision
   - numbers-project
-categories:
   - programming
 mastodon: https://mathstodon.xyz/@janmr/115888234592112995
 og:

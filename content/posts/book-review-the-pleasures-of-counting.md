@@ -5,7 +5,6 @@ layout: post
 tags:
   - book-review
   - recommended-reading
-categories:
   - book-review
 excerpt: >-
   The Pleasures of Counting is a book about people working with mathematics and

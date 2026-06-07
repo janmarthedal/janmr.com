@@ -6,7 +6,6 @@ tags:
   - arithmetic
   - geometry
   - visualization
-categories:
   - mathematics
 excerpt: >-
   Today real numbers are most often represented by applying (elementary)

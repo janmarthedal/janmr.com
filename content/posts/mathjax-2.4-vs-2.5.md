@@ -4,7 +4,6 @@ date: 2015-03-08T12:00Z
 layout: post
 tags:
   - mathjax
-categories:
   - programming
 excerpt: >-
   MathJax version 2.5 was released around a month ago. One of that version's

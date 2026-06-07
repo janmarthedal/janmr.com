@@ -5,7 +5,6 @@ layout: post
 tags:
   - computer-science
   - rust
-categories:
   - programming
 excerpt: >-
   At our house we have a game called Brain Breaker. To play the game one person

@@ -6,7 +6,6 @@ tags:
   - laplace-matrix
   - numpy
   - scipy
-categories:
   - numerical-analysis
 excerpt: >-
   Let us consider the matrix representation of the Laplace operator in one

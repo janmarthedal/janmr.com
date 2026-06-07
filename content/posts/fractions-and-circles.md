@@ -5,7 +5,6 @@ layout: post
 tags:
   - stern-brocot-tree
   - fractions
-categories:
   - mathematics
 excerpt: >-
   Fractions produced by mediants have some very interesting properties. We saw

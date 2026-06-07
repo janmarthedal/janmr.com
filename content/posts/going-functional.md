@@ -4,7 +4,6 @@ date: 2011-05-31T12:00Z
 layout: post
 tags:
   - functional-programming
-categories:
   - programming
 excerpt: >-
   Imperative programming languages--such as C++, Java, Perl and assembly are by

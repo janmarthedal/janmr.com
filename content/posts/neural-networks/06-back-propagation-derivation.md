@@ -4,8 +4,7 @@ date: 2023-01-19T12:00Z
 layout: post
 tags:
   - neural-network
-categories:
-  - machine-learning
+  - machinelearning
 excerpt: We show how to compute the gradient of a neural network error function.
 redirect: /blog/2023/01/neural-networks-06-back-propagation-derivation/
 ---

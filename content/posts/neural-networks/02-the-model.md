@@ -3,9 +3,8 @@ title: Neural Networks - The Model
 date: 2023-01-15T12:00Z
 layout: post
 tags:
-  - neural-network
-categories:
-  - machine-learning
+  - neuralnetworks
+  - machinelearning
 excerpt: We define the neural network that we will be exploring in the following posts.
 redirect: /blog/2023/01/neural-networks-02-the-model/
 ---

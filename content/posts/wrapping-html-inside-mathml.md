@@ -4,7 +4,6 @@ date: 2017-02-23T12:00Z
 layout: post
 tags:
   - mathml
-categories:
   - web-math
 excerpt: >-
   MathML is a mathematical markup language that can be used to integrate math

@@ -6,7 +6,6 @@ tags:
   - laplace-operator
   - finite-differences
   - scipy
-categories:
   - numerical-analysis
 excerpt: >-
   Let us consider the wave equation on the unit square and how to solve it

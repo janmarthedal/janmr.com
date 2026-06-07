@@ -5,7 +5,6 @@ layout: post
 tags:
   - catalan-numbers
   - knuth
-categories:
   - mathematics
 excerpt: >-
   [...] where did that pi come from? What do trees have to do with pi? That was

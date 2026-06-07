@@ -8,7 +8,6 @@ tags:
   - cpp
   - multiple-precision
   - numbers-project
-categories:
   - programming
 excerpt: >-
   This article is a follow-up to part 1 where multiple-precision addition,

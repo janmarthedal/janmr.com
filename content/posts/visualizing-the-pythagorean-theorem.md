@@ -7,7 +7,6 @@ tags:
   - proof
   - pythagoras
   - visualization
-categories:
   - mathematics
 excerpt: >-
   Most people are familiar with the Pythagorean theorem: In a right-angled

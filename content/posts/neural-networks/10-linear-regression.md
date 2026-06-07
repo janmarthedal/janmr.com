@@ -4,8 +4,7 @@ date: 2023-12-21T12:00Z
 layout: post
 tags:
   - neural-network
-categories:
-  - machine-learning
+  - machinelearning
 excerpt: >-
   Looking at the basic model for a neural network, it is natural to consider:
   What is the simplest possible neural network? And is such a network useful for

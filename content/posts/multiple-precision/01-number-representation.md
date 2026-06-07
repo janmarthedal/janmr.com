@@ -6,7 +6,6 @@ layout: post
 tags:
   - multiple-precision
   - numbers-project
-categories:
   - programming
 og:
   description: The basic representation of multiple-precision numbers, in preparation for the following posts

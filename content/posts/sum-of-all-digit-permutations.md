@@ -5,7 +5,6 @@ layout: post
 tags:
   - nerd-sniping
   - combinatorics
-categories:
   - mathematics
 excerpt: Finding the sum of all digit permutations
 redirect: /blog/2023/04/sum-of-all-digit-permutations/

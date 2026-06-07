@@ -4,8 +4,7 @@ date: 2023-01-22T12:00Z
 layout: post
 tags:
   - neural-network
-categories:
-  - machine-learning
+  - machinelearning
 excerpt: How to implement a simple neural network in Python/NumPy.
 redirect: /blog/2023/01/neural-networks-09-implementation/
 ---

@@ -5,7 +5,6 @@ layout: post
 tags:
   - kronecker-product
   - vec-operator
-categories:
   - numerical-analysis
 excerpt: Let us prove an identity involving the Kronecker product and the vec operator.
 redirect: /blog/2024/04/a-kronecker-product-and-vec-operator-identity/

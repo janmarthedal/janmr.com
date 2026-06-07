@@ -4,7 +4,6 @@ date: 2015-03-03T12:00Z
 layout: post
 tags:
   - mathjax
-categories:
   - programming
 excerpt: >-
   When MathJax typesets the equations on a web page, it does a good job of

@@ -5,7 +5,6 @@ layout: post
 tags:
   - laplace-operator
   - finite-differences
-categories:
   - numerical-analysis
 excerpt: >-
   Let us consider how to approximate the Laplace operator in one dimension. The

@@ -6,7 +6,6 @@ tags:
   - laplace-operator
   - finite-differences
   - scipy
-categories:
   - numerical-analysis
 excerpt: >-
   Let us now consider the discretization of the 2D Laplace operator using finite

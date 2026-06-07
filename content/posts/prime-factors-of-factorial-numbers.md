@@ -5,7 +5,6 @@ layout: post
 tags:
   - prime-numbers
   - factorials
-categories:
   - mathematics
 excerpt: >-
   Factorial numbers, n! = 1 * 2 * ... * n, grow very fast with n. In fact, n! ~

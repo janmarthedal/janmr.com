@@ -5,7 +5,6 @@ layout: post
 tags:
   - proof
   - infinite-series
-categories:
   - mathematics
 excerpt: >-
   Let us revisit the geometric progression sum considered in an earlier article,

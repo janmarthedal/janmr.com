@@ -3,8 +3,7 @@ title: No-Intercept Simple Linear Regression
 date: 2023-12-19T12:00Z
 layout: post
 tags:
-  - machine-learning
-categories:
+  - machinelearning
   - mathematics
 excerpt: >-
   The previous post considered the problem of finding the line that best fits a

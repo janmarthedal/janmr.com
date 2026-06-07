@@ -6,7 +6,6 @@ tags:
   - algorithms
   - cpp
   - continued-fraction
-categories:
   - programming
   - mathematics
 excerpt: 'We will be considering continued fractions of the form [...]'

@@ -7,7 +7,6 @@ tags:
   - algorithms
   - multiple-precision
   - numbers-project
-categories:
   - programming
 og:
   description: An algorithm for multiplying two multiple-precision numbers, using the basic O(n^2) algorithm

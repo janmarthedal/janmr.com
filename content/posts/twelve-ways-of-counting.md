@@ -4,7 +4,6 @@ date: 2008-12-26T12:00Z
 layout: post
 tags:
   - combinatorics
-categories:
   - mathematics
 excerpt: >-
   I have for a long time had an ambition of getting better at combinatorics,

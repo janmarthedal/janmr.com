@@ -5,7 +5,6 @@ layout: post
 tags:
   - combinatorics
   - ode
-categories:
   - mathematics
 mastodon: https://mathstodon.xyz/@janmr/115809266730138043
 excerpt: >-

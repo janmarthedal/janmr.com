@@ -5,7 +5,6 @@ layout: post
 tags:
   - web-components
   - web-development
-categories:
   - programming
 excerpt: >-
   I am very excited about Web Components. It is going to fundamentally change

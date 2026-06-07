@@ -7,7 +7,6 @@ tags:
   - algorithms
   - multiple-precision
   - numbers-project
-categories:
   - programming
 og:
   description: An algorithm for adding two multiple-precision numbers

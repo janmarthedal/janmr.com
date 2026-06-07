@@ -5,7 +5,6 @@ layout: post
 tags:
   - book-review
   - recommended-reading
-categories:
   - book-review
 excerpt: >-
   'Prime Obsession: Bernhard Riemann and the Greatest Unsolved Problem in

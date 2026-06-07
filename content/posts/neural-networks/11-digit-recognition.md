@@ -4,8 +4,7 @@ date: 2023-12-22T12:00Z
 layout: post
 tags:
   - neural-network
-categories:
-  - machine-learning
+  - machinelearning
 excerpt: >-
   This post will look at digit recognition using a neural network as described
   in earlier posts. We will use the MNIST dataset, which is a collection of

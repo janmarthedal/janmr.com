@@ -3,8 +3,7 @@ title: Simple Linear Regression
 date: 2023-12-20T12:00Z
 layout: post
 tags:
-  - machine-learning
-categories:
+  - machinelearning
   - mathematics
 excerpt: >-
   We now turn to the general case of fitting a line to a set of points in the

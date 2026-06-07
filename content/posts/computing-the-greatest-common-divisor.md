@@ -8,7 +8,6 @@ tags:
   - gcd
   - numbers-project
   - number-theory
-categories:
   - programming
 excerpt: >-
   The greatest common divisor of two integers is the largest positive integer

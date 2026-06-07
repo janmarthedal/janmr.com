@@ -3,10 +3,12 @@ title: Neural Networks - Preface
 date: 2023-01-14T12:00Z
 layout: post
 tags:
-  - neural-network
-categories:
-  - machine-learning
-excerpt: Kicking off a new blog series on Neural Networks
+  - neuralnetworks
+  - machinelearning
+  - numpy
+og:
+  description: Introducing a series of posts on the basics of Neural Networks
+  image: /media/og/neural-network-preface.png
 redirect: /blog/2023/01/neural-networks-01-preface/
 ---
 Neural Networks, or more correctly Artificial Neural Networks, have turned out to be

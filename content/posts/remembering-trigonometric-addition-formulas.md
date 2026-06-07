@@ -5,7 +5,6 @@ layout: post
 tags:
   - trigonometry
   - visualization
-categories:
   - mathematics
 excerpt: >-
   The addition formulas for sine and cosine look like this: [...] I can never

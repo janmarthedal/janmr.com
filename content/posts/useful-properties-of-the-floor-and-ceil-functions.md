@@ -6,7 +6,6 @@ tags:
   - floor
   - ceil
   - discrete-continuous
-categories:
   - mathematics
 excerpt: >-
   This articles explores some basic properties of the integer functions commonly

@@ -5,7 +5,6 @@ layout: post
 tags:
   - mathjax
   - katex
-categories:
   - programming
 excerpt: >-
   Prior to the current post, this blog contained 45 posts with a total of 2307

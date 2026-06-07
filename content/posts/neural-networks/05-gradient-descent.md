@@ -4,8 +4,7 @@ date: 2023-01-18T12:00Z
 layout: post
 tags:
   - neural-network
-categories:
-  - machine-learning
+  - machinelearning
 excerpt: >-
   We describe a method for finding a local minimum for a function of several
   real variables, Gradient Descent.
