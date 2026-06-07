@@ -38,6 +38,13 @@ const title =
   $('title').text().trim() ||
   'Untitled';
 
+// Description
+const description =
+  meta('og:description') ||
+  meta('twitter:description') ||
+  meta('description') ||
+  '';
+
 // Image
 const image =
   meta('og:image') ||
@@ -88,7 +95,7 @@ crossPosting:
 tags:
 ${tagsYaml}
 ---
-${title} ${url}
+${description || title} ${url}
 ${imageLine}`;
 
 const outPath = join(__dirname, 'drafts', 'other', `${slug}.md`);
