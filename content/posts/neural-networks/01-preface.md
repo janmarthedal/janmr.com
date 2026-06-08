@@ -9,6 +9,7 @@ tags:
 og:
   description: Introducing a series of posts on the basics of Neural Networks
   image: /media/og/neural-network-preface.png
+mastodon: https://mathstodon.xyz/@janmr/116708704600271785
 redirect: /blog/2023/01/neural-networks-01-preface/
 ---
 Neural Networks, or more correctly Artificial Neural Networks, have turned out to be
