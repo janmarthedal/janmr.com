@@ -8,6 +8,7 @@ tags:
 og:
   description: We define the neural network model that we will be exploring in the following posts
   image: /media/og/neural-network-model.png
+mastodon: https://mathstodon.xyz/@janmr/116749164634657215
 redirect: /blog/2023/01/neural-networks-02-the-model/
 ---
 A neural network has a specific structure given by
