@@ -11,4 +11,4 @@ tags:
 ---
 Introducing a series of posts on the basics of Neural Networks https://janmr.com/posts/neural-networks/01-preface/
 
-![](https://janmr.com/media/og/neural-network-preface.png)
+![](/media/og/neural-network-preface.png)

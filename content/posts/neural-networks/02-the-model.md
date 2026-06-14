@@ -5,7 +5,9 @@ layout: post
 tags:
   - neuralnetworks
   - machinelearning
-excerpt: We define the neural network that we will be exploring in the following posts.
+og:
+  description: We define the neural network model that we will be exploring in the following posts
+  image: /media/og/neural-network-model.png
 redirect: /blog/2023/01/neural-networks-02-the-model/
 ---
 A neural network has a specific structure given by
