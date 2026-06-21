@@ -1,2 +1,4 @@
 *.bsp
 uv.lock
+*.svg
+*.csv
