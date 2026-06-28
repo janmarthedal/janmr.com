@@ -2,7 +2,15 @@ import assert from "assert";
 import { mkdirSync, appendFileSync, readFileSync, writeFileSync } from "fs";
 import { dirname, extname, join } from "path";
 import { globIterateSync } from "glob";
-import matter from "gray-matter";
+import { load as yamlLoad } from "js-yaml";
+
+function matter(content: string): { data: Record<string, unknown>; content: string } {
+    if (!content.startsWith("---\n")) return { data: {}, content };
+    const end = content.indexOf("\n---\n", 4);
+    if (end === -1) return { data: {}, content };
+    const data = (yamlLoad(content.slice(4, end)) as Record<string, unknown>) ?? {};
+    return { data, content: content.slice(end + 5) };
+}
 import nunjucks from "nunjucks";
 import less from "less";
 import cleanCSS from "clean-css";
@@ -181,7 +189,7 @@ function renderLayout(layout: string, page: Record<string, unknown>): string {
         const { data: baseData, content: baseContent } = matter(buffer);
         const content = env.renderString(baseContent, page);
         if (baseData.layout) {
-            return renderLayout(baseData.layout, { ...page, content });
+            return renderLayout(baseData.layout as string, { ...page, content });
         } else {
             return content;
         }
