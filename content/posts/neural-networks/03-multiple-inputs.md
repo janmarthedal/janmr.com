@@ -3,11 +3,9 @@ title: Neural Networks - Multiple Inputs
 date: 2023-01-16T12:00Z
 layout: post
 tags:
-  - neural-network
+  - neuralnetworks
   - machinelearning
-excerpt: >-
-  We look at vectorizing the evaluation of a neural network when we have
-  multiple inputs.
+mastodon: https://mathstodon.xyz/@janmr/116827969393666317
 redirect: /blog/2023/01/neural-networks-03-multiple-inputs/
 ---
 When considering efficient implementations of evaluating a neural network as described in the
