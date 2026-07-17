@@ -1,9 +1,16 @@
 ---
 layout: page
+title: Feed
 pagination:
   data: collections.updates
   size: 50
 ---
+<p>
+This page contains all of my <a href="https://en.wikipedia.org/wiki/Microblogging">microposts</a>
+with links and observations that I find interesting.
+I usually cross-post to other social media, but I like to own them and have them here as the true source.
+You can find the latest updates as an <a href="{{ metadata.feed.url }}">Atom feed</a> as well.
+</p>
 <ul class="update-list">
   {%- for update in pagination.items -%}
   <li>
