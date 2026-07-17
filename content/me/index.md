@@ -1,6 +1,7 @@
 ---
 title: About me
 layout: page
+includeMeLinks: true
 og:
   type: profile
 ---

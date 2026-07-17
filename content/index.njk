@@ -1,38 +1,7 @@
 ---
 layout: page
 includeMeLinks: true
-pagination:
-  data: collections.updates
-  size: 50
+title: janmr.com
 ---
-<ul class="update-list">
-  {%- for update in pagination.items -%}
-  <li>
-    <div class="update-content">
-      {{ update.content | safe }}
-    </div>
-    <div class="update-footer">
-      Published
-      <time datetime="{{ update.date | dateToISO }}">{{ update.date | refHtmlDateString }}</time>
-      {% if update.data.crossPosting -%}
-      on
-      {%- if update.data.crossPosting.bluesky %}
-      <a href="{{ update.data.crossPosting.bluesky }}">Bluesky</a>
-      {%- endif -%}
-      {%- if update.data.crossPosting.mastodon %}
-      <a href="{{ update.data.crossPosting.mastodon }}">Mastodon</a>
-      {%- endif -%}
-      {%- endif %}
-    </div>
-  </li>
-  {%- endfor -%}
-</ul>
-
-<nav class="pagination-nav">
-{% if pagination.href.prev -%}
-  <a href="{{ pagination.href.prev }}" aria-label="Previous page">&larr; Previous</a>
-{%- endif %}
-{% if pagination.href.next -%}
-  <a href="{{ pagination.href.next }}" class="pagination-next" aria-label="Next page">Next &rarr;</a>
-{%- endif %}
-</nav>
+<p>Personal website of Jan Marthedal Rasmussen, on mathematics and computer science.</p>
+<p>See <a href="/feed/">recent updates</a>, <a href="/posts/">posts</a>, or <a href="/me/">about me</a>.</p>
