@@ -5,9 +5,12 @@ layout: post
 tags:
   - neuralnetworks
   - machinelearning
-excerpt: >-
-  We introduce an error function to minimize in order to fit a training set as
-  best as possible.
+  - optimization
+og:
+  description: >-
+    We introduce an error function to minimize in order to fit a training set as
+    best as possible.
+mastodon: https://mathstodon.xyz/@janmr/116946433153008729
 redirect: /blog/2023/01/neural-networks-04-the-optimization-problem/
 ---
 Consider a neural network as [previously described](/posts/neural-networks/02-the-model/).

@@ -23,6 +23,10 @@ styles: |
     <div class="update-content home-update-content">
       {{ latestUpdate.content | safe }}
     </div>
+    <div class="update-footer">
+      Published
+      <time datetime="{{ latestUpdate.date | dateToISO }}">{{ latestUpdate.date | refHtmlDateString }}</time>
+    </div>
   </li>
 </ul>
 
