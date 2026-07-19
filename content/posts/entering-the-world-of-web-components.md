@@ -6,12 +6,13 @@ tags:
   - web-components
   - web-development
   - programming
-excerpt: >-
-  I am very excited about Web Components. It is going to fundamentally change
-  the way we do web development. This post is going to contain miscellaneous
-  information and links related to Web Components. The specification is still
-  being developed, but the overall parts have been decided upon. To quote
-  Introduction to Web Components, Web Components consists of five main parts...
+og:
+  description: >-
+    I am very excited about Web Components. It is going to fundamentally change
+    the way we do web development. This post is going to contain miscellaneous
+    information and links related to Web Components. The specification is still
+    being developed, but the overall parts have been decided upon. To quote
+    Introduction to Web Components, Web Components consists of five main parts...
 redirect: /blog/2014/07/entering-the-world-of-web-components/
 ---
 I am very excited about Web Components. It is going to fundamentally change the way we do web development. This post is going to contain miscellaneous information and links related to Web Components.

@@ -5,7 +5,9 @@ layout: post
 tags:
   - neuralnetworks
   - machinelearning
-excerpt: On activation functions for neural networks.
+og:
+  description: >-
+    On activation functions for neural networks.
 redirect: /blog/2023/01/neural-networks-08-activation-functions/
 ---
 As mentioned in a [previous post](/posts/neural-networks/05-gradient-descent/), the activation

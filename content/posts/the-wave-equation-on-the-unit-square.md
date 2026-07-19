@@ -7,9 +7,10 @@ tags:
   - finite-differences
   - scipy
   - numerical-analysis
-excerpt: >-
-  Let us consider the wave equation on the unit square and how to solve it
-  numerically using Python's numpy and scipy libraries.
+og:
+  description: >-
+    Let us consider the wave equation on the unit square and how to solve it
+    numerically using Python's numpy and scipy libraries.
 redirect: /blog/2024/05/the-wave-equation-on-the-unit-square/
 ---
 Let us consider the wave equation

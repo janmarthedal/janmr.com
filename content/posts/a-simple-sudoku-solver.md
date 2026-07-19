@@ -8,9 +8,10 @@ tags:
   - combinatorics
   - programming
 mastodon: https://mathstodon.xyz/@janmr/115911074385706191
-excerpt: >-
-  This post will describe a simple way to computationally find all solutions of
-  a given Sudoku puzzle
+og:
+  description: >-
+    This post will describe a simple way to computationally find all solutions of
+    a given Sudoku puzzle
 redirect: /blog/2023/05/a-simple-sudoku-solver/
 ---
 Sudoku is a popular puzzle and for the past 15 years or so, it has been hard to

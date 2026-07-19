@@ -5,7 +5,9 @@ layout: post
 tags:
   - neuralnetworks
   - machinelearning
-excerpt: How to implement a simple neural network in Python/NumPy.
+og:
+  description: >-
+    How to implement a simple neural network in Python/NumPy.
 redirect: /blog/2023/01/neural-networks-09-implementation/
 ---
 This post will describe how to implement a simple, trainable neural network in

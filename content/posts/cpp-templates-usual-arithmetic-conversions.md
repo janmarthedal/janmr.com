@@ -7,13 +7,14 @@ tags:
   - templates
   - data-types
   - programming
-excerpt: >-
-  If you add a short int and a char in C++, what is the resulting type? What if
-  you subtract a long int from an unsigned int? The answers actually depend on
-  the compiler and the target architecture (int or unsigned in the first case
-  and long int or unsigned long int in the second). This article lists the rules
-  from the current C++ standard and gives an example of how the type can be
-  resolved at compile time using templates.
+og:
+  description: >-
+    If you add a short int and a char in C++, what is the resulting type? What if
+    you subtract a long int from an unsigned int? The answers actually depend on
+    the compiler and the target architecture (int or unsigned in the first case
+    and long int or unsigned long int in the second). This article lists the rules
+    from the current C++ standard and gives an example of how the type can be
+    resolved at compile time using templates.
 redirect: /blog/2010/08/cpp-templates-usual-arithmetic-conversions/
 ---
 

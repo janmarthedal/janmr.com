@@ -8,9 +8,10 @@ tags:
   - multiple-precision
   - cpp
   - programming
-excerpt: >-
-  This post will present an overview of the implementation of Kanooth Numbers, a
-  portable multiple-precision library in C++.
+og:
+  description: >-
+    This post will present an overview of the implementation of Kanooth Numbers, a
+    portable multiple-precision library in C++.
 redirect: /blog/2014/06/structure-of-a-multiple-precision-library-in-cpp/
 ---
 This post will present an overview of the implementation of [Kanooth Numbers](https://github.com/janmarthedal/kanooth-numbers), a portable multiple-precision library in C++.

@@ -4,9 +4,10 @@ date: 2023-05-05T12:00Z
 layout: post
 tags:
   - machinelearning
-excerpt: >-
-  This post looks at some examples of linear regression, as introduced in a
-  previous post
+og:
+  description: >-
+    This post looks at some examples of linear regression, as introduced in a
+    previous post
 redirect: /blog/2023/05/linear-regression-applied/
 ---
 This post looks at some examples of linear regression, as introduced in

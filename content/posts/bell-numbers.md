@@ -7,13 +7,14 @@ tags:
   - ode
   - mathematics
 mastodon: https://mathstodon.xyz/@janmr/115809266730138043
-excerpt: >-
-  I recently studied a system of linear ODEs, where n parameters, [...]
-  described the system. It turned out that the structure of the solutions
-  depended on whether any of the parameters where equal to each other. For
-  instance, with three parameters there were five possibilities: [...] We can
-  quickly go through small values of n and we get (starting with n=0): 1, 1, 2,
-  5, 15, .... How do we obtain a general formula? [...]
+og:
+  description: >-
+    I recently studied a system of linear ODEs, where n parameters, [...]
+    described the system. It turned out that the structure of the solutions
+    depended on whether any of the parameters where equal to each other. For
+    instance, with three parameters there were five possibilities: [...] We can
+    quickly go through small values of n and we get (starting with n=0): 1, 1, 2,
+    5, 15, .... How do we obtain a general formula? [...]
 redirect: /blog/2011/06/bell-numbers/
 ---
 I recently studied a system of linear [ODE](http://en.wikipedia.org/wiki/Ordinary_differential_equation)s, where $n$ parameters, $k_1, \ldots, k_n$ described the system. It turned out that the structure of the solutions depended on whether any of the parameters where equal to each other. For instance, with three parameters there were five possibilities:

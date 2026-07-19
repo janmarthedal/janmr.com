@@ -6,7 +6,8 @@ tags:
   - kronecker-product
   - vec-operator
   - numerical-analysis
-excerpt: Let us prove an identity involving the Kronecker product and the vec operator.
+og:
+  description: Let us prove an identity involving the Kronecker product and the vec operator.
 redirect: /blog/2024/04/a-kronecker-product-and-vec-operator-identity/
 ---
 Let $A$ be a $q \times n$ matrix and $B$ a $p \times m$ matrix.

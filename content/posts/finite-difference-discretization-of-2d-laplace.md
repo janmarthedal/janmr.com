@@ -7,9 +7,10 @@ tags:
   - finite-differences
   - scipy
   - numerical-analysis
-excerpt: >-
-  Let us now consider the discretization of the 2D Laplace operator using finite
-  differences.
+og:
+  description: >-
+    Let us now consider the discretization of the 2D Laplace operator using finite
+    differences.
 redirect: /blog/2024/05/finite-difference-discretization-of-2d-laplace/
 ---
 Let us now consider the discretization of the 2D Laplace operator using finite differences.

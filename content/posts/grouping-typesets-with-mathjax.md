@@ -5,13 +5,14 @@ layout: post
 tags:
   - mathjax
   - programming
-excerpt: >-
-  When MathJax typesets the equations on a web page, it does a good job of
-  grouping the work into chunks, so that a chunk of equations (see the EqnChunk
-  option) will be typeset before they are displayed and the next chunk is
-  processed. Typesetting and displaying one equation at a time leads to a lot of
-  screen flickering and it also takes longer before the page is completed
-  because of the increased work for the browser.
+og:
+  description: >-
+    When MathJax typesets the equations on a web page, it does a good job of
+    grouping the work into chunks, so that a chunk of equations (see the EqnChunk
+    option) will be typeset before they are displayed and the next chunk is
+    processed. Typesetting and displaying one equation at a time leads to a lot of
+    screen flickering and it also takes longer before the page is completed
+    because of the increased work for the browser.
 
   Sometimes you want to typeset and display a lot of equations dynamically [...]
 redirect: /blog/2015/03/grouping-typesets-with-mathjax/

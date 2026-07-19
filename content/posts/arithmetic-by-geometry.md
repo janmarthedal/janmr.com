@@ -7,14 +7,15 @@ tags:
   - geometry
   - visualization
   - mathematics
-excerpt: >-
-  Today real numbers are most often represented by applying (elementary)
-  functions to (decimal) integers. Throughout history, though, arithmetic and
-  propositions involving (positive) real numbers were often considered from a
-  purely geometrical point of view. Real numbers were identified by the length
-  of some line segment and, e.g., the product of two numbers was identified by
-  the area of a rectangle with side-lengths equal to the two numbers. This made
-  sense from a physical/applied point of view, but it had certain shortcomings.
+og:
+  description: >-
+    Today real numbers are most often represented by applying (elementary)
+    functions to (decimal) integers. Throughout history, though, arithmetic and
+    propositions involving (positive) real numbers were often considered from a
+    purely geometrical point of view. Real numbers were identified by the length
+    of some line segment and, e.g., the product of two numbers was identified by
+    the area of a rectangle with side-lengths equal to the two numbers. This made
+    sense from a physical/applied point of view, but it had certain shortcomings.
 redirect: /blog/2010/04/arithmetic-by-geometry/
 ---
 

@@ -6,12 +6,13 @@ tags:
   - computer-science
   - rust
   - programming
-excerpt: >-
-  At our house we have a game called Brain Breaker. To play the game one person
-  (the codemaker) sets up a secret code of four colored pegs, having five
-  different colors to choose from for each peg. The other person (the
-  codebreaker) then tries to guess the code using as few guesses as possible,
-  using only feedback provided by the codemaker.
+og:
+  description: >-
+    At our house we have a game called Brain Breaker. To play the game one person
+    (the codemaker) sets up a secret code of four colored pegs, having five
+    different colors to choose from for each peg. The other person (the
+    codebreaker) then tries to guess the code using as few guesses as possible,
+    using only feedback provided by the codemaker.
 redirect: /blog/2024/04/the-computer-as-brain-breaker/
 ---
 At our house we have a game called Brain Breaker.

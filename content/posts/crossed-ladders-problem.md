@@ -6,10 +6,11 @@ tags:
   - geometry
   - nerd-sniping
   - mathematics
-excerpt: >-
-  I was recently reminded of the crossed ladders problem. The following simple
-  figure should be adequate in defining the problem: [...]. If you haven't seen
-  the problem before, I highly recommend trying to solve it before reading on.
+og:
+  description: >-
+    I was recently reminded of the crossed ladders problem. The following simple
+    figure should be adequate in defining the problem: [...]. If you haven't seen
+    the problem before, I highly recommend trying to solve it before reading on.
 redirect: /blog/2011/03/crossed-ladders-problem/
 mastodon: https://mathstodon.xyz/@janmr/115791781810441047
 ---

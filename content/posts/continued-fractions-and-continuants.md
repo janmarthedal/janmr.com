@@ -8,7 +8,8 @@ tags:
   - continued-fraction
   - programming
   - mathematics
-excerpt: 'We will be considering continued fractions of the form [...]'
+og:
+  description: 'We will be considering continued fractions of the form [...]'
 redirect: /blog/2009/11/continued-fractions-and-continuants/
 mastodon: https://mathstodon.xyz/@janmr/115665585592338504
 ---

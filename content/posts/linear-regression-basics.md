@@ -4,10 +4,11 @@ date: 2023-05-04T12:00Z
 layout: post
 tags:
   - machinelearning
-excerpt: >-
-  Linear regression is a common and powerful method for modelling the
-  relationship between some input vectors and some output scalars. This post
-  explains the basics of linear regression.
+og:
+  description: >-
+    Linear regression is a common and powerful method for modelling the
+    relationship between some input vectors and some output scalars. This post
+    explains the basics of linear regression.
 redirect: /blog/2023/05/linear-regression-basics/
 ---
 Linear regression is a common and powerful method for modelling the relationship

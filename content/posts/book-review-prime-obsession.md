@@ -6,13 +6,14 @@ tags:
   - book-review
   - recommended-reading
   - book-review
-excerpt: >-
-  'Prime Obsession: Bernhard Riemann and the Greatest Unsolved Problem in
-  Mathematics' is a book about the Riemann Hypothesis, posed by Bernhard Riemann
-  in 1859. As the book title says, it is one of the greatest unsettled
-  mathematical conjectures remaining today. It is among David Hilbert's list of
-  twenty-three mathematical problems and one of the seven millennium problems
-  presented by the Clay Mathematics Institute.
+og:
+  description: >-
+    'Prime Obsession: Bernhard Riemann and the Greatest Unsolved Problem in
+    Mathematics' is a book about the Riemann Hypothesis, posed by Bernhard Riemann
+    in 1859. As the book title says, it is one of the greatest unsettled
+    mathematical conjectures remaining today. It is among David Hilbert's list of
+    twenty-three mathematical problems and one of the seven millennium problems
+    presented by the Clay Mathematics Institute.
 redirect: /blog/2010/01/book-review-prime-obsession/
 ---
 <div class="pull-right"><a href="/refs/derbyshire03"><img src="/media/books/derbyshire03.jpg" alt=""></a></div>

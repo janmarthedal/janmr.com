@@ -8,13 +8,14 @@ tags:
   - pythagoras
   - visualization
   - mathematics
-excerpt: >-
-  Most people are familiar with the Pythagorean theorem: In a right-angled
-  triangle the square of the hypotenuse is equal to the sum of the squares of
-  the other two sides. As the name of the theorem implies, it is attributed to
-  Pythagoras, a Greek mathematician who lived around 500 B.C. The theorem is
-  also included in Euclid's Elements, an encyclopedia of all known mathematics
-  around 300 B.C. But how do you actually prove the Pythagorean theorem?
+og:
+  description: >-
+    Most people are familiar with the Pythagorean theorem: In a right-angled
+    triangle the square of the hypotenuse is equal to the sum of the squares of
+    the other two sides. As the name of the theorem implies, it is attributed to
+    Pythagoras, a Greek mathematician who lived around 500 B.C. The theorem is
+    also included in Euclid's Elements, an encyclopedia of all known mathematics
+    around 300 B.C. But how do you actually prove the Pythagorean theorem?
 mastodon: https://mathstodon.xyz/@janmr/115705876552127902
 redirect: /blog/2010/02/visualizing-the-pythagorean-theorem/
 ---

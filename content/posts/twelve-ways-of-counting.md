@@ -5,16 +5,17 @@ layout: post
 tags:
   - combinatorics
   - mathematics
-excerpt: >-
-  I have for a long time had an ambition of getting better at combinatorics,
-  especially enumerative combinatorics, the discipline of counting the number of
-  arrangements, given some pattern. Getting introduced to The Twelvefold Way was
-  a real eye-opener in this regard. It is a way to categorize some fundamental
-  combinatorial counting problems by considering different ways of putting balls
-  into urns. Different setups arise depending on whether the balls are labeled
-  or unlabeled, whether the urns are labeled or unlabeled, and whether each urn
-  can contain any number of balls, at most one or at least one, leading to 2*2*3
-  = 12 cases. [...]
+og:
+  description: >-
+    I have for a long time had an ambition of getting better at combinatorics,
+    especially enumerative combinatorics, the discipline of counting the number of
+    arrangements, given some pattern. Getting introduced to The Twelvefold Way was
+    a real eye-opener in this regard. It is a way to categorize some fundamental
+    combinatorial counting problems by considering different ways of putting balls
+    into urns. Different setups arise depending on whether the balls are labeled
+    or unlabeled, whether the urns are labeled or unlabeled, and whether each urn
+    can contain any number of balls, at most one or at least one, leading to 2*2*3
+    = 12 cases. [...]
 mastodon: 'https://mathstodon.xyz/@janmr/115626241743758405'
 redirect: /blog/2008/12/twelve-ways-of-counting/
 ---

@@ -5,9 +5,10 @@ layout: post
 tags:
   - mathematics
   - programming
-excerpt: >-
-  When using floating-point numbers then exact, bit-for-bit, equality is almost
-  never what you want.
+og:
+  description: >-
+    When using floating-point numbers then exact, bit-for-bit, equality is almost
+    never what you want.
 redirect: /blog/2023/12/equality-of-numbers/
 ---
 When using floating-point numbers then exact, bit-for-bit, equality is almost never what you want.

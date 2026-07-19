@@ -6,9 +6,10 @@ tags:
   - trigonometry
   - visualization
   - mathematics
-excerpt: >-
-  The addition formulas for sine and cosine look like this: [...] I can never
-  remember them. [...]
+og:
+  description: >-
+    The addition formulas for sine and cosine look like this: [...] I can never
+    remember them. [...]
 redirect: /blog/2009/09/remembering-trigonometric-addition-formulas/
 ---
 The addition formulas for sine and cosine look like this:

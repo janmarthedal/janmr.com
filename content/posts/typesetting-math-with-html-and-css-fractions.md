@@ -5,10 +5,11 @@ layout: post
 tags:
   - math-typesetting
   - programming
-excerpt: >-
-  Currently, there is no best way of showing math on the web. An HTML5 standard
-  exists, MathML, but unfortunately it doesn't have broad browser support.
-  Instead, many alternatives exist, all with varying quality and speed.
+og:
+  description: >-
+    Currently, there is no best way of showing math on the web. An HTML5 standard
+    exists, MathML, but unfortunately it doesn't have broad browser support.
+    Instead, many alternatives exist, all with varying quality and speed.
 
   I would like to explore how far you can get by using just HTML and CSS
   (including web fonts). My findings should be considered experimental.

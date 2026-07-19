@@ -5,6 +5,10 @@ layout: post
 tags:
   - neuralnetworks
   - machinelearning
+og:
+  description: >-
+    We look at vectorizing the evaluation of a neural network when we have
+    multiple inputs.
 mastodon: https://mathstodon.xyz/@janmr/116827969393666317
 redirect: /blog/2023/01/neural-networks-03-multiple-inputs/
 ---

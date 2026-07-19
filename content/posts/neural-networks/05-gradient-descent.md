@@ -5,9 +5,10 @@ layout: post
 tags:
   - neuralnetworks
   - machinelearning
-excerpt: >-
-  We describe a method for finding a local minimum for a function of several
-  real variables, Gradient Descent.
+og:
+  description: >-
+    We describe a method for finding a local minimum for a function of several
+    real variables, Gradient Descent.
 redirect: /blog/2023/01/neural-networks-05-gradient-descent/
 ---
 Let us forget the specifics of neural networks for a moment and consider

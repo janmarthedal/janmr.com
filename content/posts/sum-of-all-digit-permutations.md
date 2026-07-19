@@ -6,7 +6,8 @@ tags:
   - nerd-sniping
   - combinatorics
   - mathematics
-excerpt: Finding the sum of all digit permutations
+og:
+  description: Finding the sum of all digit permutations
 redirect: /blog/2023/04/sum-of-all-digit-permutations/
 ---
 Recently, user [preshtalwalkar](https://twitter.com/preshtalwalkar) on Twitter posed the following
