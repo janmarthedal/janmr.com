@@ -7,6 +7,10 @@ tags:
   - geometry
   - theorem
   - visualization
+og:
+  description: >-
+    Thales' Theorem: If A, B and C are points on a circle with the segment AC as a
+    diameter, then the angle at B is a right angle.
 mastodon: https://mathstodon.xyz/@janmr/116056275448741940
 redirect: /blog/2014/04/thales-theorem-illustrated/
 ---

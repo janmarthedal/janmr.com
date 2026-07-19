@@ -5,6 +5,14 @@ layout: post
 tags:
   - multiple-precision
   - bit-fiddling
+og:
+  description: >-
+    Assume a positive integer is given and we wish to get the value of the nth bit
+    of the number's two's complement. Now if a fixed number of bits is used to
+    represent the number, say 32 or 64, the two's complement can be computed
+    explicitly and the nth bit can be found directly. But if we work with
+    arbitrary precision then any two's complement representation has infinitely
+    many 1s at the left.
 mastodon: https://mathstodon.xyz/@janmr/116589124710788437
 redirect: /blog/2021/01/nth-bit-of-negative-number/
 ---

@@ -8,6 +8,8 @@ tags:
   - visualization
   - geometry
   - theorem
+og:
+  description: The green circles will always be of equal size
 mastodon: https://mathstodon.xyz/@janmr/116142145573769993
 redirect: /blog/2014/04/archimedes-twin-circles-illustrated/
 ---

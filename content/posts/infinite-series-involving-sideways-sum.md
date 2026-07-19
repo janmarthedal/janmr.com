@@ -7,6 +7,10 @@ tags:
   - binary-numbers
   - stackexchange
   - nerd-sniping
+og:
+  description: >-
+    I found a recent question on Mathematics Stack Exchange quite interesting. It
+    simply asked: How does one easily calculate ...
 mastodon: https://mathstodon.xyz/@janmr/116016616218271781
 redirect: /blog/2013/07/infinite-series-involving-sideways-sum/
 ---
