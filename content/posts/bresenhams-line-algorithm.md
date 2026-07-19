@@ -7,13 +7,8 @@ tags:
   - algorithms
 og:
   description: >-
-    In 1965 Jack Elton Bresenham published the paper Algorithm for computer
-    control of a digital plotter in the IBM Systems Journal, volume 4, number 1.
-    It explained how a line could be approximated on an integer grid. The
-    algorithm is still used today as a rasterization technique for rendering lines
-    on video displays or printers. As Bresenham's paper suggests, however, it was
-    originally devised for a plotter, capable of moving from one grid point to one
-    of the adjacent eight grid points. We consider drawing a line...
+    A look at Bresenham's line algorithm, published in 1965, and still used today for
+    rasterizing lines on displays and printers.
 mastodon: https://mathstodon.xyz/@janmr/116205066688396603
 redirect: /blog/2014/04/bresenhams-line-algorithm/
 ---

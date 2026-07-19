@@ -11,9 +11,8 @@ tags:
   - rust
 og:
   description: >-
-    Python and Rust library routines for generating all permutations of a list of
-    objects is mentioned, as well as an algorithm for lexicographic r-permutation
-    generation (in both pseudo and Rust code)
+    Python and Rust routines for generating all permutations of a list, plus an
+    algorithm for lexicographic r-permutation generation.
 mastodon: https://mathstodon.xyz/@janmr/116544024304151233
 redirect: /blog/2020/06/generating-all-permutations/
 ---

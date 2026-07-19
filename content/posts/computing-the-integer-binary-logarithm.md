@@ -9,11 +9,8 @@ tags:
   - programming
 og:
   description: >-
-    The binary logarithm, or the logarithm to the base 2, of a number x > 0 is the
-    number y = log_2 x such that 2^y = x. This article looks at how we can
-    determine the integer part of the binary logarithm using integer arithmetic
-    only. Naturally, the binary logarithm is especially easy to work with on
-    (binary) computers and bitwise operations come in handy.
+    How to compute the integer part of the binary logarithm of a number using only
+    integer and bitwise arithmetic.
 redirect: /blog/2010/09/computing-the-integer-binary-logarithm/
 mastodon: https://mathstodon.xyz/@janmr/115729345751493790
 ---

@@ -7,15 +7,8 @@ tags:
   - programming
 og:
   description: >-
-    Currently, there is no best way of showing math on the web. An HTML5 standard
-    exists, MathML, but unfortunately it doesn't have broad browser support.
-    Instead, many alternatives exist, all with varying quality and speed.
-
-  I would like to explore how far you can get by using just HTML and CSS
-  (including web fonts). My findings should be considered experimental.
-
-  This post will deal with one way of typesetting fractions, inspired by the
-  approach taken by Kahn Academy's KaTeX project.
+    An experiment in typesetting math fractions using only HTML and CSS (including web
+    fonts), inspired by Khan Academy's KaTeX project.
 redirect: /blog/2015/01/typesetting-math-with-html-and-css-fractions/
 ---
 <style>

@@ -7,14 +7,8 @@ tags:
   - programming
 og:
   description: >-
-    Imperative programming languages--such as C++, Java, Perl and assembly are by
-    far the most common. They all lie fairly close to the underlying computer
-    architecture by executing one statement at a time, changing a state along the
-    way. They describe how to compute something. Purely functional languages--such
-    as Erlang and Haskell--have no state, only values, expressions and functions.
-    All variables are immutable, that is, when a value has been assigned to a
-    variable, it can never change. Purely functional programming languages
-    describe what to compute, but not explicitly how.
+    A comparison of imperative languages, which execute state-changing statements, and
+    purely functional languages, which describe what to compute rather than how.
 redirect: /blog/2011/05/going-functional/
 ---
 [Imperative programming](http://en.wikipedia.org/wiki/Imperative_programming) languages&mdash;such as C++, Java, Perl and assembly&mdash;are by far the [most common](https://web.archive.org/web/20110430164550/http://www.langpop.com/). They all lie fairly close to the underlying computer architecture by executing one statement at a time, changing a state along the way. They describe *how* to compute something.

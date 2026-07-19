@@ -7,9 +7,8 @@ tags:
   - machinelearning
 og:
   description: >-
-    Looking at the basic model for a neural network, it is natural to consider:
-    What is the simplest possible neural network? And is such a network useful for
-    anything?
+    What is the simplest possible neural network, and is it useful for anything? We
+    look at linear regression.
 redirect: /blog/2023/12/neural-networks-10-linear-regression/
 ---
 Looking at the [basic model for a neural network](/posts/neural-networks/02-the-model/),

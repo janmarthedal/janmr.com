@@ -9,12 +9,8 @@ tags:
   - programming
 og:
   description: >-
-    If you add a short int and a char in C++, what is the resulting type? What if
-    you subtract a long int from an unsigned int? The answers actually depend on
-    the compiler and the target architecture (int or unsigned in the first case
-    and long int or unsigned long int in the second). This article lists the rules
-    from the current C++ standard and gives an example of how the type can be
-    resolved at compile time using templates.
+    What type results from mixing short int, char, long int, etc. in C++ arithmetic,
+    and how to resolve it at compile time with templates.
 redirect: /blog/2010/08/cpp-templates-usual-arithmetic-conversions/
 ---
 

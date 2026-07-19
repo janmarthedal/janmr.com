@@ -7,13 +7,7 @@ tags:
   - mathematics
 og:
   description: >-
-    The sum of the first n squares is s_n = 1/6 n (n+1) (2n+1). The numbers s_0,
-    s_1, s_2, ... are called the square pyramidal numbers. Many different proofs
-    exist. Seven different proofs can be found in Concrete Mathematics and even a
-    visual proof has been published. One of the simplest proofs uses induction on
-    n. This approach assumes that you know (or guess) the correct formula
-    beforehand, though. This post will show a derivation which is a formalization
-    of the derivation shown on wikipedia.
+    A derivation of the closed-form formula for square pyramidal numbers.
 redirect: /blog/2014/06/deriving-closed-form-for-square-pyramidal-numbers/
 ---
 The sum of the first $n$ squares is

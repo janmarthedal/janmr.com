@@ -8,14 +8,8 @@ tags:
   - book-review
 og:
   description: >-
-    'The Book of Numbers' is a wonderful book about, well, numbers. And lots of
-    them. From ancient ways of writing numbers to Gaussian integers to surreal
-    numbers. The authors are some tough mathematicians, too. John H. Conway is
-    Professor of Mathematics at Princeton University, an authority in game theory
-    and group theory, and the inventor of the Game of Life and surreal numbers.
-    Richard K. Guy is professor emeritus of mathematics at the University of
-    Calgary and has (co)authored several hundred publications on combinatorial
-    game theory, number theory and graph theory.
+    A review of 'The Book of Numbers' by John H. Conway and Richard K. Guy, a
+    wonderful tour of numbers from ancient notations to surreal numbers.
 redirect: /blog/2010/05/book-review-the-book-of-numbers/
 ---
 <div class="pull-right"><a href="/refs/conway-guy"><img src="/media/books/conway-guy.jpg" alt=""></a></div>

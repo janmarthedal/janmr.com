@@ -8,11 +8,8 @@ tags:
   - mathematics
 og:
   description: >-
-    Fractions produced by mediants have some very interesting properties. We saw
-    some of them in connection with the Stern-Brocot tree. This articles explores
-    a more curious property, relating fractions to circles in the plane. It was
-    discovered in 1938 by Lester R. Ford and is also mentioned in Conway and Guy's
-    The Book of Numbers.
+    A curious property connecting fractions produced by mediants to circles in the
+    plane, discovered by Lester R. Ford in 1938.
 redirect: /blog/2010/02/fractions-and-circles/
 mastodon: https://mathstodon.xyz/@janmr/115688290212390103
 ---

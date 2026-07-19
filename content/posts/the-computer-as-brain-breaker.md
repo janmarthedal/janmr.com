@@ -8,11 +8,8 @@ tags:
   - programming
 og:
   description: >-
-    At our house we have a game called Brain Breaker. To play the game one person
-    (the codemaker) sets up a secret code of four colored pegs, having five
-    different colors to choose from for each peg. The other person (the
-    codebreaker) then tries to guess the code using as few guesses as possible,
-    using only feedback provided by the codemaker.
+    How to write a program that plays codebreaker in the game Brain Breaker, guessing
+    a secret code of four colored pegs.
 redirect: /blog/2024/04/the-computer-as-brain-breaker/
 ---
 At our house we have a game called Brain Breaker.

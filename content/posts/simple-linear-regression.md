@@ -7,10 +7,8 @@ tags:
   - mathematics
 og:
   description: >-
-    We now turn to the general case of fitting a line to a set of points in the
-    plane. The two previous posts considered the special cases where the points'
-    center of mass was at the origin and where the line had to pass through the
-    origin.
+    Fitting a line to a set of points in the plane in the general case, without
+    restrictions on the origin or center of mass.
 redirect: /blog/2023/12/simple-linear-regression/
 ---
 We now turn to the general case of fitting a line to a set of points in the plane.

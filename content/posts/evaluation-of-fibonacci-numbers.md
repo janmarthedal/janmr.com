@@ -9,11 +9,8 @@ tags:
   - mathematics
 og:
   description: >-
-    The integer sequence 0, 1, 1, 2, 3, 5, 8, 13, ... is well known as the
-    Fibonacci sequence. It is easily defined by F_0 = 0, F_1 = 1 and F_n = F_{n-1}
-    + F_{n-2} for n >= 2. To compute F_n you could use this definition directly,
-    but that leads to a highly inefficient algorithm that is both recursive and
-    which uses a number of additions which grows exponentially with n.
+    How to efficiently compute the nth Fibonacci number, avoiding the exponential
+    blow-up of the naive recursive definition.
 redirect: /blog/2011/03/evaluation-of-fibonacci-numbers/
 mastodon: https://mathstodon.xyz/@janmr/115779844025385901
 ---

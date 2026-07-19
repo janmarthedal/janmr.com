@@ -8,14 +8,8 @@ tags:
   - programming
 og:
   description: >-
-    According to the The Astronomical Almanac, a tropical year comprises a
-    complete cycle of seasons and is approximately 365 days, 5 hours, 48 minutes,
-    45 seconds, or 365.242188 days.
-
-    Such a complete cycle of seasons could be measured as one solstice or equinox
-    to the next corresponding solstice or equinox. The length of a tropical year,
-    however, is not constant. For instance, the length of tropical years as
-    measured from one March equinox to the next can vary up to 30 minutes.
+    An explanation of leap year rules, based on the length of the tropical year as
+    defined by the Astronomical Almanac.
 mastodon: https://mathstodon.xyz/@janmr/116487339981087552
 redirect: /blog/2020/04/leap-year-rules/
 ---

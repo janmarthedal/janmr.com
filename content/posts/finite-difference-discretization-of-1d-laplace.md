@@ -8,10 +8,8 @@ tags:
   - numerical-analysis
 og:
   description: >-
-    Let us consider how to approximate the Laplace operator in one dimension. The
-    method considered here is based on finite differences and will allow us to
-    approximate the Laplace operator on a regular grid in a simple and efficient
-    way.
+    Approximating the Laplace operator in one dimension using finite differences on a
+    regular grid.
 redirect: /blog/2024/04/finite-difference-discretization-of-1d-laplace/
 ---
 Let us consider how to approximate the Laplace operator in one dimension.

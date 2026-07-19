@@ -8,9 +8,7 @@ tags:
   - mathematics
 og:
   description: >-
-    I was recently reminded of the crossed ladders problem. The following simple
-    figure should be adequate in defining the problem: [...]. If you haven't seen
-    the problem before, I highly recommend trying to solve it before reading on.
+    A look at the classic crossed ladders problem.
 redirect: /blog/2011/03/crossed-ladders-problem/
 mastodon: https://mathstodon.xyz/@janmr/115791781810441047
 ---

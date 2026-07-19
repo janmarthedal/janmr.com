@@ -11,9 +11,7 @@ tags:
   - programming
 og:
   description: >-
-    The greatest common divisor of two integers is the largest positive integer
-    that divides them both. This article considers two algorithms for computing
-    gcd(u,v), the greatest common divisor of u and v [...]
+    Two algorithms for computing the greatest common divisor of two integers.
 mastodon: https://mathstodon.xyz/@janmr/115650300895601931
 redirect: /blog/2009/10/computing-the-greatest-common-divisor/
 ---

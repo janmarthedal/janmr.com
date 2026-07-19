@@ -7,13 +7,8 @@ tags:
   - web-math
 og:
   description: >-
-    MathML is a mathematical markup language that can be used to integrate math
-    into web pages. Unfortunately, browser support is far from great. What people
-    do instead is use libraries such as MathJax which can replace the math
-    container with the appropriate HTML, either server-side or client-side.
-    However, putting math markup in a structured way inside math elements has many
-    advantages, such as accessibility and search engines. So let's put the HTML
-    inside the `math` element, alongside the MathML.
+    Why and how to wrap HTML markup inside MathML's math element alongside the MathML
+    itself, improving accessibility and search engine support.
 redirect: /blog/2017/02/wrapping-html-inside-mathml/
 ---
 [MathML](https://www.w3.org/Math/) is a mathematical markup language that can be used to integrate math into web pages. For example,

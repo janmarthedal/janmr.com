@@ -8,9 +8,8 @@ tags:
   - mathematics
 og:
   description: >-
-    Let us revisit the geometric progression sum considered in an earlier article,
-    s_r = sum_{k=0}^infty r^k = 1 + r + r^2 + r^3 + ..., where r here is a complex
-    number. For what values of r does this infinite sum make sense? [...]
+    For which complex numbers r does the geometric series sum_{k=0}^infty r^k make
+    sense?
 redirect: /blog/2009/08/on-the-divergence-of-a-geometric-progression-sum/
 ---
 Let us revisit the geometric progression sum considered in an [earlier article](/posts/nice-geometric-progression-proof/),
