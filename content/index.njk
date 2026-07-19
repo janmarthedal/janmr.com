@@ -1,7 +1,38 @@
 ---
 layout: page
 includeMeLinks: true
+styles: |
+  .home-update-content {
+    max-height: 20em;
+    overflow: hidden;
+  }
+  .home-section-intro {
+    margin-top: 2em;
+  }
 ---
-<img src="/media/janmr.jpg" alt="Portrait of Jan Marthedal Rasmussen" width="500" height="500" style="max-width:200px;">
-<p>Personal website of Jan Marthedal Rasmussen, on mathematics and computer science.</p>
-<p>See <a href="/feed/">recent updates</a>, <a href="/posts/">posts</a>, or <a href="/me/">about me</a>.</p>
+<p>This is the personal website of Jan Marthedal Rasmussen.</p>
+
+{% set latestUpdate = collections.updates[0] -%}
+{% set latestPosts = collections.posts | reverse | head(5) -%}
+
+<p class="home-section-intro">
+  The latest update to my <a href="/feed/">feed</a> is the following:
+</p>
+<ul class="update-list">
+  <li>
+    <div class="update-content home-update-content">
+      {{ latestUpdate.content | safe }}
+    </div>
+  </li>
+</ul>
+
+<p class="home-section-intro">
+  My five latest <a href="/posts/">posts</a> are:
+</p>
+<ul class="post-list">
+  {%- for post in latestPosts %}
+  <li>
+    <a href="{{ post.url | url }}">{{ post.title }}</a> <small>{{ post.date | readableDate }}</small>
+  </li>
+  {%- endfor %}
+</ul>
