@@ -3,7 +3,7 @@ title: Neural Networks - Gradient Descent
 date: 2023-01-18T12:00Z
 layout: post
 tags:
-  - neural-network
+  - neuralnetworks
   - machinelearning
 excerpt: >-
   We describe a method for finding a local minimum for a function of several

@@ -3,7 +3,7 @@ title: Neural Networks - Linear Regression
 date: 2023-12-21T12:00Z
 layout: post
 tags:
-  - neural-network
+  - neuralnetworks
   - machinelearning
 excerpt: >-
   Looking at the basic model for a neural network, it is natural to consider:

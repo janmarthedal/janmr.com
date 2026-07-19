@@ -3,7 +3,7 @@ title: Neural Networks - Activation Functions
 date: 2023-01-21T12:00Z
 layout: post
 tags:
-  - neural-network
+  - neuralnetworks
   - machinelearning
 excerpt: On activation functions for neural networks.
 redirect: /blog/2023/01/neural-networks-08-activation-functions/

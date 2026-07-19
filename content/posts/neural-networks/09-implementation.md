@@ -3,7 +3,7 @@ title: Neural Networks - Implementation
 date: 2023-01-22T12:00Z
 layout: post
 tags:
-  - neural-network
+  - neuralnetworks
   - machinelearning
 excerpt: How to implement a simple neural network in Python/NumPy.
 redirect: /blog/2023/01/neural-networks-09-implementation/

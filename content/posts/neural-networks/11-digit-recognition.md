@@ -3,7 +3,7 @@ title: Neural Networks - Digit Recognition
 date: 2023-12-22T12:00Z
 layout: post
 tags:
-  - neural-network
+  - neuralnetworks
   - machinelearning
 excerpt: >-
   This post will look at digit recognition using a neural network as described

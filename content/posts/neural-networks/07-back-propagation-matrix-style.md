@@ -3,7 +3,7 @@ title: Neural Networks - Back-propagation Matrix-style
 date: 2023-01-20T12:00Z
 layout: post
 tags:
-  - neural-network
+  - neuralnetworks
   - machinelearning
 excerpt: We express the back-propagation formulas using matrix notation.
 redirect: /blog/2023/01/neural-networks-07-back-propagation-matrix-style/
