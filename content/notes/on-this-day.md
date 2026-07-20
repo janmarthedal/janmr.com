@@ -21,6 +21,7 @@ layout: page
 - *1948-07-15* [GCal]. (Day of month unknown.) A Mathematical Theory of Communication by C. E. Shannon
 - *2001-08-19* [GCal]. SciPy 0.1 is released. https://mail.python.org/pipermail/python-list/2001-August/106419.html https://web.archive.org/web/20010309040805/http://scipy.org:80/ https://arxiv.org/abs/1907.10121 https://www.nature.com/articles/s41592-019-0686-2
 - *1979-09-01* [GCal]. BLAS is announced: Basic Linear Algebra Subprograms for Fortran Usage. https://dl.acm.org/doi/10.1145/355841.355847
+- *1952-09-15* [GCal]. (Day of month unknown.) The paper "A Method for the Construction of Minimum-Redundancy Codes" is published. https://www.worldradiohistory.com/IRE_Proceedings.htm https://compression.ru/download/articles/huff/huffman_1952_minimum-redundancy-codes.pdf 
 - *2012-10-01* [GCal]. TypeScript is released (version 0.8.0). https://web.archive.org/web/20150403224440/https://typescript.codeplex.com/releases/view/95554
 - *2006-10-05* [GCal]. (Day of month unknown.) NumPy 1.0 was released. https://arxiv.org/abs/1907.10121
 - *1986-10-09* [GCal]. The paper "Learning representations by back-propagating errors" is published. https://www.nature.com/articles/323533a0
