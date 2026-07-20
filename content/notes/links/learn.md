@@ -32,5 +32,6 @@ layout: page
 * [Math videos from Math Professor Jeffrey Chasnov](https://www.youtube.com/@Jeff-math/playlists).
   YouTube playlists. Seven of the playlists are videos from his Coursera courses.
 * MIT's [Mathematics for Computer Science](https://www.youtube.com/playlist?list=PLUl4u3cNGP61VNvICqk2HXJTonnKgAc9d)
+  Elementary discrete mathematics for science and engineering, with a focus on mathematical tools and proof techniques useful in computer science 
 * [Stanford Engineering Everywhere](https://see.stanford.edu).
   Full lecture videos, syllabi, homework, and exams for courses spanning introductory computer science, artificial intelligence, linear systems & optimization, and logic.
