@@ -27,6 +27,7 @@ layout: page
 - *1986-10-09* [GCal]. The paper "Learning representations by back-propagating errors" is published. https://www.nature.com/articles/323533a0
 - *1985-10-14* [GCal]. (Day of month unknown.) First official reference guide for the C++ programming language is published. https://www.stroustrup.com/C++.html https://www.stroustrup.com/1st.html
 - *1986-11-01* [GCal]. (Day of month unknown.) An O(ND) Difference Algorithm and Its Variations by Eugene W. Myers
+- *1936-11-12* [GCal]. The paper "On Computable Numbers, with an Application to the Entscheidungsproblem" was presented to the London Mathematical Society.
 - *2009-11-10* [GCal]. Go was released. https://go.dev/blog/1year
 - *2003-11-20* [GCal]. Making reliable distributed systems in the presence of software errors by Joe Armstrong
 - *2004-12-01* [GCal]. (Day of month unknown.) The paper "MapReduce: Simplified Data Processing on Large Clusters" is published. https://research.google.com/archive/mapreduce.html
