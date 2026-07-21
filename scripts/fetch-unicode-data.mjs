@@ -1,5 +1,5 @@
 // Fetches UnicodeData.txt and unicode.xml, merges them, writes data/unicode-data.json.
-// Run once with: node scripts/fetch-unicode-data.mjs
+// Run once with: bun scripts/fetch-unicode-data.mjs
 
 import { load } from 'cheerio';
 import { writeFileSync } from 'fs';

@@ -1,4 +1,4 @@
-#!/usr/bin/env node
+#!/usr/bin/env bun
 import { load } from 'cheerio';
 import { writeFileSync } from 'fs';
 import { join, dirname } from 'path';
@@ -8,7 +8,7 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
 
 const url = process.argv[2];
 if (!url) {
-  console.error('Usage: node create-draft.mjs <url>');
+  console.error('Usage: bun create-draft.mjs <url>');
   process.exit(1);
 }
 

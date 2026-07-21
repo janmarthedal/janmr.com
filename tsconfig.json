@@ -1,8 +1,7 @@
 {
   "extends": "@tsconfig/node24/tsconfig.json",
   "compilerOptions": {
-    "rootDir": "src",
-    "sourceMap": true,
-    "outDir": "build"
-  }
+    "noEmit": true
+  },
+  "include": ["src", "scripts"]
 }

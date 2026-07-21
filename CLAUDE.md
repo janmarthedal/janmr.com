@@ -6,6 +6,7 @@ This is a custom static site generator for janmr.com, a personal website and blo
 
 ## Tech Stack
 
+- **Bun** - Runtime and package manager; runs `src/run.ts` directly, no compile step
 - **TypeScript** - Main build system language
 - **Nunjucks** - Templating engine for HTML
 - **Markdown-it** - Markdown parser with KaTeX (math) and Prism (syntax highlighting) plugins
@@ -17,7 +18,6 @@ This is a custom static site generator for janmr.com, a personal website and blo
 ```
 janmr.com/
 ├── _site/               # Generated static site (output)
-├── build/               # Compiled JavaScript (generated)
 ├── content/             # Source content files
 │   ├── css/             # CSS and LESS files
 │   ├── files/           # Static files (copied as-is)

@@ -5,19 +5,22 @@
   "main": "index.js",
   "scripts": {
     "clean": "rm -rf _site",
-    "serve": "npx sirv _site --dev",
-    "build": "tsc",
-    "make": "node build/run.js",
-    "make:dev": "node --enable-source-maps build/run.js",
-    "make:watch": "node --watch-path=content --enable-source-maps build/run.js",
-    "dev": "npm-run-all clean --parallel make:watch serve",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "serve": "bunx sirv _site --dev",
+    "make": "bun src/run.ts",
+    "make:dev": "bun src/run.ts",
+    "make:watch": "bun scripts/watch.ts",
+    "dev": "bunx npm-run-all clean --parallel make:watch serve",
+    "test": "tsc --noEmit"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
+  "engines": {
+    "bun": ">=1.3.0"
+  },
   "devDependencies": {
     "@tsconfig/node24": "^24.0.0",
+    "@types/bun": "^1.3.0",
     "@types/clean-css": "^4.2.11",
     "@types/less": "^3.0.6",
     "@types/markdown-it": "^14.1.1",
