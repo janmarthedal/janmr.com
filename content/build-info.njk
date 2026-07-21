@@ -1,0 +1,23 @@
+---
+layout: page
+title: Build Info
+---
+<p>Information about the build that produced this deployment.</p>
+<dl>
+  <dt>Commit</dt>
+  <dd>
+    <a href="https://github.com/janmarthedal/janmr.com/commit/{{ metadata.build.commitHash }}">
+      {{ metadata.build.commitHash | truncate(12, true, '') }}
+    </a>
+  </dd>
+  <dt>Built</dt>
+  <dd><time datetime="{{ metadata.build.buildTime | dateToISO }}">{{ metadata.build.buildTime | dateToISO }}</time></dd>
+  {% if metadata.build.branch -%}
+  <dt>Branch</dt>
+  <dd>{{ metadata.build.branch }}</dd>
+  {%- endif %}
+  {% if metadata.build.context -%}
+  <dt>Context</dt>
+  <dd>{{ metadata.build.context }}</dd>
+  {%- endif %}
+</dl>

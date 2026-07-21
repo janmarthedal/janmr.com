@@ -46,6 +46,15 @@ const INCLUDE_DRAFTS = process.argv.includes("--drafts");
 const KATEX_LINK = '<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/katex@0.16.7/dist/katex.min.css">';
 const PRISM_LINK = '<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/prismjs@1.20.0/themes/prism.css">';
 
+function getCommitHash(): string {
+    if (process.env.COMMIT_REF) return process.env.COMMIT_REF;
+    try {
+        return Bun.spawnSync(["git", "rev-parse", "HEAD"]).stdout.toString().trim();
+    } catch {
+        return "unknown";
+    }
+}
+
 const metadata = {
     title: "janmr.com",
     url: "https://janmr.com",
@@ -60,6 +69,12 @@ const metadata = {
         id: "https://janmr.com/",
     },
     environment: process.env.BUILD_ENV,
+    build: {
+        commitHash: getCommitHash(),
+        buildTime: new Date(),
+        branch: process.env.BRANCH,
+        context: process.env.CONTEXT,
+    },
 };
 
 const enum PageType {
