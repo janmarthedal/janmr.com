@@ -7,7 +7,7 @@ import nunjucks from "nunjucks";
 import less from "less";
 import cleanCSS from "clean-css";
 import MarkdownIt from "markdown-it";
-import markdownKaTeX from "@byronwan/markdown-it-katex";
+import markdownKaTeX from "@vscode/markdown-it-katex";
 import markdownPrism from "markdown-it-prism";
 import { load as parseHtml } from "cheerio";
 import { absoluteUrl } from "./rss/absoluteUrl";
