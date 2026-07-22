@@ -3,14 +3,6 @@ import { mkdirSync, appendFileSync, readFileSync, writeFileSync } from "fs";
 import { dirname, extname, join } from "path";
 import { globIterateSync } from "glob";
 import { load as yamlLoad } from "js-yaml";
-
-function matter(content: string): { data: Record<string, unknown>; content: string } {
-    if (!content.startsWith("---\n")) return { data: {}, content };
-    const end = content.indexOf("\n---\n", 4);
-    if (end === -1) return { data: {}, content };
-    const data = (yamlLoad(content.slice(4, end)) as Record<string, unknown>) ?? {};
-    return { data, content: content.slice(end + 5) };
-}
 import nunjucks from "nunjucks";
 import less from "less";
 import cleanCSS from "clean-css";
@@ -45,6 +37,14 @@ const LAYOUT_DIR = "layouts";
 const INCLUDE_DRAFTS = process.argv.includes("--drafts");
 const KATEX_LINK = '<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/katex@0.16.7/dist/katex.min.css">';
 const PRISM_LINK = '<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/prismjs@1.20.0/themes/prism.css">';
+
+function matter(content: string): { data: Record<string, unknown>; content: string } {
+    if (!content.startsWith("---\n")) return { data: {}, content };
+    const end = content.indexOf("\n---\n", 4);
+    if (end === -1) return { data: {}, content };
+    const data = (yamlLoad(content.slice(4, end)) as Record<string, unknown>) ?? {};
+    return { data, content: content.slice(end + 5) };
+}
 
 function getCommitHash(): string {
     if (process.env.COMMIT_REF) return process.env.COMMIT_REF;
