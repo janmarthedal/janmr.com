@@ -32,7 +32,7 @@ const CSS_OUTPUT = "css/styles.css";
 const SOURCE_PATTERN = "**/*";
 const SITE_DIR = "_site";
 const REDIRECT_FILE = join(SITE_DIR, "_redirects");
-const IGNORE_PATTERNS = [...COPY_PATTERNS, "**/CLAUDE.md"];
+const IGNORE_PATTERNS = [...COPY_PATTERNS, "**/CLAUDE.md", "**/SPEC.md"];
 const LAYOUT_DIR = "layouts";
 const INCLUDE_DRAFTS = process.argv.includes("--drafts");
 const KATEX_LINK = '<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/katex@0.16.7/dist/katex.min.css">';

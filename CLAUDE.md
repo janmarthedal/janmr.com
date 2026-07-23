@@ -18,6 +18,7 @@ This is a custom static site generator for janmr.com, a personal website and blo
 ```
 janmr.com/
 ├── _site/               # Generated static site (output)
+├── assets-src/          # Source scripts/projects that generate content/media assets (not built)
 ├── content/             # Source content files
 │   ├── css/             # CSS and LESS files
 │   ├── files/           # Static files (copied as-is)
@@ -46,3 +47,8 @@ janmr.com/
 ├── package.json
 └── tsconfig.json
 ```
+
+`CLAUDE.md` and `SPEC.md` files may be placed inside any `content/` subdirectory
+(e.g. next to a post series) to document conventions or track planned/current
+posts — both filenames are excluded from the build by `IGNORE_PATTERNS` in
+`src/run.ts` and never produce output.
