@@ -26,9 +26,7 @@ $$u = g_D \quad \text{on } \Gamma_D.$$
 $$\frac{\partial u}{\partial n} = g_N \quad \text{on } \Gamma_N,$$
 
 where $\mathbf{n}$ is the unit outward normal to $\partial\Omega$.
-When $g_N = 0$, the condition is called a **zero-flux** or **natural** condition;
-it arises automatically in the weak formulation and requires no special treatment,
-as we shall see later.
+When $g_N = 0$, the condition is called a **zero-flux** or **natural** condition.
 
 ---
 
