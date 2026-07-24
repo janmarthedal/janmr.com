@@ -47,6 +47,9 @@ Some online profiles:
 [GitHub](https://github.com/janmarthedal),
 [LinkedIn](https://www.linkedin.com/in/janmr),
 [Mastodon](https://mathstodon.xyz/@janmr),
-[X](https://x.com/janmarthedal)
+[X](https://x.com/janmarthedal).
+Feel free to follow or contact me through these.
+
+View my [Cirriculum Vitae](cv/).
 
 </div>
