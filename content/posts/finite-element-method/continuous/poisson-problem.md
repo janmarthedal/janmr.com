@@ -1,7 +1,17 @@
 ---
 title: The Poisson Problem
+date: 2026-07-24T11:43Z
+layout: post
+tags:
+  - finite-element-method
+  - numerical-analysis
+  - mathematics
+  - pde
+og:
+  description: >-
+    An introduction to the Poisson equation, its Dirichlet and Neumann boundary
+    conditions, and a 2D and 1D example solved with the finite element method.
 ---
-
 The **Poisson equation** is one of the most important partial differential equations (PDEs) in applied mathematics.
 Given a domain $\Omega \subset \mathbb{R}^n$ and a source term $f : \Omega \to \mathbb{R}$,
 the Poisson equation seeks a function $u : \Omega \to \mathbb{R}$ satisfying
