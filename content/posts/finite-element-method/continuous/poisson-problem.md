@@ -11,6 +11,7 @@ og:
   description: >-
     An introduction to the Poisson equation, its Dirichlet and Neumann boundary
     conditions, and a 2D and 1D example solved with the finite element method.
+mastodon: https://mathstodon.xyz/@janmr/116974869069055692
 ---
 The **Poisson equation** is one of the most important partial differential equations (PDEs) in applied mathematics.
 Given a domain $\Omega \subset \mathbb{R}^n$ and a source term $f : \Omega \to \mathbb{R}$,
