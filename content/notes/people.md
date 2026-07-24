@@ -4,6 +4,8 @@ layout: page
 ---
 - [Fabrice Bellard](https://bellard.org).
   Creator of [QEMU](https://www.qemu.org/), [FFmpeg](https://ffmpeg.org/), and has set multiple Pi computation records.
+- [John Carmack](https://x.com/id_aa_carmack)
+  Lead programmer of Wolfenstein 3D, Doom, Quake, among others.
 - [Geoffrey Everest Hinton](https://www.cs.toronto.edu/~hinton/).
   Known for his work on artificial neural networks, earning him the title "the Godfather of AI".
 - [Andrew Kelley](https://andrewkelley.me).
