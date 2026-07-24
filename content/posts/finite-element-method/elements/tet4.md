@@ -10,14 +10,14 @@ $$\hat{x}_0 = (0,0,0), \quad \hat{x}_1 = (1,0,0), \quad
   \hat{x}_2 = (0,1,0), \quad \hat{x}_3 = (0,0,1),$$
 
 matching the
-[tetrahedron reference domain](/posts/finite-element-method/ref-domains/tetrahedron/).
+[tetrahedron reference domain](../../ref-domains/tetrahedron/).
 
 In the library, it is implemented in [`elements/tet4.py`](https://github.com/janmarthedal/yggdrasil/tree/main/yggdrasil/elements/tet4.py)
 by the class `Tet4`.
 
 ![Nodes of the Tet4 element](/media/fem/tet4-nodes.svg)
 
-Just as the [Tri3](/posts/finite-element-method/elements/tri3/) element uses barycentric
+Just as the [Tri3](../tri3/) element uses barycentric
 coordinates on the triangle, the Tet4 element uses their three-dimensional
 analogue. The four barycentric coordinates on $\hat{T}$ are
 
@@ -45,7 +45,7 @@ $x_0, x_1, x_2, x_3 \in \mathbb{R}^3$, the isoparametric mapping
 $F_e(\hat{x}) = \sum_{i=0}^3 x_i\,N_i$ is an affine map from $\hat{T}$ to
 the physical tetrahedron, and the Jacobian $J = \partial F_e / \partial
 \hat{x}$ is constant within each element — a useful property it shares with
-Tri3 and Line2. The face element is [Tri3](/posts/finite-element-method/elements/tri3/), since
+Tri3 and Line2. The face element is [Tri3](../tri3/), since
 each of the four triangular faces carries three nodes that form a linear
 triangular element.
 

@@ -3,7 +3,7 @@ title: The Quad9 Element
 ---
 
 The **Quad9** element is a 9-node biquadratic quadrilateral. It
-lives on the same reference square as [Quad4](/posts/finite-element-method/elements/quad4/) but
+lives on the same reference square as [Quad4](../quad4/) but
 adds a node at the midpoint of each edge and one at the center, giving four
 corner nodes, four edge-midpoint nodes, and one interior node:
 
@@ -22,7 +22,7 @@ by the class `Quad9`.
 
 The shape functions are built as tensor products of the 1D quadratic [Lagrange
 basis polynomials](https://en.wikipedia.org/wiki/Lagrange_polynomial) on
-$[0,1]$ introduced in the [Line3](/posts/finite-element-method/elements/line3/) post:
+$[0,1]$ introduced in the [Line3](../line3/) post:
 
 $$\ell_0(t) = (1-t)(1-2t), \qquad \ell_1(t) = t(2t-1), \qquad
   \ell_2(t) = 4t(1-t).$$
@@ -58,6 +58,6 @@ space $\mathbb{Q}_2 = \mathrm{span}\{1, \hat{x}, \hat{y}, \hat{x}^2,
 \hat{x}\hat{y}, \hat{y}^2, \hat{x}^2\hat{y}, \hat{x}\hat{y}^2,
 \hat{x}^2\hat{y}^2\}$, so Quad9 can represent any biquadratic function
 exactly and achieves second-order accuracy. The face element is
-[Line3](/posts/finite-element-method/elements/line3/), since each edge carries three nodes (two
+[Line3](../line3/), since each edge carries three nodes (two
 corners plus the edge midpoint) that together form a quadratic 1D element.
 

@@ -10,12 +10,12 @@ $$\hat{x}_0 = (0,0), \quad \hat{x}_1 = (1,0), \quad
   \hat{x}_2 = (1,1), \quad \hat{x}_3 = (0,1),$$
 
 matching the
-[quadrilateral reference domain](/posts/finite-element-method/ref-domains/quadrilateral/).
+[quadrilateral reference domain](../../ref-domains/quadrilateral/).
 
 In the library, it is implemented in [`elements/quad4.py`](https://github.com/janmarthedal/yggdrasil/tree/main/yggdrasil/elements/quad4.py)
 by the class `Quad4`.
 
-The shape functions are obtained as tensor products of the two [Line2](/posts/finite-element-method/elements/line2/)
+The shape functions are obtained as tensor products of the two [Line2](../line2/)
 shape functions. Writing $\ell_0(t) = 1 - t$ and $\ell_1(t) = t$ for the
 linear Lagrange basis on $[0,1]$, each Quad4 shape function takes the form
 $\ell_a(\hat{x})\,\ell_b(\hat{y})$ for appropriate choices of $a, b \in

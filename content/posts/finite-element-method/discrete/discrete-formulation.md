@@ -2,7 +2,7 @@
 title: The Discrete Formulation
 ---
 
-The [abstract weak problem](/posts/finite-element-method/continuous/elliptic-weak-form/) — find $u \in V$ such that $a(u,v) = \ell(v)$ for all $v \in V_0$ — is posed in an infinite-dimensional function space and cannot be solved directly on a computer. The **Galerkin method** turns it into a finite-dimensional problem by restricting attention to a subspace.
+The [abstract weak problem](../../continuous/elliptic-weak-form/) — find $u \in V$ such that $a(u,v) = \ell(v)$ for all $v \in V_0$ — is posed in an infinite-dimensional function space and cannot be solved directly on a computer. The **Galerkin method** turns it into a finite-dimensional problem by restricting attention to a subspace.
 
 Choose a finite-dimensional subspace $V_h \subset V$ of dimension $N$. The subscript $h$ conventionally denotes a discretisation parameter, typically the mesh size. The discrete problem reads: find $u_h \in V_h$ such that
 

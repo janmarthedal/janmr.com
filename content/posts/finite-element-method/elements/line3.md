@@ -31,7 +31,7 @@ $$\frac{\mathrm{d}N_0}{\mathrm{d}\hat{x}} = 4\hat{x} - 3, \qquad
 ![Shape functions of the Line3 element](/media/fem/line3-shape-functions.svg)
 
 Because Line3 uses the same quadratic Lagrange basis as the 1D building blocks
-of the [Quad9](/posts/finite-element-method/elements/quad9/) and [Hex8](/posts/finite-element-method/elements/hex8/)
+of the [Quad9](../quad9/) and [Hex8](../hex8/)
 elements, its shape functions also appear as factors in the tensor-product
 constructions for those higher-dimensional elements.
 

@@ -2,7 +2,7 @@
 title: From Basis to Shape Functions
 ---
 
-The [discrete formulation](/posts/finite-element-method/discrete/discrete-formulation/) requires choosing
+The [discrete formulation](../discrete-formulation/) requires choosing
 a basis $\{\phi_1, \ldots, \phi_N\}$ for the space $V_h$ and assembling the
 stiffness matrix $K_{ij} = a(\phi_j, \phi_i)$ and load vector $f_i = \ell(\phi_i)$.
 In practice these global basis functions are not constructed directly; they emerge

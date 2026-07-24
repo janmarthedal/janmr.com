@@ -2,7 +2,7 @@
 title: Continuous Galerkin
 ---
 
-The [previous post](/posts/finite-element-method/discrete/basis-to-shape-functions/) noted that both
+The [previous post](../basis-to-shape-functions/) noted that both
 continuous and discontinuous Galerkin methods can be cast in the same
 element-by-element assembly framework. The defining difference is what happens
 at inter-element faces. In the **continuous Galerkin** method the discrete space

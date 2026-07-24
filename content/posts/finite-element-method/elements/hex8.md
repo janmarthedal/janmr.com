@@ -5,7 +5,7 @@ title: The Hex8 Element
 The **Hex8** element is the simplest hexahedral element: 8 nodes, one at each
 corner of the reference cube, with trilinear shape functions. The
 reference domain is $\hat{H} = [0,1]^3$, matching the
-[hexahedron reference domain](/posts/finite-element-method/ref-domains/hexahedron/). The 8 nodes
+[hexahedron reference domain](../../ref-domains/hexahedron/). The 8 nodes
 are ordered bottom face first, then top face, each traversed in the same
 cyclic order:
 
@@ -19,7 +19,7 @@ by the class `Hex8`.
 
 ![Nodes of the Hex8 element](/media/fem/hex8-nodes.svg)
 
-The shape functions extend the pattern of [Quad4](/posts/finite-element-method/elements/quad4/)
+The shape functions extend the pattern of [Quad4](../quad4/)
 from two to three dimensions. Writing $\ell_0(t) = 1 - t$ and $\ell_1(t) = t$
 for the linear Lagrange basis on $[0,1]$, each Hex8 shape function is a triple
 tensor product
@@ -56,6 +56,6 @@ terms in the trilinear functions.
 Hex8 spans the trilinear space $\mathbb{Q}_1$ — all polynomials of degree at
 most one in each variable separately. This includes all linear functions, so
 the element achieves first-order accuracy. The face element is
-[Quad4](/posts/finite-element-method/elements/quad4/), since each of the six square faces carries
+[Quad4](../quad4/), since each of the six square faces carries
 four corner nodes forming a bilinear quadrilateral element.
 

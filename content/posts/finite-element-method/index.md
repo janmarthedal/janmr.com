@@ -3,37 +3,37 @@ title: Finite Element Method
 ---
 
 - Continuous
-  - [The Poisson Problem](/posts/finite-element-method/continuous/poisson-problem/)
-  - [General Elliptic PDEs](/posts/finite-element-method/continuous/elliptic-pdes/)
-  - [Weak Formulation of the Poisson Problem](/posts/finite-element-method/continuous/poisson-weak-form/)
-  - [Weak Formulation of Elliptic PDEs](/posts/finite-element-method/continuous/elliptic-weak-form/)
+  - [The Poisson Problem](continuous/poisson-problem/)
+  - [General Elliptic PDEs](continuous/elliptic-pdes/)
+  - [Weak Formulation of the Poisson Problem](continuous/poisson-weak-form/)
+  - [Weak Formulation of Elliptic PDEs](continuous/elliptic-weak-form/)
 - Discrete
-  - [The Discrete Formulation](/posts/finite-element-method/discrete/discrete-formulation/)
-  - [From Basis to Shape Functions](/posts/finite-element-method/discrete/basis-to-shape-functions/)
-  - [Continuous Galerkin](/posts/finite-element-method/discrete/continuous-galerkin/)
+  - [The Discrete Formulation](discrete/discrete-formulation/)
+  - [From Basis to Shape Functions](discrete/basis-to-shape-functions/)
+  - [Continuous Galerkin](discrete/continuous-galerkin/)
 - Reference domains
-  - [Reference Domains and Quadrature](/posts/finite-element-method/ref-domains/overview/)
+  - [Reference Domains and Quadrature](ref-domains/overview/)
   - 1D
-    - [The Line Domain](/posts/finite-element-method/ref-domains/line/)
+    - [The Line Domain](ref-domains/line/)
   - 2D
-    - [The Triangle Domain](/posts/finite-element-method/ref-domains/triangle/)
-    - [The Quadrilateral Domain](/posts/finite-element-method/ref-domains/quadrilateral/)
+    - [The Triangle Domain](ref-domains/triangle/)
+    - [The Quadrilateral Domain](ref-domains/quadrilateral/)
   - 3D
-    - [The Tetrahedron Domain](/posts/finite-element-method/ref-domains/tetrahedron/)
-    - [The Hexahedron Domain](/posts/finite-element-method/ref-domains/hexahedron/)
+    - [The Tetrahedron Domain](ref-domains/tetrahedron/)
+    - [The Hexahedron Domain](ref-domains/hexahedron/)
 - Elements
-  - [Shape Functions on Reference Elements](/posts/finite-element-method/elements/overview/)
+  - [Shape Functions on Reference Elements](elements/overview/)
   - 1D
-    - [The Line2 Element](/posts/finite-element-method/elements/line2/)
-    - [The Line3 Element](/posts/finite-element-method/elements/line3/)
+    - [The Line2 Element](elements/line2/)
+    - [The Line3 Element](elements/line3/)
   - 2D
-    - [The Tri3 Element](/posts/finite-element-method/elements/tri3/)
-    - [The Tri6 Element](/posts/finite-element-method/elements/tri6/)
-    - [The Quad4 Element](/posts/finite-element-method/elements/quad4/)
-    - [The Quad9 Element](/posts/finite-element-method/elements/quad9/)
+    - [The Tri3 Element](elements/tri3/)
+    - [The Tri6 Element](elements/tri6/)
+    - [The Quad4 Element](elements/quad4/)
+    - [The Quad9 Element](elements/quad9/)
   - 3D
-    - [The Tet4 Element](/posts/finite-element-method/elements/tet4/)
-    - [The Hex8 Element](/posts/finite-element-method/elements/hex8/)
+    - [The Tet4 Element](elements/tet4/)
+    - [The Hex8 Element](elements/hex8/)
 - Meshes
   - Mesh Representation
   - Mesh Boundaries

@@ -3,7 +3,7 @@ title: The Tri6 Element
 ---
 
 The **Tri6** element is a 6-node quadratic triangle. It lives on
-the same reference triangle as [Tri3](/posts/finite-element-method/elements/tri3/) but adds a node
+the same reference triangle as [Tri3](../tri3/) but adds a node
 at the midpoint of each edge, giving three vertex nodes and three edge-midpoint
 nodes:
 

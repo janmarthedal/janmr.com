@@ -2,7 +2,7 @@
 title: Weak Formulation of Elliptic PDEs
 ---
 
-The [weak formulation of the Poisson problem](/posts/finite-element-method/continuous/poisson-weak-form/) extends naturally to the [general elliptic operator](/posts/finite-element-method/continuous/elliptic-pdes/)
+The [weak formulation of the Poisson problem](../poisson-weak-form/) extends naturally to the [general elliptic operator](../elliptic-pdes/)
 
 $$Lu = -\nabla \cdot (A \nabla u) + \mathbf{b} \cdot \nabla u + c\, u.$$
 
