@@ -10,5 +10,5 @@ The figure below shows the order-5 rule, which places $3 \times 3 \times 3 = 27$
 
 ![Tensor-product quadrature points on the reference hexahedron, order 5](/media/fem/hexahedron-domain-quadrature.svg)
 
-This construction is implemented in [`refdomains/hexahedron.py`](https://github.com/janmarthedal/yggdrasil/tree/main/yggdrasil/refdomains/hexahedron.py) by `HexahedronDomain`, which delegates to `LineDomain` and forms the tensor product using `np.meshgrid`. The `quadrature(order)` method supports any polynomial order for which `LineDomain` has a rule.
+In the library, this construction is implemented in [`refdomains/hexahedron.py`](https://github.com/janmarthedal/yggdrasil/tree/main/yggdrasil/refdomains/hexahedron.py) by `HexahedronDomain`, which delegates to `LineDomain` and forms the tensor product using `np.meshgrid`. Its `quadrature(order)` method supports any polynomial order for which `LineDomain` has a rule.
 
