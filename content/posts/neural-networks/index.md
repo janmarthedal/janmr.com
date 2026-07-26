@@ -1,5 +1,5 @@
 ---
-title: Neural Networks - Preface
+title: Introduction to Neural Networks
 date: 2023-01-14T12:00Z
 layout: post
 tags:

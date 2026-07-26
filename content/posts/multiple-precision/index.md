@@ -1,5 +1,5 @@
 ---
-title: Posts on Multiple-Precision Arithmetic
+title: Multiple-Precision Arithmetic
 layout: page
 ---
 - [Number representation](/posts/multiple-precision/number-representation/)
