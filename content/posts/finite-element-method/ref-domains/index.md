@@ -3,7 +3,7 @@ title: Reference Domains and Quadrature
 ---
 
 Computing the element stiffness matrices and load vectors from the
-[previous post](../../discrete/basis-to-shape-functions/) requires evaluating
+[previous post](../discrete/basis-to-shape-functions/) requires evaluating
 integrals over each element $T_e$. In a general mesh the elements can differ
 in position, size, and orientation, so it is impractical to design shape
 functions and integration rules separately for each one. Instead, every element
@@ -35,11 +35,11 @@ the pair `(points, weights)` for the requested degree, where `points` has shape
 Each element type has a dedicated post describing its reference domain and quadrature rules:
 
 - 1D
-  - [The Line Domain](../line/)
+  - [The Line Domain](line/)
 - 2D
-  - [The Triangle Domain](../triangle/)
-  - [The Quadrilateral Domain](../quadrilateral/)
+  - [The Triangle Domain](triangle/)
+  - [The Quadrilateral Domain](quadrilateral/)
 - 3D
-  - [The Tetrahedron Domain](../tetrahedron/)
-  - [The Hexahedron Domain](../hexahedron/)
+  - [The Tetrahedron Domain](tetrahedron/)
+  - [The Hexahedron Domain](hexahedron/)
 

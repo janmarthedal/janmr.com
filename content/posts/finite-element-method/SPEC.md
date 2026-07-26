@@ -106,7 +106,7 @@ exposition around the API.
      function on an irregular triangular mesh, with the support shaded and the
      patch boundary highlighted.
 
-10. `ref-domains/overview.md` — **Reference Domains and Quadrature**
+10. `ref-domains/index.md` — **Reference Domains and Quadrature**
     - Introduce the need for local parametrization of standard elements (domains).
     - Introduce the concept of integration using sample points and weights.
     - Refer to the class ReferenceDomain.quadrature.
@@ -142,7 +142,7 @@ exposition around the API.
       `quadrilateral-domain-quadrature.svg`.
     - Refer to the class HexahedronDomain
 
-16. `elements/overview.md` — **Shape Functions on Reference Elements**
+16. `elements/index.md` — **Shape Functions on Reference Elements**
     - Introduce the abstract class `ReferenceElement` in
       [`elements/element.py`](LIBROOT/elements/element.py) and its three core
       methods: `node_coords`, `shape_functions`, and `shape_function_gradients`.

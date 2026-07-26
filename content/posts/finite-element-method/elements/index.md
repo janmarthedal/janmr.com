@@ -2,7 +2,7 @@
 title: Shape Functions on Reference Elements
 ---
 
-The [previous posts](../../ref-domains/overview/) showed how each element
+The [previous posts](../ref-domains/) showed how each element
 type has a fixed reference domain $\hat{T}$ and how integrals over $\hat{T}$ are
 evaluated by quadrature. The next ingredient is the set of **shape functions**
 defined on $\hat{T}$: polynomial functions $N_1, \ldots, N_n : \hat{T} \to \mathbb{R}$
@@ -38,14 +38,14 @@ $\partial N_i / \partial \hat{x}_j$ evaluated at query point $q$.
 Each element type has a dedicated post:
 
 - 1D
-  - [The Line2 Element](../line2/)
-  - [The Line3 Element](../line3/)
+  - [The Line2 Element](line2/)
+  - [The Line3 Element](line3/)
 - 2D
-  - [The Tri3 Element](../tri3/)
-  - [The Tri6 Element](../tri6/)
-  - [The Quad4 Element](../quad4/)
-  - [The Quad9 Element](../quad9/)
+  - [The Tri3 Element](tri3/)
+  - [The Tri6 Element](tri6/)
+  - [The Quad4 Element](quad4/)
+  - [The Quad9 Element](quad9/)
 - 3D
-  - [The Tet4 Element](../tet4/)
-  - [The Hex8 Element](../hex8/)
+  - [The Tet4 Element](tet4/)
+  - [The Hex8 Element](hex8/)
 

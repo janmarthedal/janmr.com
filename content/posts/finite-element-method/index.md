@@ -12,7 +12,7 @@ title: Finite Element Method
   - [From Basis to Shape Functions](discrete/basis-to-shape-functions/)
   - [Continuous Galerkin](discrete/continuous-galerkin/)
 - Reference domains
-  - [Reference Domains and Quadrature](ref-domains/overview/)
+  - [Reference Domains and Quadrature](ref-domains/)
   - 1D
     - [The Line Domain](ref-domains/line/)
   - 2D
@@ -22,7 +22,7 @@ title: Finite Element Method
     - [The Tetrahedron Domain](ref-domains/tetrahedron/)
     - [The Hexahedron Domain](ref-domains/hexahedron/)
 - Elements
-  - [Shape Functions on Reference Elements](elements/overview/)
+  - [Shape Functions on Reference Elements](elements/)
   - 1D
     - [The Line2 Element](elements/line2/)
     - [The Line3 Element](elements/line3/)
