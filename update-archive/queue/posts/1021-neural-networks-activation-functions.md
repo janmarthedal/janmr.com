@@ -7,4 +7,4 @@ crossPosting:
 tags:
   - neural-network
 ---
-Neural Networks - Gradient Descent http://janmr.com/posts/neural-networks/05-gradient-descent/
+Neural Networks - Activation Functions http://janmr.com/posts/neural-networks/activation-functions/

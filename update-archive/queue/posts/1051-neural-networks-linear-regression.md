@@ -7,4 +7,4 @@ crossPosting:
 tags:
   - neural-network
 ---
-Neural Networks - Linear Regression http://janmr.com/posts/neural-networks/10-linear-regression/
+Neural Networks - Linear Regression http://janmr.com/posts/neural-networks/linear-regression/

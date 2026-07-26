@@ -7,4 +7,4 @@ crossPosting:
 tags:
   - neural-network
 ---
-Neural Networks - Digit Recognition http://janmr.com/posts/neural-networks/11-digit-recognition/
+Neural Networks - Implementation http://janmr.com/posts/neural-networks/implementation/

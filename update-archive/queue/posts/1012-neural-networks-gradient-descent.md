@@ -7,4 +7,4 @@ crossPosting:
 tags:
   - neural-network
 ---
-Neural Networks - Implementation http://janmr.com/posts/neural-networks/09-implementation/
+Neural Networks - Gradient Descent http://janmr.com/posts/neural-networks/gradient-descent/
