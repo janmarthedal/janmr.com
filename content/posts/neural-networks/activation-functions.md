@@ -1,5 +1,5 @@
 ---
-title: Neural Networks - Activation Functions
+title: Activation Functions
 date: 2023-01-21T12:00Z
 layout: post
 tags:

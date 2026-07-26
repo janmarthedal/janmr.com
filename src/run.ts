@@ -462,6 +462,8 @@ function decorateSeriesBreadcrumbs(pages: Array<Page>) {
             const href = relative(dirname(page.url), dirname(ancestorPage.url)) || ".";
             return { title: ancestorPage.title, url: href };
         });
+        const breadcrumbs = page.data.breadcrumbs as Array<{ title: string }>;
+        page.data.listTitle = `${breadcrumbs.map((b) => b.title).join(" › ")} › ${page.title}`;
     }
 }
 

@@ -5,7 +5,7 @@ layout: page
 <ul class="post-list">
   {%- for post in collections.posts | reverse -%}
   <li>
-    <a href="{{ post.url | url }}">{{ post.title }}</a> <small>{{ post.date | readableDate }}</small>
+    <a href="{{ post.url | url }}">{{ post.data.listTitle or post.title }}</a> <small>{{ post.date | readableDate }}</small>
   </li>
   {%- endfor -%}
 </ul>

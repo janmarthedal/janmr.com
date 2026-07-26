@@ -1,5 +1,5 @@
 ---
-title: Multiple-Precision Number Representation
+title: Number Representation
 date: 2011-10-05T12:00Z
 update: 2026-01-10T14:00Z
 layout: post

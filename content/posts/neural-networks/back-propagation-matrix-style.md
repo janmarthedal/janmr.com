@@ -1,5 +1,5 @@
 ---
-title: Neural Networks - Back-propagation Matrix-style
+title: Back-propagation Matrix-style
 date: 2023-01-20T12:00Z
 layout: post
 tags:

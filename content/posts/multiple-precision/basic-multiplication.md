@@ -1,5 +1,5 @@
 ---
-title: Basic Multiple-Precision Multiplication
+title: Basic Multiplication
 date: 2011-11-09T12:00Z
 update: 2026-01-10T14:00Z
 layout: post

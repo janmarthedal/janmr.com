@@ -1,5 +1,5 @@
 ---
-title: Multiple-Precision Subtraction
+title: Subtraction
 date: 2011-10-26T12:00Z
 update: 2026-01-10T14:00Z
 layout: post
