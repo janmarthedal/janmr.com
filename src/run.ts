@@ -1,6 +1,6 @@
 import assert from "assert";
 import { mkdirSync, appendFileSync, readFileSync, writeFileSync } from "fs";
-import { dirname, extname, join } from "path";
+import { basename, dirname, extname, join, relative } from "path";
 import { globIterateSync } from "glob";
 import { load as yamlLoad } from "js-yaml";
 import nunjucks from "nunjucks";
@@ -441,6 +441,30 @@ function decorateUpdates(pages: Array<Page>) {
     }
 }
 
+function decorateSeriesBreadcrumbs(pages: Array<Page>) {
+    const postsBySourcePath = new Map(
+        pages.filter((p) => p.type === PageType.Post && p.sourcePath).map((p) => [p.sourcePath!, p]),
+    );
+    for (const page of postsBySourcePath.values()) {
+        const relPath = page.sourcePath!.slice("posts/".length);
+        const folder = dirname(relPath);
+        if (folder === ".") continue;
+        const segments = folder.split("/");
+        const isOwnIndex = basename(relPath, extname(relPath)) === "index";
+        const ancestorSegments = isOwnIndex ? segments.slice(0, -1) : segments;
+        if (ancestorSegments.length === 0) continue;
+        page.data.breadcrumbs = ancestorSegments.map((_, i) => {
+            const ancestorFolder = ancestorSegments.slice(0, i + 1).join("/");
+            const ancestorPage = postsBySourcePath.get(`posts/${ancestorFolder}/index.md`);
+            if (!ancestorPage) {
+                throw new Error(`decorateSeriesBreadcrumbs: missing posts/${ancestorFolder}/index.md`);
+            }
+            const href = relative(dirname(page.url), dirname(ancestorPage.url)) || ".";
+            return { title: ancestorPage.title, url: href };
+        });
+    }
+}
+
 function decorateNotes(pages: Array<Page>) {
     for (const page of pages) {
         page.data.showEditLink = true;
@@ -508,6 +532,7 @@ async function run() {
     const collections = { posts, refs, updates };
 
     decoratePosts(publishPages, refMap);
+    decorateSeriesBreadcrumbs(publishPages);
     processMarkdown(pages);
     decorateUpdates(updates);
     decorateNotes(notes);
