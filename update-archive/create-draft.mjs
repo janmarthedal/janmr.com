@@ -89,9 +89,9 @@ const imageLine = image ? `\n![](${image})\n` : '';
 const content = `---
 date: ${date}
 crossPosting:
-  bluesky:
-  mastodon:
-  x:
+  bluesky:\x20
+  mastodon:\x20
+  x:\x20
 tags:
 ${tagsYaml}
 ---
