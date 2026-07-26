@@ -8,18 +8,17 @@ tags:
   - multiple-precision
   - numbers-project
   - programming
-mastodon: https://mathstodon.xyz/@janmr/115888234592112995
 og:
   description: An algorithm for subtracting two multiple-precision numbers
   image: /media/og/multiple-precision-03.png
-redirect: /blog/2011/10/multiple-precision-subtraction/
+redirect: /posts/multiple-precision/03-subtraction/
 ---
 We now turn to multiple-precision subtraction for non-negative integers.
-The algorithm is very similar to that of [multiple-precision addition](/posts/multiple-precision/02-addition/),
+The algorithm is very similar to that of [multiple-precision addition](/posts/multiple-precision/addition/),
 but some minor differences make it worth while considering subtraction separately.
 
 We consider two $n$-digit numbers, $u=(u_{n-1} \ldots u_1 u_0)_b$ and $v=(v_{n-1} \ldots v_1 v_0)_b$,
-with $n \geq 1$ (see a [previous post](/posts/multiple-precision/01-number-representation/) on the number notation).
+with $n \geq 1$ (see a [previous post](/posts/multiple-precision/number-representation/) on the number notation).
 We wish to compute an $n$-digit result $w=(w_{n-1} \ldots w_1 w_0)_b$ such that
 
 $$
@@ -68,4 +67,4 @@ $$
 and $k_n$ indicates whether $u < v+k_0$.
 
 We now turn our attention to the slightly more complicated case of
-[basic multiple-precision multiplication](/posts/multiple-precision/04-basic-multiplication/).
+[basic multiple-precision multiplication](/posts/multiple-precision/basic-multiplication/).

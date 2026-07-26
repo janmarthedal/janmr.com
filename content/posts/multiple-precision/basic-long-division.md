@@ -11,8 +11,7 @@ tags:
 og:
   description: An algorithm for dividing one multiple-precision number by another multiple-precision number
   image: /media/og/multiple-precision-06.png
-mastodon: https://mathstodon.xyz/@janmr/115967634037446950
-redirect: /blog/2014/04/basic-multiple-precision-long-division/
+redirect: /posts/multiple-precision/06-basic-long-division/
 ---
 We consider the task of dividing a positive integer $u$ by another positive integer $v$, thus obtaining a quotient $q=\lfloor u/v \rfloor$ and a remainder $r$ such that $u = q v + r$ with $0 \leq r < v$.
 
@@ -28,12 +27,12 @@ $$
 u = (u_{m-1} \ldots u_1 u_0)_b \quad \text{and} \quad v = (v_{n-1} \ldots v_1 v_0)_b \; ,
 $$
 
-so $u$ is an $m$-digit number and $v$ is an $n$-digit number (see [previous post](/posts/multiple-precision/01-number-representation/) for more details on representing multiple-precision numbers).
+so $u$ is an $m$-digit number and $v$ is an $n$-digit number (see [previous post](/posts/multiple-precision/number-representation/) for more details on representing multiple-precision numbers).
 
 Two special cases are easily dealt with:
 
  * If $m < n$ then $u < v$ and so $q = 0$ and $r = u$ is the simple answer.
- * If $n = 1$ then $v$ is just a single digit and we use a [short division algorithm](/posts/multiple-precision/05-basic-short-division/) instead.
+ * If $n = 1$ then $v$ is just a single digit and we use a [short division algorithm](/posts/multiple-precision/basic-short-division/) instead.
 
 So in the following we assume that $m \geq n > 1$.
 

@@ -10,8 +10,7 @@ tags:
 og:
   description: The basic representation of multiple-precision numbers, in preparation for the following posts
   image: /media/og/multiple-precision-01.png
-mastodon: https://mathstodon.xyz/@janmr/115843120325257187
-redirect: /blog/2011/10/multiple-precision-number-representation/
+redirect: /posts/multiple-precision/01-number-representation/
 ---
 Let us consider a common way to represent non-negative integers. An integer $u \geq 0$ will be represented in radix $b \geq 2$ using the notation
 
@@ -45,4 +44,4 @@ can be quite useful since the number of needed digits can be found, given $u$ an
 For instance, the fact that $\lfloor \log_2(1317803400) \rfloor + 1 = 31$ means that
 the number 1317803400 can be represented using 31 binary digits.
 
-We now proceed to look at how to [add multiple-precision numbers](/posts/multiple-precision/02-addition/).
+We now proceed to look at how to [add multiple-precision numbers](/posts/multiple-precision/addition/).

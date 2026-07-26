@@ -11,8 +11,7 @@ tags:
 og:
   description: An algorithm for adding two multiple-precision numbers
   image: /media/og/multiple-precision-02.png
-mastodon: https://mathstodon.xyz/@janmr/115870901679987791
-redirect: /blog/2011/10/multiple-precision-addition/
+redirect: /posts/multiple-precision/02-addition/
 ---
 <div class="pull-right"><a href="https://en.wikipedia.org/wiki/Special:BookSources/0201896842"><img src="/media/books/taocp2.jpg" alt=""></a></div>
 
@@ -20,7 +19,7 @@ This post will cover a basic addition algorithm for multiple-precision non-negat
 The algorithm is based upon that presented in Section 4.3.1, *The Classical Algorithms*,
 of [The Art of Computer Programming, Volume 2](/refs/taocp2/),
 by [Donald E. Knuth](http://www-cs-faculty.stanford.edu/~uno/).
-The notation and bounds used in this post were presented in a [previous post](/posts/multiple-precision/01-number-representation/).
+The notation and bounds used in this post were presented in a [previous post](/posts/multiple-precision/number-representation/).
 
 We consider adding two $n$-digit numbers with $n \geq 1$, $u=(u_{n-1} \ldots u_1 u_0)_b$ and $v=(v_{n-1} \ldots v_1 v_0)_b$.
 Since $b^{n-1} \leq u, v \leq b^n - 1$ we have $2 b^{n-1} \leq u+v \leq 2 b^n - 2$ which,
@@ -60,4 +59,4 @@ Assume that $0 \leq k_i \leq 1$ for some $i=0, \ldots, n-1$. Since $u_i+v_i+k_i 
 
 This shows how (not surprisingly) $k_0$ can be seen as an &#8220;initial carry&#8221; and how each $k_{i+1}$ is $0$ or $1$, depending on whether a carry was produced from the $i$th digit addition.
 
-Next, [multiple-precision number subtraction](/posts/multiple-precision/03-subtraction/).
+Next, [multiple-precision number subtraction](/posts/multiple-precision/subtraction/).

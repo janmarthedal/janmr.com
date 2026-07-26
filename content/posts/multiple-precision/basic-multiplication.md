@@ -11,13 +11,12 @@ tags:
 og:
   description: An algorithm for multiplying two multiple-precision numbers, using the basic O(n^2) algorithm
   image: /media/og/multiple-precision-04.png
-mastodon: https://mathstodon.xyz/@janmr/115933661657152451
-redirect: /blog/2011/11/basic-multiple-precision-multiplication/
+redirect: /posts/multiple-precision/04-basic-multiplication/
 ---
-After addressing multiple-precision [addition](/posts/multiple-precision/02-addition/)
-and [subtraction](/posts/multiple-precision/03-subtraction/),
+After addressing multiple-precision [addition](/posts/multiple-precision/addition/)
+and [subtraction](/posts/multiple-precision/subtraction/),
 we now turn to multiplication of two multiple-precision numbers.
-Once again, we use the number representation and notation [introduced earlier](/posts/multiple-precision/01-number-representation/).
+Once again, we use the number representation and notation [introduced earlier](/posts/multiple-precision/number-representation/).
 
 Several algorithms exist for doing multiple-precision multiplication. This post will present the basic, pencil-and-paper-like method. Basically, it consists of two parts: Multiplying a number by a single digit and adding together the sub-results, aligned appropriately.
 
@@ -110,4 +109,4 @@ $$
 $$
 
 We now move on to multiple-precision division by first adressing the
-relatively simple case of [short division](/posts/multiple-precision/05-basic-short-division/).
+relatively simple case of [short division](/posts/multiple-precision/basic-short-division/).

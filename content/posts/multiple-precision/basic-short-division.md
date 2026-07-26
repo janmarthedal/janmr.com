@@ -10,16 +10,15 @@ tags:
 og:
   description: An algorithm for dividing a multiple-digit number by a single digit
   image: /media/og/multiple-precision-05.png
-redirect: /blog/2012/11/basic-multiple-precision-short-division/
-mastodon: https://mathstodon.xyz/@janmr/115955393367653601
+redirect: /posts/multiple-precision/05-basic-short-division/
 ---
-After [addition](/posts/multiple-precision/02-addition), [subtraction](/posts/multiple-precision/03-subtraction/),
-and [multiplication](/posts/multiple-precision/04-basic-multiplication/),
+After [addition](/posts/multiple-precision/addition), [subtraction](/posts/multiple-precision/subtraction/),
+and [multiplication](/posts/multiple-precision/basic-multiplication/),
 we now move on to division.
 
 Let us ease into it by considering short division, by which we mean a multiple-digit number
 $u = (u_{m-1} \ldots u_1 u_0)_b$ divided by a single digit $v$
-(see, e.g., [post on number representation](/posts/multiple-precision/01-number-representation/)).
+(see, e.g., [post on number representation](/posts/multiple-precision/number-representation/)).
 We will assume $m \geq 1$, $u_{m-1} \neq 0$ and $0 < v < b$.
 
 We are interested in a quotient $q = \lfloor u/v \rfloor$ and a remainder $r$ such that $u = q v + r$ with $0 \leq r < v$. Using that $b^{m-1} \leq u < b^m$ and $0 < v < b$ we can deduce that $b^{m-2} < q < b^m$ which means that $q$ can be represented using $m-1$ or $m$ digits: $q = (q_{m-1} \ldots q_1 q_0)_b$ (we may have $q_{m-1} = 0$ in which case $q_{m-2} \neq 0$).
@@ -46,4 +45,4 @@ since $r_m = 0$. It is clear from the definition of $r_k$ that $0 \leq r_k < v$ 
 Note two important things: During the course of the algorithm, we only need to keep track of one $r$-value, not one for each $k$ (it just made the analysis easier). Note also that each entry of $u$ can be overwritten with the coefficients/digits of $q$, possibly saving some storage.
 
 To finish off this series of posts on multiple-precision algorithms,
-we consider the case of [long division](/posts/multiple-precision/06-basic-long-division).
+we consider the case of [long division](/posts/multiple-precision/basic-long-division).
