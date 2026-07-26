@@ -9,8 +9,7 @@ tags:
 og:
   description: Introducing a series of posts on the basics of Neural Networks
   image: /media/og/neural-network-preface.png
-mastodon: https://mathstodon.xyz/@janmr/116708704600271785
-redirect: /blog/2023/01/neural-networks-01-preface/
+redirect: /posts/neural-networks/01-preface/
 ---
 Neural Networks, or more correctly Artificial Neural Networks, have turned out to be
 a very versatile tool in the world of Machine Learning, Artificial Intelligence and
@@ -45,13 +44,13 @@ which also inspired some the approaches in this blog series.
 
 Each post will be centered around a specific topic:
 
-- [The Model](/posts/neural-networks/02-the-model/)
-- [Evaluating Multiple Inputs](/posts/neural-networks/03-multiple-inputs/)
-- [The Optimization Problem](/posts/neural-networks/04-the-optimization-problem/)
-- [Gradient Descent](/posts/neural-networks/05-gradient-descent/)
-- [Back-propagation Derivation](/posts/neural-networks/06-back-propagation-derivation/)
-- [Back-propagation Matrix-style](/posts/neural-networks/07-back-propagation-matrix-style/)
-- [Activation Functions](/posts/neural-networks/08-activation-functions/)
-- [Implementation](/posts/neural-networks/09-implementation/)
-- [Linear Regression](/posts/neural-networks/10-linear-regression/)
-- [Digit Recognition](/posts/neural-networks/11-digit-recognition/)
+- [The Model](/posts/neural-networks/model/)
+- [Evaluating Multiple Inputs](/posts/neural-networks/multiple-inputs/)
+- [The Optimization Problem](/posts/neural-networks/the-optimization-problem/)
+- [Gradient Descent](/posts/neural-networks/gradient-descent/)
+- [Back-propagation Derivation](/posts/neural-networks/back-propagation-derivation/)
+- [Back-propagation Matrix-style](/posts/neural-networks/back-propagation-matrix-style/)
+- [Activation Functions](/posts/neural-networks/activation-functions/)
+- [Implementation](/posts/neural-networks/implementation/)
+- [Linear Regression](/posts/neural-networks/linear-regression/)
+- [Digit Recognition](/posts/neural-networks/digit-recognition/)

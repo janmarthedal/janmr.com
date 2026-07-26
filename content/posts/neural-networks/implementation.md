@@ -8,7 +8,7 @@ tags:
 og:
   description: >-
     How to implement a simple neural network in Python/NumPy.
-redirect: /blog/2023/01/neural-networks-09-implementation/
+redirect: /posts/neural-networks/09-implementation/
 ---
 This post will describe how to implement a simple, trainable neural network in
 [Python](https://www.python.org) using [NumPy](https://numpy.org).
@@ -20,7 +20,7 @@ We will look at each in turn.
 **Evaluating the network**
 
 We use the expressions from the
-[Multiple Inputs post](/posts/neural-networks/03-multiple-inputs/).
+[Multiple Inputs post](/posts/neural-networks/multiple-inputs/).
 We can simply loop over the layers and compute the $Z$'s and the $A$'s:
 
 ```python
@@ -38,7 +38,7 @@ as they will be referenced during back-propagation.
 **Back-propagation**
 
 Back-propagation can be performed using the expressions from the
-[Back-propagation Matrix-style post](/posts/neural-networks/07-back-propagation-matrix-style/).
+[Back-propagation Matrix-style post](/posts/neural-networks/back-propagation-matrix-style/).
 Some other things to note:
 - Remember to loop through the layers in reverse.
 - There is no need to save the $dA$'s and $dZ$'s for each layer and the variables
@@ -81,7 +81,7 @@ column vector of 1's.
 **Gradient Descent**
 
 Left to do is a training algorithm using
-[Gradient Descent](/posts/neural-networks/05-gradient-descent/).
+[Gradient Descent](/posts/neural-networks/gradient-descent/).
 The following snippet assumes that the network's weights and biases have been
 initialized with (pseudo-)random numbers and performs a fixed number of
 steps:

@@ -8,10 +8,10 @@ tags:
 og:
   description: >-
     We express the back-propagation formulas using matrix notation.
-redirect: /blog/2023/01/neural-networks-07-back-propagation-matrix-style/
+redirect: /posts/neural-networks/07-back-propagation-matrix-style/
 ---
 This post continues from the notation and formulas introduced in the
-[previous post](/posts/neural-networks/06-back-propagation-derivation/).
+[previous post](/posts/neural-networks/back-propagation-derivation/).
 The goal is to express (most of) the summations as matrix-matrix or
 matrix-vector multiplications.
 
@@ -57,4 +57,4 @@ $$
 for $l=1,\ldots,L$.
 
 Now, before looking into an implementation, let us look a bit more at
-[activation functions](/posts/neural-networks/08-activation-functions/).
+[activation functions](/posts/neural-networks/activation-functions/).

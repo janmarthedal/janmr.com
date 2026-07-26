@@ -8,10 +8,10 @@ tags:
 og:
   description: >-
     On activation functions for neural networks.
-redirect: /blog/2023/01/neural-networks-08-activation-functions/
+redirect: /posts/neural-networks/08-activation-functions/
 ---
-As mentioned in a [previous post](/posts/neural-networks/05-gradient-descent/), the activation
-functions used in a [neural network](/posts/neural-networks/02-the-model/)
+As mentioned in a [previous post](/posts/neural-networks/gradient-descent/), the activation
+functions used in a [neural network](/posts/neural-networks/model/)
 can be *any* differentiable function $g: \mathbb{R} \mapsto \mathbb{R}$.
 Such functions make the output of a neural network well-defined, it makes it possible to
 compute the gradient at any point and it, in turn, makes it possible to perform the
@@ -20,13 +20,13 @@ Gradient Descent method.
 There are some considerations when choosing activation functions:
 1. Their shape dictate which non-linear properties the neural network can have.
 2. Their properties can affect if and how fast Gradient Descent converges.
-3. How many local minima the [error function](/posts/neural-networks/04-the-optimization-problem/)
+3. How many local minima the [error function](/posts/neural-networks/the-optimization-problem/)
    can have.
 4. The activation function for the output layer represents the values that the
    neural network can produce.
 
 One thing that seems to improve/ensure convergence is smoothness. Recall from the
-[Gradient Descent post](/posts/neural-networks/05-gradient-descent/) that both
+[Gradient Descent post](/posts/neural-networks/gradient-descent/) that both
 a continuous derivative and a Lipschitz condition for the gradient helped prove certain
 convergence theorems.
 
@@ -113,4 +113,4 @@ A plot of $g_{\scriptscriptstyle \text{ReLU}}$ and $g'_{\scriptscriptstyle \text
 </figure>
 
 Let us now open our favourite code editor and look at an
-[implementation](/posts/neural-networks/09-implementation/).
+[implementation](/posts/neural-networks/implementation/).

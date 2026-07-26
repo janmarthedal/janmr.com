@@ -9,10 +9,10 @@ og:
   description: >-
     Digit recognition using a neural network trained on the MNIST dataset of 70,000
     handwritten digit images.
-redirect: /blog/2023/12/neural-networks-11-digit-recognition/
+redirect: /posts/neural-networks/11-digit-recognition/
 ---
 This post will look at digit recognition using a neural network as described in
-[earlier posts](/posts/neural-networks/02-the-model/).
+[earlier posts](/posts/neural-networks/model/).
 
 We will use the [MNIST dataset](http://yann.lecun.com/exdb/mnist/),
 which is a collection of 70,000 images of handwritten digits.
@@ -31,7 +31,7 @@ The structure of the neural network used in this post is as follows:
 - The input layer has 784 nodes (one for each of the 28x28 pixels).
 - A single hidden layer with 300 nodes.
 - The output layer has 10 nodes (one for each possible digit).
-- A sigmoid [activation function](/posts/neural-networks/08-activation-functions/) is used for the hidden layer.
+- A sigmoid [activation function](/posts/neural-networks/activation-functions/) is used for the hidden layer.
 - No activation function is used for the output layer.
 
 When training the network, we use [one-hot encoding](https://en.wikipedia.org/wiki/One-hot)
@@ -41,7 +41,7 @@ where the 1 is in the fourth position (using zero-based indexing).
 When testing/evaluating the network, we use the index of the largest value in the output vector
 as the predicted digit.
 
-Following the implementation [described earlier](/posts/neural-networks/09-implementation/)
+Following the implementation [described earlier](/posts/neural-networks/implementation/)
 we can train the network using the training data.
 A learning rate of $\alpha = 0.03$ was used, found by trial and error.
 The code complementing this post [is available](https://github.com/janmarthedal/machine-learning-from-the-ground-up/tree/blog/digit-recognition).

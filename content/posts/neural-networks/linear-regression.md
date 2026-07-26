@@ -9,9 +9,9 @@ og:
   description: >-
     What is the simplest possible neural network, and is it useful for anything? We
     look at linear regression.
-redirect: /blog/2023/12/neural-networks-10-linear-regression/
+redirect: /posts/neural-networks/10-linear-regression/
 ---
-Looking at the [basic model for a neural network](/posts/neural-networks/02-the-model/),
+Looking at the [basic model for a neural network](/posts/neural-networks/model/),
 it is natural to consider: What is the simplest possible neural network?
 And is such a network useful for anything?
 
@@ -36,7 +36,7 @@ $$
 
 So the output of the network is a *linear* combination of the input values (and the constant $1$).
 Furthermore, as seen from the post on the
-[optimization problem](/posts/neural-networks/04-the-optimization-problem/),
+[optimization problem](/posts/neural-networks/the-optimization-problem/),
 the error function is a least squares error function.
 
 This means that the simple network described above is *equivalent* to

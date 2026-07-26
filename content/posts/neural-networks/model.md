@@ -8,8 +8,7 @@ tags:
 og:
   description: We define the neural network model that we will be exploring in the following posts
   image: /media/og/neural-network-model.png
-mastodon: https://mathstodon.xyz/@janmr/116749164634657215
-redirect: /blog/2023/01/neural-networks-02-the-model/
+redirect: /posts/neural-networks/02-the-model/
 ---
 A neural network has a specific structure given by
 1. the number of layers $L$,
@@ -70,4 +69,4 @@ It does not have to be fully connected, some of the weights can be absent or, eq
 Similarly, the biases can also be left out.
 
 In the next post, we will look at vectorizing the evaluation when we have
-[multiple inputs](/posts/neural-networks/03-multiple-inputs/).
+[multiple inputs](/posts/neural-networks/multiple-inputs/).
