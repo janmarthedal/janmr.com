@@ -63,3 +63,7 @@ $$u(x) = \frac{x(1 - x)}{2}.$$
 
 This simple example will serve as a useful reference throughout the series: it is easy to verify computed approximations against the exact parabolic profile.
 
+---
+
+The Poisson equation is only the simplest member of a much larger family. The next post generalises it to [general elliptic PDEs](../elliptic-pdes/), where the Laplacian is replaced by a second-order elliptic operator with diffusion, convection, and reaction terms.
+
