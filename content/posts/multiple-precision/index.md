@@ -1,7 +1,7 @@
 ---
 title: Multiple-Precision Arithmetic
-layout: page
 ---
+Posts in series:
 - [Number representation](/posts/multiple-precision/number-representation/)
 - [Addition](/posts/multiple-precision/addition/)
 - [Subtraction](/posts/multiple-precision/subtraction/)

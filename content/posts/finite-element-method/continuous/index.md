@@ -1,7 +1,7 @@
 ---
 title: Continuous
-layout: page
 ---
+Posts in series:
 - [The Poisson Problem](poisson-problem/)
 - [General Elliptic PDEs](elliptic-pdes/)
 - [Weak Formulation of the Poisson Problem](poisson-weak-form/)
