@@ -1,7 +1,6 @@
 ---
 title: Wrapping HTML inside MathML
 date: 2017-02-23T12:00Z
-layout: post
 tags:
   - mathml
   - web-math

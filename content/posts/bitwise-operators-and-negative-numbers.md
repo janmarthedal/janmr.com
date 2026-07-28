@@ -1,7 +1,6 @@
 ---
 title: Bitwise Operators and Negative Numbers
 date: 2010-07-24T12:00Z
-layout: post
 tags:
   - numbers-project
   - multiple-precision

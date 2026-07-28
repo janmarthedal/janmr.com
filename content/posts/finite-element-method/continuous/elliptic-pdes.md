@@ -1,7 +1,6 @@
 ---
 title: General Elliptic PDEs
 date: 2026-07-28T13:26Z
-layout: post
 tags:
   - finite-element-method
   - numerical-analysis

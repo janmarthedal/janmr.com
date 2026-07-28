@@ -1,7 +1,6 @@
 ---
 title: Good Rational Bounds
 date: 2013-01-07T12:00Z
-layout: post
 tags:
   - continued-fraction
   - rational-approximation

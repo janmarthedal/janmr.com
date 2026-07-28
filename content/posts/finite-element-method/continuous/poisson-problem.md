@@ -1,7 +1,6 @@
 ---
 title: The Poisson Problem
 date: 2026-07-24T11:43Z
-layout: post
 tags:
   - finite-element-method
   - numerical-analysis

@@ -1,7 +1,6 @@
 ---
 title: The Model
 date: 2023-01-15T12:00Z
-layout: post
 tags:
   - neuralnetworks
   - machinelearning

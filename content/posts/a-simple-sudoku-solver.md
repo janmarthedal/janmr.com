@@ -2,7 +2,6 @@
 title: A Simple Sudoku Solver
 date: 2023-05-02T12:00Z
 update: 2026-01-17T14:50Z
-layout: post
 tags:
   - rust
   - combinatorics

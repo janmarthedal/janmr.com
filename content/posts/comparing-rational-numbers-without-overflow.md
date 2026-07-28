@@ -1,7 +1,6 @@
 ---
 title: Comparing Rational Numbers Without Overflow
 date: 2014-05-18T12:00Z
-layout: post
 tags:
   - arithmetic
   - algorithms

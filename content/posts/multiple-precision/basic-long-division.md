@@ -2,7 +2,6 @@
 title: Basic Long Division
 date: 2014-04-14T12:00Z
 update: 2026-01-10T14:00Z
-layout: post
 tags:
   - arithmetic
   - algorithms

@@ -1,7 +1,6 @@
 ---
 title: Time Budgets for the Web
 date: 2015-04-26T12:00Z
-layout: post
 tags:
   - web-development
   - development

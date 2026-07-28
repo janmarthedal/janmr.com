@@ -2,7 +2,6 @@
 title: Generating All Permutations
 date: 2020-06-14T12:00Z
 update: 2026-05-09T10:57Z
-layout: post
 tags:
   - combinatorics
   - permutations

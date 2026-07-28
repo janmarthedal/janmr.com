@@ -1,7 +1,6 @@
 ---
 title: 'Book Review: Prime Obsession'
 date: 2010-01-09T12:00Z
-layout: post
 tags:
   - book-review
   - recommended-reading

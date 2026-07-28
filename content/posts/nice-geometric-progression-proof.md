@@ -2,7 +2,6 @@
 title: Nice Proof of a Geometric Progression Sum
 date: 2008-10-08T12:00Z
 update: 2009-08-22T12:00Z
-layout: post
 tags:
   - proof
   - visualization

@@ -2,7 +2,6 @@
 title: Archimedes' Twin Circles Illustrated
 date: 2014-04-03T12:00Z
 update: 2026-02-27T10:35Z
-layout: post
 tags:
   - math
   - visualization

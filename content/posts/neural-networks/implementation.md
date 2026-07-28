@@ -1,7 +1,6 @@
 ---
 title: Implementation
 date: 2023-01-22T12:00Z
-layout: post
 tags:
   - neuralnetworks
   - machinelearning

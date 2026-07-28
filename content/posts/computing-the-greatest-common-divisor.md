@@ -1,7 +1,6 @@
 ---
 title: Computing the Greatest Common Divisor
 date: 2009-10-29T12:00Z
-layout: post
 tags:
   - algorithms
   - cpp

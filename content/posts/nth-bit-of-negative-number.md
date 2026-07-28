@@ -1,7 +1,6 @@
 ---
 title: The nth Bit of a Negative Number
 date: 2021-01-09T12:00Z
-layout: post
 tags:
   - multiple-precision
   - bit-fiddling

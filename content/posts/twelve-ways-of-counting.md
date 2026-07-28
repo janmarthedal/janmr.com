@@ -1,7 +1,6 @@
 ---
 title: Twelve Ways of Counting
 date: 2008-12-26T12:00Z
-layout: post
 tags:
   - combinatorics
   - mathematics

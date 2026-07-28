@@ -1,7 +1,6 @@
 ---
 title: Digit Recognition
 date: 2023-12-22T12:00Z
-layout: post
 tags:
   - neuralnetworks
   - machinelearning

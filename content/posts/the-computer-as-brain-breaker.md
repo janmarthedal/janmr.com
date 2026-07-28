@@ -1,7 +1,6 @@
 ---
 title: The Computer as Brain Breaker
 date: 2024-04-25T12:00Z
-layout: post
 tags:
   - computer-science
   - rust

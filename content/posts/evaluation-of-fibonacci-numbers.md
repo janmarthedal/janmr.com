@@ -1,7 +1,6 @@
 ---
 title: Fast Evaluation of Fibonacci Numbers
 date: 2011-03-11T12:00Z
-layout: post
 tags:
   - algorithms
   - numbers-project

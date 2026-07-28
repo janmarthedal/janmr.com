@@ -1,7 +1,6 @@
 ---
 title: Linear Regression Basics
 date: 2023-05-04T12:00Z
-layout: post
 tags:
   - machinelearning
 og:

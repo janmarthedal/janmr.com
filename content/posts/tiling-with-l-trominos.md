@@ -1,7 +1,6 @@
 ---
 title: Tiling with L-Trominos
 date: 2016-01-24T12:00Z
-layout: post
 tags:
   - polyomino
   - tiling

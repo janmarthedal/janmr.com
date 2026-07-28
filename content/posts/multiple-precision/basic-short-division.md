@@ -2,7 +2,6 @@
 title: Basic Short Division
 date: 2012-11-28T12:00Z
 update: 2026-01-10T14:00Z
-layout: post
 tags:
   - algorithms
   - multiple-precision

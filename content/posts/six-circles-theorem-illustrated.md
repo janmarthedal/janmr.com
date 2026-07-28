@@ -2,7 +2,6 @@
 title: Six Circles Theorem Illustrated
 date: 2014-04-06T12:00Z
 update: 2026-03-03T12:35Z
-layout: post
 tags:
   - mathematics
   - geometry

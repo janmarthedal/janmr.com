@@ -1,7 +1,6 @@
 ---
 title: Continued Fractions and Continuants
 date: 2009-11-10T12:00Z
-layout: post
 tags:
   - algorithms
   - cpp

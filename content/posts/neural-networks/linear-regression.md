@@ -1,7 +1,6 @@
 ---
 title: Linear Regression
 date: 2023-12-21T12:00Z
-layout: post
 tags:
   - neuralnetworks
   - machinelearning

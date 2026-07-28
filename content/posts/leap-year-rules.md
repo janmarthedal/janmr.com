@@ -2,7 +2,6 @@
 title: Leap Year Rules
 date: 2020-04-15T12:00Z
 update: 2026-04-05T10:43Z
-layout: post
 tags:
   - datetime
   - programming

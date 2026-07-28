@@ -2,7 +2,6 @@
 title: Thales' Theorem Illustrated
 date: 2014-04-02T12:00Z
 update: 2026-02-12T06:30Z
-layout: post
 tags:
   - geometry
   - theorem

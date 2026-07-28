@@ -1,7 +1,6 @@
 ---
 title: Bresenham's Line Algorithm
 date: 2014-04-24T12:00Z
-layout: post
 tags:
   - raster-graphics
   - algorithms
