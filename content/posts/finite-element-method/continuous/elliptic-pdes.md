@@ -10,6 +10,7 @@ og:
   description: >-
     Generalising the Poisson equation to second-order linear elliptic operators,
     with uniform ellipticity, conormal boundary conditions, and well-posedness.
+mastodon: https://mathstodon.xyz/@janmr/116997896841654239
 ---
 The [Poisson problem](../poisson-problem/) is a special case of a much broader family of PDEs.
 A general second-order linear elliptic PDE on a domain $\Omega \subset \mathbb{R}^n$ can be written as
