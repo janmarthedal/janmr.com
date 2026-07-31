@@ -23,6 +23,7 @@ title: Notation
 | $\mathbf{b}$ | Convection field, $\mathbf{b} : \Omega \to \mathbb{R}^n$ |
 | $c$ | Reaction coefficient, $c : \Omega \to \mathbb{R}$ |
 | $\alpha$ | Ellipticity constant |
+| $L^2(\Omega)$ | Space of square-integrable functions on $\Omega$ |
 | $H^1(\Omega)$ | Sobolev space of square-integrable functions with square-integrable first derivatives |
 | $H^1_0(\Omega)$ | Functions in $H^1(\Omega)$ vanishing on $\partial\Omega$ |
 | $V$ | Trial function space |

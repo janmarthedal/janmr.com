@@ -6,6 +6,7 @@ title: Finite Element Method
   - [The Poisson Problem](continuous/poisson-problem/)
   - [General Elliptic PDEs](continuous/elliptic-pdes/)
   - [Weak Formulation of the Poisson Problem](continuous/poisson-weak-form/)
+  - [Example of Weak Solution to the Poisson Problem](continuous/poisson-weak-example/)
   - [Weak Formulation of Elliptic PDEs](continuous/elliptic-weak-form/)
 - Discrete
   - [The Discrete Formulation](discrete/discrete-formulation/)

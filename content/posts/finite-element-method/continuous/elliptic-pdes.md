@@ -67,5 +67,6 @@ A more numerically oriented treatment can be found in Brenner and Scott,
 [*The Mathematical Theory of Finite Element Methods*](https://link.springer.com/book/10.1007/978-0-387-75934-0),
 Chapter 5.
 
-The precise mechanism by which well-posedness is established —
-via a weak formulation and the Lax–Milgram theorem — is the subject of the next posts.
+The precise mechanism by which well-posedness is established — via a weak formulation and the
+Lax–Milgram theorem — is the subject of the next posts,
+starting with the [weak formulation of the Poisson problem](../poisson-weak-form/).
