@@ -10,6 +10,7 @@ og:
   description: >-
     Deriving the weak form of the Poisson equation by integration by parts, with
     essential and natural boundary conditions and the conditions for well-posedness.
+mastodon: https://mathstodon.xyz/@janmr/117020731865762152
 ---
 The strong form of the [Poisson problem](../poisson-problem/) —
 find $u$ satisfying $-\Delta u = f$ pointwise in $\Omega$ together with boundary conditions on $\partial\Omega$ —
