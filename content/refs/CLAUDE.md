@@ -18,7 +18,7 @@ followed by an optional two-digit year (referencing the publication year).
 - `date` — Publication year (e.g., `'1997'`) or full date (e.g., `'1944-01-22'`), quoted as a string. Full date is preferred.
 - `isbn` — ISBN for books (no dashes or with dashes, quoted as a string)
 - `journal` — Journal citation string for papers (e.g., `"Bell System Technical Journal. 27 (3): 379–423, 1948"`)
-- `tags` — YAML list of tags; e.g., `[classic, computer-science]`. The `classic` tag marks a reference as a classic paper. Category tags include: `computer-graphics`, `computer-science`, `data-science`, `information-theory`, `numerical-analysis`
+- `tags` — YAML list of tags; e.g., `[classic, computer-science]`. The `classic` tag marks a reference as a classic paper. The `online` tag marks a book/paper that is available online. Category tags include: `computer-graphics`, `computer-science`, `data-science`, `information-theory`, `numerical-analysis`
 - `links` — YAML list of related links, each with:
   - `name` — Display text for the link
   - `url` — URL (can be absolute or site-relative like `/files/papers/...`)
