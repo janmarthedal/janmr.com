@@ -1,6 +1,6 @@
 ---
 title: Weak Formulation of the Poisson Problem
-date: 2026-07-30T15:59Z
+date: 2026-08-01T14:26Z
 tags:
   - finite-element-method
   - numerical-analysis
@@ -107,7 +107,7 @@ meshed domains are polyhedral by construction, and any bounded, piecewise contin
 source term or boundary data one would tabulate or evaluate in code is square-integrable.
 In practice it is only the third condition that is worth checking.
 The result itself is the **[Lax–Milgram theorem](https://en.wikipedia.org/wiki/Lax%E2%80%93Milgram_theorem)**,
-which we will meet again in the next post,
+which we will meet again when the weak formulation is extended to general elliptic problems,
 and the ingredient that requires a non-empty $\Gamma_D$ is the
 **[Poincaré inequality](https://en.wikipedia.org/wiki/Poincar%C3%A9_inequality)**.
 The details are given in Evans,
@@ -117,14 +117,12 @@ The third condition fails for the pure Neumann problem, $\Gamma_D = \emptyset$.
 Adding a constant to a solution then changes neither the equation nor the boundary condition,
 so the solution is determined only up to that constant,
 and the data must satisfy the compatibility condition
-$\int_\Omega f \, \mathrm{d}x + \int_{\partial\Omega} g_N \, \mathrm{d}s = 0$ for a solution to exist.
+$\int_\Omega f \, \mathrm{d}x + \int_{\partial\Omega} g_N \, \mathrm{d}s = 0$ for a solution to exist
+(seen by using $v \equiv 1$ as a test function, which is admissible when $\Gamma_D$ is empty).
 The discrete symptom is a singular stiffness matrix,
 usually cured by prescribing the value at a single point or by imposing a zero-mean constraint.
 
-The weak formulation is the starting point for the finite element method.
-Instead of seeking $u$ in the infinite-dimensional space $V$,
-we will restrict attention to a finite-dimensional subspace —
-spanned by carefully chosen basis functions defined on a mesh —
-and solve the resulting linear system.
-Before that, the [next post](../poisson-weak-example/) works through a one-dimensional problem
+The same derivation applies to the [general elliptic operators](../elliptic-pdes/)
+introduced earlier in the series, which a later post carries out.
+First, though, the next post works through a one-dimensional problem
 whose weak solution exists even though the strong form has none.
