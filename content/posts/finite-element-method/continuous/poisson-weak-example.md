@@ -19,7 +19,8 @@ $\Omega = (0, 1)$ with $u(0) = u(1) = 0$, but let the source act on the left hal
 
 $$f(x) = \begin{cases} 1 & x < 1/2, \\ 0 & x > 1/2. \end{cases}$$
 
-Think of a bar that is heated over part of its length and left alone over the rest.
+Think of a bar heated uniformly over its left half, with no heat source in the right half,
+and both ends held at fixed temperature.
 The entire boundary is Dirichlet with $g_D = 0$, so $V = V_0 = H^1_0(0, 1)$ and there is no boundary integral.
 In one dimension the gradient is just the derivative, and the weak form reads:
 find $u \in H^1_0(0, 1)$ such that
