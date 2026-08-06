@@ -10,6 +10,7 @@ og:
   description: >-
     A one-dimensional Poisson problem with a discontinuous source term, whose
     solution has a kink and therefore solves the weak form but not the strong one.
+mastodon: https://mathstodon.xyz/@janmr/117048691345346035
 ---
 The [weak formulation of the Poisson problem](../poisson-weak-form/) asks less of the solution
 than the strong form does: only first derivatives appear, and only in integrals.
