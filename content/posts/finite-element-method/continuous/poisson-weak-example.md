@@ -1,5 +1,6 @@
 ---
 title: Example of Weak Solution to the Poisson Problem
+date: 2026-08-06T12:52Z
 tags:
   - finite-element-method
   - numerical-analysis
@@ -62,6 +63,5 @@ which is precisely the kind of function a finite element space is built from.
 
 ---
 
-The next post carries the weak formulation over to the
-[general elliptic operator](../elliptic-weak-form/),
+The next post carries the weak formulation over to the general elliptic operator,
 where it takes on the abstract form that the rest of the series builds on.

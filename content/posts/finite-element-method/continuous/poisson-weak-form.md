@@ -125,5 +125,5 @@ usually cured by prescribing the value at a single point or by imposing a zero-m
 
 The same derivation applies to the [general elliptic operators](../elliptic-pdes/)
 introduced earlier in the series, which a later post carries out.
-First, though, the next post works through a one-dimensional problem
+First, though, the [next post](../poisson-weak-example/) works through a one-dimensional problem
 whose weak solution exists even though the strong form has none.
