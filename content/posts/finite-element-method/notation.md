@@ -37,7 +37,8 @@ title: Notation
 | $N$ | Dimension of the discrete space |
 | $\phi_i$ | Basis functions |
 | $u_h$ | Discrete solution |
+| $w_h$ | Discrete lifting of the Dirichlet data, $u_h = w_h + u_{h,0}$ |
 | $K$ | Stiffness matrix, $K_{ij} = a(\phi_j, \phi_i)$ |
 | $\mathbf{u}$ | Vector of unknown coefficients |
-| $\mathbf{f}$ | Load vector, $f_i = \ell(\phi_i)$ |
+| $\mathbf{f}$ | Load vector, $f_i = \ell(\phi_i) - a(w_h, \phi_i)$ |
 

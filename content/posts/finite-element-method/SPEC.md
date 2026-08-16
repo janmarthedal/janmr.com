@@ -93,6 +93,15 @@ exposition around the API.
 8. `discrete/discrete-formulation.md` — **The Discrete Formulation**
    - Introduce the Galerkin method: restricting the weak problem to a
      finite-dimensional space spanned by basis functions.
+   - Carry the splitting $u = w + u_0$ from `continuous/poisson-weak-form.md`
+     into the discrete setting: choose the test space $V_{h,0} \subset V_0$,
+     introduce a discrete lifting $w_h$ of the Dirichlet data, and set
+     $V_h = w_h + V_{h,0}$. The lifting is known, so $a(w_h, \phi_i)$ moves to
+     the right-hand side of the load vector.
+   - Keep the two spaces distinct throughout: test functions always range over
+     $V_{h,0}$, while the trial set $V_h$ is affine unless $g_D = 0$. In
+     particular Galerkin orthogonality holds over $V_{h,0}$, whereas the Céa
+     infimum is taken over $V_h$.
    - Derive the resulting linear system.
    - Discuss the optimality of the discrete solution (Céa's lemma).
 
@@ -267,10 +276,18 @@ exposition around the API.
     - Library code: assemble_load_vector
 
 32. `assembly/l2-projection.md` (PLANNED) — **L² Projection**
-    - L² projection. Code: project_dirichlet_bc
+    - L² projection.
+    - Explain that this is how the discrete lifting $w_h$ of
+      `discrete/discrete-formulation.md` is actually computed: the Dirichlet
+      data $g_D$ is projected onto the trace space of $V_h$ on $\Gamma_D$,
+      which is what supplies the prescribed nodal values.
+    - Code: project_dirichlet_bc
 
 33. `assembly/dirichlet-bcs.md` (PLANNED) — **Dirichlet Boundary Conditions**
     - Dirichlet boundary conditions
+    - Close the loop on the splitting $u = w + u_0$: condensation is its
+      linear-algebra realisation, eliminating the known Dirichlet coefficients
+      from the assembled system and forming $f_i - a(w_h, \phi_i)$ in place.
     - Condensation. Code: CondensedSystem, condense_dirichlet_bc
 
 34. `assembly/neumann-bcs.md` (PLANNED) — **Neumann Boundary Conditions**
