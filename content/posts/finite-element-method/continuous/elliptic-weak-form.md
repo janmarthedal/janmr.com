@@ -60,11 +60,12 @@ together with two requirements on the coefficients:
 that $A$, $\mathbf{b}$ and $c$ be bounded on $\Omega$,
 and that $A$ be [uniformly elliptic](../elliptic-pdes/), which is what replaces the identity matrix
 of the Poisson problem in the argument.
-When convection is present a further condition is needed,
+When convection is present ($\mathbf{b} \neq 0$) a further condition is needed,
 and a sufficient one is that $c - \tfrac{1}{2}\nabla \cdot \mathbf{b} \geq 0$ almost everywhere in $\Omega$,
 together with $\mathbf{b} \cdot \mathbf{n} \geq 0$ on $\Gamma_N$.
 The first condition holds automatically in the common case of a divergence-free convection field
-and a non-negative reaction coefficient;
+($\nabla \cdot \mathbf{b} = 0$), where it reduces to asking that the reaction coefficient be
+non-negative ($c \geq 0$);
 the second says that the flow leaves the domain through the Neumann boundary rather than entering through it,
 and is vacuous for a pure Dirichlet problem.
 Note also that $a$ is symmetric only when $\mathbf{b} = 0$ and $A$ is symmetric —
