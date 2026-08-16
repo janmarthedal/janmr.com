@@ -10,6 +10,7 @@ og:
   description: >-
     Extending the weak formulation to general second-order elliptic operators,
     giving the abstract bilinear form and linear functional of the finite element method.
+mastodon: https://mathstodon.xyz/@janmr/117105577261341346
 ---
 The [weak formulation of the Poisson problem](../poisson-weak-form/) extends naturally to the
 [general elliptic operator](../elliptic-pdes/)
