@@ -64,5 +64,6 @@ which is precisely the kind of function a finite element space is built from.
 
 ---
 
-The next post carries the weak formulation over to the general elliptic operator,
+The next post carries the weak formulation over to the
+[general elliptic operator](../elliptic-weak-form/),
 where it takes on the abstract form that the rest of the series builds on.

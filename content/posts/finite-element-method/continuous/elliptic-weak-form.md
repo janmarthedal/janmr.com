@@ -1,5 +1,6 @@
 ---
 title: Weak Formulation of Elliptic PDEs
+date: 2026-08-16T13:46Z
 tags:
   - finite-element-method
   - numerical-analysis
@@ -36,7 +37,7 @@ Moving this known quantity to the right-hand side and collecting all terms gives
 $$\int_\Omega \bigl[(A \nabla u) \cdot \nabla v + (\mathbf{b} \cdot \nabla u)\, v + c\, u\, v\bigr] \mathrm{d}x = \int_\Omega f\, v \, \mathrm{d}x + \int_{\Gamma_N} g_N\, v \, \mathrm{d}s.$$
 
 It is conventional to name the two sides separately.
-Define the **bilinear form** $a : V \times V_0 \to \mathbb{R}$ by
+Define the **bilinear form** $a : H^1(\Omega) \times V_0 \to \mathbb{R}$ by
 
 $$a(u, v) = \int_\Omega \bigl[(A \nabla u) \cdot \nabla v + (\mathbf{b} \cdot \nabla u)\, v + c\, u\, v\bigr] \mathrm{d}x,$$
 
@@ -60,15 +61,18 @@ that $A$, $\mathbf{b}$ and $c$ be bounded on $\Omega$,
 and that $A$ be [uniformly elliptic](../elliptic-pdes/), which is what replaces the identity matrix
 of the Poisson problem in the argument.
 When convection is present a further condition is needed,
-and a sufficient one is that $c - \tfrac{1}{2}\nabla \cdot \mathbf{b} \geq 0$ almost everywhere in $\Omega$.
-This holds automatically in the common case of a divergence-free convection field
-and a non-negative reaction coefficient.
-Note also that $a$ is symmetric only when $\mathbf{b} = 0$ —
+and a sufficient one is that $c - \tfrac{1}{2}\nabla \cdot \mathbf{b} \geq 0$ almost everywhere in $\Omega$,
+together with $\mathbf{b} \cdot \mathbf{n} \geq 0$ on $\Gamma_N$.
+The first condition holds automatically in the common case of a divergence-free convection field
+and a non-negative reaction coefficient;
+the second says that the flow leaves the domain through the Neumann boundary rather than entering through it,
+and is vacuous for a pure Dirichlet problem.
+Note also that $a$ is symmetric only when $\mathbf{b} = 0$ and $A$ is symmetric —
 a property that will matter for the structure of the linear systems to come.
 A full treatment is given in Brenner and Scott,
 [*The Mathematical Theory of Finite Element Methods*](https://link.springer.com/book/10.1007/978-0-387-75934-0)
 (Springer, 2008), Chapter 5.
 
-The abstract formulation $a(u,v) = \ell(v)$ is the foundation on which the discrete approximation is built.
-In the [next post](../../discrete/discrete-formulation/) we replace the infinite-dimensional space $V$
+This formulation is the foundation on which the discrete approximation is built.
+In the next post we replace the infinite-dimensional space $V$
 with a finite-dimensional subspace and derive the linear system that must be solved.
