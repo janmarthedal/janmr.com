@@ -17,6 +17,7 @@ layout: page
 * [Introduction to Compilers by Cornell University](https://www.cs.cornell.edu/courses/cs4120/2026sp/notes/)
 * [Parallel Computing from Stanford](https://www.youtube.com/playlist?list=PLoROMvodv4rMp7MTFr4hQsDEcX7Bx6Odp)
 * [Pro Git](https://git-scm.com/book/en/v2)
+* [Stanford CS229 Machine Learning](https://www.youtube.com/playlist?list=PLaqpC4kq8Gpw) [notes (pdf)](https://cs229.stanford.edu/main_notes.pdf)
 * [The Missing Semester of Your CS Education](https://missing.csail.mit.edu/)
 * [The Ray Tracer Challenge](http://raytracerchallenge.com/)
 * [The Rust Programming Language](https://doc.rust-lang.org/book/)
