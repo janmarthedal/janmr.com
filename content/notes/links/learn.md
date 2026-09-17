@@ -17,6 +17,7 @@ layout: page
 * [Introduction to Compilers by Cornell University](https://www.cs.cornell.edu/courses/cs4120/2026sp/notes/)
 * [Parallel Computing from Stanford](https://www.youtube.com/playlist?list=PLoROMvodv4rMp7MTFr4hQsDEcX7Bx6Odp)
 * [Pro Git](https://git-scm.com/book/en/v2)
+* [MIT 6.824 Distributed Systems (Spring 2020)](https://www.youtube.com/playlist?list=PLrw6a1wE39_tb2fErI4-WkMbsvGQk9_UB)
 * [Stanford CS229 Machine Learning](https://www.youtube.com/playlist?list=PLaqpC4kq8Gpw) [notes (pdf)](https://cs229.stanford.edu/main_notes.pdf)
 * [The Missing Semester of Your CS Education](https://missing.csail.mit.edu/)
 * [The Ray Tracer Challenge](http://raytracerchallenge.com/)
