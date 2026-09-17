@@ -19,6 +19,7 @@ layout: page
 * [Pro Git](https://git-scm.com/book/en/v2)
 * [MIT 6.824 Distributed Systems (Spring 2020)](https://www.youtube.com/playlist?list=PLrw6a1wE39_tb2fErI4-WkMbsvGQk9_UB)
 * [Stanford CS229 Machine Learning](https://www.youtube.com/playlist?list=PLaqpC4kq8Gpw) [notes (pdf)](https://cs229.stanford.edu/main_notes.pdf)
+* [Stanford CS146S The Modern Software Developer](https://themodernsoftware.dev)
 * [The Missing Semester of Your CS Education](https://missing.csail.mit.edu/)
 * [The Ray Tracer Challenge](http://raytracerchallenge.com/)
 * [The Rust Programming Language](https://doc.rust-lang.org/book/)
