@@ -55,12 +55,29 @@ which gives $a(u, v) = \int_\Omega \nabla u \cdot \nabla v \, \mathrm{d}x$.
 The abstract notation $a(u,v) = \ell(v)$ is standard throughout the finite element literature
 and applies equally to far more general problems.
 
+---
+
 Well-posedness again follows from the [Lax–Milgram theorem](https://en.wikipedia.org/wiki/Lax%E2%80%93Milgram_theorem),
-under the conditions listed for the [Poisson problem](../poisson-weak-form/)
+which asks for two bounds on $a$ beyond bilinearity.
+It is **continuous** if there is a constant $M > 0$ with
+$$|a(u, v)| \leq M\, \|u\|_V \|v\|_V \quad \text{for all } u, v \in V_0,$$
+and **coercive** if there is a constant $\alpha > 0$ with
+$$a(v, v) \geq \alpha\, \|v\|_V^2 \quad \text{for all } v \in V_0,$$
+where $\|\cdot\|_V$ is the $H^1(\Omega)$ norm.
+Given these, together with $\ell$ bounded on $V_0$, Lax–Milgram guarantees a unique $u \in V$ solving
+$a(u,v) = \ell(v)$ for all $v \in V_0$, depending continuously on the data.
+These two constants reappear later in the series, when the quality of the finite element
+approximation is measured against them.
+
+For the operator $L$ above, continuity and coercivity follow from
+the conditions listed for the [Poisson problem](../poisson-weak-form/)
 together with two requirements on the coefficients:
-that $A$, $\mathbf{b}$ and $c$ be bounded on $\Omega$,
+that $A$, $\mathbf{b}$ and $c$ be bounded on $\Omega$, which gives continuity with an $M$ built from
+those bounds,
 and that $A$ be [uniformly elliptic](../elliptic-pdes/), which is what replaces the identity matrix
-of the Poisson problem in the argument.
+of the Poisson problem in the argument and gives coercivity with the *same* constant $\alpha$
+already fixed by uniform ellipticity, provided the further condition below on the
+lower-order terms also holds.
 When convection is present ($\mathbf{b} \neq 0$) a further condition is needed,
 and a sufficient one is that $c - \tfrac{1}{2}\nabla \cdot \mathbf{b} \geq 0$ almost everywhere in $\Omega$,
 together with $\mathbf{b} \cdot \mathbf{n} \geq 0$ on $\Gamma_N$.

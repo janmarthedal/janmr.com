@@ -24,7 +24,15 @@ the discrete problem reduces to the linear system
 
 $$K\mathbf{u} = \mathbf{f},$$
 
-where $\mathbf{u} = (u_1, \ldots, u_N)^T$ is the vector of unknown coefficients, from which the solution is recovered as $u_h = w_h + \sum_j u_j \phi_j$. When $a$ is symmetric (as for the Poisson problem), $K$ is symmetric and, under the coercivity condition, positive definite. In practice $w_h$ is rarely built as a separate function: the Dirichlet values are held in the same nodal vector as the unknowns and eliminated from the system, which is the subject of a later post on assembly.
+where $\mathbf{u} = (u_1, \ldots, u_N)^T$ is the vector of unknown coefficients, from which the
+solution is recovered as $u_h = w_h + \sum_j u_j \phi_j$.
+When $a$ is symmetric (as for the Poisson problem), $K$ is symmetric and, under the coercivity
+condition, positive definite.
+Note that, in practice, $w_h$ is rarely built as a separate function: the Dirichlet values are held
+in the same nodal vector as the unknowns and eliminated from the system, which is the subject of a
+later post on assembly.
+
+---
 
 The key question is how well $u_h$ approximates the true solution $u$. The relevant measure of error is the $V$-norm, which for $V \subset H^1(\Omega)$ is the $H^1$ norm
 
@@ -34,11 +42,11 @@ This norm controls both the function values and their first derivatives, which i
 
 $$\|u - u_h\|_V \leq \frac{M}{\alpha}\, \inf_{v_h \in V_h} \|u - v_h\|_V,$$
 
-where $M$ is the continuity constant and $\alpha$ is the coercivity constant of $a$. The proof rests on two observations. First, subtracting the discrete problem from the continuous one shows that the error $u - u_h$ is orthogonal to $V_{h,0}$ with respect to $a$:
+where $M$ and $\alpha$ are the [continuity and coercivity constants](../../continuous/elliptic-weak-form/) of $a$. The proof rests on two observations. First, subtracting the discrete problem from the continuous one shows that the error $u - u_h$ is orthogonal to $V_{h,0}$ with respect to $a$:
 
 $$a(u - u_h, v_h) = 0 \quad \text{for all } v_h \in V_{h,0}.$$
 
-This is called **Galerkin orthogonality**. Second, for any $v_h \in V_h$ — noting that $u_h - v_h$ then lies in $V_{h,0}$, since the lifting cancels in the difference —
+This is called **Galerkin orthogonality**. Second, for any $v_h \in V_h$ (noting that $u_h - v_h$ then lies in $V_{h,0}$, since the lifting cancels in the difference):
 
 $$\alpha\, \|u - u_h\|_V^2 \leq a(u - u_h,\, u - u_h) = a(u - u_h,\, u - v_h) \leq M\, \|u - u_h\|_V\, \|u - v_h\|_V,$$
 

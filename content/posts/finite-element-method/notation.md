@@ -22,7 +22,8 @@ title: Notation
 | $A$ | Matrix-valued diffusion coefficient, $A : \Omega \to \mathbb{R}^{n \times n}$ |
 | $\mathbf{b}$ | Convection field, $\mathbf{b} : \Omega \to \mathbb{R}^n$ |
 | $c$ | Reaction coefficient, $c : \Omega \to \mathbb{R}$ |
-| $\alpha$ | Ellipticity constant |
+| $\alpha$ | Ellipticity constant of $A$, also the coercivity constant of $a$ |
+| $M$ | Continuity constant of $a$ |
 | $L^2(\Omega)$ | Space of square-integrable functions on $\Omega$ |
 | $H^1(\Omega)$ | Sobolev space of square-integrable functions with square-integrable first derivatives |
 | $H^1_0(\Omega)$ | Functions in $H^1(\Omega)$ vanishing on $\partial\Omega$ |
