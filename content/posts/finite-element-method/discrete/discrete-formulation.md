@@ -1,7 +1,17 @@
 ---
 title: The Discrete Formulation
+date: 2026-09-20T12:35Z
+tags:
+  - finite-element-method
+  - numerical-analysis
+  - mathematics
+  - pde
+og:
+  description: >-
+    Restricting the weak problem to a finite-dimensional subspace with the Galerkin
+    method, assembling the stiffness matrix and load vector, and bounding the
+    discretisation error with Céa's lemma.
 ---
-
 The [abstract weak problem](../../continuous/elliptic-weak-form/) — find $u \in V$ such that $a(u,v) = \ell(v)$ for all $v \in V_0$ — is posed in an infinite-dimensional function space and cannot be solved directly on a computer. The **Galerkin method** turns it into a finite-dimensional problem by restricting attention to a subspace.
 
 Choose a finite-dimensional test space $V_{h,0} \subset V_0$ of dimension $N$. The subscript $h$ conventionally denotes a discretisation parameter, typically the mesh size. The trial set needs slightly more care: $V$ is affine rather than a vector space whenever $g_D \neq 0$, so its discrete counterpart is built the same way it was in the continuous setting. Pick a **discrete lifting** $w_h$ attaining the Dirichlet data on $\Gamma_D$ and set $V_h = w_h + V_{h,0}$, which is the discrete form of the splitting $u = w + u_0$ [introduced for the Poisson problem](../../continuous/poisson-weak-form/). The discrete problem then reads: find $u_h \in V_h$ such that

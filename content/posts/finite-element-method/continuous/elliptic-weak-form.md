@@ -93,5 +93,5 @@ A full treatment is given in Brenner and Scott,
 (Springer, 2008), Chapter 5.
 
 This formulation is the foundation on which the discrete approximation is built.
-In the next post we replace the infinite-dimensional space $V$
-with a finite-dimensional subspace and derive the linear system that must be solved.
+The [next post](../../discrete/discrete-formulation/) replaces the infinite-dimensional space $V$
+with a finite-dimensional subspace and derives the linear system that must be solved.
