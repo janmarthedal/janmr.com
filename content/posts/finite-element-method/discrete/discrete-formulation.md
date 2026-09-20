@@ -11,6 +11,7 @@ og:
     Restricting the weak problem to a finite-dimensional subspace with the Galerkin
     method, assembling the stiffness matrix and load vector, and bounding the
     discretisation error with Céa's lemma.
+mastodon: https://mathstodon.xyz/@janmr/117303557980872473
 ---
 The [abstract weak problem](../../continuous/elliptic-weak-form/) — find $u \in V$ such that $a(u,v) = \ell(v)$ for all $v \in V_0$ — is posed in an infinite-dimensional function space and cannot be solved directly on a computer. The **Galerkin method** turns it into a finite-dimensional problem by restricting attention to a subspace.
 
