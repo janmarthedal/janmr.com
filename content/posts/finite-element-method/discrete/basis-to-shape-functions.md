@@ -24,7 +24,13 @@ $$K_{ij} = a(\phi_j, \phi_i) = \sum_{e=1}^{M} a\big|_{T_e}(\phi_j, \phi_i),$$
 where $a\big|_{T_e}$ denotes the restriction of $a$ to element $T_e$. The
 contribution from $T_e$ is zero unless the supports of both $\phi_i$ and $\phi_j$
 overlap with $T_e$, which can only happen for nearby basis functions. This is the
-origin of the sparsity of the stiffness matrix. Assembly therefore proceeds
+origin of the sparsity of the stiffness matrix, illustrated below for a small
+example: each square is an entry $K_{ij}$, filled when the supports of $\phi_i$
+and $\phi_j$ overlap and left empty otherwise.
+
+![Sparsity pattern of a stiffness matrix](/media/fem/discrete-stiffness-sparsity.svg)
+
+Assembly therefore proceeds
 element by element: for each $T_e$ one computes a small **element stiffness
 matrix** and scatters its entries into the global $K$. The load vector is
 assembled the same way, each element contributing a small **element load vector**
