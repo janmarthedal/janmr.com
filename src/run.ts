@@ -167,7 +167,11 @@ env.addFilter("shortAuthors", (authors: string[]) => {
 env.addFilter("head", (array, n) => array.slice(0, n));
 env.addFilter("sourceLink", (path) => metadata.sourceBase + path);
 
-const md = new MarkdownIt({ html: true, linkify: true }).use(markdownKaTeX).use(markdownPrism);
+const md = new MarkdownIt({ html: true, linkify: true }).use(markdownKaTeX).use(markdownPrism, {
+    highlightInlineCode: false,
+    plugins: [],
+    init: () => {},
+});
 
 function writeFile(filename: string, contents: string | Buffer) {
     console.log("write", filename);
