@@ -21,3 +21,46 @@ title: Site Info
   <dd>{{ metadata.build.context }}</dd>
   {%- endif %}
 </dl>
+
+<h2>Updates</h2>
+{{ collections.updates | updatesHeatmap | safe }}
+
+<style>
+.updates-heatmap {
+  overflow-x: auto;
+  margin-bottom: 1rem;
+}
+.updates-heatmap table {
+  width: auto;
+  max-width: none;
+  border: none;
+  border-collapse: separate;
+  border-spacing: 2px;
+  margin-bottom: 0;
+  background-color: transparent;
+}
+.updates-heatmap table > tbody > tr:nth-of-type(odd) {
+  background-color: transparent;
+}
+.updates-heatmap th, .updates-heatmap td {
+  border: none;
+  padding: 0;
+  vertical-align: middle;
+}
+.updates-heatmap th {
+  font-size: 0.7rem;
+  font-weight: normal;
+  color: #777;
+  text-align: left;
+  white-space: nowrap;
+  padding-right: 0.3rem;
+}
+.updates-heatmap td {
+  border-radius: 2px;
+}
+.updates-heatmap .uh-level-0 { background-color: #ebedf0; }
+.updates-heatmap .uh-level-1 { background-color: #9be9a8; }
+.updates-heatmap .uh-level-2 { background-color: #40c463; }
+.updates-heatmap .uh-level-3 { background-color: #216e39; }
+.updates-heatmap .uh-empty { background-color: transparent; }
+</style>
