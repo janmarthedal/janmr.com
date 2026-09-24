@@ -36,5 +36,6 @@ layout: page
   YouTube playlists. Seven of the playlists are videos from his Coursera courses.
 * MIT's [Mathematics for Computer Science](https://www.youtube.com/playlist?list=PLUl4u3cNGP61VNvICqk2HXJTonnKgAc9d)
   Elementary discrete mathematics for science and engineering, with a focus on mathematical tools and proof techniques useful in computer science 
+* [MIT 18.102 Introduction to Functional Analysis, Spring 2021](https://ocw.mit.edu/courses/18-102-introduction-to-functional-analysis-spring-2021/)
 * [Stanford Engineering Everywhere](https://see.stanford.edu).
   Full lecture videos, syllabi, homework, and exams for courses spanning introductory computer science, artificial intelligence, linear systems & optimization, and logic.
