@@ -16,6 +16,7 @@ import { dateRfc3339 } from "./rss/dateRfc3339";
 import { PageType, type OpenGraph, type Page } from "./page";
 import { jsDateToISO } from "./date-to-iso";
 import { updatesHeatmap } from "./updates-heatmap";
+import { addPrismLean } from "./prism-lean";
 
 const SOURCE_DIR = "content";
 const COPY_PATTERNS = [
@@ -136,7 +137,7 @@ env.addFilter("updatesHeatmap", updatesHeatmap);
 const md = new MarkdownIt({ html: true, linkify: true }).use(markdownKaTeX).use(markdownPrism, {
     highlightInlineCode: false,
     plugins: [],
-    init: () => {},
+    init: addPrismLean,
 });
 
 function writeFile(filename: string, contents: string | Buffer) {
@@ -333,7 +334,7 @@ function postProcessPages(pages: Array<Page>) {
             $("head").append(KATEX_LINK);
             anyChanges = true;
         }
-        if ($('pre[class^="language-"]').length > 0) {
+        if ($('pre > code[class^="language-"]').length > 0) {
             $("head").append(PRISM_LINK);
             anyChanges = true;
         }
