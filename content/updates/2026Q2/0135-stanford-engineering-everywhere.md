@@ -6,7 +6,7 @@ crossPosting:
   x: https://x.com/janmarthedal/status/2067925128592146814
 tags:
   - computerscience
-  - mathematics
+  - math
   - online
   - courses
 ---

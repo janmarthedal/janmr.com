@@ -5,7 +5,7 @@ crossPosting:
   mastodon: https://mathstodon.xyz/@janmr/116867826880966607
   x: https://x.com/janmarthedal/status/2073775365344874625
 tags:
-  - mathematics
+  - math
   - combinatorics
   - discretemathematics
 ---

@@ -6,7 +6,7 @@ crossPosting:
   x: https://x.com/janmarthedal/status/2084265914329940196
 tags:
   - online
-  - mathematics
+  - math
   - video
   - journal
 ---
