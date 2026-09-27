@@ -10,6 +10,6 @@ tags:
   - numbers
   - twin-prime-conjecture
 ---
-The Twin Prime Conjecture states that there are infinitely many pairs of prime numbers that differ by 2. The current, provable, least bound on the gap between consecutive primes that is attained infinitely often is 246. https://oeis.org/A001223 https://michaelnielsen.org/polymath/index.php?title=Bounded_gaps_between_primes
+The Twin Prime Conjecture states that there are infinitely many pairs of prime numbers that differ by 2. The current, provable, least bound on the gap between consecutive primes that is attained infinitely often is 246. https://oeis.org/A001223 https://web.archive.org/web/20260825052408/https://michaelnielsen.org/polymath/index.php?title=Bounded_gaps_between_primes#Current_records
 
 [![](/media/updates/0077.png)](/media/updates/0077.png)

@@ -6,4 +6,4 @@ tags:
   - lean
   - math
 ---
-Lean: First Steps https://leanfirststeps.blogspot.com/p/contents.html
+Lean: First Steps https://github.com/rzeta0/Lean-First-Steps

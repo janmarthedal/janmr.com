@@ -5,4 +5,4 @@ crossPosting:
 ---
 Stanford's "The Fourier Transform and Its Applications"
 
-Videos, problem sets & more: https://see.stanford.edu/course/ee261
+Videos, problem sets & more: https://see.stanford.edu/Course/EE261
