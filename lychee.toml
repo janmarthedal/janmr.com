@@ -1,0 +1,5 @@
+# Settings for `bun run check-links` (scripts/check-links.ts), which adds the
+# path-dependent options (root dir, remap of https://janmr.com to _site).
+index_files = ["index.html"]
+include_fragments = "full"
+exclude = ["^mailto:"]

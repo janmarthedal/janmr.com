@@ -5,3 +5,4 @@ build/
 _site*/
 env/
 __pycache__/
+.lycheecache

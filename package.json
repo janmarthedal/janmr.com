@@ -10,7 +10,9 @@
     "make:dev": "bun src/run.ts",
     "make:watch": "bun scripts/watch.ts",
     "dev": "bunx npm-run-all clean --parallel make:watch serve",
-    "test": "tsc --noEmit"
+    "test": "tsc --noEmit",
+    "check-links": "bun scripts/check-links.ts",
+    "check-links:external": "bun scripts/check-links.ts --external"
   },
   "keywords": [],
   "author": "",

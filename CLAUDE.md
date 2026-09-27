@@ -52,3 +52,13 @@ janmr.com/
 (e.g. next to a post series) to document conventions or track planned/current
 posts — both filenames are excluded from the build by `IGNORE_PATTERNS` in
 `src/run.ts` and never produce output.
+
+## Link Checking
+
+`bun run make && bun run check-links` checks links in `_site` offline with
+[lychee](https://github.com/lycheeverse/lychee) (`scripts/check-links.ts`,
+settings in `lychee.toml`). Internal links, including absolute
+`https://janmr.com/...` ones, are resolved against `_site`; `#fragments` are
+checked. Links to redirect sources in `_site/_redirects` are warnings, other
+broken links are errors (exit code 1). `bun run check-links:external` also
+checks external links (cached for 7 days in `.lycheecache`).
