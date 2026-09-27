@@ -10,7 +10,7 @@ tags:
   - numbers
   - algorithms
 ---
-Basic Multiple-Precision Short Division, fifth post in a series of six on multiple-precision algorithms https://janmr.com/posts/multiple-precision/05-basic-short-division/ #ComputerScience #MultiplePrecision #numbers #algorithms
+Basic Multiple-Precision Short Division, fifth post in a series of six on multiple-precision algorithms https://janmr.com/posts/multiple-precision/basic-short-division/
 
 $$
 \begin{aligned}

@@ -10,7 +10,7 @@ tags:
   - numbers
   - algorithms
 ---
-Basic Multiple-Precision Long Division, sixth post in a series of six on multiple-precision algorithms https://janmr.com/posts/multiple-precision/06-basic-long-division/
+Basic Multiple-Precision Long Division, sixth post in a series of six on multiple-precision algorithms https://janmr.com/posts/multiple-precision/basic-long-division/
 
 $$
 \hat{q} = \min \left( \left\lfloor \frac{u_n b + u_{n-1}}{v_{n-1}} \right\rfloor, b-1 \right)

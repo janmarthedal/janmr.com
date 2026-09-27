@@ -9,6 +9,6 @@ tags:
   - machinelearning
   - numpy
 ---
-Introducing a series of posts on the basics of Neural Networks https://janmr.com/posts/neural-networks/01-preface/
+Introducing a series of posts on the basics of Neural Networks https://janmr.com/posts/neural-networks/
 
 ![](/media/og/neural-network-preface.png)

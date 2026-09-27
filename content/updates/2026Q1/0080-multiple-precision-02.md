@@ -10,7 +10,7 @@ tags:
   - numbers
   - algorithms
 ---
-Multiple-Precision Addition, second post in a series of six on multiple-precision algorithms https://janmr.com/posts/multiple-precision/02-addition/
+Multiple-Precision Addition, second post in a series of six on multiple-precision algorithms https://janmr.com/posts/multiple-precision/addition/
 
 $$
 \begin{aligned}

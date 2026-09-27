@@ -10,7 +10,7 @@ tags:
   - numbers
   - algorithms
 ---
-Basic Multiple-Precision Multiplication, fourth post in a series of six on multiple-precision algorithms https://janmr.com/posts/multiple-precision/04-basic-multiplication/
+Basic Multiple-Precision Multiplication, fourth post in a series of six on multiple-precision algorithms https://janmr.com/posts/multiple-precision/basic-multiplication/
 
 $$
 \begin{aligned}
