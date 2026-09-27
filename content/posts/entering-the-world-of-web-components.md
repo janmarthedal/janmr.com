@@ -13,7 +13,7 @@ redirect: /blog/2014/07/entering-the-world-of-web-components/
 ---
 I am very excited about Web Components. It is going to fundamentally change the way we do web development. This post is going to contain miscellaneous information and links related to Web Components.
 
-The specification is [still being developed](http://www.w3.org/standards/techs/components), but the overall parts have been decided upon. To quote [Introduction to Web Components](http://www.w3.org/TR/components-intro/), Web Components consists of five main parts:
+The specification is [still being developed](https://web.archive.org/web/20140704010734/http://www.w3.org/standards/techs/components), but the overall parts have been decided upon. To quote [Introduction to Web Components](https://web.archive.org/web/20140625143524/http://www.w3.org/TR/components-intro/), Web Components consists of five main parts:
 
  1. *Templates*, which define chunks of markup that are inert but can be activated for use later.
  2. *Decorators*, which apply templates based on CSS selectors to affect rich visual and behavioral changes to documents.
