@@ -22,10 +22,10 @@ layout: page
 - [Single Page Web Applications with AngularJS](https://www.coursera.org/learn/single-page-web-apps-with-angularjs/) (2017)
 - [Automata](https://online.stanford.edu/courses/soe-ycsautomata-automata-theory) (2013, [statement](/files/mooc/automata.pdf))
 - [HTML5 Game Development](https://www.udacity.com/course/cs255) (2013, [statement](/files/mooc/html5gamedev.pdf))
-- [Algorithms: Design and Analysis, Part 2](https://class.coursera.org/algo2-002) (2013, [statement](/files/mooc/algo2.pdf))
-- [Games without Chance: Combinatorial Game Theory](https://class.coursera.org/cgt-001) (2013, [statement](/files/mooc/gametheory.pdf))
-- [Functional Programming Principles in Scala](https://class.coursera.org/progfun-2012-001) (2012, [statement](/files/mooc/scala.pdf))
-- [Algorithms: Design and Analysis, Part 1](https://class.coursera.org/algo) (2012, [statement](/files/mooc/algo1.pdf))
+- Algorithms: Design and Analysis, Part 2 — by [Tim Roughgarden](https://www.youtube.com/@timroughgardenlectures1861) (Coursera, 2013, [statement](/files/mooc/algo2.pdf))
+- Games without Chance: Combinatorial Game Theory (Coursera, 2013, [statement](/files/mooc/gametheory.pdf))
+- Functional Programming Principles in Scala — by Martin Odersky (Coursera, 2012, [statement](/files/mooc/scala.pdf))
+- Algorithms: Design and Analysis, Part 1 — by [Tim Roughgarden](https://www.youtube.com/@timroughgardenlectures1861) (Coursera, 2012, [statement](/files/mooc/algo1.pdf))
 
 ## Open Source
 
