@@ -8,4 +8,5 @@ include_fragments = "full"
 exclude = [
     "^mailto:",
     "^https://ops\\.java/releases/$",  # 403 to non-browser clients
+    "^https://www\\.johnderbyshire\\.com/",  # expired SSL certificate
 ]
