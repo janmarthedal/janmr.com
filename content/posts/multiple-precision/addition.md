@@ -17,7 +17,7 @@ redirect: /posts/multiple-precision/02-addition/
 This post will cover a basic addition algorithm for multiple-precision non-negative integers.
 The algorithm is based upon that presented in Section 4.3.1, *The Classical Algorithms*,
 of [The Art of Computer Programming, Volume 2](/refs/taocp2/),
-by [Donald E. Knuth](http://www-cs-faculty.stanford.edu/~uno/).
+by [Donald E. Knuth](https://cs.stanford.edu/~knuth/).
 The notation and bounds used in this post were presented in a [previous post](/posts/multiple-precision/number-representation/).
 
 We consider adding two $n$-digit numbers with $n \geq 1$, $u=(u_{n-1} \ldots u_1 u_0)_b$ and $v=(v_{n-1} \ldots v_1 v_0)_b$.

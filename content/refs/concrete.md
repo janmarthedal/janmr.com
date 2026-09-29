@@ -13,6 +13,6 @@ tags:
   - combinatorics
 links:
   - name: Book homepage
-    url: http://www-cs-faculty.stanford.edu/~uno/gkp.html
+    url: https://cs.stanford.edu/~knuth/gkp.html
 ---
 ![](/media/books/concrete.jpg)

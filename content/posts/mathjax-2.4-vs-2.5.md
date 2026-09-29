@@ -12,7 +12,7 @@ redirect: /blog/2015/03/mathjax-2.4-vs-2.5/
 ---
 MathJax version 2.5 was [released around a month ago](https://www.mathjax.org/mathjax-v2-5-now-available/). One of that version's features were speed improvements and that's always a good thing. Seen in the light of my recent [experiments with MathJax and KaTeX](/posts/mathjax-katex-and-a-lot-of-math/), it was straightforward to set up an experiment that compared MathJax versions 2.4 and 2.5 with respect to rendering speed.
 
-All instances of math were set up to be typeset using MathJax, so no KaTeX. A small piece of JavaScript code was added to each blog post in order to load all posts in succession. Each page load was considered done as soon as MathJax emitted its ['End' signal](http://docs.mathjax.org/en/v2.5-latest/startup.html). To have a base case, all posts were also loaded with MathJax *disabled*, this time loading the next blog post as soon as a page's [`load` event](https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onload) fired.
+All instances of math were set up to be typeset using MathJax, so no KaTeX. A small piece of JavaScript code was added to each blog post in order to load all posts in succession. Each page load was considered done as soon as MathJax emitted its ['End' signal](http://docs.mathjax.org/en/v2.5-latest/startup.html). To have a base case, all posts were also loaded with MathJax *disabled*, this time loading the next blog post as soon as a page's [`load` event](https://developer.mozilla.org/en-US/docs/Web/API/Window/load_event) fired.
 
 The results were as follows:
 

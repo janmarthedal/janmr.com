@@ -16,7 +16,7 @@ We consider the task of dividing a positive integer $u$ by another positive inte
 
 The method presented here is based on *The Classical Algorithms*, Section&nbsp;4.3.1,
 of [The Art of Computer Programming, Volume&nbsp;2](/refs/taocp2/),
-by [Donald E. Knuth](http://www-cs-faculty.stanford.edu/~uno/).
+by [Donald E. Knuth](https://cs.stanford.edu/~knuth/).
 The material is quite theory-heavy and if you are just looking for the main algorithm,
 you can skip to the bottom and [Algorithm&nbsp;L](#algorithm-L).
 

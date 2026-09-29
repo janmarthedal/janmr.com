@@ -10,7 +10,7 @@ layout: page
   Known for his work on artificial neural networks, earning him the title "the Godfather of AI".
 - [Andrew Kelley](https://andrewkelley.me).
   Creator of Zig.
-- [Donald E. Knuth](https://www-cs-faculty.stanford.edu/~knuth/).
+- [Donald E. Knuth](https://cs.stanford.edu/~knuth/).
   Author of The Art of Computer Programming, creator of TeX.
 - [Ronald L. Rivest](https://people.csail.mit.edu/rivest/)
   Co-inventor of the RSA public-key cryptosystem.

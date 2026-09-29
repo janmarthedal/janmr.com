@@ -12,5 +12,5 @@ tags:
   - combinatorics
 links:
   - name: Book homepage
-    url: https://www-cs-faculty.stanford.edu/~knuth/taocp.html#vol4
+    url: https://cs.stanford.edu/~knuth/taocp.html#vol4
 ---

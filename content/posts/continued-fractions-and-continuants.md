@@ -26,7 +26,7 @@ $$
 
 where $/\!/ \, /\!/ = 0$ for $n=0$.
 
-Most of the theory in this article is based on Section&nbsp;4.5.3 from [The Art of Computer Programming, Volume&nbsp;2](/refs/taocp2/), by [Donald E. Knuth](http://www-cs-faculty.stanford.edu/~uno/) and Section&nbsp;6.7 from [Concrete Mathematics](/refs/concrete/) by [Graham](http://math.ucsd.edu/~fan/ron/), [Knuth](http://www-cs-faculty.stanford.edu/~uno/), and [Patashnik](https://en.wikipedia.org/wiki/Oren_Patashnik). See also [Continued Fractions](/refs/khinchin/) by Aleksandr Ya. Khinchin.
+Most of the theory in this article is based on Section&nbsp;4.5.3 from [The Art of Computer Programming, Volume&nbsp;2](/refs/taocp2/), by [Donald E. Knuth](https://cs.stanford.edu/~knuth/) and Section&nbsp;6.7 from [Concrete Mathematics](/refs/concrete/) by [Graham](http://math.ucsd.edu/~fan/ron/), [Knuth](https://cs.stanford.edu/~knuth/), and [Patashnik](https://en.wikipedia.org/wiki/Oren_Patashnik). See also [Continued Fractions](/refs/khinchin/) by Aleksandr Ya. Khinchin.
 
 ### Basic Properties
 
@@ -330,7 +330,7 @@ $$
 a_0 + /\!/ a_1, \ldots, a_m, b_1, \ldots, b_n, b_1, \ldots, b_n, \ldots /\!/, \quad m \geq 0, n \geq 1,
 $$
 
-if and only if $x$ is a [quadratic irrationality](https://en.wikipedia.org/wiki/Quadratic_irrational) (proved in [TAOCP](http://www-cs-faculty.stanford.edu/~uno/taocp.html), vol.&nbsp;2, Exercise&nbsp;4.5.3-12). A quadratic irrationality is a number of the form $(\sqrt{d}-u)/v$ where $d$, $u$, and $v$ are integers, $d > 0$, $v \neq 0$, and $d$ is not a [perfect square](https://en.wikipedia.org/wiki/Square_number).
+if and only if $x$ is a [quadratic irrationality](https://en.wikipedia.org/wiki/Quadratic_irrational) (proved in [TAOCP](https://cs.stanford.edu/~knuth/taocp.html), vol.&nbsp;2, Exercise&nbsp;4.5.3-12). A quadratic irrationality is a number of the form $(\sqrt{d}-u)/v$ where $d$, $u$, and $v$ are integers, $d > 0$, $v \neq 0$, and $d$ is not a [perfect square](https://en.wikipedia.org/wiki/Square_number).
 
 Some special cases of this theorem are:
 

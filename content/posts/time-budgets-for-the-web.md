@@ -22,10 +22,10 @@ In short, the RAIL principles are as follows.
 
 **Responsive**. When a user interacts with a page, e.g. clicks an item or presses a key, the page should react to that action within **100ms**.
 
-**Animation**. When an animation runs on a page it should run at 60 frames per second. Since the browser also has some work to do per frame, [it leaves around](https://developers.google.com/web/fundamentals/performance/rendering/) **10ms** per frame for calculations, manipulating the DOM, etc. Note that scrolling or dragging objects also fall under this animation category.
+**Animation**. When an animation runs on a page it should run at 60 frames per second. Since the browser also has some work to do per frame, [it leaves around](https://web.dev/articles/rendering-performance) **10ms** per frame for calculations, manipulating the DOM, etc. Note that scrolling or dragging objects also fall under this animation category.
 
 **Idle**. When a page has been loaded and waits for user interaction, it is said to be idle. This creates an opportunity for the web page to load further assets and in general prepare for what the user may do next. When doing this, the background tasks should each take no more than **50ms**.
 
-**Load**. Loading a page should take no more than **1 second**. Note that this refers to the [critical path content](https://developers.google.com/web/fundamentals/performance/critical-rendering-path/), the content that relates to the primary action the user wants to take on a page.
+**Load**. Loading a page should take no more than **1 second**. Note that this refers to the [critical path content](https://web.dev/articles/critical-rendering-path), the content that relates to the primary action the user wants to take on a page.
 
 I think that having well-defined goals as these is a good thing and I have no doubt that these principles will lead to great web experiences. It may not always be easy to live up to them, though, and I can only recommend the course mentioned above for ways to discover issues with your site and how to fix them.

@@ -26,7 +26,7 @@ $$
 
 where $k_0$ is some initial [borrow](https://mathworld.wolfram.com/Borrow.html), $0 \leq k_0 \leq 1$. Furthermore, a final borrow $k_n$ will indicate whether $u < v+k_0$.
 
-Let us first introduce a notation which [Donald E. Knuth](http://www-cs-faculty.stanford.edu/~uno/) refers to as [Iverson's convention](https://en.wikipedia.org/wiki/Iverson_bracket): $[P]$ has value $1$ if $P$ is true and $0$ otherwise.
+Let us first introduce a notation which [Donald E. Knuth](https://cs.stanford.edu/~knuth/) refers to as [Iverson's convention](https://en.wikipedia.org/wiki/Iverson_bracket): $[P]$ has value $1$ if $P$ is true and $0$ otherwise.
 
 We now have the algorithm:
 

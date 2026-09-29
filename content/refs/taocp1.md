@@ -11,6 +11,6 @@ tags:
   - algorithms
 links:
   - name: Book homepage
-    url: https://www-cs-faculty.stanford.edu/~knuth/taocp.html#vol1
+    url: https://cs.stanford.edu/~knuth/taocp.html#vol1
 ---
 ![](/media/books/taocp1.jpg)
