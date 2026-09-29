@@ -31,7 +31,7 @@ One way to define $\text{gcd}(u,v)$ is the following. Consider the set of all po
 
 Consider now Property 4. We prove this by showing that the set of divisors of $u$ and $v$ is equal to the set of divisors of $u$ and $v+n u$ (and hence, their gcd's must be equal). Consider then a positive integer $d$ that divides $u$ and $v$. Obviously, $d$ also divides $v+n u$. Assume now that some $d$ divides $u$ and $r=v+n u$. Then $d$ also divides $r-n u=v$.
 
-Another useful way to define $\text{gcd}(u,v)$ is possible for positive $u$ and $v$. According to the [fundamental theorem of arithmetic](http://en.wikipedia.org/wiki/Fundamental_theorem_of_arithmetic) we can write
+Another useful way to define $\text{gcd}(u,v)$ is possible for positive $u$ and $v$. According to the [fundamental theorem of arithmetic](https://en.wikipedia.org/wiki/Fundamental_theorem_of_arithmetic) we can write
 
 $$
 u = \prod_{p \; \rm prime} p^{u_p},
@@ -47,7 +47,7 @@ Properties 5 and 6 follow from this equality.
 
 ### Euclid's Algorithm
 
-Euclid's algorithm appeared in [Euclid](http://en.wikipedia.org/wiki/Euclid)&#8216;s [Elements](/refs/elements/)
+Euclid's algorithm appeared in [Euclid](https://en.wikipedia.org/wiki/Euclid)&#8216;s [Elements](/refs/elements/)
 ([Proposition&nbsp;1](http://aleph0.clarku.edu/~djoyce/java/elements/bookVII/propVII1.html) and
 [Proposition&nbsp;2](http://aleph0.clarku.edu/~djoyce/java/elements/bookVII/propVII2.html)) around 300 BC, but was probably known before this.
 
@@ -68,7 +68,7 @@ The algorithm can be implemented quite concisely in C++, one way of doing it bei
   }
 ```
 
-Note that this implementation is almost identical to the [Boost](http://www.boost.org) [implementation](http://www.boost.org/doc/libs/1_43_0/boost/math/common_factor_rt.hpp), which, however, checks for zero-valued variables by comparing to an actual zero-object instead of relying on an object-to-bool conversion.
+Note that this implementation is almost identical to the [Boost](https://www.boost.org) [implementation](https://www.boost.org/doc/libs/1_43_0/boost/math/common_factor_rt.hpp), which, however, checks for zero-valued variables by comparing to an actual zero-object instead of relying on an object-to-bool conversion.
 
 This generic implementation works for both built-in integer C++ types and number objects such as `natural_number` from the [Kanooth Numbers](https://github.com/janmarthedal/kanooth-numbers) library.
 
@@ -80,7 +80,7 @@ $$
 
 which in turn means that the value of $u$ at least halves every time `u %= v` is executed. Of course, a similar statement holds for `v %= u`. This shows that Euclid's algorithm computes a remainder (roughly) at most $\log_2 u + \log_2 v$ times. For a thorough analysis see Section&nbsp;4.5.3 of [The Art of Computer Programming, Volume&nbsp;2](/refs/taocp2/), by [Donald E. Knuth](http://www-cs-faculty.stanford.edu/~knuth/).
 
-Two interesting things about Euclid's algorithm should be noted. First, the analysis of Euclid's algorithm is intimately tied to [continued fractions](http://en.wikipedia.org/wiki/Continued_fraction) (*update 2009-11-10:* See also [Continued Fractions and Continuants](/posts/continued-fractions-and-continuants)/). Second, the input numbers that make the algorithm perform the most remainder-computations are two consecutive [Fibonacci](http://en.wikipedia.org/wiki/Fibonacci_number) numbers&#8212;supposedly the first practical application of the Fibonacci sequence.
+Two interesting things about Euclid's algorithm should be noted. First, the analysis of Euclid's algorithm is intimately tied to [continued fractions](https://en.wikipedia.org/wiki/Continued_fraction) (*update 2009-11-10:* See also [Continued Fractions and Continuants](/posts/continued-fractions-and-continuants)/). Second, the input numbers that make the algorithm perform the most remainder-computations are two consecutive [Fibonacci](https://en.wikipedia.org/wiki/Fibonacci_number) numbers&#8212;supposedly the first practical application of the Fibonacci sequence.
 
 ### Stein's Algorithm
 
@@ -135,11 +135,11 @@ Finally, if working with multiple-precision numbers, the binary shift operation 
 
 How many times is the while-loop executed, in the worst case? Either $u$ or $v$ is reduced by at least a factor two, so, similar to Euclid's algorithm, the loop is executed at most $\log_2 u + \log_2 v$ times.
 
-It should be noted that [Alex Stepanov](http://www.stepanovpapers.com) has written [some notes](http://www.stepanovpapers.com/notes.pdf) that, among many other things, deal with generic implementations of both Euclid's and Stein's gcd algorithms (see Section&nbsp;10.2). Stepanov has also written the book [Elements of Programming](/refs/stepanov/) with [Paul McJones](http://www.mcjones.org/paul/), which presents a mathematical approach to programming. The book also mentions Euclid's and Stein's algorithms, but the treatment in the notes is more comprehensive.
+It should be noted that [Alex Stepanov](https://www.stepanovpapers.com) has written [some notes](https://www.stepanovpapers.com/notes.pdf) that, among many other things, deal with generic implementations of both Euclid's and Stein's gcd algorithms (see Section&nbsp;10.2). Stepanov has also written the book [Elements of Programming](/refs/stepanov/) with [Paul McJones](https://www.mcjones.org/paul/), which presents a mathematical approach to programming. The book also mentions Euclid's and Stein's algorithms, but the treatment in the notes is more comprehensive.
 
 ### Running Time Comparisons
 
-This section presents some results from comparing the Euclid and Stein algorithms for computing the greatest common divisor. All tests were run on a 2.5 GHz AMD Phenom 9850 Quad-Core, running 64 bit [Mepis Linux](http://www.mepis.org/) and using a [GCC](http://gcc.gnu.org) 4.2.4 compiler.
+This section presents some results from comparing the Euclid and Stein algorithms for computing the greatest common divisor. All tests were run on a 2.5 GHz AMD Phenom 9850 Quad-Core, running 64 bit [Mepis Linux](https://mepis.org/) and using a [GCC](https://gcc.gnu.org) 4.2.4 compiler.
 
 #### Built-in integer C++ types
 
@@ -149,15 +149,15 @@ The following experiment was done.
 2. Compute the gcd of the first and second number, the second and third number, the third and fourth, and so on, until all numbers from the array have been used. Add together all the gcd-results (for some simple algorithm validation and to avoid unwanted compiler optimizations).
 3. Perform Step 2 a fixed number of times (so a second or so passes).
 
-Steps 2 and 3 were timed using different gcd algorithms (but using the same array of numbers): The Euclid and Stein algorithms from this article, an optimized Stein's algorithm, and the Euclid and Stein algorithms from [Boost](http://www.boost.org).
+Steps 2 and 3 were timed using different gcd algorithms (but using the same array of numbers): The Euclid and Stein algorithms from this article, an optimized Stein's algorithm, and the Euclid and Stein algorithms from [Boost](https://www.boost.org).
 
 The results can be summarized as follows.
 
-*   The implementation of Euclid's algorithm presented in this article and the [`gcd_euclidean` version](http://www.boost.org/doc/libs/1_43_0/boost/math/common_factor_rt.hpp) from [Boost](http://www.boost.org) performed virtually identically.
+*   The implementation of Euclid's algorithm presented in this article and the [`gcd_euclidean` version](https://www.boost.org/doc/libs/1_43_0/boost/math/common_factor_rt.hpp) from [Boost](https://www.boost.org) performed virtually identically.
 *   This article's implementation of Stein's algorithm could be optimized a little, but the effects were no more than around 3%.
 *   For 32 and 64 bit unsigned integers, Stein's algorithm was faster than Euclid's by 12% and 37%, respectively.
 *   For 8 and 16 bit unsigned integers, Euclid's algorithm was faster than Stein's by around 13% (I am not sure why these smaller word sizes changed the faster algorithm).
-*   The [`gcd_binary` version](http://www.boost.org/doc/libs/1_43_0/boost/math/common_factor_rt.hpp) of Stein's algorithm from [Boost](http://www.boost.org) performed worst of all for all built-in data types, around 70-75% slower than the Stein's algorithm from this article.
+*   The [`gcd_binary` version](https://www.boost.org/doc/libs/1_43_0/boost/math/common_factor_rt.hpp) of Stein's algorithm from [Boost](https://www.boost.org) performed worst of all for all built-in data types, around 70-75% slower than the Stein's algorithm from this article.
 
 #### The Kanooth Numbers Library
 

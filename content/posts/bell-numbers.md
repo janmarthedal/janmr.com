@@ -12,7 +12,7 @@ og:
     linear ODEs with n parameters, leading to the Bell numbers.
 redirect: /blog/2011/06/bell-numbers/
 ---
-I recently studied a system of linear [ODE](http://en.wikipedia.org/wiki/Ordinary_differential_equation)s, where $n$ parameters, $k_1, \ldots, k_n$ described the system. It turned out that the structure of the solutions depended on whether any of the parameters where equal to each other. For instance, with three parameters there were five possibilities:
+I recently studied a system of linear [ODE](https://en.wikipedia.org/wiki/Ordinary_differential_equation)s, where $n$ parameters, $k_1, \ldots, k_n$ described the system. It turned out that the structure of the solutions depended on whether any of the parameters where equal to each other. For instance, with three parameters there were five possibilities:
 
 1. $k_1 = k_2 = k_3$
 2. $k_1 = k_2$, $k_1 \neq k_3$
@@ -28,9 +28,9 @@ We can quickly go through small values of $n$ and we get (starting with $n=0$): 
 4. $\{\{k_2,k_3\}, \{k_1\}\}$
 5. $\{\{k_1\}, \{k_2\}, \{k_3\}\}$
 
-So the number of possibilities also corresponds to the number of partitions of a set of $n$ elements. Actually, there are *many* ways to interpret these numbers, see, e.g., the comments for [sequence A000110](http://oeis.org/A000110) at [OEIS](http://oeis.org).
+So the number of possibilities also corresponds to the number of partitions of a set of $n$ elements. Actually, there are *many* ways to interpret these numbers, see, e.g., the comments for [sequence A000110](https://oeis.org/A000110) at [OEIS](https://oeis.org).
 
-These numbers are typically called [Bell Numbers](http://en.wikipedia.org/wiki/Bell_number) and we will denote them by $B_n$. We thus have $B_0 = B_1 = 1$, $B_2 = 2$, $B_3 = 5$.
+These numbers are typically called [Bell Numbers](https://en.wikipedia.org/wiki/Bell_number) and we will denote them by $B_n$. We thus have $B_0 = B_1 = 1$, $B_2 = 2$, $B_3 = 5$.
 
 How can we derive a formula for $B_n$? Let us assume we already know $B_0, \ldots, B_{n-1}$ and consider the number of partitions of the set $S_n=\{1,2,\ldots,n\}$. For each partition we will focus on the subset that contains one particular element, say the element $n$.
 

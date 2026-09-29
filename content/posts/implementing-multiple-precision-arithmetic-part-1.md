@@ -26,7 +26,7 @@ $$
 
 We will call $u$ an $n$-digit number and $u_0$, $u_1$, etc., its digits. Unless stated otherwise we will always have that the most-significant digit is non-zero, here $u_{n-1} \neq 0$, and we will represent zero with no digits, $0 = ()_b$. We have $b^{n-1} \leq u \leq b^n-1$, implying $n=1+\lfloor \log_b u \rfloor$ for $u \geq 1$.
 
-Let the word size of the data type `T` used for each digit be $b_T$. For instance, if `T` is a 32 bit unsigned integer, we have $b_T = 2^{32}$. We will implement the algorithms using $b = b_T$ and exploit the fact that C++ does arithmetic on unsigned integers [modulo](http://en.wikipedia.org/wiki/Modular_arithmetic) $b_T$ (see paragraph 3.9.1 (4) of the [C++ standard](http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2009/n2914.pdf)). This makes it possible to implement portable algorithms. They will not be optimal with respect to speed, however, and it will be noted when specialized operations, such as add-with-carry instructions, would lead to more efficient implementations.
+Let the word size of the data type `T` used for each digit be $b_T$. For instance, if `T` is a 32 bit unsigned integer, we have $b_T = 2^{32}$. We will implement the algorithms using $b = b_T$ and exploit the fact that C++ does arithmetic on unsigned integers [modulo](https://en.wikipedia.org/wiki/Modular_arithmetic) $b_T$ (see paragraph 3.9.1 (4) of the [C++ standard](https://www.open-std.org/jtc1/sc22/wg21/docs/papers/2009/n2914.pdf)). This makes it possible to implement portable algorithms. They will not be optimal with respect to speed, however, and it will be noted when specialized operations, such as add-with-carry instructions, would lead to more efficient implementations.
 
 ### Data Structures
 
@@ -45,11 +45,11 @@ public:
 };
 ```
 
-The type argument `T` is used to represent each digit. It must be integer and unsigned, so `unsigned char`, `unsigned short`, `unsigned int`, `unsigned long`, and `unsigned long long` can all be used (the type `long long int` is not standard C++, but is, e.g., [supported](http://gcc.gnu.org/onlinedocs/gcc/Long-Long.html) by [GCC](http://gcc.gnu.org)). If a digit type with 8, 16, 32, or 64 bits is needed, the [boost](http://www.boost.org) [integer types](http://www.boost.org/doc/libs/release/libs/integer/index.html) `uint8_t`, `uint16_t`, `uint32_t`, `uint64_t` (from the namespace `boost`) can be used with portability ensured (`uint64_t` is not always available, but the macro `BOOST_NO_INT64_T` will tell you if it is not).
+The type argument `T` is used to represent each digit. It must be integer and unsigned, so `unsigned char`, `unsigned short`, `unsigned int`, `unsigned long`, and `unsigned long long` can all be used (the type `long long int` is not standard C++, but is, e.g., [supported](https://gcc.gnu.org/onlinedocs/gcc/Long-Long.html) by [GCC](https://gcc.gnu.org)). If a digit type with 8, 16, 32, or 64 bits is needed, the [boost](https://www.boost.org) [integer types](http://www.boost.org/doc/libs/release/libs/integer/index.html) `uint8_t`, `uint16_t`, `uint32_t`, `uint64_t` (from the namespace `boost`) can be used with portability ensured (`uint64_t` is not always available, but the macro `BOOST_NO_INT64_T` will tell you if it is not).
 
 The type argument `V` is used as the container type for the digits. The default container is `SimpleDigitVector` (which at this time is also the only container supported). This default container simply wraps an array of size (at least) the number of digits.
 
-Note that the digit container `digitvec` of `NonNegativeInteger` is wrapped in a [boost shared pointer](http://www.boost.org/doc/libs/1_43_0/libs/smart_ptr/shared_ptr.htm). Consider the small code excerpt:
+Note that the digit container `digitvec` of `NonNegativeInteger` is wrapped in a [boost shared pointer](https://www.boost.org/doc/libs/1_43_0/libs/smart_ptr/shared_ptr.htm). Consider the small code excerpt:
 
 ``` cpp
 NonNegativeInteger<unsigned> a=value1(), b=value2(), c;
@@ -89,7 +89,7 @@ Let us now look at some implementation details. How do we compute $z = (x + y) \
 2.  Use $b = b_T$ and the CPU's add and add-with-carry instructions.
 3.  Use $b = b_T$, but the computations must be done in some portable C++ way.
 
-Option 1 is actually not an option because we insist on using $b = b_T$. Option 2 leads to the most efficient code, regarding both space and speed. The problem is that these special instructions are not directly accessible via the C++ standard. Some compilers, though, make it possible to use inline assembly. For instance, [GCC](http://gcc.gnu.org) has such [capabilities](http://gcc.gnu.org/onlinedocs/gcc/Extended-Asm.html).
+Option 1 is actually not an option because we insist on using $b = b_T$. Option 2 leads to the most efficient code, regarding both space and speed. The problem is that these special instructions are not directly accessible via the C++ standard. Some compilers, though, make it possible to use inline assembly. For instance, [GCC](https://gcc.gnu.org) has such [capabilities](https://gcc.gnu.org/onlinedocs/gcc/Extended-Asm.html).
 
 Option 3 is the way to go. As mentioned earlier, C++ does calculations modulo $b_T$, so $z \leftarrow (x + y) \;\text{mod}\; b$ comes &#8216;for free&#8217; as simply `z = x + y` in C++. Left is how to detect whether a carry occurs during an addition. One way to do that is the following. Consider $z = (x + y) \;\text{mod}\; b$ for which there are two possibilities. Either $z = x + y$ ($k = 0$) which implies $z \geq x$ and $z \geq y$, or we have $z + b = x + y$ ($k = 1$) which implies $z = x - (b - y) = y - (b - x)$, leading to $z < x$ and $z < y$. So $k = [z < x] = [z < y]$. Another way to detect whether a carry occurs is to split $x$ and $y$ into a low and high part, and then adding the low and high parts seperately—keeping track of a possible intermediate carry, of course.
 

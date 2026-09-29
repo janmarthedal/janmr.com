@@ -8,6 +8,6 @@ tags:
   - polyomino
   - tiling
 ---
-Tiling with L-Trominos http://janmr.com/posts/tiling-with-l-trominos/
+Tiling with L-Trominos https://janmr.com/posts/tiling-with-l-trominos/
 
 ![](/media/updates/0116.png)

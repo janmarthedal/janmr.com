@@ -19,7 +19,7 @@ If you add a `short int` and a `char` in C++, what is the resulting type? What i
 
 ### Introduction
 
-Let me first note that I will be referring to the current C++ standard from 1998 (with a minor revision in 2003). This standard is described in <a href="/refs/stroustrup">The C++ Programming Language</a> by [Bjarne Stroustrup](http://www.stroustrup.com). ~~It can also be found online.~~
+Let me first note that I will be referring to the current C++ standard from 1998 (with a minor revision in 2003). This standard is described in <a href="/refs/stroustrup">The C++ Programming Language</a> by [Bjarne Stroustrup](https://www.stroustrup.com). ~~It can also be found online.~~
 
 In C++, the *integer types* are `short int`, `int`, `long int` and the unsigned versions of these. The integer types together with the boolean type (`bool`) and the character types (plain/`signed`/`unsigned` `char` and `wchar_t`) are called *integral types*. The integral types together with the floating-point types (`float`, `double`, and `long double`) are called *arithmetic types*.
 
@@ -189,8 +189,8 @@ typename resolve_uac<A, B>::return_type add(const A& a, const B& b)
 { return a + b; }
 ```
 
-and the return type will match that of the `+` operation. Note that the arguments to `add` have to be arithmetic types (because of the [substitution-failure-is-not-an-error](http://en.wikipedia.org/wiki/Substitution_failure_is_not_an_error) principle).
+and the return type will match that of the `+` operation. Note that the arguments to `add` have to be arithmetic types (because of the [substitution-failure-is-not-an-error](https://en.wikipedia.org/wiki/Substitution_failure_is_not_an_error) principle).
 
 ### Remarks
 
-The rules and implementation above should be complete with the exception of enumerations and bit-fields, see the links to the standard for the missing pieces. Note also that the rules for promotions and usual arithmetic conversions will change (slightly) in the upcoming C++0x standard, see the [C++0x draft](http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2010/n3092.pdf), Section 5, page 84.
+The rules and implementation above should be complete with the exception of enumerations and bit-fields, see the links to the standard for the missing pieces. Note also that the rules for promotions and usual arithmetic conversions will change (slightly) in the upcoming C++0x standard, see the [C++0x draft](https://www.open-std.org/jtc1/sc22/wg21/docs/papers/2010/n3092.pdf), Section 5, page 84.

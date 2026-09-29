@@ -9,4 +9,4 @@ tags:
   - algorithms
   - fractions
 ---
-Comparing Rational Numbers Without Overflow http://janmr.com/posts/comparing-rational-numbers-without-overflow/
+Comparing Rational Numbers Without Overflow https://janmr.com/posts/comparing-rational-numbers-without-overflow/

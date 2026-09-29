@@ -11,4 +11,4 @@ tags:
   - python
   - rust
 ---
-Generating All Permutations http://janmr.com/posts/generating-all-permutations/
+Generating All Permutations https://janmr.com/posts/generating-all-permutations/

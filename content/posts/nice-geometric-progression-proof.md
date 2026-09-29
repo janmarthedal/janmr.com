@@ -18,13 +18,13 @@ $$
 s_r = \sum_{k=0}^\infty r^k = 1 + r + r^2 + r^3 + \ldots,
 $$
 
-for $0 < r < 1$. The goal is to find a [closed-form expression](http://en.wikipedia.org/wiki/Closed-form_expression) for $s_r$.
+for $0 < r < 1$. The goal is to find a [closed-form expression](https://en.wikipedia.org/wiki/Closed-form_expression) for $s_r$.
 
 <figure>
   <img src="/media/geoprog.svg" alt="Visual proof of a geometric progression sum" class="img-responsive">
 </figure>
 
-Consider now the figure shown. Given that $|AB|=|AD|=1$ and $|DE|=r$, the rest of the figure can be constructed (the lines AC and BF are parallel and the rest of the lines, with the exception of BC, are perpendicular to AC). It is important to note that the four-sided figures ABED, DEHG, GHKJ, and so on, are all [similar](http://en.wikipedia.org/wiki/Similarity_(geometry)) to each other, and we see that the length $|AC|$ is exactly the quantity we are looking for.
+Consider now the figure shown. Given that $|AB|=|AD|=1$ and $|DE|=r$, the rest of the figure can be constructed (the lines AC and BF are parallel and the rest of the lines, with the exception of BC, are perpendicular to AC). It is important to note that the four-sided figures ABED, DEHG, GHKJ, and so on, are all [similar](https://en.wikipedia.org/wiki/Similarity_(geometry)) to each other, and we see that the length $|AC|$ is exactly the quantity we are looking for.
 
 Note now how the triangle ABC is similar to the triangle FEB, leading to
 

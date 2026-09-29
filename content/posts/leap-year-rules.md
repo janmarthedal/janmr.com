@@ -45,7 +45,7 @@ $$
 
 which is the approximation the rules for the Gregorian calendar gives us. The difference from the tropical year length is thus about 27 seconds per year.
 
-Let us briefly consider turning these leap year rules into code. There are numerous ways of doing it, but one short and efficient way of doing it is (here using [Rust](https://www.rust-lang.org/))
+Let us briefly consider turning these leap year rules into code. There are numerous ways of doing it, but one short and efficient way of doing it is (here using [Rust](https://rust-lang.org/))
 
 ``` rust
 pub fn is_leap_year(year: u64) -> bool {

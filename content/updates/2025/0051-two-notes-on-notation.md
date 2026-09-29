@@ -7,7 +7,7 @@ tags:
   - math
   - notation
 ---
-Two Notes on Notation by Donald E. Knuth (Iverson's convention and Stirling numbers) http://arxiv.org/abs/math/9205211
+Two Notes on Notation by Donald E. Knuth (Iverson's convention and Stirling numbers) https://arxiv.org/abs/math/9205211
 
 $$
 [P] \quad \left[ { n \atop k } \right] \quad \left\{ { n \atop k } \right\}

@@ -75,7 +75,7 @@ Let us first consider computing the quotient of step&nbsp;**G3** in the special 
 
 However, it is not possible to access such an instruction directly through standard C++. As we did for multiplication, we therefore split $u$ and $v$ into smaller parts and do the operation at this smaller scale. So let us assume a number $h$ exists such that $h^2 = b$. We now set $u = (u'_3 u'_2 u'_1 u'_0)_h$ and $v = (v'_1 v'_0)_h$ and use the algorithms of this article on this representation. A 'simple division' is now of the type $(u'_3 h + u'_2)/v'_1$ and we can do that directly in C++.
 
-We will not go further into the implementation of 'double-precision division', but an example implementation is the function `double_div` of [`lowlevel_generic.hpp`](http://sourceforge.net/p/sputsoftnumbers/code/HEAD/tree/tags/0.1/src/detail/lowlevel_generic.hpp). You can also see the specialization of this routine for [x86](http://en.wikipedia.org/wiki/X86) processors with [GCC](http://gcc.gnu.org/) compilers in the file [`lowlevel_gcc_x86.hpp`](http://sourceforge.net/p/sputsoftnumbers/code/HEAD/tree/tags/0.1/src/detail/lowlevel_gcc_x86.hpp).
+We will not go further into the implementation of 'double-precision division', but an example implementation is the function `double_div` of [`lowlevel_generic.hpp`](https://sourceforge.net/p/sputsoftnumbers/code/HEAD/tree/tags/0.1/src/detail/lowlevel_generic.hpp). You can also see the specialization of this routine for [x86](https://en.wikipedia.org/wiki/X86) processors with [GCC](https://gcc.gnu.org/) compilers in the file [`lowlevel_gcc_x86.hpp`](https://sourceforge.net/p/sputsoftnumbers/code/HEAD/tree/tags/0.1/src/detail/lowlevel_gcc_x86.hpp).
 
 For $n=1$ Algorithm G of the previous section can be greatly simplified if we are interested in just the quotient $q=(q_{n-1} \ldots q_1 q_0)_b$ and the remainder $0 \leq r < v$:
 
@@ -99,7 +99,7 @@ This approximate quotient is never too small, as the following theorem states.
 
 **Theorem 1.** With $\hat{q}$ as defined above we have $q \leq \hat{q}$.
 
-*Proof*. If $\hat{q}=b-1$ then since $q \leq b-1$ by assumption, the statement is true. Assume then that $\hat{q} = \lfloor (u_n b + u_{n-1})/v_{n-1} \rfloor$. From the properties of the [floor function](http://en.wikipedia.org/wiki/Floor_function) we have $u_n b + u_{n-1} \leq \hat{q} v_{n-1} + v_{n-1} - 1$ and therefore $\hat{q} v_{n-1} \geq u_n b + u_{n-1} - v_{n-1} + 1$. We then get
+*Proof*. If $\hat{q}=b-1$ then since $q \leq b-1$ by assumption, the statement is true. Assume then that $\hat{q} = \lfloor (u_n b + u_{n-1})/v_{n-1} \rfloor$. From the properties of the [floor function](https://en.wikipedia.org/wiki/Floor_function) we have $u_n b + u_{n-1} \leq \hat{q} v_{n-1} + v_{n-1} - 1$ and therefore $\hat{q} v_{n-1} \geq u_n b + u_{n-1} - v_{n-1} + 1$. We then get
 
 $$
 \begin{aligned}

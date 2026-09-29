@@ -12,13 +12,13 @@ og:
 redirect: /blog/2010/10/prime-factors-of-factorial-numbers/
 mastodon: https://mathstodon.xyz/@janmr/115739190333664454
 ---
-Factorial numbers, $n! = 1 \cdot 2 \cdots n$, grow very fast with $n$. In fact, $n! \sim \sqrt{2 \pi n} (n/e)^n$ according to [Stirling's approximation](http://en.wikipedia.org/wiki/Stirling's_approximation). The [prime factors](http://en.wikipedia.org/wiki/Prime_factor) of a factorial number, however, are all relatively small, and the complete factorization of $n!$ is quite easy to obtain.
+Factorial numbers, $n! = 1 \cdot 2 \cdots n$, grow very fast with $n$. In fact, $n! \sim \sqrt{2 \pi n} (n/e)^n$ according to [Stirling's approximation](https://en.wikipedia.org/wiki/Stirling's_approximation). The [prime factors](https://en.wikipedia.org/wiki/Prime_factor) of a factorial number, however, are all relatively small, and the complete factorization of $n!$ is quite easy to obtain.
 
 We will make use of the following fundamental theorem:
 
 > $p \mid a b$ for a prime $p$, then $p \mid a$ or $p \mid b$.
 
-(Here, $p \mid a$ means that $p$ divides $a$.) This is called Euclid's First Theorem or [Euclid's Lemma](http://en.wikipedia.org/wiki/Euclid's_lemma). For most, it is intuitively clear, but a proof can be found in, e.g., <a href="/refs/hardy-wright">Hardy and Wright: An Introduction to the Theory of Numbers</a>.
+(Here, $p \mid a$ means that $p$ divides $a$.) This is called Euclid's First Theorem or [Euclid's Lemma](https://en.wikipedia.org/wiki/Euclid's_lemma). For most, it is intuitively clear, but a proof can be found in, e.g., <a href="/refs/hardy-wright">Hardy and Wright: An Introduction to the Theory of Numbers</a>.
 
 An application of this theorem to factorial numbers is that if a prime $p$ is a divisor of $n!$ then $p$ must be a divisor of at least one of the numbers $1, 2, \ldots, n$. This immediately implies
 
@@ -28,7 +28,7 @@ Conversely, every prime number between 2 and $n$ must be a prime factor of $n!$.
 
 Let us introduce the notation $d_a(b)$ as the number of times $a$ divides into $b$. Put more precisely, $d_a(b) = k$ if and only if $b/a^k$ is an integer while $b/a^{k+1}$ is not.
 
-We now seek to determine $d_p(n!)$ for all primes $p \leq n$. From Euclid's First Theorem and the [Fundamental Theorem of Arithmetic](http://en.wikipedia.org/wiki/Fundamental_theorem_of_arithmetic) follows:
+We now seek to determine $d_p(n!)$ for all primes $p \leq n$. From Euclid's First Theorem and the [Fundamental Theorem of Arithmetic](https://en.wikipedia.org/wiki/Fundamental_theorem_of_arithmetic) follows:
 
 $$
 d_p(n!) = d_p(1) + d_p(2) + \cdots + d_p(n)
@@ -54,7 +54,7 @@ $$
 d_p(n!) = \sum_{k=1}^\infty \left\lfloor \frac{n}{p^k} \right\rfloor = \sum_{k=1}^{\lfloor \log_p(n) \rfloor} \left\lfloor \frac{n}{p^k} \right\rfloor.
 $$
 
-This [identity](http://en.wikipedia.org/wiki/Factorial#Number_theory) was found by the french mathematician [Adrien-Marie Legendre](http://en.wikipedia.org/wiki/Adrien-Marie_Legendre) (see also <a href="/refs/proofs-from-the-book">Proofs From The Book</a>, page 8, where it is called Legendre's Theorem).
+This [identity](http://en.wikipedia.org/wiki/Factorial#Number_theory) was found by the french mathematician [Adrien-Marie Legendre](https://en.wikipedia.org/wiki/Adrien-Marie_Legendre) (see also <a href="/refs/proofs-from-the-book">Proofs From The Book</a>, page 8, where it is called Legendre's Theorem).
 
 Doing this for all primes in our example, we get
 

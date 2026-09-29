@@ -18,7 +18,7 @@ $$
 a_0 + \displaystyle\frac{1}{a_1 + \displaystyle\frac{1}{\ddots + \displaystyle\frac{1}{a_{n-1} + \displaystyle\frac{1}{a_n}}}}
 $$
 
-where the $a_k$'s are real numbers called the partial quotients. Continued fractions can be greatly [generalized](http://en.wikipedia.org/wiki/Generalized_continued_fraction), where both the &#8220;numerators&#8221; (here all equal to one) and the partial quotients can be more general mathematical objects. Most common, however, are *regular continued fractions* where $a_0$ is an integer and $a_1, \ldots, a_n$ are positive integers. For easier notation we introduce
+where the $a_k$'s are real numbers called the partial quotients. Continued fractions can be greatly [generalized](https://en.wikipedia.org/wiki/Generalized_continued_fraction), where both the &#8220;numerators&#8221; (here all equal to one) and the partial quotients can be more general mathematical objects. Most common, however, are *regular continued fractions* where $a_0$ is an integer and $a_1, \ldots, a_n$ are positive integers. For easier notation we introduce
 
 $$
 /\!/a_1, a_2, \ldots, a_n/\!/ = \displaystyle\frac{1}{a_1 + \displaystyle\frac{1}{\ddots + \displaystyle\frac{1}{a_{n-1} + \displaystyle\frac{1}{a_n}}}}
@@ -26,7 +26,7 @@ $$
 
 where $/\!/ \, /\!/ = 0$ for $n=0$.
 
-Most of the theory in this article is based on Section&nbsp;4.5.3 from [The Art of Computer Programming, Volume&nbsp;2](/refs/taocp2/), by [Donald E. Knuth](http://www-cs-faculty.stanford.edu/~uno/) and Section&nbsp;6.7 from [Concrete Mathematics](/refs/concrete/) by [Graham](http://math.ucsd.edu/~fan/ron/), [Knuth](http://www-cs-faculty.stanford.edu/~uno/), and [Patashnik](http://en.wikipedia.org/wiki/Oren_Patashnik). See also [Continued Fractions](/refs/khinchin/) by Aleksandr Ya. Khinchin.
+Most of the theory in this article is based on Section&nbsp;4.5.3 from [The Art of Computer Programming, Volume&nbsp;2](/refs/taocp2/), by [Donald E. Knuth](http://www-cs-faculty.stanford.edu/~uno/) and Section&nbsp;6.7 from [Concrete Mathematics](/refs/concrete/) by [Graham](http://math.ucsd.edu/~fan/ron/), [Knuth](http://www-cs-faculty.stanford.edu/~uno/), and [Patashnik](https://en.wikipedia.org/wiki/Oren_Patashnik). See also [Continued Fractions](/refs/khinchin/) by Aleksandr Ya. Khinchin.
 
 ### Basic Properties
 
@@ -86,7 +86,7 @@ $$
 F_{n+1} = K_n(1, \ldots, 1),
 $$
 
-where $F_0, F_1, \ldots$ are the well-known [Fibonacci numbers](http://en.wikipedia.org/wiki/Fibonacci_number) ($F_0=F_1=0$ and $F_k=F_{k-1}+F_{k-2}$ for $k \geq 2$). This is easily seen by setting $x_k=1$ for all $k$ in the definition.
+where $F_0, F_1, \ldots$ are the well-known [Fibonacci numbers](https://en.wikipedia.org/wiki/Fibonacci_number) ($F_0=F_1=0$ and $F_k=F_{k-1}+F_{k-2}$ for $k \geq 2$). This is easily seen by setting $x_k=1$ for all $k$ in the definition.
 
 We also have
 
@@ -243,7 +243,7 @@ $$
 \begin{aligned} a_0 = \left\lfloor \frac{u}{v} \right\rfloor, \qquad &\frac{u_0}{v_0} = \frac{u}{v} - a_0 = \frac{u - \lfloor u/v \rfloor v}{v} = \frac{u \text{ mod } v}{v}, \\ a_{k+1} = \left\lfloor \frac{v_k}{u_k} \right\rfloor, \qquad &\frac{u_{k+1}}{v_{k+1}} = \frac{v_k}{u_k} - a_{k+1} = \frac{v_k - \lfloor v_k/u_k \rfloor u_k}{u_k} = \frac{v_k \text{ mod } u_k}{u_k}, \end{aligned}
 $$
 
-for $k = 0, 1, \ldots$. If this is turned into a C++ algorithm, we get the following. (The main loop has been [unrolled](http://en.wikipedia.org/wiki/Loop_unwinding) to avoid the $u \leftrightarrow v$ swapping and a little tweaking was also necessary when the algorithm starts because C++ integer division `u/v` is not always equal to $\lfloor u/v \rfloor$ when the result is negative.)
+for $k = 0, 1, \ldots$. If this is turned into a C++ algorithm, we get the following. (The main loop has been [unrolled](https://en.wikipedia.org/wiki/Loop_unwinding) to avoid the $u \leftrightarrow v$ swapping and a little tweaking was also necessary when the algorithm starts because C++ integer division `u/v` is not always equal to $\lfloor u/v \rfloor$ when the result is negative.)
 
 ``` cpp
 template <typename NUM, typename Out>
@@ -330,7 +330,7 @@ $$
 a_0 + /\!/ a_1, \ldots, a_m, b_1, \ldots, b_n, b_1, \ldots, b_n, \ldots /\!/, \quad m \geq 0, n \geq 1,
 $$
 
-if and only if $x$ is a [quadratic irrationality](http://en.wikipedia.org/wiki/Quadratic_irrational) (proved in [TAOCP](http://www-cs-faculty.stanford.edu/~uno/taocp.html), vol.&nbsp;2, Exercise&nbsp;4.5.3-12). A quadratic irrationality is a number of the form $(\sqrt{d}-u)/v$ where $d$, $u$, and $v$ are integers, $d > 0$, $v \neq 0$, and $d$ is not a [perfect square](http://en.wikipedia.org/wiki/Square_number).
+if and only if $x$ is a [quadratic irrationality](https://en.wikipedia.org/wiki/Quadratic_irrational) (proved in [TAOCP](http://www-cs-faculty.stanford.edu/~uno/taocp.html), vol.&nbsp;2, Exercise&nbsp;4.5.3-12). A quadratic irrationality is a number of the form $(\sqrt{d}-u)/v$ where $d$, $u$, and $v$ are integers, $d > 0$, $v \neq 0$, and $d$ is not a [perfect square](https://en.wikipedia.org/wiki/Square_number).
 
 Some special cases of this theorem are:
 

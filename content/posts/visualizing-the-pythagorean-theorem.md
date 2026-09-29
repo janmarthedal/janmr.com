@@ -14,13 +14,13 @@ og:
 mastodon: https://mathstodon.xyz/@janmr/115705876552127902
 redirect: /blog/2010/02/visualizing-the-pythagorean-theorem/
 ---
-Most people are familiar with the Pythagorean theorem: In a right-angled triangle the square of the hypotenuse is equal to the sum of the squares of the other two sides. As the name of the theorem implies, it is attributed to [Pythagoras](http://en.wikipedia.org/wiki/Pythagoras), a Greek mathematician who lived around 500 B.C. The theorem is also included in [Euclid](http://en.wikipedia.org/wiki/Euclid)&#8216;s [Elements](/refs/elements/), an encyclopedia of all known mathematics around 300 B.C. But how do you actually prove the Pythagorean theorem?
+Most people are familiar with the Pythagorean theorem: In a right-angled triangle the square of the hypotenuse is equal to the sum of the squares of the other two sides. As the name of the theorem implies, it is attributed to [Pythagoras](https://en.wikipedia.org/wiki/Pythagoras), a Greek mathematician who lived around 500 B.C. The theorem is also included in [Euclid](https://en.wikipedia.org/wiki/Euclid)&#8216;s [Elements](/refs/elements/), an encyclopedia of all known mathematics around 300 B.C. But how do you actually prove the Pythagorean theorem?
 
 In this article I show my favorite three visualizations of the theorem. Note that I call them visualizations and not proofs. This is because a proof demands rigour, which in this context would mean precise descriptions of how to construct each geometrical figure shown, and to validate each claim related to them. The presentation here is more loose. Each of them could be turned into rigorous proofs, but the accompanying text is here kept to a minimum.
 
 ### Visualization 1
 
-This first one is a classic, at least for me, see Figure&nbsp;1. It is very simple to understand and was the first visualization of the Pythagorean theorem I knew of. According to Nelsen's [Proofs Without Words](/refs/pww1/), it appeared in the chinese [Chou pei suan ching](http://en.wikipedia.org/wiki/Chou_Pei_Suan_Ching) around 200 B.C. A similar figure also appears in [Euclid](http://en.wikipedia.org/wiki/Euclid)&#8216;s [Elements](/refs/elements/), [Book II, Proposition 4](http://aleph0.clarku.edu/~djoyce/java/elements/bookII/propII4.html).
+This first one is a classic, at least for me, see Figure&nbsp;1. It is very simple to understand and was the first visualization of the Pythagorean theorem I knew of. According to Nelsen's [Proofs Without Words](/refs/pww1/), it appeared in the chinese [Chou pei suan ching](https://en.wikipedia.org/wiki/Chou_Pei_Suan_Ching) around 200 B.C. A similar figure also appears in [Euclid](https://en.wikipedia.org/wiki/Euclid)&#8216;s [Elements](/refs/elements/), [Book II, Proposition 4](http://aleph0.clarku.edu/~djoyce/java/elements/bookII/propII4.html).
 
 <figure>
   <img src="/media/pythagoras1.svg" class="img-responsive" alt="Pythagoras 1">
@@ -30,7 +30,7 @@ This first one is a classic, at least for me, see Figure&nbsp;1. It is very simp
 ### Visualization 2
 
 The second visualization, seen in Figure&nbsp;2, is attributed
-[Thābit ibn Qurra](http://en.wikipedia.org/wiki/Thābit_ibn_Qurra) who lived around 900 A.D.
+[Thābit ibn Qurra](https://en.wikipedia.org/wiki/Thābit_ibn_Qurra) who lived around 900 A.D.
 It is probably my current favorite, partly because only a single figure/drawing is needed.
 Two colorings of this figure, however, is shown to ease the understanding.
 
@@ -41,7 +41,7 @@ Two colorings of this figure, however, is shown to ease the understanding.
 
 ### Visualization 3
 
-The third visualization is due to the 12. century Indian mathematician and astronomer [Bhāskara](http://en.wikipedia.org/wiki/Bhāskara_II), see Figure&nbsp;3. I think it is a bit harder to understand at first, compared to the ones above, but it is still quite elegant. The trick is to observe that the right-most figure consists of two squares, joined at the dashed line. The side lengths of these squares can then be compared to the side lengths of the triangles.
+The third visualization is due to the 12. century Indian mathematician and astronomer [Bhāskara](https://en.wikipedia.org/wiki/Bhāskara_II), see Figure&nbsp;3. I think it is a bit harder to understand at first, compared to the ones above, but it is still quite elegant. The trick is to observe that the right-most figure consists of two squares, joined at the dashed line. The side lengths of these squares can then be compared to the side lengths of the triangles.
 
 <figure>
   <img src="/media/pythagoras3.svg" class="img-responsive" alt="Pythagoras 3">

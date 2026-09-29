@@ -100,7 +100,7 @@ with more than 90000 nodes, but they all solve very fast.
 considers Sudoku puzzles along with a method for solving them and other
 interesting information on these puzzles and backtracking in general.
 
-Peter Norvig has an essay (from 2006) about [Solving Every Sudoku Puzzle](https://norvig.com/sudoku.html).
+Peter Norvig has an essay (from 2006) about [Solving Every Sudoku Puzzle](https://www.norvig.com/sudoku.html).
 In it a simple solver in Python is described along with several test cases and results.
 The hardest puzzle for his solver is in some sense not a true Sudoku puzzle in that it
 has multiple solutions. It is also hard for the method described above and it goes

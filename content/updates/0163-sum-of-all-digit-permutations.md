@@ -9,4 +9,4 @@ tags:
   - math
   - combinatorics
 ---
-What is the sum of all 5 digit numbers using 1, 2, 3, 4, 5 without repetition? http://janmr.com/posts/sum-of-all-digit-permutations/
+What is the sum of all 5 digit numbers using 1, 2, 3, 4, 5 without repetition? https://janmr.com/posts/sum-of-all-digit-permutations/

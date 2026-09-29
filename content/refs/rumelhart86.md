@@ -10,7 +10,7 @@ links:
   - name: Article page at Nature
     url: https://www.nature.com/articles/323533a0
   - name: PDF
-    url: http://www.iro.umontreal.ca/~pift6266/A06/refs/backprop_old.pdf
+    url: https://www.iro.umontreal.ca/~pift6266/A06/refs/backprop_old.pdf
 tags:
   - classic
   - data-science

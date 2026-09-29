@@ -68,7 +68,7 @@ Given an impartial game, let $\mathcal{S}$ be the set of all possible game posit
 *   $\mathcal{S}_P$ consists of the terminal position $\{\}$, from where no legal move can be made, and every position for which *every* move will lead to a position in $\mathcal{S}_N$ ($\{G_1,\ldots,G_n\} \in \mathcal{S}_P \Leftrightarrow \forall k: G_k \in \mathcal{S}_N$).
 *   $\mathcal{S}_N$ consists of every position for which *at least one* move will lead to a position in $\mathcal{S}_P$ ($\{G_1,\ldots,G_n\} \in \mathcal{S}_N \Leftrightarrow \exists k: G_k \in \mathcal{S}_P$).
 
-Consider a graph in which every game position is a node and where there is an arc (directed edge) from position $G$ to position $g$ if and only if $g \in G$. Since any game will terminate, this graph contains no cycles and is thus a [Directed Acyclic Graph (DAG)](http://en.wikipedia.org/wiki/Directed_acyclic_graph). This makes it possible to [topologically sort](http://en.wikipedia.org/wiki/Topological_sorting) the nodes/positions, starting from the terminal position and working backwards through every possible position, placing each position in $\mathcal{S}_P$ or $\mathcal{S}_N$ in the process. We have, in this way, divided $\mathcal{S}$ into two disjoint subsets.
+Consider a graph in which every game position is a node and where there is an arc (directed edge) from position $G$ to position $g$ if and only if $g \in G$. Since any game will terminate, this graph contains no cycles and is thus a [Directed Acyclic Graph (DAG)](https://en.wikipedia.org/wiki/Directed_acyclic_graph). This makes it possible to [topologically sort](https://en.wikipedia.org/wiki/Topological_sorting) the nodes/positions, starting from the terminal position and working backwards through every possible position, placing each position in $\mathcal{S}_P$ or $\mathcal{S}_N$ in the process. We have, in this way, divided $\mathcal{S}$ into two disjoint subsets.
 
 Such a [graph](/media/graph234.svg) for the game $\star 2 + \star 3 + \star 4$ would consists of 27 vertices and 114 arcs. Only 4 of the vertices represent games/positions in $\mathcal{S}_P$.
 
@@ -371,7 +371,7 @@ This makes it possible to tabulate the values of the $\circ$-operator:
 </tbody>
 </table>
 
-This looks suspiciously like the binary [exclusive-or (XOR)](http://en.wikipedia.org/wiki/Exclusive_or) operator $\oplus$. And indeed it is, as shown by the following theorem (the theorem is slightly more general than needed, but it is actually a bit more concise this way).
+This looks suspiciously like the binary [exclusive-or (XOR)](https://en.wikipedia.org/wiki/Exclusive_or) operator $\oplus$. And indeed it is, as shown by the following theorem (the theorem is slightly more general than needed, but it is actually a bit more concise this way).
 
 **Theorem 8** (The Sprague–Grundy Theorem)**.** Let $x = \text{mex}(S)$ and $y = \text{mex}(T)$. Then
 
@@ -410,6 +410,6 @@ In other words, if a game has $p_1 \oplus p_2 \oplus \cdots \oplus p_n \neq 0$ t
 
 According to [The Art of Computer Programming, Volume 4A](/refs/taocp4a/), by [Donald E. Knuth](http://www-cs-faculty.stanford.edu/~uno/), the binary operator XOR, $\oplus$, was known long before operators such as binary *AND* and binary *OR*, because it is so intimately tied to the Nim game. For the same reason, the XOR operator has often been called the &#8220;nim sum&#8221;.
 
-Note how the definition of the $\star n$-games resembles one of the standard ways to construct the [natural numbers](http://en.wikipedia.org/wiki/Natural_number). Other than its obvious relation to the Nim-game, this is perhaps one of the reasons that $\star n$-games are sometimes called *nimbers*. Generalized numbers and games are the subject of the book [On Numbers and Games](/refs/numbers-games/) by [John H. Conway](http://en.wikipedia.org/wiki/John_Horton_Conway).
+Note how the definition of the $\star n$-games resembles one of the standard ways to construct the [natural numbers](https://en.wikipedia.org/wiki/Natural_number). Other than its obvious relation to the Nim-game, this is perhaps one of the reasons that $\star n$-games are sometimes called *nimbers*. Generalized numbers and games are the subject of the book [On Numbers and Games](/refs/numbers-games/) by [John H. Conway](https://en.wikipedia.org/wiki/John_Horton_Conway).
 
-[Wikipedia](http://www.wikipedia.org) has some relevant pages in relation to this article, see [impartial game](http://en.wikipedia.org/wiki/Impartial_game), [combinatorial game theory](http://en.wikipedia.org/wiki/Combinatorial_game_theory), and [Sprague–Grundy Theorem](http://en.wikipedia.org/wiki/Sprague–Grundy_theorem). See also the blog entry on [The Universe of Discourse](http://blog.plover.com/math/sprague-grundy.html).
+[Wikipedia](https://www.wikipedia.org) has some relevant pages in relation to this article, see [impartial game](https://en.wikipedia.org/wiki/Impartial_game), [combinatorial game theory](https://en.wikipedia.org/wiki/Combinatorial_game_theory), and [Sprague–Grundy Theorem](https://en.wikipedia.org/wiki/Sprague–Grundy_theorem). See also the blog entry on [The Universe of Discourse](http://blog.plover.com/math/sprague-grundy.html).

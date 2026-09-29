@@ -23,11 +23,11 @@ If you haven't seen the problem before, I highly recommend trying to solve it be
 I had previously tried to solve it, but without success. This time I couldn't get it out of my mind. I had become a (self-inflicted) victim of *nerd sniping*.
 
 <figure>
-  <a href="http://xkcd.com/356/"><img class="img-responsive" title="xkcd: Nerd sniping" src="https://imgs.xkcd.com/comics/nerd_sniping.png" alt="Nerd sniping"></a>
+  <a href="https://xkcd.com/356/"><img class="img-responsive" title="xkcd: Nerd sniping" src="https://imgs.xkcd.com/comics/nerd_sniping.png" alt="Nerd sniping"></a>
   <figcaption><strong>Figure 2.</strong> xkcd explains nerd sniping</figcaption>
 </figure>
 
-The thing is that it looks simple. But [it isn't](http://www.reddit.com/r/math/comments/fy6iu/35_years_on_and_i_still_cant_solve_it/). Below is my solution to the problem (using some [inspiration](http://en.wikipedia.org/wiki/Crossed_ladders_problem) for making it a bit more pretty).
+The thing is that it looks simple. But [it isn't](https://www.reddit.com/r/math/comments/fy6iu/35_years_on_and_i_still_cant_solve_it/). Below is my solution to the problem (using some [inspiration](https://en.wikipedia.org/wiki/Crossed_ladders_problem) for making it a bit more pretty).
 
 First, some variables must be introduced. Consider the following figures:
 

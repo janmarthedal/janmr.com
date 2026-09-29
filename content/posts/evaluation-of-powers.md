@@ -22,7 +22,7 @@ How do you efficiently compute $x^n$ for a positive integer $n$? Take $x^{15}$ a
 * $t_4=t_3 \cdot t_3 = x^{10}$
 * $t_5=t_3 \cdot t_4 = x^{15}$
 
-A shorter way to write this is $x^1,x^2,x^3,x^5,x^{10},x^{15}$, where each quantity is obtained by multiplying two of the previous quantities together. We can write it even shorter as 1,2,3,5,10,15, where only the exponents are written. Here each number is obtained by adding together two of the previous numbers. This is called an [addition chain](http://en.wikipedia.org/wiki/Addition_chain) and is at the heart of studying the optimal way of evaluating powers. There is no simple expression that computes the minimal number of multiplications $a(n)$ needed to evaluate $x$<sup>$n$</sup>. A [list](http://oeis.org/A003313), however, is available from [The On-Line Encyclopedia of Integer Sequences](http://oeis.org), where the first 40 entries are
+A shorter way to write this is $x^1,x^2,x^3,x^5,x^{10},x^{15}$, where each quantity is obtained by multiplying two of the previous quantities together. We can write it even shorter as 1,2,3,5,10,15, where only the exponents are written. Here each number is obtained by adding together two of the previous numbers. This is called an [addition chain](https://en.wikipedia.org/wiki/Addition_chain) and is at the heart of studying the optimal way of evaluating powers. There is no simple expression that computes the minimal number of multiplications $a(n)$ needed to evaluate $x$<sup>$n$</sup>. A [list](https://oeis.org/A003313), however, is available from [The On-Line Encyclopedia of Integer Sequences](https://oeis.org), where the first 40 entries are
 
 <p style="padding: 0 1em;">0, 1, 2, 2, 3, 3, 4, 3, 4, 4, 5, 4, 5, 5, 5, 4, 5, 5, 6, 5, 6, 6, 6, 5, 6, 6, 6, 6, 7, 6, 7, 5, 6, 6, 7, 6, 7, 7, 7, 6, &#8230;</p>
 
@@ -87,7 +87,7 @@ $$
 \lfloor \log_2 n \rfloor + \nu(n)
 $$
 
-multiplications (sequence [A056792](http://oeis.org/A056792) at [OEIS](http://oeis.org)).
+multiplications (sequence [A056792](https://oeis.org/A056792) at [OEIS](https://oeis.org)).
 
 So now we can evaluate $y \cdot x^n$ fairly efficiently. To evaluate $x^n$ we can simply use this routine by setting $y=1$. But that wastes one multiplication because the first time we perform $y \leftarrow y \cdot x$ it will be redundant. Instead we could use `power(x, x, n-1)`, but that could increase the number of multiplications for even $n$. A good way to evaluate $x^n$ is this:
 
@@ -108,7 +108,7 @@ $$
 \lfloor \log_2 n \rfloor + \nu(n) - 1
 $$
 
-multiplications (sequence [A014701](http://oeis.org/A014701) at [OEIS](http://oeis.org)).
+multiplications (sequence [A014701](https://oeis.org/A014701) at [OEIS](https://oeis.org)).
 
 As mentioned above, this algorithm is not optimal, but it is not bad either. In fact, 15 is the smallest value of $n$ for which the binary algorithm does not use the minimal number of multiplications. Figure 1 below compares the number of multiplications needed by the binary algorithm to the minimal number possible.
 

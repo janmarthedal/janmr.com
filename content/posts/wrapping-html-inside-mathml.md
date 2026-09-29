@@ -93,4 +93,4 @@ annotation-xml[encoding="text/html"] {
 
 Browser support for this seems to be good, with the exception of Safari.
 
-You can experiment with a [codepen example](http://codepen.io/janmr/pen/dGNLog) and the css can be found as a [GitHub gist](https://gist.github.com/janmarthedal/1c4d0db7be01053c408b).
+You can experiment with a [codepen example](https://codepen.io/janmr/pen/dGNLog) and the css can be found as a [GitHub gist](https://gist.github.com/janmarthedal/1c4d0db7be01053c408b).

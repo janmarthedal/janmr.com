@@ -10,8 +10,8 @@ tags:
   - computer-science
 links:
   - name: Homepage
-    url: http://www.elementsofprogramming.com
+    url: https://www.elementsofprogramming.com
   - name: PDF
-    url: http://elementsofprogramming.com/eop_coloredlinks.pdf
+    url: https://elementsofprogramming.com/eop_coloredlinks.pdf
 ---
 ![](/media/books/stepanov.jpg)

@@ -91,7 +91,7 @@ So the root of the Stern-Brocot tree is $f(I)=\frac{1}{1}$ with $T(L)$ and $T(R)
   <figcaption><strong>Figure 1.</strong> The Stern-Brocot tree.</figcaption>
 </figure>
 
-Consider any subtree $T(M)$ of the Stern-Brocot tree with root $f(M)$. Note that it follows from the definitions that every node in the left subtree $T(M L)$ is strictly less than $f(M)$ and that every node in the right subtree $T(M R)$ is strictly greater than $f(M)$. Thus, *the Stern-Brocot tree is a [binary search tree](http://en.wikipedia.org/wiki/Binary_search_tree)*, although an infinite one.
+Consider any subtree $T(M)$ of the Stern-Brocot tree with root $f(M)$. Note that it follows from the definitions that every node in the left subtree $T(M L)$ is strictly less than $f(M)$ and that every node in the right subtree $T(M R)$ is strictly greater than $f(M)$. Thus, *the Stern-Brocot tree is a [binary search tree](https://en.wikipedia.org/wiki/Binary_search_tree)*, although an infinite one.
 
 From the definition we see that for any node $f(M)$ of the Stern-Brocot tree we have
 
@@ -101,7 +101,7 @@ $$
 M=R^{a_0} L^{a_1} R^{a_2} L^{a_3} \cdots L^{a_{n-1}},
 $$
 
-for even $n$ and non-negative integers $a_k$. Insisting that $n$ must be even is just a technicality which will be clarified later. Any $a_k$ can be zero so its not a restriction. Computing the [determinants](http://en.wikipedia.org/wiki/Determinant) of the simple matrices in&nbsp;(6) and&nbsp;(7) we get $\det I = \det L = \det R = 1$. Since $\det (A B) = \det A \, \det B$ it follows that
+for even $n$ and non-negative integers $a_k$. Insisting that $n$ must be even is just a technicality which will be clarified later. Any $a_k$ can be zero so its not a restriction. Computing the [determinants](https://en.wikipedia.org/wiki/Determinant) of the simple matrices in&nbsp;(6) and&nbsp;(7) we get $\det I = \det L = \det R = 1$. Since $\det (A B) = \det A \, \det B$ it follows that
 
 <div class="pull-right">(9)</div>
 
@@ -115,7 +115,7 @@ $$
 M' = \begin{bmatrix} m' & m \\ n' & n \end{bmatrix}
 $$
 
-for some integers $m'$ and $n'$. But then $m' n - m n' = 1$ from&nbsp;(9), which shows that $m$ and $n$ are [relatively prime](http://en.wikipedia.org/wiki/Relatively_prime), $m \perp n$. Or, to put it another way, *every fraction in the Stern-Brocot tree is in its lowest terms*.
+for some integers $m'$ and $n'$. But then $m' n - m n' = 1$ from&nbsp;(9), which shows that $m$ and $n$ are [relatively prime](https://en.wikipedia.org/wiki/Relatively_prime), $m \perp n$. Or, to put it another way, *every fraction in the Stern-Brocot tree is in its lowest terms*.
 
 A natural question is now: Can *any* reduced positive fraction be found in the Stern-Brocot tree? Assume there is a fraction $\frac{p}{q}$ with $p \perp q$ which is *not* present. Consider now the process of searching for this fraction. This will produce an infinite sequence of matrices of the form&nbsp;(8) for $n=0, 1, \ldots$, where the $a_k$'s are determined from the number of left and right branches chosen during the search. Let one of the matrices be
 
@@ -175,4 +175,4 @@ For instance, $\frac{7}{5} = 1 + /\!/ 2, 2 /\!/ = 1 + /\!/ 2, 1, 1 /\!/$, so $\f
 
 ### Further Reading
 
-The Stern-Brocot tree is mentioned in Exercise&nbsp;4.5.3-(40) of [The Art of Computer Programming, Volume&nbsp;2](/refs/taocp2/), by [Donald E. Knuth](http://www-cs-faculty.stanford.edu/~uno/) and treated in more detail in Section&nbsp;4.5 of [Concrete Mathematics](/refs/concrete/) by [Graham](http://math.ucsd.edu/~fan/ron/), [Knuth](http://www-cs-faculty.stanford.edu/~uno/), and [Patashnik](http://en.wikipedia.org/wiki/Oren_Patashnik).
+The Stern-Brocot tree is mentioned in Exercise&nbsp;4.5.3-(40) of [The Art of Computer Programming, Volume&nbsp;2](/refs/taocp2/), by [Donald E. Knuth](http://www-cs-faculty.stanford.edu/~uno/) and treated in more detail in Section&nbsp;4.5 of [Concrete Mathematics](/refs/concrete/) by [Graham](http://math.ucsd.edu/~fan/ron/), [Knuth](http://www-cs-faculty.stanford.edu/~uno/), and [Patashnik](https://en.wikipedia.org/wiki/Oren_Patashnik).

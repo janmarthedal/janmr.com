@@ -7,6 +7,6 @@ crossPosting:
 tags:
   - datetime
 ---
-Leap Year Rules http://janmr.com/posts/leap-year-rules/
+Leap Year Rules https://janmr.com/posts/leap-year-rules/
 
 ![](/media/updates/0119.png)

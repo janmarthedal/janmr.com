@@ -11,9 +11,9 @@ og:
     intersect.
 redirect: /blog/2010/03/line-line-intersection/
 ---
-How do you calculate the point where two lines in the plane intersect? It is not very hard to do, but the formula can look [quite complicated](http://en.wikipedia.org/w/index.php?title=Line-line_intersection&oldid=330824670), depending on how you write it up. This article is a reminder that it can be expressed in a simple manner.
+How do you calculate the point where two lines in the plane intersect? It is not very hard to do, but the formula can look [quite complicated](https://en.wikipedia.org/w/index.php?title=Line-line_intersection&oldid=330824670), depending on how you write it up. This article is a reminder that it can be expressed in a simple manner.
 
-We start out by not restricting ourselves to the plane, but any [vector space](http://en.wikipedia.org/wiki/Vector_space) with an [inner product](http://en.wikipedia.org/wiki/Inner_product) $\langle \cdot, \cdot \rangle$. Let two lines be represented as
+We start out by not restricting ourselves to the plane, but any [vector space](https://en.wikipedia.org/wiki/Vector_space) with an [inner product](https://en.wikipedia.org/wiki/Inner_product) $\langle \cdot, \cdot \rangle$. Let two lines be represented as
 
 <div class="pull-right">(1)</div>
 
@@ -88,7 +88,7 @@ for some values of $\alpha$ and $\beta$ and where $\langle \text{w}_1, \hat{\tex
 
 ### Summary Using Coordinates
 
-Let us consider the usual [two-dimensional Euclidean](http://en.wikipedia.org/wiki/Euclidean_geometry) [space](http://en.wikipedia.org/wiki/Euclidean_space) and [Cartesian coordinates](http://en.wikipedia.org/wiki/Cartesian_coordinate_system). We set
+Let us consider the usual [two-dimensional Euclidean](https://en.wikipedia.org/wiki/Euclidean_geometry) [space](https://en.wikipedia.org/wiki/Euclidean_space) and [Cartesian coordinates](https://en.wikipedia.org/wiki/Cartesian_coordinate_system). We set
 
 $$
 \text{p} = (p_1,p_2), \quad \text{q} = (q_1,q_2), \quad \text{v} = (v_1,v_2), \quad \text{w} = (w_1,w_2),

@@ -7,6 +7,6 @@ tags:
   - math
   - geometry
 ---
-How to Draw a Straight Line (Peaucellier–Lipkin linkage) http://www.futilitycloset.com/2014/12/05/straight-and-narrow-3/
+How to Draw a Straight Line (Peaucellier–Lipkin linkage) https://www.futilitycloset.com/2014/12/05/straight-and-narrow-3/
 
 ![](/media/updates/0053.png)

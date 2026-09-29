@@ -13,17 +13,17 @@ redirect: /blog/2010/01/book-review-prime-obsession/
 ---
 <div class="pull-right"><a href="/refs/derbyshire03"><img src="/media/books/derbyshire03.jpg" alt=""></a></div>
 
-[Prime Obsession: Bernhard Riemann and the Greatest Unsolved Problem in Mathematics](/refs/derbyshire03/) is a book about the [Riemann Hypothesis](http://en.wikipedia.org/wiki/Riemann_hypothesis), posed by [Bernhard Riemann](http://en.wikipedia.org/wiki/Bernhard_Riemann) in 1859. As the book title says, it is one of the greatest unsettled mathematical conjectures remaining today. It is among [David Hilbert](http://en.wikipedia.org/wiki/David_Hilbert)'s [list of twenty-three mathematical problems](http://en.wikipedia.org/wiki/Hilbert_problems) and one of the seven millennium problems presented by the [Clay Mathematics Institute](http://www.claymath.org).
+[Prime Obsession: Bernhard Riemann and the Greatest Unsolved Problem in Mathematics](/refs/derbyshire03/) is a book about the [Riemann Hypothesis](https://en.wikipedia.org/wiki/Riemann_hypothesis), posed by [Bernhard Riemann](https://en.wikipedia.org/wiki/Bernhard_Riemann) in 1859. As the book title says, it is one of the greatest unsettled mathematical conjectures remaining today. It is among [David Hilbert](https://en.wikipedia.org/wiki/David_Hilbert)'s [list of twenty-three mathematical problems](https://en.wikipedia.org/wiki/Hilbert_problems) and one of the seven millennium problems presented by the [Clay Mathematics Institute](https://www.claymath.org).
 
-The Riemann Hypothesis concerns the zeros of the [Riemann zeta function](http://en.wikipedia.org/wiki/Riemann_zeta_function),
+The Riemann Hypothesis concerns the zeros of the [Riemann zeta function](https://en.wikipedia.org/wiki/Riemann_zeta_function),
 
 $$
 \zeta(s) = \sum_{n=1}^\infty \frac{1}{n^s} = 1 + \frac{1}{2^s} + \frac{1}{3^s} + \frac{1}{4^s} + \ldots
 $$
 
-(actually, the right-hand side is only well-defined for $\Re s > 1$, and $\zeta(s)$ is an [analytical continuation](http://en.wikipedia.org/wiki/Analytic_continuation) of this infinite series). The zeta function is defined for all complex numbers $s \neq 1$ and has the so-called trivial zeros $s=-2, -4, -6, \ldots$ along the real line. The Riemann Hypothesis says: *All non-trivial zeros of the Riemann Zeta function has real part* $\frac{1}{2}$. [Billions of non-trivial zeros](http://www.dtc.umn.edu/~odlyzko/zeta_tables/index.html) with real part $\frac{1}{2}$ have been found computationally, but it remains to prove whether this is true for them all.
+(actually, the right-hand side is only well-defined for $\Re s > 1$, and $\zeta(s)$ is an [analytical continuation](https://en.wikipedia.org/wiki/Analytic_continuation) of this infinite series). The zeta function is defined for all complex numbers $s \neq 1$ and has the so-called trivial zeros $s=-2, -4, -6, \ldots$ along the real line. The Riemann Hypothesis says: *All non-trivial zeros of the Riemann Zeta function has real part* $\frac{1}{2}$. [Billions of non-trivial zeros](http://www.dtc.umn.edu/~odlyzko/zeta_tables/index.html) with real part $\frac{1}{2}$ have been found computationally, but it remains to prove whether this is true for them all.
 
-The Riemann zeta function is intimately linked to primes through the [Euler product formula](http://en.wikipedia.org/wiki/Euler_product_formula),
+The Riemann zeta function is intimately linked to primes through the [Euler product formula](https://en.wikipedia.org/wiki/Euler_product_formula),
 
 $$
 \sum_{n=1}^\infty \frac{1}{n^s} = \prod_{p \text{ prime}} \left( 1 - \frac{1}{p^s} \right)^{-1}
@@ -43,8 +43,8 @@ I would recommend it to anyone interested in mathematics and who has some basic 
 
 Book facts:
 
-*   Author: [John Derbyshire](http://www.johnderbyshire.com/).
+*   Author: [John Derbyshire](https://www.johnderbyshire.com/).
 *   Book title: [Prime Obsession](/refs/derbyshire03/).
 *   Publication year: 2004.
 *   Publisher: Plume Books.
-*   ISBN: Paperback [0452285259](http://en.wikipedia.org/w/index.php?title=Special:BookSources&isbn=0452285259).
+*   ISBN: Paperback [0452285259](https://en.wikipedia.org/w/index.php?title=Special:BookSources&isbn=0452285259).

@@ -12,7 +12,7 @@ og:
 redirect: /blog/2010/02/fractions-and-circles/
 mastodon: https://mathstodon.xyz/@janmr/115688290212390103
 ---
-Fractions produced by mediants have some very interesting properties. We saw some of them in connection with the [Stern-Brocot tree](/posts/the-stern-brocot-tree-of-fractions/). This articles explores a more curious property, relating fractions to circles in the plane. It was [discovered](http://www.jstor.org/pss/2302799) in 1938 by [Lester R. Ford](http://en.wikipedia.org/wiki/Lester_R._Ford) and is also mentioned in Conway and Guy's [The Book of Numbers](/refs/conway-guy/).
+Fractions produced by mediants have some very interesting properties. We saw some of them in connection with the [Stern-Brocot tree](/posts/the-stern-brocot-tree-of-fractions/). This articles explores a more curious property, relating fractions to circles in the plane. It was [discovered](http://www.jstor.org/pss/2302799) in 1938 by [Lester R. Ford](https://en.wikipedia.org/wiki/Lester_R._Ford) and is also mentioned in Conway and Guy's [The Book of Numbers](/refs/conway-guy/).
 
 Let us consider a way to construct fractions. We always start out with the sequence
 
@@ -60,14 +60,14 @@ $$
 
 Note how this property implies that the fractions in any mediant sequence are ordered by size. But the most important use of this property will appear shortly.
 
-We now do the following in a [Cartesian coordinate system](http://en.wikipedia.org/wiki/Cartesian_coordinate_system): For each fraction $\frac{m}{n}$ in a given mediant sequence, draw a circle centered at $\left(\frac{m}{n}, \frac{1}{2 n^2}\right)$ with radius $\frac{1}{2 n^2}$. An example can be seen in Figure&nbsp;1.
+We now do the following in a [Cartesian coordinate system](https://en.wikipedia.org/wiki/Cartesian_coordinate_system): For each fraction $\frac{m}{n}$ in a given mediant sequence, draw a circle centered at $\left(\frac{m}{n}, \frac{1}{2 n^2}\right)$ with radius $\frac{1}{2 n^2}$. An example can be seen in Figure&nbsp;1.
 
 <figure>
   <img src="/media/ford1.svg" class="img-responsive" alt="Ford circles 1">
   <figcaption><strong>Figure 1</strong></figcaption>
 </figure>
 
-By construction, the x-axis is obviously a tangent to all such circles. Furthermore, two circles, corresponding to two fractions $\frac{m_1}{n_1}$ and $\frac{m_2}{n_2}$, touch at exactly one point if and only if $| n_1 m_2 - m_1 n_2 | = 1$. This is shown by an application of the [Pythagorean Theorem](http://en.wikipedia.org/wiki/Pythagorean_theorem):
+By construction, the x-axis is obviously a tangent to all such circles. Furthermore, two circles, corresponding to two fractions $\frac{m_1}{n_1}$ and $\frac{m_2}{n_2}$, touch at exactly one point if and only if $| n_1 m_2 - m_1 n_2 | = 1$. This is shown by an application of the [Pythagorean Theorem](https://en.wikipedia.org/wiki/Pythagorean_theorem):
 
 $$
 \begin{aligned} \left( \frac{m_2}{n_2} - \frac{m_1}{n_1} \right)^2 + \left( \frac{1}{2 n_2^2} - \frac{1}{2 n_1^2} \right)^2 &= \left( \frac{1}{2 n_2^2} + \frac{1}{2 n_1^2} \right)^2 \quad \Leftrightarrow \\ \left( \frac{n_1 m_2 - m_1 n_2}{n_1 n_2} \right)^2 &= \frac{1}{n_1^2 n_2^2} \quad \Leftrightarrow \\ | n_1 m_2 - m_1 n_2 | &= 1. \end{aligned}
@@ -103,4 +103,4 @@ Zooming in once again we get Figure&nbsp;3.
   <figcaption><strong>Figure 3</strong></figcaption>
 </figure>
 
-Note the many [self-similarities](http://en.wikipedia.org/wiki/Self-similarity).
+Note the many [self-similarities](https://en.wikipedia.org/wiki/Self-similarity).

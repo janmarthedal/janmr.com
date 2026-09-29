@@ -7,4 +7,4 @@ crossPosting:
 tags:
   - rust
 ---
-Rust and Iterator Adapters http://janmr.com/posts/rust-and-iterator-adapters/
+Rust and Iterator Adapters https://janmr.com/posts/rust-and-iterator-adapters/
