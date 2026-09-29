@@ -61,4 +61,7 @@ settings in `lychee.toml`). Internal links, including absolute
 `https://janmr.com/...` ones, are resolved against `_site`; `#fragments` are
 checked. Links to redirect sources in `_site/_redirects` are warnings, other
 broken links are errors (exit code 1). `bun run check-links:external` also
-checks external links (cached for 7 days in `.lycheecache`).
+checks external links (cached for 7 days in `.lycheecache`). In that mode,
+permanent redirects (301/308) and 403 Forbidden responses are warnings, and
+http(s) links matching an `exclude` pattern in `lychee.toml` (e.g. sites that
+block non-browser clients) are listed as `CHECK` entries to verify by hand.
