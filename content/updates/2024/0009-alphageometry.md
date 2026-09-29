@@ -7,4 +7,4 @@ tags:
   - geometry
   - ai
 ---
-AlphaGeometry: An Olympiad-level AI system for geometry https://deepmind.google/discover/blog/alphageometry-an-olympiad-level-ai-system-for-geometry/
+AlphaGeometry: An Olympiad-level AI system for geometry https://deepmind.google/blog/alphageometry-an-olympiad-level-ai-system-for-geometry/

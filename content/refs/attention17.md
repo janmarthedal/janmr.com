@@ -18,7 +18,7 @@ links:
   - name: ArXiv
     url: https://arxiv.org/abs/1706.03762
   - name: PDF
-    url: https://arxiv.org/pdf/1706.03762.pdf
+    url: https://arxiv.org/pdf/1706.03762
   - name: Local PDF
     url: /files/papers/attention17.pdf
 tags:

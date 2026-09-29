@@ -30,6 +30,6 @@ layout: page
 - *1936-11-12* [GCal]. The paper "On Computable Numbers, with an Application to the Entscheidungsproblem" was presented to the London Mathematical Society.
 - *2009-11-10* [GCal]. Go was released. https://go.dev/blog/1year
 - *2003-11-20* [GCal]. Making reliable distributed systems in the presence of software errors by Joe Armstrong
-- *2004-12-01* [GCal]. (Day of month unknown.) The paper "MapReduce: Simplified Data Processing on Large Clusters" is published. https://research.google.com/archive/mapreduce.html
+- *2004-12-01* [GCal]. (Day of month unknown.) The paper "MapReduce: Simplified Data Processing on Large Clusters" is published. https://research.google/pubs/mapreduce-simplified-data-processing-on-large-clusters/
 - *1995-12-04* [GCal]. JavaScript is first released. https://web.archive.org/web/20070916144913/https://wp.netscape.com/newsref/pr/newsrelease67.html
 - *1987-12-18* [GCal]. Perl 1.0 was released?

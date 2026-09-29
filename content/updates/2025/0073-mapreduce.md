@@ -11,6 +11,6 @@ tags:
   - functional
   - programming
 ---
-The paper "MapReduce: Simplified Data Processing on Large Clusters" was published in December 2004. Map/reduce operations had been known for decades, but the paper was instrumental in the area of practical distributed computing and "big data". https://research.google.com/archive/mapreduce.html
+The paper "MapReduce: Simplified Data Processing on Large Clusters" was published in December 2004. Map/reduce operations had been known for decades, but the paper was instrumental in the area of practical distributed computing and "big data". https://research.google/pubs/mapreduce-simplified-data-processing-on-large-clusters/
 
 ![](/media/updates/0073.png)
