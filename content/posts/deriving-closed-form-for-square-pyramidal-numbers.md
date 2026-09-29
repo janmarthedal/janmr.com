@@ -21,7 +21,7 @@ Many different proofs exist. Seven different proofs can be found in [Concrete Ma
 
 One of the simplest proofs uses induction on *n*. This approach assumes that you know (or guess) the correct formula beforehand, though.
 
-This post will show a derivation which is a formalization of the derivation shown on [wikipedia](https://en.wikipedia.org/wiki/Square_pyramidal_number#Derivation_of_the_summation_formula).<span></span> It revolves around manipulating sums and the fact that
+This post will show a derivation which is a formalization of the derivation shown on [wikipedia](https://en.wikipedia.org/w/index.php?title=Square_pyramidal_number&oldid=606943964#Derivation_of_the_summation_formula). It revolves around manipulating sums and the fact that
 
 $$
 k^2 = \sum_{j=1}^k (2j-1)

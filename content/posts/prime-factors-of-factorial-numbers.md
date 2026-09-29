@@ -54,7 +54,7 @@ $$
 d_p(n!) = \sum_{k=1}^\infty \left\lfloor \frac{n}{p^k} \right\rfloor = \sum_{k=1}^{\lfloor \log_p(n) \rfloor} \left\lfloor \frac{n}{p^k} \right\rfloor.
 $$
 
-This [identity](http://en.wikipedia.org/wiki/Factorial#Number_theory) was found by the french mathematician [Adrien-Marie Legendre](https://en.wikipedia.org/wiki/Adrien-Marie_Legendre) (see also <a href="/refs/proofs-from-the-book">Proofs From The Book</a>, page 8, where it is called Legendre's Theorem).
+This identity was found by the french mathematician [Adrien-Marie Legendre](https://en.wikipedia.org/wiki/Adrien-Marie_Legendre) and is also called [Legendre's formula](https://en.wikipedia.org/wiki/Legendre's_formula) (see also [Proofs From The Book](/refs/proofs-from-the-book), page 10).
 
 Doing this for all primes in our example, we get
 

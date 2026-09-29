@@ -10,5 +10,5 @@ tags:
   - mathematics
 links:
   - name: Online version
-    url: https://proofsfromthebook.github.io
+    url: https://dn710103.ca.archive.org/0/items/springers-collection-of-books/Proofs%20from%20THE%20BOOK%20%28%20PDFDrive%20%29.pdf
 ---

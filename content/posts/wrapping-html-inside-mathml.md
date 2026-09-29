@@ -31,7 +31,7 @@ $$
 \sqrt{1+x^2} \, .
 $$
 
-Unfortunately, browser support is [far from great](http://radar.oreilly.com/2013/11/mathml-forges-on.html#browser-support) (and not as good as [caniuse.com](http://caniuse.com/#feat=mathml) reports).
+Unfortunately, browser support is [far from great](http://radar.oreilly.com/2013/11/mathml-forges-on.html#browser-support) (and not as good as [caniuse.com](http://caniuse.com/mathml) reports).
 
 What people do instead is use libraries such as [MathJax](https://www.mathjax.org/) which can replace the `math` container with the appropriate HTML, either server-side or client-side.
 
@@ -56,7 +56,7 @@ So let's put the HTML inside the `math` element instead, alongside the MathML. [
 </math>
 ```
 
-This will not display properly out-of-the-box, but Chrome's current [user agent stylesheet](https://chromium.googlesource.com/chromium/blink/+/master/Source/core/css/mathml.css) comes close:
+This will not display properly out-of-the-box, but Chrome's current [user agent stylesheet](https://web.archive.org/web/20200811144751/https://chromium.googlesource.com/chromium/blink/+/master/Source/core/css/mathml.css) comes close:
 
 ``` css
 math {
