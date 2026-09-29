@@ -98,6 +98,6 @@ ${tagsYaml}
 ${description || title} ${url}
 ${imageLine}`;
 
-const outPath = join(__dirname, 'drafts', 'other', `${slug}.md`);
+const outPath = join(__dirname, 'wip', `${slug}.md`);
 writeFileSync(outPath, content);
 console.log(`Created: ${outPath}`);
