@@ -2,4 +2,10 @@
 # path-dependent options (root dir, remap of https://janmr.com to _site).
 index_files = ["index.html"]
 include_fragments = "full"
-exclude = ["^mailto:"]
+
+# Links matching these are not checked. Except for non-http(s) URLs, they are
+# listed by `bun run check-links:external` as a reminder to check them by hand.
+exclude = [
+    "^mailto:",
+    "^https://ops\\.java/releases/$",  # 403 to non-browser clients
+]
