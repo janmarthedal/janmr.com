@@ -8,7 +8,8 @@ import lycheeConfig from "../lychee.toml";
 // as warnings, other broken links as errors. With --external, permanent
 // redirects (301/308) of external links are reported as warnings, and http(s)
 // links matching an `exclude` pattern in lychee.toml are listed as links to
-// check manually.
+// check manually. 403 Forbidden responses are reported as warnings, since
+// many sites return them to non-browser clients.
 //
 // Usage: bun scripts/check-links.ts [--external]
 
@@ -20,7 +21,7 @@ const PERMANENT_REDIRECT_CODES = [301, 308];
 
 interface LinkResult {
     url: string;
-    status: { text: string; details?: string };
+    status: { text: string; code?: number; details?: string };
     remap?: { original: { url: string } };
     span?: { line: number; column: number };
 }
@@ -186,6 +187,9 @@ async function run() {
             if (target) {
                 warnings++;
                 console.log(`WARN  ${where}\n      ${url} redirects to ${target}`);
+            } else if (result.status.code === 403) {
+                warnings++;
+                console.log(`WARN  ${where}\n      ${url}: 403 Forbidden, check manually`);
             } else {
                 errors++;
                 console.log(`ERROR ${where}\n      ${url}: ${result.status.text}`);
