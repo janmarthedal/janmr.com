@@ -41,5 +41,5 @@ Book facts:
 *   Book title: [The Book of Numbers](/refs/conway-guy/).
 *   Authors: [John H. Conway](https://en.wikipedia.org/wiki/John_Horton_Conway) and [Richard K. Guy](https://en.wikipedia.org/wiki/Richard_Guy).
 *   Publication year: 1996.
-*   Publisher: [Springer](http://www.springer.com/).
+*   Publisher: Springer
 *   ISBN: [978-0-387-97993-9](https://en.wikipedia.org/w/index.php?title=Special:BookSources&isbn=978-0-387-97993-9).

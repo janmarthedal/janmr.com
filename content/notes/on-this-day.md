@@ -4,7 +4,7 @@ layout: page
 ---
 - *1938-01-10* [GCal]. Donald E. Knuth is born https://mathshistory.st-andrews.ac.uk/Biographies/Knuth/
 - *2012-01-20* [GCal]. The first Rust compiler is released. https://web.archive.org/web/20120124160628/https://mail.mozilla.org/pipermail/rust-dev/2012-January/001256.html
-- *1996-01-23* [GCal]. Java is released. https://www.java.com/releases/
+- *1996-01-23* [GCal]. Java is released. https://ops.java/releases/
 - *1978-02-01* [GCal]. The "RSA paper" "A method for obtaining digital signatures and public-key cryptosystems" was published. https://dl.acm.org/doi/10.1145/359340.359342, https://people.csail.mit.edu/rivest/pubs.html
 - *2016-02-08* [GCal]. Zig was introduced. https://andrewkelley.me/post/intro-to-zig.html
 - *1991-02-20* [GCal]. (Day of month unknown.) First release of Python (version 0.9.0). https://raw.githubusercontent.com/python/cpython/master/Misc/HISTORY https://www.tuhs.org/Usenet/alt.sources/1991-February/001749.html

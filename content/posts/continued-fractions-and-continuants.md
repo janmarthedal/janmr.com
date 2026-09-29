@@ -154,7 +154,7 @@ This shows that when $u = K_{n+1}(a_0, a_1, \ldots, a_n)$ and $v = K_n(a_1, a_2,
 
 ### Evaluating Continued Fractions
 
-Let us consider how to evaluate a continued fraction in C++, given access to the partial quotients $a_0, a_1, \ldots, a_n$ through a [forward iterator](http://www.sgi.com/tech/stl/ForwardIterator.html). One way is to use Equation&nbsp;(1) which leads to
+Let us consider how to evaluate a continued fraction in C++, given access to the partial quotients $a_0, a_1, \ldots, a_n$ through a [forward iterator](https://web.archive.org/web/20100107144647/http://www.sgi.com/tech/stl/ForwardIterator.html). One way is to use Equation&nbsp;(1) which leads to
 
 ``` cpp
 template <typename NUM, typename In>
@@ -184,7 +184,7 @@ $$
 /\!/ a_1, \ldots, a_{n-1}, a_n /\!/ = /\!/ a_1, \ldots, a_{n-1} + 1/a_n /\!/, \quad \text{for } n \geq 2.
 $$
 
-So given a [bidirectional iterator](http://www.sgi.com/tech/stl/BidirectionalIterator.html) the evaluation can be done as
+So given a [bidirectional iterator](https://web.archive.org/web/20100124210202/http://www.sgi.com/tech/stl/BidirectionalIterator.html) the evaluation can be done as
 
 ``` cpp
 template <typename NUM, typename Bi>
