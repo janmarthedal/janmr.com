@@ -86,7 +86,7 @@ Counting the number of times step 1 is performed is a measure of how large the s
 tree is. For the sample grid shown above the count is only 97. This is a very slim
 search tree, since the height of the tree is 53 (the number of empty cells).
 
-A supposedly ["world's most difficult Sudoku"](https://abcnews.go.com/blogs/headlines/2012/06/can-you-solve-the-hardest-ever-sudoku)
+A supposedly ["world's most difficult Sudoku"](https://abcnews.com/blogs/headlines/2012/06/can-you-solve-the-hardest-ever-sudoku)
 was designed by the Finnish mathematician Arto Inkala. For this Sudoku the method
 considers 10102 different grids while solving the puzzle, but it still solves in less
 than a second on my machine (a MacBook Pro with an Apple M2 Max chip).

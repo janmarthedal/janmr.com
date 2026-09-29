@@ -10,9 +10,9 @@ links:
   - name: Journal page
     url: https://dl.acm.org/doi/10.1109/TIT.1976.1055638
   - name: Homepage of Martin E. Hellman
-    url: http://ee.stanford.edu/%7Ehellman/
+    url: https://ee.stanford.edu/~hellman/
   - name: PDF
-    url: http://ee.stanford.edu/%7Ehellman/publications/24.pdf
+    url: https://ee.stanford.edu/~hellman/publications/24.pdf
   - name: Local PDF
     url: /files/papers/diffie-hellman76.pdf
 tags:

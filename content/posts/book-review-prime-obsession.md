@@ -21,7 +21,7 @@ $$
 \zeta(s) = \sum_{n=1}^\infty \frac{1}{n^s} = 1 + \frac{1}{2^s} + \frac{1}{3^s} + \frac{1}{4^s} + \ldots
 $$
 
-(actually, the right-hand side is only well-defined for $\Re s > 1$, and $\zeta(s)$ is an [analytical continuation](https://en.wikipedia.org/wiki/Analytic_continuation) of this infinite series). The zeta function is defined for all complex numbers $s \neq 1$ and has the so-called trivial zeros $s=-2, -4, -6, \ldots$ along the real line. The Riemann Hypothesis says: *All non-trivial zeros of the Riemann Zeta function has real part* $\frac{1}{2}$. [Billions of non-trivial zeros](http://www.dtc.umn.edu/~odlyzko/zeta_tables/index.html) with real part $\frac{1}{2}$ have been found computationally, but it remains to prove whether this is true for them all.
+(actually, the right-hand side is only well-defined for $\Re s > 1$, and $\zeta(s)$ is an [analytical continuation](https://en.wikipedia.org/wiki/Analytic_continuation) of this infinite series). The zeta function is defined for all complex numbers $s \neq 1$ and has the so-called trivial zeros $s=-2, -4, -6, \ldots$ along the real line. The Riemann Hypothesis says: *All non-trivial zeros of the Riemann Zeta function has real part* $\frac{1}{2}$. [Billions of non-trivial zeros](https://www-users.cse.umn.edu/~odlyzko/zeta_tables/index.html) with real part $\frac{1}{2}$ have been found computationally, but it remains to prove whether this is true for them all.
 
 The Riemann zeta function is intimately linked to primes through the [Euler product formula](https://en.wikipedia.org/wiki/Euler_product_formula),
 

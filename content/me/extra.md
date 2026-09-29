@@ -18,7 +18,7 @@ layout: page
 - [Neural Networks and Deep Learning](https://www.coursera.org/learn/neural-networks-deep-learning) (2018, [statement](/files/mooc/neural-networks-deep-learning.pdf))
 - [Machine Learning](https://www.coursera.org/learn/machine-learning) (2018, [statement](/files/mooc/machine-learning.pdf))
 - [Build Complex Express Sites with Redis and Socket IO](https://www.udemy.com/build-complex-express-sites-with-redis-and-socket-io) (2017)
-- [Modern React with Redux](https://www.udemy.com/react-redux/) (2017)
+- [Modern React with Redux](https://www.udemy.com/course/react-redux/) (2017)
 - [Single Page Web Applications with AngularJS](https://www.coursera.org/learn/single-page-web-apps-with-angularjs/) (2017)
 - [Automata](https://online.stanford.edu/courses/soe-ycsautomata-automata-theory) (2013, [statement](/files/mooc/automata.pdf))
 - [HTML5 Game Development](https://www.udacity.com/course/cs255) (2013, [statement](/files/mooc/html5gamedev.pdf))

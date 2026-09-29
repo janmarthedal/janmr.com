@@ -32,7 +32,7 @@ $$
 \sum_{n=1}^\infty\frac{\mathrm{pop}(n)}{n(n+1)} = \sum_{n=1}^\infty \sum_{k=0}^\infty \frac{\theta_k(n)}{n(n+1)} = \sum_{k=0}^\infty \sum_{n=1}^\infty \frac{\theta_k(n)}{n(n+1)}.
 $$
 
-After reversing the order of summation (which requires [justification](http://www.math.ubc.ca/~feldman/m321/twosum.pdf)), he asks: For fixed $k$, which values of $n$ has $\theta_k(n)=1$? Note here that $n$ has the $k$th bit set if and only if $\lfloor n/2^k \rfloor$ has the zeroth bit set. And a number has the zeroth bit set if and only if that number is odd. So $\theta_k(n)=1$ if and only if $\lfloor n/2^k \rfloor = 2 l + 1$ for some $l = 0, 1, 2, \ldots$. This means
+After reversing the order of summation (which requires [justification](https://personal.math.ubc.ca/~feldman/m321/twosum.pdf)), he asks: For fixed $k$, which values of $n$ has $\theta_k(n)=1$? Note here that $n$ has the $k$th bit set if and only if $\lfloor n/2^k \rfloor$ has the zeroth bit set. And a number has the zeroth bit set if and only if that number is odd. So $\theta_k(n)=1$ if and only if $\lfloor n/2^k \rfloor = 2 l + 1$ for some $l = 0, 1, 2, \ldots$. This means
 
 $$
 \begin{aligned} \theta_k(n)=1 \quad&\Leftrightarrow\quad 2 l + 1 \leq n/2^k < 2 l + 2 \\ &\Leftrightarrow\quad (2 l + 1) 2^k \leq n \leq (2 l + 2) 2^k - 1, \end{aligned}

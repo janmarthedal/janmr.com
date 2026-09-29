@@ -33,7 +33,7 @@ contact me and I will correct it), but some terminology or approaches may be off
 compared to what is usually done (again, let me know).
 
 If you are into online courses then I highly recommend
-[Andrew Ng](https://www.andrewng.org/about/)'s course
+[Andrew Ng](https://www.andrewng.org/)'s course
 [Neural Networks and Deep Learning](https://www.coursera.org/learn/neural-networks-deep-learning),
 which also inspired some the approaches in this blog series.
 
