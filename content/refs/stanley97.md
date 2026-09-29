@@ -10,6 +10,6 @@ tags:
   - combinatorics
 links:
   - name: Book homepage
-    url: http://www-math.mit.edu/~rstan/ec/
+    url: https://math.mit.edu/~rstan/ec/
 ---
 ![](/media/books/stanley97.jpg)
