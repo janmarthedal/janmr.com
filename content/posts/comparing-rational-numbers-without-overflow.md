@@ -26,7 +26,7 @@ $$
 
 and we were done. But if our number representation allowed numbers only up to a certain size, say 32 bit unsigned integers, the multiplication could overflow.
 
-Of course, double-precision could be used to do the multiplication anyway, but this post will present a different method. The method effectively computes the [continued fraction representation](/posts/continued-fractions-and-continuants/) of each fraction simultaneously, but stops as soon as they differ. It is also the algorithm used for comparisons in the Boost C++ library [Rational](http://www.boost.org/doc/libs/release/libs/rational/).
+Of course, double-precision could be used to do the multiplication anyway, but this post will present a different method. The method effectively computes the [continued fraction representation](/posts/continued-fractions-and-continuants/) of each fraction simultaneously, but stops as soon as they differ. It is also the algorithm used for comparisons in the Boost C++ library [Rational](https://www.boost.org/doc/libs/latest/libs/rational/).
 
 We start by doing the (integer) division on each side of the inequality to obtain the representation
 

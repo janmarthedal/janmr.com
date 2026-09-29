@@ -8,4 +8,4 @@ tags:
   - neuralnetworks
   - machinelearning
 ---
-Introduction to Neural Networks, part 3: Multiple Inputs http://janmr.com/posts/neural-networks/03-multiple-inputs/
+Introduction to Neural Networks, part 3: Multiple Inputs https://janmr.com/posts/neural-networks/multiple-inputs/

@@ -45,7 +45,7 @@ public:
 };
 ```
 
-The type argument `T` is used to represent each digit. It must be integer and unsigned, so `unsigned char`, `unsigned short`, `unsigned int`, `unsigned long`, and `unsigned long long` can all be used (the type `long long int` is not standard C++, but is, e.g., [supported](https://gcc.gnu.org/onlinedocs/gcc/Long-Long.html) by [GCC](https://gcc.gnu.org)). If a digit type with 8, 16, 32, or 64 bits is needed, the [boost](https://www.boost.org) [integer types](http://www.boost.org/doc/libs/release/libs/integer/index.html) `uint8_t`, `uint16_t`, `uint32_t`, `uint64_t` (from the namespace `boost`) can be used with portability ensured (`uint64_t` is not always available, but the macro `BOOST_NO_INT64_T` will tell you if it is not).
+The type argument `T` is used to represent each digit. It must be integer and unsigned, so `unsigned char`, `unsigned short`, `unsigned int`, `unsigned long`, and `unsigned long long` can all be used (the type `long long int` is not standard C++, but is, e.g., [supported](https://gcc.gnu.org/onlinedocs/gcc/Long-Long.html) by [GCC](https://gcc.gnu.org)). If a digit type with 8, 16, 32, or 64 bits is needed, the [boost](https://www.boost.org) [integer types](https://www.boost.org/doc/libs/latest/libs/integer/doc/html/index.html) `uint8_t`, `uint16_t`, `uint32_t`, `uint64_t` (from the namespace `boost`) can be used with portability ensured (`uint64_t` is not always available, but the macro `BOOST_NO_INT64_T` will tell you if it is not).
 
 The type argument `V` is used as the container type for the digits. The default container is `SimpleDigitVector` (which at this time is also the only container supported). This default container simply wraps an array of size (at least) the number of digits.
 

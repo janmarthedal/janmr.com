@@ -8,6 +8,6 @@ tags:
   - neuralnetworks
   - machinelearning
 ---
-Introduction to Neural Networks, part 2: The Model http://janmr.com/posts/neural-networks/02-the-model/ #neuralnetworks #machinelearning
+Introduction to Neural Networks, part 2: The Model https://janmr.com/posts/neural-networks/model/ #neuralnetworks #machinelearning
 
 ![](/media/og/neural-network-model.png)
