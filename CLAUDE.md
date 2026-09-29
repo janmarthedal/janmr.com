@@ -65,3 +65,5 @@ checks external links (cached for 7 days in `.lycheecache`). In that mode,
 permanent redirects (301/308) and 403 Forbidden responses are warnings, and
 http(s) links matching an `exclude` pattern in `lychee.toml` (e.g. sites that
 block non-browser clients) are listed as `CHECK` entries to verify by hand.
+Broken links to commits or files in the site's GitHub repository that exist
+locally (e.g. the build commit on `/site/` before it is pushed) are warnings.

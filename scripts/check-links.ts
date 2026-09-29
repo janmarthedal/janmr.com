@@ -9,7 +9,9 @@ import lycheeConfig from "../lychee.toml";
 // redirects (301/308) of external links are reported as warnings, and http(s)
 // links matching an `exclude` pattern in lychee.toml are listed as links to
 // check manually. 403 Forbidden responses are reported as warnings, since
-// many sites return them to non-browser clients.
+// many sites return them to non-browser clients. Broken links to commits or
+// files in this site's GitHub repository that exist locally are reported as
+// warnings, since they may just not have been pushed yet.
 //
 // Usage: bun scripts/check-links.ts [--external]
 
@@ -17,6 +19,7 @@ const SITE_DIR = resolve("_site");
 const SITE_URL = "https://janmr.com";
 const REDIRECT_FILE = `${SITE_DIR}/_redirects`;
 const CACHE_FILE = ".lycheecache";
+const REPO_URL = "https://github.com/janmarthedal/janmr.com";
 const PERMANENT_REDIRECT_CODES = [301, 308];
 
 interface LinkResult {
@@ -110,6 +113,22 @@ function sitePath(url: string): string | null {
     return path.endsWith("/") ? path + "index.html" : path;
 }
 
+// Whether a link to a commit or file in this site's GitHub repository points
+// to something that exists locally (committed, or for files, on disk).
+function inLocalRepo(url: string): boolean {
+    if (!url.startsWith(`${REPO_URL}/`)) return false;
+    const path = url.slice(REPO_URL.length + 1).replace(/[?#].*$/, "");
+    const gitHas = (object: string) => Bun.spawnSync(["git", "cat-file", "-e", object]).exitCode === 0;
+    const commit = path.match(/^commit\/([0-9a-f]+)$/);
+    if (commit) return gitHas(`${commit[1]}^{commit}`);
+    const blob = path.match(/^blob\/([^/]+)\/(.+)$/);
+    if (blob) {
+        const file = decodeURI(blob[2]);
+        return gitHas(`${blob[1]}:${file}`) || existsSync(file);
+    }
+    return false;
+}
+
 // Locations of excluded http(s) links matching a lychee.toml pattern, by URL.
 function manualChecks(report: LycheeReport): Map<string, string[]> {
     const checks = new Map<string, string[]>();
@@ -161,8 +180,9 @@ function permanentRedirects(report: LycheeReport): PermanentRedirect[] {
 }
 
 // lychee caches a redirected link as a plain success, which would hide the
-// redirect on later runs. Remove such links from the cache so they are always
-// re-checked.
+// redirect on later runs, and caches failures of unpushed repository links,
+// which would keep failing after a push. Remove such links from the cache so
+// they are always re-checked.
 function uncache(urls: Set<string>) {
     if (urls.size === 0 || !existsSync(CACHE_FILE)) return;
     const lines = readFileSync(CACHE_FILE, "utf8").split("\n");
@@ -175,6 +195,7 @@ async function run() {
     const redirects = loadRedirects();
     let warnings = 0;
     let errors = 0;
+    const unpushed = new Set<string>();
 
     const inputs = Object.keys(report.error_map).sort();
     for (const input of inputs) {
@@ -187,6 +208,10 @@ async function run() {
             if (target) {
                 warnings++;
                 console.log(`WARN  ${where}\n      ${url} redirects to ${target}`);
+            } else if (inLocalRepo(url)) {
+                warnings++;
+                unpushed.add(result.url);
+                console.log(`WARN  ${where}\n      ${url}: ${result.status.text}, exists locally (not pushed yet?)`);
             } else if (result.status.code === 403) {
                 warnings++;
                 console.log(`WARN  ${where}\n      ${url}: 403 Forbidden, check manually`);
@@ -203,7 +228,7 @@ async function run() {
             warnings++;
             console.log(`WARN  ${where}\n      ${url} permanently redirects (${codes.join(", ")}) to ${target}`);
         }
-        uncache(new Set(found.map((r) => r.url)));
+        uncache(new Set([...found.map((r) => r.url), ...unpushed]));
     }
 
     const checks = external ? manualChecks(report) : new Map<string, string[]>();
