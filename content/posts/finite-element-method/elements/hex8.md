@@ -14,7 +14,7 @@ $$\hat{x}_0 = (0,0,0), \quad \hat{x}_1 = (1,0,0), \quad
 $$\hat{x}_4 = (0,0,1), \quad \hat{x}_5 = (1,0,1), \quad
   \hat{x}_6 = (1,1,1), \quad \hat{x}_7 = (0,1,1).$$
 
-In the library, it is implemented in [`elements/hex8.py`](https://github.com/janmarthedal/yggdrasil/tree/main/yggdrasil/elements/hex8.py)
+In the library, it is implemented in [`elements/hex8.py`](https://github.com/janmarthedal/yggdrasil/blob/main/yggdrasil/elements/hex8.py)
 by the class `Hex8`.
 
 ![Nodes of the Hex8 element](/media/fem/hex8-nodes.svg)

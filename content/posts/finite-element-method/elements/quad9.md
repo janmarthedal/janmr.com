@@ -15,7 +15,7 @@ $$\hat{x}_4 = \bigl(\tfrac{1}{2},0\bigr), \quad
   \hat{x}_7 = \bigl(0,\tfrac{1}{2}\bigr), \quad
   \hat{x}_8 = \bigl(\tfrac{1}{2},\tfrac{1}{2}\bigr).$$
 
-In the library, it is implemented in [`elements/quad9.py`](https://github.com/janmarthedal/yggdrasil/tree/main/yggdrasil/elements/quad9.py)
+In the library, it is implemented in [`elements/quad9.py`](https://github.com/janmarthedal/yggdrasil/blob/main/yggdrasil/elements/quad9.py)
 by the class `Quad9`.
 
 ![Nodes of the Quad9 element](/media/fem/quad9-nodes.svg)

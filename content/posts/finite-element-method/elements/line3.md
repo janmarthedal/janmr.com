@@ -6,7 +6,7 @@ The **Line3** element is a 3-node quadratic element on $[0, 1]$. The nodes
 are placed at $\hat{x}_0 = 0$, $\hat{x}_1 = 1$, and $\hat{x}_2 = \tfrac{1}{2}$:
 the first two sit at the endpoints, as in Line2; the third is the midpoint.
 
-In the library, it is implemented in [`elements/line3.py`](https://github.com/janmarthedal/yggdrasil/tree/main/yggdrasil/elements/line3.py)
+In the library, it is implemented in [`elements/line3.py`](https://github.com/janmarthedal/yggdrasil/blob/main/yggdrasil/elements/line3.py)
 by the class `Line3`.
 
 The three shape functions are the quadratic [Lagrange basis polynomials](https://en.wikipedia.org/wiki/Lagrange_polynomial) associated

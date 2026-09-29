@@ -12,5 +12,5 @@ The figure below shows the point locations for each order. Marker size is propor
 
 The order-1 rule places a single point at the centroid $(\tfrac{1}{4}, \tfrac{1}{4}, \tfrac{1}{4})$ with weight $\tfrac{1}{6}$. The order-2 rule uses 4 points arranged symmetrically near the four vertices, all with equal weight $\tfrac{1}{24}$. The order-3 rule adds a fifth point at the centroid with a negative weight, in the same spirit as the order-3 triangle rule. All weights sum to $\tfrac{1}{6}$, the volume of the reference tetrahedron.
 
-In the library, these rules are provided by [`TetrahedronDomain`](https://github.com/janmarthedal/yggdrasil/tree/main/yggdrasil/refdomains/tetrahedron.py); its `quadrature(order)` method returns `(points, weights)` for the lowest-order rule that integrates polynomials of the requested degree exactly, up to a maximum of order 3.
+In the library, these rules are provided by [`TetrahedronDomain`](https://github.com/janmarthedal/yggdrasil/blob/main/yggdrasil/refdomains/tetrahedron.py); its `quadrature(order)` method returns `(points, weights)` for the lowest-order rule that integrates polynomials of the requested degree exactly, up to a maximum of order 3.
 

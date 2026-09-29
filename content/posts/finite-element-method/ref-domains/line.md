@@ -12,5 +12,5 @@ The figure below shows the quadrature points on $[0, 1]$ for $n = 1, 2, 3, 4$ po
 
 Given a required polynomial degree $p$, the number of points needed is $n = \lceil (p+1)/2 \rceil$.
 
-In the library, this is implemented in [`refdomains/line.py`](https://github.com/janmarthedal/yggdrasil/tree/main/yggdrasil/refdomains/line.py) by the class `LineDomain`, whose `quadrature(order)` method returns `(points, weights)` for the rule that integrates polynomials of degree `order` exactly.
+In the library, this is implemented in [`refdomains/line.py`](https://github.com/janmarthedal/yggdrasil/blob/main/yggdrasil/refdomains/line.py) by the class `LineDomain`, whose `quadrature(order)` method returns `(points, weights)` for the rule that integrates polynomials of degree `order` exactly.
 

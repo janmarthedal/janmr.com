@@ -12,7 +12,7 @@ $$\hat{x}_0 = (0,0,0), \quad \hat{x}_1 = (1,0,0), \quad
 matching the
 [tetrahedron reference domain](../../ref-domains/tetrahedron/).
 
-In the library, it is implemented in [`elements/tet4.py`](https://github.com/janmarthedal/yggdrasil/tree/main/yggdrasil/elements/tet4.py)
+In the library, it is implemented in [`elements/tet4.py`](https://github.com/janmarthedal/yggdrasil/blob/main/yggdrasil/elements/tet4.py)
 by the class `Tet4`.
 
 ![Nodes of the Tet4 element](/media/fem/tet4-nodes.svg)

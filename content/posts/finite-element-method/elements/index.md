@@ -25,7 +25,7 @@ gradients on an actual element additionally requires the Jacobian of the element
 mapping $F_e$, which is covered in a later assembly post.
 
 In the library, this structure is captured by the abstract class
-`ReferenceElement` in [`elements/element.py`](https://github.com/janmarthedal/yggdrasil/tree/main/yggdrasil/elements/element.py), which
+`ReferenceElement` in [`elements/element.py`](https://github.com/janmarthedal/yggdrasil/blob/main/yggdrasil/elements/element.py), which
 exposes three core methods. `node_coords` is a property returning an array of
 shape `(num_nodes, topo_dim)` with the reference-domain coordinates of each node.
 `shape_functions(xi)` takes an array `xi` of shape `(num_points, topo_dim)` and

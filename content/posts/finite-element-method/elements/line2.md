@@ -4,7 +4,7 @@ title: The Line2 Element
 
 The simplest 1D element is the **Line2** element: a 2-node linear element on the
 reference interval $[0, 1]$ with nodes at $\hat{x}_0 = 0$ and $\hat{x}_1 = 1$.
-In the library, it is implemented in [`elements/line2.py`](https://github.com/janmarthedal/yggdrasil/tree/main/yggdrasil/elements/line2.py)
+In the library, it is implemented in [`elements/line2.py`](https://github.com/janmarthedal/yggdrasil/blob/main/yggdrasil/elements/line2.py)
 by the class `Line2`.
 
 The two shape functions are the linear [Lagrange basis polynomials](https://en.wikipedia.org/wiki/Lagrange_polynomial) on $[0, 1]$:

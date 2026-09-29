@@ -12,5 +12,5 @@ The figure below shows the point locations for each order. Marker size is propor
 
 The order-3 rule is notable: it uses 4 points but one weight is negative. Quadrature rules with negative weights are mathematically valid — the signed sum still converges to the integral — but they can amplify rounding errors, so they are used only where no equally efficient all-positive rule exists. The weights of all rules sum to $\tfrac{1}{2}$, the area of the reference triangle.
 
-In the library, these rules are provided by [`TriangleDomain`](https://github.com/janmarthedal/yggdrasil/tree/main/yggdrasil/refdomains/triangle.py); its `quadrature(order)` method returns `(points, weights)` for the lowest-order rule that integrates polynomials of the requested degree exactly, up to a maximum of order 5.
+In the library, these rules are provided by [`TriangleDomain`](https://github.com/janmarthedal/yggdrasil/blob/main/yggdrasil/refdomains/triangle.py); its `quadrature(order)` method returns `(points, weights)` for the lowest-order rule that integrates polynomials of the requested degree exactly, up to a maximum of order 5.
 

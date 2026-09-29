@@ -12,7 +12,7 @@ $$\hat{x}_0 = (0,0), \quad \hat{x}_1 = (1,0), \quad
 matching the
 [quadrilateral reference domain](../../ref-domains/quadrilateral/).
 
-In the library, it is implemented in [`elements/quad4.py`](https://github.com/janmarthedal/yggdrasil/tree/main/yggdrasil/elements/quad4.py)
+In the library, it is implemented in [`elements/quad4.py`](https://github.com/janmarthedal/yggdrasil/blob/main/yggdrasil/elements/quad4.py)
 by the class `Quad4`.
 
 The shape functions are obtained as tensor products of the two [Line2](../line2/)

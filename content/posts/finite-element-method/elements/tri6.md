@@ -12,7 +12,7 @@ $$\hat{x}_3 = \bigl(\tfrac{1}{2},0\bigr), \quad
   \hat{x}_4 = \bigl(\tfrac{1}{2},\tfrac{1}{2}\bigr), \quad
   \hat{x}_5 = \bigl(0,\tfrac{1}{2}\bigr).$$
 
-In the library, it is implemented in [`elements/tri6.py`](https://github.com/janmarthedal/yggdrasil/tree/main/yggdrasil/elements/tri6.py)
+In the library, it is implemented in [`elements/tri6.py`](https://github.com/janmarthedal/yggdrasil/blob/main/yggdrasil/elements/tri6.py)
 by the class `Tri6`.
 
 The shape functions are built from the barycentric coordinates

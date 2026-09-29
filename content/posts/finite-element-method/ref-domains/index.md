@@ -27,7 +27,7 @@ most $p$. Given a required polynomial degree, one selects a rule with enough
 points to integrate it exactly.
 
 In the library, each reference domain is represented by the `ReferenceDomain`
-class in [`refdomains/refdomain.py`](https://github.com/janmarthedal/yggdrasil/tree/main/yggdrasil/refdomains/refdomain.py), with a
+class in [`refdomains/refdomain.py`](https://github.com/janmarthedal/yggdrasil/blob/main/yggdrasil/refdomains/refdomain.py), with a
 concrete subclass for each element type. Its `quadrature(order)` method returns
 the pair `(points, weights)` for the requested degree, where `points` has shape
 `(Q, topological_dimension)` and `weights` has shape `(Q,)`.

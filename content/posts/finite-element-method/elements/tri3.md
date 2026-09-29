@@ -8,7 +8,7 @@ reference domain is the right triangle $\hat{T}$ with vertices
 $\hat{x}_0 = (0,0)$, $\hat{x}_1 = (1,0)$, $\hat{x}_2 = (0,1)$, matching the
 [triangle reference domain](../../ref-domains/triangle/).
 
-In the library, it is implemented in [`elements/tri3.py`](https://github.com/janmarthedal/yggdrasil/tree/main/yggdrasil/elements/tri3.py)
+In the library, it is implemented in [`elements/tri3.py`](https://github.com/janmarthedal/yggdrasil/blob/main/yggdrasil/elements/tri3.py)
 by the class `Tri3`.
 
 A natural coordinate system on $\hat{T}$ is provided by the **barycentric

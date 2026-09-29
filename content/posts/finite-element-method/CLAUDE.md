@@ -29,7 +29,7 @@ surrounding prose carries the explanation.
 - Use markdown syntax.
 - Reference library source files using links to the GitHub source, e.g.
   reference `yggdrasil/assemble.py` as
-  `[`assemble.py`](https://github.com/janmarthedal/yggdrasil/tree/main/yggdrasil/assemble.py)`.
+  `[`assemble.py`](https://github.com/janmarthedal/yggdrasil/blob/main/yggdrasil/assemble.py)`.
 
 ## Library references
 - Theory first: write the post so that a reader who skips every library mention
