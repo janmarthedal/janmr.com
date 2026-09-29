@@ -10,7 +10,7 @@ layout: page
   YouTube playlist.
 * [Crafting Interpreters by Robert Nystrom](https://craftinginterpreters.com)
 * [Dictionary of Algorithms and Data Structures](https://xlinux.nist.gov/dads/)
-* [Donald Knuth Annual Christmas Lectures](https://youtube.com/playlist?list=PLoROMvodv4rOAvKVR_dyCigSBMcYjevYB).
+* [Donald Knuth Annual Christmas Lectures](https://www.youtube.com/playlist?list=PLoROMvodv4rOAvKVR_dyCigSBMcYjevYB).
   YouTube playlist.
 * [Functional Programming in Lean](https://lean-lang.org/functional_programming_in_lean/)
 * [Introduction To Algorithms](https://ocw.mit.edu/courses/6-006-introduction-to-algorithms-spring-2020/)
@@ -29,7 +29,7 @@ layout: page
 * [Calculus by Gilbert Strang](https://ocw.mit.edu/courses/res-18-001-calculus-fall-2023/)
   Online book that covers single variable and multivariable calculus in depth, and is rich with applications
 * [Combinatorics by Joy Morris](https://www.cs.uleth.ca/~morris/Combinatorics/Combinatorics.html). An upper-level introductory course in enumeration, graph theory, and design theory
-* [Deep Learning by Professor Bryce](https://youtube.com/playlist?list=PLgPbN3w-ia_PeT1_c5jiLW3RJdR7853b9&si=vffALSeFQBjtt5BJ)
+* [Deep Learning by Professor Bryce](https://www.youtube.com/playlist?list=PLgPbN3w-ia_PeT1_c5jiLW3RJdR7853b9)
 * [Linear Algebra by Gilbert Strang](https://ocw.mit.edu/courses/18-06-linear-algebra-spring-2010/)
 * [Linear Algebra by Terence Tao](https://www.math.ucla.edu/~tao/resource/general/115a.3.02f/)
 * [Math videos from Math Professor Jeffrey Chasnov](https://www.youtube.com/@Jeff-math/playlists).

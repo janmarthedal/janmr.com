@@ -7,4 +7,4 @@ tags:
   - math
   - computerscience
 ---
-Donald Knuth Annual Christmas Lectures https://youtube.com/playlist?list=PLoROMvodv4rOAvKVR_dyCigSBMcYjevYB
+Donald Knuth Annual Christmas Lectures https://www.youtube.com/playlist?list=PLoROMvodv4rOAvKVR_dyCigSBMcYjevYB

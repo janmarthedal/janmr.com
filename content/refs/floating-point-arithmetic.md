@@ -13,7 +13,7 @@ links:
   - name: Journal page
     url: https://dl.acm.org/doi/10.1145/103162.103163
   - name: PDF
-    url: https://www.itu.dk/~sestoft/bachelor/IEEE754_article.pdf
+    url: https://dl.acm.org/doi/pdf/10.1145/103162.103163
   - name: HTML version
     about: Math not pretty...
     url: https://docs.oracle.com/cd/E19957-01/806-3568/ncg_goldberg.html

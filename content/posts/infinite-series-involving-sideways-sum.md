@@ -13,14 +13,13 @@ og:
 mastodon: https://mathstodon.xyz/@janmr/116016616218271781
 redirect: /blog/2013/07/infinite-series-involving-sideways-sum/
 ---
-
 I found a recent [question](https://math.stackexchange.com/questions/432250/how-does-one-easily-calculate-sum-limits-n-1-infty-frac-mathrmpopn) on [Mathematics Stack Exchange](https://math.stackexchange.com) quite interesting. It simply asked
 
 > How does one easily calculate $\sum\limits_{n=1}^\infty\frac{\mathrm{pop}(n)}{n(n+1)}$ ?
 
-Here $\mathrm{pop}(n)$ denotes the &#8220;population count&#8221; or &#8220;sideways sum&#8221;, which is the number of 1s in the binary representation of $n$ ([A000120](https://oeis.org/A000120)).<span></span>
+Here $\mathrm{pop}(n)$ denotes the &#8220;population count&#8221; or &#8220;sideways sum&#8221;, which is the number of 1s in the binary representation of $n$ ([A000120](https://oeis.org/A000120)).
 
-The user [achille hui](https://math.stackexchange.com/users/59379/achille-hui) provided a [very nice answer](http://math.stackexchange.com/a/432336/2043) which I would like to describe in some detail here. First, he introduces the function
+The user [achille hui](https://math.stackexchange.com/users/59379/achille-hui) provided a [very nice answer](https://math.stackexchange.com/a/432336/2043) which I would like to describe in some detail here. First, he introduces the function
 
 $$
 \theta_k(n) = \begin{cases}1,&\text{ if the $k$th bit of $n$ is set,}\\0,&\text{ otherwise.}\end{cases}

@@ -9,6 +9,6 @@ tags:
   - mathematics
 links:
   - name: Book homepage
-    url: https://www.dpmms.cam.ac.uk/~twk/my-book.html
+    url: https://www.dpmms.cam.ac.uk/~twk10/my-book.html
 ---
 ![](/media/books/korner.jpg)
