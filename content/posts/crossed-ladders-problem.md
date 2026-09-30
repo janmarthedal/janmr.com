@@ -11,7 +11,8 @@ og:
 redirect: /blog/2011/03/crossed-ladders-problem/
 mastodon: https://mathstodon.xyz/@janmr/115791781810441047
 ---
-I was [recently reminded](https://twitter.com/divbyzero/status/44871018350784512) of the crossed ladders problem. The following simple figure should be adequate in defining the problem:
+I was recently reminded of the crossed ladders problem.
+The following simple figure should be adequate in defining the problem:
 
 <figure>
   <img src="/media/crossed-ladders.svg" class="img-responsive" alt="The Crossed Ladders Problem">

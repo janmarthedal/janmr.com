@@ -10,8 +10,8 @@ og:
 mastodon: https://mathstodon.xyz/@janmr/117337251878410946
 redirect: /blog/2023/04/sum-of-all-digit-permutations/
 ---
-Recently, user [preshtalwalkar](https://twitter.com/preshtalwalkar) on Twitter posed the following
-[question](https://twitter.com/preshtalwalkar/status/1640552185296551938):
+Recently, user [preshtalwalkar](https://x.com/preshtalwalkar) on Twitter posed the following
+[question](https://x.com/preshtalwalkar/status/1640552185296551938):
 
 > What is the sum of all 5 digit numbers using 1, 2, 3, 4, 5 without repetition?
 

@@ -29,7 +29,7 @@ The [Polymer project](https://web.archive.org/web/20140702195843/http://www.poly
  * Provide a polyfill layer to add Polymer support to [evergreen browsers](https://tomdale.net/2013/05/evergreen-browsers/) not yet having native support for Web Components.
  * Implement and publish own core custom elements.
 
-[Matt McNulty](https://twitter.com/mattsmcnulty) from the Polymer team recently [gave a talk](https://www.youtube.com/watch?v=yRbOSdAe_JU) on *Polymer and the Web Components revolution*. [Addy Osmani](https://twitter.com/addyosmani) also [made a video](https://www.youtube.com/watch?v=2toYLLcoY14) on how to make your own custom Polymer elements. ~~Polymer can be followed on Twitter and has its own blog.~~
+Matt McNulty from the Polymer team recently [gave a talk](https://www.youtube.com/watch?v=yRbOSdAe_JU) on *Polymer and the Web Components revolution*. Addy Osmani also [made a video](https://www.youtube.com/watch?v=2toYLLcoY14) on how to make your own custom Polymer elements. ~~Polymer can be followed on Twitter and has its own blog.~~
 
 [X-Tag](https://www.x-tags.org) is a Mozilla project with a goal similar to that of Polymer. The two projects even share the polyfill layer.
 
