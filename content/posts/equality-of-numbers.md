@@ -1,6 +1,7 @@
 ---
 title: Equality of Floating-Point Numbers
 date: 2023-12-03T12:00Z
+update: 2026-09-30T07:30Z
 tags:
   - mathematics
   - programming
@@ -44,8 +45,8 @@ $$
 $$
 
 This is the function suggested for approximate equality in a [Python Enhancement Proposals](https://peps.python.org/pep-0485/) from 2015.
-It is implemented as [`isclose`](https://docs.python.org/3.12/library/math.html#math.isclose) in the `math` module
-([CPython implementation](https://github.com/python/cpython/blob/3.12/Modules/mathmodule.c#L3146)).
+It is implemented as [`isclose`](https://docs.python.org/3.14/library/math.html#math.isclose) in the `math` module
+([CPython implementation](https://github.com/python/cpython/blob/v3.14.7/Modules/mathmodule.c#L3186)).
 
 Some rules of thumb for choosing $\epsilon_{\text{rel}}$ and $\epsilon_{\text{abs}}$:
 * Use $\epsilon_{\text{rel}}=10^{-k}$ when you want (roughly) $k$ correct decimal digits.
