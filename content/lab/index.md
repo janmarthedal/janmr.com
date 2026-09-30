@@ -5,6 +5,9 @@ layout: page
 ### Demos
 - [L-Trominos](/lab/tromino/).
   A demo to accompany the blog post [Tiling with L-Trominos](/posts/tiling-with-l-trominos/).
+- [Peaucellier–Lipkin Linkage](/lab/peaucellier/).
+  An animation of the first planar linkage to turn circular motion into exact
+  straight-line motion. Adjust the lengths and see how the traced curve changes.
 - [math-tex demo](/lab/math-tex/).
   A demo that combines [Web Components](https://developer.mozilla.org/en-US/docs/Web/API/Web_components)
   (custom elements and shadow DOM) and [MathJax](https://www.mathjax.org/).

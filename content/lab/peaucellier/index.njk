@@ -1,0 +1,136 @@
+---
+title: Peaucellier–Lipkin Linkage
+date: 2026-09-30
+---
+{% extends "page.njk" %}
+{% block head -%}
+{{ super() }}
+<style>
+#linkage-wrap {
+  position: relative;
+  margin: 1em 0;
+}
+#linkage {
+  display: block;
+  width: 100%;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  touch-action: none;
+}
+#linkage-msg {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1em;
+  text-align: center;
+  color: #c9302c;
+  pointer-events: none;
+}
+.pl-controls {
+  display: grid;
+  grid-template-columns: auto 1fr 3.5em;
+  gap: 0.4em 0.8em;
+  align-items: center;
+  margin: 1em 0;
+}
+.pl-controls label {
+  white-space: nowrap;
+}
+.pl-controls input[type=range] {
+  width: 100%;
+}
+.pl-controls output {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+.pl-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5em 1.2em;
+  align-items: center;
+  margin: 1em 0;
+}
+.pl-btn {
+  font-size: 1em;
+  line-height: 1;
+  padding: 0.4em 0.9em;
+  background-color: #337ab7;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.pl-btn:hover {
+  background-color: #286090;
+}
+#pl-info {
+  font-variant-numeric: tabular-nums;
+}
+</style>
+{%- endblock %}
+{% block pagecontent -%}
+<p>The <a href="https://en.wikipedia.org/wiki/Peaucellier%E2%80%93Lipkin_linkage">Peaucellier–Lipkin
+linkage</a> (1864) was the first planar linkage that converts circular motion
+into exact straight-line motion. Adjust the lengths below and watch how the
+curve traced by the point <i>Q</i> (red) changes. You can also drag the crank
+point <i>P</i>.</p>
+
+<div id="linkage-wrap">
+  <canvas id="linkage"></canvas>
+  <div id="linkage-msg" hidden></div>
+</div>
+
+<div class="pl-buttons">
+  <button id="pl-play" class="pl-btn">Pause</button>
+  <button id="pl-clear" class="pl-btn">Clear trace</button>
+  <label><input type="checkbox" id="pl-lock" checked> Keep <i>d</i> = <i>r</i></label>
+  <label><input type="checkbox" id="pl-full" checked> Show full path</label>
+</div>
+
+<div class="pl-controls">
+  <label for="pl-L">Long arms <i>L</i> (OA, OB)</label>
+  <input type="range" id="pl-L" min="1" max="8" step="0.05" value="4">
+  <output for="pl-L" id="pl-L-out"></output>
+
+  <label for="pl-s">Rhombus side <i>s</i></label>
+  <input type="range" id="pl-s" min="0.5" max="6" step="0.05" value="1.5">
+  <output for="pl-s" id="pl-s-out"></output>
+
+  <label for="pl-r">Crank <i>r</i> (CP)</label>
+  <input type="range" id="pl-r" min="0.5" max="6" step="0.05" value="2">
+  <output for="pl-r" id="pl-r-out"></output>
+
+  <label for="pl-d">Pivot distance <i>d</i> (OC)</label>
+  <input type="range" id="pl-d" min="0.5" max="6" step="0.05" value="2">
+  <output for="pl-d" id="pl-d-out"></output>
+
+  <label for="pl-speed">Speed</label>
+  <input type="range" id="pl-speed" min="0" max="3" step="0.05" value="1">
+  <output for="pl-speed" id="pl-speed-out"></output>
+</div>
+
+<p id="pl-info"></p>
+
+<h2>How it works</h2>
+<p>The points <i>O</i> and <i>C</i> are fixed to the ground. The two long
+arms <i>OA</i> and <i>OB</i> have length <i>L</i>, and <i>A</i>, <i>P</i>,
+<i>B</i>, <i>Q</i> form a rhombus with side <i>s</i>. By symmetry, <i>O</i>,
+<i>P</i> and <i>Q</i> always lie on a line, and applying the Pythagorean
+theorem to the triangles formed with the diagonal <i>AB</i> gives</p>
+<p style="text-align: center">|<i>OP</i>| · |<i>OQ</i>| = <i>L</i>² − <i>s</i>².</p>
+<p>So <i>Q</i> is the <a href="https://en.wikipedia.org/wiki/Inversive_geometry">inversion</a>
+of <i>P</i> in the circle with center <i>O</i> and radius
+√(<i>L</i>² − <i>s</i>²) (drawn dashed). The crank <i>CP</i> forces <i>P</i>
+onto a circle with center <i>C</i> and radius <i>r</i>. When <i>d</i> = <i>r</i>
+this circle passes through <i>O</i>, and inversion maps it to a straight line.
+When <i>d</i> ≠ <i>r</i>, the image is another circle, and <i>Q</i> traces an
+arc of it.</p>
+<p>The linkage can only be assembled when <i>L</i> − <i>s</i> ≤ |<i>OP</i>| ≤
+<i>L</i> + <i>s</i>, which limits how far the crank can turn.</p>
+{%- endblock %}
+{% block bodyend -%}
+<script src="peaucellier.js"></script>
+{{ super() }}
+{%- endblock %}
