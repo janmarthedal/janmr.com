@@ -6,6 +6,6 @@ crossPosting:
   x: 
 tags:
   - video
-  - mathematics
+  - math
 ---
 MIT 18.102 Introduction to Functional Analysis (Spring 2021) with Dr. Casey Rodriguez https://ocw.mit.edu/courses/18-102-introduction-to-functional-analysis-spring-2021/
