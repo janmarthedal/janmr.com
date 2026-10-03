@@ -5,3 +5,4 @@
 - Vandermonde matrix (determinant and invertibility)
 - DFT
 - Chebyshev polynomials
+- Simulate hanging chain
