@@ -8,6 +8,8 @@ Perhaps useful for others.
 
 - [CLI Tools](tools/cli/)
 - [Links](links/)
+- [On this day](on-this-day/)
 - [People](people/)
+- [Problems](problems/)
 - [Unicode](unicode/)
 - [Web Tools](tools/web/)

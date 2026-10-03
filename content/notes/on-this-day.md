@@ -2,6 +2,7 @@
 title: On This Day
 layout: page
 ---
+## Dates
 - *1938-01-10* [GCal]. Donald E. Knuth is born https://mathshistory.st-andrews.ac.uk/Biographies/Knuth/
 - *2012-01-20* [GCal]. The first Rust compiler is released. https://web.archive.org/web/20120124160628/https://mail.mozilla.org/pipermail/rust-dev/2012-January/001256.html
 - *1996-01-23* [GCal]. Java is released. https://ops.java/releases/
@@ -13,11 +14,13 @@ layout: page
 - *2005-04-07* [GCal]. Git becomes self-hosted https://github.com/git/git/commit/e83c5163316f89bfbde7d9ab23ca2e25604af290 https://marc.info/?l=git&m=117254154130732
 - *1965-04-15* [GCal]. (Day of month unknown.) The paper "An algorithm for the machine calculation of complex Fourier series" by Cooley and Tukey was published. https://www.ams.org/journals/mcom/1965-19-090/home.html https://www.historyofinformation.com/detail.php?id=833
 - *1964-05-01* [GCal]. The first BASIC program runs. https://cis-alumni.org/TKurtz.html
+- *1971-05-03* [GCal]. The paper The complexity of theorem-proving procedures is published. It introduced the foundations of NP-completeness. https://dl.acm.org/doi/10.1145/800157.805047
 - *1974-05-05* [GCal]. The paper A Protocol for Packet Network Intercommunication by Vinton G. Cerf and Robert E. Kahn was published
 - *1997-05-11* [GCal]. Deep Blue defeats Garry Kasparov. https://www.ibm.com/history/deep-blue
 - *2015-05-15* [GCal]. The first stable release of Rust, version 1.0, is released. https://blog.rust-lang.org/2015/05/15/Rust-1.0/
 - *1977-05-31* [GCal]. (Day of month unknown.) The paper A universal algorithm for sequential data compression was published. https://ieeexplore.ieee.org/document/1055714 https://courses.cs.duke.edu/spring03/cps296.5/papers/ziv_lempel_1977_universal_algorithm.pdf
 - *2017-06-12* [GCal]. The paper Attention is All You Need is published. https://arxiv.org/abs/1706.03762
+- *1978-07-10* [GCal]. (Day of month unknown.) The paper Time, Clocks, and the Ordering of Events in a Distributed System is published. https://dl.acm.org/doi/abs/10.1145/359545.359563
 - *1948-07-15* [GCal]. (Day of month unknown.) A Mathematical Theory of Communication by C. E. Shannon
 - *2001-08-19* [GCal]. SciPy 0.1 is released. https://mail.python.org/pipermail/python-list/2001-August/106419.html https://web.archive.org/web/20010309040805/http://scipy.org:80/ https://arxiv.org/abs/1907.10121 https://www.nature.com/articles/s41592-019-0686-2
 - *1979-09-01* [GCal]. BLAS is announced: Basic Linear Algebra Subprograms for Fortran Usage. https://dl.acm.org/doi/10.1145/355841.355847
@@ -33,3 +36,19 @@ layout: page
 - *2004-12-01* [GCal]. (Day of month unknown.) The paper "MapReduce: Simplified Data Processing on Large Clusters" is published. https://research.google/pubs/mapreduce-simplified-data-processing-on-large-clusters/
 - *1995-12-04* [GCal]. JavaScript is first released. https://web.archive.org/web/20070916144913/https://wp.netscape.com/newsref/pr/newsrelease67.html
 - *1987-12-18* [GCal]. Perl 1.0 was released?
+
+## To research
+- Linux
+- Internet https://home.cern/science/computing/the-birth-of-the-web/
+- Haskell
+- Erlang http://erlang.org/course/history.html
+- Scala
+- C
+- Pascal
+- TeX (1978, more specific possible?)
+- LaTeX
+- The Art of Computer Programming (1968)
+
+## Links
+- https://softwarepreservation.computerhistory.org/
+- https://www.acm.org/education/otd-in-computing-history
