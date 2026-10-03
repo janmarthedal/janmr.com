@@ -1,0 +1,7 @@
+- Padé approximations
+- Good approximation for the circumference of an ellipse, perhaps use Padé?
+- Wavelets
+- De Moivre’s formula (trigonometric addition formulas)
+- Vandermonde matrix (determinant and invertibility)
+- DFT
+- Chebyshev polynomials
