@@ -7,7 +7,8 @@ tags:
 og:
   description: >-
     We describe a method for finding a local minimum for a function of several
-    real variables, Gradient Descent.
+    real variables, Gradient Descent
+mastodon: https://mathstodon.xyz/@janmr/117382784695983758
 redirect: /posts/neural-networks/05-gradient-descent/
 ---
 Let us forget the specifics of neural networks for a moment and consider

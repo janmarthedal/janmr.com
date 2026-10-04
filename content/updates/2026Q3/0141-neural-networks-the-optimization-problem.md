@@ -9,4 +9,4 @@ tags:
   - machinelearning
   - optimization
 ---
-Neural Networks - The Optimization Problem https://janmr.com/posts/neural-networks/the-optimization-problem/
+Introduction to Neural Networks, part 4: The Optimization Problem https://janmr.com/posts/neural-networks/the-optimization-problem/
