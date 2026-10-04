@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="440" height="350" viewBox="0 0 440 350">
+  <!-- Long arms length 5, rhombus side 2 (scale 60 px/unit); O=(0,0), P=(3.5,0), P'=(6,0), A,B=(4.75,±1.5612) -->
+  <!-- Copy rotated 30° about O, flattened so Q'=(6,3.4641) is above P'; |OQ|=21/|OQ'|=3.0311 -->
+  <g transform="translate(0 95)">
+    <g stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none" stroke="#aaa">
+      <path d="M40 140 L325 46.33 M40 140 L325 233.67"/>
+      <path d="M250 140 L325 46.33 L400 140 L325 233.67 Z"/>
+      <path d="M40 140 L285.23 -32.81 M40 140 L312.27 14.03"/>
+      <path d="M197.5 49.07 L285.23 -32.81 L400 -67.85 L312.27 14.03 Z"/>
+    </g>
+    <path d="M40 140 A105 105 0 0 1 250 140" fill="none" stroke="#f09a9a" stroke-width="4" stroke-linecap="round"/>
+    <path d="M40 140 L400 140 L400 -67.85 Z M250 140 L197.5 49.07" fill="none" stroke="#000" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+    <g fill="#fff" stroke="#000" stroke-width="2">
+      <circle cx="250" cy="140" r="5"/>
+      <circle cx="400" cy="140" r="5"/>
+      <circle cx="197.5" cy="49.07" r="5"/>
+      <circle cx="400" cy="-67.85" r="5"/>
+      <circle cx="40" cy="140" r="5"/>
+      <circle cx="145" cy="140" r="5"/>
+    </g>
+    <g font-family="'Times New Roman', Times, serif" font-style="italic" font-size="18" fill="#000">
+      <text x="40" y="164" text-anchor="middle">O</text>
+      <text x="245" y="162" text-anchor="end">P</text>
+      <text x="405" y="159">P′</text>
+      <text x="197.5" y="36" text-anchor="middle">Q</text>
+      <text x="410" y="-62">Q′</text>
+      <text x="145" y="162" text-anchor="middle">C</text>
+    </g>
+  </g>
+</svg>

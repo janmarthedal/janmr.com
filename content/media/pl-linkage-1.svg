@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="440" height="280" viewBox="0 0 440 280">
+  <!-- Long arms length 5, rhombus side 2 (scale 60 px/unit); O=(0,0), P=(3.5,0), P'=(6,0), A,B=(4.75,±1.5612) -->
+  <line x1="40" y1="140" x2="400" y2="140" stroke="#bbb" stroke-width="1" stroke-dasharray="6 4"/>
+  <line x1="325" y1="46.33" x2="325" y2="233.67" stroke="#bbb" stroke-width="1" stroke-dasharray="6 4"/>
+  <g stroke-width="4" stroke-linecap="round" stroke-linejoin="round" fill="none">
+    <path d="M40 140 L325 46.33 M40 140 L325 233.67" stroke="#333"/>
+    <path d="M250 140 L325 46.33 L400 140 L325 233.67 Z" stroke="#2a6fb0"/>
+  </g>
+  <g fill="#fff" stroke="#000" stroke-width="2">
+    <circle cx="325" cy="46.33" r="5"/>
+    <circle cx="325" cy="233.67" r="5"/>
+    <circle cx="250" cy="140" r="5"/>
+    <circle cx="400" cy="140" r="5"/>
+  </g>
+  <circle cx="40" cy="140" r="5" fill="#fff" stroke="#000" stroke-width="2"/>
+  <circle cx="325" cy="140" r="2.5" fill="#000"/>
+  <g font-family="'Times New Roman', Times, serif" font-style="italic" font-size="18" fill="#000">
+    <text x="40" y="164" text-anchor="middle">O</text>
+    <text x="245" y="162" text-anchor="end">P</text>
+    <text x="405" y="159">P′</text>
+    <text x="333" y="38">A</text>
+    <text x="330" y="255">B</text>
+    <text x="331" y="158">M</text>
+  </g>
+</svg>
