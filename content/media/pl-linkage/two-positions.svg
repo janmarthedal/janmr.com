@@ -8,7 +8,7 @@
       <path d="M40 140 L285.23 -32.81 M40 140 L312.27 14.03"/>
       <path d="M197.5 49.07 L285.23 -32.81 L400 -67.85 L312.27 14.03 Z"/>
     </g>
-    <path d="M40 140 A105 105 0 0 1 250 140" fill="none" stroke="#f09a9a" stroke-width="4" stroke-linecap="round"/>
+    <path d="M40 140 A105 105 0 0 1 250 140" fill="none" stroke="#96cca5" stroke-width="4" stroke-linecap="round"/>
     <path d="M40 140 L400 140 L400 -67.85 Z M250 140 L197.5 49.07" fill="none" stroke="#000" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
     <g fill="#fff" stroke="#000" stroke-width="2">
       <circle cx="250" cy="140" r="5"/>

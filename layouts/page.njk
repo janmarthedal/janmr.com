@@ -13,6 +13,9 @@
 {{ data.styles | safe }}
 </style>
 {%- endif %}
+{%- for script in data.scripts %}
+<script type="module" src="{{ script | url }}"></script>
+{%- endfor %}
 {%- endblock %}
 {% block content -%}
 <header>

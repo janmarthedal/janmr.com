@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="380" height="370" viewBox="30 5 380 370">
+  <!-- Static frame of the <pl-linkage> animation (pl-linkage.js) at angle 10°, used as its fallback -->
+  <path d="M400 44.6 L400 335.4" stroke="#bbb" stroke-width="1" stroke-dasharray="6 4" fill="none"/>
+  <g stroke-width="4" stroke-linecap="round" stroke-linejoin="round" fill="none">
+    <path d="M40.00 190.00 L306.21 51.67 M40.00 190.00 L337.46 228.94" stroke="#333"/>
+    <path d="M243.67 154.09 L306.21 51.67 L400.00 126.52 L337.46 228.94 Z" stroke="#2a6fb0"/>
+    <path d="M145.00 190.00 L243.67 154.09" stroke="#2e9a4b"/>
+  </g>
+  <g fill="#fff" stroke="#000" stroke-width="2">
+    <circle cx="306.21" cy="51.67" r="5"/>
+    <circle cx="337.46" cy="228.94" r="5"/>
+    <circle cx="243.67" cy="154.09" r="5"/>
+    <circle cx="400.00" cy="126.52" r="5"/>
+    <circle cx="40.00" cy="190.00" r="5"/>
+    <circle cx="145.00" cy="190.00" r="5"/>
+  </g>
+</svg>
