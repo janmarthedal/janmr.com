@@ -6,11 +6,11 @@
     <path d="M40 140 L325 46.33 M40 140 L325 233.67" stroke="#333"/>
     <path d="M250 140 L325 46.33 L400 140 L325 233.67 Z" stroke="#2a6fb0"/>
   </g>
-  <g fill="#fff" stroke="#000" stroke-width="2">
-    <circle cx="325" cy="46.33" r="5"/>
-    <circle cx="325" cy="233.67" r="5"/>
-    <circle cx="250" cy="140" r="5"/>
-    <circle cx="400" cy="140" r="5"/>
+  <g fill="#000">
+    <circle cx="325" cy="46.33" r="3.5"/>
+    <circle cx="325" cy="233.67" r="3.5"/>
+    <circle cx="250" cy="140" r="3.5"/>
+    <circle cx="400" cy="140" r="3.5"/>
   </g>
   <circle cx="40" cy="140" r="5" fill="#fff" stroke="#000" stroke-width="2"/>
   <circle cx="325" cy="140" r="2.5" fill="#000"/>

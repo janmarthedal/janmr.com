@@ -10,11 +10,13 @@
     </g>
     <path d="M40 140 A105 105 0 0 1 250 140" fill="none" stroke="#96cca5" stroke-width="4" stroke-linecap="round"/>
     <path d="M40 140 L400 140 L400 -67.85 Z M250 140 L197.5 49.07" fill="none" stroke="#000" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+    <g fill="#000">
+      <circle cx="250" cy="140" r="3.5"/>
+      <circle cx="400" cy="140" r="3.5"/>
+      <circle cx="197.5" cy="49.07" r="3.5"/>
+      <circle cx="400" cy="-67.85" r="3.5"/>
+    </g>
     <g fill="#fff" stroke="#000" stroke-width="2">
-      <circle cx="250" cy="140" r="5"/>
-      <circle cx="400" cy="140" r="5"/>
-      <circle cx="197.5" cy="49.07" r="5"/>
-      <circle cx="400" cy="-67.85" r="5"/>
       <circle cx="40" cy="140" r="5"/>
       <circle cx="145" cy="140" r="5"/>
     </g>

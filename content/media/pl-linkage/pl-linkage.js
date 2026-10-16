@@ -23,11 +23,13 @@ const TEMPLATE = `
     <path data-part="rhombus" stroke="#2a6fb0"/>
     <path data-part="driver" stroke="#2e9a4b"/>
   </g>
+  <g fill="#000">
+    <circle data-part="a" r="3.5"/>
+    <circle data-part="b" r="3.5"/>
+    <circle data-part="p" r="3.5"/>
+    <circle data-part="pp" r="3.5"/>
+  </g>
   <g fill="#fff" stroke="#000" stroke-width="2">
-    <circle data-part="a" r="5"/>
-    <circle data-part="b" r="5"/>
-    <circle data-part="p" r="5"/>
-    <circle data-part="pp" r="5"/>
     <circle cx="40" cy="190" r="5"/>
     <circle cx="145" cy="190" r="5"/>
   </g>
