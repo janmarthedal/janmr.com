@@ -9,4 +9,4 @@ tags:
   - machinelearning
   - optimization
 ---
-Introduction to Neural Networks, part 5: Gradient Descent http://janmr.com/posts/neural-networks/gradient-descent/
+Introduction to Neural Networks, part 5: Gradient Descent https://janmr.com/posts/neural-networks/gradient-descent/
