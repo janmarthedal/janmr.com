@@ -6,4 +6,4 @@ crossPosting:
   x: 
 tags:
 ---
-Linear Regression Basics http://janmr.com/posts/linear-regression-basics/
+Linear Regression Basics https://janmr.com/posts/linear-regression-basics/

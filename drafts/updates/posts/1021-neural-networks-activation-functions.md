@@ -7,4 +7,4 @@ crossPosting:
 tags:
   - neural-network
 ---
-Neural Networks - Activation Functions http://janmr.com/posts/neural-networks/activation-functions/
+Introduction to Neural Networks, part 8: Activation Functions https://janmr.com/posts/neural-networks/activation-functions/

@@ -8,4 +8,4 @@ tags:
   - computer-science
   - rust
 ---
-The Computer as Brain Breaker http://janmr.com/posts/the-computer-as-brain-breaker/
+The Computer as Brain Breaker https://janmr.com/posts/the-computer-as-brain-breaker/

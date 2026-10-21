@@ -6,4 +6,4 @@ crossPosting:
   x: 
 tags:
 ---
-Equality of Floating-Point Numbers http://janmr.com/posts/equality-of-numbers/
+Equality of Floating-Point Numbers https://janmr.com/posts/equality-of-numbers/

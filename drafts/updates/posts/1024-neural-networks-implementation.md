@@ -7,4 +7,4 @@ crossPosting:
 tags:
   - neural-network
 ---
-Neural Networks - Implementation http://janmr.com/posts/neural-networks/implementation/
+Introduction to Neural Networks, part 9: Implementation https://janmr.com/posts/neural-networks/implementation/

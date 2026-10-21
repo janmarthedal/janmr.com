@@ -8,4 +8,4 @@ tags:
   - nerd-sniping
   - inequality
 ---
-a to the bth power versus b to the ath power http://janmr.com/posts/atob-vs-btoa/
+a to the bth power versus b to the ath power https://janmr.com/posts/atob-vs-btoa/

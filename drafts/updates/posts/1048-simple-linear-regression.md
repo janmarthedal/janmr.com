@@ -7,4 +7,4 @@ crossPosting:
 tags:
   - machine-learning
 ---
-Simple Linear Regression http://janmr.com/posts/simple-linear-regression/
+Simple Linear Regression https://janmr.com/posts/simple-linear-regression/

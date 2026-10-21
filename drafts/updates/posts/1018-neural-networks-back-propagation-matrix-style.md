@@ -7,4 +7,4 @@ crossPosting:
 tags:
   - neural-network
 ---
-Neural Networks - Back-propagation Matrix-style http://janmr.com/posts/neural-networks/back-propagation-matrix-style/
+Introduction to Neural Networks, part 7: Back-propagation Matrix-style https://janmr.com/posts/neural-networks/back-propagation-matrix-style/

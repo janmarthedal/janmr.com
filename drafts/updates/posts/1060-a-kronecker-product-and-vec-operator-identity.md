@@ -8,4 +8,4 @@ tags:
   - kronecker-product
   - vec-operator
 ---
-A Kronecker Product and Vec Operator Identity http://janmr.com/posts/a-kronecker-product-and-vec-operator-identity/
+A Kronecker Product and Vec Operator Identity https://janmr.com/posts/a-kronecker-product-and-vec-operator-identity/

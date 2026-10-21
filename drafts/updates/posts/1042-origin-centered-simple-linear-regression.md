@@ -7,4 +7,4 @@ crossPosting:
 tags:
   - machine-learning
 ---
-Origin-Centered Simple Linear Regression http://janmr.com/posts/origin-centered-simple-linear-regression/
+Origin-Centered Simple Linear Regression https://janmr.com/posts/origin-centered-simple-linear-regression/

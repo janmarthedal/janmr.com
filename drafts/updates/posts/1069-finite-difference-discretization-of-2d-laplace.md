@@ -9,4 +9,4 @@ tags:
   - finite-differences
   - scipy
 ---
-Finite Difference Discretization of the 2D Laplace Operator http://janmr.com/posts/finite-difference-discretization-of-2d-laplace/
+Finite Difference Discretization of the 2D Laplace Operator https://janmr.com/posts/finite-difference-discretization-of-2d-laplace/

@@ -7,4 +7,4 @@ crossPosting:
 tags:
   - machine-learning
 ---
-No-Intercept Simple Linear Regression http://janmr.com/posts/no-intercept-simple-linear-regression/
+No-Intercept Simple Linear Regression https://janmr.com/posts/no-intercept-simple-linear-regression/

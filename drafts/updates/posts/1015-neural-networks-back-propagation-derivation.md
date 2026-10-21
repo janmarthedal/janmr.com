@@ -7,4 +7,4 @@ crossPosting:
 tags:
   - neural-network
 ---
-Neural Networks - Back-propagation Derivation http://janmr.com/posts/neural-networks/back-propagation-derivation/
+Introduction to Neural Networks, part 6: Back-propagation Derivation https://janmr.com/posts/neural-networks/back-propagation-derivation/

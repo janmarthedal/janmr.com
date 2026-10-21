@@ -9,4 +9,4 @@ tags:
   - numpy
   - scipy
 ---
-The 1D Laplace Matrix Using NumPy and SciPy http://janmr.com/posts/the-1d-laplace-matrix-using-numpy-and-scipy/
+The 1D Laplace Matrix Using NumPy and SciPy https://janmr.com/posts/the-1d-laplace-matrix-using-numpy-and-scipy/

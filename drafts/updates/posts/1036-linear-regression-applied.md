@@ -6,4 +6,4 @@ crossPosting:
   x: 
 tags:
 ---
-Linear Regression Applied http://janmr.com/posts/linear-regression-applied/
+Linear Regression Applied https://janmr.com/posts/linear-regression-applied/

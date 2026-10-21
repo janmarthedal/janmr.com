@@ -8,4 +8,4 @@ tags:
   - rust
   - combinatorics
 ---
-A Simple Sudoku Solver http://janmr.com/posts/a-simple-sudoku-solver/
+A Simple Sudoku Solver https://janmr.com/posts/a-simple-sudoku-solver/

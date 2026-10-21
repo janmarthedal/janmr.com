@@ -9,4 +9,4 @@ tags:
   - finite-differences
   - scipy
 ---
-The Wave Equation on the Unit Square http://janmr.com/posts/the-wave-equation-on-the-unit-square/
+The Wave Equation on the Unit Square https://janmr.com/posts/the-wave-equation-on-the-unit-square/
