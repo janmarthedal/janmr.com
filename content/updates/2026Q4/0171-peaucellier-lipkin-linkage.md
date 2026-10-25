@@ -9,4 +9,6 @@ tags:
   - geometry
   - visualization
 ---
-Peaucellier–Lipkin Linkage https://janmr.com/posts/peaucellier-lipkin-linkage/ #math #geometry #visualization
+Peaucellier–Lipkin Linkage https://janmr.com/posts/peaucellier-lipkin-linkage/
+
+![](/media/pl-linkage/animation-frame.svg)
