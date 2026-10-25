@@ -12,7 +12,7 @@ og:
 scripts: [/media/pl-linkage/pl-linkage.js]
 ---
 Consider the device shown in the animation below.
-It consists entirely of rigid bars joined at pivot points.
+It consists entirely of rigid rods joined at pivot points.
 
 <figure class="framed">
   <pl-linkage><img src="/media/pl-linkage/animation-frame.svg" class="img-responsive" alt="The Peaucellier–Lipkin linkage, with P' on a straight line"></pl-linkage>
@@ -26,20 +26,20 @@ It has the special property of transforming rotary motion into straight-line mot
 This post examines why this works.
 
 Let us first introduce some parameters.
-Let the two long black rods have length *L*. They are joined at the anchor point $O$.
-Each rod of the blue rhombus has length *s*.
-The green rod has length *r* and is also the distance between $O$ and the other anchor point $C$.
+Let the two long black rods have length $L$. They are joined at the anchor point $O$.
+Each rod of the blue rhombus has length $s$.
+The green rod is anchored at $C$, at distance $r$ from $O$, and has length $r$ as well.
 
-We start by considering the long arms and the rhombus by itself.
-We will require that $s < L$, which makes the rhombus fit inside the two arms.
+We start by considering the long rods and the rhombus by themselves.
+We will require that $s < L$, which makes the rhombus fit inside the two long rods.
 
 <figure class="framed">
-  <img src="/media/pl-linkage/arms-rhombus.svg" class="img-responsive" alt="The Peaucellier–Lipkin linkage without the driving arm">
+  <img src="/media/pl-linkage/arms-rhombus.svg" class="img-responsive" alt="The Peaucellier–Lipkin linkage without the green rod">
 </figure>
 
 The long rods join $O$ to the points $A$ and $B$,
 and the rhombus is $APBP'$.
-The midpoint of the rhombus is denoted *M*.
+The midpoint of the rhombus is denoted $M$.
 The diagonals $AB$ and $PP'$ of the rhombus are perpendicular and bisect each other at $M$.
 Since $O$ is equally far from $A$ and $B$, it lies on the perpendicular bisector of $AB$,
 which is the line through $P$ and $P'$.
@@ -70,36 +70,36 @@ Now for the green rod.
 It joins $P$ to the anchor point $C$, and since $\lvert OC \rvert = \lvert CP \rvert = r$,
 the point $P$ is constrained to move on the circle with center $C$ and radius $r$,
 which passes through $O$.
-Let $P$ be the point on this circle opposite $O$, so that $C$ is halfway between $O$ and $P$,
-and let $Q$ be any other point on the circle, off the $OP$ line.
-Let also $Q'$ be the inversion of $Q$.
+Let $Q$ be the point on this circle opposite $O$, so that $C$ is halfway between $O$ and $Q$,
+and let $Q'$ be the inverse of $Q$.
+Now let $P$ be anywhere else on the circle, off the $OQ$ line.
 
 <figure class="framed">
   <img src="/media/pl-linkage/two-positions.svg" class="img-responsive" alt="Two positions of the Peaucellier–Lipkin linkage, with P on a circle through O">
 </figure>
 
 We have
-$\lvert OP \rvert \lvert OP' \rvert = \lvert OQ \rvert \lvert OQ' \rvert = L^2 - s^2$
+$\lvert OQ \rvert \lvert OQ' \rvert = \lvert OP \rvert \lvert OP' \rvert = L^2 - s^2$
 and thus
 
 $$
-\frac{\lvert OQ \rvert}{\lvert OP' \rvert} = \frac{\lvert OP \rvert}{\lvert OQ' \rvert}.
+\frac{\lvert OP \rvert}{\lvert OQ' \rvert} = \frac{\lvert OQ \rvert}{\lvert OP' \rvert}.
 $$
 
-Since $P'$ lies on the ray $OP$ and $Q'$ lies on the ray $OQ$,
-the triangles $OQP$ and $OP'Q'$ share the angle $\angle POQ = \angle P'OQ'$.
-This proportionality and the shared angle imply that the triangles $OQP$ and $OP'Q'$
+Since $Q'$ lies on the ray $OQ$ and $P'$ lies on the ray $OP$,
+the triangles $OPQ$ and $OQ'P'$ share the angle $\angle QOP = \angle Q'OP'$.
+This proportionality and the shared angle imply that the triangles $OPQ$ and $OQ'P'$
 are [similar](https://en.wikipedia.org/wiki/Similarity_(geometry)).
 
 Now for the final part:
-Since $Q$ is a point on the circle where $OP$ is a diameter, the angle $\angle OQP$
+Since $P$ is a point on the circle where $OQ$ is a diameter, the angle $\angle OPQ$
 is a right angle by [Thales's Theorem](https://en.wikipedia.org/wiki/Thales%27s_theorem).
-From the similarity we then have that $\angle OP'Q'$ is a right angle.
-And since $Q$ was chosen arbitrarily (off the $OP$ line),
-this will be true for any $Q$ with $\lvert CQ \rvert = r$.
+From the similarity we then have that $\angle OQ'P'$ is a right angle.
+And since $P$ was chosen arbitrarily (off the $OQ$ line),
+this will be true for any position of $P$ on the circle.
 
-So every position $Q'$ of the tracing point lies on the line through $P'$ perpendicular to $OP'$.
+So $P'$ always lies on the line through $Q'$ perpendicular to $OQ'$.
 In other words, as $P$ moves on its circle, $P'$ moves on a straight line,
-at distance $\lvert OP' \rvert = (L^2 - s^2)/(2r)$ from $O$.
+at distance $\lvert OQ' \rvert = (L^2 - s^2)/(2r)$ from $O$.
 
-You can also explore the linkage interactively in the [lab](/lab/peaucellier/).
+You can also [explore the linkage interactively](/lab/peaucellier/) in the lab.

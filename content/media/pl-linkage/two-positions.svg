@@ -22,10 +22,10 @@
     </g>
     <g font-family="'Times New Roman', Times, serif" font-style="italic" font-size="18" fill="#000">
       <text x="40" y="164" text-anchor="middle">O</text>
-      <text x="245" y="162" text-anchor="end">P</text>
-      <text x="405" y="159">P′</text>
-      <text x="197.5" y="36" text-anchor="middle">Q</text>
-      <text x="410" y="-62">Q′</text>
+      <text x="245" y="162" text-anchor="end">Q</text>
+      <text x="405" y="159">Q′</text>
+      <text x="197.5" y="36" text-anchor="middle">P</text>
+      <text x="410" y="-62">P′</text>
       <text x="145" y="162" text-anchor="middle">C</text>
     </g>
   </g>

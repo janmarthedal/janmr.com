@@ -198,7 +198,7 @@
     var L = params.L, s = params.s, r = params.r;
     msgEl.hidden = true;
     if (L <= s) {
-      msgEl.textContent = 'The long arms must be longer than the rhombus sides (L > s).';
+      msgEl.textContent = 'The long rods must be longer than the rhombus sides (L > s).';
       msgEl.hidden = false;
       infoEl.textContent = '';
       return;
@@ -211,11 +211,11 @@
     }
     var k = L * L - s * s;
     var text = '|OP| · |OP′| = L² − s² = ' + fmt(k) + '. ';
-    text += 'P′ moves on the straight line x = ' + fmt(k / (2 * r)) + '.';
+    text += 'P′ moves on a straight line at distance ' + fmt(k / (2 * r)) + ' from O.';
     if (range.mode === 'swing') {
-      text += ' The crank can turn ' + Math.round((range.hi - range.lo) * 180 / Math.PI) + '°.';
+      text += ' The driving rod can turn ' + Math.round((range.hi - range.lo) * 180 / Math.PI) + '°.';
     } else {
-      text += ' The crank can turn all the way around.';
+      text += ' The driving rod can turn all the way around.';
     }
     infoEl.textContent = text;
   }
