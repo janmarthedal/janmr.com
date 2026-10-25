@@ -11,6 +11,7 @@ og:
     straight-line motion.
   image: /media/og/peaucellier-lipkin-linkage.png
 scripts: [/media/pl-linkage/pl-linkage.js]
+mastodon: https://mathstodon.xyz/@janmr/117501739270024714
 ---
 Consider the device shown in the animation below.
 It consists entirely of rigid rods joined at pivot points.
