@@ -3,7 +3,7 @@
 
 const STYLE = `
 pl-linkage { display: block; position: relative; width: fit-content; max-width: 100%; margin: 0 auto; }
-pl-linkage svg { display: block; max-width: 100%; height: auto; }
+pl-linkage svg { display: block; max-width: 100%; height: auto; cursor: pointer; }
 pl-linkage button {
   /* bottom aligned with the end of the dashed line: (375 - 335.4) / 370 of the viewBox height */
   position: absolute; left: 8px; bottom: 10.7%; width: 32px; height: 32px; padding: 0;
@@ -61,7 +61,8 @@ class PLLinkage extends HTMLElement {
     this.parts = {};
     for (const el of this.querySelectorAll("[data-part]")) this.parts[el.dataset.part] = el;
     this.btn = this.querySelector("button");
-    this.btn.addEventListener("click", () => { this.running = !this.running; this.update(); });
+    // Clicking anywhere on the animation, including the button, toggles it.
+    this.addEventListener("click", () => { this.running = !this.running; this.update(); });
     this.t = 0;
     this.last = null;
     this.raf = null;
