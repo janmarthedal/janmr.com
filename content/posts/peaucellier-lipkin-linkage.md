@@ -1,6 +1,6 @@
 ---
 title: Peaucellier–Lipkin Linkage
-date: 2026-10-25T12:00Z
+date: 2026-10-25T13:12Z
 tags:
   - mathematics
   - geometry
@@ -9,6 +9,7 @@ og:
   description: >-
     Why the Peaucellier–Lipkin linkage turns circular motion into exact
     straight-line motion.
+  image: /media/og/peaucellier-lipkin-linkage.png
 scripts: [/media/pl-linkage/pl-linkage.js]
 ---
 Consider the device shown in the animation below.
