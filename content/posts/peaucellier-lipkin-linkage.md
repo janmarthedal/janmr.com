@@ -20,28 +20,37 @@ Let the long black rods have length *L*.
 Each rod of the blue rhombus has length *s*.
 The green rod has length *r* and this is also the distance between the two anchor points.
 
-We will require that $s < L$.
-
 Let us first consider the long arms and the rhombus by itself.
+We will require that $s < L$ which makes the rhombus fit inside the two arms.
 
 <figure class="framed">
   <img src="/media/pl-linkage/arms-rhombus.svg" class="img-responsive" alt="The Peaucellier–Lipkin linkage without the driving arm">
 </figure>
 
-The midpoint of the rhombus is denoted *M* and let us introduce
-$x = \lvert PM \rvert = \lvert MP' \rvert$ and
-$y = \lvert AM \rvert = \lvert MB \rvert$.
-Using the Pythagorean Theorem on the right-angled triangles $OAM$ and $AP'M$,
-we get $L^2=(\lvert OP \rvert + x)^2 + y^2$ and $s^2 = x^2 + y^2$.
+The midpoint of the rhombus is denoted *M*.
+The diagonals $AB$ and $PP'$ of the rhombus are perpendicular and bisect each other at $M$.
+Since $O$ is equally far from $A$ and $B$, it lies on the perpendicular bisector of $AB$,
+which is the line through $P$ and $P'$.
+
+Using the Pythagorean Theorem on the right-angled triangles $OAM$ and $APM$,
+we get $L^2 = \lvert OM \rvert^2 + \lvert AM \rvert^2$ and
+$s^2 = \lvert PM \rvert^2 + \lvert AM \rvert^2$.
 Then we have
 
 $$
-\begin{aligned}
-L^2 - s^2 &= (\lvert OP \rvert + x)^2 - x^2 = \lvert OP \rvert^2 + 2x \lvert OP \rvert \\
-          &= \lvert OP \rvert (\lvert OP \rvert + 2x) = \lvert OP \rvert \lvert OP' \rvert.
-\end{aligned}
+L^2 - s^2 = \lvert OM \rvert^2 - \lvert PM \rvert^2
+= (\lvert OM \rvert - \lvert PM \rvert) (\lvert OM \rvert + \lvert PM \rvert)
+= \lvert OP \rvert \lvert OP' \rvert.
 $$
 
+The two factors $\lvert OM \rvert - \lvert PM \rvert$ and $\lvert OM \rvert + \lvert PM \rvert$
+are the distances from $O$ to the closer and the farther of the points $P$ and $P'$.
+The product does not depend on which is which,
+so the relation holds whether $P$ is the closer or the farther of the two.
+
+Furthermore, since $\lvert OM \rvert^2 - \lvert PM \rvert^2 = L^2 - s^2 > 0$,
+we have $\lvert OM \rvert > \lvert PM \rvert$,
+so $O$ lies outside the segment $PP'$ and $P$ and $P'$ are on the same ray from $O$.
 This means that the points $P$ and $P'$ are each other's
 [(circle) inverses](https://en.wikipedia.org/wiki/Inversive_geometry#Inversion_in_a_circle).
 
