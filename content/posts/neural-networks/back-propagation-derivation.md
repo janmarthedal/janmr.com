@@ -7,6 +7,7 @@ tags:
 og:
   description: >-
     We show how to compute the gradient of a neural network error function.
+mastodon: https://mathstodon.xyz/@janmr/117479085143442414
 redirect: /posts/neural-networks/06-back-propagation-derivation/
 ---
 Consider a neural network as [previously described](/posts/neural-networks/model/).
