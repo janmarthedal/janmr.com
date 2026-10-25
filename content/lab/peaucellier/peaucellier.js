@@ -25,7 +25,6 @@
   var infoEl = document.getElementById('pl-info');
   var playBtn = document.getElementById('pl-play');
   var clearBtn = document.getElementById('pl-clear');
-  var fullEl = document.getElementById('pl-full');
 
   var sliders = {};
   ['L', 's', 'r', 'speed'].forEach(function (name) {
@@ -326,32 +325,11 @@
     ctx.stroke();
   }
 
-  function ground(p) {
-    var c = toScreen(p);
-    var size = 10;
-    ctx.fillStyle = '#ddd';
-    ctx.strokeStyle = COLORS.anchorStroke;
-    ctx.lineWidth = 1.2;
-    ctx.beginPath();
-    ctx.moveTo(c.x, c.y);
-    ctx.lineTo(c.x - size, c.y + size * 1.4);
-    ctx.lineTo(c.x + size, c.y + size * 1.4);
-    ctx.closePath();
-    ctx.fill();
-    ctx.stroke();
-    ctx.beginPath();
-    for (var i = -size; i < size; i += 4) {
-      ctx.moveTo(c.x + i, c.y + size * 1.4 + 5);
-      ctx.lineTo(c.x + i + 4, c.y + size * 1.4);
-    }
-    ctx.stroke();
-  }
-
-  function joint(p, radius) {
+  function joint(p) {
     var c = toScreen(p);
     ctx.fillStyle = COLORS.joint;
     ctx.beginPath();
-    ctx.arc(c.x, c.y, radius || 4, 0, TWO_PI);
+    ctx.arc(c.x, c.y, 3.5, 0, TWO_PI);
     ctx.fill();
   }
 
@@ -396,7 +374,7 @@
     }
 
     if (range.mode !== 'none') {
-      if (fullEl.checked) path(range.lo, range.hi, COLORS.fullPath, 2);
+      path(range.lo, range.hi, COLORS.fullPath, 2);
       path(traceLo, traceHi, COLORS.trace, 2.5);
     }
 
@@ -404,21 +382,15 @@
     if (c) {
       line(c.O, c.A, COLORS.arm, 4);
       line(c.O, c.B, COLORS.arm, 4);
-      line(c.A, c.P, COLORS.rhombus, 3);
-      line(c.P, c.B, COLORS.rhombus, 3);
-      line(c.B, c.Pp, COLORS.rhombus, 3);
-      line(c.Pp, c.A, COLORS.rhombus, 3);
-      line(c.C, c.P, COLORS.crank, 3);
-    }
-
-    ground(O);
-    ground(C);
-
-    if (c) {
+      line(c.A, c.P, COLORS.rhombus, 4);
+      line(c.P, c.B, COLORS.rhombus, 4);
+      line(c.B, c.Pp, COLORS.rhombus, 4);
+      line(c.Pp, c.A, COLORS.rhombus, 4);
+      line(c.C, c.P, COLORS.crank, 4);
       joint(c.A);
       joint(c.B);
-      joint(c.P, 5.5);
-      joint(c.Pp, 5.5);
+      joint(c.P);
+      joint(c.Pp);
     }
     anchor(O);
     anchor(C);
