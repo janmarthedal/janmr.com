@@ -6,15 +6,16 @@
   var BASE_OMEGA = 0.8; // radians per second at speed 1
 
   var COLORS = {
-    arm: '#337ab7',
-    rhombus: '#5b9bd5',
-    crank: '#555',
+    arm: '#333',
+    rhombus: '#2a6fb0',
+    crank: '#2e9a4b',
     guide: '#ccc',
     inversion: '#aaa',
     trace: '#c9302c',
     fullPath: 'rgba(201, 48, 44, 0.25)',
-    joint: '#fff',
-    jointStroke: '#333',
+    joint: '#000',
+    anchor: '#fff',
+    anchorStroke: '#000',
     label: '#333'
   };
 
@@ -24,11 +25,10 @@
   var infoEl = document.getElementById('pl-info');
   var playBtn = document.getElementById('pl-play');
   var clearBtn = document.getElementById('pl-clear');
-  var lockEl = document.getElementById('pl-lock');
   var fullEl = document.getElementById('pl-full');
 
   var sliders = {};
-  ['L', 's', 'r', 'd', 'speed'].forEach(function (name) {
+  ['L', 's', 'r', 'speed'].forEach(function (name) {
     sliders[name] = {
       input: document.getElementById('pl-' + name),
       output: document.getElementById('pl-' + name + '-out')
@@ -37,7 +37,7 @@
 
   // ==================== State ====================
 
-  var params = { L: 4, s: 1.5, r: 2, d: 2, speed: 1 };
+  var params = { L: 5, s: 2, r: 1.75, speed: 1 };
   var range = { mode: 'none', lo: 0, hi: 0 }; // mode: 'rotate' | 'swing' | 'none'
   var theta = 0;
   var dir = 1;
@@ -51,8 +51,10 @@
 
   // ==================== Geometry ====================
 
+  // The anchor C is at distance r from O, so P moves on a circle through O.
+
   function crankPoint(th) {
-    return { x: params.d + params.r * Math.cos(th), y: params.r * Math.sin(th) };
+    return { x: params.r + params.r * Math.cos(th), y: params.r * Math.sin(th) };
   }
 
   function isValid(th) {
@@ -76,11 +78,11 @@
     var k = (L * L - s * s) / (rho * rho);
     return {
       O: { x: 0, y: 0 },
-      C: { x: params.d, y: 0 },
+      C: { x: params.r, y: 0 },
       P: P,
       A: { x: a * ux - h * uy, y: a * uy + h * ux },
       B: { x: a * ux + h * uy, y: a * uy - h * ux },
-      Q: { x: k * P.x, y: k * P.y }
+      Pp: { x: k * P.x, y: k * P.y }
     };
   }
 
@@ -194,7 +196,7 @@
   }
 
   function updateInfo() {
-    var L = params.L, s = params.s, r = params.r, d = params.d;
+    var L = params.L, s = params.s, r = params.r;
     msgEl.hidden = true;
     if (L <= s) {
       msgEl.textContent = 'The long arms must be longer than the rhombus sides (L > s).';
@@ -209,14 +211,8 @@
       return;
     }
     var k = L * L - s * s;
-    var text = '|OP| · |OQ| = L² − s² = ' + fmt(k) + '. ';
-    var diff = d * d - r * r;
-    if (Math.abs(d - r) < 1e-9) {
-      text += 'Since d = r, Q moves on the straight line x = ' + fmt(k / (2 * r)) + '.';
-    } else {
-      text += 'Since d ≠ r, Q moves on a circle with center (' + fmt(d * k / diff) +
-        ', 0) and radius ' + fmt(r * k / Math.abs(diff)) + '.';
-    }
+    var text = '|OP| · |OP′| = L² − s² = ' + fmt(k) + '. ';
+    text += 'P′ moves on the straight line x = ' + fmt(k / (2 * r)) + '.';
     if (range.mode === 'swing') {
       text += ' The crank can turn ' + Math.round((range.hi - range.lo) * 180 / Math.PI) + '°.';
     } else {
@@ -228,7 +224,7 @@
   // ==================== View ====================
 
   function computeView() {
-    var minX = Math.min(0, params.d - params.r), maxX = Math.max(0, params.d);
+    var minX = 0, maxX = params.r;
     var minY = 0, maxY = 0;
     function add(p) {
       if (p.x < minX) minX = p.x;
@@ -240,11 +236,11 @@
       var n = 300;
       for (var i = 0; i <= n; i++) {
         var c = configuration(range.lo + (range.hi - range.lo) * i / n);
-        if (c) { add(c.P); add(c.A); add(c.B); add(c.Q); }
+        if (c) { add(c.P); add(c.A); add(c.B); add(c.Pp); }
       }
     } else {
-      add({ x: params.d + params.r, y: params.r });
-      add({ x: params.d - params.r, y: -params.r });
+      add({ x: 2 * params.r, y: params.r });
+      add({ x: 0, y: -params.r });
     }
     return {
       x: (minX + maxX) / 2,
@@ -323,7 +319,7 @@
     for (var i = 0; i <= n; i++) {
       var c = configuration(lo + (hi - lo) * i / n);
       if (!c) { started = false; continue; }
-      var p = toScreen(c.Q);
+      var p = toScreen(c.Pp);
       if (started) ctx.lineTo(p.x, p.y); else ctx.moveTo(p.x, p.y);
       started = true;
     }
@@ -334,7 +330,7 @@
     var c = toScreen(p);
     var size = 10;
     ctx.fillStyle = '#ddd';
-    ctx.strokeStyle = COLORS.jointStroke;
+    ctx.strokeStyle = COLORS.anchorStroke;
     ctx.lineWidth = 1.2;
     ctx.beginPath();
     ctx.moveTo(c.x, c.y);
@@ -354,10 +350,18 @@
   function joint(p, radius) {
     var c = toScreen(p);
     ctx.fillStyle = COLORS.joint;
-    ctx.strokeStyle = COLORS.jointStroke;
-    ctx.lineWidth = 1.5;
     ctx.beginPath();
     ctx.arc(c.x, c.y, radius || 4, 0, TWO_PI);
+    ctx.fill();
+  }
+
+  function anchor(p) {
+    var c = toScreen(p);
+    ctx.fillStyle = COLORS.anchor;
+    ctx.strokeStyle = COLORS.anchorStroke;
+    ctx.lineWidth = 2;
+    ctx.beginPath();
+    ctx.arc(c.x, c.y, 5, 0, TWO_PI);
     ctx.fill();
     ctx.stroke();
   }
@@ -384,7 +388,7 @@
     updateTransform(width, height);
 
     var O = { x: 0, y: 0 };
-    var C = { x: params.d, y: 0 };
+    var C = { x: params.r, y: 0 };
 
     circle(C, params.r, COLORS.guide, 1);
     if (params.L > params.s) {
@@ -402,8 +406,8 @@
       line(c.O, c.B, COLORS.arm, 4);
       line(c.A, c.P, COLORS.rhombus, 3);
       line(c.P, c.B, COLORS.rhombus, 3);
-      line(c.B, c.Q, COLORS.rhombus, 3);
-      line(c.Q, c.A, COLORS.rhombus, 3);
+      line(c.B, c.Pp, COLORS.rhombus, 3);
+      line(c.Pp, c.A, COLORS.rhombus, 3);
       line(c.C, c.P, COLORS.crank, 3);
     }
 
@@ -414,19 +418,19 @@
       joint(c.A);
       joint(c.B);
       joint(c.P, 5.5);
-      joint(c.Q, 5.5);
+      joint(c.Pp, 5.5);
     }
-    joint(O);
-    joint(C);
+    anchor(O);
+    anchor(C);
 
     label(O, 'O', -14, -8);
     label(C, 'C', 14, -8);
     if (c) {
-      var mid = { x: (c.P.x + c.Q.x) / 2, y: (c.P.y + c.Q.y) / 2 };
+      var mid = { x: (c.P.x + c.Pp.x) / 2, y: (c.P.y + c.Pp.y) / 2 };
       labelAway(c.A, mid, 'A');
       labelAway(c.B, mid, 'B');
       labelAway(c.P, c.A, 'P');
-      labelAway(c.Q, c.A, 'Q');
+      labelAway(c.Pp, c.A, 'P′');
     }
   }
 
@@ -476,7 +480,7 @@
 
   function dragTo(event) {
     var w = pointerWorld(event);
-    var th = Math.atan2(w.y, w.x - params.d);
+    var th = Math.atan2(w.y, w.x - params.r);
     if (range.mode === 'swing') {
       th = fitAngle(th);
     } else {
@@ -531,19 +535,8 @@
 
   clearBtn.addEventListener('click', clearTrace);
 
-  lockEl.addEventListener('change', function () {
-    if (lockEl.checked) {
-      sliders.d.input.value = sliders.r.input.value;
-      onParamsChanged();
-    }
-  });
-
   Object.keys(sliders).forEach(function (name) {
     sliders[name].input.addEventListener('input', function () {
-      if (lockEl.checked) {
-        if (name === 'r') sliders.d.input.value = sliders.r.input.value;
-        if (name === 'd') sliders.r.input.value = sliders.d.input.value;
-      }
       if (name === 'speed') {
         readParams();
         updateOutputs();
