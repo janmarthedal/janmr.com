@@ -65,8 +65,8 @@ Any norm will do, but the most common choice is the
 [Euclidean norm](https://en.wikipedia.org/wiki/Norm_(mathematics)#Euclidean_norm),
 also called the 2-norm, $\| (u_1, \ldots, u_n) \|_2 = \sqrt{u_1^2 + \ldots + u_n^2}$.
 This norm has the advantage that the solution can be computed exactly and in
-a fairly efficient way (see, e.g., Section&nbsp;5.5 in
-[Matrix Computations](/refs/matrix-comp/)/).
+a fairly efficient way
+(see, e.g., Section&nbsp;5.5 in [Matrix Computations](/refs/matrix-comp/)).
 A solution to this optimization problem is also computed by the NumPy function
 [`numpy.linalg.lstsq`](https://numpy.org/doc/stable/reference/generated/numpy.linalg.lstsq.html).
 
