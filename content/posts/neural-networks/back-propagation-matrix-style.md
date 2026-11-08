@@ -7,6 +7,7 @@ tags:
 og:
   description: >-
     We express the back-propagation formulas using matrix notation.
+mastodon: https://mathstodon.xyz/@janmr/117581485159552042
 redirect: /posts/neural-networks/07-back-propagation-matrix-style/
 ---
 This post continues from the notation and formulas introduced in the
